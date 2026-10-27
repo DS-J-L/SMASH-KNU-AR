@@ -1,0 +1,4 @@
+# Direct dependencies for the scaffold, verified with Python 3.12.
+fastapi==0.162.0
+uvicorn==0.54.0
+websockets==16.0

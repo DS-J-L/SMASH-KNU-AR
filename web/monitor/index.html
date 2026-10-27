@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMASH-KNU-AR · 모니터</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <script type="module" src="/monitor/app.js"></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">SMASH-KNU-AR · 개발 시작 화면</p>
+  <h1>경북대 부수기</h1>
+  <p>카메라와 캠퍼스를 준비한 뒤, 몸으로 건물을 부수는 게임입니다.</p>
+  <p id="server-status" role="status">서버 연결 확인 중…</p>
+  <section aria-labelledby="ready-title">
+    <h2 id="ready-title">플레이 준비</h2>
+    <ul class="readiness">
+      <li><span>카메라 C0 · C1 · C2</span><strong>입력 연결 전</strong></li>
+      <li><span>카메라 보정</span><strong>구현 예정</strong></li>
+      <li><span>사람 인식 · 3D 손목</span><strong>구현 예정</strong></li>
+      <li><span>건물 · 충돌 · 파괴</span><strong>구현 예정</strong></li>
+    </ul>
+    <button type="button" disabled aria-describedby="setup-note">캠퍼스 부수기 시작</button>
+    <p id="setup-note" class="muted">초기 구조입니다. 실제 입력과 게임 기능을 연결한 뒤 시작할 수 있습니다.</p>
+  </section>
+  <nav><a href="/camera/">카메라 미리보기 열기</a> <a href="/docs">서버 API 문서</a></nav>
+</main>
+</body>
+</html>

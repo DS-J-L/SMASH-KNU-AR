@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMASH-KNU-AR · 카메라</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <script type="module" src="/camera/app.js"></script>
+</head>
+<body>
+<main>
+  <p class="eyebrow">SMASH-KNU-AR · 카메라 확인</p>
+  <h1>휴대폰 미리보기</h1>
+  <p>영상은 이 기기에서만 표시됩니다. 관절 추출과 서버 전송은 다음 단계에서 연결합니다.</p>
+  <p id="server-status" role="status">서버 연결 확인 중…</p>
+  <label for="camera-id">이 기기의 카메라 번호</label>
+  <select id="camera-id">
+    <option value="C0">C0 · 정면</option>
+    <option value="C1">C1 · 왼쪽</option>
+    <option value="C2">C2 · 오른쪽</option>
+  </select>
+  <p class="muted">현재 번호 선택은 화면 표시용이며 서버에 기기를 등록하지 않습니다.</p>
+  <video id="preview" autoplay muted playsinline aria-label="선택한 기기의 카메라 영상"></video>
+  <div class="actions">
+    <button id="start" type="button">카메라 켜기</button>
+    <button id="stop" type="button" disabled>카메라 끄기</button>
+  </div>
+  <p id="camera-status" role="status">카메라 꺼짐</p>
+  <p class="muted">휴대폰에서 카메라를 켜려면 신뢰할 수 있는 HTTPS 연결이 필요합니다.</p>
+  <nav><a href="/monitor/">모니터 준비 화면</a></nav>
+</main>
+</body>
+</html>

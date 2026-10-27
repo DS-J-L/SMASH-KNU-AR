@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "type": "pose_3d",
+  "sample_only": true,
+  "session_id": "example-session-only",
+  "sequence": 0,
+  "coordinate_frame": "room_z_up",
+  "units": "m",
+  "aligned_capture_at_server_ms": null,
+  "server_sent_at_ms": null,
+  "skew_ms": null,
+  "joints": {
+    "left_wrist": {"position_m": null, "valid": false, "camera_ids": [], "reprojection_error_px": null, "reason": "not_calibrated"},
+    "right_wrist": {"position_m": null, "valid": false, "camera_ids": [], "reprojection_error_px": null, "reason": "not_calibrated"}
+  }
+}

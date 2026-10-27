@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "type": "pose_2d",
+  "sample_only": true,
+  "camera_id": "C0",
+  "device_id": "example-device-only",
+  "stream_id": "example-stream-only",
+  "frame_id": 0,
+  "calibration_id": null,
+  "image": {"width": 640, "height": 480, "rotation_deg": 0, "mirrored": false, "coordinate_space": "raw_distorted_pixels"},
+  "timing": {"capture_time_ms": null, "clock_id": "example-clock-only", "timestamp_source": "unknown"},
+  "joints": {"left_wrist": null, "right_wrist": null}
+}

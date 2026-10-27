@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1",
+  "sample_only": true,
+  "runtime_loaded": false,
+  "cameras": [
+    {"camera_id": "C0", "role": "front_video_and_pose", "device_id": null, "input_source": null, "image_settings": null, "calibration_file": null},
+    {"camera_id": "C1", "role": "pose", "device_id": null, "input_source": null, "image_settings": null, "calibration_file": null},
+    {"camera_id": "C2", "role": "pose", "device_id": null, "input_source": null, "image_settings": null, "calibration_file": null}
+  ]
+}
