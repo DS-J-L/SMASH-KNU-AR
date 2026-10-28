@@ -2,13 +2,54 @@
 
 휴대폰 3대로 몸의 움직임을 추적하고, 모니터에 합성한 경북대 건물을 부수는 AR 프로젝트입니다.
 
-**처음 시작하면 [개발 계획](DEVELOPMENT_PLAN.md)의 ‘첫 작업’부터 읽으세요.**
+**처음 시작하면 [PM 전체 계획](PM_plan.md)과 아래 ‘팀원 시작 안내’를 읽으세요.**
 
 ## 현재 상태
 
 초기 개발 구조입니다. FastAPI 서버, 상태 확인용 WebSocket, 모니터 준비 화면, 휴대폰의 로컬 카메라 미리보기를 제공합니다.
 
 관절 추출, 휴대폰 영상 전송, 카메라 등록, 보정, 시간 동기화, 삼각측량, 3D 렌더링, 충돌과 파괴는 아직 구현하지 않았습니다. 시작 버튼은 비활성 상태이며, 예시 설정을 실측값으로 사용하지 않습니다.
+
+## 팀원 시작 안내
+
+처음 받는 경우:
+
+```bash
+git clone https://github.com/DS-J-L/SMASH-KNU-AR.git
+cd SMASH-KNU-AR
+```
+
+이미 저장소를 받은 경우, main을 갱신합니다.
+
+```bash
+git switch main
+git pull --ff-only origin main
+```
+
+1. [PM_plan.md](PM_plan.md)에서 P0~P6의 목표·일정·통합 완료 기준을 확인합니다. 날짜는 제안 일정입니다.
+2. [AGENTS.md](AGENTS.md)와 [기록 운영 안내](AGENTS/README.md)를 읽습니다.
+3. 아래 표에서 자신의 계획과 진행 파일을 열고, 마지막 완료·미검증·다음 작업을 확인합니다.
+4. 작업 시작 기록을 남기고 진행합니다. 종료할 때 검증 결과·남은 일·다음 행동을 기록하고, 완료한 계획 체크박스와 [팀 진행현황](AGENTS/진행현황.md)의 자기 행을 갱신합니다.
+5. 작업 브랜치의 PR에 코드 변경과 관련 계획·진행 기록을 함께 담습니다. 공통 Phase 통과는 PM의 통합 확인 기록으로 구분합니다.
+
+| 담당 | 작업 계획 | 진행 기록 |
+| --- | --- | --- |
+| 이동수 | [이동수_plan.md](이동수_plan.md) | [이동수_progress.md](AGENTS/이동수_progress.md) |
+| 김태이 | [김태이_plan.md](김태이_plan.md) | [김태이_progress.md](AGENTS/김태이_progress.md) |
+| 정경호 | [정경호_plan.md](정경호_plan.md) | [정경호_progress.md](AGENTS/정경호_progress.md) |
+| PM·공통 관리 | [PM_plan.md](PM_plan.md) | [PM_progress.md](AGENTS/PM_progress.md) |
+
+[팀 진행현황](AGENTS/진행현황.md)에서 사람별 작업과 공통 Phase를 확인하고, 새 기록에는 [작업 기록 양식](AGENTS/작업기록_template.md)을 사용합니다. 최초 개발 상태는 `확인 전`이므로 기존 작업·실행 근거를 확인해 갱신합니다.
+
+Codex를 사용할 때는 저장소를 프로젝트 폴더로 열고 아래처럼 요청할 수 있습니다.
+
+```text
+AGENTS.md와 PM_plan.md를 읽고, 내 이름_plan.md와 AGENTS/내 이름_progress.md를
+확인해 다음 작업을 진행해줘. 시작 기록을 남기고, 끝나면 검증 결과·남은 일·
+다음 작업을 기록한 뒤 계획 체크리스트와 팀 진행현황도 맞춰줘.
+```
+
+`내 이름`은 실제 담당자 이름으로 바꿉니다. AGENTS는 작업 지침과 기록이며, 서버·휴대폰 준비는 아래 실행 방법과 [SETUP.md](docs/SETUP.md)를 따릅니다.
 
 ## 실행
 
@@ -52,13 +93,15 @@ python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 
 ## 읽는 순서
 
-1. [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md): 오늘 할 일, 역할, 일정, 작업별 완료 기준
-2. [SETUP.md](docs/SETUP.md): 설치와 실행
-3. [ARCHITECTURE.md](docs/ARCHITECTURE.md): 각 폴더의 책임과 데이터 흐름
-4. [DATA_CONTRACT.md](docs/DATA_CONTRACT.md): 함께 맞춰야 할 메시지·좌표·시간 규칙
-5. [DECISIONS.md](docs/DECISIONS.md): 노션과 발표자료의 차이, 아직 결정할 항목
-6. [HARDWARE_CHECKLIST.md](docs/HARDWARE_CHECKLIST.md): 실제 휴대폰 3대 점검
-7. [EVALUATION.md](docs/EVALUATION.md): 실험 계획의 구분과 측정 기준
+1. [PM_plan.md](PM_plan.md)와 개인 계획: P0~P6 목표·담당·일정·완료 기준
+2. [AGENTS.md](AGENTS.md), [AGENTS/README.md](AGENTS/README.md), [팀 진행현황](AGENTS/진행현황.md): 계획 읽기·진행 기록·통합 확인
+3. [SETUP.md](docs/SETUP.md): 설치와 실행
+4. [ARCHITECTURE.md](docs/ARCHITECTURE.md): 각 폴더의 책임과 데이터 흐름
+5. [DATA_CONTRACT.md](docs/DATA_CONTRACT.md): 함께 맞춰야 할 메시지·좌표·시간 규칙
+6. [DECISIONS.md](docs/DECISIONS.md): 노션과 발표자료의 차이, 아직 결정할 항목
+7. [HARDWARE_CHECKLIST.md](docs/HARDWARE_CHECKLIST.md): 실제 휴대폰 3대 점검
+8. [EVALUATION.md](docs/EVALUATION.md): 실험 계획의 구분과 측정 기준
+9. [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md): 초기 T00~T13 설계와 개발 배경
 
 ## 확인 명령
 
