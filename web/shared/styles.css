@@ -18,6 +18,17 @@ button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid
 select { margin-left: 12px; background: #233329; color: #edf2f6; }
 label { font-weight: 600; }
 video { display: block; width: 100%; aspect-ratio: 4 / 3; background: #090b0f; object-fit: contain; border: 1px solid #303a49; border-radius: 8px; }
+.stage { position: relative; }
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.field-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+.field-row select { margin-left: 0; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+.stats div { border: 1px solid #303a49; border-radius: 6px; padding: 10px 12px; }
+.stats dt { color: #aeb9c7; font-size: .85rem; }
+.stats dd { margin: 4px 0 0; font-variant-numeric: tabular-nums; }
+details { margin: 12px 0; }
+summary { cursor: pointer; }
+pre { overflow-x: auto; font-size: .8rem; background: #090b0f; border: 1px solid #303a49; border-radius: 6px; padding: 12px; }
 .actions, nav { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
 a { color: #b7e0ab; text-underline-offset: 4px; }
 @media (max-width: 480px) { main { padding: 28px 18px; } .readiness li { flex-direction: column; gap: 6px; } }

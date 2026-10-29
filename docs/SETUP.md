@@ -26,11 +26,13 @@ source .venv/bin/activate
 
 ```bash
 python -m pip install -r requirements.txt
+python tools/fetch_mediapipe.py
 python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 ```
 
 - `/monitor/`: 준비 화면과 서버 연결 상태
-- `/camera/`: C0/C1/C2 선택과 로컬 카메라 미리보기
+- `/camera/`: C0/C1/C2 선택, MediaPipe 좌·우 손목 추출, 서버가 받을 수 있으면 `pose_2d` 송신
+- `/camera/?replay=/public/...mp4`: 카메라 대신 녹화 파일로 같은 처리(`source=replay`)
 - `/api/health`: 서버 상태 JSON
 - `/ws/status`: 현재 구현 범위를 포함한 상태 메시지
 - `/docs`: HTTP API 문서

@@ -7,7 +7,7 @@ def test_health_and_browser_entrypoints():
     with TestClient(app) as client:
         assert client.get("/api/health").json()["status"] == "ok"
         assert client.get("/").url.path == "/monitor/"
-        for path in ("/monitor/", "/camera/", "/shared/status-socket.js"):
+        for path in ("/monitor/", "/camera/", "/camera/pose.js", "/camera/pose-link.js", "/shared/status-socket.js"):
             assert client.get(path).status_code == 200
 
 
