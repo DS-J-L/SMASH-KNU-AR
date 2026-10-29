@@ -9,23 +9,55 @@
 </head>
 <body>
 <main>
-  <p class="eyebrow">SMASH-KNU-AR · 카메라 확인</p>
-  <h1>휴대폰 미리보기</h1>
-  <p>영상은 이 기기에서만 표시됩니다. 관절 추출과 서버 전송은 다음 단계에서 연결합니다.</p>
+  <p class="eyebrow">SMASH-KNU-AR · 카메라</p>
+  <h1>손목 추출·전송</h1>
+  <p>이 기기에서 MediaPipe로 좌·우 손목을 찾고, 서버가 받을 수 있으면 <code>pose_2d</code>로 보냅니다. 영상은 서버로 보내지 않습니다.</p>
   <p id="server-status" role="status">서버 연결 확인 중…</p>
-  <label for="camera-id">이 기기의 카메라 번호</label>
-  <select id="camera-id">
-    <option value="C0">C0 · 정면</option>
-    <option value="C1">C1 · 왼쪽</option>
-    <option value="C2">C2 · 오른쪽</option>
-  </select>
-  <p class="muted">현재 번호 선택은 화면 표시용이며 서버에 기기를 등록하지 않습니다.</p>
-  <video id="preview" autoplay muted playsinline aria-label="선택한 기기의 카메라 영상"></video>
+  <div class="field-row">
+    <label for="camera-id">카메라 번호</label>
+    <select id="camera-id">
+      <option value="C0">C0 · 정면</option>
+      <option value="C1">C1 · 왼쪽</option>
+      <option value="C2">C2 · 오른쪽</option>
+    </select>
+  </div>
+  <div class="field-row">
+    <label for="facing">렌즈</label>
+    <select id="facing">
+      <option value="environment">후면</option>
+      <option value="user">전면</option>
+    </select>
+    <label for="model">모델</label>
+    <select id="model">
+      <option value="lite">lite</option>
+      <option value="full">full</option>
+    </select>
+  </div>
+  <div class="stage">
+    <video id="preview" autoplay muted playsinline aria-label="선택한 기기의 카메라 영상"></video>
+    <canvas id="overlay" aria-hidden="true"></canvas>
+  </div>
+  <p class="muted">미리보기는 좌우 반전하지 않습니다. L/R은 촬영된 사람 기준 왼손·오른손입니다.</p>
   <div class="actions">
     <button id="start" type="button">카메라 켜기</button>
     <button id="stop" type="button" disabled>카메라 끄기</button>
   </div>
   <p id="camera-status" role="status">카메라 꺼짐</p>
+  <p id="link-status" role="status">전송 꺼짐</p>
+  <dl id="stats" class="stats">
+    <div><dt>추론 FPS</dt><dd id="stat-fps">–</dd></div>
+    <div><dt>추론 시간</dt><dd id="stat-infer">–</dd></div>
+    <div><dt>전송 / 미전송</dt><dd id="stat-sent">–</dd></div>
+    <div><dt>시각 출처</dt><dd id="stat-time">–</dd></div>
+  </dl>
+  <details>
+    <summary>최근 pose_2d 메시지</summary>
+    <pre id="last-message">아직 없음</pre>
+  </details>
+  <details>
+    <summary>장비 정보 (장비표 기록용)</summary>
+    <pre id="device-info">카메라를 켜면 표시됩니다</pre>
+  </details>
   <p class="muted">휴대폰에서 카메라를 켜려면 신뢰할 수 있는 HTTPS 연결이 필요합니다.</p>
   <nav><a href="/monitor/">모니터 준비 화면</a></nav>
 </main>
