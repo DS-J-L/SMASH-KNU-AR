@@ -9,6 +9,9 @@ dist/
 .env
 .env.*
 *.local.json
+*.local.bat
+*.local.ps1
+*.local.txt
 certs/
 *.pem
 *.key
@@ -24,3 +27,4 @@ assets/source/*
 Thumbs.db
 .idea/
 .vscode/
+정경호_작업/.extracted/
