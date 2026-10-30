@@ -10,7 +10,29 @@
   "server_sent_at_ms": null,
   "skew_ms": null,
   "joints": {
-    "left_wrist": {"position_m": null, "valid": false, "camera_ids": [], "reprojection_error_px": null, "reason": "not_calibrated"},
-    "right_wrist": {"position_m": null, "valid": false, "camera_ids": [], "reprojection_error_px": null, "reason": "not_calibrated"}
+    "left_wrist": {
+      "position_m": null,
+      "valid": false,
+      "camera_ids": [],
+      "reprojection_error_px": null,
+      "reason": "not_calibrated",
+      "excluded": {
+        "C0": "not_calibrated",
+        "C1": "not_calibrated",
+        "C2": "not_calibrated"
+      }
+    },
+    "right_wrist": {
+      "position_m": null,
+      "valid": false,
+      "camera_ids": [],
+      "reprojection_error_px": null,
+      "reason": "not_calibrated",
+      "excluded": {
+        "C0": "not_calibrated",
+        "C1": "not_calibrated",
+        "C2": "not_calibrated"
+      }
+    }
   }
 }
