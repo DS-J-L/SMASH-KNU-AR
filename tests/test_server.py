@@ -18,12 +18,14 @@ def test_non_web_project_files_are_not_served():
 
 
 def test_socket_never_claims_game_or_cameras_are_ready():
+    """Without phones, calibration and scene the server must not report any readiness."""
     with TestClient(app) as client, client.websocket_connect("/ws/status") as socket:
         first = socket.receive_json()
         assert first["game_ready"] is False
         assert not any(first["readiness"].values())
         assert {camera["camera_id"] for camera in first["cameras"]} == {"C0", "C1", "C2"}
-        assert all(camera["status"] == "not_implemented" for camera in first["cameras"])
+        assert all(camera["status"] == "disconnected" for camera in first["cameras"])
+        assert all(camera["calibration"]["status"] == "missing" for camera in first["cameras"])
         socket.send_json({"type": "get_status"})
         assert socket.receive_json() == first
 
