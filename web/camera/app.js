@@ -19,6 +19,7 @@ const stat = {
   infer: document.querySelector("#stat-infer"),
   sent: document.querySelector("#stat-sent"),
   time: document.querySelector("#stat-time"),
+  errors: document.querySelector("#stat-errors"),
 };
 
 // ?replay=/public/... plays a recorded file instead of the camera; messages are marked source=replay.
@@ -99,7 +100,7 @@ function buildPose2d(timing, wrists) {
     camera_id: cameraId.value,
     device_id: deviceId,
     stream_id: current.id,
-    frame_id: current.frameId++,
+    frame_id: current.frameId,
     calibration_id: null,
     image: {
       width: current.width,
@@ -171,8 +172,14 @@ function onFrame(now, metadata) {
     drawWrists(wrists);
     if (session.stream) {
       const message = buildPose2d(timing, wrists);
-      if (link.send(message)) session.counts.sent += 1;
-      else session.counts.unsent += 1;
+      // frame_id advances only when a frame actually leaves, so a new stream always starts at 0
+      // on the server even if its first frames had to be dropped.
+      if (link.send(message)) {
+        session.stream.frameId += 1;
+        session.counts.sent += 1;
+      } else {
+        session.counts.unsent += 1;
+      }
       session.lastMessage = message;
     }
     session.counts.frames += 1;
@@ -200,6 +207,9 @@ function updateStats() {
   stat.infer.textContent = counts.frames ? `${(counts.inferMs / counts.frames).toFixed(1)} ms · ${delegate}` : "–";
   stat.sent.textContent = `${session.totals.sent + counts.sent} / ${session.totals.unsent + counts.unsent}`;
   stat.time.textContent = session.lastTimingSource ?? "–";
+  stat.errors.textContent = session.frameErrors.total
+    ? `${session.frameErrors.total} · ${session.frameErrors.lastCode}`
+    : "0";
   if (session.lastMessage) lastMessage.textContent = JSON.stringify(session.lastMessage, null, 2);
   session.totals.sent += counts.sent;
   session.totals.unsent += counts.unsent;
@@ -273,6 +283,7 @@ start.addEventListener("click", async () => {
       lastTimingSource: null,
       counts: { frames: 0, inferMs: 0, sent: 0, unsent: 0, since: performance.now() },
       totals: { sent: 0, unsent: 0 },
+      frameErrors: { total: 0, lastCode: null },
       deviceInfo: {
         user_agent: navigator.userAgent,
         video: { width: preview.videoWidth, height: preview.videoHeight, ...opened.settings },
@@ -287,6 +298,11 @@ start.addEventListener("click", async () => {
       makeHello,
       clockId,
       onState: (_, text) => { linkStatus.textContent = text; },
+      onFrameError: (code) => {
+        if (!session) return;
+        session.frameErrors.total += 1;
+        session.frameErrors.lastCode = code;
+      },
     });
     running = true;
     scheduleFrame();

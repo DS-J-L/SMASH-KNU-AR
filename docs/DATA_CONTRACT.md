@@ -60,14 +60,16 @@
 | `image.rotation_deg` | 항상 0. 브라우저가 전달한 프레임 방향 그대로의 좌표. 폭·높이가 바뀌면(회전 등) 새 `stream_id`로 시작 |
 | `joints.*` | 사람이 검출되지 않았거나 손목이 화면 밖으로 추정되면 `null`. `visibility`는 0~1이며 기준값 거르기는 서버가 함 |
 
-### `/ws/pose` 연결 절차 (제안 — 정경호 확인 필요)
+### `/ws/pose` 연결 절차 (김태이 제안 → 정경호 `feat/server-deployment`에서 서버 구현, 2026-10-30)
 
 카메라 페이지는 아래 순서를 기준으로 구현했습니다. 서버에 `/ws/pose`가 없으면 연결 실패를 표시하고, 손목은 화면에만 보여주며 3초마다 다시 연결합니다.
 
 1. 폰 → 서버 `camera_hello`: `camera_id`, `device_id`(브라우저 저장소에 유지), `stream_id`(연결마다 새로 발급), `clock_id`, `source`, `device_info`(UA·영상 설정·MediaPipe 버전/모델/GPU·CPU).
 2. 서버 → 폰 `camera_ack` `{camera_id, stream_id}`를 받은 뒤에만 `pose_2d`를 보냅니다. 거부는 `{"type":"error","code":"duplicate_camera_id"}`처럼 보내면 폰 화면에 코드가 표시됩니다.
 3. 서버 → 폰 `clock_ping` `{ping_id, server_time_ms}`에는 즉시 `clock_pong` `{ping_id, server_time_ms, client_time_ms, clock_id}`로 답합니다. `client_time_ms`는 `timing`과 같은 시계입니다.
-4. 재연결하면 새 `stream_id`로 `camera_hello`부터 다시 시작하고 `frame_id`는 0부터 셉니다. 등록 전이나 송신 버퍼(64 KB)가 찼을 때의 프레임은 쌓지 않고 버리므로 `frame_id`에 빈 번호가 생길 수 있습니다.
+4. 재연결하면 새 `stream_id`로 `camera_hello`부터 다시 시작하고 `frame_id`는 0부터 셉니다. 등록 전이나 송신 버퍼(64 KB)가 찼을 때의 프레임은 쌓지 않고 버립니다. `frame_id`는 실제로 보낸 프레임에만 증가하므로, 해상도·회전 변경으로 시작한 새 스트림도 서버에 항상 0번부터 도착합니다.
+5. 등록 후의 `error`는 해당 메시지 하나에 대한 거부로 보고 송신을 계속하며, 화면의 "서버 거부 프레임"에 횟수·마지막 코드를 표시합니다. 등록 전의 `error`(`duplicate_camera_id` 등)는 등록 거부로 표시합니다.
+6. 종료 코드 4001(같은 기기의 다른 탭이 대체), 4401(접속 키 없음), 4403(다른 기기 전용 번호)은 다시 연결해도 해결되지 않으므로 재연결하지 않고 안내만 표시합니다. 그 밖의 종료(4409 사용 중, 4400, 네트워크 끊김)는 3초 뒤 새 스트림으로 다시 등록합니다.
 
 ## 다음 구현: 서버 → 모니터
 

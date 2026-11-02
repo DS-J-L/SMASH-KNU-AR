@@ -1,9 +1,14 @@
-// Phone → server pose link over /ws/pose. The handshake is a proposal (docs/DATA_CONTRACT.md)
-// until the server side of T01 lands; without it the page keeps showing pose locally.
+// Phone → server pose link over /ws/pose (docs/DATA_CONTRACT.md).
 const MAX_BUFFERED_BYTES = 64 * 1024;
 const RETRY_MS = 3000;
+// Close codes after which reconnecting cannot help; the user has to act first.
+const FINAL_CLOSES = {
+  4001: "같은 기기의 다른 탭·창이 이 번호로 다시 등록했습니다. 이 탭에서 쓰려면 카메라를 껐다 켜세요",
+  4401: "접속 키가 필요합니다. 주소 끝에 ?key=접속키 를 붙여 다시 여세요",
+  4403: "서버 설정에서 이 번호는 다른 기기 전용입니다",
+};
 
-export function openPoseLink({ makeHello, clockId, onState }) {
+export function openPoseLink({ makeHello, clockId, onState, onFrameError }) {
   let socket = null;
   let retry = null;
   let registered = false;
@@ -15,6 +20,7 @@ export function openPoseLink({ makeHello, clockId, onState }) {
     const protocol = location.protocol === "https:" ? "wss:" : "ws:";
     socket = new WebSocket(`${protocol}//${location.host}/ws/pose`);
     let opened = false;
+    let rejection = null;
 
     socket.addEventListener("open", () => {
       opened = true;
@@ -41,19 +47,30 @@ export function openPoseLink({ makeHello, clockId, onState }) {
           clock_id: clockId,
         }));
       } else if (message.type === "error") {
-        registered = false;
-        onState("rejected", `서버 거부: ${message.code ?? "unknown"}${message.detail ? ` · ${message.detail}` : ""}`);
+        // Before the ack an error rejects the registration; after it, it concerns one message
+        // and the server keeps the stream, so keep sending.
+        if (registered && message.code !== "superseded") {
+          onFrameError(message.code ?? "unknown");
+        } else {
+          registered = false;
+          rejection = message.code ?? "unknown";
+          onState("rejected", `서버 거부: ${rejection}${message.detail ? ` · ${message.detail}` : ""}`);
+        }
       }
     });
     socket.addEventListener("close", (event) => {
       registered = false;
       if (disposed) return;
-      onState(
-        "disconnected",
-        opened
-          ? `연결 끊김 (code ${event.code}) · 새 스트림으로 다시 연결합니다`
-          : "서버에 /ws/pose 수신이 아직 없거나 서버가 꺼져 있습니다 · 로컬 표시만 합니다",
-      );
+      const final = FINAL_CLOSES[event.code];
+      if (final) {
+        onState("stopped", `${final} (code ${event.code})`);
+        return;
+      }
+      let text;
+      if (!opened) text = "서버에 /ws/pose 수신이 없거나 서버가 꺼져 있습니다 · 로컬 표시만 합니다";
+      else if (rejection) text = `서버 거부: ${rejection} (code ${event.code}) · 3초 뒤 다시 등록합니다`;
+      else text = `연결 끊김 (code ${event.code}) · 새 스트림으로 다시 연결합니다`;
+      onState("disconnected", text);
       retry = window.setTimeout(connect, RETRY_MS);
     });
   }
