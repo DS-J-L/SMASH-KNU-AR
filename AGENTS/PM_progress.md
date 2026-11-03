@@ -7,7 +7,7 @@
 | 항목 | 현재 값 |
 | --- | --- |
 | 마지막 갱신 | 2026-11-03 15:28 KST |
-| 현재 작업·상태 | PR 기반 협업 스킬 구현·검증 완료 — 별도 PR 공유 준비 |
+| 현재 작업·상태 | PR 기반 협업 스킬 추가·검증 및 PR #2 공유 완료 — 검토 대기 |
 | 마지막 확인된 완료 | pr-workflow 스킬/YAML·루트 규칙/PM 계획 연결, 형식·상대 링크 검사 통과 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
 | 남은 일·미검증 | 실제 휴대폰 3대·실측 보정·C0 영상·3D/AR/게임 통합. 서버 코드는 별도 feat/server-deployment |
@@ -131,3 +131,12 @@
 - 근거: [공식 스킬 경로](https://learn.chatgpt.com/docs/build-skills), [AGENTS에서 스킬 연결 사례](https://developers.openai.com/blog/skills-agents-sdk). skill-creator의 생성/검증 도구 사용. 최초 파일 교체 패치는 같은 파일 삭제/추가 중복으로 적용 전 거부되어 단일 수정으로 바로잡음.
 - 남은 일·다음 행동: 이번 변경을 작업 브랜치 PR로 게시. 머지 여부는 별도 확인하며 실제 장비 시험 11-09·개발 체크리스트·P0~P6 상태는 유지.
 - 종료 시각: 2026-11-03 15:28 KST.
+
+### 2026-11-03 15:30 KST — PR 기반 협업 스킬 PR 공유 완료
+
+- 담당 / 기록자: PM·공통 개발 절차 / Codex. 상태: 구현·문서 검증·PR 게시 완료, 검토 대기.
+- 실제 결과·근거: docs/pr-workflow-skill 브랜치, 구현 커밋 3d4802c4bbd7d69657b9a8124f39763757343c67, [PR #2](https://github.com/DS-J-L/SMASH-KNU-AR/pull/2). 대상 main, 이번 변경도 새 스킬의 브랜치/PR 경로를 따름.
+- 검증·범위: quick_validate.py·YAML/상대 링크 52개·check_scaffold.py·staged diff 검사 통과. 실행 코드/에셋과 GitHub 보호 설정 변경 없음. 기존 미게시 건물 작업 보존.
+- 변경 기록·남은 일: PM 현재 요약·팀 공통 행에 실제 PR 연결. PR 머지 후 팀원이 저장소를 갱신해 사용한다. 새 실행의 스킬 선택·실기기·공통 Phase는 별도 검증.
+- 다음 행동: PR #2 검토. 스킬은 .agents/skills/pr-workflow/SKILL.md, 기존 계획/진행 문서는 AGENTS/에 유지.
+- 종료 시각: 2026-11-03 15:30 KST.
