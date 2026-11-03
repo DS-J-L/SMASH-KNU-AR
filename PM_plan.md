@@ -262,3 +262,7 @@ PM 할 일:
 사용자 지시에 따라 이동수 L-SC-01~06의 PC 쪽을 순서대로 구현했다. [실행·인계 안내](docs/SINGLE_CAMERA_MONITOR.md)·[검증 요약](docs/asset-validation/single-camera/summary.json)을 따른다. 별도 /monitor/single/의 실제 입력/합성 선택, VideoReceiver/ControlLink·프레임/변환·건물 영역·게임/점수/복원과 기존 키보드 공용 계층을 제공한다.
 
 김태이의 실제 송신/PoseAdapter/HitDetector·소리, 정경호의 방/신호/세션 서버·로그 저장은 연결 대기다. 코드·합성/브라우저 피어 검증과 실제 폰/20분/성능·공통 Phase 통과는 구분한다. 사람별 담당/11-09 실제 장비 목표는 바꾸지 않는다.
+
+### PR #5 검토 수정 근거 (2026-11-03)
+
+PC 소비자의 영상만 표시하는 준비 단계·새 스트림 신호 순서·프레임 수명/메타 동결·타격 필드/로그·캐시 복귀를 검토해 보완했다. [검토 보고서](docs/asset-validation/single-camera/pr5-review.json)와 개인/PM 진행 기록을 따른다. 기존 담당/Phase·실제 폰/서버 완료 기준은 바꾸지 않는다.

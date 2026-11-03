@@ -23,7 +23,7 @@ export class FrameCoordinator {
     }
     this.lastFrame = meta.frame_id; this.stats.submitted++;
     if (this.pending) { close(this.pending.resource); this.stats.dropped++; }
-    this.pending = { resource, meta: { ...meta }, generation: this.generation };
+    this.pending = { resource, meta: Object.freeze({ ...meta }), generation: this.generation };
     this.stats.maxPending = Math.max(this.stats.maxPending, 1);
     void this.drain(); return true;
   }
@@ -46,6 +46,7 @@ export class FrameCoordinator {
             throw new Error('pose_frame_mismatch');
           }
           if(this.onMatched(item.resource, item.meta, result)===false){this.stats.dropped++;continue;}
+          if(this.disposed || item.generation!==this.generation){this.stats.dropped++;continue;}
           close(this.displayed?.resource); this.displayed = item; retained = true;
           this.stats.processed++;
         } catch (error) {

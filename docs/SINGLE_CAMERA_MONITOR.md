@@ -96,3 +96,17 @@ node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs
 playwright.single.config.js는 독립 포트8875·새 서버를 사용해 다른 작업의 서버를 재사용하지 않는다. 기본 Playwright 설정으로도 새 시험을 실행할 수 있다. Windows 하드웨어 경로 대신 기본 소프트웨어 렌더러를 쓸 때는 AR_TEST_RENDERER를 설정하지 않는다. 새 브라우저 시험의 실제 RTC 영상은 canvas 합성 스트림으로 만든 브라우저 피어이며 실제 폰/카메라 실험이 아니다.
 
 상세 결과·시각 근거는 [검증 요약](asset-validation/single-camera/summary.json), [준비 화면](asset-validation/single-camera/ready.png), [파편 화면](asset-validation/single-camera/fractured.png), [개인 기록](../AGENTS/이동수_progress.md)에 남긴다. T-SC 시험의 자동/합성으로 확인한 범위와 live 미검증은 아래 검증 요약에서 구분한다. 원래 실제 장비 파일럿과 실시간20분/60초3회 항목은 가상 시계 검사만으로 완료 처리하지 않는다.
+
+## PR #5 검토 보완 — 2026-11-03
+
+- 추론 어댑터 미등록 시에도 수신 영상의 같은 프레임을 표시한다. 손목은 valid=false/pose_adapter_missing이므로 시작·타격은 계속 차단한다. 영상만 표시한 상태를 추론 성공으로 기록하지 않는다.
+- 폰 교체 시 새 스트림 offer/ICE가 control의 stream_bound보다 먼저 오면 제한 큐에 보관한다. 승인된 스트림으로 전환한 뒤 전달하고 이전 스트림의 지연 신호는 폐기한다.
+- FrameInput 메타는 읽기 전용이다. 어댑터는 시각·프레임 키를 수정하지 말고 반환 객체에 복사한다. 콜백 중 reset/dispose가 발생해도 이전 프레임을 다시 보관하지 않는다.
+- HitEvent는 허용된 손목 이름과 증가하는 정수 frame_id/previous_frame_id를 요구한다. 프로토타입 속성 이름이나 누락된 프레임은 거부한다.
+- hit_result 로그에는 방/스트림·실행/변환·이전/현재 프레임·건물·손목을 남긴다. 서버 전달과 로컬 저장은 같은 PC 관측 시각·설정/모델 버전의 레코드를 쓴다.
+- 시작 ACK 대기 중 복원/모드 변경도 pending session_id로 end를 보내고 제어 요청을 취소한다. 전송 전에 취소된 start는 보내지 않으며 늦은 ACK는 새 게임을 시작하지 못한다. pagehide도 진행/대기 세션 종료를 알린다. 서버는 starting 세션의 end도 멱등 취소로 처리해야 한다.
+- pagehide에서 자원을 해제한 화면이 캐시로 복귀하면 새 문서를 로드해 다시 초기화한다. persisted 이벤트의 의미는 [MDN pageshow](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event)를 참조했다. 회귀 시험은 합성 PageTransitionEvent이며 실제 기기 캐시 성능 측정은 아니다.
+
+[PR #5 검토·재현·최종 검증](asset-validation/single-camera/pr5-review.json)은 최초 구현의 summary.json과 별도로 보존한다. 최신 소스/빌드의 해시는 검토 보고서를 따른다. 실제 폰·망·추론/선분/서버 통합·실시간20분은 여전히 미검증이다.
+
+영상만 표시한 프레임의 tracking_state=loading과 valid=false는 추론 결과가 아니다. 이 경로의 처리 시간은 실제 MediaPipe 추론 성능으로 보고하지 않는다.

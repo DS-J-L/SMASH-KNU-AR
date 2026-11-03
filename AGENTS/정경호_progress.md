@@ -97,3 +97,10 @@
 - 자료: [단일 PC 실행·인계](../docs/SINGLE_CAMERA_MONITOR.md), frontend/single/ 및 frontend/game/. ControlLink의 POST rooms·join/stream_bound/receiver_ready·SDP/ICE·ping/pong·start_ack/end/log 소비 형식을 확인한다. room/epoch·세션·source/task/config를 일치시키며 실제 서버/인증/보존 구현은 해당 담당 범위다.
 - 검증/범위: PC 합성·실제 RTC 브라우저 피어로 독립 검증. 상대 모듈과 실제 폰/서버 연결은 아직 미검증이며 개인 Phase 체크는 유지.
 - 다음: 개인 SC 계획의 해당 생산 모듈에서 위 문서의 양방향 예제를 사용하고 실제 수신 결과/버전을 기록한다. 메시지 발송·상대 인수 완료를 추정하지 않는다.
+
+### 2026-11-03 23:12 KST — PR #5 소비자 검토 수정 인계
+
+- 기록자/범위: PM 코드 검토 / Codex. 폰 교체 시 승인보다 먼저 온 새 스트림 신호를 PC가 제한 큐에 보관한다. hit_result의 방/스트림·프레임/건물 추적 정보와 PC 시각/설정·모델 버전을 서버에도 전달하도록 보완했다. 실제 서버/인증/보존 검증은 해당 담당 후속 범위다.
+- 자료/검증: SINGLE_CAMERA_MONITOR.md의 PR 검토 보완과 pr5-review.json에 연결한다. PC 재현/회귀만 수행하며 실제 담당 개발 완료·실기기/공통 Phase 체크는 유지한다. 메시지 발송·상대 검토 완료를 의미하지 않는다.
+
+- 2026-11-03 23:14 KST 추가 인계: starting 중 reset/mode/pagehide도 해당 pending session_id로 end를 보내므로 서버는 ACK 대기 세션 취소를 멱등 처리해야 한다. PC는 미전송 요청/늦은 ACK·로컬 대기 요청을 함께 정리한다. 실제 서버 적용은 별도 검증 대상이다.

@@ -54,3 +54,17 @@ test('T-SC-12 stop while room request is loading prevents late sockets and pendi
   const y=controlFixture();await y.link.connect();y.link.receive('control',{schema:'single_camera.v1-draft',...binding,type:'stream_bound'});
   const ack=y.link.requestStart({type:'start',request_id:'pending'});y.link.stop();await assert.rejects(ack,/control_disconnected/);
 });
+
+test('PR5 review: replacement offer arriving before stream_bound survives channel ordering',async()=>{
+  const x=controlFixture();await x.link.connect();
+  try {
+    const envelope={schema:'single_camera.v1-draft',...binding};
+    x.link.receive('control',{...envelope,type:'stream_bound'});
+    x.link.receive('signaling',{...envelope,stream_id:'next',type:'offer',sdp:'replacement'});
+    assert.equal(x.receiver.received.length,0,'not sent to the old receiver');
+    x.link.receive('control',{...envelope,stream_id:'next',type:'stream_bound'});
+    assert.equal(x.receiver.received.length,1);assert.equal(x.receiver.received[0].stream_id,'next');
+    x.link.receive('signaling',{...envelope,type:'ice',candidate:null});
+    assert.equal(x.link.waitingSignals.length,0,'late retired stream is discarded');
+  } finally {x.link.stop();}
+});

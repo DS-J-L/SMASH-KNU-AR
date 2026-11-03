@@ -134,3 +134,7 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 ## 2026-11-03 PC 단일 소비자 구현
 
 [PC 인계 규격](SINGLE_CAMERA_MONITOR.md)의 Frame/PoseFrame/HitEvent와 공개 API를 구현했다. PC PoseFrame의 손목 키는 left_wrist/right_wrist, 2D hit_point_m/speed_mps는 반드시 null이며 source/task/session·프레임/실행/변환·단위 혼입을 거부한다. 현재 서버 0.1 스키마는 그대로이며 single_camera.v1-draft 메시지를 /ws/pose로 보내지 않는다. 제안 방/제어/신호의 실제 서버 검증은 후속 통합 대상이다.
+
+### PR #5 검토 보완 (2026-11-03)
+
+PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wrist를 valid=false로 표시하고 추론 준비를 켜지 않는다. FrameInput 시각/키는 읽기 전용이며 타격은 허용된 손목 이름·증가하는 정수 프레임 쌍을 요구한다. hit_result 로그는 room_id/stream_id/run_id/transform_version/frame_id/previous_frame_id/building_id/joint와 수락/거부를 함께 기록하고, 서버에도 로컬과 같은 PC 시각/설정·모델 버전을 전달한다. 서버 스키마0.1과 3D 기준은 변경하지 않았다. 최신 근거는 [PR #5 검토 보고서](asset-validation/single-camera/pr5-review.json)를 따른다.

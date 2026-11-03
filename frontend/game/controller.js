@@ -52,7 +52,10 @@ export class GameController {
       tracking_mode: this.trackingMode, source: this.source, task_type: this.taskType, config_version: 'single-monitor-1' };
     this.pendingRequest = request; this.phase = 'starting'; let timer;
     try {
-      const ack = await Promise.race([Promise.resolve().then(() => sendStart(request)),
+      const ack = await Promise.race([Promise.resolve().then(() => {
+        if(generation!==this.generation||this.phase!=='starting')throw new Error('start_cancelled');
+        return sendStart(request);
+      }),
         new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('start_timeout')), this.startTimeoutMs); })]);
       if (generation !== this.generation || this.phase !== 'starting') return false;
       if (ack?.type !== 'start_ack' || ['request_id','session_id','room_id','stream_id','server_epoch','tracking_mode','source','task_type','config_version'].some(k => ack[k] !== request[k])) throw new Error('ack_mismatch');
@@ -90,6 +93,8 @@ export class GameController {
       event.session_id !== this.sessionId || event.tracking_mode !== this.trackingMode || event.source !== this.source ||
       event.task_type !== this.taskType || event.schema !== 'single_camera.v1-draft') reason = 'context_mismatch';
     else if (typeof event.event_id !== 'string' || !event.event_id || event.event_id.length > 128 ||
+      !JOINTS.includes(event.joint) || !Number.isSafeInteger(event.frame_id) || !Number.isSafeInteger(event.previous_frame_id) ||
+      event.previous_frame_id<0 || event.frame_id<=event.previous_frame_id ||
       !norm(event.hit_point_image_norm) || !Number.isFinite(event.speed_norm_per_s) || event.speed_norm_per_s < 0 ||
       event.hit_point_m !== null || event.speed_mps !== null) reason = 'invalid_units_or_fields';
     else if (this.seenEvents.has(event.event_id)) reason = 'duplicate_event';
@@ -102,7 +107,10 @@ export class GameController {
     }
     if (!reason) { this.seenEvents.add(event.event_id); this.destroyed.add(event.building_id); this.score += 100; }
     const result = { accepted: !reason, reject_reason: reason, score_delta: reason ? 0 : 100 };
-    this.emitLog({ event_id: event?.event_id ?? null, session_id: this.sessionId, tracking_mode: this.trackingMode,
+    this.emitLog({ type:'hit_result', event_id: event?.event_id ?? null, session_id: this.sessionId, tracking_mode: this.trackingMode,
+      room_id:this.context?.room_id??null,stream_id:this.context?.stream_id??null,run_id:this.context?.run_id??null,transform_version:this.context?.transform_version??null,
+      frame_id:Number.isSafeInteger(event?.frame_id)?event.frame_id:null,previous_frame_id:Number.isSafeInteger(event?.previous_frame_id)?event.previous_frame_id:null,
+      building_id:typeof event?.building_id==='string'?event.building_id:null,joint:JOINTS.includes(event?.joint)?event.joint:null,
       source: this.source, task_type: this.taskType, game_elapsed_ms: Math.max(0, this.durationMs-this.remainingMs()), ...result });
     return result;
   }

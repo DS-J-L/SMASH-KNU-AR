@@ -125,3 +125,37 @@ test('T-SC-15 logger outage does not repeat or cancel the accepted effect or sco
   assert.equal(x.game.acceptHit(x.event()).accepted,true);assert.equal(x.game.score,100);assert.equal(x.game.logFailed,true);
   assert.equal(x.game.acceptHit(x.event()).accepted,false);assert.equal(x.hits.length,1);
 });
+
+test('PR5 review: disposing during a matched-frame callback cannot retain a stale resource',async()=>{
+  const q=new FrameCoordinator({now:()=>100,process:async(_r,m)=>m,onMatched:()=>q.dispose()});q.configure(ctx);
+  const a=resource();q.submit(a,{...ctx,frame_id:1,observed_at_pc_ms:100});await turn();
+  assert.equal(q.displayed,null);assert.equal(a.closed,1);assert.equal(q.stats.processed,0);
+});
+test('PR5 review: a processor cannot refresh the timestamp used to reject stale input',async()=>{
+  let now=100,shown=0;
+  const q=new FrameCoordinator({now:()=>now,process:async(_r,m)=>{
+    now=300;try{m.observed_at_pc_ms=300;}catch{}
+    return {...m,observed_at_pc_ms:300};
+  },onMatched:()=>shown++});q.configure(ctx);
+  const a=resource();q.submit(a,{...ctx,frame_id:1,observed_at_pc_ms:100});await turn();
+  assert.equal(shown,0);assert.equal(a.closed,1);
+});
+test('PR5 review: accepted hit logs preserve frame, stream, building and joint trace',async()=>{
+  const x=setup();await x.start();const event=x.event();x.game.acceptHit(event);
+  const entry=x.logs.at(-1);
+  for(const key of ['room_id','stream_id','run_id','transform_version','frame_id','previous_frame_id','building_id','joint'])assert.equal(entry[key],event[key],key);
+  assert.equal(entry.type,'hit_result');
+});
+
+test('PR5 review: prototype property names cannot bypass missing joint/frame validation',async()=>{
+  for(const joint of ['__proto__','toString']){
+    const x=setup();await x.start();const e=x.event({joint,frame_id:undefined,previous_frame_id:undefined});
+    assert.equal(x.game.acceptHit(e).accepted,false,joint);assert.equal(x.game.score,0);
+  }
+});
+
+test('PR5 review: resetting before deferred start dispatch does not send an orphan start',async()=>{
+  const x=setup();x.feed(1);let sent=0;
+  const pending=x.game.start(r=>{sent++;return {...r,type:'start_ack'};});x.game.reset();
+  assert.equal(await pending,false);assert.equal(sent,0);
+});

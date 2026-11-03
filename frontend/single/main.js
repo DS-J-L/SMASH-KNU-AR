@@ -15,7 +15,7 @@ let imageWidth=640,imageHeight=480,lastFrameAt=-Infinity,lastTick=performance.no
 let connectionState='disconnected',disposed=false,animationId;
 const poseListeners=new Set();
 
-function log(entry){logs.add({...entry,observed_at_pc_ms:performance.now(),config_version:'single-monitor-1',model_version:'knu-it1-v3'});if(source==='live'){link.send({type:'log',entry});if(entry.type==='ended')link.send({type:'end',session_id:entry.session_id,reason:entry.reason});}}
+function log(entry){const record={...entry,observed_at_pc_ms:performance.now(),config_version:'single-monitor-1',model_version:'knu-it1-v3'};logs.add(record);if(source==='live'){link.send({type:'log',entry:record});if(entry.type==='ended')link.send({type:'end',session_id:entry.session_id,reason:entry.reason});}}
 function makeGame(){return new GameController({source,onLog:log,
   validateHit:e=>e.building_id==='knu-it1-v3'&&e.transform_version===transformVersion&&view.target.contains(e.hit_point_image_norm),
   onHit:e=>view.destroy(e,transform)});}
@@ -50,7 +50,8 @@ function draw(){
 }
 function makeCoordinator(){return new FrameCoordinator({process:async(resource,meta)=>{
   if(source==='synthetic')return {...meta,wrists:{left_wrist:{valid:true,image_norm:[.32,.42],visibility:1},right_wrist:{valid:true,image_norm:[.68,.42],visibility:1}}};
-  if(!processor)throw new Error('pose_adapter_missing');return processor(resource,meta);
+  if(!processor)return {...meta,tracking_state:'loading',wrists:{left_wrist:{valid:false,image_norm:null,visibility:0,reason:'pose_adapter_missing'},right_wrist:{valid:false,image_norm:null,visibility:0,reason:'pose_adapter_missing'}}};
+  return processor(resource,meta);
 },onMatched:matched,onInvalid:()=>{game.clearInput();message='손목 추적을 준비하지 못했습니다. 다시 연결하세요.';}});}
 function receiveFrame(resource,meta){
   if(disposed||!binding||meta.room_id!==binding.room_id||meta.stream_id!==binding.stream_id){resource.close?.();return;}
@@ -86,7 +87,7 @@ function syntheticFrame(){
   receiveFrame(image,{...binding,frame_id:++frameId,image_width:640,image_height:480,observed_at_pc_ms:performance.now(),media_time_s:frameId*.08,capture_time:null});
 }
 function setMode(next){
-  const old=game.sessionId;if(old&&source==='live')link.send({type:'end',session_id:old,reason:'mode_change'});
+  endGame('mode_change');
   game.abort('mode_change');stop();coordinator.dispose();source=next;message=null;frameId=0;
   game=makeGame();coordinator=makeCoordinator();view?.reset();
   $('sample-hit').hidden=source!=='synthetic';$('connect').disabled=$('stop').disabled=source!=='live';
@@ -101,7 +102,13 @@ async function start(){
   const ok=await game.start(request=>source==='synthetic'?{...request,type:'start_ack'}:link.requestStart(request));
   if(ok)invalidate();else if(game.reason)message=({start_timeout:'시작 승인 시간이 초과됐습니다. 다시 시도하세요.',ack_mismatch:'시작 승인 정보가 맞지 않습니다.',readiness_lost:'입력이 끊겨 시작하지 않았습니다.'})[game.reason]??'시작하지 못했습니다. 연결을 확인하세요.';
 }
-function reset(){if(game.sessionId&&source==='live')link.send({type:'end',session_id:game.sessionId,reason:'reset'});game.reset();view?.reset();message=null;invalidate();gates();}
+function endGame(reason){
+  if(source!=='live')return;
+  const sessionId=game.sessionId??game.pendingRequest?.session_id;
+  if(sessionId)link.send({type:'end',session_id:sessionId,reason});
+  if(game.pendingRequest)link.cancelStart(game.pendingRequest.request_id);
+}
+function reset(){endGame('reset');game.reset();view?.reset();message=null;invalidate();gates();}
 function sampleHit(){
   if(source!=='synthetic'||!game.pose||!game.pairs.left_wrist)return;
   const area=t=>Math.abs((t[1][0]-t[0][0])*(t[2][1]-t[0][1])-(t[1][1]-t[0][1])*(t[2][0]-t[0][0]));
@@ -141,7 +148,8 @@ $('download').addEventListener('click',()=>{
   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='single-camera-log.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 document.addEventListener('visibilitychange',()=>{invalidate();});
-window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(animationId);stop();coordinator.dispose();observer.disconnect();view?.dispose();});
+window.addEventListener('pagehide',()=>{endGame('pagehide');game.abort('pagehide');disposed=true;cancelAnimationFrame(animationId);stop();coordinator.dispose();observer.disconnect();view?.dispose();});
+window.addEventListener('pageshow',event=>{if(event.persisted&&disposed)location.reload();else $('mode').value=source;});
 const observer=new ResizeObserver(()=>{resize();draw();});observer.observe($('stage'));
 // Public handoff surface for the separate pose/hit modules; no test-only live bypass.
 window.singleCameraMonitor=Object.freeze({

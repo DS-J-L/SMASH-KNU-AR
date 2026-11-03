@@ -6,10 +6,10 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-03 17:55 KST |
+| 마지막 갱신 | 2026-11-03 23:16 KST |
 | 현재 Phase·작업 상태 | SC 추가 PC 구현·독립 검증 완료 / 실제 통합 대기, 기존 P2 일부 완료 |
-| 마지막 확인된 개발 완료 | feat/single-camera-monitor의 PC 수신/정합/목표/공용 게임·UI, Node19·브라우저27·서버4·카메라6 통과 |
-| 현재 작업 | L-SC-01~06 PC 구현·독립 검증·Draft PR #5 공유 완료 — 실제 통합 대기 |
+| 마지막 확인된 개발 완료 | PC 수신/정합/게임 및 검토8개 보완, Node25·브라우저32·서버4·카메라6 통과 |
+| 현재 작업 | PR #5 검토 보완·67개 검증 완료 — 반영 상태는 PR 참조, 실제 통합 대기 |
 | 남은 일·미검증 | 폰 송신·실제 PC 추론/충돌/소리·신호/제어 서버 인계, live/20분/성능·기존 미확인 건물/AR |
 | 다음 한 단계 | 김태이 attachPoseProcessor/onPoseFrame/acceptHit, 정경호 방/신호/제어 초안 대조 후 실제 폰 연결 시험 |
 | 막힌 점·인계 | 상대 SC 생산 모듈 미통합; SINGLE_CAMERA_MONITOR.md·summary.json 제공, 정밀 DEM/미확인 치수 유지 |
@@ -650,3 +650,15 @@
 - 범위/남은 일: 실제 폰/추론/선분 판정·서버/소리·실시간20분은 미검증. 상대 생산 모듈이 연결되지 않아 Draft이며 전체 SC/공통 Phase 체크는 유지한다.
 - 인계/다음: SINGLE_CAMERA_MONITOR.md의 공개 API·PC 신호/제어 초안을 소비자 구현과 함께 공유. 김태이/정경호의 실제 모듈을 연결해 live 시험. 사람에게 메시지는 보내지 않았다.
 - 종료 시각: 2026-11-03 17:55 KST.
+
+### 2026-11-03 23:16 KST — PR #5 검토 보완·최종 검증 완료
+
+- 담당/기록자: PM·코드 검토 / Codex. 상태: 검토/수정·재검증 완료, 사용자 승인된 머지 단계.
+- 원본/기준: PR #5 bd9292c, main9f5e13c, L-SC-01~06 PC 소비자/기존 키보드. 기존 사용자 작업은 별도 worktree로 보존.
+- 실제 발견/수정: ① 추론 없는 수신 영상 미표시 ② 폰 교체 신호의 채널 순서 유실 ③ 표시 콜백 중 dispose 후 재보관 ④ 시각 메타 변경으로 TTL 우회 ⑤ 비허용 관절/누락 프레임 타격 통과 ⑥ 타격 추적·서버 로그 시각/버전 누락 ⑦ 캐시 복귀 후 해제된 화면 정지 ⑧ 시작 승인 대기 중 복원/모드 변경 미취소. 각각 수정 전 신규 Node/브라우저 검사 실패를 확인하고 보완했다.
+- 변경 파일/근거: frontend/game/controller.js, single의 main/control-link/frame-coordinator, 관련 Node2개·신규 single-camera-review.spec.js, 재빌드한 두 진입점/번들, 실행/계약·인계 문서. docs/asset-validation/single-camera/pr5-review.json에8개 문제·최종 사례·20개 실행/빌드 해시 기록. 원래 summary.json은 앞선 버전 이력으로 유지.
+- 최종 명령/결과: npm run test:single 25/25, npm run build:all 통과, 독립8875 서버+AR_TEST_RENDERER=d3d11 Playwright32/32(기존22+단일5+검토5), 실패/재시도/skip0·약66.0초. pytest tests/test_server.py -q 4/4, Node 카메라 수명주기6/6. 총67개 통과. 기존 종류의 Vite 대형 번들 경고/Node VM 안내는 유지.
+- 입력/검증 한계: synthetic/keyboard_demo·canvas RTC 영상·mock 신호/Pose·TestClient·합성 persisted 이벤트/가상60초. 실제 폰/인증/망·MediaPipe/선분/소리·서버/로그 저장·현장성능/실시간20분·실기기 캐시 검증은 미실행. 실제 준비 기준을 완화하거나 다른 담당 완료를 표시하지 않았다.
+- 인계/기록: 김태이에게 읽기 전용 메타/무효 손목·타격 필드, 정경호에게 신호 순서·로그/starting end 취소 규격을 문서 연결. 기존 PNG11개 시험 산출물은 사전 보존본으로 복원. 공통 Phase/SC 전체 체크 유지.
+- 다음: 검증한 코드/빌드 해시·문서 링크/공백을 확인해 같은 PR 갱신, Ready 전환 후 최신 head/base·검사/리뷰 확인·head 지정 머지. 원격 반영과 검증 트리 일치를 확인해 종료 기록에 남긴다.
+- 검토 종료 시각: 2026-11-03 23:16 KST.

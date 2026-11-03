@@ -1,7 +1,7 @@
 // PC consumer of the draft protocol. The room/signaling/control server is a separate deliverable.
 export class ControlLink {
   constructor({ receiver, onStatus=()=>{}, onMessage=()=>{}, fetchImpl=(...args)=>fetch(...args), socket=url=>new WebSocket(url), now=()=>performance.now(), baseUrl=globalThis.location?.href??'http://localhost/' }) {
-    Object.assign(this,{receiver,onStatus,onMessage,fetchImpl,socket,now,baseUrl});this.epoch=0;this.sockets=[];this.pending=new Map();this.waitingSignals=[];
+    Object.assign(this,{receiver,onStatus,onMessage,fetchImpl,socket,now,baseUrl});this.epoch=0;this.sockets=[];this.pending=new Map();this.waitingSignals=[];this.retiredStreams=new Set();
   }
   async connect() {
     this.stop(); const epoch=this.epoch;this.abort=new AbortController();
@@ -35,14 +35,17 @@ export class ControlLink {
     if(m.schema!=='single_camera.v1-draft'||m.room_id!==this.room?.room_id)return;
     if(m.server_epoch!==this.room?.server_epoch){this.onMessage({type:'session_lost',reason:'server_epoch_changed'});this.fail('서버가 다시 시작됐습니다. 복원 후 새로 연결하세요.');return;}
     if(channel==='signaling') {
-      if(!this.receiver.binding){if(this.waitingSignals.length>=64){this.fail('영상 연결 정보가 너무 많습니다. 다시 연결하세요.');return;}this.waitingSignals.push(m);}
+      if(!['offer','ice'].includes(m.type)||typeof m.stream_id!=='string'||!m.stream_id||this.retiredStreams.has(m.stream_id))return;
+      if(!this.receiver.binding||this.receiver.binding.stream_id!==m.stream_id){if(this.waitingSignals.length>=64){this.fail('영상 연결 정보가 너무 많습니다. 다시 연결하세요.');return;}this.waitingSignals.push(m);}
       else void this.receiver.receive(m);
       return;
     }
     let newBinding=false;
+    if(m.type==='stream_bound'&&this.retiredStreams.has(m.stream_id))return;
     if(m.type==='stream_bound' && typeof m.stream_id==='string' && m.stream_id &&
       (!this.bound || this.streamId!==m.stream_id)) {
       newBinding=true;
+      if(this.streamId){this.retiredStreams.add(this.streamId);if(this.retiredStreams.size>32)this.retiredStreams.delete(this.retiredStreams.values().next().value);}
       clearTimeout(this.handshake);this.bound=true;this.lastHeartbeat=this.now();this.streamId=m.stream_id;
       this.receiver.bind({room_id:m.room_id,stream_id:m.stream_id,server_epoch:m.server_epoch},{iceServers:this.room.ice_servers??[]});
       for(const signal of this.waitingSignals)if(signal.stream_id===m.stream_id)void this.receiver.receive(signal);
@@ -66,9 +69,10 @@ export class ControlLink {
       if(!this.send(request)){clearTimeout(timer);this.pending.delete(request.request_id);reject(new Error('control_disconnected'));}
     });
   }
+  cancelStart(requestId){const p=this.pending.get(requestId);if(p){clearTimeout(p.timer);this.pending.delete(requestId);p.reject(new Error('start_cancelled'));}}
   fail(message) {this.stop();this.onStatus({state:'failed',alive:false,message});}
   stop() {
-    this.epoch++;this.abort?.abort();clearInterval(this.timer);clearTimeout(this.handshake);this.bound=false;this.waitingSignals=[];
+    this.epoch++;this.abort?.abort();clearInterval(this.timer);clearTimeout(this.handshake);this.bound=false;this.waitingSignals=[];this.retiredStreams.clear();this.streamId=null;
     for(const ws of this.sockets){ws.onopen=ws.onmessage=ws.onerror=ws.onclose=null;ws.close();}this.sockets=[];
     for(const p of this.pending.values()){clearTimeout(p.timer);p.reject(new Error('control_disconnected'));}this.pending.clear();
     this.receiver.stop();this.onStatus({state:'disconnected',alive:false});

@@ -1,0 +1,283 @@
+{
+  "recorded_at": "2026-11-03T23:15:28.781600+09:00",
+  "reviewed_original_head": "bd9292c29aa8530083b40ca978ff9411a3838188",
+  "base": "9f5e13c34b363b86a12694bfa6c24c765b85bfbf",
+  "findings_fixed": [
+    {
+      "id": "R1",
+      "file": "frontend/single/main.js",
+      "problem": "추론 어댑터 없으면 영상 프레임도 표시되지 않음",
+      "reproduction": "수정 전 UI processed=0, 수정 후 영상 표시·시작 차단",
+      "fix": "영상 전용 프레임과 valid=false 손목을 구분"
+    },
+    {
+      "id": "R2",
+      "file": "frontend/single/control-link.js",
+      "problem": "새 스트림 offer가 stream_bound보다 먼저 오면 기존 수신기로 전달되어 유실",
+      "reproduction": "새 스트림 제어 승인 이전 신호 Node 검사 실패",
+      "fix": "미승인 스트림 제한 큐·승인 후 전달·퇴역 스트림 폐기"
+    },
+    {
+      "id": "R3",
+      "file": "frontend/single/frame-coordinator.js",
+      "problem": "표시 콜백에서 dispose 후 이전 프레임 재보관",
+      "reproduction": "displayed!=null·자원 close0으로 Node 실패",
+      "fix": "콜백 후 세대/폐기 재확인"
+    },
+    {
+      "id": "R4",
+      "file": "frontend/single/frame-coordinator.js",
+      "problem": "어댑터가 메타 시각을 바꾸면 TTL 검사를 우회",
+      "reproduction": "200ms 만료 프레임 표시1건으로 Node 실패",
+      "fix": "FrameInput 메타 동결"
+    },
+    {
+      "id": "R5",
+      "file": "frontend/game/controller.js",
+      "problem": "프로토타입 관절 이름+누락 프레임이 타격 승인될 수 있음",
+      "reproduction": "__proto__ 이벤트 accepted=true로 Node 실패",
+      "fix": "손목 허용 목록·증가 정수 프레임 검증"
+    },
+    {
+      "id": "R6",
+      "file": "frontend/game/controller.js, frontend/single/main.js",
+      "problem": "타격 추적 필드 및 서버 전달 로그의 시각/버전 누락",
+      "reproduction": "Node 로그 room_id 미존재·브라우저 서버 model_version undefined",
+      "fix": "hit_result 추적 필드·동일 레코드 저장/전달"
+    },
+    {
+      "id": "R7",
+      "file": "frontend/single/main.js",
+      "problem": "pagehide 자원 해제 후 캐시 복귀 화면이 정지",
+      "reproduction": "persisted pagehide/pageshow 합성 이벤트 후 문서 재로드 없음",
+      "fix": "폐기된 페이지의 persisted 복귀 시 재로딩"
+    },
+    {
+      "id": "R8",
+      "file": "frontend/game/controller.js, frontend/single/main.js, frontend/single/control-link.js",
+      "problem": "시작 대기 중 복원/모드 변경이 서버 세션 취소를 전달하지 않음",
+      "reproduction": "Node 미전송 취소 시 start1건·브라우저 reset/mode end0건으로 실패",
+      "fix": "전송 직전 세대 검사·pending session end·제어 대기 취소·늦은 ACK 거부"
+    }
+  ],
+  "results": {
+    "node": {
+      "passed": 25,
+      "command": "npm run test:single"
+    },
+    "browser": {
+      "passed": 32,
+      "existing_demo": 22,
+      "single_original": 5,
+      "new_review": 5,
+      "duration_ms": 66007.217,
+      "unexpected": 0,
+      "flaky": 0,
+      "command": "AR_TEST_RENDERER=d3d11 npx playwright test -c playwright.single.config.js --reporter=json"
+    },
+    "server": {
+      "passed": 4,
+      "command": "python -m pytest tests/test_server.py -q"
+    },
+    "camera": {
+      "passed": 6,
+      "command": "node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs"
+    },
+    "build": "npm run build:all passed; existing large bundle warnings remain"
+  },
+  "input_scope": "synthetic / keyboard_demo / canvas RTC browser peers / mocked signaling/pose / TestClient. Live UI branch exercised with synthetic fixtures; not phone/live validation.",
+  "not_verified": [
+    "실제 폰/HTTPS/망/인증",
+    "실제 PoseAdapter/HitDetector·소리",
+    "신호/세션 서버·로그 영구 저장",
+    "현장 FPS/전체 동작 지연/실시간20분",
+    "실제 기기 bfcache 동작"
+  ],
+  "runtime_sha256_basis": "LF-normalized text; verified against staged Git blobs before commit",
+  "runtime_sha256": {
+    "frontend/single/control-link.js": "062d152efcb875cc70a03dbf3ba76b2d9c2aa48a07c193a986f5b9d8b3397158",
+    "frontend/single/display-transform.js": "a2389ed3dc54c504598ec0bc0ffe9bd84132755ebcf3ee7743f58b4b27710ad1",
+    "frontend/single/fracture-view.js": "6d6c8816f63f42217edec29fbd5022ca21475214d00bd93e2d8386df725b4764",
+    "frontend/single/frame-coordinator.js": "fa4d6c53de277a01e72aeac48d217562b28c593c7f0ea2462cbdccf2c84639ba",
+    "frontend/single/index.html": "a6004c9d80f7c41aaa2a491015f60d19f154d0007a902c0fc9e4db69e53d4357",
+    "frontend/single/log-buffer.js": "32bd9f0b8214482ae054bcae552c447437e44dce7d0a2a93107431e0c6a93f76",
+    "frontend/single/main.js": "b07215200c652e9bf0df38ae3eceb3b76a779b3c116adb534322c79f297bef83",
+    "frontend/single/style.css": "b4ea920fe8d40e1facfd55c07bf72e40846fb01741db8f65ab6a01d015e10a56",
+    "frontend/single/target-provider.js": "6d9b8eca5b266ec0083969547892a5eb1d99579db8c69576225d6939a4575b6f",
+    "frontend/single/video-receiver.js": "eb3d63db74901ba65d29a8cb717336c1521608ab0677019c5ce234b658287b2f",
+    "frontend/game/controller.js": "9b961221a5c5414da256a7eec3ac2e96a918477bbbe3c5793ccd6ba4e488c328",
+    "frontend/game/fragment-bodies.js": "acd1c75319279a06248881da36bf0ecc64ece551830d9838278b9ec026230877",
+    "web/monitor/single/index.html": "7e1274b21fe8e3cc623f5f1a40f3f4d2869e082640b21d0fc88c780b27ce74b0",
+    "web/monitor/single/assets/index-CGddBM8h.css": "9ecae5084d3ad97552785c42e5de01f8bd06af803c1315d5413f2b39bcd8fc0a",
+    "web/monitor/single/assets/index-DkHUqACK.js": "59768c250e30e3069857e0c7072050af8b7d2df012a1fadfd550410447707c68",
+    "web/monitor/fracture/index.html": "935256d7f51d3797c43c25c74b4714ea540a5ade6f84bd8637ed422474bcc261",
+    "web/monitor/fracture/assets/index-CYocg6RT.js": "2a602dc1c7d1fc8049c9b564b21957b6d48f8b0208bc5809343815a2890f8b07",
+    "web/monitor/fracture/assets/index-K54p3q6p.css": "ca88ce11cd866408f26930410140e03b8b2a82c12ae3421af3ff19609c310098",
+    "frontend/fracture/main.js": "2ce37c6f8cb76f1a73cd5af33a7c0727f3e449ba924763756e1f240048e0e468",
+    "vite.single.config.js": "4a6ed81413bdb0ff9cfe8f7886144b0457a866ca6646d396dad2b8484726010c"
+  },
+  "browser_cases": [
+    {
+      "title": "six reviewed buildings can be inspected at their real campus coordinates",
+      "status": "expected",
+      "duration_ms": 5025
+    },
+    {
+      "title": "campus focus controls fit the small screen",
+      "status": "expected",
+      "duration_ms": 2070
+    },
+    {
+      "title": "new models and previous version can all fracture and restore",
+      "status": "expected",
+      "duration_ms": 3741
+    },
+    {
+      "title": "separated inspection blocks hits and restores from the range control",
+      "status": "expected",
+      "duration_ms": 1634
+    },
+    {
+      "title": "click selects a new impact point and dust clears on restoration",
+      "status": "expected",
+      "duration_ms": 2533
+    },
+    {
+      "title": "switching warmed models releases previous GPU resources",
+      "status": "expected",
+      "duration_ms": 3910
+    },
+    {
+      "title": "failed model replacement keeps the current package usable",
+      "status": "expected",
+      "duration_ms": 1139
+    },
+    {
+      "title": "Space activates the focused start button without destroying the building",
+      "status": "expected",
+      "duration_ms": 882
+    },
+    {
+      "title": "Space on a focused view button opens the view without a hit",
+      "status": "expected",
+      "duration_ms": 2002
+    },
+    {
+      "title": "timer and end controls update on sparse frames away from a 200 ms boundary",
+      "status": "expected",
+      "duration_ms": 1193
+    },
+    {
+      "title": "a late hit updates expiry even while animation frames are suspended",
+      "status": "expected",
+      "duration_ms": 942
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: fragment-count",
+      "status": "expected",
+      "duration_ms": 597
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: units",
+      "status": "expected",
+      "duration_ms": 620
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+      "status": "expected",
+      "duration_ms": 779
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: dimensions",
+      "status": "expected",
+      "duration_ms": 692
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: hull-bounds",
+      "status": "expected",
+      "duration_ms": 646
+    },
+    {
+      "title": "failed campus load can be retried and clears the error",
+      "status": "expected",
+      "duration_ms": 2221
+    },
+    {
+      "title": "real package: keyboard fracture, single score, floor contacts and repeated clean restoration",
+      "status": "expected",
+      "duration_ms": 4704
+    },
+    {
+      "title": "60-second end blocks hits, and reset restores a new ready session",
+      "status": "expected",
+      "duration_ms": 1031
+    },
+    {
+      "title": "campus terrain inspection returns to intact prop without extra bodies",
+      "status": "expected",
+      "duration_ms": 3049
+    },
+    {
+      "title": "missing package remains disabled and explains recovery",
+      "status": "expected",
+      "duration_ms": 773
+    },
+    {
+      "title": "small viewport has usable controls and no horizontal overflow",
+      "status": "expected",
+      "duration_ms": 1461
+    },
+    {
+      "title": "PR5 review: received video is visible while pose adapter is absent and start stays blocked",
+      "status": "expected",
+      "duration_ms": 2878
+    },
+    {
+      "title": "PR5 review: server-forwarded and exported logs retain identical PC time and version fields",
+      "status": "expected",
+      "duration_ms": 2129
+    },
+    {
+      "title": "PR5 review: persisted page restoration reloads a monitor whose resources were disposed",
+      "status": "expected",
+      "duration_ms": 1202
+    },
+    {
+      "title": "PR5 review: reset cancels a pending server start before a late ACK",
+      "status": "expected",
+      "duration_ms": 2534
+    },
+    {
+      "title": "PR5 review: mode cancels a pending server start before a late ACK",
+      "status": "expected",
+      "duration_ms": 2558
+    },
+    {
+      "title": "single live entry remains gated when server and pose adapter are missing, leaves multiview scaffold unchanged",
+      "status": "expected",
+      "duration_ms": 1048
+    },
+    {
+      "title": "synthetic screen event fractures 96 shards once, three clean restores with distinct sessions",
+      "status": "expected",
+      "duration_ms": 3005
+    },
+    {
+      "title": "rotated mirrored portrait display, resize invalidation and live mode switch reset synthetic session",
+      "status": "expected",
+      "duration_ms": 1491
+    },
+    {
+      "title": "three virtual 60-second rounds expire without post-end hits and reset correctly",
+      "status": "expected",
+      "duration_ms": 1734
+    },
+    {
+      "title": "real WebRTC browser peer video receiver reconnects three times and rejects late old-stream signaling",
+      "status": "expected",
+      "duration_ms": 1118
+    }
+  ],
+  "restored_validation_images": 11,
+  "history": "Original summary.json remains the earlier implementation validation; this report is the reviewed revision."
+}
