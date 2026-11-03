@@ -6,13 +6,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-03 20:50 KST — K-SC-03 PC 추론 어댑터 구현·replay 검증 |
-| 현재 Phase·작업 상태 | 단일 카메라 SC-02 / K-SC-03 코드 구현·PC 합성 프레임 검증 — 실제 폰 영상 미연결. P1은 실기기 미검증 유지 |
-| 마지막 확인된 개발 완료 | `frontend/single/pose-adapter.js`: PR #5 FrameCoordinator + 실제 MediaPipe로 가로·세로·사람 없음 프레임 처리, 폐기 0 (아래 20:50 기록) |
-| 현재 작업 | K-SC-03 PoseAdapter — 로컬 main 작업 트리, 커밋·PR 전 |
-| 남은 일·미검증 | PR #5 화면에 연결(이 PR 머지 후 한 줄 등록), Worker 경로 비교, 실제 폰 WebRTC 영상·Windows PC·live, K-SC-04 타격 판정 |
-| 다음 한 단계 | K-SC-04 `hit-detector.js`(선분·재무장·중복) — PR #5 TargetProvider 형식 기준 |
-| 막힌 점·인계 | 이동수: PR #5 머지 또는 이 어댑터를 화면에 등록할 위치 합의. 정경호: K-SC-02 폰 송신에 필요한 방·신호 서버 |
+| 마지막 갱신 | 2026-11-03 21:05 KST — K-SC-04 화면 2D 타격 판정 구현·검증 |
+| 현재 Phase·작업 상태 | 단일 카메라 SC-02/03 / K-SC-03·04 코드 구현·PC 검증 — 실제 폰 영상 미연결. P1은 실기기 미검증 유지 |
+| 마지막 확인된 개발 완료 | `hit-detector.js`: PR #5 GameController와 결합해 1회 점수·중복/종료 거부, 실제 MediaPipe 이동 영상에서 정지·느린 동작 타격 0 (아래 21:05 기록). `pose-adapter.js` PR #6 |
+| 현재 작업 | K-SC-04 HitDetector — `feat/single-pose-adapter`(PR #6) 작업 트리, 커밋 전 |
+| 남은 일·미검증 | PR #5 화면에 두 모듈 등록(이동수 파일), 속도·cooldown 실제 폰 파일럿 튜닝, Worker 경로, 실제 폰 WebRTC·Windows·live, K-SC-05 소리·물리 연결 |
+| 다음 한 단계 | K-SC-05 타격 수락 시 소리(Web Audio)·연출 충격 연결, 또는 PR #5 머지 후 화면 등록 |
+| 막힌 점·인계 | 이동수: PR #5 머지 또는 두 모듈 등록 위치 합의. 정경호: K-SC-02 폰 송신에 필요한 방·신호 서버 |
 
 ## 2. 개인 Phase 현황
 
@@ -250,6 +250,28 @@
 - 인계 대상·넘긴 자료: 이동수 — PoseFrame에 추가 필드 `inference`가 붙음(코디네이터 비교 키와 무관), 첫 GPU 추론 지연과 warmup 필요. 아직 메시지 발송 없음
 - 갱신한 계획 체크리스트·현황: 실제 영상·실기기 전이라 K-SC-03 `[ ]` 유지. 본 파일 요약만 갱신. `진행현황.md` 김태이 행은 PR #5가 바로 위 이동수 행을 바꿔 충돌하므로 PR #5 머지 뒤 따로 갱신
 - 종료·중단 시각: 2026-11-03 20:50 KST
+
+### 2026-11-03 21:05 KST — K-SC-04 화면 2D 타격 판정 구현·검증
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 개발 / 단일 카메라 SC-03 K-SC-04 / 코드 구현·PC 검증 완료, 실제 폰 영상 미연결
+- 읽은 계획·기록: `SINGLE_CAMERA_INTERFACES.md` 5절(HitEvent·선분·재무장·cooldown), `SINGLE_CAMERA_TEST_PLAN.md` T-SC-06/07/08/11, PR #5 `game/controller.js`(acceptHit 검사·pairs)·`target-provider.js`(image_norm 삼각형)·`main.js`(validateHit·onPoseFrame 순서)
+- 연결할 계획 항목: K-SC-04 "HitEvent·연속/재무장·속도/설정 버전", 완료 기준 "빠른 통과·빈 공간/정지·복구 첫 점·중복 검사"
+- 이번 목표·완료 기준: PoseFrame과 `getTarget()`만으로 PR #5 GameController가 수락하는 HitEvent를 만들고, 정지·느린 겹침·빈 공간·끊긴 궤적은 타격하지 않음
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: `frontend/single/hit-detector.js`(신규: `HitDetector`·`attachHitDetector`·`clipSegment`·`firstEntry`·`HIT_CONFIG`), `tests/single/hit-detector.test.mjs`(신규 10개)
+- 동작: 손목별 직전 유효 점→현재 점 선분을 삼각형 합집합에 Cyrus–Beck으로 잘라 가장 먼저 들어간 지점(경계 바로 안쪽)을 타격점으로 씀. 양 끝이 밖이어도 통과하면 후보. 조건: 직전 점이 활성 목표 **밖**에서 관측됨(재무장), dt 0 초과·200 ms 미만, 속도 ≥ 0.5 대각선/초, 손목별 cooldown 300 ms, 목표 `active`·`transform_version` 일치, session_id 있음. room/stream/run/transform/session이 바뀌면 궤적 초기화(첫 점은 기준점만). 양손 동시 후보는 먼저 들어간 쪽 1건. 속도는 인터페이스 정의대로 `hypot(dx_px, dy_px)/hypot(w,h)/dt`. `hit_point_m`·`speed_mps`는 null. 판정 사유(`baseline`/`invalid_wrist`/`gap`/`no_target`/`disarmed`/`missed`/`too_slow`/`cooldown`/`hit`/`no_session`)를 손목별·누적으로 보관. 임계값은 `config_version: hit-2d-1`로 이벤트에 기록
+- 발견·수정: PR #5 GameController와 결합 시험에서 게임 시작 전 손짓마다 이벤트가 만들어져 `not_playing` 거부 로그가 쌓임 → session_id가 없으면 이벤트를 만들지 않음
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/*.test.mjs` 20/20(어댑터 10 + 판정 10). ② PR #5 결합(임시 worktree, 커밋 안 함): 실제 `GameController`+`TargetProvider.contains`로 시작 전 0건, 첫 타격 수락·100점, 같은 이벤트 재전송 `duplicate_event`, 파괴 후 추가 점수 0, 복원 후 손이 건물 안에 있으면 타격 0 → 밖으로 나갔다 들어오면 수락, 60초 종료 후 타격 `not_playing` 거부. PR #5 자체 테스트 19/19 유지. ③ 실제 MediaPipe e2e(MacBook Air M4·Chrome 139 headless·GPU, PR #5 FrameCoordinator + 어댑터 + 판정, 사진을 움직인 640×480 스냅샷): 왼손목이 쉬는 위치에 폭 0.04의 막대 목표를 두고 — 정지 3초 87프레임 타격 0(손목 x 변동 0.001), 느린 흔들기(약 0.2 대각선/초) 4초 116프레임 타격 0, 빠른 흔들기(약 1.1) 4초 116프레임 타격 11·cooldown 10(통과 약 21회, 0.3초 간격 제한과 일치), 측정 속도 0.99~1.36
+- 입력·장비 범위: synthetic(단위·결합 시험) / replay 스냅샷(사진 1장 이동). 정지 사진이라 실제 카메라의 손목 흔들림(지터)은 재현하지 못함. 실제 폰·live·사람 동작은 미실행
+- 남은 일·미검증: 0.5/초·300 ms는 출발값이며 실제 폰 파일럿에서 지터·실제 타격 속도로 조정 필요. PR #5 화면 등록(`attachHitDetector(window.singleCameraMonitor)`). 깊이를 재지 않으므로 건물 앞뒤 손도 겹치면 타격(단일 2D 모드의 알려진 한계)
+- 막힌 점·도움·해제 조건: 없음(독립 모듈)
+- 다음 한 단계·재개 위치: K-SC-05 수락된 타격의 소리·연출 충격 연결
+- 인계 대상·넘긴 자료: 이동수 — HitEvent에 `observed_at_pc_ms`·`config_version` 추가 필드, 판정기는 `getTarget()`을 프레임마다 호출. 메시지 발송 없음
+- 갱신한 계획 체크리스트·현황: 실제 영상·실기기 전이라 K-SC-04 `[ ]` 유지. 본 파일 요약만 갱신(`진행현황.md`는 PR #5 충돌 회피로 보류)
+- 종료·중단 시각: 2026-11-03 21:05 KST
 
 ### 2026-11-03 17:19 KST — 단일 카메라 v0.2 역할 계획 추가
 
