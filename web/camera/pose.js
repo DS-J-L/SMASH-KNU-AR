@@ -5,8 +5,8 @@ export const MODELS = {
   lite: `${VENDOR}/models/pose_landmarker_lite.task`,
   full: `${VENDOR}/models/pose_landmarker_full.task`,
 };
-const LEFT_WRIST = 15;
-const RIGHT_WRIST = 16;
+export const LEFT_WRIST = 15;
+export const RIGHT_WRIST = 16;
 
 let visionModule = null;
 
@@ -22,11 +22,12 @@ async function loadVision() {
 }
 
 // Returns {landmarker, delegate}. GPU first, CPU if the phone's WebGL path fails.
-export async function createPoseLandmarker(model) {
+// A caller whose GPU instance later failed at run time can pass ["CPU"].
+export async function createPoseLandmarker(model, delegates = ["GPU", "CPU"]) {
   const { FilesetResolver, PoseLandmarker } = await loadVision();
   const fileset = await FilesetResolver.forVisionTasks(`${VENDOR}/wasm`);
   let lastError = null;
-  for (const delegate of ["GPU", "CPU"]) {
+  for (const delegate of delegates) {
     try {
       const landmarker = await PoseLandmarker.createFromOptions(fileset, {
         baseOptions: { modelAssetPath: MODELS[model], delegate },

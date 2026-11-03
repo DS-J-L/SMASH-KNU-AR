@@ -6,13 +6,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-03 17:19 KST |
-| 현재 Phase·작업 상태 | P1 코드 GitHub main 반영·PM 검증 완료 — 실제 폰 3대 미검증 |
-| 마지막 확인된 개발 완료 | PR #1 fa3b19e 머지, 실제 MediaPipe replay/서버 수신·회귀 6개 검증; 공용 키보드 데모와 별도 |
-| 현재 작업 | 카메라 코드 검토·머지 완료, 실제 폰/C0·궤적 충돌/물리·소리 후속 준비 상태 확인 필요 |
-| 남은 일·미검증 | 소리·실제 궤적 충돌·C0 송신·실기기 작업은 미검증 |
-| 다음 한 단계 | K-SC-01 장비/PC 추론 시제품·J-SC-02 신호/K-SC-02 송신 준비, 11-09 실제 폰 시험 |
-| 막힌 점·인계 | 실제 기기·배치·접속 상태 확인 필요, 특정 기술 장애는 아직 확인되지 않음 |
+| 마지막 갱신 | 2026-11-03 20:50 KST — K-SC-03 PC 추론 어댑터 구현·replay 검증 |
+| 현재 Phase·작업 상태 | 단일 카메라 SC-02 / K-SC-03 코드 구현·PC 합성 프레임 검증 — 실제 폰 영상 미연결. P1은 실기기 미검증 유지 |
+| 마지막 확인된 개발 완료 | `frontend/single/pose-adapter.js`: PR #5 FrameCoordinator + 실제 MediaPipe로 가로·세로·사람 없음 프레임 처리, 폐기 0 (아래 20:50 기록) |
+| 현재 작업 | K-SC-03 PoseAdapter — 로컬 main 작업 트리, 커밋·PR 전 |
+| 남은 일·미검증 | PR #5 화면에 연결(이 PR 머지 후 한 줄 등록), Worker 경로 비교, 실제 폰 WebRTC 영상·Windows PC·live, K-SC-04 타격 판정 |
+| 다음 한 단계 | K-SC-04 `hit-detector.js`(선분·재무장·중복) — PR #5 TargetProvider 형식 기준 |
+| 막힌 점·인계 | 이동수: PR #5 머지 또는 이 어댑터를 화면에 등록할 위치 합의. 정경호: K-SC-02 폰 송신에 필요한 방·신호 서버 |
 
 ## 2. 개인 Phase 현황
 
@@ -228,6 +228,28 @@
 - 인계 대상·넘긴 자료: 정경호 — 수정된 종료 코드 처리(DATA_CONTRACT `/ws/pose` 5·6번), 병합 시 문서 충돌 4개(`DATA_CONTRACT.md`, `README.md`, `ARCHITECTURE.md`, `진행현황.md`) 예상
 - 갱신한 계획 체크리스트·현황: 실기기 확인 전이라 P1 체크리스트 `[ ]` 유지. 본 파일 요약, `진행현황.md` 김태이 행
 - 종료·중단 시각: 2026-11-02 16:05 KST
+
+### 2026-11-03 20:50 KST — K-SC-03 PC 추론 어댑터 구현·검증
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 개발 / 단일 카메라 SC-02 K-SC-03 / 코드 구현·PC 검증 완료, 실제 폰 영상 미연결
+- 읽은 계획·기록: 김태이_plan.md v0.2 K-SC 표, `docs/SINGLE_CAMERA_PLAN.md`·`SINGLE_CAMERA_INTERFACES.md` 4·5절, PR #5(`origin/feat/single-camera-monitor`)의 `SINGLE_CAMERA_MONITOR.md`·`frame-coordinator.js`·`main.js`·`game/controller.js`
+- 연결할 계획 항목: K-SC-03 "PoseFrame·손목별 무효 사유·종료/자원 반환", T-SC-04~06/09/13/15 중 어댑터 범위
+- 이번 목표·완료 기준: PR #5가 넘기는 빌린 캔버스 스냅샷을 받아 같은 frame 키의 PoseFrame을 만들고, 코디네이터 TTL(200 ms) 안에 돌려줌. 무효 손목은 사유와 함께 `valid=false`
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: `frontend/single/pose-adapter.js`(신규: `createPoseAdapter`·`attachPoseAdapter`·`toWrist`·`toPoseFrame`), `tests/single/pose-adapter.test.mjs`(신규 10개), `web/camera/pose.js`(손목 번호 export, `createPoseLandmarker(model, delegates)` 선택 인자 — 기존 호출 동작 동일)
+- 동작: 런타임·모델은 `/camera/pose.js`를 실행 시점에 불러와 폰과 같은 고정 파일 사용(번들에 MediaPipe를 넣지 않음). 받은 meta를 그대로 두고 `wrists.left_wrist/right_wrist = {valid, image_norm, visibility, reason}`과 `inference{started/ended_at_pc_ms, model, delegate, runtime}` 추가. 사유: `not_detected`/`out_of_frame`/`low_visibility`(<0.5, PR #5 기준과 같음)/`non_finite`. 이미지는 닫거나 transfer하지 않음. 크기가 meta와 다르면 `frame_size_mismatch`. GPU 추론 중 예외 시 그 인스턴스를 닫고 다음 프레임부터 CPU로 다시 생성. stream/run이 바뀌어도 MediaPipe 시각은 단조 증가
+- 발견·수정: 첫 실행에서 **모델 로딩 후 첫 `detectForVideo`가 8.9초 동안 메인 스레드를 막아** 그동안의 4초 분량 프레임이 모두 TTL 초과로 버려짐(가로 구간 matched 0). → `warmup()`이 빈 캔버스로 한 번 추론해 GPU 초기화를 미리 끝내고, `attachPoseAdapter`가 등록과 함께 실행. 수정 후 빈 추론 0.43초, 이후 폐기 0
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/pose-adapter.test.mjs` 10/10, 기존 `tests/test_camera_lifecycle.mjs` 6/6. ② 실제 MediaPipe e2e(스크래치 스크립트, 커밋 안 함): MacBook Air M4·Chrome 139 headless, FastAPI `/camera/pose.js`, PR #5 `frame-coordinator.js` 원본, MediaPipe 예제 사진(`mediapipe-assets/pose.jpg`)을 좌우로 움직여 그린 캔버스 스냅샷 30 fps 제출. GPU·lite, 로딩 0.66초. 640×480 4초: 115/115 정합, 28.8 fps, 추론 평균 16.0·최대 39.1 ms, 양손 115/115 유효. 480×640(run 2) 3초: 87/87, 29.0 fps, 평균 22.6 ms, 양손 유효. 사람 없음 1.5초: 44/44 정합·양손 `not_detected`. 크기 불일치·dispose 후 프레임은 `onInvalid`로 거부. 코디네이터 submitted 248·processed 246·dropped 0·failed 2(의도한 두 건). 좌우: 정면 인물의 `left_wrist`가 영상 오른쪽(x 0.64~0.96)으로 촬영자 기준 판별 유지
+- 입력·장비 범위: synthetic/replay 스냅샷(사진 1장 이동), PC 브라우저 1종. 실제 폰 WebRTC 영상·live·Windows/다른 GPU·PR #5 화면 연동은 미실행
+- 남은 일·미검증: PR #5 `index.html`에 `attachPoseAdapter(window.singleCameraMonitor)` 등록 위치(이동수 파일이라 머지 후 또는 합의 후). Worker/OffscreenCanvas 경로(K-SC-01 측정 항목) — 현재는 메인 스레드 동기 추론. 시연 PC의 GPU/CPU 대체·추론 시간
+- 막힌 점·도움·해제 조건: 없음(독립 모듈). live 검증은 K-SC-02 폰 송신과 정경호 방/신호 서버가 있어야 함
+- 다음 한 단계·재개 위치: K-SC-04 `frontend/single/hit-detector.js` — PoseFrame + PR #5 `getTarget()` 삼각형으로 손목 선분 판정
+- 인계 대상·넘긴 자료: 이동수 — PoseFrame에 추가 필드 `inference`가 붙음(코디네이터 비교 키와 무관), 첫 GPU 추론 지연과 warmup 필요. 아직 메시지 발송 없음
+- 갱신한 계획 체크리스트·현황: 실제 영상·실기기 전이라 K-SC-03 `[ ]` 유지. 본 파일 요약만 갱신. `진행현황.md` 김태이 행은 PR #5가 바로 위 이동수 행을 바꿔 충돌하므로 PR #5 머지 뒤 따로 갱신
+- 종료·중단 시각: 2026-11-03 20:50 KST
 
 ### 2026-11-03 17:19 KST — 단일 카메라 v0.2 역할 계획 추가
 
