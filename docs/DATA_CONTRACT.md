@@ -123,3 +123,8 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 
 
 2026-11-02 파편 세분화: catalog.default=knu-it1-v3(96개), knu-main-v2(85개)를 추가했다. 이전64/52/32개도 유지하며 수량은 manifest에서 읽는다. previous_version은 이전ID, fracture_seed_count는 생성영역 수다. 축/단위/피벗/복원·실제 hit_event 계약 유지. 사용자 인수는 이동수 담당이고 실제 충돌/물리는 김태이,3D는 정경호 책임이다. [세분화·역할](FRACTURE_REFINEMENT.md)을 따른다.
+
+
+## 2026-11-03 단일 카메라 추가 계약 제안
+
+[휴대폰 1대·PC 화면 계획](SINGLE_CAMERA_PLAN.md)의 단일 화면 2D 경로를 제안한다. PC 수신 프레임 추론·모드별 준비/세션·2D 이벤트 단위는 설계 검토 대상이며 현재 구현/메시지 스키마가 아니다. 기존 다중 3D의 room_z_up·보정·유효 시점·시간 기준은 유지하고 후속 구현 PR에서 확정·검증한다.
