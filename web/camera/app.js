@@ -35,6 +35,10 @@ let delegate = null;
 let link = null;
 let running = false;
 let session = null;
+// Async permission/model work and queued frames belong to exactly one camera run.
+let runId = 0;
+let frameCallback = null;
+let frameCallbackKind = null;
 
 watchServerStatus((connected, message) => {
   serverStatus.textContent = connected ? "서버 상태 연결됨" : message;
@@ -153,6 +157,22 @@ function drawWrists(wrists) {
 }
 
 function onFrame(now, metadata) {
+  frameCallback = null;
+  frameCallbackKind = null;
+  if (!running) return;
+  try {
+    processFrame(now, metadata);
+  } catch (error) {
+    stopCamera();
+    // A failed GPU/MediaPipe instance must be recreated on the next start.
+    landmarker?.close();
+    landmarker = null;
+    landmarkerModel = null;
+    cameraStatus.textContent = `손목 추출이 중단됐습니다. 카메라를 다시 켜세요: ${error.message}`;
+  }
+}
+
+function processFrame(now, metadata) {
   if (!running) return;
   const width = preview.videoWidth;
   const height = preview.videoHeight;
@@ -191,11 +211,17 @@ function onFrame(now, metadata) {
 
 function scheduleFrame() {
   if (!running) return;
+  const scheduledRun = runId;
+  const callback = (now, metadata) => {
+    if (scheduledRun === runId) onFrame(now, metadata);
+  };
   if (preview.requestVideoFrameCallback) {
-    preview.requestVideoFrameCallback(onFrame);
+    frameCallbackKind = "video";
+    frameCallback = preview.requestVideoFrameCallback(callback);
   } else {
     // Older browsers: no per-frame metadata, so the capture time stays unknown.
-    requestAnimationFrame((now) => onFrame(now, null));
+    frameCallbackKind = "animation";
+    frameCallback = requestAnimationFrame((now) => callback(now, null));
   }
 }
 
@@ -216,7 +242,7 @@ function updateStats() {
   session.counts = { frames: 0, inferMs: 0, sent: 0, unsent: 0, since: performance.now() };
 }
 
-async function openSource() {
+async function openSource(attempt) {
   if (replayUrl) {
     preview.srcObject = null;
     preview.src = replayUrl;
@@ -227,14 +253,20 @@ async function openSource() {
   if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) {
     throw new Error("카메라를 사용하려면 HTTPS 또는 같은 PC의 localhost로 접속하세요.");
   }
-  stream = await navigator.mediaDevices.getUserMedia({
+  const acquired = await navigator.mediaDevices.getUserMedia({
     audio: false,
     video: { facingMode: { ideal: facing.value }, width: { ideal: 640 }, height: { ideal: 480 } },
   });
-  preview.srcObject = stream;
+  if (attempt !== runId) {
+    acquired.getTracks().forEach((track) => track.stop());
+    return null;
+  }
+  stream = acquired;
+  preview.srcObject = acquired;
   await preview.play();
-  const [track] = stream.getVideoTracks();
-  track.addEventListener("ended", stopCamera);
+  if (attempt !== runId) return null;
+  const [track] = acquired.getVideoTracks();
+  track.addEventListener("ended", () => { if (attempt === runId) stopCamera(); });
   return { source: "live", settings: track.getSettings() };
 }
 
@@ -245,7 +277,14 @@ function setControlsRunning(isRunning) {
 }
 
 function stopCamera() {
+  runId += 1;
   running = false;
+  if (frameCallback !== null) {
+    if (frameCallbackKind === "video") preview.cancelVideoFrameCallback?.(frameCallback);
+    else window.cancelAnimationFrame(frameCallback);
+    frameCallback = null;
+    frameCallbackKind = null;
+  }
   link?.close();
   link = null;
   if (stream) stream.getTracks().forEach((track) => track.stop());
@@ -262,15 +301,21 @@ function stopCamera() {
 }
 
 start.addEventListener("click", async () => {
+  const attempt = ++runId;
   setControlsRunning(true);
   cameraStatus.textContent = "카메라 권한을 확인하고 있습니다…";
   try {
-    const opened = await openSource();
+    const opened = await openSource(attempt);
+    if (attempt !== runId) return;
     cameraStatus.textContent = `MediaPipe ${model.value} 모델을 불러오는 중…`;
     if (!landmarker || landmarkerModel !== model.value) {
       landmarker?.close();
       landmarker = null;
       const created = await createPoseLandmarker(model.value);
+      if (attempt !== runId) {
+        created.landmarker.close();
+        return;
+      }
       landmarker = created.landmarker;
       landmarkerModel = model.value;
       delegate = created.delegate;
@@ -308,6 +353,7 @@ start.addEventListener("click", async () => {
     scheduleFrame();
     cameraStatus.textContent = `${cameraId.value} · ${opened.source === "replay" ? "녹화 재생" : "실시간"} · 손목 추출 중 (${delegate})`;
   } catch (error) {
+    if (attempt !== runId) return;
     stopCamera();
     cameraStatus.textContent = `시작하지 못했습니다: ${error.message}`;
   }

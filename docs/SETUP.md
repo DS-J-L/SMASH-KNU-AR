@@ -37,6 +37,12 @@ python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 - `/ws/status`: 현재 구현 범위를 포함한 상태 메시지
 - `/docs`: HTTP API 문서
 
+카메라의 중지·재시작·비동기 로딩 취소·추론 실패 회귀 검사는 Node.js 22에서 아래 명령으로 실행합니다. npm 패키지 설치는 필요하지 않으며, 실제 휴대폰 시험과는 별도입니다.
+
+```bash
+node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs
+```
+
 화면 파일을 더블클릭하는 대신 서버 URL로 접속하세요. 서버는 `web/`만 정적으로 제공하며 설정·보정·실험 폴더는 공개하지 않습니다.
 
 ## 3. 휴대폰으로 접속하기

@@ -13,7 +13,7 @@ let visionModule = null;
 async function loadVision() {
   if (!visionModule) {
     try {
-      visionModule = await import(`${VENDOR}/vision_bundle.mjs`);
+      visionModule = await import(`${VENDOR}/vision_bundle.js`);
     } catch {
       throw new Error("MediaPipe 파일이 없습니다. PC에서 `python tools/fetch_mediapipe.py`를 실행하세요.");
     }

@@ -20,7 +20,9 @@ MODEL_BASE = "https://storage.googleapis.com/mediapipe-models/pose_landmarker"
 
 # (published path, source URL, SHA-256 as reported by jsDelivr / measured on 2026-10-29)
 FILES = [
-    ("vision_bundle.mjs", f"{NPM_BASE}/vision_bundle.mjs",
+    # Windows may register .mjs as text/plain, which browsers reject for ESM.
+    # Keep the pinned upstream ESM bytes/hash, but serve them with the .js MIME type.
+    ("vision_bundle.js", f"{NPM_BASE}/vision_bundle.mjs",
      "VderYk+7cNzFrcSubX6pz8tWkTnT2/vysd6vy5ZrwP4="),
     ("wasm/vision_wasm_internal.js", f"{NPM_BASE}/wasm/vision_wasm_internal.js",
      "5/2YWOjo8iHZuW7dwR+OB38mPgt7vXnTy+iCsTQnT4w="),

@@ -10,11 +10,13 @@ python tools/fetch_mediapipe.py
 
 | 항목 | 버전·파일 | 출처 |
 | --- | --- | --- |
-| 런타임 | `@mediapipe/tasks-vision` 0.10.35 (`vision_bundle.mjs`, `wasm/vision_wasm_internal.*`, `wasm/vision_wasm_nosimd_internal.*`) | npm 패키지, jsDelivr로 받음. Apache-2.0 |
+| 런타임 | `@mediapipe/tasks-vision` 0.10.35 (`vision_bundle.js`, `wasm/vision_wasm_internal.*`, `wasm/vision_wasm_nosimd_internal.*`) | npm 패키지, jsDelivr로 받음. Apache-2.0 |
 | 모델 기본값 | `pose_landmarker_lite.task` float16 v1, 5,777,746 B | `storage.googleapis.com/mediapipe-models/pose_landmarker/` |
 | 모델 선택 | `pose_landmarker_full.task` float16 v1, 9,398,198 B | 같은 경로 |
 
 카메라 페이지에서 lite/full을 고를 수 있습니다. GPU 생성이 실패하면 CPU로 다시 시도하며, 실제로 쓴 쪽을 화면과 `camera_hello.device_info`에 표시합니다. 버전을 바꿀 때는 `tools/fetch_mediapipe.py`의 해시와 이 표를 함께 고칩니다.
+
+원본 `vision_bundle.mjs`는 같은 내용·해시의 `vision_bundle.js`로 저장합니다. Windows의 `.mjs` MIME 등록이 `text/plain`이면 브라우저가 모듈을 거부하므로, 이 경우에도 실행할 수 있도록 제공 파일명만 바꿨습니다. 이전에 받은 경우 다운로드 명령을 다시 실행하세요.
 
 ## PC 추론
 
