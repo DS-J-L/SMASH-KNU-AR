@@ -1,0 +1,20 @@
+{
+  "name": "smash-knu-ar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:demo": "vite build",
+    "test:demo": "playwright test",
+    "validate:assets": "node tools/validate-assets.mjs",
+    "validate:enhancements": "node tools/validate-enhancements.mjs"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "gltf-validator": "2.0.0-dev.3.10",
+    "vite": "8.3.5"
+  }
+}

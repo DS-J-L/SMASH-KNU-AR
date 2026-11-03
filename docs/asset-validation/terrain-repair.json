@@ -1,0 +1,152 @@
+[
+  {
+    "name": "SM_CampusTerrain_v11",
+    "before": {
+      "vertices": 19556,
+      "faces": 37418
+    },
+    "after": {
+      "vertices": 9669,
+      "faces": 17972
+    },
+    "overlap_flap_area_removed_m2": [],
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "SM_CampusTerrain_v11: 1 n-gons",
+        "asset lowest point z=-15.854 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -15.854,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "SM_CampusTerrain_v11": {
+          "verts": 9669,
+          "faces": 17972,
+          "tris": 18008,
+          "ngons": 1,
+          "boundary_edges": 1328,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "green.005",
+    "before": {
+      "vertices": 2450,
+      "faces": 2232
+    },
+    "after": {
+      "vertices": 2450,
+      "faces": 4717
+    },
+    "overlap_flap_area_removed_m2": [
+      0.04535401612520218
+    ],
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.2583 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -4.2583,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "green.005": {
+          "verts": 2450,
+          "faces": 4717,
+          "tris": 4718,
+          "ngons": 0,
+          "boundary_edges": 180,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 1
+        }
+      }
+    }
+  },
+  {
+    "name": "green.013",
+    "before": {
+      "vertices": 231,
+      "faces": 196
+    },
+    "after": {
+      "vertices": 231,
+      "faces": 410
+    },
+    "overlap_flap_area_removed_m2": [],
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-12.4317 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -12.4317,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "green.013": {
+          "verts": 231,
+          "faces": 410,
+          "tris": 412,
+          "ngons": 0,
+          "boundary_edges": 48,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 1
+        }
+      }
+    }
+  }
+]

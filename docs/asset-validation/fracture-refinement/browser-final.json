@@ -1,0 +1,965 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\playwright.config.js",
+    "rootDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser",
+        "snapshotDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8765",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "launchOptions": {
+            "args": [
+              "--enable-webgl",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "python -m uvicorn backend.server:app --host 127.0.0.1 --port 8765",
+      "url": "http://127.0.0.1:8765/api/health",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "campus-map-review.spec.js",
+      "file": "campus-map-review.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "six reviewed buildings can be inspected at their real campus coordinates",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 69821,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\campus-map-review.spec.js",
+                        "column": 39,
+                        "line": 26
+                      },
+                      "message": "Error: locator.selectOption: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#campus-focus')\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"campus-focus\">…</select>\u001b[22m\n\n\n  24 |     }\n  25 |   }\n> 26 |   await page.locator('#campus-focus').selectOption('all');(await snap(page)).cameraTarget.forEach((value,i)=>expect(value).toBeCloseTo([0,-4,0][i],6));\n     |                                       ^\n  27 |   await page.locator('#building-view').click();await expect(page.locator('#campus-focus-wrap')).toBeHidden();\n  28 |   await page.locator('canvas').focus();await page.keyboard.press('Space');expect((await snap(page)).score).toBe(100);\n  29 |   expect(errors).toEqual([]);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\campus-map-review.spec.js:26:39"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:45:35.202Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\campus-map-review-six-revi-2a8b6-eir-real-campus-coordinates\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "dacfaa6172e7586e09c2-38ed271b332ca0c52210",
+          "file": "campus-map-review.spec.js",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "campus focus controls fit the small screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:46:57.526Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "dacfaa6172e7586e09c2-f4829aabb7e5edc725ab",
+          "file": "campus-map-review.spec.js",
+          "line": 31,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "enhancements.spec.js",
+      "file": "enhancements.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "new models and previous version can all fracture and restore",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 64462,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:47:37.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-5f3da79c966835390182",
+          "file": "enhancements.spec.js",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "separated inspection blocks hits and restores from the range control",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 52661,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:48:42.606Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-c4447c07d46d8981979d",
+          "file": "enhancements.spec.js",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "click selects a new impact point and dust clears on restoration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:49:36.279Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-8786bfc55a4019c2c8e0",
+          "file": "enhancements.spec.js",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "switching warmed models releases previous GPU resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 56497,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:50:03.846Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-8b23bec9036a0747ca0c",
+          "file": "enhancements.spec.js",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "failed model replacement keeps the current package usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19131,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:51:01.512Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-cddcfb888c74867fe283",
+          "file": "enhancements.spec.js",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fracture-regressions.spec.js",
+      "file": "fracture-regressions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Space activates the focused start button without destroying the building",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20140,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:51:22.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-24e164193da9776342e8",
+          "file": "fracture-regressions.spec.js",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Space on a focused view button opens the view without a hit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34164,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:51:44.527Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-74fb278d3c31818c03ac",
+          "file": "fracture-regressions.spec.js",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "timer and end controls update on sparse frames away from a 200 ms boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13077,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:52:21.154Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-5a7d7293c920d9dec2f4",
+          "file": "fracture-regressions.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "a late hit updates expiry even while animation frames are suspended",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14012,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:52:37.564Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-9afdf4bd80e20e3f5cfb",
+          "file": "fracture-regressions.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: fragment-count",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:52:52.064Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-6dbd7587bec46d78edcb",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: units",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3772,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:52:55.752Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-7706f3ec92705f66e006",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3985,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:52:59.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-7b788ea4126492174cb4",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: dimensions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:53:03.593Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-0b36c33ffef05e812e0d",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: hull-bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3836,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:53:07.525Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-03e21acf6d62e8777b19",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "failed campus load can be retried and clears the error",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32164,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:53:11.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-70580bd56ee744fad333",
+          "file": "fracture-regressions.spec.js",
+          "line": 77,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fracture.spec.js",
+      "file": "fracture.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real package: keyboard fracture, single score, floor contacts and repeated clean restoration",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 67193,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                        "column": 14,
+                        "line": 34
+                      },
+                      "message": "Error: page.screenshot: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\n\n  32 |   }\n  33 |   const end=await snapshot(page);expect(end.geometryCount).toBe(baseline.geometryCount);expect(end.textureCount).toBe(baseline.textureCount);\n> 34 |   await page.screenshot({path:'docs/asset-validation/demo-restored.png'});\n     |              ^\n  35 |   expect(errors).toEqual([]);\n  36 | });\n  37 |\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js:34:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:53:47.809Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-real-package-keyb-f228b--repeated-clean-restoration\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-41978884ca48d50ba46e",
+          "file": "fracture.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "60-second end blocks hits, and reset restores a new ready session",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:55:05.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-db7e0bfa48e3503da97d",
+          "file": "fracture.spec.js",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "campus terrain inspection returns to intact prop without extra bodies",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 68545,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"campus\"\u001b[39m\nReceived: \u001b[31m\"building\"\u001b[39m\n\nCall Log:\n- Test timeout of 60000ms exceeded",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"campus\"\u001b[39m\nReceived: \u001b[31m\"building\"\u001b[39m\n\nCall Log:\n- Test timeout of 60000ms exceeded\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js:50:78",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                      "column": 78,
+                      "line": 50
+                    },
+                    "snippet": "  48 | test('campus terrain inspection returns to intact prop without extra bodies', async ({page}) => {\n  49 |   await open(page);await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n> 50 |   await expect.poll(async () => (await snapshot(page)).view,{timeout:30000}).toBe('campus');\n     |                                                                              ^\n  51 |   await expect(page.getByRole('button',{name:/파괴 Space/})).toBeDisabled();\n  52 |   await page.screenshot({path:'docs/asset-validation/demo-campus.png'});\n  53 |   await page.getByRole('button',{name:'건물 파괴',exact:true}).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                        "column": 78,
+                        "line": 50
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"campus\"\u001b[39m\nReceived: \u001b[31m\"building\"\u001b[39m\n\nCall Log:\n- Test timeout of 60000ms exceeded\n\n  48 | test('campus terrain inspection returns to intact prop without extra bodies', async ({page}) => {\n  49 |   await open(page);await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n> 50 |   await expect.poll(async () => (await snapshot(page)).view,{timeout:30000}).toBe('campus');\n     |                                                                              ^\n  51 |   await expect(page.getByRole('button',{name:/파괴 Space/})).toBeDisabled();\n  52 |   await page.screenshot({path:'docs/asset-validation/demo-campus.png'});\n  53 |   await page.getByRole('button',{name:'건물 파괴',exact:true}).click();\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js:50:78"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:55:13.007Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-campus-terrain-in-f0796-t-prop-without-extra-bodies\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                    "column": 78,
+                    "line": 50
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-0edffc24bf43a452b0fd",
+          "file": "fracture.spec.js",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "missing package remains disabled and explains recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:56:32.174Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-76f5b288a8b018ced581",
+          "file": "fracture.spec.js",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "small viewport has usable controls and no horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11918,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T11:56:35.044Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-4503e4455c6349169037",
+          "file": "fracture.spec.js",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T11:45:33.477Z",
+    "duration": 674356.7549999999,
+    "expected": 19,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

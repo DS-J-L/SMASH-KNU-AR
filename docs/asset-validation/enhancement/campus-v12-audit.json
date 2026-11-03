@@ -1,0 +1,1315 @@
+{
+  "checked_at_utc": "2026-11-02T09:06:22.114875+00:00",
+  "source_sha256": {
+    "assets\\source\\knu-campus-v12.blend": "05759646c5a60580ca1afdfc504b648d6fd391e8720bcddb19708f0cb6255e01",
+    "web\\public\\assets\\campus\\knu-campus-v12.glb": "f17c0c94052b0e7d42ae2a6d5dc488b0c61640cb033a3bf93868b49349eed9ba"
+  },
+  "mesh_count": 2123,
+  "building_count": 123,
+  "triangles_checked": 144847,
+  "errors": [],
+  "warning_counts": {
+    "ngons": 144,
+    "relative_ground": 2123,
+    "green.036: duplicate verts=1 loose verts=0": 1
+  },
+  "building_contacts": [
+    {
+      "object": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+      "vertices": 6,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "vertices": 25,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 암석창고 [vw/10]",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 법과대학 [vw/16]",
+      "vertices": 19,
+      "max_contact_error_m": 1.5259981155396618e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+      "vertices": 4,
+      "max_contact_error_m": 1.499176025390736e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "vertices": 4,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "vertices": 5,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실2 [vw/50]",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "vertices": 4,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+      "vertices": 4,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+      "vertices": 25,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "vertices": 5,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+      "vertices": 4,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "vertices": 4,
+      "max_contact_error_m": 7.839202880860485e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 학군단창고 [vw/114]",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "vertices": 10,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+      "vertices": 4,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실1 [vw/143]",
+      "vertices": 8,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "vertices": 35,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "vertices": 19,
+      "max_contact_error_m": 7.658004760741077e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+      "vertices": 43,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+      "vertices": 4,
+      "max_contact_error_m": 7.839202880860485e-06
+    },
+    {
+      "object": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "IT 1호관",
+      "vertices": 8,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "IT 2호관",
+      "vertices": 4,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "IT 3호관",
+      "vertices": 10,
+      "max_contact_error_m": 1.5048980712889515e-05
+    },
+    {
+      "object": "IT 4호관",
+      "vertices": 4,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "IT융복합관 (IT5호관)",
+      "vertices": 9,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "IT융합산업빌딩",
+      "vertices": 4,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "PP구조실습실",
+      "vertices": 4,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "간호대학",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "경북대 출판부",
+      "vertices": 10,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "경상대학",
+      "vertices": 11,
+      "max_contact_error_m": 2.8610229491077277e-08
+    },
+    {
+      "object": "공대 12호관",
+      "vertices": 6,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "공대 1호관",
+      "vertices": 4,
+      "max_contact_error_m": 7.839202880860485e-06
+    },
+    {
+      "object": "공대 2호관",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "공대 3호관",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "공대 6호관",
+      "vertices": 4,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "공대 7호관",
+      "vertices": 4,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "공대 8호관",
+      "vertices": 4,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "공대 9호관",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "공대2A호관",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "교수아파트",
+      "vertices": 12,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "교육대학원",
+      "vertices": 17,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "국민체육센터",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "글로벌플라자",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "금란정",
+      "vertices": 4,
+      "max_contact_error_m": 2.8610229491077277e-08
+    },
+    {
+      "object": "농대 3호관",
+      "vertices": 5,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "농대1호관",
+      "vertices": 14,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "농대2호관",
+      "vertices": 4,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "농업생명과학관",
+      "vertices": 8,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "누리관",
+      "vertices": 6,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "누리관.001",
+      "vertices": 6,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "대강당",
+      "vertices": 13,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "대학원동",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "동물사육장",
+      "vertices": 4,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "면학관",
+      "vertices": 4,
+      "max_contact_error_m": 7.658004760741077e-06
+    },
+    {
+      "object": "문예관",
+      "vertices": 11,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "미래창직관",
+      "vertices": 13,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "박물관",
+      "vertices": 17,
+      "max_contact_error_m": 7.658004760741077e-06
+    },
+    {
+      "object": "반도체융합연구동",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "백호관",
+      "vertices": 22,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "법과대학",
+      "vertices": 6,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "법학전문대학원",
+      "vertices": 6,
+      "max_contact_error_m": 7.628202438353382e-06
+    },
+    {
+      "object": "보람관",
+      "vertices": 16,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "복지관",
+      "vertices": 12,
+      "max_contact_error_m": 7.658004760741077e-06
+    },
+    {
+      "object": "복현회관",
+      "vertices": 11,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "본관",
+      "vertices": 17,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "봉사관",
+      "vertices": 8,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "사과센터",
+      "vertices": 4,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "사회과학대학",
+      "vertices": 10,
+      "max_contact_error_m": 7.628202438353382e-06
+    },
+    {
+      "object": "생물학관",
+      "vertices": 4,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "생활과학대학",
+      "vertices": 8,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "수의과대학",
+      "vertices": 8,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "수의과대학부속병원",
+      "vertices": 21,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "약학대학",
+      "vertices": 9,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "어린이집",
+      "vertices": 8,
+      "max_contact_error_m": 1.5048980712889515e-05
+    },
+    {
+      "object": "어학교육원",
+      "vertices": 4,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "연구실 안전관리센터",
+      "vertices": 4,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "영선관",
+      "vertices": 4,
+      "max_contact_error_m": 7.628202438353382e-06
+    },
+    {
+      "object": "예술대학",
+      "vertices": 10,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "우당교육관",
+      "vertices": 6,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "융합교육정보관",
+      "vertices": 7,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "인문대학",
+      "vertices": 4,
+      "max_contact_error_m": 2.8610229491077277e-08
+    },
+    {
+      "object": "인문한국진흥관",
+      "vertices": 11,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "자연과학대학",
+      "vertices": 6,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "정보센터",
+      "vertices": 6,
+      "max_contact_error_m": 1.5048980712889515e-05
+    },
+    {
+      "object": "정보화본부",
+      "vertices": 6,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "제1과학관",
+      "vertices": 10,
+      "max_contact_error_m": 1.552581787109264e-05
+    },
+    {
+      "object": "제1체육관",
+      "vertices": 4,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "제2과학관",
+      "vertices": 12,
+      "max_contact_error_m": 1.499176025390736e-05
+    },
+    {
+      "object": "제2체육관",
+      "vertices": 13,
+      "max_contact_error_m": 7.36236572265736e-06
+    },
+    {
+      "object": "제3합동강의동",
+      "vertices": 12,
+      "max_contact_error_m": 1.5048980712889515e-05
+    },
+    {
+      "object": "제4합동강의동",
+      "vertices": 8,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "조소동",
+      "vertices": 11,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "중앙도서관",
+      "vertices": 7,
+      "max_contact_error_m": 1.5230178833008923e-05
+    },
+    {
+      "object": "진리관",
+      "vertices": 10,
+      "max_contact_error_m": 7.839202880860485e-06
+    },
+    {
+      "object": "창업보육센터",
+      "vertices": 6,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "첨성관",
+      "vertices": 18,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "청룡관 (Cheonglyong-Gwan)",
+      "vertices": 9,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "테크노빌딩",
+      "vertices": 11,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "평생교육원",
+      "vertices": 6,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "학군단",
+      "vertices": 9,
+      "max_contact_error_m": 1.499176025390736e-05
+    },
+    {
+      "object": "한국기초과학지원연구원",
+      "vertices": 14,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "향토관",
+      "vertices": 15,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "화목관",
+      "vertices": 4,
+      "max_contact_error_m": 1.5287399291991077e-05
+    },
+    {
+      "object": "화학관",
+      "vertices": 13,
+      "max_contact_error_m": 7.419586181639515e-06
+    },
+    {
+      "object": "이름 미등록 건물",
+      "vertices": 4,
+      "max_contact_error_m": 7.600784301758923e-06
+    },
+    {
+      "object": "이름 미등록 건물.001",
+      "vertices": 8,
+      "max_contact_error_m": 7.658004760741077e-06
+    },
+    {
+      "object": "이름 미등록 건물.002",
+      "vertices": 6,
+      "max_contact_error_m": 2.0980834961048522e-07
+    },
+    {
+      "object": "이름 미등록 건물.003",
+      "vertices": 4,
+      "max_contact_error_m": 1.5468597412110485e-05
+    },
+    {
+      "object": "이름 미등록 건물.004",
+      "vertices": 6,
+      "max_contact_error_m": 2.670288085926398e-07
+    },
+    {
+      "object": "이름 미등록 건물.005",
+      "vertices": 4,
+      "max_contact_error_m": 7.89642333984264e-06
+    },
+    {
+      "object": "이름 미등록 건물.006",
+      "vertices": 4,
+      "max_contact_error_m": 1.499176025390736e-05
+    },
+    {
+      "object": "이름 미등록 건물.007",
+      "vertices": 4,
+      "max_contact_error_m": 1.5259981155396618e-05
+    },
+    {
+      "object": "이름 미등록 건물.008",
+      "vertices": 4,
+      "max_contact_error_m": 1.5259981155396618e-05
+    },
+    {
+      "object": "이름 미등록 건물.009",
+      "vertices": 6,
+      "max_contact_error_m": 7.36236572265736e-06
+    }
+  ],
+  "tree_contacts": [
+    {
+      "index": 0,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 1,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 2,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 3,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 4,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 5,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 6,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 7,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 8,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 9,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 10,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 11,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 12,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 13,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 14,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 15,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 16,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 17,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 18,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 19,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 20,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 21,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 22,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 23,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 24,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 25,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 26,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 27,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 28,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 29,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 30,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 31,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 32,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 33,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 34,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 35,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 36,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 37,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 38,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 39,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 40,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 41,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 42,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 43,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 44,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 45,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 46,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 47,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 48,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 49,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 50,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 51,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 52,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 53,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 54,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 55,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 56,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 57,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 58,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 59,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 60,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 61,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 62,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 63,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 64,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 65,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 66,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 67,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 68,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 69,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 70,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 71,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 72,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 73,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 74,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 75,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 76,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 77,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 78,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 79,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 80,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 81,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 82,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 83,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 84,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 85,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 86,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 87,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 88,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 89,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 90,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 91,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 92,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 93,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 94,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 95,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 96,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 97,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 98,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 99,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 100,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 101,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 102,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 103,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 104,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 105,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 106,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 107,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 108,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 109,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 110,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 111,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 112,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 113,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 114,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 115,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 116,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 117,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 118,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 119,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 120,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 121,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 122,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 123,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 124,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 125,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 126,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 127,
+      "base_gap_m": -0.015000343322753906
+    },
+    {
+      "index": 128,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 129,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 130,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 131,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 132,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 133,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 134,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 135,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 136,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 137,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 138,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 139,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 140,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 141,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 142,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 143,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 144,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 145,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 146,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 147,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 148,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 149,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 150,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 151,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 152,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 153,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 154,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 155,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 156,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 157,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 158,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 159,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 160,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 161,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 162,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 163,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 164,
+      "base_gap_m": -0.014999985694885254
+    },
+    {
+      "index": 165,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 166,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 167,
+      "base_gap_m": -0.015000104904174805
+    },
+    {
+      "index": 168,
+      "base_gap_m": -0.014999866485595703
+    },
+    {
+      "index": 169,
+      "base_gap_m": -0.014999866485595703
+    }
+  ]
+}

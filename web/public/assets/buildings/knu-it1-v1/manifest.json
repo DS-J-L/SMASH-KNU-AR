@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-it1-v1",
+  "display_name": "IT 1호관",
+  "source_osm_way": "468931895",
+  "source_campus": "knu-campus-v11",
+  "source_origin_campus_z_up_m": [
+    219.83499145507812,
+    -314.57000732421875,
+    -4.150000095367432
+  ],
+  "scale_from_campus": 0.03277537445925333,
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y); already baked into GLB and colliders",
+  "apply_additional_axis_rotation": false,
+  "origin": "bottom_center",
+  "fragment_count": 32,
+  "dimensions_m": [
+    2.8,
+    1.0324382,
+    0.6155215
+  ],
+  "source_dimensions_campus_z_up_m": [
+    85.42999267578125,
+    18.779998779296875,
+    31.500425720214842
+  ],
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "note": "Game density, fracture seed and scale are design values."
+  },
+  "accuracy": "OSM footprint and assumed 2019 9 floors x 3.5 m; facade repeat is game art, not surveyed.",
+  "fragment_method": "Seeded closed half-space cuts, capped concrete interiors; no inter-fragment gap.",
+  "source": "synthetic",
+  "input_mode": "keyboard_demo",
+  "tracking_mode": "keyboard_demo"
+}

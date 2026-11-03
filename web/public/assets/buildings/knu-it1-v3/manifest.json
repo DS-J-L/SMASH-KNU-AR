@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-it1-v3",
+  "display_name": "IT 1호관",
+  "source_osm_way": "468931895",
+  "source_campus": "knu-campus-v11",
+  "source_origin_campus_z_up_m": [
+    219.83499145507812,
+    -314.57000732421875,
+    -4.150000095367432
+  ],
+  "scale_from_campus": 0.03277537445925333,
+  "source_dimensions_campus_z_up_m": [
+    85.42999267578125,
+    18.779998779296875,
+    31.500425720214842
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y); baked into GLB and colliders",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.8101179599761963,
+    1.0844383239746094,
+    0.6256438493728638
+  ],
+  "fragment_count": 96,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "enhancements": [
+    "PBR facade and aggregate normal/roughness maps",
+    "bevelled edges",
+    "3D Voronoi capped fracture",
+    "game-art parapet and rooftop utilities"
+  ],
+  "accuracy": "Existing footprint/height assumptions. Facades, edge finish and utility details are game art; no new survey.",
+  "fragment_method": "Seeded 3D Voronoi intersections; disconnected islands separated; concrete caps",
+  "source": "synthetic",
+  "input_mode": "keyboard_demo",
+  "tracking_mode": "keyboard_demo",
+  "previous_version": "knu-it1-v2",
+  "fracture_seed_count": 96
+}

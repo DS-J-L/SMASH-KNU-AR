@@ -1,0 +1,40 @@
+[
+  {
+    "source": "IT 1호관",
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "ground_z": 0.0,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_0": {
+          "verts": 120,
+          "faces": 236,
+          "tris": 236,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,5296 @@
+{
+  "buildings": 123,
+  "errors": [],
+  "objects": [
+    {
+      "name": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.2836 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -9.2836,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]": {
+            "verts": 24,
+            "faces": 26,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "roof_edges": 25,
+      "triangles": 196,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.5365 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.5365,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 북문수위실 [vw/8]": {
+            "verts": 100,
+            "faces": 121,
+            "tris": 196,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 암석창고 [vw/10]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.2645 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.2645,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 암석창고 [vw/10]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 법과대학 [vw/16]",
+      "roof_edges": 19,
+      "triangles": 148,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-1.8072 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.8072,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 법과대학 [vw/16]": {
+            "verts": 76,
+            "faces": 91,
+            "tris": 148,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6744 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6744,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 4-1 [vw/18]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6145 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6145,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 5-4 [vw/20]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6535 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6535,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 5-1 [vw/21]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.7741 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.7741,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 농산물가공동 [vw/22]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "roof_edges": 5,
+      "triangles": 36,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.2787 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.2787,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 옥수수저장창고 [vw/33]": {
+            "verts": 20,
+            "faces": 21,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실2 [vw/50]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.639 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.639,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실2 [vw/50]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6618 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6618,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 5-2 [vw/52]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.8067 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.8067,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실관리사 [vw/62]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+      "roof_edges": 25,
+      "triangles": 196,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.5027 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.5027,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 기숙사B동 [vw/73]": {
+            "verts": 100,
+            "faces": 121,
+            "tris": 196,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6831 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6831,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 4-2 [vw/79]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "roof_edges": 5,
+      "triangles": 36,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.6659 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.6659,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 교양과정동 [vw/95]": {
+            "verts": 20,
+            "faces": 21,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.676 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.676,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 테니스장대기실 [vw/105]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6094 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6094,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 5-3 [vw/110]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.4261 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.4261,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 사과포장개발실 [vw/111]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.8968 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.8968,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 농대사과센터 [vw/113]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 학군단창고 [vw/114]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.586 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -11.586,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 학군단창고 [vw/114]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-0.9804 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.9804,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 취업정보센터 [vw/127]": {
+            "verts": 40,
+            "faces": 46,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.7335 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.7335,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 3-1 [vw/130]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실1 [vw/143]",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.7851 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.7851,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실1 [vw/143]": {
+            "verts": 32,
+            "faces": 36,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "roof_edges": 35,
+      "triangles": 276,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.7673 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.7673,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 기숙사A동 [vw/145]": {
+            "verts": 140,
+            "faces": 171,
+            "tris": 276,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "roof_edges": 19,
+      "triangles": 148,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-2.1121 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -2.1121,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 사범대학 [vw/147]": {
+            "verts": 76,
+            "faces": 91,
+            "tris": 148,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+      "roof_edges": 43,
+      "triangles": 340,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.5779 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.5779,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 기숙사C동 [vw/162]": {
+            "verts": 172,
+            "faces": 211,
+            "tris": 340,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.7278 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.7278,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 3-2 [vw/163]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.1362 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.1362,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 동위원소저장고 [vw/165]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.6915 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.6915,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "v7 | 추가 건물 | 온실 4-3 [vw/166]": {
+            "verts": 16,
+            "faces": 14,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "IT 1호관",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.919 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.919,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT 1호관": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "IT 2호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.2152 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.2152,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT 2호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "IT 3호관",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.7061 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.7061,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT 3호관": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "IT 4호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.9838 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.9838,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT 4호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "IT융복합관 (IT5호관)",
+      "roof_edges": 9,
+      "triangles": 68,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.9492 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.9492,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT융복합관 (IT5호관)": {
+            "verts": 36,
+            "faces": 50,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "IT융합산업빌딩",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.9236 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.9236,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "IT융합산업빌딩": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "PP구조실습실",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.2271 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.2271,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "PP구조실습실": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "간호대학",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.6571 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.6571,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "간호대학": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "경북대 출판부",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.8945 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.8945,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "경북대 출판부": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "경상대학",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-1.1032 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.1032,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "경상대학": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 12호관",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.957 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.957,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 12호관": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 1호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.6712 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.6712,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 1호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 2호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.1823 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.1823,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 2호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 3호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.0598 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.0598,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 3호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 6호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.0767 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.0767,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 6호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 7호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.8458 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.8458,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 7호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 8호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.858 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.858,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 8호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "공대 9호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.8796 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.8796,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대 9호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "공대2A호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-13.489 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -13.489,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "공대2A호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "교수아파트",
+      "roof_edges": 12,
+      "triangles": 92,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.7703 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.7703,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "교수아파트": {
+            "verts": 48,
+            "faces": 68,
+            "tris": 92,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "교육대학원",
+      "roof_edges": 17,
+      "triangles": 132,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.0298 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.0298,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "교육대학원": {
+            "verts": 68,
+            "faces": 98,
+            "tris": 132,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "국민체육센터",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.8684 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.8684,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "국민체육센터": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "글로벌플라자",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.0857 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.0857,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "글로벌플라자": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "금란정",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-0.7702 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.7702,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "금란정": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "농대 3호관",
+      "roof_edges": 5,
+      "triangles": 36,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.1383 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.1383,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "농대 3호관": {
+            "verts": 20,
+            "faces": 26,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "농대1호관",
+      "roof_edges": 14,
+      "triangles": 108,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.5835 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.5835,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "농대1호관": {
+            "verts": 56,
+            "faces": 80,
+            "tris": 108,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "농대2호관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.6735 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.6735,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "농대2호관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "농업생명과학관",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.4874 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.4874,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "농업생명과학관": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "누리관",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.6074 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.6074,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "누리관": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "누리관.001",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.8663 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.8663,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "누리관.001": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "대강당",
+      "roof_edges": 13,
+      "triangles": 100,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.8995 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.8995,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "대강당": {
+            "verts": 52,
+            "faces": 74,
+            "tris": 100,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "대학원동",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.0586 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.0586,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "대학원동": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "동물사육장",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.1625 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -11.1625,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "동물사육장": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "면학관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.0771 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.0771,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "면학관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "문예관",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.7822 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.7822,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "문예관": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "미래창직관",
+      "roof_edges": 13,
+      "triangles": 100,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.1818 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.1818,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "미래창직관": {
+            "verts": 52,
+            "faces": 74,
+            "tris": 100,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "박물관",
+      "roof_edges": 17,
+      "triangles": 132,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.7799 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.7799,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "박물관": {
+            "verts": 68,
+            "faces": 98,
+            "tris": 132,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "반도체융합연구동",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.8172 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.8172,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "반도체융합연구동": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "백호관",
+      "roof_edges": 22,
+      "triangles": 172,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.921 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.921,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "백호관": {
+            "verts": 88,
+            "faces": 128,
+            "tris": 172,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "법과대학",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-1.4626 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.4626,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "법과대학": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "법학전문대학원",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4038 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4038,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "법학전문대학원": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "보람관",
+      "roof_edges": 16,
+      "triangles": 124,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.6633 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.6633,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "보람관": {
+            "verts": 64,
+            "faces": 92,
+            "tris": 124,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "복지관",
+      "roof_edges": 12,
+      "triangles": 92,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.3979 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.3979,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "복지관": {
+            "verts": 48,
+            "faces": 68,
+            "tris": 92,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "복현회관",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.234 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.234,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "복현회관": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "본관",
+      "roof_edges": 17,
+      "triangles": 132,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.3787 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.3787,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "본관": {
+            "verts": 68,
+            "faces": 98,
+            "tris": 132,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "봉사관",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.9721 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.9721,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "봉사관": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "사과센터",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.4018 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.4018,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "사과센터": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "사회과학대학",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-0.5435 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.5435,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "사회과학대학": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "생물학관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.3853 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.3853,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "생물학관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "생활과학대학",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-2.296 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -2.296,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "생활과학대학": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "수의과대학",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.7841 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.7841,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "수의과대학": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "수의과대학부속병원",
+      "roof_edges": 21,
+      "triangles": 164,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.428 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.428,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "수의과대학부속병원": {
+            "verts": 84,
+            "faces": 122,
+            "tris": 164,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "약학대학",
+      "roof_edges": 9,
+      "triangles": 68,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.9474 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.9474,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "약학대학": {
+            "verts": 36,
+            "faces": 50,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "어린이집",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-6.076 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -6.076,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "어린이집": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "어학교육원",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.959 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.959,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "어학교육원": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "연구실 안전관리센터",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.0185 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -9.0185,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "연구실 안전관리센터": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "영선관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.0516 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.0516,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "영선관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "예술대학",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.3845 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.3845,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "예술대학": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "우당교육관",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.0825 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.0825,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "우당교육관": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "융합교육정보관",
+      "roof_edges": 7,
+      "triangles": 52,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-2.197 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -2.197,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "융합교육정보관": {
+            "verts": 28,
+            "faces": 38,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "인문대학",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-2.1093 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -2.1093,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "인문대학": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "인문한국진흥관",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.024 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -3.024,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "인문한국진흥관": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "자연과학대학",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.3046 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -9.3046,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "자연과학대학": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "정보센터",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.9745 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.9745,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "정보센터": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "정보화본부",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.3876 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.3876,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "정보화본부": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "제1과학관",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.5902 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.5902,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제1과학관": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "제1체육관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.5578 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.5578,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제1체육관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "제2과학관",
+      "roof_edges": 12,
+      "triangles": 92,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-10.1634 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -10.1634,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제2과학관": {
+            "verts": 48,
+            "faces": 68,
+            "tris": 92,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "제2체육관",
+      "roof_edges": 13,
+      "triangles": 100,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.7139 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -11.7139,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제2체육관": {
+            "verts": 52,
+            "faces": 74,
+            "tris": 100,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "제3합동강의동",
+      "roof_edges": 12,
+      "triangles": 92,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.864 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.864,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제3합동강의동": {
+            "verts": 48,
+            "faces": 68,
+            "tris": 92,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "제4합동강의동",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-1.5522 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.5522,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "제4합동강의동": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "조소동",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.0449 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.0449,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "조소동": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "중앙도서관",
+      "roof_edges": 7,
+      "triangles": 52,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-2.6182 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -2.6182,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "중앙도서관": {
+            "verts": 28,
+            "faces": 38,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "진리관",
+      "roof_edges": 10,
+      "triangles": 76,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-5.3575 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -5.3575,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "진리관": {
+            "verts": 40,
+            "faces": 56,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "창업보육센터",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.0364 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.0364,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "창업보육센터": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "첨성관",
+      "roof_edges": 18,
+      "triangles": 140,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.1723 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -9.1723,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "첨성관": {
+            "verts": 72,
+            "faces": 104,
+            "tris": 140,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "청룡관 (Cheonglyong-Gwan)",
+      "roof_edges": 9,
+      "triangles": 68,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.8772 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.8772,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "청룡관 (Cheonglyong-Gwan)": {
+            "verts": 36,
+            "faces": 50,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "테크노빌딩",
+      "roof_edges": 11,
+      "triangles": 84,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.4727 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -9.4727,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "테크노빌딩": {
+            "verts": 44,
+            "faces": 62,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "평생교육원",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.8724 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -8.8724,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "평생교육원": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "학군단",
+      "roof_edges": 9,
+      "triangles": 68,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-14.2528 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -14.2528,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "학군단": {
+            "verts": 36,
+            "faces": 50,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "한국기초과학지원연구원",
+      "roof_edges": 14,
+      "triangles": 108,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.2415 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -11.2415,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "한국기초과학지원연구원": {
+            "verts": 56,
+            "faces": 80,
+            "tris": 108,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "향토관",
+      "roof_edges": 15,
+      "triangles": 116,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.6493 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.6493,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "향토관": {
+            "verts": 60,
+            "faces": 86,
+            "tris": 116,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "화목관",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.302 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.302,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "화목관": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "화학관",
+      "roof_edges": 13,
+      "triangles": 100,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-7.9342 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -7.9342,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "화학관": {
+            "verts": 52,
+            "faces": 74,
+            "tris": 100,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-1.1085 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.1085,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.001",
+      "roof_edges": 8,
+      "triangles": 60,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.0923 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.0923,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.001": {
+            "verts": 32,
+            "faces": 44,
+            "tris": 60,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.002",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.8197 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.8197,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.002": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.003",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.4639 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.4639,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.003": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.004",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-15.2162 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -15.2162,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.004": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.005",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.6603 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.6603,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.005": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.006",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.7378 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -11.7378,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.006": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.007",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-0.163 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.163,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.007": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.008",
+      "roof_edges": 4,
+      "triangles": 28,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-0.1435 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.1435,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.008": {
+            "verts": 16,
+            "faces": 20,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "이름 미등록 건물.009",
+      "roof_edges": 6,
+      "triangles": 44,
+      "bounds_max_change_m": 0.0,
+      "qa": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-12.0392 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -12.0392,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "이름 미등록 건물.009": {
+            "verts": 24,
+            "faces": 32,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 2
+          }
+        }
+      }
+    }
+  ],
+  "accuracy": "Roof-edge game-art finish and PBR only; footprint, height and terrain not remeasured."
+}

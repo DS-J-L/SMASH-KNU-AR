@@ -1,0 +1,140 @@
+{
+  "completed_at_kst": "2026-11-02 18:20 KST",
+  "input": "synthetic/keyboard_demo",
+  "common_phase": "P0-P6 unverified",
+  "browser": {
+    "startTime": "2026-11-02T09:14:38.781Z",
+    "duration": 103658.497,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "final_model_recheck": {
+    "startTime": "2026-11-02T09:17:13.905Z",
+    "duration": 65464.419,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "server_pytest": {
+    "passed": 4,
+    "failed": 0
+  },
+  "gltf": [
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/intact.glb",
+      "bytes": 836016,
+      "triangles": 666,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+      "bytes": 1605784,
+      "triangles": 4914,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/intact.glb",
+      "bytes": 916028,
+      "triangles": 1612,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/fragments.glb",
+      "bytes": 1707376,
+      "triangles": 6340,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/intact.glb",
+      "bytes": 4580,
+      "triangles": 28,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/fragments.glb",
+      "bytes": 100360,
+      "triangles": 636,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/campus/knu-campus-v12.glb",
+      "bytes": 25219388,
+      "triangles": 422035,
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "source_sha256": {
+    "assets/source/knu-campus-v12.blend": "05759646c5a60580ca1afdfc504b648d6fd391e8720bcddb19708f0cb6255e01",
+    "assets/source/knu-it1-fracture-v2.blend": "c033705feb57484656146b7c0e37f9bb2131c30d263605b273f9a05fdd6a4459",
+    "assets/source/knu-main-fracture-v1.blend": "a8d1ca8a488dc16f8950f5eddddcbffc7a0117cda07bad50563c9facc75271b4",
+    "web/public/assets/buildings/knu-it1-v2/fragments.glb": "dcbb433b6fdc4c74a0b2f7c2f61b6582efdc6125414575bc78b60d8a691aca81",
+    "web/public/assets/buildings/knu-it1-v2/intact.glb": "6f65524e8e5fc20c4e565a429e376590e3be499ba887d39f5adcaff810e66a36",
+    "web/public/assets/buildings/knu-it1-v2/colliders.json": "f209e069abc12200becf3ff31f2f11fa3780fa72a7b98f34bcc9c8045992f053",
+    "web/public/assets/buildings/knu-it1-v2/manifest.json": "ada09e05bf17850eaa145bb3653052b71121e0fe6c55fb1c77a04796a34a7c29",
+    "web/public/assets/buildings/knu-main-v1/fragments.glb": "0a5d36fcd3aa6ba0a05c1a71989a7467646a4ec9287890df49eb2c578e96eb14",
+    "web/public/assets/buildings/knu-main-v1/intact.glb": "0dd9e411b82ed62fdf1411cf183f37ac5a02ac9852d13236cd36e42e7b810fad",
+    "web/public/assets/buildings/knu-main-v1/colliders.json": "6d7c673815b8eb08c636f1a86e3505258568a704eed6ec33d84bf4f6d18d70ea",
+    "web/public/assets/buildings/knu-main-v1/manifest.json": "f86b72de1d5f7805b17ed86c7d2b68868888c71caf51b2780f50cf5666c4f2b7",
+    "web/public/assets/campus/knu-campus-v12.glb": "f17c0c94052b0e7d42ae2a6d5dc488b0c61640cb033a3bf93868b49349eed9ba",
+    "web/public/assets/buildings/catalog.json": "b9623e9c5ab881342dead576449e147b3beeba5741cf3d382c496be6a60055d5"
+  },
+  "buildings": [
+    {
+      "building_id": "knu-it1-v2",
+      "fragment_count": 64,
+      "volume_relative_error": 3.818590688350051e-08,
+      "errors": []
+    },
+    {
+      "building_id": "knu-main-v1",
+      "fragment_count": 52,
+      "volume_relative_error": 1.73396768494196e-08,
+      "errors": []
+    }
+  ],
+  "campus": {
+    "building_cores": 123,
+    "checked_meshes": 2123,
+    "checked_triangles": 144847,
+    "errors": 0,
+    "tree_contacts": 170
+  },
+  "accepted_warnings": [
+    "intentional tiling UV overlap/out of range",
+    "relative ground for assembled fragments/campus",
+    "static terrain n-gons and existing green.036 near vertex pair",
+    "Vite 5MB bundle chunk"
+  ],
+  "tangent_fallback": {
+    "knu-it1-v2 fragments": 1,
+    "all_other_new_primitives": 0,
+    "method": "orthogonal axis to normal where accumulated UV tangent cancels"
+  },
+  "unverified": [
+    "83 unresolved heights",
+    "main footprint mismatch",
+    "precise DEM",
+    "live cameras/C0/wrist/AR",
+    "audio",
+    "hardware FPS",
+    "20-minute run"
+  ],
+  "commands": [
+    "npm run validate:enhancements",
+    "npm run validate:assets",
+    "npm run build:demo",
+    "npx playwright test --reporter=json",
+    "python -m pytest -q",
+    "python tools/check_scaffold.py"
+  ]
+}

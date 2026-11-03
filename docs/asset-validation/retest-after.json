@@ -1,0 +1,115 @@
+{
+  "checked_at_kst": "2026-11-02 17:27 KST",
+  "input_mode": "keyboard_demo",
+  "source": "synthetic",
+  "browser": "Playwright Chromium 156 / software WebGL",
+  "stats": {
+    "startTime": "2026-11-02T08:24:06.431Z",
+    "duration": 35296.716,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "test": "Space activates the focused start button without destroying the building",
+      "status": "passed",
+      "duration_ms": 2937
+    },
+    {
+      "test": "Space on a focused view button opens the view without a hit",
+      "status": "passed",
+      "duration_ms": 2682
+    },
+    {
+      "test": "timer and end controls update on sparse frames away from a 200 ms boundary",
+      "status": "passed",
+      "duration_ms": 2636
+    },
+    {
+      "test": "a late hit updates expiry even while animation frames are suspended",
+      "status": "passed",
+      "duration_ms": 936
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: fragment-count",
+      "status": "passed",
+      "duration_ms": 427
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: units",
+      "status": "passed",
+      "duration_ms": 418
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+      "status": "passed",
+      "duration_ms": 452
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: dimensions",
+      "status": "passed",
+      "duration_ms": 437
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: hull-bounds",
+      "status": "passed",
+      "duration_ms": 417
+    },
+    {
+      "test": "failed campus load can be retried and clears the error",
+      "status": "passed",
+      "duration_ms": 2320
+    },
+    {
+      "test": "real package: keyboard fracture, single score, floor contacts and repeated clean restoration",
+      "status": "passed",
+      "duration_ms": 7889
+    },
+    {
+      "test": "60-second end blocks hits, and reset restores a new ready session",
+      "status": "passed",
+      "duration_ms": 1818
+    },
+    {
+      "test": "campus terrain inspection returns to intact prop without extra bodies",
+      "status": "passed",
+      "duration_ms": 6755
+    },
+    {
+      "test": "missing package remains disabled and explains recovery",
+      "status": "passed",
+      "duration_ms": 1103
+    },
+    {
+      "test": "small viewport has usable controls and no horizontal overflow",
+      "status": "passed",
+      "duration_ms": 798
+    }
+  ],
+  "server_tests_passed": 4,
+  "campus_qa": {
+    "meshes": 2123,
+    "triangles": 140799,
+    "buildings": 123,
+    "trees": 170,
+    "errors": 0
+  },
+  "source_sha256": {
+    "assets/source/knu-campus-v11.blend": "e008a3e552421e327427872e5d22ca16f2556798d790edc6b0de0029c1ca3e3b",
+    "assets/source/knu-it1-fracture-v1.blend": "eb601af5f4592b758bfbf97cf5f818e00d4a7ca95b3c62c5b8d748c199ba746b",
+    "web/public/assets/campus/knu-campus-v11.glb": "55a28c9f8f3d2898ad49049f1c0e807566ce79ae28082cadd2e3c9dd0484d281",
+    "web/public/assets/buildings/knu-it1-v1/colliders.json": "af7a80795ad55fc6e30346b56588036e77efb9840b8ed457f4060b269aec1006",
+    "web/public/assets/buildings/knu-it1-v1/fragments.glb": "ec5a4ea12564108d9337aa1f91010f617617b5afff9f298735a6e307933a12c0",
+    "web/public/assets/buildings/knu-it1-v1/intact.glb": "4b1b9a97e303886d0104b7349dca0bbb6bb7fe8dc976669d49e4bc8b2b2a0e19",
+    "web/public/assets/buildings/knu-it1-v1/manifest.json": "5657a00b986140cb83efe1709872936f00f8e35e78053bdb8404f768633f62f1"
+  },
+  "not_measured": [
+    "live phones and C0",
+    "AR alignment",
+    "audio",
+    "hardware FPS",
+    "20-minute run"
+  ]
+}

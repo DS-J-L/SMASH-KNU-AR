@@ -1,0 +1,176 @@
+{
+  "completed_at_kst": "2026-11-02 21:04 KST",
+  "owner_scope": "user takes Lee Dong-su responsibilities only, explicitly confirmed",
+  "role_map": {
+    "Lee Dong-su": "models/fragments/colliders/render/game integration",
+    "Kim Tae-i": "wrist trajectory collision and fragment physics/audio",
+    "Jeong Gyeong-ho": "3D reconstruction and calibration"
+  },
+  "input": "synthetic/keyboard_demo",
+  "models": [
+    {
+      "building_id": "knu-it1-v3",
+      "fragment_count": 96,
+      "seed_count": 96,
+      "volume_relative_error": 1.6834999969158367e-08,
+      "max_hull_points": 29,
+      "roundtrip_bound_error_m": 0.0,
+      "errors": 0
+    },
+    {
+      "building_id": "knu-main-v2",
+      "fragment_count": 85,
+      "seed_count": 80,
+      "volume_relative_error": 3.238154775125253e-08,
+      "max_hull_points": 31,
+      "roundtrip_bound_error_m": 0.0,
+      "errors": 0
+    }
+  ],
+  "gltf": [
+    {
+      "file": "web/public/assets/buildings/knu-it1-v3/intact.glb",
+      "bytes": 836016,
+      "triangles": 666,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v3/fragments.glb",
+      "bytes": 1799952,
+      "triangles": 6442,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v2/intact.glb",
+      "bytes": 916028,
+      "triangles": 1612,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v2/fragments.glb",
+      "bytes": 1915956,
+      "triangles": 7982,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/intact.glb",
+      "bytes": 836016,
+      "triangles": 666,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+      "bytes": 1605784,
+      "triangles": 4914,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/intact.glb",
+      "bytes": 916028,
+      "triangles": 1612,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/fragments.glb",
+      "bytes": 1707376,
+      "triangles": 6340,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/intact.glb",
+      "bytes": 4580,
+      "triangles": 28,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/fragments.glb",
+      "bytes": 100360,
+      "triangles": 636,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/campus/knu-campus-v13.glb",
+      "bytes": 24049444,
+      "triangles": 396917,
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "browser_hardware": {
+    "renderer": "ANGLE Intel UHD Graphics / Direct3D11 (WebGL2 probe confirmed)",
+    "stats": {
+      "startTime": "2026-11-02T11:59:00.316Z",
+      "duration": 78032.984,
+      "expected": 22,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "browser_software": {
+    "renderer": "SwiftShader",
+    "stats": {
+      "startTime": "2026-11-02T11:45:33.477Z",
+      "duration": 674356.7549999999,
+      "expected": 19,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "limitation": "19 passed; 3 capture/campus-loading timeouts. Failures preserved."
+  },
+  "server_pytest": {
+    "passed": 4,
+    "failed": 0
+  },
+  "preserved_previous_asset_files": [
+    "assets/source/knu-it1-fracture-v2.blend",
+    "assets/source/knu-main-fracture-v1.blend",
+    "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+    "web/public/assets/buildings/knu-it1-v2/intact.glb",
+    "web/public/assets/buildings/knu-it1-v2/colliders.json",
+    "web/public/assets/buildings/knu-it1-v2/manifest.json",
+    "web/public/assets/buildings/knu-main-v1/fragments.glb",
+    "web/public/assets/buildings/knu-main-v1/intact.glb",
+    "web/public/assets/buildings/knu-main-v1/colliders.json",
+    "web/public/assets/buildings/knu-main-v1/manifest.json"
+  ],
+  "source_sha256": {
+    "web/public/assets/buildings/knu-it1-v3/fragments.glb": "a1f0d3348fe19e83701b2fbbc7b20c52e61047be98e76d12c4e48708cd1b9642",
+    "web/public/assets/buildings/knu-it1-v3/intact.glb": "f911d922e79de48e1ed83fdc0e9940ead9b60f831205329dc0803ddc879beb84",
+    "web/public/assets/buildings/knu-it1-v3/colliders.json": "f4d983fb443c88a11c21ea232a7c33ead9dcdfa4a198ef56505ddca0e0a81753",
+    "web/public/assets/buildings/knu-it1-v3/manifest.json": "04257560bbc3b6a6dc6b26674c69e11855460d385c4cbbc7c834734c676221ae",
+    "assets/source/knu-it1-fracture-v3.blend": "e1a27bf7cd484bbf5b4986626f68a902362602da3a1ab904926669bdcba29c59",
+    "web/public/assets/buildings/knu-main-v2/fragments.glb": "fa96eea7348ab418b2e6b829e0cd3958539cb77c4b60fdfe3d25eaa3b77c948f",
+    "web/public/assets/buildings/knu-main-v2/intact.glb": "e54ab38b33c9e116609bbc5d678350c1193eb481ff7e6448449309b571937fa2",
+    "web/public/assets/buildings/knu-main-v2/colliders.json": "1a6c5f66275efdcb8cf1fb64db87724deacc56e1f4b265a1cc0cce6457c5dce2",
+    "web/public/assets/buildings/knu-main-v2/manifest.json": "b7947039d430346bde176fa9d8536df57122a8c9dbd5373788116d6fe2dc6ee0",
+    "assets/source/knu-main-fracture-v2.blend": "b2e0cc0a05b639cfccbfb06638e74905b9cac65a709a239931c6351a78d476c0",
+    "web/public/assets/buildings/catalog.json": "373bb9a131c8af71d37181fe32eb61eb45ce774699dbb5031751c85fc42bdb79",
+    "tools/enhance_buildings.py": "28accf43d569261e056ed8f8711e365417d06fbc70da0d1db3cc064ae881e0a7"
+  },
+  "unverified": [
+    "live wrist/body input",
+    "whole-body continuous debris interaction scope",
+    "audio",
+    "AR/C0/tracking integration",
+    "20-minute run",
+    "FPS measurement"
+  ],
+  "accepted_warnings": [
+    "intentional tiled UV overlap",
+    "assembled-fragment relative ground",
+    "two Main tangent fallback vertices",
+    "approximately 5MB Vite bundle"
+  ]
+}

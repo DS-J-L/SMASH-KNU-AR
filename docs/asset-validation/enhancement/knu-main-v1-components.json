@@ -1,0 +1,290 @@
+[
+  {
+    "source": "본관",
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "ground_z": 0.0,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_0": {
+          "verts": 254,
+          "faces": 504,
+          "tris": 504,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  },
+  {
+    "source": "Detail | 본관 | dome approximate",
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=0.5704 (not resting on ground plane z=0)"
+      ],
+      "ground_z": 0.5704,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_1": {
+          "verts": 257,
+          "faces": 510,
+          "tris": 510,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  },
+  {
+    "source": "v5 | 본관 | 앞으로 돌출된 기둥",
+    "qa": {
+      "ok": true,
+      "pass": false,
+      "errors": [
+        "floating/detached part in Construction_2 (8 verts at [0.595, -0.809, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.697, -0.656, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.747, -0.58, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.798, -0.504, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.849, -0.428, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.461, -0.739, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.521, -0.779, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.733, -0.331, 0.28])",
+        "floating/detached part in Construction_2 (8 verts at [0.794, -0.371, 0.28])"
+      ],
+      "warnings": [
+        "asset lowest point z=0.0619 (not resting on ground plane z=0)"
+      ],
+      "ground_z": 0.0619,
+      "zfighting": [],
+      "floating": [
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.595,
+            -0.809,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.697,
+            -0.656,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.747,
+            -0.58,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.798,
+            -0.504,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.849,
+            -0.428,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.461,
+            -0.739,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.521,
+            -0.779,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.733,
+            -0.331,
+            0.28
+          ]
+        },
+        {
+          "object": "Construction_2",
+          "island_verts": 8,
+          "center": [
+            0.794,
+            -0.371,
+            0.28
+          ]
+        }
+      ],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_2": {
+          "verts": 80,
+          "faces": 120,
+          "tris": 120,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 10,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  },
+  {
+    "source": "v5 | 본관 | 돌출 현관 박공지붕",
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=0.4938 (not resting on ground plane z=0)"
+      ],
+      "ground_z": 0.4938,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_3": {
+          "verts": 6,
+          "faces": 8,
+          "tris": 8,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  },
+  {
+    "source": "v5 | 본관 | 돌출 현관 바닥",
+    "qa": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "ground_z": 0.0,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "Construction_4": {
+          "verts": 8,
+          "faces": 12,
+          "tris": 12,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4
+        }
+      }
+    }
+  }
+]

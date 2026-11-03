@@ -1,0 +1,5217 @@
+{
+  "building_id": "knu-it1-v2",
+  "seed_count": 64,
+  "fragment_count": 64,
+  "intact_volume_m3": 1.5551479526538539,
+  "volume_relative_error": 2.636544190423341e-08,
+  "discarded_volume_m3": 0,
+  "errors": [
+    {
+      "object": "SM_IT1V2_Fragment_005",
+      "check": "closed",
+      "error": "SM_IT1V2_Fragment_005: degenerate faces=1 zero-len edges=0"
+    },
+    {
+      "object": "SM_IT1V2_Fragment_005",
+      "check": "visual",
+      "error": "SM_IT1V2_Fragment_005: degenerate faces=1 zero-len edges=0"
+    },
+    {
+      "object": "SM_IT1V2_Fragment_027",
+      "check": "closed",
+      "error": "SM_IT1V2_Fragment_027: degenerate faces=1 zero-len edges=0"
+    },
+    {
+      "object": "SM_IT1V2_Fragment_027",
+      "check": "visual",
+      "error": "SM_IT1V2_Fragment_027: degenerate faces=1 zero-len edges=0"
+    }
+  ],
+  "objects": {
+    "SM_IT1V2_Intact": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "SM_IT1V2_Intact: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+      ],
+      "ground_z": 0.0,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "SM_IT1V2_Intact": {
+          "verts": 252,
+          "faces": 500,
+          "tris": 500,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 4,
+          "uv_maps": 1,
+          "uv_oob_pct": 99.6,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 100.0,
+          "uv_coverage_pct": 100.0
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_000": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_000": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_000: ~20.21% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_000": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 96.88,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 20.21,
+            "uv_coverage_pct": 92.9
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_001": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.628 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.628,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_001": {
+            "verts": 63,
+            "faces": 122,
+            "tris": 122,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.628 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.628,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_001": {
+            "verts": 63,
+            "faces": 122,
+            "tris": 122,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_002": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7095 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7095,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_002": {
+            "verts": 165,
+            "faces": 326,
+            "tris": 326,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7095 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7095,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_002": {
+            "verts": 165,
+            "faces": 326,
+            "tris": 326,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_003": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_003": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_003: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_003": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 100.0,
+            "uv_coverage_pct": 0.1
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_004": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8173 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8173,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_004": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8173 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8173,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_004": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 95.31,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 30.8
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_005": {
+      "closed": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_IT1V2_Fragment_005: degenerate faces=1 zero-len edges=0"
+        ],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_005": {
+            "verts": 33,
+            "faces": 62,
+            "tris": 62,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 1,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_IT1V2_Fragment_005: degenerate faces=1 zero-len edges=0"
+        ],
+        "warnings": [
+          "SM_IT1V2_Fragment_005: ~60.39% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_005": {
+            "verts": 33,
+            "faces": 62,
+            "tris": 62,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 1,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 81.18,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 60.39,
+            "uv_coverage_pct": 93.2
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_006": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_006": {
+            "verts": 23,
+            "faces": 42,
+            "tris": 42,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_006": {
+            "verts": 23,
+            "faces": 42,
+            "tris": 42,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 97.62,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 8.9
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_007": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6085 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6085,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_007": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6085 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6085,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_007": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_008": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3467 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3467,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_008": {
+            "verts": 28,
+            "faces": 52,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3467 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3467,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_008": {
+            "verts": 28,
+            "faces": 52,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 81.8
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_009": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_009": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_009": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_010": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5884 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5884,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_010": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5884 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5884,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_010": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_011": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_011": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_011: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_011": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 93.52,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 100.0,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_012": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7401 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7401,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_012": {
+            "verts": 36,
+            "faces": 68,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7401 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7401,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_012": {
+            "verts": 36,
+            "faces": 68,
+            "tris": 68,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_013": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1988 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1988,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_013": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1988 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1988,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_013": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_014": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_014": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_014": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_015": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1639 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1639,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_015": {
+            "verts": 30,
+            "faces": 56,
+            "tris": 56,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1639 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1639,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_015": {
+            "verts": 30,
+            "faces": 56,
+            "tris": 56,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_016": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_016": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_016: ~79.23% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_016": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 90.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 79.23,
+            "uv_coverage_pct": 88.6
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_017": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.216 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.216,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_017": {
+            "verts": 14,
+            "faces": 24,
+            "tris": 24,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.216 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.216,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_017": {
+            "verts": 14,
+            "faces": 24,
+            "tris": 24,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_018": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2083 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2083,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_018": {
+            "verts": 26,
+            "faces": 48,
+            "tris": 48,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2083 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2083,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_018": {
+            "verts": 26,
+            "faces": 48,
+            "tris": 48,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_019": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6847 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6847,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_019": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6847 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6847,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_019": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 96.59,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 69.2
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_020": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3376 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3376,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_020": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3376 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3376,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_020": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_021": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2373 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2373,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_021": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2373 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2373,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_021": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_022": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1543 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1543,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_022": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1543 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1543,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_022": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_023": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7706 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7706,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_023": {
+            "verts": 72,
+            "faces": 140,
+            "tris": 140,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7706 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7706,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_023": {
+            "verts": 72,
+            "faces": 140,
+            "tris": 140,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_024": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4062 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4062,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_024": {
+            "verts": 38,
+            "faces": 72,
+            "tris": 72,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4062 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4062,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_024": {
+            "verts": 38,
+            "faces": 72,
+            "tris": 72,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_025": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6655 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6655,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_025": {
+            "verts": 40,
+            "faces": 76,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6655 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6655,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_025": {
+            "verts": 40,
+            "faces": 76,
+            "tris": 76,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_026": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6906 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6906,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_026": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6906 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6906,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_026": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_027": {
+      "closed": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_IT1V2_Fragment_027: degenerate faces=1 zero-len edges=0"
+        ],
+        "warnings": [
+          "asset lowest point z=0.3109 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3109,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_027": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 1,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_IT1V2_Fragment_027: degenerate faces=1 zero-len edges=0"
+        ],
+        "warnings": [
+          "asset lowest point z=0.3109 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3109,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_027": {
+            "verts": 34,
+            "faces": 64,
+            "tris": 64,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 1,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_028": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_028": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_028": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_029": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_029": {
+            "verts": 30,
+            "faces": 56,
+            "tris": 56,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_029: ~6.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_029": {
+            "verts": 30,
+            "faces": 56,
+            "tris": 56,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 97.02,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 6.0,
+            "uv_coverage_pct": 27.1
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_030": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7143 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7143,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_030": {
+            "verts": 60,
+            "faces": 116,
+            "tris": 116,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7143 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7143,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_030": {
+            "verts": 60,
+            "faces": 116,
+            "tris": 116,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_031": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6655 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6655,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_031": {
+            "verts": 37,
+            "faces": 70,
+            "tris": 70,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6655 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6655,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_031": {
+            "verts": 37,
+            "faces": 70,
+            "tris": 70,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_032": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2808 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2808,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_032": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2808 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2808,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_032": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_033": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.0058 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.0058,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_033": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_033: ~70.7% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+          "asset lowest point z=0.0058 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.0058,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_033": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 94.05,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 70.7,
+            "uv_coverage_pct": 80.3
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_034": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3346 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3346,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_034": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3346 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3346,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_034": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_035": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_035": {
+            "verts": 12,
+            "faces": 20,
+            "tris": 20,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_035": {
+            "verts": 12,
+            "faces": 20,
+            "tris": 20,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 98.33,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 29.1
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_036": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5905 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5905,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_036": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5905 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5905,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_036": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_037": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_037": {
+            "verts": 26,
+            "faces": 48,
+            "tris": 48,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_037: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_037": {
+            "verts": 26,
+            "faces": 48,
+            "tris": 48,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 98.61,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 100.0,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_038": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8124 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8124,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_038": {
+            "verts": 53,
+            "faces": 102,
+            "tris": 102,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8124 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8124,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_038": {
+            "verts": 53,
+            "faces": 102,
+            "tris": 102,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_039": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_039": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_039: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_039": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 92.5,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 100.0,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_040": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6146 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6146,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_040": {
+            "verts": 75,
+            "faces": 146,
+            "tris": 146,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6146 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6146,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_040": {
+            "verts": 75,
+            "faces": 146,
+            "tris": 146,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_041": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6177 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6177,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_041": {
+            "verts": 119,
+            "faces": 234,
+            "tris": 234,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6177 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6177,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_041": {
+            "verts": 119,
+            "faces": 234,
+            "tris": 234,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_042": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2582 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2582,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_042": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2582 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2582,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_042": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_043": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2549 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2549,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_043": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2549 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2549,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_043": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_044": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5091 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5091,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_044": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5091 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5091,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_044": {
+            "verts": 46,
+            "faces": 88,
+            "tris": 88,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_045": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_045": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_045: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_045": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 95.24,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 100.0,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_046": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_046": {
+            "verts": 15,
+            "faces": 26,
+            "tris": 26,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_046: ~67.54% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_046": {
+            "verts": 15,
+            "faces": 26,
+            "tris": 26,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 93.59,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 67.54,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_047": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_047": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_047": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_048": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_048": {
+            "verts": 10,
+            "faces": 16,
+            "tris": 16,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_048": {
+            "verts": 10,
+            "faces": 16,
+            "tris": 16,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_049": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.288 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.288,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_049": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.288 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.288,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_049": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_050": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6061 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6061,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_050": {
+            "verts": 42,
+            "faces": 80,
+            "tris": 80,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.6061 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.6061,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_050": {
+            "verts": 42,
+            "faces": 80,
+            "tris": 80,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_051": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4377 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4377,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_051": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4377 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4377,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_051": {
+            "verts": 16,
+            "faces": 28,
+            "tris": 28,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_052": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_052": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_052: ~11.24% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_052": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 97.22,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 11.24,
+            "uv_coverage_pct": 63.1
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_053": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3067 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3067,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_053": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3067 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3067,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_053": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_054": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2768 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2768,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_054": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.2768 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.2768,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_054": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_055": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4321 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4321,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_055": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4321 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4321,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_055": {
+            "verts": 20,
+            "faces": 36,
+            "tris": 36,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_056": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.03 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.03,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_056": {
+            "verts": 50,
+            "faces": 96,
+            "tris": 96,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_056: ~15.26% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+          "asset lowest point z=0.03 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.03,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_056": {
+            "verts": 50,
+            "faces": 96,
+            "tris": 96,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 94.1,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 15.26,
+            "uv_coverage_pct": 15.4
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_057": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.1937 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1937,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_057": {
+            "verts": 28,
+            "faces": 52,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_057: ~18.17% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+          "asset lowest point z=0.1937 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.1937,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_057": {
+            "verts": 28,
+            "faces": 52,
+            "tris": 52,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 18.17,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_058": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5716 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5716,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_058": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.5716 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.5716,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_058": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_059": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8194 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8194,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_059": {
+            "verts": 61,
+            "faces": 118,
+            "tris": 118,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.8194 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.8194,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_059": {
+            "verts": 61,
+            "faces": 118,
+            "tris": 118,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_060": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4484 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4484,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_060": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.4484 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.4484,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_060": {
+            "verts": 18,
+            "faces": 32,
+            "tris": 32,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_061": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_061": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "SM_IT1V2_Fragment_061: ~70.94% UV overlap (ok only if mirrored/stacked on purpose; bakes break)"
+        ],
+        "ground_z": 0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_061": {
+            "verts": 24,
+            "faces": 44,
+            "tris": 44,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 96.97,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 70.94,
+            "uv_coverage_pct": 100.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_062": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3809 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3809,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_062": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.3809 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.3809,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_062": {
+            "verts": 22,
+            "faces": 40,
+            "tris": 40,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    },
+    "SM_IT1V2_Fragment_063": {
+      "closed": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7932 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7932,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_063": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4
+          }
+        }
+      },
+      "visual": {
+        "ok": true,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=0.7932 (not resting on ground plane z=0)"
+        ],
+        "ground_z": 0.7932,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_IT1V2_Fragment_063": {
+            "verts": 44,
+            "faces": 84,
+            "tris": 84,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 4,
+            "uv_maps": 1,
+            "uv_oob_pct": 100.0,
+            "uv_zero_area_faces": 0,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      }
+    }
+  }
+}

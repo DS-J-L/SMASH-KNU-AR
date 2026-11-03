@@ -1,0 +1,677 @@
+[
+  {
+    "key": "global",
+    "osm_id": "468931850",
+    "name": "글로벌플라자",
+    "features": [
+      "twin glass volumes and full-height dark central recess",
+      "transverse crown and recessed podium portal"
+    ],
+    "before_group_bounds": [
+      [
+        58.84000015258789,
+        130.1315155029297,
+        -4.08566427230835
+      ],
+      [
+        119.19000244140625,
+        221.36000061035156,
+        77.9892349243164
+      ]
+    ],
+    "after_bounds": [
+      [
+        58.84000015258789,
+        131.9600067138672,
+        -4.08566427230835
+      ],
+      [
+        119.19000244140625,
+        221.36000061035156,
+        77.9892349243164
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.0857 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -4.0857,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "글로벌플라자": {
+          "verts": 83,
+          "faces": 162,
+          "tris": 162,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.0857 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -4.0857,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "글로벌플라자": {
+          "verts": 83,
+          "faces": 162,
+          "tris": 162,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7,
+          "uv_maps": 1,
+          "uv_oob_pct": 100.0,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 0.0,
+          "uv_coverage_pct": 0.0
+        }
+      }
+    }
+  },
+  {
+    "key": "library",
+    "osm_id": "468931852",
+    "name": "중앙도서관",
+    "features": [
+      "lower east wing instead of a uniform-height block",
+      "raised central roof volume and separated roof solar fields"
+    ],
+    "before_group_bounds": [
+      [
+        125.25504302978516,
+        127.76506805419922,
+        -2.618180513381958
+      ],
+      [
+        225.36492919921875,
+        217.574951171875,
+        24.22210121154785
+      ]
+    ],
+    "after_bounds": [
+      [
+        125.36000061035156,
+        127.87000274658203,
+        -2.618180513381958
+      ],
+      [
+        225.25999450683594,
+        217.47000122070312,
+        24.22210121154785
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-2.6182 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -2.6182,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "중앙도서관": {
+          "verts": 76,
+          "faces": 148,
+          "tris": 148,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-2.6182 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -2.6182,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "중앙도서관": {
+          "verts": 76,
+          "faces": 148,
+          "tris": 148,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7,
+          "uv_maps": 1,
+          "uv_oob_pct": 100.0,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 0.0,
+          "uv_coverage_pct": 0.0
+        }
+      }
+    }
+  },
+  {
+    "key": "auditorium",
+    "osm_id": "468931841",
+    "name": "대강당",
+    "features": [
+      "deep glazed entrance under the projecting upper wall",
+      "narrow upper windows instead of a regular three-storey window grid",
+      "previously referenced rooftop panels/roof forms retained despite uncertain photo dates"
+    ],
+    "before_group_bounds": [
+      [
+        -2.549999952316284,
+        244.21141052246094,
+        -8.899537086486816
+      ],
+      [
+        71.6500015258789,
+        313.5093688964844,
+        7.65553617477417
+      ]
+    ],
+    "after_bounds": [
+      [
+        -2.549999952316284,
+        244.2844696044922,
+        -8.899537086486816
+      ],
+      [
+        71.6500015258789,
+        313.44000244140625,
+        7.65553617477417
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-8.8995 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -8.8995,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "대강당": {
+          "verts": 3434,
+          "faces": 6864,
+          "tris": 6864,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "대강당: ~82.01% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+        "asset lowest point z=-8.8995 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -8.8995,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "대강당": {
+          "verts": 3434,
+          "faces": 6864,
+          "tris": 6864,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7,
+          "uv_maps": 1,
+          "uv_oob_pct": 99.89,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 82.01,
+          "uv_coverage_pct": 99.1
+        }
+      }
+    }
+  },
+  {
+    "key": "museum",
+    "osm_id": "468931898",
+    "name": "박물관",
+    "features": [
+      "broad brick wall fields and light piers/floor edges",
+      "removed unsupported continuous glass-and-white infill strips",
+      "previously referenced rooftop panels/roof forms retained despite uncertain photo dates"
+    ],
+    "before_group_bounds": [
+      [
+        254.77500915527344,
+        -210.73179626464844,
+        -6.7799391746521
+      ],
+      [
+        354.1680908203125,
+        -141.38502502441406,
+        15.043391227722168
+      ]
+    ],
+    "after_bounds": [
+      [
+        254.77908325195312,
+        -210.63999938964844,
+        -6.7799391746521
+      ],
+      [
+        354.0799865722656,
+        -141.39370727539062,
+        15.043391227722168
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-6.7799 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -6.7799,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "박물관": {
+          "verts": 1828,
+          "faces": 3652,
+          "tris": 3652,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-6.7799 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -6.7799,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "박물관": {
+          "verts": 1828,
+          "faces": 3652,
+          "tris": 3652,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7,
+          "uv_maps": 1,
+          "uv_oob_pct": 100.0,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 0.0,
+          "uv_coverage_pct": 0.0
+        }
+      }
+    }
+  },
+  {
+    "key": "gym2",
+    "osm_id": "468931925",
+    "name": "제2체육관",
+    "features": [
+      "separate main hall and lower west/northwest annex roofs",
+      "roof vent; unverified absolute height retained"
+    ],
+    "before_group_bounds": [
+      [
+        -537.7935791015625,
+        -90.03680419921875,
+        -11.713868141174316
+      ],
+      [
+        -427.4596862792969,
+        -14.060101509094238,
+        -3.3081178665161133
+      ]
+    ],
+    "after_bounds": [
+      [
+        -537.786376953125,
+        -90.01000213623047,
+        -11.713868141174316
+      ],
+      [
+        -427.489990234375,
+        -14.100000381469727,
+        -3.3081178665161133
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-11.7139 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -11.7139,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "제2체육관": {
+          "verts": 159,
+          "faces": 314,
+          "tris": 314,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 6
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-11.7139 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -11.7139,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "제2체육관": {
+          "verts": 159,
+          "faces": 314,
+          "tris": 314,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 6,
+          "uv_maps": 1,
+          "uv_oob_pct": 100.0,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 0.0,
+          "uv_coverage_pct": 0.0
+        }
+      }
+    }
+  },
+  {
+    "key": "it2",
+    "osm_id": "468931876",
+    "name": "IT 2호관",
+    "features": [
+      "lower central roof well and small skylight; not an assumed through-building courtyard",
+      "four perimeter solar fields and facade bands"
+    ],
+    "before_group_bounds": [
+      [
+        85.36540985107422,
+        -340.5838623046875,
+        -4.215249538421631
+      ],
+      [
+        149.2944793701172,
+        -273.34588623046875,
+        8.701202392578125
+      ]
+    ],
+    "after_bounds": [
+      [
+        85.41000366210938,
+        -340.5400085449219,
+        -4.215249538421631
+      ],
+      [
+        149.25,
+        -273.3900146484375,
+        8.701202392578125
+      ]
+    ],
+    "geometry": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.2152 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -4.2152,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "IT 2호관": {
+          "verts": 67,
+          "faces": 130,
+          "tris": 130,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7
+        }
+      }
+    },
+    "visual": {
+      "ok": true,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.2152 (not resting on ground plane z=0)"
+      ],
+      "ground_z": -4.2152,
+      "zfighting": [],
+      "floating": [],
+      "back_to_back": [],
+      "enclosed": [],
+      "objects": {
+        "IT 2호관": {
+          "verts": 67,
+          "faces": 130,
+          "tris": 130,
+          "ngons": 0,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "wire_edges": 0,
+          "loose_verts": 0,
+          "degenerate_faces": 0,
+          "zero_length_edges": 0,
+          "inconsistent_normals_edges": 0,
+          "duplicate_verts": 0,
+          "islands": 1,
+          "inside_out_islands": 0,
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": 7,
+          "uv_maps": 1,
+          "uv_oob_pct": 100.0,
+          "uv_zero_area_faces": 0,
+          "uv_overlap_pct": 0.0,
+          "uv_coverage_pct": 0.0
+        }
+      }
+    }
+  }
+]

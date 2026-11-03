@@ -1,0 +1,122 @@
+{
+  "checked_at_kst": "2026-11-03 15:42 KST",
+  "owner_scope": "Lee Dong-su model/render/game integration only",
+  "base_main": "f5bf68397f88ce0ee238830fe676b2058d6ac0b6",
+  "input": "synthetic/keyboard_demo",
+  "source_snapshot": "local HEAD 66078f7 plus uncommitted changes; inventory preserved locally",
+  "tests": {
+    "browser_hardware": {
+      "passed": 22,
+      "failed": 0,
+      "duration_ms": 71018.52
+    },
+    "server_pytest": {
+      "passed": 4
+    },
+    "camera_lifecycle": {
+      "passed": 6
+    },
+    "blender": {
+      "version": "5.2.3 LTS",
+      "objects": 183,
+      "triangles": 16702,
+      "errors": 0
+    },
+    "gltf": "all current 5 building packages and campus v13: 0 errors, 0 warnings",
+    "build": "npm ci and Vite production build pass",
+    "scaffold": "4 JSON examples, 44 Markdown/link checks pass"
+  },
+  "reproduction": {
+    "browser": "AR_TEST_RENDERER=d3d11 npm run test:demo (fresh review server used port 8873)",
+    "server": "python -m pytest -q",
+    "camera": "node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs",
+    "assets": [
+      "npm run validate:assets",
+      "npm run validate:enhancements",
+      "npm run build:demo"
+    ]
+  },
+  "merged_conflicts": [
+    "AGENTS/PM_progress.md",
+    "AGENTS/김태이_progress.md",
+    "AGENTS/진행현황.md",
+    "README.md"
+  ],
+  "binary_sha256": {
+    "assets/source/knu-campus-v10.blend": "af99b6be847253dd09f2f08fa09123e4a9b44b5261b39e10b462f65d95c14aaa",
+    "assets/source/knu-campus-v11.blend": "e008a3e552421e327427872e5d22ca16f2556798d790edc6b0de0029c1ca3e3b",
+    "assets/source/knu-campus-v12.blend": "05759646c5a60580ca1afdfc504b648d6fd391e8720bcddb19708f0cb6255e01",
+    "assets/source/knu-campus-v13.blend": "dcc39c54ef98384e073689c50210544555b8f8d7fa40cb87649132669ebe8d10",
+    "assets/source/knu-it1-fracture-v1.blend": "eb601af5f4592b758bfbf97cf5f818e00d4a7ca95b3c62c5b8d748c199ba746b",
+    "assets/source/knu-it1-fracture-v2.blend": "c033705feb57484656146b7c0e37f9bb2131c30d263605b273f9a05fdd6a4459",
+    "assets/source/knu-it1-fracture-v3.blend": "e1a27bf7cd484bbf5b4986626f68a902362602da3a1ab904926669bdcba29c59",
+    "assets/source/knu-main-fracture-v1.blend": "a8d1ca8a488dc16f8950f5eddddcbffc7a0117cda07bad50563c9facc75271b4",
+    "assets/source/knu-main-fracture-v2.blend": "b2e0cc0a05b639cfccbfb06638e74905b9cac65a709a239931c6351a78d476c0",
+    "web/public/assets/buildings/knu-it1-v1/fragments.glb": "ec5a4ea12564108d9337aa1f91010f617617b5afff9f298735a6e307933a12c0",
+    "web/public/assets/buildings/knu-it1-v1/intact.glb": "4b1b9a97e303886d0104b7349dca0bbb6bb7fe8dc976669d49e4bc8b2b2a0e19",
+    "web/public/assets/buildings/knu-it1-v2/fragments.glb": "dcbb433b6fdc4c74a0b2f7c2f61b6582efdc6125414575bc78b60d8a691aca81",
+    "web/public/assets/buildings/knu-it1-v2/intact.glb": "6f65524e8e5fc20c4e565a429e376590e3be499ba887d39f5adcaff810e66a36",
+    "web/public/assets/buildings/knu-it1-v3/fragments.glb": "a1f0d3348fe19e83701b2fbbc7b20c52e61047be98e76d12c4e48708cd1b9642",
+    "web/public/assets/buildings/knu-it1-v3/intact.glb": "f911d922e79de48e1ed83fdc0e9940ead9b60f831205329dc0803ddc879beb84",
+    "web/public/assets/buildings/knu-main-v1/fragments.glb": "0a5d36fcd3aa6ba0a05c1a71989a7467646a4ec9287890df49eb2c578e96eb14",
+    "web/public/assets/buildings/knu-main-v1/intact.glb": "0dd9e411b82ed62fdf1411cf183f37ac5a02ac9852d13236cd36e42e7b810fad",
+    "web/public/assets/buildings/knu-main-v2/fragments.glb": "fa96eea7348ab418b2e6b829e0cd3958539cb77c4b60fdfe3d25eaa3b77c948f",
+    "web/public/assets/buildings/knu-main-v2/intact.glb": "e54ab38b33c9e116609bbc5d678350c1193eb481ff7e6448449309b571937fa2",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Facade_BC.png": "cc06641d2182ef796a3d27a0ace594408a5638e93a9a4a5ae925b580c7afc6f7",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Facade_N.png": "ed27e29cf766980fd14f3a2b9c212034f4c1d2ace7950d954920699c8fce0313",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Facade_ORM.png": "63222abfce7e8d2e37f614c58a888fe55c55bd212b9ae8e9003cc7fcb2fda29b",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Fracture_BC.png": "bbde354e1b115ce9d1288e827afc239c25fc72814c1f14675981e423c3a3239d",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Fracture_N.png": "43ae5e2c00ee622c46d7b52c438dd5c0690aae0af7936128904a3b9aa8388cfe",
+    "web/public/assets/buildings/knu-it1-v2/textures/M_IT1V2_Fracture_ORM.png": "72a6180fb4a06d320a7b8d33ad3ea5161a5916410f1211f6c006a0514b675c82",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Facade_BC.png": "cc06641d2182ef796a3d27a0ace594408a5638e93a9a4a5ae925b580c7afc6f7",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Facade_N.png": "ed27e29cf766980fd14f3a2b9c212034f4c1d2ace7950d954920699c8fce0313",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Facade_ORM.png": "63222abfce7e8d2e37f614c58a888fe55c55bd212b9ae8e9003cc7fcb2fda29b",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Fracture_BC.png": "bbde354e1b115ce9d1288e827afc239c25fc72814c1f14675981e423c3a3239d",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Fracture_N.png": "43ae5e2c00ee622c46d7b52c438dd5c0690aae0af7936128904a3b9aa8388cfe",
+    "web/public/assets/buildings/knu-it1-v3/textures/M_IT1V3_Fracture_ORM.png": "72a6180fb4a06d320a7b8d33ad3ea5161a5916410f1211f6c006a0514b675c82",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Facade_BC.png": "27f615db48d2a5ab8dd0fc4a5c46ed5078d27d1144449aaedf2bd19caaf65e36",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Facade_N.png": "aac72189e19eff75fcd65f72ae45446fe07985eb192f1251122325f5c73023d7",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Facade_ORM.png": "81b81f85612c85dc0f2113e8e9da29875870e529b02a5a80d302c6af1cbd5fdf",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Fracture_BC.png": "3242593ed5ec9044632bc1e446c87f3ac6076853a2fb71842cbf04861d3f27e2",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Fracture_N.png": "1d71907b5d8971b2e74679718f642bc019ec568687cd608215888ac2c91756cf",
+    "web/public/assets/buildings/knu-main-v1/textures/M_MainV1_Fracture_ORM.png": "70209c62067eabb181c1244b3b0a67a2712cf1a1f7cc869f3ea7c1819f1011bb",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Facade_BC.png": "27f615db48d2a5ab8dd0fc4a5c46ed5078d27d1144449aaedf2bd19caaf65e36",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Facade_N.png": "aac72189e19eff75fcd65f72ae45446fe07985eb192f1251122325f5c73023d7",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Facade_ORM.png": "81b81f85612c85dc0f2113e8e9da29875870e529b02a5a80d302c6af1cbd5fdf",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Fracture_BC.png": "3242593ed5ec9044632bc1e446c87f3ac6076853a2fb71842cbf04861d3f27e2",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Fracture_N.png": "1d71907b5d8971b2e74679718f642bc019ec568687cd608215888ac2c91756cf",
+    "web/public/assets/buildings/knu-main-v2/textures/M_MainV2_Fracture_ORM.png": "70209c62067eabb181c1244b3b0a67a2712cf1a1f7cc869f3ea7c1819f1011bb",
+    "web/public/assets/campus/knu-campus-v10.glb": "e2dd9018b44333cd800ddedbba51b13f1440740025eb87a381d663409805eaf4",
+    "web/public/assets/campus/knu-campus-v11.glb": "55a28c9f8f3d2898ad49049f1c0e807566ce79ae28082cadd2e3c9dd0484d281",
+    "web/public/assets/campus/knu-campus-v12.glb": "f17c0c94052b0e7d42ae2a6d5dc488b0c61640cb033a3bf93868b49349eed9ba",
+    "web/public/assets/campus/knu-campus-v13.glb": "0516d1c65a03d6d2e24f0f85bd246e63596b4dbafde4d6320ab5dd93ef87097c",
+    "web/public/assets/campus/v13-textures/M_v13_GlobalPanels.png": "dc70fa80d0f356b7ffc87791c2014b9a11bf20272e600ff12badf538e29ad50a",
+    "web/public/assets/campus/v13-textures/M_v13_IT2Windows.png": "e675b2f94cb716439f9266a3ad6a19bfb40cb8dd3b4d18fa27ed4ba52063b915",
+    "web/public/assets/campus/v13-textures/M_v13_LibraryWindows.png": "dd607fc94286d0a7cded623526975274230f8ea252af9f7695190160ea8a6e1f",
+    "web/public/assets/campus/v13-textures/M_v13_Photovoltaic.png": "6a31e27e412b633c8de58f7515ac32c5139478863010dadb7a8585e0179a8865"
+  },
+  "prior_qa_hashes_matched": 17,
+  "historical_metadata_difference": [
+    {
+      "report": "docs/asset-validation/map-review/summary.json",
+      "path": "web/public/assets/buildings/catalog.json",
+      "expected": "bd3df4f302afb8853b46b9730ba784de797ac590971550847caed426ae9a78d0",
+      "actual": "373bb9a131c8af71d37181fe32eb61eb45ce774699dbb5031751c85fc42bdb79"
+    }
+  ],
+  "accepted_warnings": [
+    "intentional repeated UV tiling",
+    "relative height of assembled fragments",
+    "one planar source n-gon in main fragment 042; GLB is triangulated and validates",
+    "Vite bundled Rapier/Three chunk around 5 MB",
+    "Starlette/httpx deprecation; Node VM experimental notice",
+    "Git whitespace exemption only for generated bundle's upstream GLSL template strings; authored source remains checked"
+  ],
+  "unverified": [
+    "actual phones x3",
+    "C0 video transport",
+    "measured calibration/AR registration",
+    "actual wrist hit/audio",
+    "20-minute run and measured FPS"
+  ]
+}

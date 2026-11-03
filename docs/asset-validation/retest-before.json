@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "startTime": "2026-11-02T08:15:04.359Z",
+    "duration": 66896.958,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "test": "Space activates the focused start button without destroying the building",
+      "status": "failed",
+      "duration_ms": 3206,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 3\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"destroyed\": false,\u001b[39m\n\u001b[32m-   \"fragmentCount\": 0,\u001b[39m\n\u001b[31m+   \"destroyed\": true,\u001b[39m\n\u001b[31m+   \"fragmentCount\": 32,\u001b[39m\n\u001b[2m    \"phase\": \"playing\",\u001b[22m\n\u001b[32m-   \"score\": 0,\u001b[39m\n\u001b[31m+   \"score\": 100,\u001b[39m\n\u001b[2m  }\u001b[22m"
+    },
+    {
+      "test": "Space on a focused view button opens the view without a hit",
+      "status": "failed",
+      "duration_ms": 1715,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m100\u001b[39m"
+    },
+    {
+      "test": "timer and end controls update on sparse frames away from a 200 ms boundary",
+      "status": "failed",
+      "duration_ms": 1416,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m60\u001b[39m\nReceived:   \u001b[31m60\u001b[39m"
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: fragment-count",
+      "status": "failed",
+      "duration_ms": 11939,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 \u001b[7m실패\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"준비 \u001b[7m완료. 테스트 시작 또는 Space 키를 누르세요.\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\u001b[2m    2 × locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p>\u001b[22m\n\u001b[2m      - unexpected value \"모델과 물리 엔진을 준비하고 있습니다.\"\u001b[22m\n\u001b[2m    21 × locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">준비 완료. 테스트 시작 또는 Space 키를 누르세요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"준비 완료. 테스트 시작 또는 Space 키를 누르세요.\"\u001b[22m\n"
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: units",
+      "status": "failed",
+      "duration_ms": 11943,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 \u001b[7m실패\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"준비 \u001b[7m완료. 테스트 시작 또는 Space 키를 누르세요.\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\u001b[2m    - locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p>\u001b[22m\n\u001b[2m    - unexpected value \"모델과 물리 엔진을 준비하고 있습니다.\"\u001b[22m\n\u001b[2m    22 × locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">준비 완료. 테스트 시작 또는 Space 키를 누르세요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"준비 완료. 테스트 시작 또는 Space 키를 누르세요.\"\u001b[22m\n"
+    },
+    {
+      "test": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+      "status": "failed",
+      "duration_ms": 11952,
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 \u001b[7m실패\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"준비 \u001b[7m완료. 테스트 시작 또는 Space 키를 누르세요.\u001b[27m\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\u001b[2m    - locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p>\u001b[22m\n\u001b[2m    - unexpected value \"모델과 물리 엔진을 준비하고 있습니다.\"\u001b[22m\n\u001b[2m    22 × locator resolved to <p id=\"status\" role=\"status\" aria-live=\"polite\">준비 완료. 테스트 시작 또는 Space 키를 누르세요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"준비 완료. 테스트 시작 또는 Space 키를 누르세요.\"\u001b[22m\n"
+    },
+    {
+      "test": "failed campus load can be retried and clears the error",
+      "status": "passed",
+      "duration_ms": 3397,
+      "error": ""
+    }
+  ]
+}

@@ -1,0 +1,1100 @@
+{
+  "snapshot": "2026-11-02",
+  "model": "knu-campus-v12",
+  "osm_buildings_within_campus": 94,
+  "model_cores": 123,
+  "matched": 94,
+  "missing_osm": 0,
+  "minimum_iou": 0.9981871500941698,
+  "maximum_boundary_hausdorff_m": 0.006800222103894707,
+  "buildings": [
+    {
+      "osm_id": "440331569",
+      "name": "약학대학",
+      "osm_name": "경북대학교 약학대학",
+      "osm_area_m2": 1490.1189769296943,
+      "model_area_m2": 1490.312978750049,
+      "intersection_over_union": 0.9997439121956596,
+      "boundary_hausdorff_m": 0.00492139379384023,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931841",
+      "name": "대강당",
+      "osm_name": "경북대학교 대강당",
+      "osm_area_m2": 3078.991734550324,
+      "model_area_m2": 3078.70574975,
+      "intersection_over_union": 0.9998491038230948,
+      "boundary_hausdorff_m": 0.005602069240656531,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931844",
+      "name": "예술대학",
+      "osm_name": "예술대학",
+      "osm_area_m2": 1351.0195327588358,
+      "model_area_m2": 1351.0739370000001,
+      "intersection_over_union": 0.9997275806532834,
+      "boundary_hausdorff_m": 0.0050104607325493445,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931846",
+      "name": "조소동",
+      "osm_name": "조소동",
+      "osm_area_m2": 1689.3038175673573,
+      "model_area_m2": 1689.2307555497996,
+      "intersection_over_union": 0.9997715115425316,
+      "boundary_hausdorff_m": 0.005594415049204861,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931848",
+      "name": "제3합동강의동",
+      "osm_name": "제3합동강의동",
+      "osm_area_m2": 1329.8293100517067,
+      "model_area_m2": 1329.961829100051,
+      "intersection_over_union": 0.9996821134284297,
+      "boundary_hausdorff_m": 0.0056571331416726016,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931850",
+      "name": "글로벌플라자",
+      "osm_name": "글로벌플라자",
+      "osm_area_m2": 5139.370765660773,
+      "model_area_m2": 5138.96474825,
+      "intersection_over_union": 0.999860594657745,
+      "boundary_hausdorff_m": 0.005470051615983356,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931852",
+      "name": "중앙도서관",
+      "osm_name": "경북대학교 중앙도서관",
+      "osm_area_m2": 7240.322350415689,
+      "model_area_m2": 7239.9900368001,
+      "intersection_over_union": 0.9999237147791923,
+      "boundary_hausdorff_m": 0.004779742341280814,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931854",
+      "name": "이름 미등록 건물",
+      "osm_name": null,
+      "osm_area_m2": 527.9224267818478,
+      "model_area_m2": 527.8730731000501,
+      "intersection_over_union": 0.9996127267328171,
+      "boundary_hausdorff_m": 0.004435620111713597,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931857",
+      "name": "인문대학",
+      "osm_name": "인문대학",
+      "osm_area_m2": 1854.3386483327185,
+      "model_area_m2": 1854.387599999999,
+      "intersection_over_union": 0.9998313002920587,
+      "boundary_hausdorff_m": 0.004973072879432396,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931858",
+      "name": "본관",
+      "osm_name": "본관",
+      "osm_area_m2": 2477.4649304415598,
+      "model_area_m2": 2477.314117,
+      "intersection_over_union": 0.9997939238681115,
+      "boundary_hausdorff_m": 0.006416047538412008,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931865",
+      "name": "대학원동",
+      "osm_name": "대학원동",
+      "osm_area_m2": 1246.8171288609446,
+      "model_area_m2": 1246.754,
+      "intersection_over_union": 0.9998667010129304,
+      "boundary_hausdorff_m": 0.0043236336811782235,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931867",
+      "name": "공대 12호관",
+      "osm_name": "공대 12호관",
+      "osm_area_m2": 2234.6508457890013,
+      "model_area_m2": 2234.40240135,
+      "intersection_over_union": 0.9998109834756891,
+      "boundary_hausdorff_m": 0.006800222103894707,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931869",
+      "name": "공대 2호관",
+      "osm_name": "공대 2호관",
+      "osm_area_m2": 1415.030829310902,
+      "model_area_m2": 1415.3242178500009,
+      "intersection_over_union": 0.9997613564572391,
+      "boundary_hausdorff_m": 0.0048437629601939475,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931871",
+      "name": "공대 1호관",
+      "osm_name": "공대 1호관",
+      "osm_area_m2": 1374.8019237043477,
+      "model_area_m2": 1374.7700557499986,
+      "intersection_over_union": 0.9997075576792863,
+      "boundary_hausdorff_m": 0.005025107605046333,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931872",
+      "name": "공대 3호관",
+      "osm_name": "공대 3호관",
+      "osm_area_m2": 1188.029322442194,
+      "model_area_m2": 1187.7630613,
+      "intersection_over_union": 0.9996266961541406,
+      "boundary_hausdorff_m": 0.005148022114145681,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931873",
+      "name": "IT 3호관",
+      "osm_name": "IT 3호관",
+      "osm_area_m2": 1842.9712575654867,
+      "model_area_m2": 1843.3056887999985,
+      "intersection_over_union": 0.999743338785047,
+      "boundary_hausdorff_m": 0.005531295847587716,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931874",
+      "name": "IT 4호관",
+      "osm_name": "IT 4호관",
+      "osm_area_m2": 993.6435068607786,
+      "model_area_m2": 993.56014,
+      "intersection_over_union": 0.9996831216341616,
+      "boundary_hausdorff_m": 0.004596465918702283,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931876",
+      "name": "IT 2호관",
+      "osm_name": "IT 2호관",
+      "osm_area_m2": 4012.014545084779,
+      "model_area_m2": 4012.1349439000005,
+      "intersection_over_union": 0.9998696451613266,
+      "boundary_hausdorff_m": 0.006287192569903572,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931877",
+      "name": "공대 7호관",
+      "osm_name": "공대 7호관",
+      "osm_area_m2": 928.6773145591371,
+      "model_area_m2": 928.7931310499989,
+      "intersection_over_union": 0.9997077505444395,
+      "boundary_hausdorff_m": 0.004842399902082208,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931878",
+      "name": "공대 6호관",
+      "osm_name": "공대 6호관",
+      "osm_area_m2": 1217.2136535333475,
+      "model_area_m2": 1217.055505100001,
+      "intersection_over_union": 0.9998263478232338,
+      "boundary_hausdorff_m": 0.0037262303295175934,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931879",
+      "name": "공대 9호관",
+      "osm_name": "공대 9호관",
+      "osm_area_m2": 1818.0575788741726,
+      "model_area_m2": 1818.125664249998,
+      "intersection_over_union": 0.9998372749933161,
+      "boundary_hausdorff_m": 0.004994038767478316,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931880",
+      "name": "진리관",
+      "osm_name": "진리관",
+      "osm_area_m2": 1019.2950800583505,
+      "model_area_m2": 1019.3020750999996,
+      "intersection_over_union": 0.9996657026222359,
+      "boundary_hausdorff_m": 0.005737114770701032,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931882",
+      "name": "화학관",
+      "osm_name": "화학관",
+      "osm_area_m2": 1951.409427017449,
+      "model_area_m2": 1951.322271000001,
+      "intersection_over_union": 0.9997192451082507,
+      "boundary_hausdorff_m": 0.00567615536744406,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931886",
+      "name": "한국기초과학지원연구원",
+      "osm_name": "한국기초과학지원연구원",
+      "osm_area_m2": 2280.7189065115135,
+      "model_area_m2": 2280.4570367999004,
+      "intersection_over_union": 0.9996596680928628,
+      "boundary_hausdorff_m": 0.005945618178475052,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931887",
+      "name": "생물학관",
+      "osm_name": "생물학관",
+      "osm_area_m2": 1469.4724871319763,
+      "model_area_m2": 1469.0772214499,
+      "intersection_over_union": 0.999575233771232,
+      "boundary_hausdorff_m": 0.006025546770772439,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931888",
+      "name": "PP구조실습실",
+      "osm_name": "PP구조실습실",
+      "osm_area_m2": 1304.3751110478142,
+      "model_area_m2": 1304.6775525,
+      "intersection_over_union": 0.9997072787648946,
+      "boundary_hausdorff_m": 0.0051375498711251745,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931889",
+      "name": "연구실 안전관리센터",
+      "osm_name": "연구실 안전관리센터",
+      "osm_area_m2": 155.8154158053474,
+      "model_area_m2": 155.80983179995002,
+      "intersection_over_union": 0.9995905807829605,
+      "boundary_hausdorff_m": 0.0036683084022667285,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931890",
+      "name": "화목관",
+      "osm_name": "화목관",
+      "osm_area_m2": 982.6747799588152,
+      "model_area_m2": 982.5384134999997,
+      "intersection_over_union": 0.9997744225971021,
+      "boundary_hausdorff_m": 0.005429761555566142,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931892",
+      "name": "공대 8호관",
+      "osm_name": "공대 8호관",
+      "osm_area_m2": 1166.9644414198488,
+      "model_area_m2": 1166.8528197999983,
+      "intersection_over_union": 0.9997459002600851,
+      "boundary_hausdorff_m": 0.004821291755291127,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931893",
+      "name": "이름 미등록 건물.001",
+      "osm_name": null,
+      "osm_area_m2": 829.3907439740883,
+      "model_area_m2": 829.3693202499494,
+      "intersection_over_union": 0.999634449790199,
+      "boundary_hausdorff_m": 0.005389299999221638,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931894",
+      "name": "수의과대학부속병원",
+      "osm_name": "수의과대학부속병원",
+      "osm_area_m2": 2126.4974433073394,
+      "model_area_m2": 2126.44289555025,
+      "intersection_over_union": 0.9997764399619834,
+      "boundary_hausdorff_m": 0.006349854705519506,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931895",
+      "name": "IT 1호관",
+      "osm_name": "IT 1호관",
+      "osm_area_m2": 1397.8728237440532,
+      "model_area_m2": 1397.8754082501002,
+      "intersection_over_union": 0.9997146413130172,
+      "boundary_hausdorff_m": 0.006043533835223985,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931896",
+      "name": "이름 미등록 건물.002",
+      "osm_name": null,
+      "osm_area_m2": 161.19858232817012,
+      "model_area_m2": 161.12800419994977,
+      "intersection_over_union": 0.9993636734821427,
+      "boundary_hausdorff_m": 0.006225364440899636,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931897",
+      "name": "IT융복합관 (IT5호관)",
+      "osm_name": "IT융복합관 (IT5호관)",
+      "osm_area_m2": 2266.641183976112,
+      "model_area_m2": 2266.452315100001,
+      "intersection_over_union": 0.9998147561226965,
+      "boundary_hausdorff_m": 0.006090770088211497,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931898",
+      "name": "박물관",
+      "osm_name": "경북대학교 박물관",
+      "osm_area_m2": 2376.03781319075,
+      "model_area_m2": 2375.763679800099,
+      "intersection_over_union": 0.9997567592012433,
+      "boundary_hausdorff_m": 0.006071519471496119,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931899",
+      "name": "법과대학",
+      "osm_name": "법과대학",
+      "osm_area_m2": 1359.9679345946156,
+      "model_area_m2": 1359.9656027500507,
+      "intersection_over_union": 0.999795238571159,
+      "boundary_hausdorff_m": 0.005606941122517854,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931900",
+      "name": "법학전문대학원",
+      "osm_name": "법학전문대학원",
+      "osm_area_m2": 1062.7297107353616,
+      "model_area_m2": 1062.9537904998504,
+      "intersection_over_union": 0.999738630441376,
+      "boundary_hausdorff_m": 0.005058200747179983,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931902",
+      "name": "복지관",
+      "osm_name": "복지관",
+      "osm_area_m2": 3023.05466058065,
+      "model_area_m2": 3023.001772350049,
+      "intersection_over_union": 0.9998007297217465,
+      "boundary_hausdorff_m": 0.006084503228663835,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931903",
+      "name": "제4합동강의동",
+      "osm_name": "제4합동강의동",
+      "osm_area_m2": 1942.0323436605386,
+      "model_area_m2": 1941.9392471500005,
+      "intersection_over_union": 0.9997516236760955,
+      "boundary_hausdorff_m": 0.005731486096919826,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931904",
+      "name": "경상대학",
+      "osm_name": "경상대학",
+      "osm_area_m2": 3335.457269638378,
+      "model_area_m2": 3335.7106729001466,
+      "intersection_over_union": 0.9998587360088316,
+      "boundary_hausdorff_m": 0.006102729450804334,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931905",
+      "name": "생활과학대학",
+      "osm_name": "생활과학대학",
+      "osm_area_m2": 1325.2392547203267,
+      "model_area_m2": 1325.5660024000003,
+      "intersection_over_union": 0.9996060986813882,
+      "boundary_hausdorff_m": 0.006234957754467318,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931907",
+      "name": "우당교육관",
+      "osm_name": "우당교육관",
+      "osm_area_m2": 870.4337429708416,
+      "model_area_m2": 870.66714965,
+      "intersection_over_union": 0.9995914920196538,
+      "boundary_hausdorff_m": 0.0057564732922816084,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931908",
+      "name": "향토관",
+      "osm_name": "향토관",
+      "osm_area_m2": 1365.6860650195606,
+      "model_area_m2": 1365.4435299499999,
+      "intersection_over_union": 0.9996642554725617,
+      "boundary_hausdorff_m": 0.0046946782089740575,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931909",
+      "name": "정보화본부",
+      "osm_name": "정보전산원",
+      "osm_area_m2": 1756.8702599295616,
+      "model_area_m2": 1756.6402669499496,
+      "intersection_over_union": 0.9997184086834779,
+      "boundary_hausdorff_m": 0.005660047062502389,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931910",
+      "name": "어학교육원",
+      "osm_name": "어학교육원",
+      "osm_area_m2": 1309.9811519293569,
+      "model_area_m2": 1310.0660818999995,
+      "intersection_over_union": 0.9997839806646597,
+      "boundary_hausdorff_m": 0.005694809172625101,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931911",
+      "name": "첨성관",
+      "osm_name": "첨성관",
+      "osm_area_m2": 2958.245082615241,
+      "model_area_m2": 2958.369796349899,
+      "intersection_over_union": 0.999635639088925,
+      "boundary_hausdorff_m": 0.005763762552361652,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931912",
+      "name": "테크노빌딩",
+      "osm_name": "테크노빌딩",
+      "osm_area_m2": 1218.3412267595209,
+      "model_area_m2": 1218.1192456500003,
+      "intersection_over_union": 0.9996344348400017,
+      "boundary_hausdorff_m": 0.006267579231525333,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931913",
+      "name": "IT융합산업빌딩",
+      "osm_name": "IT융합산업빌딩",
+      "osm_area_m2": 1010.774707242142,
+      "model_area_m2": 1010.5887167000017,
+      "intersection_over_union": 0.9996947392503093,
+      "boundary_hausdorff_m": 0.0038443825329677354,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931914",
+      "name": "정보센터",
+      "osm_name": "정보센터",
+      "osm_area_m2": 560.9360791535489,
+      "model_area_m2": 560.7755821500004,
+      "intersection_over_union": 0.9995147758680961,
+      "boundary_hausdorff_m": 0.005807212448962899,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931915",
+      "name": "이름 미등록 건물.003",
+      "osm_name": null,
+      "osm_area_m2": 702.0268347085664,
+      "model_area_m2": 702.0547290999999,
+      "intersection_over_union": 0.9997109002404939,
+      "boundary_hausdorff_m": 0.004482096428424186,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931916",
+      "name": "평생교육원",
+      "osm_name": "평생교육원",
+      "osm_area_m2": 606.3082601950578,
+      "model_area_m2": 606.1142447999994,
+      "intersection_over_union": 0.9993182479617635,
+      "boundary_hausdorff_m": 0.00543359418322968,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931917",
+      "name": "농대1호관",
+      "osm_name": "농대1호관",
+      "osm_area_m2": 3319.6173344713134,
+      "model_area_m2": 3319.6829,
+      "intersection_over_union": 0.9997614694618373,
+      "boundary_hausdorff_m": 0.005885727148942582,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931918",
+      "name": "농대 3호관",
+      "osm_name": "농대 3호관",
+      "osm_area_m2": 1094.0657322529555,
+      "model_area_m2": 1093.9075986500002,
+      "intersection_over_union": 0.999761985463034,
+      "boundary_hausdorff_m": 0.0053314213881688775,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931919",
+      "name": "농대2호관",
+      "osm_name": "농대2호관",
+      "osm_area_m2": 1626.168908830326,
+      "model_area_m2": 1626.0573942999995,
+      "intersection_over_union": 0.999730257534612,
+      "boundary_hausdorff_m": 0.004312462856336206,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931920",
+      "name": "제1과학관",
+      "osm_name": "제1과학관",
+      "osm_area_m2": 2702.494552224336,
+      "model_area_m2": 2702.8038397,
+      "intersection_over_union": 0.9998006442215874,
+      "boundary_hausdorff_m": 0.004717530856439131,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931921",
+      "name": "복현회관",
+      "osm_name": "복현회관",
+      "osm_area_m2": 1169.9148650432346,
+      "model_area_m2": 1169.8188149999996,
+      "intersection_over_union": 0.9997093386198151,
+      "boundary_hausdorff_m": 0.005681419547931491,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931922",
+      "name": "자연과학대학",
+      "osm_name": "자연과학대학",
+      "osm_area_m2": 1565.792470713725,
+      "model_area_m2": 1565.8644482999991,
+      "intersection_over_union": 0.9998220959583892,
+      "boundary_hausdorff_m": 0.005210688109081416,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931923",
+      "name": "제2과학관",
+      "osm_name": "제2과학관",
+      "osm_area_m2": 1908.6806151249234,
+      "model_area_m2": 1908.3050875000001,
+      "intersection_over_union": 0.9996789245024807,
+      "boundary_hausdorff_m": 0.0059745689614515846,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931924",
+      "name": "국민체육센터",
+      "osm_name": "국민체육센터",
+      "osm_area_m2": 1355.2433012652414,
+      "model_area_m2": 1355.2523339000006,
+      "intersection_over_union": 0.9996961226970168,
+      "boundary_hausdorff_m": 0.0044155981209994056,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931925",
+      "name": "제2체육관",
+      "osm_name": "제2체육관",
+      "osm_area_m2": 5372.993445360209,
+      "model_area_m2": 5373.0100834,
+      "intersection_over_union": 0.9998437875138948,
+      "boundary_hausdorff_m": 0.004857264023521264,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931926",
+      "name": "제1체육관",
+      "osm_name": "제1체육관",
+      "osm_area_m2": 2791.799267029891,
+      "model_area_m2": 2791.9209441498506,
+      "intersection_over_union": 0.9998484407643972,
+      "boundary_hausdorff_m": 0.005703206141418089,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931928",
+      "name": "백호관",
+      "osm_name": "백호관",
+      "osm_area_m2": 1381.7234246062974,
+      "model_area_m2": 1381.8607353998993,
+      "intersection_over_union": 0.9997183541950018,
+      "boundary_hausdorff_m": 0.00575666852220967,
+      "status": "matched"
+    },
+    {
+      "osm_id": "468931930",
+      "name": "학군단",
+      "osm_name": "학군단",
+      "osm_area_m2": 924.9810151184602,
+      "model_area_m2": 925.1337613998493,
+      "intersection_over_union": 0.9996982603309397,
+      "boundary_hausdorff_m": 0.005977679900574893,
+      "status": "matched"
+    },
+    {
+      "osm_id": "469617252",
+      "name": "교육대학원",
+      "osm_name": "교육대학원",
+      "osm_area_m2": 1058.432704885652,
+      "model_area_m2": 1058.619323800001,
+      "intersection_over_union": 0.9995460839687785,
+      "boundary_hausdorff_m": 0.0055807552760906015,
+      "status": "matched"
+    },
+    {
+      "osm_id": "469843173",
+      "name": "교수아파트",
+      "osm_name": "교수아파트",
+      "osm_area_m2": 1200.7335070336117,
+      "model_area_m2": 1200.902317700003,
+      "intersection_over_union": 0.9996226796761747,
+      "boundary_hausdorff_m": 0.00481370402406093,
+      "status": "matched"
+    },
+    {
+      "osm_id": "473684404",
+      "name": "경북대 출판부",
+      "osm_name": "경북대 출판부",
+      "osm_area_m2": 858.967765500071,
+      "model_area_m2": 858.8185778500001,
+      "intersection_over_union": 0.9995369776054004,
+      "boundary_hausdorff_m": 0.0062715706741759735,
+      "status": "matched"
+    },
+    {
+      "osm_id": "473684409",
+      "name": "어린이집",
+      "osm_name": "어린이집",
+      "osm_area_m2": 766.0485721547266,
+      "model_area_m2": 765.97485475,
+      "intersection_over_union": 0.9996904709648766,
+      "boundary_hausdorff_m": 0.004056000028308881,
+      "status": "matched"
+    },
+    {
+      "osm_id": "473687810",
+      "name": "사과센터",
+      "osm_name": "사과센터",
+      "osm_area_m2": 460.8011306416272,
+      "model_area_m2": 460.65530000000024,
+      "intersection_over_union": 0.999633556062132,
+      "boundary_hausdorff_m": 0.006063952871524868,
+      "status": "matched"
+    },
+    {
+      "osm_id": "522514118",
+      "name": "청룡관 (Cheonglyong-Gwan)",
+      "osm_name": "청룡관 (Cheonglyong-Gwan)",
+      "osm_area_m2": 2965.8021767131095,
+      "model_area_m2": 2966.25832440025,
+      "intersection_over_union": 0.9997632907230509,
+      "boundary_hausdorff_m": 0.004779688609502282,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021463",
+      "name": "창업보육센터",
+      "osm_name": "창업보육센터",
+      "osm_area_m2": 549.3719667095361,
+      "model_area_m2": 549.4201684999501,
+      "intersection_over_union": 0.9997532277240316,
+      "boundary_hausdorff_m": 0.004517865441080627,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021464",
+      "name": "면학관",
+      "osm_name": "면학관",
+      "osm_area_m2": 412.5771127121642,
+      "model_area_m2": 412.73922779999975,
+      "intersection_over_union": 0.9995922486804859,
+      "boundary_hausdorff_m": 0.004573223002917022,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021465",
+      "name": "수의과대학",
+      "osm_name": "수의과대학",
+      "osm_area_m2": 950.4103164127863,
+      "model_area_m2": 950.3694111000491,
+      "intersection_over_union": 0.999603291174581,
+      "boundary_hausdorff_m": 0.00536123280665497,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021468",
+      "name": "사회과학대학",
+      "osm_name": "사회과학대학",
+      "osm_area_m2": 4115.577691361245,
+      "model_area_m2": 4114.892497650001,
+      "intersection_over_union": 0.9997676269985483,
+      "boundary_hausdorff_m": 0.006683312207620524,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021469",
+      "name": "반도체융합연구동",
+      "osm_name": "반도체융합연구동",
+      "osm_area_m2": 801.917725805347,
+      "model_area_m2": 801.8087500000006,
+      "intersection_over_union": 0.9998237151015655,
+      "boundary_hausdorff_m": 0.00445566895441806,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524021470",
+      "name": "공대2A호관",
+      "osm_name": "공대2A호관",
+      "osm_area_m2": 2238.3049295282713,
+      "model_area_m2": 2238.00906955,
+      "intersection_over_union": 0.999829897190042,
+      "boundary_hausdorff_m": 0.0052584403280164236,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524025612",
+      "name": "영선관",
+      "osm_name": "영선관",
+      "osm_area_m2": 800.6799202596811,
+      "model_area_m2": 800.8097000000001,
+      "intersection_over_union": 0.9997580402802635,
+      "boundary_hausdorff_m": 0.004859554937506253,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524161867",
+      "name": "문예관",
+      "osm_name": "문예관",
+      "osm_area_m2": 348.6428181851781,
+      "model_area_m2": 348.7044591002999,
+      "intersection_over_union": 0.9995570163689937,
+      "boundary_hausdorff_m": 0.0051372081174902405,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524161868",
+      "name": "이름 미등록 건물.004",
+      "osm_name": null,
+      "osm_area_m2": 1112.3349969622218,
+      "model_area_m2": 1112.042736150099,
+      "intersection_over_union": 0.9996836154178327,
+      "boundary_hausdorff_m": 0.00392276524348246,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524161871",
+      "name": "금란정",
+      "osm_name": "금란정",
+      "osm_area_m2": 47.80381964706554,
+      "model_area_m2": 47.8276999999999,
+      "intersection_over_union": 0.9989853694757987,
+      "boundary_hausdorff_m": 0.0038112768579182145,
+      "status": "matched"
+    },
+    {
+      "osm_id": "524172305",
+      "name": "농업생명과학관",
+      "osm_name": "농업생명과학관",
+      "osm_area_m2": 2708.5809271829594,
+      "model_area_m2": 2708.8521980498494,
+      "intersection_over_union": 0.9998073389708176,
+      "boundary_hausdorff_m": 0.00504057579998275,
+      "status": "matched"
+    },
+    {
+      "osm_id": "576254849",
+      "name": "동물사육장",
+      "osm_name": "동물사육장",
+      "osm_area_m2": 116.52825438250434,
+      "model_area_m2": 116.54401195010001,
+      "intersection_over_union": 0.9993315822012243,
+      "boundary_hausdorff_m": 0.004709386030231127,
+      "status": "matched"
+    },
+    {
+      "osm_id": "576358734",
+      "name": "이름 미등록 건물.005",
+      "osm_name": null,
+      "osm_area_m2": 268.81462685952346,
+      "model_area_m2": 268.8438149500002,
+      "intersection_over_union": 0.999585205620298,
+      "boundary_hausdorff_m": 0.004895299789654523,
+      "status": "matched"
+    },
+    {
+      "osm_id": "577759119",
+      "name": "이름 미등록 건물.006",
+      "osm_name": null,
+      "osm_area_m2": 181.68770477268768,
+      "model_area_m2": 181.60625814994984,
+      "intersection_over_union": 0.9990717478452313,
+      "boundary_hausdorff_m": 0.005734132389472484,
+      "status": "matched"
+    },
+    {
+      "osm_id": "584385630",
+      "name": "이름 미등록 건물.007",
+      "osm_name": null,
+      "osm_area_m2": 32.57382708327267,
+      "model_area_m2": 32.61395035010021,
+      "intersection_over_union": 0.9987697513978888,
+      "boundary_hausdorff_m": 0.005188299729761586,
+      "status": "matched"
+    },
+    {
+      "osm_id": "584386432",
+      "name": "이름 미등록 건물.008",
+      "osm_name": null,
+      "osm_area_m2": 36.24668457273183,
+      "model_area_m2": 36.29739450020009,
+      "intersection_over_union": 0.9981871500941698,
+      "boundary_hausdorff_m": 0.005121042115504123,
+      "status": "matched"
+    },
+    {
+      "osm_id": "846905616",
+      "name": "인문한국진흥관",
+      "osm_name": "인문한국진흥관",
+      "osm_area_m2": 3218.261597200006,
+      "model_area_m2": 3218.2745000000004,
+      "intersection_over_union": 0.999860785324648,
+      "boundary_hausdorff_m": 0.004535801164611908,
+      "status": "matched"
+    },
+    {
+      "osm_id": "854306251",
+      "name": "누리관",
+      "osm_name": "누리관",
+      "osm_area_m2": 1383.3371548112102,
+      "model_area_m2": 1383.4812792999505,
+      "intersection_over_union": 0.9998266892007608,
+      "boundary_hausdorff_m": 0.004546111959587857,
+      "status": "matched"
+    },
+    {
+      "osm_id": "854306497",
+      "name": "누리관.001",
+      "osm_name": "누리관",
+      "osm_area_m2": 2330.278413140546,
+      "model_area_m2": 2330.057555900199,
+      "intersection_over_union": 0.999837464848086,
+      "boundary_hausdorff_m": 0.004774920770711988,
+      "status": "matched"
+    },
+    {
+      "osm_id": "972016220",
+      "name": "이름 미등록 건물.009",
+      "osm_name": null,
+      "osm_area_m2": 3274.4316850726404,
+      "model_area_m2": 3274.63038805,
+      "intersection_over_union": 0.9998370832805016,
+      "boundary_hausdorff_m": 0.0047580155374674065,
+      "status": "matched"
+    },
+    {
+      "osm_id": "1026072764",
+      "name": "융합교육정보관",
+      "osm_name": "융합교육정보관",
+      "osm_area_m2": 2449.8156709667596,
+      "model_area_m2": 2449.5955010999996,
+      "intersection_over_union": 0.9998156279720204,
+      "boundary_hausdorff_m": 0.0058262121232751755,
+      "status": "matched"
+    },
+    {
+      "osm_id": "1107268251",
+      "name": "간호대학",
+      "osm_name": "간호대학",
+      "osm_area_m2": 1317.6437096100137,
+      "model_area_m2": 1317.57307825,
+      "intersection_over_union": 0.9997189556078384,
+      "boundary_hausdorff_m": 0.004598556287854196,
+      "status": "matched"
+    },
+    {
+      "osm_id": "1300033666",
+      "name": "보람관",
+      "osm_name": "보람관",
+      "osm_area_m2": 1664.2139477534852,
+      "model_area_m2": 1664.1500811999997,
+      "intersection_over_union": 0.9996842967119699,
+      "boundary_hausdorff_m": 0.005664771549364925,
+      "status": "matched"
+    },
+    {
+      "osm_id": "1408182451",
+      "name": "미래창직관",
+      "osm_name": "미래창직관",
+      "osm_area_m2": 1613.4835982723469,
+      "model_area_m2": 1613.7160077999995,
+      "intersection_over_union": 0.9997497157083637,
+      "boundary_hausdorff_m": 0.005054279885172372,
+      "status": "matched"
+    },
+    {
+      "osm_id": "1470108675",
+      "name": "봉사관",
+      "osm_name": "봉사관",
+      "osm_area_m2": 1030.030190560087,
+      "model_area_m2": 1029.9048826,
+      "intersection_over_union": 0.9996360059647117,
+      "boundary_hausdorff_m": 0.0064549132462405215,
+      "status": "matched"
+    }
+  ],
+  "additional_existing": [
+    {
+      "id": "vw/1",
+      "name": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/8",
+      "name": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/10",
+      "name": "v7 | 추가 건물 | 암석창고 [vw/10]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/16",
+      "name": "v7 | 추가 건물 | 법과대학 [vw/16]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/18",
+      "name": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/20",
+      "name": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/21",
+      "name": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/22",
+      "name": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/33",
+      "name": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/50",
+      "name": "v7 | 추가 건물 | 온실2 [vw/50]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/52",
+      "name": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/62",
+      "name": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/73",
+      "name": "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/79",
+      "name": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/95",
+      "name": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/105",
+      "name": "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/110",
+      "name": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/111",
+      "name": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/113",
+      "name": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/114",
+      "name": "v7 | 추가 건물 | 학군단창고 [vw/114]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/127",
+      "name": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/130",
+      "name": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/143",
+      "name": "v7 | 추가 건물 | 온실1 [vw/143]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/145",
+      "name": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/147",
+      "name": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/162",
+      "name": "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/163",
+      "name": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/165",
+      "name": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    },
+    {
+      "id": "vw/166",
+      "name": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+      "status": "existing VWorld-derived; no independent current footprint confirmation"
+    }
+  ],
+  "limitations": "Map agreement is not a survey. OSM itself may omit buildings; 29 VWorld-derived extras retained. Heights, inner courtyards, roofs, dates not established by polygon agreement."
+}

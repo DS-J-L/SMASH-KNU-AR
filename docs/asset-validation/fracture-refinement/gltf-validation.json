@@ -1,0 +1,79 @@
+[
+  {
+    "file": "web/public/assets/buildings/knu-it1-v3/intact.glb",
+    "bytes": 836016,
+    "triangles": 666,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v3/fragments.glb",
+    "bytes": 1799952,
+    "triangles": 6442,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v2/intact.glb",
+    "bytes": 916028,
+    "triangles": 1612,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v2/fragments.glb",
+    "bytes": 1915956,
+    "triangles": 7982,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v2/intact.glb",
+    "bytes": 836016,
+    "triangles": 666,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+    "bytes": 1605784,
+    "triangles": 4914,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v1/intact.glb",
+    "bytes": 916028,
+    "triangles": 1612,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v1/fragments.glb",
+    "bytes": 1707376,
+    "triangles": 6340,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v1/intact.glb",
+    "bytes": 4580,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v1/fragments.glb",
+    "bytes": 100360,
+    "triangles": 636,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/campus/knu-campus-v13.glb",
+    "bytes": 24049444,
+    "triangles": 396917,
+    "errors": 0,
+    "warnings": 0
+  }
+]

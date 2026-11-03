@@ -1,0 +1,20 @@
+{
+  "zoom": 19,
+  "left": 449437,
+  "top": 206077,
+  "right": 449439,
+  "bottom": 206079,
+  "urls": [
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449437",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449438",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449439",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449437",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449438",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449439",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449437",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449438",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449439"
+  ],
+  "attribution": "Esri World Imagery; provider/capture date not confirmed. Visual reference only.",
+  "usage": "Local inspection only. No textures or traced vectors derived from this imagery in deliverables."
+}
