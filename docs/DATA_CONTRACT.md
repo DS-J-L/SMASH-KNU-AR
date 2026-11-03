@@ -130,3 +130,7 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 [휴대폰 1대·PC 화면 계획](SINGLE_CAMERA_PLAN.md)의 단일 화면 2D 경로를 제안한다. PC 수신 프레임 추론·모드별 준비/세션·2D 이벤트 단위는 설계 검토 대상이며 현재 구현/메시지 스키마가 아니다. 기존 다중 3D의 room_z_up·보정·유효 시점·시간 기준은 유지하고 후속 구현 PR에서 확정·검증한다.
 
 2026-11-03 v0.2 상세화: [인터페이스·상태 기준안](SINGLE_CAMERA_INTERFACES.md)에 PC 생성 세션/서버 ACK, 방/스트림/실행 버전, 프레임·변환·만료, 2D 단위와 수락/거부를 정의했다. [검증 계획](SINGLE_CAMERA_TEST_PLAN.md)의 T-SC-01~18로 후속 구현을 확인한다. 제안 API/파일은 신규 개발 대상이며 현재 스키마·실행 코드에 적용한 변경은 없다.
+
+## 2026-11-03 PC 단일 소비자 구현
+
+[PC 인계 규격](SINGLE_CAMERA_MONITOR.md)의 Frame/PoseFrame/HitEvent와 공개 API를 구현했다. PC PoseFrame의 손목 키는 left_wrist/right_wrist, 2D hit_point_m/speed_mps는 반드시 null이며 source/task/session·프레임/실행/변환·단위 혼입을 거부한다. 현재 서버 0.1 스키마는 그대로이며 single_camera.v1-draft 메시지를 /ws/pose로 보내지 않는다. 제안 방/제어/신호의 실제 서버 검증은 후속 통합 대상이다.
