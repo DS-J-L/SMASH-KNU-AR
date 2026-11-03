@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "pass": false,
+  "errors": [
+    "SM_IT1V2_Intact: degenerate faces=17 zero-len edges=0",
+    "SM_IT1V2_Intact: duplicate verts=1 loose verts=0",
+    "z-fighting: SM_IT1V2_Intact (1 overlapping coplanar tri pairs)"
+  ],
+  "warnings": [],
+  "ground_z": 0.0,
+  "zfighting": [
+    {
+      "where": "SM_IT1V2_Intact",
+      "tri_pairs": 1
+    }
+  ],
+  "floating": [],
+  "back_to_back": [],
+  "enclosed": [],
+  "objects": {
+    "SM_IT1V2_Intact": {
+      "verts": 587,
+      "faces": 1121,
+      "tris": 1170,
+      "ngons": 3,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 17,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 1,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 4
+    }
+  }
+}

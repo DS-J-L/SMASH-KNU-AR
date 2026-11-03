@@ -17,8 +17,10 @@ for path in json_paths:
     except (ValueError, OSError) as exc:
         errors.append(f"{path.relative_to(ROOT)}: {exc}")
 
+excluded_dirs = {"node_modules", "dist", "test-results", "playwright-report"}
 markdown_paths = [path for path in ROOT.rglob("*.md") if not any(
-    part.startswith(".") and part != ".github" for part in path.relative_to(ROOT).parts
+    part in excluded_dirs or (part.startswith(".") and part != ".github")
+    for part in path.relative_to(ROOT).parts
 )]
 for path in markdown_paths:
     for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", path.read_text(encoding="utf-8")):

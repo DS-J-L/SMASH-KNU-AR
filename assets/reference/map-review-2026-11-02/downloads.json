@@ -1,0 +1,37 @@
+[
+  {
+    "file": "osm-current.osm",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=128.6034,35.8845,128.6173,35.8963",
+    "accessed_at_utc": "2026-11-02T09:22:18.890805+00:00",
+    "bytes": 3469360,
+    "sha256": "f6c8bf229a4d3207dbb181f71301b37c1de93832fee8f75a5a58b9ed467e90cb"
+  },
+  {
+    "file": "imagery-service.json",
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer?f=pjson",
+    "accessed_at_utc": "2026-11-02T09:22:19.192532+00:00",
+    "bytes": 11142,
+    "sha256": "3c41ca79d7ddc2267fa1ac60c43263acbfed04915e3b2433e6b8e5d30378e2dc"
+  },
+  {
+    "file": "raw/global-photo.jpg",
+    "url": "https://photo.knu.ac.kr/photoImageView/preview/54436.do",
+    "accessed_at_utc": "2026-11-02T09:23:39.331820+00:00",
+    "bytes": 38530,
+    "use": "local visual reference only; not packed into deliverables"
+  },
+  {
+    "file": "raw/library-photo.jpg",
+    "url": "https://photo.knu.ac.kr/photoImageView/preview/55581.do",
+    "accessed_at_utc": "2026-11-02T09:23:39.388941+00:00",
+    "bytes": 49666,
+    "use": "local visual reference only; not packed into deliverables"
+  },
+  {
+    "file": "raw/campus-map.png",
+    "url": "https://en.knu.ac.kr/img/intro/map_daegu_2025.png?v=2026",
+    "accessed_at_utc": "2026-11-02T09:23:39.801148+00:00",
+    "bytes": 876007,
+    "use": "local visual reference only; not packed into deliverables"
+  }
+]

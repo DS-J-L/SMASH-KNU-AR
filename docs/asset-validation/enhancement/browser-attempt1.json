@@ -1,0 +1,1095 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\playwright.config.js",
+    "rootDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/USER/OneDrive/문서/ChatGPT/증강현실/SMASH-KNU-AR/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser",
+        "snapshotDir": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 60000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8765",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "launchOptions": {
+            "args": [
+              "--enable-webgl",
+              "--use-angle=swiftshader",
+              "--enable-unsafe-swiftshader"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "python -m uvicorn backend.server:app --host 127.0.0.1 --port 8765",
+      "url": "http://127.0.0.1:8765/api/health",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "enhancements.spec.js",
+      "file": "enhancements.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "new models and previous version can all fracture and restore",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10728,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:10:33.669Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-5f3da79c966835390182",
+          "file": "enhancements.spec.js",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "separated inspection blocks hits and restores from the range control",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10751,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:10:44.602Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-c4447c07d46d8981979d",
+          "file": "enhancements.spec.js",
+          "line": 28,
+          "column": 1
+        },
+        {
+          "title": "click selects a new impact point and dust clears on restoration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5797,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:10:55.377Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-8786bfc55a4019c2c8e0",
+          "file": "enhancements.spec.js",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "switching warmed models releases previous GPU resources",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12363,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:01.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-8b23bec9036a0747ca0c",
+          "file": "enhancements.spec.js",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "failed model replacement keeps the current package usable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5840,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"기존 모델을 유지\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"기존 모델을 유지\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\enhancements.spec.js:68:42",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\enhancements.spec.js",
+                      "column": 42,
+                      "line": 68
+                    },
+                    "snippet": "  66 |   await page.route('**/knu-main-v1/manifest.json',route=>route.fulfill({status:503,body:'missing'}));\n  67 |   await page.locator('#building-select').selectOption('knu-main-v1');\n> 68 |   await expect(page.getByRole('status')).toContainText('기존 모델을 유지');\n     |                                          ^\n  69 |   expect(await snapshot(page)).toMatchObject({buildingId:'knu-it1-v2',bodyCount:2,loading:false});\n  70 |   await page.locator('canvas').focus();await page.keyboard.press('Space');expect((await snapshot(page)).score).toBe(100);\n  71 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\enhancements.spec.js",
+                        "column": 42,
+                        "line": 68
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"기존 모델을 유지\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  66 |   await page.route('**/knu-main-v1/manifest.json',route=>route.fulfill({status:503,body:'missing'}));\n  67 |   await page.locator('#building-select').selectOption('knu-main-v1');\n> 68 |   await expect(page.getByRole('status')).toContainText('기존 모델을 유지');\n     |                                          ^\n  69 |   expect(await snapshot(page)).toMatchObject({buildingId:'knu-it1-v2',bodyCount:2,loading:false});\n  70 |   await page.locator('canvas').focus();await page.keyboard.press('Space');expect((await snapshot(page)).score).toBe(100);\n  71 | });\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\enhancements.spec.js:68:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:13.582Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\enhancements-failed-model--4f22b--the-current-package-usable\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\enhancements-failed-model--4f22b--the-current-package-usable\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\enhancements.spec.js",
+                    "column": 42,
+                    "line": 68
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c5cf86bb1878733414b1-cddcfb888c74867fe283",
+          "file": "enhancements.spec.js",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fracture-regressions.spec.js",
+      "file": "fracture-regressions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Space activates the focused start button without destroying the building",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4279,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:21.699Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-24e164193da9776342e8",
+          "file": "fracture-regressions.spec.js",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "Space on a focused view button opens the view without a hit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:26.401Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-74fb278d3c31818c03ac",
+          "file": "fracture-regressions.spec.js",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "timer and end controls update on sparse frames away from a 200 ms boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3571,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:32.543Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-5a7d7293c920d9dec2f4",
+          "file": "fracture-regressions.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "a late hit updates expiry even while animation frames are suspended",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2447,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:36.136Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e26f272c39583368a035-9afdf4bd80e20e3f5cfb",
+          "file": "fracture-regressions.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: fragment-count",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 969,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 44,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 44,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:38.599Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-e102e-ing-gameplay-fragment-count\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-e102e-ing-gameplay-fragment-count\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 44,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-6dbd7587bec46d78edcb",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: units",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1641,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 44,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 44,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:42.063Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-f6a1a-ore-enabling-gameplay-units\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-f6a1a-ore-enabling-gameplay-units\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 44,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-7706f3ec92705f66e006",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1715,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 44,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 44,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:45.232Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-941d5-nabling-gameplay-rest-pivot\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-941d5-nabling-gameplay-rest-pivot\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 44,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-7b788ea4126492174cb4",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: dimensions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1744,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 44,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 44,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:48.403Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-b126a-nabling-gameplay-dimensions\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-b126a-nabling-gameplay-dimensions\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 44,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-0b36c33ffef05e812e0d",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "inconsistent package is rejected before enabling gameplay: hull-bounds",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1923,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 44,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 44,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  68 |     });\n  69 |     await page.goto('/monitor/fracture/');\n> 70 |     await expect(page.getByRole('status')).toContainText('준비 실패',{timeout:10000});\n     |                                            ^\n  71 |     await expect(page.getByRole('status')).toContainText(reason);\n  72 |     await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  73 |     expect((await snapshot(page)).fragmentCount).toBe(0);\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:70:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:52.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-2ea8f-abling-gameplay-hull-bounds\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-incon-2ea8f-abling-gameplay-hull-bounds\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 44,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-03e21acf6d62e8777b19",
+          "file": "fracture-regressions.spec.js",
+          "line": 58,
+          "column": 3
+        },
+        {
+          "title": "failed campus load can be retried and clears the error",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3165,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"지형을 불러오지 못했습니다\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">지형을 불러오지 못했습니다: fetch for \"http://127.0.0.1:8765/…</p> aka getByText('지형을 불러오지 못했습니다: fetch for \"')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"지형을 불러오지 못했습니다\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">지형을 불러오지 못했습니다: fetch for \"http://127.0.0.1:8765/…</p> aka getByText('지형을 불러오지 못했습니다: fetch for \"')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:86:42",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                      "column": 42,
+                      "line": 86
+                    },
+                    "snippet": "  84 |   await open(page);\n  85 |   await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n> 86 |   await expect(page.getByRole('status')).toContainText('지형을 불러오지 못했습니다');\n     |                                          ^\n  87 |   await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n  88 |   await expect.poll(async () => (await snapshot(page)).view,{timeout:30000}).toBe('campus');\n  89 |   expect((await snapshot(page)).errorMessage).toBeNull();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                        "column": 42,
+                        "line": 86
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"지형을 불러오지 못했습니다\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">지형을 불러오지 못했습니다: fetch for \"http://127.0.0.1:8765/…</p> aka getByText('지형을 불러오지 못했습니다: fetch for \"')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  84 |   await open(page);\n  85 |   await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n> 86 |   await expect(page.getByRole('status')).toContainText('지형을 불러오지 못했습니다');\n     |                                          ^\n  87 |   await page.getByRole('button',{name:'캠퍼스 지형',exact:true}).click();\n  88 |   await expect.poll(async () => (await snapshot(page)).view,{timeout:30000}).toBe('campus');\n  89 |   expect((await snapshot(page)).errorMessage).toBeNull();\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js:86:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:11:55.784Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-faile-d0de0-etried-and-clears-the-error\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-regressions-faile-d0de0-etried-and-clears-the-error\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture-regressions.spec.js",
+                    "column": 42,
+                    "line": 86
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e26f272c39583368a035-70580bd56ee744fad333",
+          "file": "fracture-regressions.spec.js",
+          "line": 77,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "fracture.spec.js",
+      "file": "fracture.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real package: keyboard fracture, single score, floor contacts and repeated clean restoration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11912,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:12:02.464Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-41978884ca48d50ba46e",
+          "file": "fracture.spec.js",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "60-second end blocks hits, and reset restores a new ready session",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:12:14.581Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-db7e0bfa48e3503da97d",
+          "file": "fracture.spec.js",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "campus terrain inspection returns to intact prop without extra bodies",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6982,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:12:19.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-0edffc24bf43a452b0fd",
+          "file": "fracture.spec.js",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "missing package remains disabled and explains recovery",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3638,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js:60:42",
+                    "location": {
+                      "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                      "column": 42,
+                      "line": 60
+                    },
+                    "snippet": "  58 |   await page.route('**/manifest.json', route=>route.fulfill({status:404,body:'missing'}));\n  59 |   await page.goto('/monitor/fracture/');\n> 60 |   await expect(page.getByRole('status')).toContainText('준비 실패');\n     |                                          ^\n  61 |   await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  62 | });\n  63 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                        "column": 42,
+                        "line": 60
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected substring: \u001b[32m\"준비 실패\"\u001b[39m\nError: strict mode violation: getByRole('status') resolved to 2 elements:\n    1) <output id=\"separation-value\">0%</output> aka getByText('%')\n    2) <p id=\"status\" role=\"status\" aria-live=\"polite\">모델과 물리 엔진을 준비하고 있습니다.</p> aka getByText('모델과 물리 엔진을 준비하고 있습니다')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  58 |   await page.route('**/manifest.json', route=>route.fulfill({status:404,body:'missing'}));\n  59 |   await page.goto('/monitor/fracture/');\n> 60 |   await expect(page.getByRole('status')).toContainText('준비 실패');\n     |                                          ^\n  61 |   await expect(page.getByRole('button',{name:'테스트 시작',exact:true})).toBeDisabled();\n  62 | });\n  63 |\n    at C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js:60:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:12:26.802Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-missing-package-r-d736e-abled-and-explains-recovery\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\test-results\\fracture-missing-package-r-d736e-abled-and-explains-recovery\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\USER\\OneDrive\\문서\\ChatGPT\\증강현실\\SMASH-KNU-AR\\tests\\browser\\fracture.spec.js",
+                    "column": 42,
+                    "line": 60
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-76f5b288a8b018ced581",
+          "file": "fracture.spec.js",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "small viewport has usable controls and no horizontal overflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2935,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T09:12:33.208Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ca790fe9e0c5199e0ba9-4503e4455c6349169037",
+          "file": "fracture.spec.js",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T09:10:32.781Z",
+    "duration": 124934.833,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

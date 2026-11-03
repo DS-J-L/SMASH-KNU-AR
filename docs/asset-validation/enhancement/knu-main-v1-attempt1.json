@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "pass": false,
+  "errors": [
+    "SM_MainV1_Intact: 140 edges with inconsistent face winding",
+    "SM_MainV1_Intact: non-manifold edges=105 wire=11",
+    "SM_MainV1_Intact: 515 open boundary edges (not watertight)",
+    "SM_MainV1_Intact: degenerate faces=2 zero-len edges=0"
+  ],
+  "warnings": [],
+  "ground_z": 0.0,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [],
+  "enclosed": [],
+  "objects": {
+    "SM_MainV1_Intact": {
+      "verts": 1284,
+      "faces": 2365,
+      "tris": 2368,
+      "ngons": 0,
+      "boundary_edges": 515,
+      "nonmanifold_edges": 105,
+      "wire_edges": 11,
+      "loose_verts": 0,
+      "degenerate_faces": 2,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 140,
+      "duplicate_verts": 0,
+      "islands": 1,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 4
+    }
+  }
+}

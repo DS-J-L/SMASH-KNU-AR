@@ -1,4 +1,10 @@
-# 경북대학교 대구캠퍼스 모델 v10
+# 경북대학교 대구캠퍼스 모델 v10~v13
+
+2026-11-02 지도 대조: [v13 GLB](knu-campus-v13.glb)·[v13 편집 원본](../../../../assets/source/knu-campus-v13.blend)은 주요 6개 건물의 단차·후퇴부·입구·지붕을 공식 지도·건물 사진·공개 지도와 비교해 보완했다. [변경·출처·추정 범위](../../../../docs/CAMPUS_MAP_REVIEW.md)를 따른다. 신규 측량 결과가 아니며 이전 버전은 보존한다.
+
+2026-11-02 고도화: [v12 GLB](knu-campus-v12.glb)와 [v12 편집 원본](../../../../assets/source/knu-campus-v12.blend)은 건물 123개 옥상 모서리·벽/지붕/유리 재질을 보완했다. 원래 지형·윤곽·높이와 v11의 접지를 유지한다. [추가 제작·검증](../../../../docs/BUILDING_ENHANCEMENTS.md)을 참고한다.
+
+2026-11-02 추가: [v11 GLB](knu-campus-v11.glb)와 [v11 편집 원본](../../../../assets/source/knu-campus-v11.blend)은 기존 표고·건물 치수를 유지하면서 접합을 보완한 버전이다. 건물 하단 123개, 도로·녹지 1,999개 표면과 수목 170그루의 접지를 갱신했다. 지형은 외곽이 열린 정적 표면이다. [제작·검증·한계](../../../../docs/ASSET_PIPELINE.md)를 따른다. 원래 v10과 아래 출처 설명은 보존한다.
 
 - 실행·공유용: [knu-campus-v10.glb](./knu-campus-v10.glb) (약 19.6MB).
 - Blender 5.2.3 편집 원본: [knu-campus-v10.blend](../../../../assets/source/knu-campus-v10.blend) (약 5.6MB). 원본 파일은 이번 요청으로 `assets/source`에 명시적으로 포함했다.

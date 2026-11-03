@@ -1,0 +1,307 @@
+{
+  "completed_at_kst": "2026-11-02 18:54 KST",
+  "scope": "six reference-reviewed campus models, local static/keyboard_demo",
+  "common_phase": "P0-P6 unverified",
+  "references": "assets/reference/map-review-2026-11-02/sources.json",
+  "map_comparison": {
+    "model_cores": 123,
+    "osm_buildings_within_campus": 94,
+    "matched": 94,
+    "missing_osm": 0,
+    "minimum_iou": 0.9920847168382351,
+    "maximum_boundary_hausdorff_m": 0.10898477135970024
+  },
+  "buildings": [
+    {
+      "name": "글로벌플라자",
+      "osm_id": "468931850",
+      "triangles": 162,
+      "errors": 0,
+      "features": [
+        "twin glass volumes and full-height dark central recess",
+        "transverse crown and recessed podium portal"
+      ],
+      "estimated_dimensions": true
+    },
+    {
+      "name": "중앙도서관",
+      "osm_id": "468931852",
+      "triangles": 148,
+      "errors": 0,
+      "features": [
+        "lower east wing instead of a uniform-height block",
+        "raised central roof volume and separated roof solar fields"
+      ],
+      "estimated_dimensions": true
+    },
+    {
+      "name": "대강당",
+      "osm_id": "468931841",
+      "triangles": 6864,
+      "errors": 0,
+      "features": [
+        "deep glazed entrance under the projecting upper wall",
+        "narrow upper windows instead of a regular three-storey window grid",
+        "previously referenced rooftop panels/roof forms retained despite uncertain photo dates"
+      ],
+      "estimated_dimensions": true
+    },
+    {
+      "name": "박물관",
+      "osm_id": "468931898",
+      "triangles": 3652,
+      "errors": 0,
+      "features": [
+        "broad brick wall fields and light piers/floor edges",
+        "removed unsupported continuous glass-and-white infill strips",
+        "previously referenced rooftop panels/roof forms retained despite uncertain photo dates"
+      ],
+      "estimated_dimensions": true
+    },
+    {
+      "name": "제2체육관",
+      "osm_id": "468931925",
+      "triangles": 314,
+      "errors": 0,
+      "features": [
+        "separate main hall and lower west/northwest annex roofs",
+        "roof vent; unverified absolute height retained"
+      ],
+      "estimated_dimensions": true
+    },
+    {
+      "name": "IT 2호관",
+      "osm_id": "468931876",
+      "triangles": 130,
+      "errors": 0,
+      "features": [
+        "lower central roof well and small skylight; not an assumed through-building courtyard",
+        "four perimeter solar fields and facade bands"
+      ],
+      "estimated_dimensions": true
+    }
+  ],
+  "fresh_campus_audit": {
+    "meshes_checked": 2123,
+    "triangles_checked": 155677,
+    "buildings": 123,
+    "tree_contacts": 170,
+    "errors": 0,
+    "warning_counts": {
+      "ngons": 144,
+      "relative_ground": 2123,
+      "green.036: duplicate verts=1 loose verts=0": 1
+    }
+  },
+  "roundtrip": {
+    "cores": 123,
+    "objects": [
+      {
+        "osm_id": "468931850",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            58.84000015258789,
+            131.9600067138672,
+            -4.08566427230835
+          ],
+          [
+            119.19000244140625,
+            221.36000061035156,
+            77.9892349243164
+          ]
+        ]
+      },
+      {
+        "osm_id": "468931852",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            125.36000061035156,
+            127.87000274658203,
+            -2.618180513381958
+          ],
+          [
+            225.25999450683594,
+            217.47000122070312,
+            24.22210121154785
+          ]
+        ]
+      },
+      {
+        "osm_id": "468931841",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            -2.549999952316284,
+            244.2844696044922,
+            -8.899537086486816
+          ],
+          [
+            71.6500015258789,
+            313.44000244140625,
+            7.65553617477417
+          ]
+        ]
+      },
+      {
+        "osm_id": "468931898",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            254.77908325195312,
+            -210.63999938964844,
+            -6.7799391746521
+          ],
+          [
+            354.0799865722656,
+            -141.39370727539062,
+            15.043391227722168
+          ]
+        ]
+      },
+      {
+        "osm_id": "468931925",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            -537.786376953125,
+            -90.01000213623047,
+            -11.713868141174316
+          ],
+          [
+            -427.489990234375,
+            -14.100000381469727,
+            -3.3081178665161133
+          ]
+        ]
+      },
+      {
+        "osm_id": "468931876",
+        "max_bound_error_m": 0.0,
+        "bounds": [
+          [
+            85.41000366210938,
+            -340.5400085449219,
+            -4.215249538421631
+          ],
+          [
+            149.25,
+            -273.3900146484375,
+            8.701202392578125
+          ]
+        ]
+      }
+    ],
+    "errors": 0,
+    "glb_sha256": "0516d1c65a03d6d2e24f0f85bd246e63596b4dbafde4d6320ab5dd93ef87097c"
+  },
+  "gltf": [
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/intact.glb",
+      "bytes": 836016,
+      "triangles": 666,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+      "bytes": 1605784,
+      "triangles": 4914,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/intact.glb",
+      "bytes": 916028,
+      "triangles": 1612,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-main-v1/fragments.glb",
+      "bytes": 1707376,
+      "triangles": 6340,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/intact.glb",
+      "bytes": 4580,
+      "triangles": 28,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/buildings/knu-it1-v1/fragments.glb",
+      "bytes": 100360,
+      "triangles": 636,
+      "errors": 0,
+      "warnings": 0
+    },
+    {
+      "file": "web/public/assets/campus/knu-campus-v13.glb",
+      "bytes": 24049444,
+      "triangles": 396917,
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "browser_full": {
+    "startTime": "2026-11-02T09:45:05.783Z",
+    "duration": 135464.695,
+    "expected": 22,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_final_model": {
+    "startTime": "2026-11-02T09:51:35.824Z",
+    "duration": 25769.116,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "server_pytest": {
+    "passed": 4,
+    "failed": 0
+  },
+  "shapely": "2.2.0",
+  "source_sha256": {
+    "assets/source/knu-campus-v13.blend": "dcc39c54ef98384e073689c50210544555b8f8d7fa40cb87649132669ebe8d10",
+    "web/public/assets/campus/knu-campus-v13.glb": "0516d1c65a03d6d2e24f0f85bd246e63596b4dbafde4d6320ab5dd93ef87097c",
+    "web/public/assets/buildings/catalog.json": "bd3df4f302afb8853b46b9730ba784de797ac590971550847caed426ae9a78d0",
+    "frontend/fracture/main.js": "e0bf5a7c41cbc1280944ff1e82f4c246443c036443149efd9c3470f7b87a3980",
+    "tools/refine_campus_from_maps.py": "26fc947f3812d43f4d39245bd68d010040291068dc8ad9d41ecff708431c9a31",
+    "tools/finalize_map_assets.py": "f9380e97cba0b4c5acfc0ff39717ffdb47b096c65ee820850e76e1397ddd33be"
+  },
+  "unchanged_game_package_files": [
+    "assets/source/knu-it1-fracture-v2.blend",
+    "assets/source/knu-main-fracture-v1.blend",
+    "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+    "web/public/assets/buildings/knu-it1-v2/intact.glb",
+    "web/public/assets/buildings/knu-it1-v2/colliders.json",
+    "web/public/assets/buildings/knu-it1-v2/manifest.json",
+    "web/public/assets/buildings/knu-main-v1/fragments.glb",
+    "web/public/assets/buildings/knu-main-v1/intact.glb",
+    "web/public/assets/buildings/knu-main-v1/colliders.json",
+    "web/public/assets/buildings/knu-main-v1/manifest.json"
+  ],
+  "accepted_warnings": [
+    "relative ground in a georeferenced scene",
+    "intentional tiling UV overlap in auditorium",
+    "existing static n-gons and green.036 near vertices",
+    "Vite approximately 5MB bundle"
+  ],
+  "unverified": [
+    "83 building height matches",
+    "29 existing VWorld extras current footprints",
+    "main footprint area",
+    "veterinary roof differences by date",
+    "greenhouses detailed roof structure",
+    "imagery capture dates",
+    "precise DEM",
+    "live input/AR/audio/hardware FPS/20-minute run"
+  ]
+}

@@ -100,3 +100,26 @@
 - 참조 정답은 `reference_label`로 따로 기록합니다. 시스템의 성공 판정으로 정답을 자동 생성하지 않습니다.
 
 노션의 A/B는 추적 방식, PPT의 A/B는 과제 종류입니다. 코드에서 둘 다 `mode=A/B`로 표현하지 않습니다.
+
+## 로컬 건물·파편 패키지 v1 (2026-11-02)
+
+`web/public/assets/buildings/knu-it1-v1/manifest.json`과 `colliders.json`은 독립 에셋 계약이다. `building_id=knu-it1-v1`, 단위 m, 패키지 로컬 좌표는 glTF/Three.js의 Y 위쪽이다. 공통 월드의 `(X,Y,Z) → (X,Z,-Y)` 변환을 패키지 내보내기에서 이미 적용했으므로 패키지를 다시 회전하지 않는다. 조립 위치·피벗·충돌체 정점은 같은 로컬 좌표를 사용한다.
+
+기존 `pose_3d`의 `room_z_up` 계약은 그대로다. 실내 배치는 보정 결과를 통해 별도로 결정한다. `source_origin_campus_z_up_m`는 출처 메타데이터이며 실제 플레이 공간의 위치로 쓰지 않는다. 키보드 데모는 `tracking_mode=keyboard_demo`, `source=synthetic`이며 네트워크 타격·추적 입력을 보내거나 서버 준비 상태를 바꾸지 않는다. [실행·제작·검증](ASSET_PIPELINE.md)을 참조한다.
+
+2026-11-02 재검증 정정: manifest의 `dimensions_m`에 축소 배율이 빠져 있던 것을 수정했다. 이 값은 Y-up 게임 모델의 실제 크기이고, `source_dimensions_campus_z_up_m`가 원본 캠퍼스 크기다. 파편 수·단위·축·피벗·회전·배율·렌더/충돌체 경계를 로딩 전에 검사하며 불일치 패키지에서는 플레이를 허용하지 않는다. 이전 잘못된 크기 값을 보존한 소비 코드는 새 manifest와 대조해야 한다.
+
+
+## 건물 카탈로그·고도화 패키지 (2026-11-02)
+
+`web/public/assets/buildings/catalog.json`의 `default`와 `buildings[{id,label,folder}]`로 로컬 모델을 고른다. 기본 `knu-it1-v2`는 64개, `knu-main-v1`은 52개, 보존한 `knu-it1-v1`은 32개 파편이다. 소비 코드는 파편 수와 크기를 manifest에서 읽고 하드코딩하지 않는다. `campus`는 별도 검사 화면의 v12 GLB 경로다.
+
+schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규칙은 유지한다. 새 GLB는 PBR 텍스처와 최종 삼각형/UV에서 계산한 tangent를 포함한다. 크기는 난간 등 마감까지 포함한 실제 패키지 경계다. 원본 캠퍼스 크기와 혼용하지 않는다. 선택 모델의 사전 검증 후 강체·GPU 자원을 교체하며, 새 모델 로딩 실패 시 이전 모델을 유지한다.
+
+클릭 타격점·방사형 속도·먼지는 로컬 synthetic/keyboard_demo 효과다. 네트워크 `hit_event`나 실제 궤적을 송수신한 결과가 아니다. 기존 `pose_3d`, 시계·장비 설정·서버 준비 계약은 변경하지 않았다. [고도화 결과·검증](BUILDING_ENHANCEMENTS.md)을 참고한다.
+
+
+2026-11-02 지도 대조 v13: catalog.campus는 정적 캠퍼스 v13 GLB 경로다. 선택 필드 campus_focus의 각 항목은 {id,label,target_y_up_m,distance_m}로 로컬 카메라 둘러보기에만 사용한다. 실제 AR 보정값·실내 배치나 네트워크 메시지로 사용하지 않는다. 게임 건물 ID/파편/피벗·축 변환·기존 pose_3d 계약은 변경하지 않았다. 상세 근거는 [캠퍼스 지도 대조](CAMPUS_MAP_REVIEW.md)를 따른다.
+
+
+2026-11-02 파편 세분화: catalog.default=knu-it1-v3(96개), knu-main-v2(85개)를 추가했다. 이전64/52/32개도 유지하며 수량은 manifest에서 읽는다. previous_version은 이전ID, fracture_seed_count는 생성영역 수다. 축/단위/피벗/복원·실제 hit_event 계약 유지. 사용자 인수는 이동수 담당이고 실제 충돌/물리는 김태이,3D는 정경호 책임이다. [세분화·역할](FRACTURE_REFINEMENT.md)을 따른다.

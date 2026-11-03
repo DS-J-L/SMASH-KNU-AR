@@ -5,6 +5,11 @@ __pycache__/
 .coverage
 htmlcov/
 node_modules/
+.cache/
+assets/reference/map-review-2026-11-02/raw/
+assets/reference/map-review-2026-11-02/*.html
+test-results/
+playwright-report/
 dist/
 .env
 .env.*
@@ -20,6 +25,14 @@ web/public/models/
 web/public/vendor/
 assets/source/*
 !assets/source/README.md
+!assets/source/knu-campus-v11.blend
+!assets/source/knu-it1-fracture-v1.blend
+!assets/source/knu-it1-fracture-v2.blend
+!assets/source/knu-main-fracture-v1.blend
+!assets/source/knu-campus-v12.blend
+!assets/source/knu-campus-v13.blend
+!assets/source/knu-it1-fracture-v3.blend
+!assets/source/knu-main-fracture-v2.blend
 *.log
 .DS_Store
 Thumbs.db

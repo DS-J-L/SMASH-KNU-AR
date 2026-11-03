@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "default": "knu-it1-v3",
+  "campus": "/public/assets/campus/knu-campus-v13.glb",
+  "buildings": [
+    {
+      "id": "knu-it1-v3",
+      "label": "IT 1호관 · 세분화 96개",
+      "folder": "knu-it1-v3"
+    },
+    {
+      "id": "knu-main-v2",
+      "label": "본관 · 세분화 85개",
+      "folder": "knu-main-v2"
+    },
+    {
+      "id": "knu-it1-v2",
+      "label": "IT 1호관 · 이전 64개",
+      "folder": "knu-it1-v2"
+    },
+    {
+      "id": "knu-main-v1",
+      "label": "본관 · 이전 52개",
+      "folder": "knu-main-v1"
+    },
+    {
+      "id": "knu-it1-v1",
+      "label": "IT 1호관 · 초기 32개",
+      "folder": "knu-it1-v1"
+    }
+  ],
+  "campus_focus": [
+    {
+      "id": "global",
+      "label": "글로벌플라자",
+      "target_y_up_m": [
+        88,
+        35,
+        -177
+      ],
+      "distance_m": 115
+    },
+    {
+      "id": "library",
+      "label": "중앙도서관",
+      "target_y_up_m": [
+        175,
+        12,
+        -172
+      ],
+      "distance_m": 120
+    },
+    {
+      "id": "auditorium",
+      "label": "대강당",
+      "target_y_up_m": [
+        35,
+        0,
+        -278
+      ],
+      "distance_m": 95
+    },
+    {
+      "id": "museum",
+      "label": "박물관",
+      "target_y_up_m": [
+        305,
+        5,
+        177
+      ],
+      "distance_m": 110
+    },
+    {
+      "id": "gym2",
+      "label": "제2체육관",
+      "target_y_up_m": [
+        -480,
+        -6,
+        55
+      ],
+      "distance_m": 120
+    },
+    {
+      "id": "it2",
+      "label": "IT 2호관",
+      "target_y_up_m": [
+        117,
+        3,
+        307
+      ],
+      "distance_m": 95
+    }
+  ]
+}

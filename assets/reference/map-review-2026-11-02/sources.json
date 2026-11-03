@@ -1,0 +1,100 @@
+{
+  "reviewed_at": "2026-11-02 Asia/Seoul",
+  "image_policy": "Photo previews and basemap tiles used only for local inspection, ignored by git; no source pixels packed into GLB or textures.",
+  "footprints": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=128.6034,35.8845,128.6173,35.8963",
+    "file": "osm-current.osm",
+    "license": "OpenStreetMap contributors, ODbL 1.0",
+    "observed": "94 building outlines inside existing campus boundary; all have model counterparts; 29 existing VWorld-derived extras not independently confirmed"
+  },
+  "official_map": {
+    "url": "https://en.knu.ac.kr/intro/map04.htm",
+    "image": "https://en.knu.ac.kr/img/intro/map_daegu_2025.png",
+    "year": 2025,
+    "use": "building identities and general arrangement; illustrative scale is not a measurement"
+  },
+  "aerial": {
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "attribution": "Esri World Imagery",
+    "capture_date": "unconfirmed",
+    "use": "visual roof type and visible component arrangement only; parallax and imagery date preclude surveyed coordinates"
+  },
+  "buildings": [
+    {
+      "key": "global",
+      "osm_id": "468931850",
+      "name": "글로벌플라자",
+      "urls": [
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?ctgryNo=1&key=162&pageUnit=24&photoInfoNo=14199&photoNo=54436"
+      ],
+      "photo_date": "2014-01-05",
+      "observed": "two glass volumes, dark central recess and transverse crown, recessed entrance",
+      "estimated": "component dimensions, occluded sides and exact mullion layout"
+    },
+    {
+      "key": "library",
+      "osm_id": "468931852",
+      "name": "중앙도서관",
+      "urls": [
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?ctgryNo=3&key=839&pageUnit=60&photoInfoNo=15157"
+      ],
+      "photo_date": "unknown",
+      "observed": "stepped wings, white structural frames, raised central roof, separate solar fields in aerial",
+      "estimated": "wing partition coordinates and height ratio, solar module count"
+    },
+    {
+      "key": "auditorium",
+      "osm_id": "468931841",
+      "name": "대강당",
+      "urls": [
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?ctgryNo=3&key=839&pageUnit=48&photoInfoNo=15267"
+      ],
+      "photo_date": "unknown",
+      "observed": "brick walls, narrow upper windows and recessed lower entrance under projecting wall",
+      "estimated": "entrance depth, slit count and occluded sides"
+    },
+    {
+      "key": "museum",
+      "osm_id": "468931898",
+      "name": "박물관",
+      "urls": [
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?key=162&ctgryNo=1&photoInfoNo=15380&pageUnit=24",
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?key=162&ctgryNo=1&photoInfoNo=15381&pageUnit=24",
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?key=162&ctgryNo=1&photoInfoNo=15382&pageUnit=24"
+      ],
+      "photo_date": "unknown",
+      "observed": "broad brick fields, light vertical piers and floor edges",
+      "estimated": "frame thickness and occluded rear facade"
+    },
+    {
+      "key": "gym2",
+      "osm_id": "468931925",
+      "name": "제2체육관",
+      "urls": [
+        "https://en.knu.ac.kr/intro/map04.htm"
+      ],
+      "photo_date": "aerial capture date unknown",
+      "observed": "main roof and lower west/northwest annexes, roof vent, different roof tones",
+      "estimated": "roof levels within previous height envelope, clerestory rhythm"
+    },
+    {
+      "key": "it2",
+      "osm_id": "468931876",
+      "name": "IT 2호관",
+      "urls": [
+        "https://photo.knu.ac.kr/www/selectPhotoInfoWebView.do?ctgryNo=682&key=845&pageUnit=60&photoInfoNo=15408"
+      ],
+      "photo_date": "unknown",
+      "observed": "white facade bands; aerial lower central roof, small central skylight and perimeter solar fields",
+      "estimated": "3.2m roof step and skylight dimensions; not evidence of a through courtyard"
+    }
+  ],
+  "deferred": [
+    "83 unresolved building heights",
+    "29 VWorld-derived extras current footprint confirmation",
+    "veterinary building roof conflict between older photos and illustration",
+    "main building footprint-area mismatch",
+    "greenhouses exact roof structure and imagery currency",
+    "new surveyed DEM"
+  ]
+}

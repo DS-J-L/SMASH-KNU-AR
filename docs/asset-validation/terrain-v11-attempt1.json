@@ -1,0 +1,1021 @@
+{
+  "source": "v10 / FABDEM V1-2 ~30 m",
+  "new_survey_data": false,
+  "pad_transition_width_m": 12,
+  "terrain_top_vertices": 9778,
+  "building_contacts": [
+    {
+      "name": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+      "id": "vw/1",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.01380279541015561
+    },
+    {
+      "name": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "id": "vw/8",
+      "bottom_vertices": 25,
+      "max_shift_m": 0.009938507080077486
+    },
+    {
+      "name": "v7 | 추가 건물 | 암석창고 [vw/10]",
+      "id": "vw/10",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.019178657531737642
+    },
+    {
+      "name": "v7 | 추가 건물 | 법과대학 [vw/16]",
+      "id": "vw/16",
+      "bottom_vertices": 19,
+      "max_shift_m": 0.025719909667968777
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+      "id": "vw/18",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010595588684081392
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+      "id": "vw/20",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010004310607909517
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+      "id": "vw/21",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010066299438475923
+    },
+    {
+      "name": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "id": "vw/22",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.032437591552734624
+    },
+    {
+      "name": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "id": "vw/33",
+      "bottom_vertices": 5,
+      "max_shift_m": 0.016512660980224858
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실2 [vw/50]",
+      "id": "vw/50",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010195045471190767
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "id": "vw/52",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010093955993651704
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+      "id": "vw/62",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010023384094237642
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+      "id": "vw/73",
+      "bottom_vertices": 25,
+      "max_shift_m": 0.013131408691406499
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+      "id": "vw/79",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010298042297362642
+    },
+    {
+      "name": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "id": "vw/95",
+      "bottom_vertices": 5,
+      "max_shift_m": 0.03277376174926783
+    },
+    {
+      "name": "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+      "id": "vw/105",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.4641511154174811
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+      "id": "vw/110",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.012633590698241548
+    },
+    {
+      "name": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "id": "vw/111",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.020355491638183842
+    },
+    {
+      "name": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+      "id": "vw/113",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.01290729522705103
+    },
+    {
+      "name": "v7 | 추가 건물 | 학군단창고 [vw/114]",
+      "id": "vw/114",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.025896339416503267
+    },
+    {
+      "name": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "id": "vw/127",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.015923945903778103
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+      "id": "vw/130",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.009985237121581392
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실1 [vw/143]",
+      "id": "vw/143",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.010002403259276704
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "id": "vw/145",
+      "bottom_vertices": 35,
+      "max_shift_m": 0.043364791870117436
+    },
+    {
+      "name": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "id": "vw/147",
+      "bottom_vertices": 19,
+      "max_shift_m": 0.031876592636108425
+    },
+    {
+      "name": "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+      "id": "vw/162",
+      "bottom_vertices": 43,
+      "max_shift_m": 0.01496580123901392
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+      "id": "vw/163",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.009990005493163423
+    },
+    {
+      "name": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+      "id": "vw/165",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.00820901870727564
+    },
+    {
+      "name": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+      "id": "vw/166",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010199813842772798
+    },
+    {
+      "name": "IT 1호관",
+      "id": "468931895",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.024214954376220454
+    },
+    {
+      "name": "IT 2호관",
+      "id": "468931876",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.020592718124389453
+    },
+    {
+      "name": "IT 3호관",
+      "id": "468931873",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.06797864913940455
+    },
+    {
+      "name": "IT 4호관",
+      "id": "468931874",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.021783142089844
+    },
+    {
+      "name": "IT융복합관 (IT5호관)",
+      "id": "468931897",
+      "bottom_vertices": 9,
+      "max_shift_m": 0.022786407470703374
+    },
+    {
+      "name": "IT융합산업빌딩",
+      "id": "468931913",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.021298675537108736
+    },
+    {
+      "name": "PP구조실습실",
+      "id": "468931888",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.015045433044432954
+    },
+    {
+      "name": "간호대학",
+      "id": "1107268251",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.04059150695800717
+    },
+    {
+      "name": "경북대 출판부",
+      "id": "473684404",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.020322589874267827
+    },
+    {
+      "name": "경상대학",
+      "id": "468931904",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.01749887943267825
+    },
+    {
+      "name": "공대 12호관",
+      "id": "468931867",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.05156824111938452
+    },
+    {
+      "name": "공대 1호관",
+      "id": "468931871",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.057570724487304936
+    },
+    {
+      "name": "공대 2호관",
+      "id": "468931869",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.01926300048828189
+    },
+    {
+      "name": "공대 3호관",
+      "id": "468931872",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.020842761993407954
+    },
+    {
+      "name": "공대 6호관",
+      "id": "468931878",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.012152462005615483
+    },
+    {
+      "name": "공대 7호관",
+      "id": "468931877",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.021328477859496875
+    },
+    {
+      "name": "공대 8호관",
+      "id": "468931892",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.021673412322998242
+    },
+    {
+      "name": "공대 9호관",
+      "id": "468931879",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.023064403533935796
+    },
+    {
+      "name": "공대2A호관",
+      "id": "524021470",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.028403549194335298
+    },
+    {
+      "name": "교수아파트",
+      "id": "469843173",
+      "bottom_vertices": 12,
+      "max_shift_m": 0.02368572235107358
+    },
+    {
+      "name": "교육대학원",
+      "id": "469617252",
+      "bottom_vertices": 17,
+      "max_shift_m": 0.014908103942870898
+    },
+    {
+      "name": "국민체육센터",
+      "id": "468931924",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.04228618621826108
+    },
+    {
+      "name": "글로벌플라자",
+      "id": "468931850",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.059672563076019314
+    },
+    {
+      "name": "금란정",
+      "id": "524161871",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.014094977378845241
+    },
+    {
+      "name": "농대 3호관",
+      "id": "468931918",
+      "bottom_vertices": 5,
+      "max_shift_m": 0.03491857528686548
+    },
+    {
+      "name": "농대1호관",
+      "id": "468931917",
+      "bottom_vertices": 14,
+      "max_shift_m": 0.0480439949035647
+    },
+    {
+      "name": "농대2호관",
+      "id": "468931919",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.015579967498779546
+    },
+    {
+      "name": "농업생명과학관",
+      "id": "524172305",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.10587814331054624
+    },
+    {
+      "name": "누리관",
+      "id": "854306251",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.07246616363525327
+    },
+    {
+      "name": "누리관.001",
+      "id": "854306497",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.05589649200439517
+    },
+    {
+      "name": "대강당",
+      "id": "468931841",
+      "bottom_vertices": 13,
+      "max_shift_m": 0.021939487457275142
+    },
+    {
+      "name": "대학원동",
+      "id": "468931865",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.07720783233642603
+    },
+    {
+      "name": "동물사육장",
+      "id": "576254849",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.009802131652831392
+    },
+    {
+      "name": "면학관",
+      "id": "524021464",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.013425378799438281
+    },
+    {
+      "name": "문예관",
+      "id": "524161867",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.05332019805908139
+    },
+    {
+      "name": "미래창직관",
+      "id": "1408182451",
+      "bottom_vertices": 13,
+      "max_shift_m": 0.0347292709350584
+    },
+    {
+      "name": "박물관",
+      "id": "468931898",
+      "bottom_vertices": 17,
+      "max_shift_m": 0.024071006774902592
+    },
+    {
+      "name": "반도체융합연구동",
+      "id": "524021469",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.03344413757324194
+    },
+    {
+      "name": "백호관",
+      "id": "468931928",
+      "bottom_vertices": 22,
+      "max_shift_m": 1.333517341613769
+    },
+    {
+      "name": "법과대학",
+      "id": "468931899",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.01319679498672488
+    },
+    {
+      "name": "법학전문대학원",
+      "id": "468931900",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.012804000377655056
+    },
+    {
+      "name": "보람관",
+      "id": "1300033666",
+      "bottom_vertices": 16,
+      "max_shift_m": 0.01829507827758814
+    },
+    {
+      "name": "복지관",
+      "id": "468931902",
+      "bottom_vertices": 12,
+      "max_shift_m": 0.016239910125732226
+    },
+    {
+      "name": "복현회관",
+      "id": "468931921",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.01918151855468775
+    },
+    {
+      "name": "본관",
+      "id": "468931858",
+      "bottom_vertices": 17,
+      "max_shift_m": 0.05206778526306155
+    },
+    {
+      "name": "봉사관",
+      "id": "1470108675",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.020864276885986577
+    },
+    {
+      "name": "사과센터",
+      "id": "473687810",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.016289978027344
+    },
+    {
+      "name": "사회과학대학",
+      "id": "524021468",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.015864877700805663
+    },
+    {
+      "name": "생물학관",
+      "id": "468931887",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.012263565063475923
+    },
+    {
+      "name": "생활과학대학",
+      "id": "468931905",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.022579164505004856
+    },
+    {
+      "name": "수의과대학",
+      "id": "524021465",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.020356683731078906
+    },
+    {
+      "name": "수의과대학부속병원",
+      "id": "468931894",
+      "bottom_vertices": 21,
+      "max_shift_m": 0.08000019073486353
+    },
+    {
+      "name": "약학대학",
+      "id": "440331569",
+      "bottom_vertices": 9,
+      "max_shift_m": 0.052729396820068164
+    },
+    {
+      "name": "어린이집",
+      "id": "473684409",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.022182731628418217
+    },
+    {
+      "name": "어학교육원",
+      "id": "468931910",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.04113510131835918
+    },
+    {
+      "name": "연구실 안전관리센터",
+      "id": "468931889",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.021952896118163423
+    },
+    {
+      "name": "영선관",
+      "id": "524025612",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.026929407119751003
+    },
+    {
+      "name": "예술대학",
+      "id": "468931844",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.023676605224610014
+    },
+    {
+      "name": "우당교육관",
+      "id": "468931907",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.01297476768493655
+    },
+    {
+      "name": "융합교육정보관",
+      "id": "1026072764",
+      "bottom_vertices": 7,
+      "max_shift_m": 0.02425458908081035
+    },
+    {
+      "name": "인문대학",
+      "id": "468931857",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.018167285919189452
+    },
+    {
+      "name": "인문한국진흥관",
+      "id": "846905616",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.03383256375789642
+    },
+    {
+      "name": "자연과학대학",
+      "id": "468931922",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.02796581268310483
+    },
+    {
+      "name": "정보센터",
+      "id": "468931914",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.04727485656738306
+    },
+    {
+      "name": "정보화본부",
+      "id": "468931909",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.0265047836303709
+    },
+    {
+      "name": "제1과학관",
+      "id": "468931920",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.05087402343750025
+    },
+    {
+      "name": "제1체육관",
+      "id": "468931926",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.05059268951415952
+    },
+    {
+      "name": "제2과학관",
+      "id": "468931923",
+      "bottom_vertices": 12,
+      "max_shift_m": 0.019597320556639986
+    },
+    {
+      "name": "제2체육관",
+      "id": "468931925",
+      "bottom_vertices": 13,
+      "max_shift_m": 0.023143081665038423
+    },
+    {
+      "name": "제3합동강의동",
+      "id": "468931848",
+      "bottom_vertices": 12,
+      "max_shift_m": 0.04766819000244116
+    },
+    {
+      "name": "제4합동강의동",
+      "id": "468931903",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.024709253311157253
+    },
+    {
+      "name": "조소동",
+      "id": "468931846",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.04542854309081967
+    },
+    {
+      "name": "중앙도서관",
+      "id": "468931852",
+      "bottom_vertices": 7,
+      "max_shift_m": 0.020103425979614453
+    },
+    {
+      "name": "진리관",
+      "id": "468931880",
+      "bottom_vertices": 10,
+      "max_shift_m": 0.023837833404541264
+    },
+    {
+      "name": "창업보육센터",
+      "id": "524021463",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.011631517410278125
+    },
+    {
+      "name": "첨성관",
+      "id": "468931911",
+      "bottom_vertices": 18,
+      "max_shift_m": 0.0490505981445315
+    },
+    {
+      "name": "청룡관 (Cheonglyong-Gwan)",
+      "id": "522514118",
+      "bottom_vertices": 9,
+      "max_shift_m": 0.7400553512573236
+    },
+    {
+      "name": "테크노빌딩",
+      "id": "468931912",
+      "bottom_vertices": 11,
+      "max_shift_m": 0.032303123474120454
+    },
+    {
+      "name": "평생교육원",
+      "id": "468931916",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.009935646057128267
+    },
+    {
+      "name": "학군단",
+      "id": "468931930",
+      "bottom_vertices": 9,
+      "max_shift_m": 0.03602149963378842
+    },
+    {
+      "name": "한국기초과학지원연구원",
+      "id": "468931886",
+      "bottom_vertices": 14,
+      "max_shift_m": 0.06870529174804751
+    },
+    {
+      "name": "향토관",
+      "id": "468931908",
+      "bottom_vertices": 15,
+      "max_shift_m": 0.06976535797119165
+    },
+    {
+      "name": "화목관",
+      "id": "468931890",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.011859683990478764
+    },
+    {
+      "name": "화학관",
+      "id": "468931882",
+      "bottom_vertices": 13,
+      "max_shift_m": 0.013947277069092046
+    },
+    {
+      "name": "이름 미등록 건물",
+      "id": "468931854",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.03788152217864993
+    },
+    {
+      "name": "이름 미등록 건물.001",
+      "id": "468931893",
+      "bottom_vertices": 8,
+      "max_shift_m": 0.021210937499999805
+    },
+    {
+      "name": "이름 미등록 건물.002",
+      "id": "468931896",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.015141696929931392
+    },
+    {
+      "name": "이름 미등록 건물.003",
+      "id": "468931915",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.027798442840575976
+    },
+    {
+      "name": "이름 미등록 건물.004",
+      "id": "524161868",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.0597006988525397
+    },
+    {
+      "name": "이름 미등록 건물.005",
+      "id": "576358734",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.0446846771240228
+    },
+    {
+      "name": "이름 미등록 건물.006",
+      "id": "577759119",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.21236923217773374
+    },
+    {
+      "name": "이름 미등록 건물.007",
+      "id": "584385630",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.010033665895462035
+    },
+    {
+      "name": "이름 미등록 건물.008",
+      "id": "584386432",
+      "bottom_vertices": 4,
+      "max_shift_m": 0.009926884174346923
+    },
+    {
+      "name": "이름 미등록 건물.009",
+      "id": "972016220",
+      "bottom_vertices": 6,
+      "max_shift_m": 0.044037132263182954
+    }
+  ],
+  "surface_objects": 1999,
+  "qa_errors": [
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "SM_CampusTerrain_v11: 2 edges with inconsistent face winding"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "SM_CampusTerrain_v11: degenerate faces=40 zero-len edges=0"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "z-fighting: SM_CampusTerrain_v11 (11 overlapping coplanar tri pairs)"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [342.083, -590.0, -0.477])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [344.468, -590.0, -0.477])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [390.0, -560.966, -0.116])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [400.0, -553.878, -0.124])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-80.0, -545.27, -8.207])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-37.725, -470.0, -5.587])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [150.0, -450.191, -3.535])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [20.0, -444.357, -4.493])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [60.0, -446.152, -3.818])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [70.0, -446.6, -3.554])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-310.0, -415.034, -9.112])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [553.141, -120.0, 1.851])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-558.454, -70.0, -11.709])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [523.279, -60.0, 0.655])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-430.0, 18.649, -10.961])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [492.801, 50.0, -4.874])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-350.0, 67.214, -7.484])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-330.0, 79.356, -7.065])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [433.37, 180.0, -8.282])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [-130.0, 202.256, -6.542])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [397.745, 260.0, -11.089])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [34.374, 370.0, -9.574])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [70.0, 410.737, -10.808])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [301.431, 520.0, -15.474])"
+    },
+    {
+      "object": "SM_CampusTerrain_v11",
+      "error": "floating/detached part in SM_CampusTerrain_v11 (1 verts at [311.787, 530.0, -15.306])"
+    },
+    {
+      "object": "green.005",
+      "error": "green.005: 2 edges with inconsistent face winding"
+    },
+    {
+      "object": "green.013",
+      "error": "z-fighting: green.013 (1 overlapping coplanar tri pairs)"
+    }
+  ],
+  "qa_warning_counts": {
+    "SM_CampusTerrain_v11: non-manifold edges=1 wire=0": 1,
+    "SM_CampusTerrain_v11: duplicate verts=0 loose verts=212": 1,
+    "relative_ground": 2123,
+    "green: 103 n-gons": 1,
+    "green.001: 8 n-gons": 1,
+    "water: 12 n-gons": 1,
+    "green.002: 1 n-gons": 1,
+    "green.003: 172 n-gons": 1,
+    "green.004: 51 n-gons": 1,
+    "green.005: non-manifold edges=2 wire=0": 1,
+    "green.005: 209 n-gons": 1,
+    "green.006: 72 n-gons": 1,
+    "green.007: 48 n-gons": 1,
+    "green.008: 43 n-gons": 1,
+    "green.009: 57 n-gons": 1,
+    "green.010: 11 n-gons": 1,
+    "green.011: 1 n-gons": 1,
+    "green.012: 68 n-gons": 1,
+    "green.013: 34 n-gons": 1,
+    "green.014: 45 n-gons": 1,
+    "green.015: 15 n-gons": 1,
+    "water.001: 4 n-gons": 1,
+    "water.002: 8 n-gons": 1,
+    "green.016: 67 n-gons": 1,
+    "green.017: 39 n-gons": 1,
+    "green.018: 14 n-gons": 1,
+    "green.019: 4 n-gons": 1,
+    "green.020: 391 n-gons": 1,
+    "green.021: 4 n-gons": 1,
+    "green.022: 4 n-gons": 1,
+    "green.023: 15 n-gons": 1,
+    "green.024: 17 n-gons": 1,
+    "green.025: 3 n-gons": 1,
+    "green.026: 36 n-gons": 1,
+    "green.027: 1 n-gons": 1,
+    "green.029: 2 n-gons": 1,
+    "green.030: 1 n-gons": 1,
+    "green.031: 2 n-gons": 1,
+    "green.032: 17 n-gons": 1,
+    "green.033: 2 n-gons": 1,
+    "green.035: 23 n-gons": 1,
+    "green.036: duplicate verts=1 loose verts=0": 1,
+    "green.036: 7 n-gons": 1,
+    "green.037: 72 n-gons": 1,
+    "green.038: 70 n-gons": 1,
+    "green.039: 16 n-gons": 1,
+    "green.040: 28 n-gons": 1,
+    "green.041: 2 n-gons": 1,
+    "green.042: 54 n-gons": 1,
+    "green.043: 6 n-gons": 1,
+    "green.044: 47 n-gons": 1,
+    "green.045: 13 n-gons": 1,
+    "green.046: 21 n-gons": 1,
+    "green.048: 4 n-gons": 1,
+    "green.049: 41 n-gons": 1,
+    "green.050: 52 n-gons": 1,
+    "green.051: 7 n-gons": 1,
+    "green.052: 2 n-gons": 1,
+    "green.053: 10 n-gons": 1,
+    "road_2.007: 2 n-gons": 1,
+    "road_2.016: 2 n-gons": 1,
+    "road_2.018: 2 n-gons": 1,
+    "road_9.001: 4 n-gons": 1,
+    "road_19.008: 2 n-gons": 1,
+    "road_25.004: 4 n-gons": 1,
+    "road_25.006: 2 n-gons": 1,
+    "road_25.011: 4 n-gons": 1,
+    "road_28.004: 2 n-gons": 1,
+    "road_29.004: 4 n-gons": 1,
+    "road_30: 4 n-gons": 1,
+    "road_30.009: 4 n-gons": 1,
+    "road_37.001: 2 n-gons": 1,
+    "road_39.001: 4 n-gons": 1,
+    "road_39.002: 4 n-gons": 1,
+    "road_43: 4 n-gons": 1,
+    "road_43.008: 4 n-gons": 1,
+    "road_50: 4 n-gons": 1,
+    "road_50.001: 4 n-gons": 1,
+    "road_50.002: 4 n-gons": 1,
+    "road_51.004: 4 n-gons": 1,
+    "road_53.001: 4 n-gons": 1,
+    "road_58.003: 4 n-gons": 1,
+    "road_58.005: 2 n-gons": 1,
+    "road_59: 4 n-gons": 1,
+    "road_59.004: 2 n-gons": 1,
+    "road_63.002: 2 n-gons": 1,
+    "road_64.006: 4 n-gons": 1,
+    "road_65.001: 4 n-gons": 1,
+    "road_71.006: 4 n-gons": 1,
+    "road_75: 2 n-gons": 1,
+    "road_86.014: 2 n-gons": 1,
+    "road_86.016: 2 n-gons": 1,
+    "road_93: 2 n-gons": 1,
+    "road_102.004: 2 n-gons": 1,
+    "road_106: 2 n-gons": 1,
+    "road_107.001: 2 n-gons": 1,
+    "road_107.011: 2 n-gons": 1,
+    "road_109.002: 2 n-gons": 1,
+    "road_113: 12 n-gons": 1,
+    "road_114: 2 n-gons": 1,
+    "road_119: 4 n-gons": 1,
+    "road_120.007: 2 n-gons": 1,
+    "road_125: 2 n-gons": 1,
+    "road_131: 2 n-gons": 1,
+    "road_143.015: 6 n-gons": 1,
+    "road_155.001: 2 n-gons": 1,
+    "road_169.001: 2 n-gons": 1,
+    "road_169.002: 2 n-gons": 1,
+    "road_178: 2 n-gons": 1,
+    "road_183: 2 n-gons": 1,
+    "road_184.003: 4 n-gons": 1,
+    "road_187.007: 4 n-gons": 1,
+    "road_201: 2 n-gons": 1,
+    "road_207.002: 4 n-gons": 1,
+    "road_214.002: 4 n-gons": 1,
+    "road_219.005: 2 n-gons": 1,
+    "road_220: 2 n-gons": 1,
+    "road_233.005: 4 n-gons": 1,
+    "road_236.001: 2 n-gons": 1,
+    "road_242.001: 4 n-gons": 1,
+    "road_245.001: 2 n-gons": 1,
+    "road_247.009: 4 n-gons": 1,
+    "road_252.002: 4 n-gons": 1,
+    "road_252.004: 4 n-gons": 1,
+    "road_256: 8 n-gons": 1,
+    "road_257.002: 4 n-gons": 1,
+    "road_257.011: 4 n-gons": 1,
+    "road_257.016: 2 n-gons": 1,
+    "road_257.021: 4 n-gons": 1,
+    "road_259: 8 n-gons": 1,
+    "road_259.015: 2 n-gons": 1,
+    "road_259.027: 4 n-gons": 1,
+    "road_272: 2 n-gons": 1,
+    "road_275: 4 n-gons": 1,
+    "road_276: 2 n-gons": 1,
+    "road_276.003: 4 n-gons": 1,
+    "road_276.009: 4 n-gons": 1,
+    "road_276.020: 2 n-gons": 1,
+    "road_276.021: 2 n-gons": 1,
+    "road_287.001: 4 n-gons": 1,
+    "road_288: 4 n-gons": 1,
+    "road_288.001: 4 n-gons": 1,
+    "road_305.004: 2 n-gons": 1,
+    "road_311.003: 2 n-gons": 1,
+    "road_323.007: 2 n-gons": 1,
+    "road_331.004: 2 n-gons": 1,
+    "road_338.016: 2 n-gons": 1,
+    "road_340: 6 n-gons": 1,
+    "road_377.004: 2 n-gons": 1,
+    "road_380.003: 2 n-gons": 1
+  }
+}
