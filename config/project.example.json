@@ -1,23 +1,38 @@
 {
   "schema_version": "0.1",
   "sample_only": true,
-  "runtime_loaded": false,
-  "note": "초기 제안값. 현재 서버에서 읽지 않으며 실기기 파일럿 후 확정합니다.",
+  "runtime_loaded": true,
+  "note": "초기 제안값. config/project.local.json이 없으면 서버가 이 파일을 읽고 상태에 config_source=example로 표시합니다. 실기기 파일럿 후 확정합니다.",
   "input_mode_proposal": "phone_pose",
-  "world": {"frame": "room_z_up", "units": "m"},
+  "world": {
+    "frame": "room_z_up",
+    "units": "m"
+  },
   "session_duration_s": 60,
   "tracking": {
     "min_views": 2,
     "visibility_min": 0.6,
     "max_skew_ms": 45,
     "max_reprojection_error_px": 14,
-    "max_frame_age_ms": null
+    "max_frame_age_ms": null,
+    "max_wait_ms": 100,
+    "align_mode": "nearest",
+    "allowed_timestamp_sources": [
+      "capture_metadata"
+    ]
   },
-  "hit": {"min_speed_mps": 0.9, "cooldown_ms": 350},
+  "hit": {
+    "min_speed_mps": 0.9,
+    "cooldown_ms": 350
+  },
   "evaluation": {
     "participant_target_proposal": 6,
     "tracking_mode": "multiview_3d",
-    "task_types": ["practice", "prescribed", "free"],
+    "task_types": [
+      "practice",
+      "prescribed",
+      "free"
+    ],
     "decision_status": "team_review_required"
   }
 }

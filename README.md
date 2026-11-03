@@ -6,11 +6,13 @@
 
 ## 현재 상태
 
-FastAPI 상태 서버, 휴대폰 MediaPipe 좌·우 손목 추출·송신 클라이언트와 모니터 준비 화면을 제공합니다. [키보드 파괴·복원 데모](http://127.0.0.1:8765/monitor/fracture/)에서는 IT 1호관 96개·본관 85개 파편, 모델 선택·분리 보기·클릭 타격, 60초·점수·리셋을 시험할 수 있습니다. 이전 64/52/32개 버전도 보존합니다. [설치·실행](docs/ASSET_PIPELINE.md), [세분화·역할](docs/FRACTURE_REFINEMENT.md)을 따릅니다.
+FastAPI 기기 등록·2D 관절 수신/검증·시계 교환·시간 정렬·3D 손목 복원 서버, 휴대폰 MediaPipe 손목 추출·송신 클라이언트와 모니터 준비 화면을 제공합니다. [키보드 파괴·복원 데모](http://127.0.0.1:8765/monitor/fracture/)에서는 IT 1호관 96개·본관 85개 파편, 모델 선택·분리 보기·클릭 타격, 60초·점수·리셋을 시험할 수 있습니다. 이전 64/52/32개 버전도 보존합니다. [설치·실행](docs/ASSET_PIPELINE.md), [세분화·역할](docs/FRACTURE_REFINEMENT.md)을 따릅니다.
 
 캠퍼스 v13은 건물 123개와 지형을 포함하고, 지도·사진과 대조해 6개 건물 외형을 보완했습니다. [지도 대조·치수 한계](docs/CAMPUS_MAP_REVIEW.md), [모델·파편 고도화](docs/BUILDING_ENHANCEMENTS.md)를 참고하세요. 인수 범위는 이동수 담당 전체이며 김태이는 실제 손목 입력·충돌·파편 물리/소리, 정경호는 서버·보정·3D 복원을 담당합니다.
 
-현재 main 서버에는 /ws/pose 수신이 없어 카메라 손목은 로컬로 표시하고 연결 안내를 제공합니다. 수신·시간 정렬·3D 기초 코드는 별도 feat/server-deployment 브랜치에 있습니다. 실제 3대 입력·C0 실영상·실측 보정·AR 정합·실제 손동작 타격 통합은 미검증입니다. 키보드 데모는 synthetic/keyboard_demo이며 실제 게임 준비 상태를 바꾸지 않습니다.
+현재 작업 브랜치에는 feat/server-deployment의 `/ws/ingest`·`/ws/pose` 수신, `/ws/pose3d` 전달, `/api/calibration`과 선택적 접속 키를 로컬 병합했습니다. 카메라 클라이언트는 `/ws/pose`로 손목을 송신하며 실제 기기 연결·모델 배포·촬영 시각 출처는 별도 확인이 필요합니다. 모니터 3D 소비와 단일 카메라 방/신호/세션 서버는 아직 미구현입니다. 실제 3대 입력·C0 실영상·실측 보정·AR 정합·실제 손동작 타격 통합은 미검증입니다. 키보드 데모는 synthetic/keyboard_demo이며 실제 게임 준비 상태를 바꾸지 않습니다.
+
+기존 외부 HTTPS 접속 성공은 사용자 보고 기준이며 이번 병합 후 외부 접속 재현은 하지 않았습니다. 단일 카메라 추가 경로는 [실행 계획](docs/SINGLE_CAMERA_PLAN.md)·[인터페이스](docs/SINGLE_CAMERA_INTERFACES.md)를 따릅니다.
 
 ## 팀원 시작 안내
 
@@ -55,7 +57,7 @@ AGENTS.md와 PM_plan.md를 읽고, 내 이름_plan.md와 AGENTS/내 이름_progr
 
 ## 실행
 
-Python 3.12를 기준으로 합니다. 프로젝트 루트에서 실행합니다.
+Python 3.12를 기준으로 하며, Windows Python 3.13.14에서도 자동 테스트를 확인했습니다. 프로젝트 루트에서 실행합니다.
 
 ```bash
 python -m venv .venv

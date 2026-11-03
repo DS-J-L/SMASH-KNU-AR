@@ -26,7 +26,7 @@ flowchart TD
 | `backend/calibration/` | 내부·외부 보정, 보정 버전·기기 설정 검증 | 실제 촬영 설정과 맞지 않는 보정 거부 |
 | `backend/sync/` | 시계 오프셋·RTT·불확실성, 최신 프레임 정렬 | 폰 로컬 타임스탬프를 서로 바로 비교하지 않음 |
 | `backend/tracking/` | 삼각측량, 재투영·깊이·신뢰도 검사 | 단일 시점과 실패 결과는 null |
-| `web/camera/` | 카메라 미리보기, 이후 MediaPipe·전송 | 영상 회전·크롭·렌즈 변경을 보정 버전에 연결 |
+| `web/camera/` | 카메라 미리보기, MediaPipe 손목 추출·전송 | 영상 회전·크롭·렌즈 변경을 보정 버전에 연결 |
 | `web/monitor/render/` | Three.js, C0 투영, 건물 로드 | 영상과 가상 장면의 픽셀 격자·왜곡 처리 일치 |
 | `web/monitor/physics/` | 손목 궤적 충돌, Rapier, 소리 | 건물 변환을 렌더링과 공유하고 추적 실패 시 궤적 초기화 |
 | `web/monitor/game/` | 준비, 시작, 60초, 점수, 결과, 리셋 | UI가 관절의 유효 여부를 임의로 바꾸지 않음 |
@@ -35,10 +35,12 @@ flowchart TD
 
 ## 현재 실행되는 흐름
 
-1. FastAPI가 `/monitor/`와 `/camera/`를 제공합니다.
-2. 두 화면이 `/ws/status`로 서버 상태를 받습니다.
-3. 카메라 페이지는 버튼을 누르면 카메라를 켜고, 폰에서 MediaPipe로 좌·우 손목을 찾아 화면에 표시합니다.
-4. 카메라 페이지는 `/ws/pose`로 `pose_2d`를 보내려 하지만, 서버 수신(T01)은 아직 없어 연결 실패를 표시하고 로컬 표시만 합니다. 서버에는 관절·영상이 도착하지 않으므로 `game_ready=false`를 유지합니다.
+1. FastAPI가 `/monitor/`와 `/camera/`를 제공합니다. 접속 키 설정 시 HTTP·WebSocket 접속을 보호합니다(D07).
+2. 두 화면은 `/ws/status`를 수신하며 서버는 등록·관절 수신·보정·추적 준비를 구분합니다.
+3. 카메라는 MediaPipe 손목을 `/ws/pose`에서 camera_hello → camera_ack 후 송신합니다. `/ws/ingest` 등록 경로도 유지합니다. 실기기 검증은 별도입니다.
+4. 보정·시간 조건을 만족한 관측을 정렬하고 `/ws/pose3d`로 전달합니다. rvfc_capture_time은 기본 3D 허용 출처가 아니므로 2D 수신 성공만으로 추적 준비가 되지 않습니다.
+5. 실측 보정·모니터 pose_3d 소비·장면 준비 연결은 남아 있습니다. 합성 입력·보정이나 키보드 데모로 실제 game_ready를 켜지 않습니다.
+6. `/monitor/fracture/`는 synthetic/keyboard_demo 경로입니다. 단일 카메라 방·WebRTC 신호·세션 ACK 서버는 아래 설계의 후속 구현 대상입니다.
 
 ## 좌표와 시간
 
@@ -55,7 +57,7 @@ flowchart TD
 
 ## 의존성 추가 시점
 
-초기 스타터 화면은 별도 Node 빌드가 없었습니다. 2026-11-03 main 기준 카메라는 로컬 MediaPipe 배포 파일을 사용하며, frontend/fracture의 키보드 데모는 루트 package.json·잠금 파일과 Vite/Three.js/Rapier를 사용합니다. 단일 모드의 새 진입점은 후속 구현 대상입니다. 서버 별도 브랜치의 OpenCV·NumPy 등은 선별 통합 시 의존 버전/검증을 함께 기록합니다. 모델·WASM·필수 에셋은 로컬 제공 경로를 유지합니다.
+초기 스타터 화면은 별도 Node 빌드가 없었습니다. 2026-11-03 main 기준 카메라는 로컬 MediaPipe 배포 파일을 사용하며, frontend/fracture의 키보드 데모는 루트 package.json·잠금 파일과 Vite/Three.js/Rapier를 사용합니다. 단일 모드의 새 진입점은 후속 구현 대상입니다. 이번 로컬 병합의 서버는 OpenCV(opencv-python-headless 4.13.0.92)·NumPy(2.4.4)를 사용하며 requirements.txt로 버전을 관리합니다. 모델·WASM·필수 에셋은 로컬 제공 경로를 유지합니다.
 
 
 ## 2026-11-03 단일 카메라 추가 구조 제안
