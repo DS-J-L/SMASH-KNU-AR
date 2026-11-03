@@ -46,11 +46,11 @@
     "frontend/single/frame-coordinator.js": "f07f54bff9bcefe82251141b43fb7bbc27d5b58b9538e813170dbed915c03946",
     "frontend/single/index.html": "a6004c9d80f7c41aaa2a491015f60d19f154d0007a902c0fc9e4db69e53d4357",
     "frontend/single/log-buffer.js": "32bd9f0b8214482ae054bcae552c447437e44dce7d0a2a93107431e0c6a93f76",
-    "frontend/single/main.js": "33a0566f78b4f3bf363f2847651ca2bbb468423b26a4cf55d5f0637e85a87843",
-    "frontend/single/style.css": "26344cc68c17568dcb278d9347ee71e571b03ccb2839c9d86e07eef4d763cdb9",
+    "frontend/single/main.js": "dbebe09784f5e33d8830f21ad765416e38e95b948c91f07f393c5c2daee279a5",
+    "frontend/single/style.css": "b4ea920fe8d40e1facfd55c07bf72e40846fb01741db8f65ab6a01d015e10a56",
     "frontend/single/target-provider.js": "6d9b8eca5b266ec0083969547892a5eb1d99579db8c69576225d6939a4575b6f",
-    "frontend/single/video-receiver.js": "b436fae6135d660200690bb9b82cc9f1f587258b8c8f869b7d03f24ab758c207",
-    "frontend/game/controller.js": "8a659758016e2497abdbf165777f7237a5938e7e7dafa23444485fa32796aaab",
+    "frontend/single/video-receiver.js": "eb3d63db74901ba65d29a8cb717336c1521608ab0677019c5ce234b658287b2f",
+    "frontend/game/controller.js": "051eae3440abd6ebeb7aff6c2edbad617c10026e05a156ef4631d4f09dd32ce2",
     "frontend/game/fragment-bodies.js": "acd1c75319279a06248881da36bf0ecc64ece551830d9838278b9ec026230877",
     "frontend/fracture/main.js": "2ce37c6f8cb76f1a73cd5af33a7c0727f3e449ba924763756e1f240048e0e468",
     "vite.single.config.js": "4a6ed81413bdb0ff9cfe8f7886144b0457a866ca6646d396dad2b8484726010c",
@@ -210,5 +210,6 @@
     "Three 60-second rounds use a virtual Playwright clock.",
     "No Blender/model/asset geometry or multiview server readiness was changed.",
     "Existing validation screenshots restored; new monitor screenshots are separate."
-  ]
+  ],
+  "runtime_sha256_basis": "Git blob bytes: LF-normalized text per .gitattributes; test execution used the same text with platform line endings."
 }
