@@ -6,13 +6,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-10-28 KST |
-| 현재 작업·상태 | 공통 관리 — GitHub main 공유·팀원 시작 안내 구성, 완료 |
-| 마지막 확인된 완료 | 계획·AGENTS 문서와 README 안내를 main에 반영하고 원격 14개 파일 내용·기존 38개 파일 보존 확인 |
+| 마지막 갱신 | 2026-11-03 15:22 KST |
+| 현재 작업·상태 | 카메라 PR #1 코드 검증 완료 — 실제 폰 3대 시험 11-09 예정 |
+| 마지막 확인된 완료 | 중지/재시작 회귀 6개·PR 서버 4개·임시 서버 통합 58개, 실제 MediaPipe 재생 확인 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
-| 남은 일·미검증 | 팀원의 실제 개발 완료·기기·환경·P0 합의와 새 Codex 실행의 지침 로딩 확인. 이번 작업은 문서 공유 범위 |
-| 다음 한 단계 | 팀원이 저장소를 clone하거나 main을 갱신하고 README → PM 계획 → 개인 계획/진행 파일 순서로 첫 기록 시작 |
-| 막힌 점·필요 확인 | 특정 문서 장애 없음. 팀원 실제 개발 상태는 별도 확인 필요 |
+| 남은 일·미검증 | 실제 휴대폰 3대·실측 보정·C0 영상·3D/AR/게임 통합. 서버 코드는 별도 feat/server-deployment |
+| 다음 한 단계 | 검증한 PR head 머지, 서버 브랜치 문서 충돌 정리·11-09 실제 장비 시험 준비 |
+| 막힌 점·필요 확인 | 서버 브랜치와 문서 4개 충돌; 촬영 시각 출처·실측 보정은 실기기 확인 필요 |
 
 ## 2. 누적 관리 작업 기록
 
@@ -88,3 +88,25 @@
 ## 3. 공통 Phase 통합 확인 기록
 
 아직 실제 통합 확인 기록이 없다. 팀원이 남긴 개인 결과와 PM 계획의 기준을 확인한 뒤 양식에 따라 아래에 추가한다. 운영 문서를 만들었다는 이유로 P0를 완료 처리하지 않는다.
+
+### 2026-11-03 15:12 KST — PR #1 코드 검증·머지 시작
+
+- 담당 / 기록자: PM·공통 검토 / Codex. 작업 구분·Phase·상태: 코드 검토·통합 확인 / P1 카메라 코드 / 진행 중.
+- 사용자 지시: GitHub에 열린 PR 검증 후 머지. 대상 PR #1, 최초 head 0918bcf5d344a5f2e50cd958c2a23f7ee1b90425. main 66078f7954eb2f8544369cfdec345bf03fa58575.
+- 읽은 계획·기록: AGENTS 운영/양식, PM P1·핵심 전달 약속, 김태이 P1/11-02 통합 기록, 정경호 P1~P3 협업 범위. 사용자 확정 실제 장비 시험일 11-09(월).
+- 목표·검증 계획: 미게시 모델 작업을 보존한 별도 worktree에서 코드/계약·main 병합 후보·서버 의존 경로 확인. 실패 수정 후 검증한 head만 머지.
+
+### 2026-11-03 15:22 KST — PR #1 오류 수정·코드 검증 종료
+
+- 담당 / 기록자: PM·공통 검토 / Codex. 작업 구분·Phase·상태: 검토·수정·자동/재생 검증 / P1 코드 / 검증 완료, 실제 장비 미검증.
+- 실제 문제·수정: 중지 후 늦은 권한/모델 응답이 카메라를 다시 시작하거나 새 세션을 덮어쓰는 문제, 예약 프레임 미취소로 재시작 루프 중복, 추론 예외 뒤 카메라/전송이 남는 문제를 run 식별자·콜백 취소·예외 정리로 수정. Windows에서 .mjs의 text/plain 응답으로 ESM 로딩이 막힘을 실제 재현; 같은 원본/해시를 vision_bundle.js로 제공.
+- 바꾼 파일·근거: 수정 커밋 8f31c61의 web/camera/app.js·pose.js, tools/fetch_mediapipe.py, tests/test_camera_lifecycle.mjs, models/README.md, docs/SETUP.md. 본 기록과 팀 현황의 공통 검토 행을 추가.
+- 검증 방법·실제 결과: Node 22.15.1 회귀 명령 node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs: 수정 전 6개 실패, 수정 후 6개 통과. 격리 Python 3.12.10 + 고정 requirements-dev.txt에서 pytest 4개 통과. 최신 main과의 미커밋 병합 후보에서도 동일 4개·6개 및 check_scaffold.py(예제 4개·Markdown 34개/링크) 통과. 런타임/모델 7개 SHA-256 일치.
+- 브라우저 범위: Windows Chromium/Playwright, 실제 MediaPipe 0.10.35 GPU·640x480 녹화 재생. 좌우 손목 검출, capture_time_ms=null/unknown 유지, 중지 후 예약 콜백 0·재시작 실행 루프 1·페이지 예외 0. main 수신 경로 부재 시 로컬 표시 안내 확인.
+- 서버 호환: 별도 임시 worktree에서 e9cdaff의 feat/server-deployment와 카메라 수정본 결합. pytest 58개·Node 6개 통과. MediaPipe 재생으로 C0 receiving·clock.ready=true·sample_only=true·rejected={}·game_ready=false 확인. 서버 브랜치를 main에 머지한 결과가 아님.
+- 실패 이력 구분: 시험 스크립트 URL route의 쿼리 매칭과 시험 영상 SAR 불일치를 수정해 재실행. 문서 기록의 격리 venv tzdata 부재는 표준 라이브러리 UTC+09 사용으로 해소. 앱 오류와 구분하며 코드/검증 근거를 보존.
+- 로컬 실행 근거: 임시 검토 worktree data/local/pr1-review/main-replay.json·server-replay.json·검토 화면 및 커밋된 회귀 시험/실행 안내. 공개 예제 사진 기반 replay이며 실제 폰 촬영이 아님.
+- 경고·한계: Starlette/httpx 사용 중단 예고 1개와 Node VM 실험 기능 안내. 실제 폰 3대·HTTPS/GPU/FPS/발열·실측 보정·C0/3D/AR/타격 통합은 미검증.
+- 남은 일·막힘: 서버 브랜치 통합 시 문서 4개 충돌 정리, rvfc_capture_time 허용 기준·실측 보정 확인. 11-09 실제 장비 시험에서 확인.
+- 다음 행동·인계: 최신 PR head/base·필수 상태 재확인 후 검증한 head만 머지. 실제 장비 P1 및 공통 Phase 완료 체크는 유지. 미게시 로컬 건물/지형/파편 작업 보존.
+- 종료 시각: 2026-11-03 15:22 KST.

@@ -17,6 +17,7 @@ data/local/
 models/*.task
 models/*.tflite
 web/public/models/
+web/public/vendor/
 assets/source/*
 !assets/source/README.md
 *.log
