@@ -14,3 +14,4 @@
 
 # Generated bundle preserves whitespace inside upstream GLSL template strings.
 web/monitor/fracture/assets/*.js -whitespace
+web/monitor/single/assets/*.js -whitespace

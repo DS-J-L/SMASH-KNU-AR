@@ -1,0 +1,215 @@
+{
+  "recorded_at": "2026-11-03T17:44:48.563276+09:00",
+  "branch": "feat/single-camera-monitor",
+  "base": "9f5e13c34b363b86a12694bfa6c24c765b85bfbf",
+  "scope": "이동수 L-SC-01~06 PC 소비자/화면 구현 및 독립 검증; 다른 담당 실제 모듈 인계 대기",
+  "inputs": {
+    "new_monitor": "synthetic",
+    "webrtc_browser_peer": "canvas synthetic video, real RTCPeerConnection, 3 connections",
+    "existing_demo": "keyboard_demo / synthetic",
+    "camera_tests": "mocked lifecycle",
+    "server_tests": "scaffold TestClient"
+  },
+  "results": {
+    "node_single": {
+      "passed": 19,
+      "command": "npm run test:single"
+    },
+    "browser": {
+      "passed": 27,
+      "new_single": 5,
+      "existing": 22,
+      "duration_ms": 110264.09,
+      "command": "AR_TEST_RENDERER=d3d11 npx playwright test -c playwright.single.config.js --reporter=json",
+      "renderer_note": "d3d11 requested in launch config; no field FPS/E2E claim"
+    },
+    "server": {
+      "passed": 4,
+      "command": "python -m pytest tests/test_server.py -q"
+    },
+    "camera": {
+      "passed": 6,
+      "command": "node --experimental-vm-modules --test tests/test_camera_lifecycle.mjs"
+    },
+    "build": "npm run build:all passed, two large bundle warnings retained"
+  },
+  "observed_failures_and_fixes": [
+    "First browser run: native fetch called with ControlLink as this caused Illegal invocation. Wrapped fetch and reran 5/5.",
+    "Transport test run pending after failure was terminated; old peer promise/duplicate stream binding/ACK ordering/heartbeat were corrected, final Node 19/19.",
+    "Visual review: wrist markers hidden under the building. Added a separate overlay canvas.",
+    "Code review: invalidate outstanding results on video/control loss; natural expiry sends ended log/end to the draft consumer. Final full browser 27/27."
+  ],
+  "runtime_sha256": {
+    "frontend/single/control-link.js": "ff39266aa6299924ab1802b1ac813b3d0d3666b41efe139ec6ed7957691a318c",
+    "frontend/single/display-transform.js": "a2389ed3dc54c504598ec0bc0ffe9bd84132755ebcf3ee7743f58b4b27710ad1",
+    "frontend/single/fracture-view.js": "6d6c8816f63f42217edec29fbd5022ca21475214d00bd93e2d8386df725b4764",
+    "frontend/single/frame-coordinator.js": "f07f54bff9bcefe82251141b43fb7bbc27d5b58b9538e813170dbed915c03946",
+    "frontend/single/index.html": "a6004c9d80f7c41aaa2a491015f60d19f154d0007a902c0fc9e4db69e53d4357",
+    "frontend/single/log-buffer.js": "32bd9f0b8214482ae054bcae552c447437e44dce7d0a2a93107431e0c6a93f76",
+    "frontend/single/main.js": "dbebe09784f5e33d8830f21ad765416e38e95b948c91f07f393c5c2daee279a5",
+    "frontend/single/style.css": "b4ea920fe8d40e1facfd55c07bf72e40846fb01741db8f65ab6a01d015e10a56",
+    "frontend/single/target-provider.js": "6d9b8eca5b266ec0083969547892a5eb1d99579db8c69576225d6939a4575b6f",
+    "frontend/single/video-receiver.js": "eb3d63db74901ba65d29a8cb717336c1521608ab0677019c5ce234b658287b2f",
+    "frontend/game/controller.js": "051eae3440abd6ebeb7aff6c2edbad617c10026e05a156ef4631d4f09dd32ce2",
+    "frontend/game/fragment-bodies.js": "acd1c75319279a06248881da36bf0ecc64ece551830d9838278b9ec026230877",
+    "frontend/fracture/main.js": "2ce37c6f8cb76f1a73cd5af33a7c0727f3e449ba924763756e1f240048e0e468",
+    "vite.single.config.js": "4a6ed81413bdb0ff9cfe8f7886144b0457a866ca6646d396dad2b8484726010c",
+    "web/monitor/single/index.html": "ec174e39c143d6180eadac5e54d92ed01956da63c5305d88fbae6592d6d06009",
+    "web/monitor/single/assets/index-CGddBM8h.css": "9ecae5084d3ad97552785c42e5de01f8bd06af803c1315d5413f2b39bcd8fc0a",
+    "web/monitor/single/assets/index-ySZH8VJR.js": "56a0155f5943398759d0d4d102915a2280ba50b01a0d1ebde9e3178768091468",
+    "web/monitor/fracture/index.html": "fdad8927a0403e43ca472ef975eadf8d7bf670a8e78dfe13197d456368741780",
+    "web/monitor/fracture/assets/index-K54p3q6p.css": "ca88ce11cd866408f26930410140e03b8b2a82c12ae3421af3ff19609c310098",
+    "web/monitor/fracture/assets/index-Sk530-pT.js": "e0b7035ffd00e660f90783d4458e7352d86b65c1d50c31d10a1ef445ba340c2c"
+  },
+  "browser_cases": [
+    {
+      "title": "six reviewed buildings can be inspected at their real campus coordinates",
+      "status": "expected",
+      "duration_ms": 13369
+    },
+    {
+      "title": "campus focus controls fit the small screen",
+      "status": "expected",
+      "duration_ms": 6536
+    },
+    {
+      "title": "new models and previous version can all fracture and restore",
+      "status": "expected",
+      "duration_ms": 7328
+    },
+    {
+      "title": "separated inspection blocks hits and restores from the range control",
+      "status": "expected",
+      "duration_ms": 3707
+    },
+    {
+      "title": "click selects a new impact point and dust clears on restoration",
+      "status": "expected",
+      "duration_ms": 4064
+    },
+    {
+      "title": "switching warmed models releases previous GPU resources",
+      "status": "expected",
+      "duration_ms": 7419
+    },
+    {
+      "title": "failed model replacement keeps the current package usable",
+      "status": "expected",
+      "duration_ms": 2468
+    },
+    {
+      "title": "Space activates the focused start button without destroying the building",
+      "status": "expected",
+      "duration_ms": 1839
+    },
+    {
+      "title": "Space on a focused view button opens the view without a hit",
+      "status": "expected",
+      "duration_ms": 4655
+    },
+    {
+      "title": "timer and end controls update on sparse frames away from a 200 ms boundary",
+      "status": "expected",
+      "duration_ms": 2371
+    },
+    {
+      "title": "a late hit updates expiry even while animation frames are suspended",
+      "status": "expected",
+      "duration_ms": 1931
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: fragment-count",
+      "status": "expected",
+      "duration_ms": 1087
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: units",
+      "status": "expected",
+      "duration_ms": 1054
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: rest-pivot",
+      "status": "expected",
+      "duration_ms": 1223
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: dimensions",
+      "status": "expected",
+      "duration_ms": 1230
+    },
+    {
+      "title": "inconsistent package is rejected before enabling gameplay: hull-bounds",
+      "status": "expected",
+      "duration_ms": 1405
+    },
+    {
+      "title": "failed campus load can be retried and clears the error",
+      "status": "expected",
+      "duration_ms": 5202
+    },
+    {
+      "title": "real package: keyboard fracture, single score, floor contacts and repeated clean restoration",
+      "status": "expected",
+      "duration_ms": 7379
+    },
+    {
+      "title": "60-second end blocks hits, and reset restores a new ready session",
+      "status": "expected",
+      "duration_ms": 1916
+    },
+    {
+      "title": "campus terrain inspection returns to intact prop without extra bodies",
+      "status": "expected",
+      "duration_ms": 4937
+    },
+    {
+      "title": "missing package remains disabled and explains recovery",
+      "status": "expected",
+      "duration_ms": 1253
+    },
+    {
+      "title": "small viewport has usable controls and no horizontal overflow",
+      "status": "expected",
+      "duration_ms": 2127
+    },
+    {
+      "title": "single live entry remains gated when server and pose adapter are missing, leaves multiview scaffold unchanged",
+      "status": "expected",
+      "duration_ms": 1585
+    },
+    {
+      "title": "synthetic screen event fractures 96 shards once, three clean restores with distinct sessions",
+      "status": "expected",
+      "duration_ms": 3562
+    },
+    {
+      "title": "rotated mirrored portrait display, resize invalidation and live mode switch reset synthetic session",
+      "status": "expected",
+      "duration_ms": 2006
+    },
+    {
+      "title": "three virtual 60-second rounds expire without post-end hits and reset correctly",
+      "status": "expected",
+      "duration_ms": 2329
+    },
+    {
+      "title": "real WebRTC browser peer video receiver reconnects three times and rejects late old-stream signaling",
+      "status": "expected",
+      "duration_ms": 4714
+    }
+  ],
+  "not_verified": [
+    "actual phone/HTTPS/permissions/Wi-Fi",
+    "K-SC phone sender, MediaPipe PC adapter, segment detector and sound",
+    "J-SC room/signaling/control server, authentication and log persistence",
+    "live single-camera gameplay and multiview integration",
+    "wall-clock 20 minutes and 3 live 60-second rounds",
+    "field accuracy/FPS/end-to-end p95 latency"
+  ],
+  "notes": [
+    "Three 60-second rounds use a virtual Playwright clock.",
+    "No Blender/model/asset geometry or multiview server readiness was changed.",
+    "Existing validation screenshots restored; new monitor screenshots are separate."
+  ],
+  "runtime_sha256_basis": "Git blob bytes: LF-normalized text per .gitattributes; test execution used the same text with platform line endings."
+}
