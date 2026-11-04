@@ -144,6 +144,21 @@ test('eagerWarmup=false registers the processor without loading MediaPipe', asyn
   attached.dispose();
 });
 
+test('a model load failure is kept and retried at most every 5 s, not on every frame', async () => {
+  let clock = 0;
+  let attempts = 0;
+  const loadPose = async () => { attempts++; throw new Error('MediaPipe 파일이 없습니다. PC에서 `python tools/fetch_mediapipe.py`를 실행하세요.'); };
+  const adapter = createPoseAdapter({ loadPose, now: () => clock });
+  await assert.rejects(adapter.process(image(), meta(1)), /fetch_mediapipe/);
+  clock = 1000;
+  await assert.rejects(adapter.process(image(), meta(2)), /fetch_mediapipe/);
+  assert.equal(attempts, 1);
+  assert.match(adapter.info().loadError, /fetch_mediapipe/);
+  clock = 5001;
+  await assert.rejects(adapter.process(image(), meta(3)));
+  assert.equal(attempts, 2);
+});
+
 test('a GPU failure during inference closes that instance and the next frame runs on CPU', async () => {
   const fake = fakePose({ failOn: new Set([2]) });
   const adapter = createPoseAdapter({ loadPose: fake.loadPose });

@@ -1,6 +1,8 @@
 // K-SC-05: synthesized impact and collapse sound for hits the game accepted. Web Audio only, no sound files.
 // Browsers keep an AudioContext suspended until a user gesture: prepare() early, unlock() from a click or key press.
 const MAX_VOICES = 3;
+// Up to three overlapping hits are summed into the speakers; keep their peaks under 1 to avoid clipping.
+const HEADROOM = 0.45;
 
 // Swing speed in image diagonals/s → loudness. A screen-effect mapping only, not a measured force.
 export function hitGain(speedNormPerS) {
@@ -48,7 +50,9 @@ export function createHitSound({
     filter.type = filterType;
     filter.frequency.setValueAtTime(frequency, start);
     const gain = envelope(start, peak, 0.005, duration);
-    source.connect(filter).connect(gain).connect(output);
+    source.connect(filter);
+    filter.connect(gain);
+    gain.connect(output);
     source.start(start, random() * 0.5, duration + 0.05);
     return source;
   }
@@ -66,39 +70,55 @@ export function createHitSound({
       return context.state;
     },
 
-    // Call from a user gesture. Safe to call repeatedly; returns whether audio can play now.
+    // Call from a user gesture. Safe to call repeatedly, also after the OS or Safari suspended or
+    // interrupted audio again; returns whether audio can play now.
     async unlock() {
       if (disposed) return false;
+      let ctx;
       try {
-        context ??= createContext();
-        if (context.state === 'suspended') await context.resume();
+        ctx = context ??= createContext();
+        if (ctx.state !== 'running') await ctx.resume();
       } catch {
         return false;
       }
-      return context.state === 'running';
+      // dispose() may have run while resume() was pending.
+      return !disposed && ctx.state === 'running';
     },
 
     // Thump + crumble + a few debris clicks. Returns false (and counts why) when nothing was played.
+    // Runs inside the monitor's pose listener, so it must never throw.
     play(event = {}) {
       if (disposed) return skip('disposed');
       if (!context) return skip('locked');
       if (context.state !== 'running') return skip(context.state);
       if (voices >= MAX_VOICES) return skip('busy');
-      const start = context.currentTime + 0.01;
-      const master = context.createGain();
-      master.gain.setValueAtTime(hitGain(event.speed_norm_per_s), start);
-      master.connect(context.destination);
+      const sources = [];
+      let master = null;
+      try {
+        const start = context.currentTime + 0.01;
+        master = context.createGain();
+        master.gain.setValueAtTime(hitGain(event.speed_norm_per_s) * HEADROOM, start);
+        master.connect(context.destination);
 
-      const thump = context.createOscillator();
-      thump.type = 'triangle';
-      thump.frequency.setValueAtTime(150, start);
-      thump.frequency.exponentialRampToValueAtTime(45, start + 0.25);
-      thump.connect(envelope(start, 0.9, 0.004, 0.3)).connect(master);
-      thump.start(start);
-      thump.stop(start + 0.35);
+        const thump = context.createOscillator();
+        thump.type = 'triangle';
+        thump.frequency.setValueAtTime(150, start);
+        thump.frequency.exponentialRampToValueAtTime(45, start + 0.25);
+        const thumpGain = envelope(start, 0.9, 0.004, 0.3);
+        // Separate connect() calls: older webkitAudioContext returns undefined instead of the target.
+        thump.connect(thumpGain);
+        thumpGain.connect(master);
+        thump.start(start);
+        thump.stop(start + 0.35);
+        sources.push(thump);
 
-      const sources = [thump, burst(master, start, 0.6, 0.9, 'lowpass', 900)];
-      for (let i = 0; i < 4; i++) sources.push(burst(master, start + 0.08 + random() * 0.35, 0.25, 0.06, 'bandpass', 1800 + random() * 2200));
+        sources.push(burst(master, start, 0.6, 0.9, 'lowpass', 900));
+        for (let i = 0; i < 4; i++) sources.push(burst(master, start + 0.08 + random() * 0.35, 0.25, 0.06, 'bandpass', 1800 + random() * 2200));
+      } catch {
+        for (const source of sources) try { source.stop(); } catch { /* not started */ }
+        try { master?.disconnect(); } catch { /* already gone */ }
+        return skip('error');
+      }
 
       voices += 1;
       let open = sources.length;

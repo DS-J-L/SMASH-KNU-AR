@@ -2,6 +2,7 @@
 // The runtime and model are the pinned files /camera/ already serves, so phone and PC run the same build.
 export const POSE_MODULE_URL = '/camera/pose.js';
 export const MIN_VISIBILITY = 0.5;
+const LOAD_RETRY_MS = 5000;
 // MediaPipe 15/16 are the subject's own left/right on the un-mirrored frame.
 const JOINTS = { left_wrist: 15, right_wrist: 16 };
 
@@ -41,6 +42,9 @@ export function createPoseAdapter({
   let delegates = ['GPU', 'CPU'];
   let lastTimestamp = -Infinity;
   let warmed = false;
+  // A missing runtime/model fails the same way on every frame; retry at most this often and keep the reason.
+  let loadError = null;
+  let loadErrorAt = -Infinity;
   const stats = { frames: 0, failures: 0, lastInferMs: null, maxInferMs: 0, totalInferMs: 0, warmupMs: null };
 
   // detectForVideo needs strictly increasing timestamps across every stream this instance sees.
@@ -51,6 +55,7 @@ export function createPoseAdapter({
 
   function ready() {
     if (landmarker) return Promise.resolve(landmarker);
+    if (loadError && now() - loadErrorAt < LOAD_RETRY_MS) return Promise.reject(loadError);
     loading ??= (async () => {
       const pose = await loadPose();
       const created = await pose.createPoseLandmarker(model, delegates);
@@ -60,8 +65,15 @@ export function createPoseAdapter({
       }
       ({ landmarker, delegate } = created);
       runtime = pose.RUNTIME ?? null;
+      loadError = null;
       return landmarker;
-    })().finally(() => { loading = null; });
+    })().catch((error) => {
+      if (error?.message !== 'pose_adapter_disposed') {
+        loadError = error;
+        loadErrorAt = now();
+      }
+      throw error;
+    }).finally(() => { loading = null; });
     return loading;
   }
 
@@ -112,7 +124,6 @@ export function createPoseAdapter({
       let result;
       try {
         result = instance.detectForVideo(image, timestamp);
-        warmed = true;
       } catch (error) {
         discard();
         throw error;
@@ -135,7 +146,7 @@ export function createPoseAdapter({
       }
     },
 
-    info: () => ({ model: `pose_landmarker_${model}`, delegate, runtime, ready: Boolean(landmarker), stats: { ...stats } }),
+    info: () => ({ model: `pose_landmarker_${model}`, delegate, runtime, ready: Boolean(landmarker), loadError: loadError?.message ?? null, stats: { ...stats } }),
 
     dispose() {
       disposed = true;

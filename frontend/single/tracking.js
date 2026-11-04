@@ -5,8 +5,9 @@ import { attachPoseAdapter } from './pose-adapter.js';
 import { attachHitDetector } from './hit-detector.js';
 import { createHitSound } from './hit-sound.js';
 
-// Any click or key press on the page counts as the gesture that lets audio start; the start button
-// is pressed before any hit can be accepted.
+// Any click or key press on the page counts as the gesture that lets audio start. The listeners stay for
+// the page's lifetime: the OS or Safari can suspend or interrupt audio again later, and the next gesture
+// has to resume it.
 const GESTURES = ['pointerdown', 'keydown'];
 
 export function attachTracking(monitor, { target = globalThis.document, pose: poseOptions, sound = createHitSound() } = {}) {
@@ -20,9 +21,8 @@ export function attachTracking(monitor, { target = globalThis.document, pose: po
   // Build the audio context now, while nothing is timing-sensitive; the gesture only resumes it.
   sound.prepare();
   const unlock = () => {
-    void sound.unlock().then((running) => {
-      if (running) for (const type of GESTURES) target?.removeEventListener(type, unlock, true);
-    });
+    if (sound.info().state === 'running') return;
+    sound.unlock().catch(() => {});
   };
   for (const type of GESTURES) target?.addEventListener(type, unlock, true);
   return {

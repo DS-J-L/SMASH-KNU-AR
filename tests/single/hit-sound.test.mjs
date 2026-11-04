@@ -3,18 +3,18 @@ import assert from 'node:assert/strict';
 import { createHitSound, hitGain } from '../../frontend/single/hit-sound.js';
 
 // Minimal Web Audio stand-in: records nodes, scheduled starts and connections.
-function fakeContext({ state = 'suspended', resumeFails = false } = {}) {
-  const log = { created: [], started: [], resumed: 0, closed: 0, buffers: 0 };
-  const param = () => ({ setValueAtTime() {}, exponentialRampToValueAtTime() {} });
+function fakeContext({ state = 'suspended', resumeFails = false, resume = null, connectThrows = false } = {}) {
+  const log = { created: [], started: [], resumed: 0, closed: 0, buffers: 0, stopped: 0 };
+  const param = () => ({ values: [], setValueAtTime(v) { this.values.push(v); }, exponentialRampToValueAtTime() {} });
   const node = (kind, extra = {}) => {
-    const n = { kind, connected: [], connect(to) { this.connected.push(to); return to; }, disconnect() { this.disconnected = true; }, ...extra };
+    const n = { kind, connected: [], connect(to) { if (connectThrows && kind === 'filter') throw new Error('connect failed'); this.connected.push(to); return undefined; }, disconnect() { this.disconnected = true; }, ...extra };
     log.created.push(n);
     return n;
   };
-  const source = (kind, extra) => node(kind, { start(when, offset, duration) { log.started.push({ kind, when, offset, duration }); }, stop() {}, ...extra });
+  const source = (kind, extra) => node(kind, { start(when, offset, duration) { log.started.push({ kind, when, offset, duration }); }, stop() { log.stopped++; }, ...extra });
   const ctx = {
     state, currentTime: 10, sampleRate: 8000, destination: { kind: 'destination' },
-    async resume() { if (resumeFails) throw new Error('blocked'); log.resumed++; this.state = 'running'; },
+    async resume() { if (resumeFails) throw new Error('blocked'); if (resume) return resume(this); log.resumed++; this.state = 'running'; },
     async close() { log.closed++; this.state = 'closed'; },
     createGain: () => node('gain', { gain: param() }),
     createOscillator: () => source('oscillator', { frequency: param(), type: 'sine' }),
@@ -97,6 +97,45 @@ test('a blocked resume or a suspended context reports false instead of throwing'
   const unsupported = createHitSound({ createContext: () => { throw new Error('no audio'); } });
   assert.equal(await unsupported.unlock(), false);
   assert.equal(unsupported.play(), false);
+});
+
+test('master gain leaves headroom for three overlapping hits', async () => {
+  const { ctx, log } = fakeContext({ state: 'running' });
+  const sound = createHitSound({ createContext: () => ctx });
+  await sound.unlock();
+  sound.play({ speed_norm_per_s: 100 });
+  const master = log.created.find((n) => n.kind === 'gain' && n.connected.includes(ctx.destination));
+  assert.ok(Math.abs(master.gain.values[0] - 0.45) < 1e-12);
+});
+
+test('dispose while resume() is pending resolves unlock to false instead of throwing', async () => {
+  let finish;
+  const { ctx } = fakeContext({ resume: (c) => new Promise((r) => { finish = () => { c.state = 'running'; r(); }; }) });
+  const sound = createHitSound({ createContext: () => ctx });
+  const pending = sound.unlock();
+  sound.dispose();
+  finish();
+  assert.equal(await pending, false);
+});
+
+test('an interrupted context (Safari) is resumed by the next unlock', async () => {
+  const { ctx, log } = fakeContext({ state: 'interrupted' });
+  const sound = createHitSound({ createContext: () => ctx });
+  assert.equal(sound.play(), false);
+  assert.equal(await sound.unlock(), true);
+  assert.equal(log.resumed, 1);
+  assert.deepEqual(sound.info().skipped, { locked: 1 });
+});
+
+test('a failing graph build is reported, stops what started and does not hold a voice', async () => {
+  const { ctx, log } = fakeContext({ state: 'running', connectThrows: true });
+  const sound = createHitSound({ createContext: () => ctx });
+  await sound.unlock();
+  assert.doesNotThrow(() => sound.play());
+  assert.equal(sound.play(), false);
+  assert.deepEqual(sound.info().skipped, { error: 2 });
+  assert.equal(sound.info().voices, 0);
+  assert.ok(log.stopped >= 1);
 });
 
 test('dispose closes the context and later calls do nothing', async () => {

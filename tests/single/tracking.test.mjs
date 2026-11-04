@@ -27,9 +27,11 @@ function fixture({ accept = true, unlockResult = true } = {}) {
     addEventListener(type, fn) { handlers.set(type, fn); },
     removeEventListener(type, fn) { if (handlers.get(type) === fn) handlers.delete(type); },
   };
+  const audio = { state: 'suspended' };
   const sound = {
-    prepare() { calls.prepared = (calls.prepared ?? 0) + 1; return 'suspended'; },
-    async unlock() { calls.unlocks++; return unlockResult; },
+    prepare() { calls.prepared = (calls.prepared ?? 0) + 1; return audio.state; },
+    async unlock() { calls.unlocks++; if (unlockResult) audio.state = 'running'; return unlockResult; },
+    info: () => ({ state: audio.state }),
     play(event) { calls.played.push(event.event_id); return true; },
     dispose() { calls.disposed++; },
   };
@@ -40,7 +42,7 @@ function fixture({ accept = true, unlockResult = true } = {}) {
   } });
   const tracking = attachTracking(monitor, { target, sound, pose: { loadPose } });
   const image = { width: 640, height: 480 };
-  return { tracking, calls, handlers, frame: (p) => listener?.(p), process: (p) => processor(image, p) };
+  return { tracking, calls, handlers, audio, frame: (p) => listener?.(p), process: (p) => processor(image, p) };
 }
 
 test('registers one pose processor and plays a sound only for accepted hits', async () => {
@@ -58,7 +60,7 @@ test('registers one pose processor and plays a sound only for accepted hits', as
   assert.equal(rejected.tracking.hit.results[0].reject_reason, 'not_ready');
 });
 
-test('the audio context is prepared at attach; the first gesture unlocks it and the listeners go away', async () => {
+test('the audio context is prepared at attach and the first gesture resumes it', async () => {
   const { calls, handlers } = fixture();
   assert.equal(calls.prepared, 1);
   assert.equal(calls.unlocks, 0);
@@ -66,14 +68,29 @@ test('the audio context is prepared at attach; the first gesture unlocks it and 
   handlers.get('pointerdown')();
   await new Promise((r) => setImmediate(r));
   assert.equal(calls.unlocks, 1);
-  assert.equal(handlers.size, 0);
+  // While audio runs, further gestures cost nothing.
+  handlers.get('keydown')();
+  assert.equal(calls.unlocks, 1);
 });
 
-test('listeners stay while audio is still blocked, so a later gesture can retry', async () => {
+test('listeners stay for the page lifetime, so audio suspended again later is resumed by the next gesture', async () => {
+  const { calls, handlers, audio } = fixture();
+  handlers.get('pointerdown')();
+  await new Promise((r) => setImmediate(r));
+  audio.state = 'interrupted';
+  handlers.get('pointerdown')();
+  await new Promise((r) => setImmediate(r));
+  assert.equal(calls.unlocks, 2);
+  assert.equal(audio.state, 'running');
+  assert.equal(handlers.size, 2);
+});
+
+test('a blocked or failing unlock is retried on the next gesture and never rejects into the page', async () => {
   const { calls, handlers } = fixture({ unlockResult: false });
   handlers.get('keydown')();
+  handlers.get('keydown')();
   await new Promise((r) => setImmediate(r));
-  assert.equal(calls.unlocks, 1);
+  assert.equal(calls.unlocks, 2);
   assert.equal(handlers.size, 2);
 });
 

@@ -6,9 +6,9 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-04 18:15 KST — K-SC-05 타격 소리·화면 등록 모듈 구현·검증, PR #6 머지 결과 기록 |
+| 마지막 갱신 | 2026-11-04 18:25 KST — K-SC-05 타격 소리·화면 등록 모듈 구현·검증·전역/지역 리뷰 반영, PR #6 머지 결과 기록 |
 | 현재 Phase·작업 상태 | 단일 카메라 SC-02~04 / K-SC-03·04 main 반영(PR #6), K-SC-05 소리 구현·PC 검증 — 실제 폰 영상 미연결. P1은 실기기 미검증 유지 |
-| 마지막 확인된 개발 완료 | `hit-sound.js`·`tracking.js`: 빌드한 PC 화면에 등록해 별도 창 송신·실제 MediaPipe로 수락 타격 1회=소리 1회·100점·파편 96 (아래 18:15 기록) |
+| 마지막 확인된 개발 완료 | `hit-sound.js`·`tracking.js`: 빌드한 PC 화면에 등록해 별도 창 송신·실제 MediaPipe로 수락 타격 1회=소리 1회·100점·파편 96, 전역·지역 리뷰 반영 (아래 18:15 기록) |
 | 현재 작업 | K-SC-05 PR — 전역·지역 리뷰 후 김태이가 직접 머지 |
 | 남은 일·미검증 | 화면 등록 `<script>` 한 줄과 "어댑터 없음" 전제 시험 2개 수정(이동수 파일), 속도·cooldown·음량 실제 폰 파일럿 튜닝, Worker 경로, 실제 폰 WebRTC·Windows·live, 단일 모드 바닥 정합(팀 결정) |
 | 다음 한 단계 | 김태이 폰 1대로 `/camera/` 실기기 측정(HTTPS·GPU·FPS·captureTime) |
@@ -322,13 +322,14 @@
   - `frontend/single/hit-sound.js`(신규): Web Audio 합성음(저음 쿵·붕괴 잡음·파편 딸깍 4개), 파일 없음. 속도→음량 0.55~1(연출용, 실측 힘 아님). 동시 3개 제한, 잡음 버퍼 재사용. `prepare()`로 꺼진 상태의 오디오를 미리 만들고 `unlock()`은 사용자 클릭·키 입력 때 켜기만 함
   - `frontend/single/tracking.js`(신규): 어댑터·판정기·소리를 `window.singleCameraMonitor`에 한 번에 등록. **게임이 수락한 타격에만** 소리. 첫 클릭·키 입력에서 오디오 켜고 리스너 제거. pagehide 때 정리. 이 파일은 `index.html`이 main.js 다음에 불러야 동작(이동수 파일이라 아직 미등록)
   - `frontend/single/pose-adapter.js`: `attachPoseAdapter(..., { eagerWarmup })` 추가. 미리 추론을 하지 않으면 첫 실제 프레임에서 그 크기로 1회 미리 추론
-  - 시험: `tests/single/hit-sound.test.mjs`(7), `tracking.test.mjs`(5), `pose-adapter.test.mjs`(+2)
+  - 시험: `tests/single/hit-sound.test.mjs`(11), `tracking.test.mjs`(6), `pose-adapter.test.mjs`(+3), `hit-detector.test.mjs`(+1)
 - 발견·수정: ① 등록 즉시 미리 추론하면 소프트웨어 WebGL(이동수 Playwright 설정)에서 페이지가 9.2초 멈춰 합성 모드 시험이 실패 → tracking은 미리 추론을 첫 실제 프레임까지 미룸(합성 모드는 MediaPipe를 불러오지 않음). ② 시작 클릭 때 AudioContext를 만들면 280 ms 멈춰 손목 정보가 만료돼 시작이 거부됨(합성 시험 3/3 실패 재현) → 페이지 로드 때 미리 만들고 클릭 때는 resume만(0.1 ms)
-- 검증 방법·조건·실제 결과: ① `node --test tests/single/*.test.mjs` 59/59. ② 임시 worktree에서 최신 main + 이 변경 + `index.html` 등록 한 줄로 `build:single`, MacBook Air M4·Chrome 139 headless, 휴대폰 역할은 **별도 브라우저 창**(사진 이동 영상 canvas → WebRTC), 신호 서버는 PR #5 검토 시험과 같은 가짜 WebSocket: 첫 1초 미리 추론 중 4프레임 폐기 후 2초에 시작 가능, 시작 전 빠른 손짓 이벤트 0, 느린 통과 타격 0(`too_slow`), 빠른 통과 수락 → 100점·파편 96·서버 로그 수락 1건, **소리 1회 재생 후 사용 중 소리 0으로 복귀**, 처리 471·실패 0·GPU. ③ 같은 빌드로 이동수 브라우저 시험(single-camera·review, Chrome 소프트웨어 WebGL) 2회 반복: 14 통과·6 실패 = 3개×2. 실패는 "추론 어댑터 없음"을 전제로 한 2개(`single live entry ... pose adapter are missing`, `received video ... pose adapter is absent`)와 등록 없이도 이 Mac에서 실패하는 페이지 캐시 복귀 1개
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/*.test.mjs` 66/66(김태이 모듈 41 + 이동수 모니터·전송 25). ② 임시 worktree에서 최신 main + 이 변경 + `index.html` 등록 한 줄로 `build:single`, MacBook Air M4·Chrome 139 headless, 휴대폰 역할은 **별도 브라우저 창**(사진 이동 영상 canvas → WebRTC), 신호 서버는 PR #5 검토 시험과 같은 가짜 WebSocket: 첫 1초 미리 추론 중 4프레임 폐기 후 2초에 시작 가능, 시작 전 빠른 손짓 이벤트 0, 느린 통과 타격 0(`too_slow`), 빠른 통과 수락 → 100점·파편 96·서버 로그 수락 1건, **소리 1회 재생 후 사용 중 소리 0으로 복귀**, 처리 471·실패 0·GPU. ③ 같은 빌드로 이동수 브라우저 시험(single-camera·review, Chrome 소프트웨어 WebGL) 2회 반복: 14 통과·6 실패 = 3개×2. 실패는 "추론 어댑터 없음"을 전제로 한 2개(`single live entry ... pose adapter are missing`, `received video ... pose adapter is absent`)와 등록 없이도 이 Mac에서 실패하는 페이지 캐시 복귀 1개
+- 전역·지역 리뷰(서브에이전트 2개, 읽기·시험만) 반영: 확정 계약 불일치 없음(한 프레임 추적·필드/프레임 쌍/TTL/건물 ID 일치, 전체 검사 통과, 커밋된 번들 최신). 김태이 코드 지적 반영 — ① 오디오 켜는 중 정리되면 처리 안 된 오류 → 정리 후엔 false 반환 ② 처음 켠 뒤 클릭 감지를 없애 OS/Safari가 다시 멈추면 계속 무음 → 감지를 유지하고 `interrupted`도 다시 켬 ③ 겹친 소리 클리핑 → 전체 음량 ×0.45 ④ 소리 생성 중 예외가 손목 리스너로 번져 입력이 지워질 수 있음(옛 Safari `connect()` 연결) → 연결을 나누고 예외 시 `error`로 건너뜀 ⑤ 모델 로드 실패 시 매 프레임 재시도·안내 소실 → 5초 간격 재시도·`info().loadError` ⑥ 시간 종료 뒤에도 휘두를 때마다 거부 로그 전송 → 플레이 중이 아니면 보내지 않음 ⑦ `models/README.md` 미리 추론 설명 갱신. 반영하지 않은 것: 판정 설정·속도의 서버 로그 기록(이동수 controller/main 수정 필요), 휴대폰 연결 직후 모델 준비 중 표시(이동수 화면), 이동수 코드 지적(아래 인계)
 - 입력·장비 범위: synthetic(단위) / replay(사진 이동 영상, 별도 창 송신·가짜 신호). 스피커로 실제 청취·실제 폰·live는 미실행
 - 남은 일·미검증: 이동수에게 `index.html` 등록 한 줄과 위 시험 2개의 전제 변경 요청. 음량·음색 실제 청취 조정, 파편 물리의 타격 세기 연결(이동수 FractureView 영역)
 - 막힌 점·도움·해제 조건: 화면 등록은 이동수 파일 수정이 필요
 - 다음 한 단계·재개 위치: 김태이 폰 1대 실기기 측정
-- 인계 대상·넘긴 자료: 이동수 — 등록 방법(`<script type="module" src="./tracking.js">`를 main.js 다음에), 바뀌어야 할 시험 2개, 오디오·미리 추론 시점 이유. 메시지 발송 없음
+- 인계 대상·넘긴 자료: 이동수 — 등록 방법(`<script type="module" src="./tracking.js">`를 main.js 다음에), 바뀌어야 할 시험 2개, 오디오·미리 추론 시점 이유, 전역 리뷰가 찾은 이동수 코드 항목(세로 영상일 때 검은 띠 위 건물은 타격 불가, 로그 `model_version`이 건물 ID, 판정 설정·속도 로그 누락, 문서의 PoseAdapter/HitDetector '후속' 표기). 메시지 발송 없음
 - 갱신한 계획 체크리스트·현황: 실제 청취·실기기 전이라 K-SC-05 `[ ]` 유지. 본 파일 요약, `진행현황.md` 김태이 행
-- 종료·중단 시각: 2026-11-04 18:15 KST
+- 종료·중단 시각: 2026-11-04 18:25 KST

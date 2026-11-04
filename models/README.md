@@ -22,6 +22,6 @@ python tools/fetch_mediapipe.py
 
 D01에서 PC 추론을 채택하면 PC용 모델은 이 폴더에 둡니다. 두 위치에 불필요하게 복제하지 않습니다.
 
-단일 카메라 모드(SC-D04)의 PC 추론은 별도 모델을 두지 않습니다. `frontend/single/pose-adapter.js`가 실행 시점에 `/camera/pose.js`를 불러와 위 표의 같은 런타임·모델을 씁니다. 그래서 Vite 번들에는 MediaPipe가 들어가지 않으며, PC에서도 다운로드 명령을 먼저 실행해야 합니다. GPU 첫 추론은 셰이더 준비로 수 초 걸릴 수 있어(2026-11-03 M4 Chrome 시험 8.9초), 어댑터가 등록 직후 빈 화면으로 한 번 추론해 둡니다.
+단일 카메라 모드(SC-D04)의 PC 추론은 별도 모델을 두지 않습니다. `frontend/single/pose-adapter.js`가 실행 시점에 `/camera/pose.js`를 불러와 위 표의 같은 런타임·모델을 씁니다. 그래서 Vite 번들에는 MediaPipe가 들어가지 않으며, PC에서도 다운로드 명령을 먼저 실행해야 합니다. GPU 첫 추론은 셰이더 준비로 페이지를 멈춥니다(M4 Chrome 0.4~0.9초, 첫 실행 한 번 8.9초, 소프트웨어 WebGL 9.2초). 그래서 어댑터는 같은 크기의 빈 화면으로 한 번 미리 추론합니다. `tracking.js`로 등록하면 이 미리 추론을 **첫 실제 휴대폰 프레임이 왔을 때** 하므로, 합성 모드나 연결 전에는 MediaPipe를 불러오지 않고, 연결 직후 그 시간만큼의 프레임이 버려집니다. 런타임·모델을 불러오지 못하면 5초마다만 다시 시도하고 이유를 `adapter.info().loadError`에 남깁니다.
 
 [MediaPipe Pose 웹 가이드](https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker/web_js)

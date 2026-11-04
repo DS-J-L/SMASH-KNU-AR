@@ -165,6 +165,13 @@ export function attachHitDetector(monitor, { detector = new HitDetector(), onRes
   const unsubscribe = monitor.onPoseFrame((pose) => {
     const event = detector.update(pose, monitor.getTarget());
     if (!event) return;
+    // After time-up the session id is still set; the game would only log a not_playing rejection per swing.
+    const phase = monitor.snapshot?.().phase;
+    if (phase !== undefined && phase !== 'playing') {
+      results.push({ event_id: event.event_id, joint: event.joint, frame_id: event.frame_id, accepted: false, reject_reason: 'not_playing_local', score_delta: 0 });
+      if (results.length > 50) results.shift();
+      return;
+    }
     const result = monitor.acceptHit(event);
     results.push({ event_id: event.event_id, joint: event.joint, frame_id: event.frame_id, ...result });
     if (results.length > 50) results.shift();
