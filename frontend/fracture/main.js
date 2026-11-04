@@ -6,6 +6,8 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import RAPIER from '@dimforge/rapier3d-compat';
 import { validatePackageMetadata, validatePackageModels } from './package-contract.js';
 import './style.css';
+import { GameController } from '../game/controller.js';
+import { spawnFragmentBodies } from '../game/fragment-bodies.js';
 
 const $=id=>document.getElementById(id),canvas=$('scene'),stage=canvas.parentElement;
 const scene=new THREE.Scene();scene.background=new THREE.Color('#e7eadf');
@@ -15,7 +17,9 @@ let dynamic=[],helpers=[],loading=true,view='building',inspection=0;
 let campusFocus='all';
 let phase='ready',destroyed=false,score=0,sessionId=null,endsAt=0,errorMessage=null;
 let accumulator=0,lastFrame=performance.now(),lastUiUpdate=-Infinity,pointerDown=null;
-const seenEvents=new Set(),impactPoint=new THREE.Vector3(),impactNormal=new THREE.Vector3(0,0,1);
+const game=new GameController({trackingMode:'keyboard_demo',source:'synthetic'});
+let seenEvents=game.seenEvents;
+const impactPoint=new THREE.Vector3(),impactNormal=new THREE.Vector3(0,0,1);
 const floor=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:'#e2e6d8',roughness:1}));
 floor.rotation.x=-Math.PI/2;floor.position.y=-.002;floor.receiveShadow=true;scene.add(floor);
 const grid=new THREE.GridHelper(12,24,'#c1cbb6','#d1d9c7');grid.position.y=-.001;scene.add(grid);
@@ -96,7 +100,7 @@ async function loadBuilding(id) {
     committing=true;clearBuilding();manifest=meta;colliderData=data;intact=nextIntact;shards=nextShards;helpers=pendingHelpers;
     pending=[];pendingHelpers=[];activeId=id;scene.add(intact,shards,...helpers);shards.visible=false;
     for(const root of [intact,shards])root.traverse(node=>{if(node.isMesh){node.castShadow=true;node.receiveShadow=true;}});
-    createIntactBody();phase='ready';destroyed=false;score=0;sessionId=null;endsAt=0;seenEvents.clear();inspection=0;accumulator=0;dust.visible=false;
+    createIntactBody();game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;seenEvents.clear();inspection=0;accumulator=0;dust.visible=false;
     $('separation').value='0';$('building-select').value=id;$('manifest-link').href=base+'manifest.json';
     const url=new URL(location.href);url.searchParams.set('building',id);history.replaceState(null,'',url);
     loading=false;configureCamera();setLighting(false);chooseDefaultImpact();updateUI();
@@ -122,8 +126,8 @@ function updateUI(now=performance.now()) {
   $('status').textContent=errorMessage||(loading?'모델과 물리 엔진을 준비하고 있습니다.':!buildingView?'그림자와 재질을 적용한 캠퍼스를 둘러보세요.':inspection>0?'파편 구조를 확인하세요. 슬라이더를 0으로 돌리거나 R 키로 복원하면 플레이할 수 있습니다.':phase==='ended'?'테스트 종료. R 키로 복원하고 다시 시작하세요.':destroyed?`${count}개 파편이 타격점 주변에서 퍼지고 무너집니다. R 키로 복원하세요.`:phase==='playing'?'Space로 파괴하세요. 주황색 표시는 타격 위치입니다.':'건물을 클릭해 타격점을 고른 뒤 Space를 누르세요.');
   marker.visible=!loading&&buildingView&&!destroyed&&inspection===0;
 }
-function expireSession(now){if(phase==='playing'&&now>=endsAt){phase='ended';updateUI(now);}}
-function start(){if(loading||view!=='building'||phase!=='ready'||inspection>0)return false;sessionId=crypto.randomUUID();phase='playing';endsAt=performance.now()+60000;updateUI();return true;}
+function expireSession(now){game.tick();if(phase!==game.phase){phase=game.phase;updateUI(now);}}
+function start(){if(loading||view!=='building'||phase!=='ready'||inspection>0)return false;if(!game.startKeyboard())return false;sessionId=game.sessionId;phase=game.phase;endsAt=game.endsAt;updateUI();return true;}
 function setImpact(hit){impactPoint.copy(hit.point);impactNormal.copy(hit.face.normal).transformDirection(hit.object.matrixWorld).normalize();marker.position.copy(impactPoint).addScaledVector(impactNormal,.006);marker.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),impactNormal);}
 function chooseDefaultImpact(){raycaster.set(camera.position,controls.target.clone().sub(camera.position).normalize());const hit=raycaster.intersectObject(intact,true)[0];if(hit)setImpact(hit);}
 function emitDust(now){
@@ -134,16 +138,10 @@ function emitDust(now){
 function destroy(eventId=crypto.randomUUID()){
   expireSession(performance.now());if(loading||view!=='building'||destroyed||phase==='ended'||inspection>0)return false;if(phase==='ready')start();
   if(performance.now()>=endsAt||seenEvents.has(eventId))return false;
-  seenEvents.add(eventId);world.removeRigidBody(fixedBuilding);fixedBuilding=null;intact.visible=false;shards.visible=true;
+  if(!game.acceptKeyboard(eventId,activeId))return false;seenEvents.add(eventId);world.removeRigidBody(fixedBuilding);fixedBuilding=null;intact.visible=false;shards.visible=true;
   const radius=manifest.gameplay?.impact_radius_m??.65;
-  dynamic=colliderData.fragments.map((item,index)=>{
-    const node=shards.getObjectByName(item.node),[x,y,z]=item.rest_position_m;node.position.set(x,y,z);node.quaternion.identity();
-    const body=world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setTranslation(x,y,z).setLinearDamping(.35).setAngularDamping(.6).setCcdEnabled(true));world.createCollider(collider(item),body);
-    const direction=new THREE.Vector3(x,y,z).sub(impactPoint),energy=4.4*Math.exp(-direction.lengthSq()/(radius*radius));direction.normalize().multiplyScalar(energy).addScaledVector(impactNormal,energy*.5);
-    body.setLinvel({x:direction.x+Math.sin(index*2.4)*energy*.12,y:.15+Math.max(0,direction.y)+energy*.5,z:direction.z+Math.cos(index*3.1)*energy*.12},true);
-    body.setAngvel({x:Math.sin(index)*energy,y:Math.cos(index)*energy*.6,z:Math.cos(index*1.7)*energy},true);return {node,body};
-  });
-  destroyed=true;score+=100;emitDust(performance.now());updateUI();return true;
+  dynamic=spawnFragmentBodies({world,shards,data:colliderData,impactPoint,impactNormal,radius,collider});
+  destroyed=true;score=game.score;emitDust(performance.now());updateUI();return true;
 }
 function restoreNodes(){
   const center=new THREE.Vector3(0,manifest.dimensions_m[1]/2,0);
@@ -151,7 +149,7 @@ function restoreNodes(){
 }
 function reset(){
   if(loading||!manifest)return;for(const item of dynamic)world.removeRigidBody(item.body);dynamic=[];if(fixedBuilding)world.removeRigidBody(fixedBuilding);createIntactBody();
-  inspection=0;$('separation').value='0';restoreNodes();shards.visible=false;intact.visible=view==='building';phase='ready';destroyed=false;score=0;sessionId=null;endsAt=0;errorMessage=null;seenEvents.clear();accumulator=0;dust.visible=false;updateUI();
+  inspection=0;$('separation').value='0';restoreNodes();shards.visible=false;intact.visible=view==='building';game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;errorMessage=null;seenEvents.clear();accumulator=0;dust.visible=false;updateUI();
 }
 function previewSeparation(){if(loading||phase!=='ready'||view!=='building')return;inspection=Number($('separation').value);restoreNodes();intact.visible=inspection===0;shards.visible=inspection>0;updateUI();}
 function showHelpers(){for(const helper of helpers)helper.visible=$('colliders').checked&&view==='building';}
