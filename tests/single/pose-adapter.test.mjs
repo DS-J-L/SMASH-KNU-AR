@@ -117,6 +117,33 @@ test('warmup runs one blank inference once, before and in timestamp order with r
   }
 });
 
+test('without an explicit warmup the first frame warms the model with its own size, once', async () => {
+  const fake = fakePose();
+  const created = [];
+  globalThis.document = { createElement: () => { const canvas = { width: 0, height: 0 }; created.push(canvas); return canvas; } };
+  try {
+    const adapter = createPoseAdapter({ loadPose: fake.loadPose, now: () => 5000 });
+    await adapter.process(image(), meta(1, 4000));
+    await adapter.process(image(), meta(2, 4033));
+    assert.deepEqual(created, [{ width: 640, height: 480 }]);
+    assert.deepEqual(fake.calls.timestamps, [5000, 5001, 5002]);
+    assert.equal(adapter.info().stats.frames, 2);
+  } finally {
+    delete globalThis.document;
+  }
+});
+
+test('eagerWarmup=false registers the processor without loading MediaPipe', async () => {
+  let loads = 0;
+  const fake = fakePose();
+  const monitor = { attachPoseProcessor: () => () => {} };
+  const attached = attachPoseAdapter(monitor, { eagerWarmup: false, loadPose: async () => { loads++; return fake.loadPose(); } });
+  await attached.ready;
+  assert.equal(loads, 0);
+  assert.equal(attached.adapter.info().ready, false);
+  attached.dispose();
+});
+
 test('a GPU failure during inference closes that instance and the next frame runs on CPU', async () => {
   const fake = fakePose({ failOn: new Set([2]) });
   const adapter = createPoseAdapter({ loadPose: fake.loadPose });

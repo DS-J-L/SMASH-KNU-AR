@@ -74,24 +74,29 @@ export function createPoseAdapter({
     stats.failures += 1;
   }
 
+  // One blank inference. On GPU the first detectForVideo compiles shaders and blocks the page, beyond any
+  // frame TTL: 0.4–0.9 s on an M4 GPU in Chrome (8.9 s on one first run), 9 s under software WebGL.
+  function warm(instance, width, height) {
+    if (warmed || typeof document === 'undefined') return;
+    const blank = document.createElement('canvas');
+    blank.width = width;
+    blank.height = height;
+    const started = now();
+    try {
+      instance.detectForVideo(blank, nextTimestamp(started))?.close?.();
+    } catch (error) {
+      discard();
+      throw error;
+    }
+    warmed = true;
+    stats.warmupMs = now() - started;
+  }
+
   return {
-    // Load the model and run one blank inference before frames arrive. On GPU the first detectForVideo
-    // compiles shaders and blocked the page for ~9 s in a desktop Chrome test, longer than any frame TTL.
+    // Load and warm the model before frames arrive. Optional: process() warms on its first frame anyway.
     async warmup({ width = 640, height = 480 } = {}) {
       const instance = await ready();
-      if (warmed || disposed || typeof document === 'undefined') return;
-      const blank = document.createElement('canvas');
-      blank.width = width;
-      blank.height = height;
-      const started = now();
-      try {
-        instance.detectForVideo(blank, nextTimestamp(started))?.close?.();
-      } catch (error) {
-        discard();
-        throw error;
-      }
-      warmed = true;
-      stats.warmupMs = now() - started;
+      if (!disposed) warm(instance, width, height);
     },
 
     // image is borrowed from the FrameCoordinator: read it, never close or transfer it.
@@ -100,6 +105,8 @@ export function createPoseAdapter({
       if (image?.width !== meta.image_width || image?.height !== meta.image_height) throw new Error('frame_size_mismatch');
       const instance = await ready();
       if (disposed) throw new Error('pose_adapter_disposed');
+      // Warm with this frame's size; the coordinator drops the frames that arrive meanwhile.
+      warm(instance, meta.image_width, meta.image_height);
       const timestamp = nextTimestamp(meta.observed_at_pc_ms);
       const started = now();
       let result;
@@ -139,11 +146,13 @@ export function createPoseAdapter({
 }
 
 // Plugs the adapter into window.singleCameraMonitor (docs/SINGLE_CAMERA_MONITOR.md).
-export function attachPoseAdapter(monitor, options) {
+// eagerWarmup=false defers loading MediaPipe to the first live frame, so pages that never receive video
+// (synthetic mode, before the phone connects) are not blocked by the model warm-up.
+export function attachPoseAdapter(monitor, { eagerWarmup = true, ...options } = {}) {
   const adapter = createPoseAdapter(options);
   const detach = monitor.attachPoseProcessor((image, meta) => adapter.process(image, meta));
   // Frames that arrive while this runs are dropped by the coordinator; a failure shows up on them too.
-  const ready = adapter.warmup();
+  const ready = eagerWarmup ? adapter.warmup() : Promise.resolve();
   ready.catch(() => {});
   return {
     adapter,
