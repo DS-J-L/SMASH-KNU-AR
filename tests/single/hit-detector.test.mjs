@@ -152,3 +152,19 @@ test('attachHitDetector sends events to acceptHit with the current target and ke
   attached.dispose();
   assert.equal(listener, null);
 });
+
+test('attachHitDetector does not send events while the game is not playing (time-up)', () => {
+  let listener = null;
+  const sent = [];
+  const monitor = {
+    onPoseFrame(fn) { listener = fn; return () => {}; },
+    getTarget: () => target(),
+    snapshot: () => ({ phase: 'ended' }),
+    acceptHit(event) { sent.push(event); return { accepted: true }; },
+  };
+  const attached = attachHitDetector(monitor, { detector: detector() });
+  listener(pose(1, wrist(0.2, 0.5)));
+  listener(pose(2, wrist(0.65, 0.5)));
+  assert.equal(sent.length, 0);
+  assert.deepEqual(attached.results.map((r) => r.reject_reason), ['not_playing_local']);
+});
