@@ -40,7 +40,8 @@ flowchart TD
 3. 카메라는 MediaPipe 손목을 `/ws/pose`에서 camera_hello → camera_ack 후 송신합니다. `/ws/ingest` 등록 경로도 유지합니다. 실기기 검증은 별도입니다.
 4. 보정·시간 조건을 만족한 관측을 정렬하고 `/ws/pose3d`로 전달합니다. rvfc_capture_time은 기본 3D 허용 출처가 아니므로 2D 수신 성공만으로 추적 준비가 되지 않습니다.
 5. 실측 보정·모니터 pose_3d 소비·장면 준비 연결은 남아 있습니다. 합성 입력·보정이나 키보드 데모로 실제 game_ready를 켜지 않습니다.
-6. `/monitor/fracture/`는 synthetic/keyboard_demo 경로입니다. 현재 room.v1은 별도로 방·영상·video_check ACK/타이머/결과를 제공합니다. PC 방페이지·공개폰QR·전송/시각/표시정렬의 실제 계약은 [ROOMS.md](ROOMS.md)를 따릅니다.
+6. `/monitor/fracture/`는 synthetic/keyboard_demo 경로입니다. 기본 방 페이지는 video_check ACK/타이머/결과를 제공합니다. 실제 전송/인증 계약은 [ROOMS.md](ROOMS.md)를 따릅니다.
+7. `/monitor/phone-game/?room=room-2`는 폰 C0 한 대로 기존 팀원 게임을 실행합니다. 방1 버전은 세 카메라 준비가 필수입니다. 폰의 동일 스냅샷 추론/JPEG → room.v1 등록 관측 검증·정규화 손목 짝 → PC 동일 프레임 표시·2D 타격·파편/소리 → 서버 세션/중복 검사·점수 보관 순서입니다. 방2 관측은 별도 registry여서 방1/3D 입력과 섞이지 않습니다. [실행·검증](PHONE_POSE_GAME.md)을 따르며 실제 깊이 충돌은 미연결입니다.
 
 ## 좌표와 시간
 
@@ -57,11 +58,17 @@ flowchart TD
 
 ## 의존성 추가 시점
 
-초기 스타터 화면은 별도 Node 빌드가 없었습니다. 2026-11-03 main 기준 카메라는 로컬 MediaPipe 배포 파일을 사용하며, frontend/fracture의 키보드 데모는 루트 package.json·잠금 파일과 Vite/Three.js/Rapier를 사용합니다. 단일 모드의 새 진입점은 후속 구현 대상입니다. 이번 로컬 병합의 서버는 OpenCV(opencv-python-headless 4.13.0.92)·NumPy(2.4.4)를 사용하며 requirements.txt로 버전을 관리합니다. 모델·WASM·필수 에셋은 로컬 제공 경로를 유지합니다.
+초기 스타터 화면은 별도 Node 빌드가 없었습니다. 현재 카메라는 로컬 MediaPipe 파일, frontend/fracture·single·phone-game은 루트 package.json·잠금 파일과 Vite/Three.js/Rapier를 사용합니다. 기존 단일 화면은 build:single, 폰 좌표 게임은 build:phone-game이며 build:all에 포함됩니다. 서버의 OpenCV·NumPy 버전은 requirements.txt로 관리합니다. 모델·WASM·필수 에셋의 로컬 제공 경로를 유지합니다.
 
 
 ## 2026-11-03 단일 카메라 추가 구조 제안
 
+아래 두 문단은 당시 제안 이력이다. 현재 PC 모듈과 폰 좌표 게임의 구현 범위는 위 ‘현재 실행되는 흐름’ 및 [추가 연결](PHONE_POSE_GAME.md)이 우선한다. 기존 ControlLink 서버 초안과 현재 room.v1 어댑터를 혼용하지 않는다.
+
 [휴대폰 1대·PC 화면 계획](SINGLE_CAMERA_PLAN.md)의 단일 화면 2D 경로를 제안한다. PC 수신 프레임 추론·모드별 준비/세션·2D 이벤트 단위는 설계 검토 대상이며 현재 구현/메시지 스키마가 아니다. 기존 다중 3D의 room_z_up·보정·유효 시점·시간 기준은 유지하고 후속 구현 PR에서 확정·검증한다.
 
 2026-11-03 v0.2 상세화: [인터페이스·상태 기준안](SINGLE_CAMERA_INTERFACES.md)에 PC 생성 세션/서버 ACK, 방/스트림/실행 버전, 프레임·변환·만료, 2D 단위와 수락/거부를 정의했다. [검증 계획](SINGLE_CAMERA_TEST_PLAN.md)의 T-SC-01~18로 후속 구현을 확인한다. 제안 API/파일은 신규 개발 대상이며 현재 스키마·실행 코드에 적용한 변경은 없다.
+
+## 2026-11-03 PC 단일 화면 구현
+
+/monitor/single/은 별도 Vite 진입점이며 [실행/모듈/인계](SINGLE_CAMERA_MONITOR.md)를 따른다. 프레임·표시·정상 건물 목표·게임 소비자를 구현했고 기존 키보드는 공용 GameController/fragment-bodies를 재사용한다. 단일 live 경로는 아직 없는 신호 서버/추론 연결을 요구해 시작을 차단한다. synthetic은 명시 선택한 로컬 시험이며 글로벌 다중3D 준비 상태에 영향을 주지 않는다.

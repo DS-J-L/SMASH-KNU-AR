@@ -1,6 +1,6 @@
-# 방·영상·영상 확인 세션 계약 room.v1
+# 방·영상·세션 계약 room.v1
 
-기준: 2026-11-04 KST. 현재 로컬 코드의 계약이다. 단일 2D 게임 설계는 [SINGLE_CAMERA_INTERFACES.md](SINGLE_CAMERA_INTERFACES.md), 기존 좌표 계약은 [DATA_CONTRACT.md](DATA_CONTRACT.md)를 따른다.
+기준: 2026-11-06 KST. 현재 로컬 코드의 계약이며 main 게시 완료를 뜻하지 않는다. PC DTO/설계는 [SINGLE_CAMERA_INTERFACES.md](SINGLE_CAMERA_INTERFACES.md), 실행 가능한 추가 게임 연결은 [PHONE_POSE_GAME.md](PHONE_POSE_GAME.md), 기존 좌표는 [DATA_CONTRACT.md](DATA_CONTRACT.md)를 따른다.
 
 ## 1. 방과 화면
 
@@ -11,7 +11,8 @@
 
 - `/monitor/`: 방 상태·PC 입장 링크·전체 QR4개. 목록 조회는 방을 점유하지 않는다.
 - `/monitor/room-1/`, `/monitor/room-2/`: 해당 방에 PC 자동 입장, 카메라 가로 표시·게임 시작·60초/결과·그 방 QR 제공.
-- `/camera/room/?room=room-1&camera=C0`: 지정 방/카메라를 미리 선택한다. 폰에서 권한 허용·입장 버튼을 누른다. 방 1은 폰 손목 추론·관절/영상 송신, 방 2는 영상만 송신한다.
+- `/camera/room/?room=room-1&camera=C0`: 지정 방/카메라를 미리 선택한다. 폰에서 권한 허용·입장 버튼을 누른다. 두 방 모두 폰 관절 추론·영상·좌표를 송신한다.
+- `/monitor/phone-game/?room=room-1` 또는 `room-2`: 해당 방 C0의 폰 좌표 2D 게임. 기본 방 페이지의 링크로 같은 탭에서 이동하며 C0 서버 중계를 사용한다. 자세한 준비 조건은 9절을 따른다.
 - room-2는 C1/C2 입장을 거부한다. 허용 목록 외 방·QR·PC 페이지는 제공하지 않는다.
 - 방 구성은 `backend/room_config.py`가 입장·세션 시작 필수 목록의 기준이다. 상태의 camera_mode는 연결 구성일 뿐 2D/3D 추적 완료를 뜻하지 않는다.
 
@@ -54,7 +55,9 @@ PC는 role=monitor, camera_id=null 또는 생략이다. transport는 webrtc(기�
 | leave | 자리 해제·연결 종료·남은 참가자에게 상태 전달 |
 | offer / answer / ice | 같은 방 현재 PC↔카메라의 WebRTC 신호 중계 |
 | video_frame | server 방식 카메라의 JPEG를 같은 방 PC에 중계 |
-| start_game | PC의 video_check 세션 시작 요청 |
+| start_game | PC의 video_check 또는 phone_2d 세션 시작 요청 |
+| stop_game | 현재 세션 수동/입력 중단 종료 |
+| game_hit | phone_2d에서 PC가 수락한 타격의 바인딩/중복 검증·점수 반영 |
 | get_game_status | 현재 방의 세션·남은 시간·결과 조회 |
 
 서버 기본 수신 만료는5초다. 입장/교체/종료/만료 때 상태를 전달한다. 유한 송신 큐에서 누락된 상태는 get_status로 재조회한다. 같은 기기의 동일 자리는 새 연결로 교체하고 이전 연결은 superseded/4001로 종료한다. 이전 연결의 늦은 종료는 새 연결을 지우지 않는다. 다른 기기의 자리 중복·기기 ID의 다른 자리 중복은 거부한다. 방 이동은 leave 후 새 join이다.
@@ -97,7 +100,7 @@ SDP/ICE의 target_connection_id와 payload를 지정한다. 서버는 현재 같
 
 ## 6. 준비 점검·60초·결과
 
-현재는 mode=video_check인 영상 확인 세션이다. 방 1 폰 손목 추론·서버 수신은 연결했지만 게임 장면·충돌·점수는 연결 전이며 결과의 score는 null이다. 아래 시작 조건은 영상 확인용이며 관절/3D 준비 완료를 뜻하지 않는다.
+기본 방 페이지는 mode=video_check인 영상 확인 세션이며 score=null이다. 아래 시작 조건은 이 세션에 해당하고 관절/3D 준비 완료를 뜻하지 않는다. 타격 게임은 별도 화면의 phone_2d 모드이며 9절을 따른다.
 
 PC는 현재 방 입장·표시 중인 탭·필수 카메라 모두 연결·각 영상의 최근1.5초 프레임을 검사한다. room-1은3대, room-2는1대다. 부족하면 시작 버튼을 비활성화하고 사유를 표시한다. 서버도 필수 카메라와 현재 연결 ID·PC 역할을 검사한다. 실제 영상 준비는 PC 보고이며 서버의 독립 영상 인식 검증이 아니다.
 
@@ -134,9 +137,9 @@ PC 연결만 끊긴 경우 서버 타이머는 계속 가며 같은 방 재입�
 
 pose_2d의 기존 joints.left_wrist/right_wrist는 유지하고 선택 필드 body를 추가한다. body가 있으면 left/right_shoulder, elbow, wrist, pinky, index, thumb, hip, knee, ankle, heel, foot_index의22개 키가 모두 있어야 한다. 각 값은 기존과 같은 원본 픽셀 u_px/v_px·visibility 또는 null이다. 서버는 얼굴/알 수 없는 키·누락·비유한 수·잘못된 가시성을 거부하고 수신 스트림의 최신 Pose2D.body에 보관한다. body가 없는 기존 입력은 호환한다. body의3D 복원·pose_3d 추가 출력은 아직 없으며 기존3D는 손목만 사용한다. 기존 모델을 한 번만 추론하고 결과를 재사용한다. 전송/그리기 비용 증가와 실제 폰 지연은 실측이 필요하다.
 
-방 1은 이미 열린 카메라 영상에 MediaPipe lite(GPU 우선, CPU 대체)를 적용해 최대15Hz로 양손 손목 픽셀·가시성을 추출한다. 미검출은 null이다. 폰 미리보기에 왼손 파란 점·오른손 주황 점, 좌표·전송 개수·서버 수신 프레임·관절 시계 상태를 표시한다. 모델 로딩/추론 실패 시에도 영상 송신은 유지한다. 방 2는 폰 추론을 실행하지 않는다.
+두 방 모두 이미 열린 카메라 영상에 MediaPipe lite(GPU 우선, CPU 대체)를 적용해 최대15Hz로 양손 손목 픽셀·가시성을 추출한다. 미검출은 null이다. 폰 미리보기에 왼손 파란 점·오른손 주황 점, 좌표·전송 개수·서버 수신 프레임·관절 시계 상태를 표시한다. 모델 로딩/추론 실패 시에도 일반 영상 송신은 유지한다.
 
-PC 영상에도 같은 양손 손목 점을 표시한다. 폰에서 이미 계산한 최신 손목 결과를 축소된 송신 canvas에 비율대로 그린 뒤 WebRTC/JPEG로 보낸다. 추가 추론·관절 응답 대기·네트워크 왕복을 넣지 않으며 기존 별도 관절 메시지는 유지한다. 미검출·200ms 초과 결과·원본 크기 불일치·추론 종료 후에는 점을 그리지 않는다. 최신 좌표를 재사용하는 시각화이며 영상 프레임과 관절의 정밀 정합/실측 지연 완료를 뜻하지 않는다. 방 2는 영상 전용을 유지한다.
+PC 영상에도 같은 양손 손목 점을 표시한다. 폰의 추론 결과를 축소된 송신 canvas에 비율대로 그린 뒤 WebRTC/JPEG로 보낸다. 미검출·200ms 초과 결과·원본 크기 불일치·추론 종료 후에는 점을 그리지 않는다. 일반 영상의 최신 좌표 시각화와 게임용 동일 스냅샷 짝 전달은 구분한다. 게임용 C0 서버 JPEG는 추론한 canvas를 재사용하며 별도 관절 메시지/등록 검증도 유지한다. 실제 센서 촬영 정합·지연 실측 완료를 뜻하지 않는다.
 
 관절도 `/ws/single/signaling` 연결을 사용한다. 내부 payload는 기존 카메라 v0.1 계약이며 서버 응답도 같은 pose 봉투를 쓴다.
 
@@ -144,7 +147,7 @@ PC 영상에도 같은 양손 손목 점을 표시한다. 폰에서 이미 계�
 {"schema":"room.v1","type":"pose","room_id":"room-1","payload":{"schema_version":"0.1","type":"camera_hello","camera_id":"C0","device_id":"joined-device-id","stream_id":"new-stream-uuid","clock_id":"page-clock-id","source":"live"}}
 ```
 
-- camera_hello → camera_ack → pose_2d 순서다. 서버는 room-1 camera 역할·카메라 번호·device_id를 확인하고 기존 runtime.registry에 등록한다. 다른 슬롯/기기 사칭은 거부하며 기존 중복·기기 바인딩·입력 검증을 유지한다. joined에는 device_id를 포함한다.
+- camera_hello → camera_ack → pose_2d 순서다. 서버는 현재 방의 camera 역할·카메라 번호·device_id를 확인한다. 방 1은 기존 runtime.registry, 방 2는 별도 room-local registry에 등록하므로 같은 C0라도 교체/수신/종료가 섞이지 않는다. 방 2에 방 1 보정값을 자동 적용하지 않는다. 다른 슬롯/기기 사칭은 거부하며 기존 입력 검증을 유지한다. joined에는 device_id를 포함한다.
 - 폰 ID는 기존 `/camera/`와 `smash.device_id`를 공유한다. 기존 ID가 없으면 과거 `smash.room.camera.device`를 이관한다. camera_ack.expected에 보정 ID·영상 설정이 있으면 원본 크기/회전이 일치할 때만 해당 ID를 송신한다. 서버의 기기/보정 일치 검사도 유지한다.
 - 서버 clock_ping에 폰 performance.now()로 clock_pong을 답해 기존 DeviceClock을 동기화한다. 촬영 시각은 requestVideoFrameCallback.captureTime이 있을 때만 rvfc_capture_time으로 표시한다. 없으면 capture_time_ms=null/timestamp_source=unknown이다. 서버 수신/영상 전송 준비 시각으로 대신하지 않는다.
 - 수신 검증 후 pose_received(stream_id/frame_id/clock_ready)를 반환한다. 전송 개수와 서버 수신 확인은 구분한다. 관절 오류는 내부 error(code/detail)로 반환하며 영상 연결은 유지한다.
@@ -156,5 +159,14 @@ PC 영상에도 같은 양손 손목 점을 표시한다. 폰에서 이미 계�
 선택 head 필드는 {u_px,v_px,visibility} 중심점1개 또는 null이다. 폰 내부에서 양 귀 중점을 우선 사용하고, 불가능하면 양 눈 중점·코 위치 순으로 대표점을 추정한다. 코/눈/귀 각각의 좌표·표정 정보는 송신하지 않는다. 유한 픽셀·가시성[0,1]과 정확한3개 키를 검증하고 최신 Pose2D.head에 보관한다. body22개와 joints 손목은 유지하며 head 없는 이전 입력도 받는다. 폰/PC에는 노란 머리 대표점1개만 표시한다. 두 귀가 보이지 않을 때는 해부학적 머리 중심이 아닌 근사 위치다. 기존 Pose 모델을 재사용하며 얼굴 메시·표정 분석·머리3D 복원은 포함하지 않는다.
 
 - 방 1 관절은 기존 추적 런타임에 연결됐다. `/ws/pose3d`는 서버 실행 단위 ID를 유지하며 video_check 게임 UUID와 동일시하지 않는다. 소비자 화면·실제게임 연결은 별도다.
-- 단일 모드 PC 추론·타격, 다중 모드 실측 보정·3D 복원 연결, 실제게임 점수·타격/성능 영구 로그는 후속이다.
+- 폰 좌표 기반 화면2D 타격은 두 방에 로컬 연결했다. 기존 단일 PC 추론 경로의 실제 서버 연결, 실측 보정·3D 게임 연결, 타격/성능 영구 로그는 후속이다. 서버 점수는 메모리 상태이며 재시작 후 보존하지 않는다.
 - 단위/서버 테스트와 Edge 모의 UI는 통과 기록이 있다. 실제3대·폰QR 스캔·다른 망·장시간·정량 지연은 미검증이다. 사용자 영상 정상 보고와 에이전트 실기기 검증은 구분한다.
+
+## 9. 폰 좌표 2D 게임 phone_2d
+
+- start_game의 mode를 phone_2d로 지정한다. 방 1은 세 카메라, 방 2는 C0 한 대의 현재 연결/영상 준비를 요구하고 PC는 같은 프레임의 유효 손목·건물·표시 변환도 검사한다. C0 전송 방식은 server다. 기본 video_check 시작 버튼으로 이 모드가 실행되지는 않는다.
+- 카메라 video_frame에 pose_stream_id/pose_frame_id를 추가하면 서버가 현재 소유 스트림의 최신 관측(수신500ms 이내)과 비교한다. 불일치는 pose_frame_mismatch다. 전달되는 phone_pose는 stream_id/frame_id, 정규화 wrists.left_wrist/right_wrist, source, 원래 capture_time_ms/timestamp_source를 포함한다. 픽셀 관측은 그대로 보존하고 게임용 image_norm만 추가 생성한다.
+- PC RoomInputLink/PairedReceiver가 JPEG와 그 안의 좌표를 기존 FrameCoordinator/GameController에 연결한다. PC 관측 시각은 performance.now이고 TTL200ms이며 촬영 시각으로 바꾸지 않는다. PC에서 관절 재추론하지 않는다.
+- game_hit는 entry에 PC의 accepted hit_result를 담는다. 서버는 monitor 권한·현재 방/세션/스트림·live/single_view_2d·건물/관절·증가하는 두 정수 프레임(최근1초 짝 기록)·100점 단위를 검사한다. 같은 event_id는 중복 가산하지 않고 같은 건물은 한 번만 득점한다. 2D 기하 판정은 인증된 PC를 신뢰하며 서버가 재계산하지 않는다.
+- game_ack/game_status/room_status.game의 mode는 phone_2d, score는 0부터 시작한다. 서버는60초·종료 상태/점수를 보관하고 PC와 같은 세션으로 연결한다. 필수 카메라 이탈은 서버에서, 영상/짝 좌표1.5초 중단은 PC에서 종료를 요청한다. 손목 미검출(null) 자체와 관절 프레임 송신 중단은 구분한다.
+- 방별 메모리 세션·점수·관측은 독립이다. 합성 검증과 실폰/실제 모델·소리 청취·성능 검증은 [실행·결과](PHONE_POSE_GAME.md)를 따른다.

@@ -6,13 +6,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-03 17:19 KST |
-| 현재 Phase·작업 상태 | P1 코드 GitHub main 반영·PM 검증 완료 — 실제 폰 3대 미검증 |
-| 마지막 확인된 개발 완료 | PR #1 fa3b19e 머지, 실제 MediaPipe replay/서버 수신·회귀 6개 검증; 공용 키보드 데모와 별도 |
-| 현재 작업 | 카메라 코드 검토·머지 완료, 실제 폰/C0·궤적 충돌/물리·소리 후속 준비 상태 확인 필요 |
-| 남은 일·미검증 | 소리·실제 궤적 충돌·C0 송신·실기기 작업은 미검증 |
-| 다음 한 단계 | K-SC-01 장비/PC 추론 시제품·J-SC-02 신호/K-SC-02 송신 준비, 11-09 실제 폰 시험 |
-| 막힌 점·인계 | 실제 기기·배치·접속 상태 확인 필요, 특정 기술 장애는 아직 확인되지 않음 |
+| 마지막 갱신 | 2026-11-04 18:25 KST — K-SC-05 타격 소리·화면 등록 모듈 구현·검증·전역/지역 리뷰 반영, PR #6 머지 결과 기록 |
+| 현재 Phase·작업 상태 | 단일 카메라 SC-02~04 / K-SC-03·04 main 반영(PR #6), K-SC-05 소리 구현·PC 검증 — 실제 폰 영상 미연결. P1은 실기기 미검증 유지 |
+| 마지막 확인된 개발 완료 | `hit-sound.js`·`tracking.js`: 빌드한 PC 화면에 등록해 별도 창 송신·실제 MediaPipe로 수락 타격 1회=소리 1회·100점·파편 96, 전역·지역 리뷰 반영 (아래 18:15 기록) |
+| 현재 작업 | K-SC-05 PR — 전역·지역 리뷰 후 김태이가 직접 머지 |
+| 남은 일·미검증 | 화면 등록 `<script>` 한 줄과 "어댑터 없음" 전제 시험 2개 수정(이동수 파일), 속도·cooldown·음량 실제 폰 파일럿 튜닝, Worker 경로, 실제 폰 WebRTC·Windows·live, 단일 모드 바닥 정합(팀 결정) |
+| 다음 한 단계 | 김태이 폰 1대로 `/camera/` 실기기 측정(HTTPS·GPU·FPS·captureTime) |
+| 막힌 점·인계 | 이동수: `index.html` 등록 한 줄·시험 2개 수정 요청 필요(김태이가 직접 수정하지 않음). 정경호: K-SC-02 폰 송신에 필요한 방·신호 서버(10-31 이후 원격 변경 없음) |
 
 ## 2. 개인 Phase 현황
 
@@ -229,6 +229,50 @@
 - 갱신한 계획 체크리스트·현황: 실기기 확인 전이라 P1 체크리스트 `[ ]` 유지. 본 파일 요약, `진행현황.md` 김태이 행
 - 종료·중단 시각: 2026-11-02 16:05 KST
 
+### 2026-11-03 20:50 KST — K-SC-03 PC 추론 어댑터 구현·검증
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 개발 / 단일 카메라 SC-02 K-SC-03 / 코드 구현·PC 검증 완료, 실제 폰 영상 미연결
+- 읽은 계획·기록: 김태이_plan.md v0.2 K-SC 표, `docs/SINGLE_CAMERA_PLAN.md`·`SINGLE_CAMERA_INTERFACES.md` 4·5절, PR #5(`origin/feat/single-camera-monitor`)의 `SINGLE_CAMERA_MONITOR.md`·`frame-coordinator.js`·`main.js`·`game/controller.js`
+- 연결할 계획 항목: K-SC-03 "PoseFrame·손목별 무효 사유·종료/자원 반환", T-SC-04~06/09/13/15 중 어댑터 범위
+- 이번 목표·완료 기준: PR #5가 넘기는 빌린 캔버스 스냅샷을 받아 같은 frame 키의 PoseFrame을 만들고, 코디네이터 TTL(200 ms) 안에 돌려줌. 무효 손목은 사유와 함께 `valid=false`
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: `frontend/single/pose-adapter.js`(신규: `createPoseAdapter`·`attachPoseAdapter`·`toWrist`·`toPoseFrame`), `tests/single/pose-adapter.test.mjs`(신규 10개), `web/camera/pose.js`(손목 번호 export, `createPoseLandmarker(model, delegates)` 선택 인자 — 기존 호출 동작 동일)
+- 동작: 런타임·모델은 `/camera/pose.js`를 실행 시점에 불러와 폰과 같은 고정 파일 사용(번들에 MediaPipe를 넣지 않음). 받은 meta를 그대로 두고 `wrists.left_wrist/right_wrist = {valid, image_norm, visibility, reason}`과 `inference{started/ended_at_pc_ms, model, delegate, runtime}` 추가. 사유: `not_detected`/`out_of_frame`/`low_visibility`(<0.5, PR #5 기준과 같음)/`non_finite`. 이미지는 닫거나 transfer하지 않음. 크기가 meta와 다르면 `frame_size_mismatch`. GPU 추론 중 예외 시 그 인스턴스를 닫고 다음 프레임부터 CPU로 다시 생성. stream/run이 바뀌어도 MediaPipe 시각은 단조 증가
+- 발견·수정: 첫 실행에서 **모델 로딩 후 첫 `detectForVideo`가 8.9초 동안 메인 스레드를 막아** 그동안의 4초 분량 프레임이 모두 TTL 초과로 버려짐(가로 구간 matched 0). → `warmup()`이 빈 캔버스로 한 번 추론해 GPU 초기화를 미리 끝내고, `attachPoseAdapter`가 등록과 함께 실행. 수정 후 빈 추론 0.43초, 이후 폐기 0
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/pose-adapter.test.mjs` 10/10, 기존 `tests/test_camera_lifecycle.mjs` 6/6. ② 실제 MediaPipe e2e(스크래치 스크립트, 커밋 안 함): MacBook Air M4·Chrome 139 headless, FastAPI `/camera/pose.js`, PR #5 `frame-coordinator.js` 원본, MediaPipe 예제 사진(`mediapipe-assets/pose.jpg`)을 좌우로 움직여 그린 캔버스 스냅샷 30 fps 제출. GPU·lite, 로딩 0.66초. 640×480 4초: 115/115 정합, 28.8 fps, 추론 평균 16.0·최대 39.1 ms, 양손 115/115 유효. 480×640(run 2) 3초: 87/87, 29.0 fps, 평균 22.6 ms, 양손 유효. 사람 없음 1.5초: 44/44 정합·양손 `not_detected`. 크기 불일치·dispose 후 프레임은 `onInvalid`로 거부. 코디네이터 submitted 248·processed 246·dropped 0·failed 2(의도한 두 건). 좌우: 정면 인물의 `left_wrist`가 영상 오른쪽(x 0.64~0.96)으로 촬영자 기준 판별 유지
+- 입력·장비 범위: synthetic/replay 스냅샷(사진 1장 이동), PC 브라우저 1종. 실제 폰 WebRTC 영상·live·Windows/다른 GPU·PR #5 화면 연동은 미실행
+- 남은 일·미검증: PR #5 `index.html`에 `attachPoseAdapter(window.singleCameraMonitor)` 등록 위치(이동수 파일이라 머지 후 또는 합의 후). Worker/OffscreenCanvas 경로(K-SC-01 측정 항목) — 현재는 메인 스레드 동기 추론. 시연 PC의 GPU/CPU 대체·추론 시간
+- 막힌 점·도움·해제 조건: 없음(독립 모듈). live 검증은 K-SC-02 폰 송신과 정경호 방/신호 서버가 있어야 함
+- 다음 한 단계·재개 위치: K-SC-04 `frontend/single/hit-detector.js` — PoseFrame + PR #5 `getTarget()` 삼각형으로 손목 선분 판정
+- 인계 대상·넘긴 자료: 이동수 — PoseFrame에 추가 필드 `inference`가 붙음(코디네이터 비교 키와 무관), 첫 GPU 추론 지연과 warmup 필요. 아직 메시지 발송 없음
+- 갱신한 계획 체크리스트·현황: 실제 영상·실기기 전이라 K-SC-03 `[ ]` 유지. 본 파일 요약만 갱신. `진행현황.md` 김태이 행은 PR #5가 바로 위 이동수 행을 바꿔 충돌하므로 PR #5 머지 뒤 따로 갱신
+- 종료·중단 시각: 2026-11-03 20:50 KST
+
+### 2026-11-03 21:05 KST — K-SC-04 화면 2D 타격 판정 구현·검증
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 개발 / 단일 카메라 SC-03 K-SC-04 / 코드 구현·PC 검증 완료, 실제 폰 영상 미연결
+- 읽은 계획·기록: `SINGLE_CAMERA_INTERFACES.md` 5절(HitEvent·선분·재무장·cooldown), `SINGLE_CAMERA_TEST_PLAN.md` T-SC-06/07/08/11, PR #5 `game/controller.js`(acceptHit 검사·pairs)·`target-provider.js`(image_norm 삼각형)·`main.js`(validateHit·onPoseFrame 순서)
+- 연결할 계획 항목: K-SC-04 "HitEvent·연속/재무장·속도/설정 버전", 완료 기준 "빠른 통과·빈 공간/정지·복구 첫 점·중복 검사"
+- 이번 목표·완료 기준: PoseFrame과 `getTarget()`만으로 PR #5 GameController가 수락하는 HitEvent를 만들고, 정지·느린 겹침·빈 공간·끊긴 궤적은 타격하지 않음
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: `frontend/single/hit-detector.js`(신규: `HitDetector`·`attachHitDetector`·`clipSegment`·`firstEntry`·`HIT_CONFIG`), `tests/single/hit-detector.test.mjs`(신규 10개)
+- 동작: 손목별 직전 유효 점→현재 점 선분을 삼각형 합집합에 Cyrus–Beck으로 잘라 가장 먼저 들어간 지점(경계 바로 안쪽)을 타격점으로 씀. 양 끝이 밖이어도 통과하면 후보. 조건: 직전 점이 활성 목표 **밖**에서 관측됨(재무장), dt 0 초과·200 ms 미만, 속도 ≥ 0.5 대각선/초, 손목별 cooldown 300 ms, 목표 `active`·`transform_version` 일치, session_id 있음. room/stream/run/transform/session이 바뀌면 궤적 초기화(첫 점은 기준점만). 양손 동시 후보는 먼저 들어간 쪽 1건. 속도는 인터페이스 정의대로 `hypot(dx_px, dy_px)/hypot(w,h)/dt`. `hit_point_m`·`speed_mps`는 null. 판정 사유(`baseline`/`invalid_wrist`/`gap`/`no_target`/`disarmed`/`missed`/`too_slow`/`cooldown`/`hit`/`no_session`)를 손목별·누적으로 보관. 임계값은 `config_version: hit-2d-1`로 이벤트에 기록
+- 발견·수정: PR #5 GameController와 결합 시험에서 게임 시작 전 손짓마다 이벤트가 만들어져 `not_playing` 거부 로그가 쌓임 → session_id가 없으면 이벤트를 만들지 않음
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/*.test.mjs` 20/20(어댑터 10 + 판정 10). ② PR #5 결합(임시 worktree, 커밋 안 함): 실제 `GameController`+`TargetProvider.contains`로 시작 전 0건, 첫 타격 수락·100점, 같은 이벤트 재전송 `duplicate_event`, 파괴 후 추가 점수 0, 복원 후 손이 건물 안에 있으면 타격 0 → 밖으로 나갔다 들어오면 수락, 60초 종료 후 타격 `not_playing` 거부. PR #5 자체 테스트 19/19 유지. ③ 실제 MediaPipe e2e(MacBook Air M4·Chrome 139 headless·GPU, PR #5 FrameCoordinator + 어댑터 + 판정, 사진을 움직인 640×480 스냅샷): 왼손목이 쉬는 위치에 폭 0.04의 막대 목표를 두고 — 정지 3초 87프레임 타격 0(손목 x 변동 0.001), 느린 흔들기(약 0.2 대각선/초) 4초 116프레임 타격 0, 빠른 흔들기(약 1.1) 4초 116프레임 타격 11·cooldown 10(통과 약 21회, 0.3초 간격 제한과 일치), 측정 속도 0.99~1.36
+- 입력·장비 범위: synthetic(단위·결합 시험) / replay 스냅샷(사진 1장 이동). 정지 사진이라 실제 카메라의 손목 흔들림(지터)은 재현하지 못함. 실제 폰·live·사람 동작은 미실행
+- 남은 일·미검증: 0.5/초·300 ms는 출발값이며 실제 폰 파일럿에서 지터·실제 타격 속도로 조정 필요. PR #5 화면 등록(`attachHitDetector(window.singleCameraMonitor)`). 깊이를 재지 않으므로 건물 앞뒤 손도 겹치면 타격(단일 2D 모드의 알려진 한계)
+- 막힌 점·도움·해제 조건: 없음(독립 모듈)
+- 다음 한 단계·재개 위치: K-SC-05 수락된 타격의 소리·연출 충격 연결
+- 인계 대상·넘긴 자료: 이동수 — HitEvent에 `observed_at_pc_ms`·`config_version` 추가 필드, 판정기는 `getTarget()`을 프레임마다 호출. 메시지 발송 없음
+- 갱신한 계획 체크리스트·현황: 실제 영상·실기기 전이라 K-SC-04 `[ ]` 유지. 본 파일 요약만 갱신(`진행현황.md`는 PR #5 충돌 회피로 보류)
+- 종료·중단 시각: 2026-11-03 21:05 KST
+
 ### 2026-11-03 17:19 KST — 단일 카메라 v0.2 역할 계획 추가
 
 - 담당 / 기록자: PM·공통 계획 / Codex. 개인 개발 수행 보고가 아니라 사용자 지시에 따른 역할 계획 연결이다.
@@ -241,3 +285,51 @@
 - 다음 행동·재개: K-SC-01 장비/PC 추론 시제품·J-SC-02 신호/K-SC-02 송신 준비, 11-09 실제 폰 시험. 해당 개인 계획의 v0.2 체크리스트부터 시작 기록을 남긴다.
 - 체크리스트·현황: 새 기능 6개 모두 미완료, 기존 P0~P6 상태/체크 유지. 현황의 다음 행동만 갱신. 팀원 메시지 발송 없음.
 - 종료 시각: 2026-11-03 17:19 KST. PR #4 문서 변경에 함께 공유하며 머지 결과는 PM 기록에 남긴다.
+
+### 2026-11-03 17:44 KST — 이동수 PC 소비자 구현 인계 문서 연결
+
+- 기록자/구분: 이동수·PM 인계 / Codex. 담당자의 실제 개발 수행/완료 기록이 아님.
+- 자료: [단일 PC 실행·인계](../docs/SINGLE_CAMERA_MONITOR.md), frontend/single/ 및 frontend/game/. attachPoseProcessor/onPoseFrame/acceptHit·getTarget를 연결한다. PoseFrame은 빌린 원본 스냅샷/메타 키·세션·출처를 보존하고 wrists.left_wrist/right_wrist를 반환한다. 실제 손목 추출/선분/소리 구현은 해당 담당 범위다.
+- 검증/범위: PC 합성·실제 RTC 브라우저 피어로 독립 검증. 상대 모듈과 실제 폰/서버 연결은 아직 미검증이며 개인 Phase 체크는 유지.
+- 다음: 개인 SC 계획의 해당 생산 모듈에서 위 문서의 양방향 예제를 사용하고 실제 수신 결과/버전을 기록한다. 메시지 발송·상대 인수 완료를 추정하지 않는다.
+
+### 2026-11-03 23:12 KST — PR #5 소비자 검토 수정 인계
+
+- 기록자/범위: PM 코드 검토 / Codex. FrameInput 메타는 동결된 읽기 전용 객체다. {...meta, wrists}로 결과를 반환하고 원본 시각/키를 변경하지 않는다. 추론 미등록 시 영상만 보이며 손목 valid=false/시작 차단을 유지한다. HitEvent는 허용된 손목·증가 정수 프레임 쌍이 필수다.
+- 자료/검증: SINGLE_CAMERA_MONITOR.md의 PR 검토 보완과 pr5-review.json에 연결한다. PC 재현/회귀만 수행하며 실제 담당 개발 완료·실기기/공통 Phase 체크는 유지한다. 메시지 발송·상대 검토 완료를 의미하지 않는다.
+
+### 2026-11-04 15:28 KST — PR #6 최신 main 반영·머지 준비
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·상태: PR 관리 / K-SC-03·04 / 머지 전 검증
+- 운영 원칙(사용자 결정, 2026-11-04): 김태이 브랜치·파일만 수정하고 다른 팀원이 만든 브랜치·코드·PR은 수정·머지하지 않는다. 김태이 PR은 김태이가 직접 올리고 검증 후 직접 머지한다.
+- 내용: PR #5 머지(7b0990a)를 `feat/single-pose-adapter`에 병합(충돌 없음). PR #5로 미뤄 둔 `진행현황.md` 김태이 행만 갱신. PR #5 검토 보완(읽기 전용 FrameInput 메타, HitEvent 손목 이름·증가 정수 프레임 검사)과 두 모듈의 호환을 머지 전 검사로 확인
+- 다음: 검증한 head로 머지, K-SC-05 소리·연출 충격
+
+### 2026-11-04 15:30 KST — PR #6 머지 완료
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 결과: PR #6(K-SC-03·04)을 검증한 head 952b4e4로 김태이가 직접 머지. 머지 커밋 6b24edf, main 트리가 검증 트리와 동일함을 확인. 머지 전 tests/single 45/45·카메라 6/6·서버 4/4·check_scaffold·build:all(커밋된 번들과 동일)·실제 MediaPipe replay 통과
+- 미검증: 실제 폰·live, PC 화면 등록(이동수 파일)
+
+### 2026-11-04 18:15 KST — K-SC-05 타격 소리·화면 등록 모듈
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 개발 / 단일 카메라 SC-04 K-SC-05(소리 부분), K-SC-03·04 연결 준비 / 코드 구현·PC 검증, 실제 폰 미연결
+- 읽은 계획·기록: 김태이_plan.md K-SC-05·P2 "소리", 발표 19장(사전 분할·물리·소리), `SINGLE_CAMERA_MONITOR.md` 연결 API, PR #5 `main.js`(matched·acceptHit·pagehide)·`game/controller.js`(start 준비 검사)·`tests/browser/single-camera*.spec.js`
+- 연결할 계획 항목: K-SC-05 "거부/중복 타격 무음·무점수, 반복 복원과 오디오 시작 권한 확인"
+- 바꾼 파일·결과물:
+  - `frontend/single/hit-sound.js`(신규): Web Audio 합성음(저음 쿵·붕괴 잡음·파편 딸깍 4개), 파일 없음. 속도→음량 0.55~1(연출용, 실측 힘 아님). 동시 3개 제한, 잡음 버퍼 재사용. `prepare()`로 꺼진 상태의 오디오를 미리 만들고 `unlock()`은 사용자 클릭·키 입력 때 켜기만 함
+  - `frontend/single/tracking.js`(신규): 어댑터·판정기·소리를 `window.singleCameraMonitor`에 한 번에 등록. **게임이 수락한 타격에만** 소리. 첫 클릭·키 입력에서 오디오 켜고 리스너 제거. pagehide 때 정리. 이 파일은 `index.html`이 main.js 다음에 불러야 동작(이동수 파일이라 아직 미등록)
+  - `frontend/single/pose-adapter.js`: `attachPoseAdapter(..., { eagerWarmup })` 추가. 미리 추론을 하지 않으면 첫 실제 프레임에서 그 크기로 1회 미리 추론
+  - 시험: `tests/single/hit-sound.test.mjs`(11), `tracking.test.mjs`(6), `pose-adapter.test.mjs`(+3), `hit-detector.test.mjs`(+1)
+- 발견·수정: ① 등록 즉시 미리 추론하면 소프트웨어 WebGL(이동수 Playwright 설정)에서 페이지가 9.2초 멈춰 합성 모드 시험이 실패 → tracking은 미리 추론을 첫 실제 프레임까지 미룸(합성 모드는 MediaPipe를 불러오지 않음). ② 시작 클릭 때 AudioContext를 만들면 280 ms 멈춰 손목 정보가 만료돼 시작이 거부됨(합성 시험 3/3 실패 재현) → 페이지 로드 때 미리 만들고 클릭 때는 resume만(0.1 ms)
+- 검증 방법·조건·실제 결과: ① `node --test tests/single/*.test.mjs` 66/66(김태이 모듈 41 + 이동수 모니터·전송 25). ② 임시 worktree에서 최신 main + 이 변경 + `index.html` 등록 한 줄로 `build:single`, MacBook Air M4·Chrome 139 headless, 휴대폰 역할은 **별도 브라우저 창**(사진 이동 영상 canvas → WebRTC), 신호 서버는 PR #5 검토 시험과 같은 가짜 WebSocket: 첫 1초 미리 추론 중 4프레임 폐기 후 2초에 시작 가능, 시작 전 빠른 손짓 이벤트 0, 느린 통과 타격 0(`too_slow`), 빠른 통과 수락 → 100점·파편 96·서버 로그 수락 1건, **소리 1회 재생 후 사용 중 소리 0으로 복귀**, 처리 471·실패 0·GPU. ③ 같은 빌드로 이동수 브라우저 시험(single-camera·review, Chrome 소프트웨어 WebGL) 2회 반복: 14 통과·6 실패 = 3개×2. 실패는 "추론 어댑터 없음"을 전제로 한 2개(`single live entry ... pose adapter are missing`, `received video ... pose adapter is absent`)와 등록 없이도 이 Mac에서 실패하는 페이지 캐시 복귀 1개
+- 전역·지역 리뷰(서브에이전트 2개, 읽기·시험만) 반영: 확정 계약 불일치 없음(한 프레임 추적·필드/프레임 쌍/TTL/건물 ID 일치, 전체 검사 통과, 커밋된 번들 최신). 김태이 코드 지적 반영 — ① 오디오 켜는 중 정리되면 처리 안 된 오류 → 정리 후엔 false 반환 ② 처음 켠 뒤 클릭 감지를 없애 OS/Safari가 다시 멈추면 계속 무음 → 감지를 유지하고 `interrupted`도 다시 켬 ③ 겹친 소리 클리핑 → 전체 음량 ×0.45 ④ 소리 생성 중 예외가 손목 리스너로 번져 입력이 지워질 수 있음(옛 Safari `connect()` 연결) → 연결을 나누고 예외 시 `error`로 건너뜀 ⑤ 모델 로드 실패 시 매 프레임 재시도·안내 소실 → 5초 간격 재시도·`info().loadError` ⑥ 시간 종료 뒤에도 휘두를 때마다 거부 로그 전송 → 플레이 중이 아니면 보내지 않음 ⑦ `models/README.md` 미리 추론 설명 갱신. 반영하지 않은 것: 판정 설정·속도의 서버 로그 기록(이동수 controller/main 수정 필요), 휴대폰 연결 직후 모델 준비 중 표시(이동수 화면), 이동수 코드 지적(아래 인계)
+- 입력·장비 범위: synthetic(단위) / replay(사진 이동 영상, 별도 창 송신·가짜 신호). 스피커로 실제 청취·실제 폰·live는 미실행
+- 남은 일·미검증: 이동수에게 `index.html` 등록 한 줄과 위 시험 2개의 전제 변경 요청. 음량·음색 실제 청취 조정, 파편 물리의 타격 세기 연결(이동수 FractureView 영역)
+- 막힌 점·도움·해제 조건: 화면 등록은 이동수 파일 수정이 필요
+- 다음 한 단계·재개 위치: 김태이 폰 1대 실기기 측정
+- 인계 대상·넘긴 자료: 이동수 — 등록 방법(`<script type="module" src="./tracking.js">`를 main.js 다음에), 바뀌어야 할 시험 2개, 오디오·미리 추론 시점 이유, 전역 리뷰가 찾은 이동수 코드 항목(세로 영상일 때 검은 띠 위 건물은 타격 불가, 로그 `model_version`이 건물 ID, 판정 설정·속도 로그 누락, 문서의 PoseAdapter/HitDetector '후속' 표기). 메시지 발송 없음
+- 갱신한 계획 체크리스트·현황: 실제 청취·실기기 전이라 K-SC-05 `[ ]` 유지. 본 파일 요약, `진행현황.md` 김태이 행
+- 종료·중단 시각: 2026-11-04 18:25 KST

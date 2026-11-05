@@ -6,7 +6,10 @@
     "build:demo": "vite build",
     "test:demo": "playwright test",
     "validate:assets": "node tools/validate-assets.mjs",
-    "validate:enhancements": "node tools/validate-enhancements.mjs"
+    "validate:enhancements": "node tools/validate-enhancements.mjs",
+    "build:single": "vite build --config vite.single.config.js",
+    "build:all": "npm run build:demo && npm run build:single",
+    "test:single": "node --test tests/single/*.test.mjs"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "0.21.0",

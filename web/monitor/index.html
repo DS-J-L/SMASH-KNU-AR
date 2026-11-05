@@ -1,21 +1,70 @@
 <!doctype html>
-<html lang="ko"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SMASH-KNU-AR · 방 선택</title><link rel="stylesheet" href="/shared/styles.css">
-<script type="module" src="/monitor/lobby.js"></script></head>
-<body><main class="monitor-main">
-<p class="eyebrow">SMASH-KNU-AR · PC</p><h1>입장할 방을 선택하세요</h1>
-<p>각 방의 전용 페이지에서 카메라 테스트와 게임 시작을 진행합니다.</p>
-<p id="server-status" role="status">서버 연결 확인 중…</p>
-<div class="room-cards"><article><h2>room-1 · 다중 카메라</h2><p>C0 · C1 · C2 최대 3대</p><p data-room-summary="room-1">상태 확인 중…</p><a class="room-entry" href="/monitor/room-1/">room-1 PC 입장</a></article>
-<article><h2>room-2 · 단일 카메라</h2><p>C0 한 대 전용</p><p data-room-summary="room-2">상태 확인 중…</p><a class="room-entry" href="/monitor/room-2/">room-2 PC 입장</a></article></div>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMASH-KNU-AR · 방 선택</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <script type="module" src="/monitor/lobby.js"></script>
+</head>
+<body>
+<main class="monitor-main">
+  <p class="eyebrow">SMASH-KNU-AR · PC</p>
+  <h1>경북대 부수기</h1>
+  <p>카메라를 연결할 방을 선택하세요. 한 대로 게임을 시험하려면 방 2를 이용하세요.</p>
+  <p id="server-status" role="status" aria-live="polite">서버 연결 확인 중…</p>
+
+  <section aria-labelledby="rooms-title">
+    <h2 id="rooms-title">방 선택</h2>
+    <div class="room-cards">
+      <article>
+        <h3>room-1 · 다중 카메라</h3>
+        <p>C0 · C1 · C2 세 대가 모두 준비돼야 시작할 수 있습니다.</p>
+        <p data-room-summary="room-1">상태 확인 중…</p>
+        <div class="actions">
+          <a class="room-entry" href="/monitor/room-1/">room-1 PC 입장</a>
+          <a class="room-entry" href="/monitor/phone-game/?room=room-1">방 1 폰 좌표 2D 게임</a>
+        </div>
+      </article>
+      <article>
+        <h3>room-2 · 단일 카메라</h3>
+        <p>C0 한 대로 카메라 테스트와 2D 게임을 진행합니다.</p>
+        <p data-room-summary="room-2">상태 확인 중…</p>
+        <div class="actions">
+          <a class="room-entry" href="/monitor/room-2/">room-2 PC 입장</a>
+          <a class="room-entry" href="/monitor/phone-game/?room=room-2">방 2 폰 좌표 2D 게임</a>
+        </div>
+      </article>
+    </div>
+    <p class="muted">PC 입장은 영상 확인 화면입니다. 건물 타격은 2D 게임에서 ‘휴대폰 연결 준비’ → ‘시작’을 누르세요. 폰의 C0 전송 방식은 ‘서버 중계 · JPEG’를 선택하세요. PC 화면은 방마다 하나씩 사용합니다.</p>
+  </section>
+
   <details id="qr-sheet">
     <summary>카메라 입장 고정 QR · 출력</summary>
     <h2>방별 카메라 입장 QR</h2>
     <p>스캔하면 지정된 방·카메라 번호가 선택됩니다. 폰에서 카메라 권한을 허용하고 입장하세요.</p>
-    <div class="field-row qr-tools"><label for="qr-base">휴대폰 접속 서버 주소</label><input id="qr-base" type="url" placeholder="https://서버주소:8443"><button id="qr-update" type="button">QR 주소 적용</button><button id="qr-print" type="button">QR 인쇄</button></div>
+    <div class="field-row qr-tools">
+      <label for="qr-base">휴대폰 접속 서버 주소</label>
+      <input id="qr-base" type="url" placeholder="https://서버주소:8443">
+      <button id="qr-update" type="button">QR 주소 적용</button>
+      <button id="qr-print" type="button">QR 인쇄</button>
+    </div>
     <p id="qr-message" role="status"></p>
     <div id="qr-grid" class="qr-grid"></div>
   </details>
-<nav><a href="/monitor/fracture/">건물 파괴·복원 키보드 데모</a><a href="/camera/room/">카메라로 입장</a></nav>
-</main></body></html>
+
+  <section aria-labelledby="tools-title">
+    <h2 id="tools-title">기존 실행·시험 화면</h2>
+    <nav aria-label="실행 및 시험">
+      <a class="room-entry" href="/monitor/single/">1대 카메라 PC 화면·합성 시험</a>
+      <a class="room-entry" href="/monitor/fracture/">건물 파괴·복원 키보드 데모</a>
+    </nav>
+    <nav aria-label="카메라 및 서버">
+      <a href="/camera/room/">카메라로 입장</a>
+      <a href="/docs">서버 API 문서</a>
+    </nav>
+  </section>
+
+</main>
+</body>
+</html>

@@ -1,6 +1,13 @@
 # 단일 카메라 인터페이스·상태 설계 v0.2
 
-단일2D 추적·게임의 구현 기준안이다. 현재 실행 중인 방·영상·video_check 세션 계약은 [ROOMS.md](ROOMS.md)를 따른다. 아래 추론·프레임/타격·로그 인터페이스는 아직 통합 전이며 room.v1과 자동 호환되지 않는다. 단일 방식은 폰 영상 송신·PC 손목 추론, 다중 방식은 폰2D 추출·서버3D 복원 역할을 유지한다.
+2026-11-06 KST 갱신. [실행 계획](SINGLE_CAMERA_PLAN.md)의 v0.2 설계와 main의 PC 소비자 규격을 보존하고, 현재 로컬 `phone_2d` 연결을 구분한다. 실제 방·영상·제어는 [ROOMS.md](ROOMS.md), 폰 좌표 게임 연결은 [PHONE_POSE_GAME.md](PHONE_POSE_GAME.md)를 따른다. 아래 `single_camera.v1-draft`는 PC 내부 DTO/기존 ControlLink 초안이며 room.v1·서버0.1과 자동 호환되지 않는다. `/ws/single/control`과 POST 방 생성은 현재 서버에 구현하지 않았다.
+
+## 현재 로컬 구현과 기존 설계의 관계
+
+- main의 `/monitor/single/`과 PC 추론용 PoseAdapter/Tracking 모듈은 보존한다. 현재 실행 가능한 추가 진입점은 `/monitor/phone-game/?room=room-1` 또는 `room-2`이며 폰 추론 결과를 사용한다.
+- room-1은 C0/C1/C2 모두, room-2는 C0 한 대가 시작 필수다. 이 화면의 타격 입력은 각 방 C0이며 서버 JPEG와 같은 스냅샷의 손목을 짝지어 전달한다. PC 재추론은 하지 않는다.
+- `RoomInputLink`가 room.v1 시작/ACK·상태/점수를 기존 GameController에 연결한다. PC가 2D 기하 타격을 판정하고 서버는 방·세션·스트림·최근 프레임/이벤트를 검사해 점수를 보관한다. 서버 영구 로그·전체 로그 ACK/재전송은 미구현이다.
+- 아래 PC 추론·별도 제어 채널 내용은 원래 경로의 설계/모듈 계약으로 읽는다. 현재 어댑터 경로의 실제 전송·중단 정책이 우선한다. 합성 통합 통과와 실폰·실제 MediaPipe·3D 검증은 구분한다.
 
 ## 1. 책임과 구현 경계
 
@@ -22,7 +29,7 @@
 1. 고정 방의 PC 페이지에서 폰의 고정 QR 링크를 제공하고 카메라1대를 연결한다. 서버는 PC/폰 역할과 stream_id 바인딩을 확인한다.
 2. 영상·모델·유효 손목·변환·장면·제어 연결이 준비되면 시작 버튼이 활성화된다.
 3. PC가 새 session_id와 모드/입력 출처/설정 버전을 시작 요청으로 보낸다. 서버 ACK 전에는 타이머·타격·점수를 시작하지 않는다. 같은 ID·같은 내용 재전송은 같은 ACK, 같은 ID·다른 내용은 충돌로 거부한다.
-4. ACK 수신 후 PC 단조 시계로 60초를 잰다. PC가 게임과 점수의 권위 주체, 서버는 세션 바인딩·기록 수신 주체다. 서버가 점수를 다시 계산하는 기능은 이번 MVP에 넣지 않는다.
+4. ACK 수신 후 PC 단조 시계로 60초를 잰다. 원래 PC 소비자는 타격/게임의 주체다. 현재 phone_2d에서는 서버도 세션 타이머·종료·점수를 보관하고 PC가 서버 남은 시간/점수에 맞춘다. 서버는 수락 이벤트의 바인딩·중복·100점 단위를 검사하지만 기하 타격을 재계산하지 않는다.
 5. 게임 상태는 idle → ready → starting → playing → ended다. reset은 점수·물리·이벤트·궤적을 비우고 idle로 간다. 카메라는 계속 켜둘 수 있으며 다음 시작에 새 session_id를 쓴다. 모드 변경은 진행 중 게임을 종료한 뒤 수행한다.
 
 연결 상태(disconnected/connecting/live/stalled/failed), 추적 상태(loading/valid/invalid/stale), 장면 상태는 게임 상태와 분리한다. playing 중 손목 미검출/추적 무효·제어 단절은 타격을 차단하는 기준안이다. 카메라 연결 종료·필수 영상 중단은 사용자 최신 지시로 자동 중지하며 현재 video_check의 수동/자동 중지 규칙은 [ROOMS.md](ROOMS.md)를 따른다. 손목 미검출만으로 카메라 연결 종료를 판정하지 않는다. 장비 장애 회차도 지우지 않고 종료·무효 사유를 기록한다. 탭이 숨겨지거나 렌더 루프가 멈춘 동안 입력은 거부한다.
@@ -36,13 +43,13 @@ accept_hit = playing && remaining_ms > 0 && visible_page && single_ready
              && matching_session_stream_run_transform && continuous_valid_points
 ~~~
 
-fresh_valid_wrist는 적어도 한 손목이 유효한 조건이다. 판정은 손목별로 따로 유효성을 검사한다. 종료 시각 이상 이벤트는 거부한다. C1/C2·다중 시점 보정값은 이 식의 입력이 아니다. multiview_3d의 별도 준비 식과 최소 2시점·시간/보정 기준은 그대로 유지한다. 시작 요청 타임아웃은 starting을 해제해 재시도 안내하고 같은 요청의 ACK 지연이 중복 시작을 만들지 않도록 요청 ID를 확인한다.
+fresh_valid_wrist는 적어도 한 손목이 유효한 조건이다. 판정은 손목별로 따로 유효성을 검사한다. 종료 시각 이상 이벤트는 거부한다. 독립 단일 PC 경로의 기본식은 C1/C2·다중 보정을 요구하지 않는다. 현재 phone_2d 어댑터는 방1에서 C0/C1/C2, 방2에서 C0의 최근 영상 조건을 추가한다. 이는 3D 준비 판정이 아니다. multiview_3d의 최소 유효 시점·시간/보정 기준은 유지한다. 시작 타임아웃은 starting을 해제하고 늦은 ACK가 중복 시작을 만들지 않게 한다.
 
-제어 WebSocket 단절 또는 heartbeat 만료 시 P2P 영상이 남아도 타격은 차단한다. heartbeat 주기/만료는 접속 설정에 버전과 함께 정하고 서버/PC에서 같은 기준으로 확인한다. 재접속 시 서버가 같은 server_epoch/room/session을 확인한 경우에만 남은 시간으로 복구한다. 서버 재시작·알 수 없는 세션이면 현재 회차를 중단 처리하고 명시적으로 새로 시작한다. 점수의 자동 초기화나 다른 방으로의 자동 이동은 하지 않는다.
+제어 WebSocket 단절 또는 heartbeat 만료 시 영상이 남아도 타격을 차단한다. 재접속/복구는 경로별로 구분한다. 기본 video_check는 서버 상태/남은 시간을 조회할 수 있으나 현재 phone_2d 게임 화면은 연결 단절 시 로컬 회차를 중단하고 복원·명시적 재시작을 요구한다. 자동 게임 재개·다른 방 이동을 하지 않는다. 서버 재시작·알 수 없는 세션도 새로 시작한다.
 
 ## 3. 제안하는 서버 API
 
-GET /api/single/rooms와 WS /ws/single/signaling은 현재 room.v1로 구현되어 있다. 아래 /ws/single/control과 single_camera.v1-draft는 추론·타격 통합용 설계안이며 미구현이다. 현재 시작/ACK/상태 조회도 signaling에서 처리한다. 기존 /ws/status·/ws/pose 계약과 자동 호환되지 않는다.
+GET /api/single/rooms와 WS /ws/single/signaling은 현재 room.v1로 구현되어 있다. /ws/single/control은 미구현 제안이고 single_camera.v1-draft는 구현된 PC 내부 DTO 및 별도 ControlLink 초안이다. 현재 phone_2d는 시작/ACK·상태 조회·game_hit도 signaling에서 처리하고 RoomInputLink가 PC 소비자에 연결한다. 기존 /ws/status·/ws/pose 계약과 자동 호환되지 않는다.
 
 | 제안 경로 | 역할·핵심 동작 | 실패와 시험 |
 | --- | --- | --- |
@@ -57,6 +64,8 @@ GET /api/single/rooms와 WS /ws/single/signaling은 현재 room.v1로 구현되�
 ## 4. 프레임·시계·변환 계약
 
 FrameInput의 키는 room_id/stream_id/run_id/frame_id/transform_version이다. frame_id는 새 디코딩 프레임에만 증가한다. width/height는 실제 추론 이미지 크기, media_time_s는 미디어 시각, observed_at_pc_ms는 PC가 새 프레임을 확보한 performance.now 계열 시각이다. 추론 시작/끝 시각을 별도로 남긴다. 폰의 노출 시각 또는 서버 UTC로 대신 쓰지 않는다. capture_time은 브라우저가 제공한 경우에만 값·출처를 기록하고 없으면 null이다.
+
+위 문단은 기존 PC 수신/추론 경로의 프레임 정의다. 현재 phone_2d는 JPEG 전송 frame_id와 원래 관측의 pose_frame_id를 구분하고, PC PoseFrame에는 원래 관측 frame_id를 사용한다. 소유 스트림/짝 검증 후 관측 번호는 건너뛸 수 있으며 새로 만들어 섞지 않는다. PC observed_at_pc_ms는 짝지어진 표시 프레임 수신 시각이다.
 
 - 대기열은 실행 중 1개 + 최신 대기 1개로 제한한다. 새 대기가 오면 이전 대기는 폐기하고 자원을 닫는다. 결과가 돌아와도 현재 키/버전과 다르거나 observed_at_pc_ms부터 만료 기준 이상이면 타격에 사용하지 않는다.
 - 표시하는 배경 스냅샷과 손목 결과를 같은 frame_id로 묶는다. 결과가 없는 최신 영상에 과거 손목을 겹치지 않는다. 오래된 마지막 화면은 추적 끊김 표시와 함께 둘 수 있으나 타격은 차단한다. 영상 갱신률과 3D 렌더 갱신률은 별도로 측정한다.
@@ -73,7 +82,7 @@ TargetProvider는 현재 가상 카메라의 IT1 정상 건물 표면을 화면�
 
 | 데이터 | 필드·단위 | 무효/거부 규칙 |
 | --- | --- | --- |
-| PoseFrame | image_width/height, observed_at_pc_ms, media_time_s, wrists.left/right: valid, image_norm[x,y], visibility, reason | 미검출/낮은 신뢰도/범위 밖/비유한 값은 해당 손목 valid=false, image_norm=null |
+| PoseFrame | image_width/height, observed_at_pc_ms, media_time_s(경로가 제공할 때), wrists.left_wrist/right_wrist: valid, image_norm[x,y], visibility, reason | 미검출/낮은 신뢰도/범위 밖/비유한 값은 해당 손목 valid=false, image_norm=null |
 | HitEvent | event_id, building_id, joint, frame_id, previous_frame_id, hit_point_image_norm[x,y], speed_norm_per_s | 이전/현재 점이 연속 유효하고 같은 키 계열이며 시간 증가·만료 이내여야 함 |
 | 2D 물리 구분 | hit_point_m=null, speed_mps=null, effect_point_scene_m는 선택 | 연출 좌표는 가상 장면 좌표임을 표시. pose_3d valid로 변환 금지 |
 | 결과 로그 | accepted, reject_reason, score_delta, game_elapsed_ms, config_version, model_version | 중복/다른 세션/종료 후/이미 파괴/잘못된 단위는 거부 사유 보존 |
@@ -117,3 +126,9 @@ HitDetector는 손목별 직전 유효 점과 현재 점 사이 선분을 검사
 기본은 원본 영상 저장 없이 이벤트·설정·기기·성능 요약을 남긴다. 재생 자료가 필요하면 허용된 시험 자료로 별도 준비하고 영상/토큰을 PR에 포함하지 않는다. 로그 전송 실패 시 PC는 개수 제한 임시 버퍼와 dropped_log_count를 사용하며 로그 ACK 재전송으로 점수를 다시 반영하지 않는다. 로그 수신 실패 자체와 제어 연결 상실을 별도 상태로 표시한다.
 
 인계 PR에는 송신/수신 예제, 성공/거부 예제, 실행 명령, source, commit·모델/설정 버전, [검증표](SINGLE_CAMERA_TEST_PLAN.md)의 관련 시험 ID와 실제 결과를 적는다. 구현하지 않은 경로는 빈 성공 화면 대신 미구현·시작 불가 사유를 표시한다.
+
+## 7. PC 소비자 구현 연결 (2026-11-03)
+
+[PC 실행·인계 문서](SINGLE_CAMERA_MONITOR.md)의 VideoReceiver/ControlLink·프레임/게임 API 구현 이력이다. 별도 ControlLink가 요구하는 POST 방 생성·control API는 현재도 제안이며 404를 성공으로 취급하지 않는다. 현재 room.v1 어댑터와 구분한다. 손목 키는 wrists.left_wrist/right_wrist다. Worker 입력은 빌린 스냅샷이며 원본 소유권 이전을 금지하고 필요 시 복제한다.
+
+PC 클라이언트의 1초 ping/3초 heartbeat·7.5초 제어 요청/8초 게임 시작 타임아웃은 현재 시험 설정이다. 실제 서버와 연결할 때 설정/프로토콜을 함께 검토한다. TTL200ms·가시성0.5·60초는 현재 PC 모듈 기준이며 실제 성능 달성 수치가 아니다. 로그의 서버 보존/ACK 재전송과 실제 물리/소리는 후속 인계에서 확인한다.

@@ -1,6 +1,6 @@
 # 데이터 계약 v0.2
 
-현재 방·영상·video_check 세션·QR 계약은 [ROOMS.md](ROOMS.md)를 따른다. 방 1은 room.v1의 pose 봉투로 아래 관절 계약을 전달하며 기존 registry·시계·3D 파이프라인에 입력한다. 방 2는 영상 전용이다. `/ws/pose`·`/ws/ingest`도 유지하며 실제 보정/3D 통합 검증은 별도다.
+현재 방·영상·video_check/phone_2d 세션·QR 계약은 [ROOMS.md](ROOMS.md)를 따른다. 두 방 모두 room.v1의 pose 봉투로 폰 관절을 받는다. 방 1은 기존 registry·시계·3D 파이프라인, 방 2는 격리된 방별 registry를 사용한다. [폰 좌표 게임 연결](PHONE_POSE_GAME.md)은 기존 PC DTO를 재사용하는 별도 어댑터다. `/ws/pose`·`/ws/ingest`와 room_z_up/3D 유효 기준은 유지하며 실측/실폰 검증은 별도다.
 
 팀이 따로 개발할 때 맞춰야 할 인터페이스입니다. 필드 정의는 정경호가 관리하고 송신·수신 담당이 함께 검토합니다. 아래 서버 메시지는 JSON 텍스트이며 시간은 별도 표기가 없으면 ms입니다. 2D 관절은 원본 영상 픽셀, 3D 좌표는 m입니다. 단일 카메라 제안의 정규화 좌표·속도는 별도 계약을 따릅니다.
 
@@ -272,9 +272,9 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 
 ## 2026-11-03 단일 카메라 추가 계약 제안
 
-[휴대폰 1대·PC 화면 계획](SINGLE_CAMERA_PLAN.md)의 단일 화면 2D 경로를 제안한다. PC 수신 프레임 추론·모드별 준비/세션·2D 이벤트 단위는 설계 검토 대상이며 현재 구현/메시지 스키마가 아니다. 기존 다중 3D의 room_z_up·보정·유효 시점·시간 기준은 유지하고 후속 구현 PR에서 확정·검증한다.
+[휴대폰 1대·PC 화면 계획](SINGLE_CAMERA_PLAN.md)의 2026-11-03 당시 제안 이력이다. PC 수신 추론·모드별 준비/세션·2D 이벤트를 설계했고 이후 main의 PC 모듈과 로컬 phone_2d 연결로 일부 구현됐다. 현재 서버 전송은 room.v1, 게임용 PC DTO는 single_camera.v1-draft로 구분한다. 기존 다중3D의 room_z_up·보정·유효 시점·시간 기준은 유지한다.
 
-2026-11-03 v0.2 상세화: [인터페이스·상태 기준안](SINGLE_CAMERA_INTERFACES.md)에 PC 생성 세션/서버 ACK, 방/스트림/실행 버전, 프레임·변환·만료, 2D 단위와 수락/거부를 정의했다. [검증 계획](SINGLE_CAMERA_TEST_PLAN.md)의 T-SC-01~18로 후속 구현을 확인한다. 제안 API/파일은 신규 개발 대상이며 현재 스키마·실행 코드에 적용한 변경은 없다.
+2026-11-03 v0.2 상세화 당시 [인터페이스·상태 기준안](SINGLE_CAMERA_INTERFACES.md)에 PC 세션/서버 ACK·프레임/변환·만료·2D 단위와 수락/거부를 정의했다. [검증 계획](SINGLE_CAMERA_TEST_PLAN.md)의 T-SC-01~18과 실제 실행 기록을 구분한다. 2026-11-06 현재 구현/제안 경계는 각 문서의 최신 실행 기준과 [폰 좌표 게임 계약](PHONE_POSE_GAME.md)을 따른다.
 
 ## 카메라 브랜치 호환 수신 — 2026-10-30
 
@@ -295,3 +295,10 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 | 접근 키 | 기존 HTTP/WS 키·같은 출처 쿠키가 /ws/pose에도 적용됨 |
 
 서버 내부 알고리즘에는 두 경로 모두 같은 등록·검증·정렬 파이프라인으로 연결한다. 휴대폰의 calibration_id=null은 그대로 유지하며 실제 보정 연결은 후속 작업이다. /ws/pose 호출 성공만으로 3D 준비 완료가 되지 않는다.
+## 2026-11-03 PC 단일 소비자 구현
+
+[PC 인계 규격](SINGLE_CAMERA_MONITOR.md)의 Frame/PoseFrame/HitEvent와 공개 API를 구현했다. PC PoseFrame의 손목 키는 left_wrist/right_wrist, 2D hit_point_m/speed_mps는 반드시 null이며 source/task/session·프레임/실행/변환·단위 혼입을 거부한다. 현재 서버 0.1 스키마는 그대로이며 single_camera.v1-draft 메시지를 /ws/pose로 보내지 않는다. 제안 방/제어/신호의 실제 서버 검증은 후속 통합 대상이다.
+
+### PR #5 검토 보완 (2026-11-03)
+
+PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wrist를 valid=false로 표시하고 추론 준비를 켜지 않는다. FrameInput 시각/키는 읽기 전용이며 타격은 허용된 손목 이름·증가하는 정수 프레임 쌍을 요구한다. hit_result 로그는 room_id/stream_id/run_id/transform_version/frame_id/previous_frame_id/building_id/joint와 수락/거부를 함께 기록하고, 서버에도 로컬과 같은 PC 시각/설정·모델 버전을 전달한다. 서버 스키마0.1과 3D 기준은 변경하지 않았다. 최신 근거는 [PR #5 검토 보고서](asset-validation/single-camera/pr5-review.json)를 따른다.
