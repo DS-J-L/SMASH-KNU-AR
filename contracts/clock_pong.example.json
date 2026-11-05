@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "type": "clock_pong",
+  "sample_only": true,
+  "ping_id": 7,
+  "server_send_ms": 1793300000123.4,
+  "device_time_ms": 1793300001957.9,
+  "clock_id": "example-clock-only"
+}

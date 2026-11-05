@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMASH-KNU-AR · PC 방</title>
+  <link rel="stylesheet" href="/shared/styles.css?v=20261104-game-stop">
+  <script type="module" src="/monitor/app.js?v=phone-game-2"></script>
+</head>
+<body><main class="monitor-main">
+  <p class="eyebrow">SMASH-KNU-AR · PC ROOM</p>
+  <h1 id="page-room-title">카메라 테스트</h1>
+  <p><a id="phone-game-link" class="room-entry" href="/monitor/phone-game/?room=room-1" hidden>폰 좌표로 2D 게임 · C0 서버 중계</a></p>
+  <p id="server-status" role="status">서버 연결 확인 중…</p>
+  <div class="actions"><button id="room-join" type="button">다시 연결</button><button id="room-leave" type="button" disabled>방 나가기</button><a id="phone-link" href="/camera/room/">이 방에 카메라로 입장</a></div>
+  <p id="room-status" role="status">방 연결 중…</p>
+  <p id="sync-status" role="status">서버 중계 영상 동기화 대기</p>
+  <p id="viewer-clock" class="muted">서버 기준 현재 시각: 동기화 대기</p>
+  <ul id="camera-presence" class="camera-presence" aria-label="카메라 접속 상태"><li>C0 · 대기</li><li>C1 · 대기</li><li>C2 · 대기</li></ul>
+  <div id="play-view">
+    <header id="game-hud" class="game-hud" hidden>
+      <div class="hud-stat"><span>남은 시간</span><strong id="play-timer">60.0초</strong></div>
+      <div class="hud-stat"><span>점수</span><strong id="play-score">—</strong><small id="play-score-note">타격 연결 전</small></div>
+      <div id="play-cameras" class="play-cameras" role="group" aria-label="큰 화면 카메라 선택"></div>
+      <button id="play-collapse" type="button">화면 축소</button>
+      <button id="play-stop" class="game-stop" type="button" hidden>중지</button>
+      <p id="play-status" class="play-status" role="status" hidden></p>
+    </header>
+    <p id="room-empty" class="room-empty">카메라가 입장하면 C0 · C1 · C2 영상이 한 줄에 표시됩니다.</p>
+    <div id="camera-grid" class="camera-grid" data-count="0" aria-label="연결된 카메라 영상"></div>
+  </div>
+  <section class="game-panel" aria-labelledby="game-title">
+    <h2 id="game-title">카메라 테스트 · 게임 준비</h2>
+    <p>게임 시작 시 연결과 최신 영상을 점검합니다. 현재는 60초 영상 확인 단계이며 실제 손목 타격·점수는 연결 전입니다.</p>
+    <button id="game-start" type="button" disabled aria-describedby="game-start-note">게임 시작</button>
+    <p id="game-start-note" class="muted">카메라와 영상을 확인 중입니다.</p>
+    <p id="game-status" role="status">카메라를 연결한 후 게임 시작을 누르세요.</p>
+    <button id="game-expand" type="button" hidden>게임 화면 크게 보기</button>
+    <button id="game-stop" class="game-stop" type="button" hidden>중지</button>
+    <ul id="game-checks" class="readiness"></ul>
+    <p id="game-timer" class="game-timer" aria-label="남은 시간">60.0초</p>
+    <div id="game-result" hidden></div>
+    <button id="game-back" type="button" hidden>카메라 테스트로 돌아가기</button>
+  </section>
+  <details id="qr-sheet">
+    <summary>이 방의 카메라 입장 QR · 출력</summary><h2>카메라 입장 QR</h2>
+    <div class="field-row qr-tools"><label for="qr-base">휴대폰 접속 서버 주소</label><input id="qr-base" type="url"><button id="qr-update" type="button">QR 주소 적용</button><button id="qr-print" type="button">QR 인쇄</button></div>
+    <p id="qr-message" role="status"></p><div id="qr-grid" class="qr-grid"></div>
+  </details>
+  <p class="muted">WebRTC 직접 영상은 독립 표시하며 서버 중계 영상은 시각이 준비되면 동기화합니다. 서버 시각은 추정 오차가 있고 촬영부터의 전체 지연과 다릅니다.</p>
+</main></body></html>
