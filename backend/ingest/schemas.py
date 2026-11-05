@@ -16,6 +16,8 @@ SCHEMA_VERSION = "0.1"
 COORDINATE_SPACES = ("raw_distorted_pixels", "undistorted_pixels")
 ROTATIONS = (0, 90, 180, 270)
 WRISTS = ("left_wrist", "right_wrist")
+BODY_NAMES = tuple(f'{side}_{joint}' for joint in ('shoulder','elbow','wrist','pinky','index','thumb',
+    'hip','knee','ankle','heel','foot_index') for side in ('left','right'))
 MAX_ID_LEN = 128
 MAX_IMAGE_SIDE = 8192
 
@@ -67,6 +69,8 @@ class Pose2D:
     clock_id: str
     timestamp_source: str
     wrists: dict  # name -> Wrist | None
+    body: dict | None = None  # Optional face-free 2D observations; not triangulated yet.
+    head: Wrist | None = None  # One representative 2D head position.
 
 
 def parse_json(text: str, max_bytes: int) -> dict:
@@ -191,6 +195,40 @@ def parse_pose_2d(msg: dict, camera_ids: tuple[str, ...]) -> Pose2D:
             raise MessageError("invalid_visibility", f"joints.{name}.visibility must be in [0, 1]")
         wrists[name] = Wrist(u, v, vis, 0.0 <= u <= width and 0.0 <= v <= height)
 
+    groups = {}
+    for field, names in (('body', BODY_NAMES),):
+        if field not in msg:
+            continue
+        data = msg[field]
+        if not isinstance(data, dict) or set(data) != set(names):
+            raise MessageError(f'invalid_{field}', f'{field} requires exactly {len(names)} landmarks')
+        points = {}
+        for name, point in data.items():
+            if point is None:
+                points[name] = None
+                continue
+            if not isinstance(point, dict):
+                raise MessageError(f'invalid_{field}', name)
+            u = _num(point.get('u_px'), f'body.{name}.u_px')
+            v = _num(point.get('v_px'), f'body.{name}.v_px')
+            visibility = _num(point.get('visibility'), f'body.{name}.visibility')
+            if not 0 <= visibility <= 1:
+                raise MessageError('invalid_visibility', name)
+            points[name] = Wrist(u, v, visibility, 0 <= u <= width and 0 <= v <= height)
+        groups[field] = points
+
+    head = None
+    if msg.get('head') is not None:
+        point = msg['head']
+        if not isinstance(point, dict) or set(point) != {'u_px', 'v_px', 'visibility'}:
+            raise MessageError('invalid_head', 'one head point is required')
+        u = _num(point.get('u_px'), 'head.u_px')
+        v = _num(point.get('v_px'), 'head.v_px')
+        visibility = _num(point.get('visibility'), 'head.visibility')
+        if not 0 <= visibility <= 1:
+            raise MessageError('invalid_visibility', 'head.visibility')
+        head = Wrist(u, v, visibility, 0 <= u <= width and 0 <= v <= height)
+
     return Pose2D(
         sample_only=_bool(msg, "sample_only"),
         camera_id=_camera_id(msg, camera_ids),
@@ -200,4 +238,5 @@ def parse_pose_2d(msg: dict, camera_ids: tuple[str, ...]) -> Pose2D:
         calibration_id=_str(msg, "calibration_id", nullable=True),
         width=width, height=height, rotation_deg=rotation, coordinate_space=space,
         capture_time_ms=capture, clock_id=_str(timing, "clock_id"), timestamp_source=source, wrists=wrists,
+        body=groups.get('body'), head=head,
     )
