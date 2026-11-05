@@ -1,9 +1,11 @@
 """Access key for the externally reachable server (team decision D07).
 
-When SMASH_ACCESS_KEY is set, every HTTP request and WebSocket handshake needs either
+When SMASH_ACCESS_KEY is set, protected requests need either
 `?key=<key>` or the cookie set after one successful `?key=` page load. The cookie holds a
 SHA-256 digest, not the key, and is HttpOnly/SameSite=Strict (Secure on HTTPS). Because
 browsers send it on same-origin WebSocket handshakes, pages need no code change.
+The exact public camera page/assets are exempt. The room socket accepts public camera
+joins, but validates monitor credentials before granting that role.
 """
 
 from __future__ import annotations
@@ -18,9 +20,33 @@ MAX_AGE_S = 30 * 24 * 3600
 DENIED_HTML = ("<!doctype html><meta charset='utf-8'><title>접속 키 필요</title>"
                "<p>접속 키가 필요합니다. 주소 끝에 <code>?key=접속키</code>를 붙여 다시 여세요.</p>").encode()
 
+# Only the camera entry screen and its exact module dependency graph are public.
+PUBLIC_CAMERA_FILES = frozenset({
+    '/camera/room/', '/camera/room/index.html', '/camera/room/app.js',
+    '/shared/styles.css', '/shared/room-link.js', '/shared/server-clock.js',
+    '/shared/video-clock.js', '/shared/video-timeline.js', '/shared/synchronized-video.js',
+    '/shared/relay-video.js',
+    '/camera/room/pose.js', '/camera/pose.js', '/camera/body.js',
+    '/public/vendor/mediapipe/vision_bundle.js',
+    '/public/vendor/mediapipe/models/pose_landmarker_lite.task',
+    '/public/vendor/mediapipe/wasm/vision_wasm_internal.js',
+    '/public/vendor/mediapipe/wasm/vision_wasm_internal.wasm',
+    '/public/vendor/mediapipe/wasm/vision_wasm_nosimd_internal.js',
+    '/public/vendor/mediapipe/wasm/vision_wasm_nosimd_internal.wasm',
+})
+
 
 def digest(key: str) -> str:
     return hashlib.sha256(key.encode("utf-8")).hexdigest()
+
+
+def is_authorized(scope, access_key: str | None) -> bool:
+    if not access_key:
+        return True
+    token = digest(access_key)
+    supplied = parse_qs(scope.get('query_string', b'').decode('latin-1')).get('key', [None])[0]
+    return ((supplied is not None and hmac.compare_digest(digest(supplied), token))
+            or hmac.compare_digest(AccessKeyMiddleware._cookie(scope) or '', token))
 
 
 class AccessKeyMiddleware:
@@ -37,6 +63,11 @@ class AccessKeyMiddleware:
         by_cookie = hmac.compare_digest(self._cookie(scope) or "", self.token)
 
         if not (by_query or by_cookie):
+            path = scope.get('path', '')
+            if ((scope['type'] == 'http' and path in PUBLIC_CAMERA_FILES)
+                    or (scope['type'] == 'websocket' and path == '/ws/single/signaling')):
+                # Monitor authorization is checked again against the first join message.
+                return await self.app(scope, receive, send)
             if scope["type"] == "websocket":
                 await receive()  # websocket.connect
                 await send({"type": "websocket.close", "code": 4401, "reason": "access key required"})

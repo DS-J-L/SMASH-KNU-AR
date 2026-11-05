@@ -4,4 +4,5 @@ uvicorn==0.54.0
 websockets==16.0
 # Triangulation, undistortion and calibration checks (added with backend sync/tracking).
 numpy==2.4.4
+qrcode==8.2
 opencv-python-headless==4.13.0.92

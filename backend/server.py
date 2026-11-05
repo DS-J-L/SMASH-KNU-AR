@@ -15,7 +15,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .auth import AccessKeyMiddleware
@@ -24,6 +24,8 @@ from .ingest.pose_receiver import accept_pose
 from .ingest.camera_protocol import parse_hello, normalize_pose, normalize_pong
 from .ingest.schemas import MessageError, parse_clock_pong, parse_json, parse_pose_2d, parse_register
 from .runtime import Runtime
+from .rooms import Rooms, room_router
+from .qr_codes import qr_router
 from .settings import Settings, load_settings
 from .sync.clock import server_now_ms
 
@@ -49,6 +51,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
+        app.state.rooms = Rooms()
         runtime = Runtime(settings)
         app.state.runtime = runtime
         await runtime.start()
@@ -241,6 +244,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 rt.broadcast_status()
             await peer.stop()
 
+    app.include_router(room_router(settings))
+    app.include_router(qr_router())
+    @app.get('/monitor/room-1/', include_in_schema=False)
+    @app.get('/monitor/room-2/', include_in_schema=False)
+    async def room_page():
+        return FileResponse(WEB_ROOT / 'monitor' / 'room' / 'index.html')
     # Serve only browser assets; local configs, calibration and experiment data stay outside.
     app.mount("/", StaticFiles(directory=WEB_ROOT, html=True), name="web")
     app.add_middleware(AccessKeyMiddleware, access_key=settings.access_key)

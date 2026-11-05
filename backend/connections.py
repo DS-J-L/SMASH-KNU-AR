@@ -18,7 +18,8 @@ class Peer:
         self.ws = ws
         self.name = name
         self.dropped = 0
-        self._queue: asyncio.Queue[str | None] = asyncio.Queue(maxsize=queue_size)
+        self._queue: asyncio.Queue[str | tuple[str] | None] = asyncio.Queue(maxsize=queue_size)
+        self._video: dict[str, str] = {}
         self._task: asyncio.Task | None = None
 
     def start(self) -> "Peer":
@@ -42,6 +43,19 @@ class Peer:
             await self.ws.close(code=code, reason=reason)
         await self.stop()
 
+    def send_video(self, camera_id: str, message: dict) -> None:
+        """One pending frame per camera; replace it instead of queueing stale video."""
+        encoded = json.dumps(message, separators=(',', ':'))
+        if camera_id in self._video:
+            self._video[camera_id] = encoded
+            self.dropped += 1
+            return
+        try:
+            self._queue.put_nowait((camera_id,))
+            self._video[camera_id] = encoded
+        except asyncio.QueueFull:
+            self.dropped += 1
+
     async def stop(self) -> None:
         if self._task and not self._task.done():
             self._task.cancel()
@@ -54,4 +68,6 @@ class Peer:
                 text = await self._queue.get()
                 if text is None:
                     return
+                if isinstance(text, tuple):
+                    text = self._video.pop(text[0])
                 await self.ws.send_text(text)
