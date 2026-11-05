@@ -5,7 +5,7 @@ Conventions (docs/ARCHITECTURE.md):
 - x_cam = R_world_to_camera @ X_world + t_world_to_camera_m
 - `source` is "measured" or "synthetic". Synthetic files never make calibration readiness true.
 
-Computing K/dist/R/t from real captures (intrinsics.py / extrinsics.py) is a later P3 task.
+Offline computation from surveyed correspondences is in solve.py; real captures still need validation.
 """
 
 from __future__ import annotations
