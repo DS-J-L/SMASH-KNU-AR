@@ -15,7 +15,7 @@ flowchart TD
   game --> effect["파편·소리·점수"]
 ```
 
-폰 추론을 우선 검증하는 작업 가정입니다. 위 흐름은 목표 구조이며 현재 구현 완료를 뜻하지 않습니다. PC 추론을 채택하면 영상 입력·MediaPipe를 `backend/ingest/`에 연결하고 이후 공통 계약은 유지합니다.
+위는 기존 다중3D 목표 구조입니다. 다중은 폰2D 추출·서버3D 복원, 단일은 PC 브라우저 추론 기준안입니다. 방 1의 폰 손목 입력은 공개 방 소켓에서 기존 추적 런타임으로 연결됐습니다. 영상 확인 세션과 실제게임은 분리하며 실측 보정·3D 정확도는 미검증입니다.
 
 ## 폴더별 책임
 
@@ -35,12 +35,12 @@ flowchart TD
 
 ## 현재 실행되는 흐름
 
-1. FastAPI가 `/monitor/`와 `/camera/`를 제공합니다. 접속 키 설정 시 HTTP·WebSocket 접속을 보호합니다(D07).
+1. FastAPI가 `/monitor/`와 `/camera/`를 제공합니다. PC·기존관절API는 접속 키로 보호하며, 카메라 전용 페이지·방소켓 camera 입장은 공개합니다.
 2. 두 화면은 `/ws/status`를 수신하며 서버는 등록·관절 수신·보정·추적 준비를 구분합니다.
 3. 카메라는 MediaPipe 손목을 `/ws/pose`에서 camera_hello → camera_ack 후 송신합니다. `/ws/ingest` 등록 경로도 유지합니다. 실기기 검증은 별도입니다.
 4. 보정·시간 조건을 만족한 관측을 정렬하고 `/ws/pose3d`로 전달합니다. rvfc_capture_time은 기본 3D 허용 출처가 아니므로 2D 수신 성공만으로 추적 준비가 되지 않습니다.
 5. 실측 보정·모니터 pose_3d 소비·장면 준비 연결은 남아 있습니다. 합성 입력·보정이나 키보드 데모로 실제 game_ready를 켜지 않습니다.
-6. `/monitor/fracture/`는 synthetic/keyboard_demo 경로입니다. 단일 카메라 방·WebRTC 신호·세션 ACK 서버는 아래 설계의 후속 구현 대상입니다.
+6. `/monitor/fracture/`는 synthetic/keyboard_demo 경로입니다. 현재 room.v1은 별도로 방·영상·video_check ACK/타이머/결과를 제공합니다. PC 방페이지·공개폰QR·전송/시각/표시정렬의 실제 계약은 [ROOMS.md](ROOMS.md)를 따릅니다.
 
 ## 좌표와 시간
 

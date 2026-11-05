@@ -1,30 +1,21 @@
 <!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMASH-KNU-AR · 모니터</title>
-  <link rel="stylesheet" href="/shared/styles.css">
-  <script type="module" src="/monitor/app.js"></script>
-</head>
-<body>
-<main>
-  <p class="eyebrow">SMASH-KNU-AR · 개발 시작 화면</p>
-  <h1>경북대 부수기</h1>
-  <p>카메라와 캠퍼스를 준비한 뒤, 몸으로 건물을 부수는 게임입니다.</p>
-  <p id="server-status" role="status">서버 연결 확인 중…</p>
-  <section aria-labelledby="ready-title">
-    <h2 id="ready-title">플레이 준비</h2>
-    <ul class="readiness">
-      <li><span>카메라 C0 · C1 · C2</span><strong>입력 연결 전</strong></li>
-      <li><span>카메라 보정</span><strong>구현 예정</strong></li>
-      <li><span>사람 인식 · 3D 손목</span><strong>구현 예정</strong></li>
-      <li><span>건물 · 충돌 · 파괴</span><strong>구현 예정</strong></li>
-    </ul>
-    <button type="button" disabled aria-describedby="setup-note">캠퍼스 부수기 시작</button>
-    <p id="setup-note" class="muted">초기 구조입니다. 실제 입력과 게임 기능을 연결한 뒤 시작할 수 있습니다.</p>
-  </section>
-  <nav><a href="/monitor/fracture/">건물 파괴·복원 키보드 데모</a> <a href="/camera/">카메라 미리보기 열기</a> <a href="/docs">서버 API 문서</a></nav>
-</main>
-</body>
-</html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMASH-KNU-AR · 방 선택</title><link rel="stylesheet" href="/shared/styles.css">
+<script type="module" src="/monitor/lobby.js"></script></head>
+<body><main class="monitor-main">
+<p class="eyebrow">SMASH-KNU-AR · PC</p><h1>입장할 방을 선택하세요</h1>
+<p>각 방의 전용 페이지에서 카메라 테스트와 게임 시작을 진행합니다.</p>
+<p id="server-status" role="status">서버 연결 확인 중…</p>
+<div class="room-cards"><article><h2>room-1 · 다중 카메라</h2><p>C0 · C1 · C2 최대 3대</p><p data-room-summary="room-1">상태 확인 중…</p><a class="room-entry" href="/monitor/room-1/">room-1 PC 입장</a></article>
+<article><h2>room-2 · 단일 카메라</h2><p>C0 한 대 전용</p><p data-room-summary="room-2">상태 확인 중…</p><a class="room-entry" href="/monitor/room-2/">room-2 PC 입장</a></article></div>
+  <details id="qr-sheet">
+    <summary>카메라 입장 고정 QR · 출력</summary>
+    <h2>방별 카메라 입장 QR</h2>
+    <p>스캔하면 지정된 방·카메라 번호가 선택됩니다. 폰에서 카메라 권한을 허용하고 입장하세요.</p>
+    <div class="field-row qr-tools"><label for="qr-base">휴대폰 접속 서버 주소</label><input id="qr-base" type="url" placeholder="https://서버주소:8443"><button id="qr-update" type="button">QR 주소 적용</button><button id="qr-print" type="button">QR 인쇄</button></div>
+    <p id="qr-message" role="status"></p>
+    <div id="qr-grid" class="qr-grid"></div>
+  </details>
+<nav><a href="/monitor/fracture/">건물 파괴·복원 키보드 데모</a><a href="/camera/room/">카메라로 입장</a></nav>
+</main></body></html>

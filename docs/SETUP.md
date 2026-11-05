@@ -30,7 +30,8 @@ python tools/fetch_mediapipe.py
 python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 ```
 
-- `/monitor/`: 준비 화면과 서버 연결 상태
+- `/monitor/`: 방 선택. `/monitor/room-1/`은 C0/C1/C2, `/monitor/room-2/`는 C0 영상·시작·60초 결과 화면
+- `/camera/room/`: 고정 QR용 공개 화면. 방 1은 폰 손목 추론·영상·관절 송신, 방 2는 영상만 송신
 - `/camera/`: C0/C1/C2 선택, MediaPipe 좌·우 손목 추출, 서버가 받을 수 있으면 `pose_2d` 송신
 - `/camera/?replay=/public/...mp4`: 카메라 대신 녹화 파일로 같은 처리(`source=replay`)
 - `/api/health`: 서버 상태 JSON
@@ -38,6 +39,8 @@ python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 - `/ws/status`: 실제 입력·보정·추적 기준의 상태 메시지
 - `/ws/ingest`, `/ws/pose3d`: 휴대폰 입력과 3D 손목 전달. 형식은 [데이터 계약](DATA_CONTRACT.md)
 - `/docs`: HTTP API 문서
+
+방 카메라 입장은 토큰 없이 공개하며 PC 화면·관리 API·기존 관절 API는 설정된 키/쿠키로 보호합니다. 방 1에서는 각 폰의 MediaPipe lite 모델이 손목을 추출하고 방 소켓으로 기존 추적 런타임에 전달합니다. 방 2는 영상만 보냅니다. 모델 자산은 위 `fetch_mediapipe.py` 명령으로 준비합니다. 현재 세션은 점수 없는 video_check입니다. QR 인쇄·영상/관절 계약은 [ROOMS.md](ROOMS.md)를 따릅니다.
 
 카메라의 중지·재시작·비동기 로딩 취소·추론 실패 회귀 검사는 Node.js 22에서 아래 명령으로 실행합니다. npm 패키지 설치는 필요하지 않으며, 실제 휴대폰 시험과는 별도입니다.
 
