@@ -9,8 +9,9 @@ export function serverClockLabel(clock) {
 }
 
 export function drawTimedFrame(canvas, video, cameraId, clock, drawOverlay) {
-  const scale = Math.min(1, 640 / Math.max(video.videoWidth, video.videoHeight));
-  const width = Math.round(video.videoWidth * scale), height = Math.round(video.videoHeight * scale);
+  const sourceWidth = video.videoWidth || video.width, sourceHeight = video.videoHeight || video.height;
+  const scale = Math.min(1, 640 / Math.max(sourceWidth, sourceHeight));
+  const width = Math.round(sourceWidth * scale), height = Math.round(sourceHeight * scale);
   if (canvas.width !== width) canvas.width = width;
   if (canvas.height !== height) canvas.height = height;
   const context = canvas.getContext('2d');

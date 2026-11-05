@@ -19,7 +19,8 @@ async function harness({ load } = {}) {
   const overlay = { width: 0, height: 0, getContext: () => ({
     clearRect() {}, beginPath() {}, arc() {}, fill() {},
   }) };
-  const context = vm.createContext({ performance: { now: () => now }, crypto: webcrypto });
+  const context = vm.createContext({ performance: { now: () => now }, crypto: webcrypto,
+    document:{createElement:()=>({getContext:()=>({drawImage(){}})})} });
   const dependency = new vm.SyntheticModule(['createPoseLandmarker', 'extractWrists'], function() {
     this.setExport('createPoseLandmarker', load || (async () => ({ landmarker, delegate: 'CPU' })));
     this.setExport('extractWrists', () => ({ left_wrist: { u_px: 120, v_px: 80, visibility: 0.9 }, right_wrist: null }));

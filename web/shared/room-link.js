@@ -1,5 +1,5 @@
-import { createSynchronizedVideo } from '/shared/synchronized-video.js?v=20261104-video-fix';
-import { drawTimedFrame } from '/shared/video-clock.js?v=20261104-wrist-video-2';
+import { createSynchronizedVideo } from '/shared/synchronized-video.js?v=phone-game-1';
+import { drawTimedFrame } from '/shared/video-clock.js?v=phone-game-1';
 import { createServerClock } from '/shared/server-clock.js?v=20261104-video-fix';
 // Room membership: camera chooses direct WebRTC or JPEG frames relayed by the server.
 function deviceId(role) {
@@ -13,14 +13,15 @@ function deviceId(role) {
   } catch { return crypto.randomUUID(); }
 }
 
-export function openRoom({ role, roomId = 'room-1', cameraId = null, stream = null, sourceVideo = null, transport = 'webrtc', onState, onStatus, onVideo, onSendFrame, onSync, onGame, onGameError, onJoined, onPose, onFrame, drawOverlay }) {
+export function openRoom({ role, roomId = 'room-1', cameraId = null, stream = null, sourceVideo = null, transport = 'webrtc', onState, onStatus, onVideo, onSendFrame, onSync, onGame, onGameError, onJoined, onPose, onFrame, drawOverlay, onMatchedFrame }) {
   let joined = null, status = null, heartbeat = null, watchdog = null, closed = false;
   let lastMessage = Date.now();
   let awaitingStop = false;
   const peers = new Map();
-  const synchronized = role === 'monitor' ? createSynchronizedVideo(onVideo, onSync, onFrame) : null;
+  const synchronized = role === 'monitor' ? createSynchronizedVideo(onVideo, onSync, onFrame, onMatchedFrame) : null;
   let frameTimer = null, frameId = 0, lastSourceTime = -1;
   let timedStream = null;
+  let lastPairedAt = -Infinity;
   const clock = createServerClock();
   const sendCanvas = document.createElement('canvas');
   const url = new URL('/ws/single/signaling', location.href);
@@ -126,6 +127,7 @@ export function openRoom({ role, roomId = 'room-1', cameraId = null, stream = nu
       if (!joined || !status?.monitor_connected || !sourceVideo?.videoWidth) return;
       if (sourceVideo.currentTime === lastSourceTime) return;
       if (transport === 'server' && ws.bufferedAmount > 512 * 1024) return;
+      if (transport === 'server' && performance.now() - lastPairedAt < 120) return;
       lastSourceTime = sourceVideo.currentTime;
       const label = drawTimedFrame(sendCanvas, sourceVideo, cameraId, clock, drawOverlay);
       onSendFrame?.(label);
@@ -213,7 +215,7 @@ export function openRoom({ role, roomId = 'room-1', cameraId = null, stream = nu
     else if (msg.type === 'error') {
       if (awaitingStop && msg.code === 'unsupported_message') {
         awaitingStop = false; onGameError?.(msg.code, 'stop_game');
-      } else if (msg.request_type === 'stop_game' || ['camera_not_ready','monitor_required','invalid_session_id','session_conflict','old_session','session_in_progress','session_limit','game_not_connected','session_mismatch','invalid_stop_reason'].includes(msg.code)) onGameError?.(msg.code, msg.request_type);
+      } else if (['stop_game','start_game','game_hit'].includes(msg.request_type) || ['camera_not_ready','monitor_required','invalid_session_id','session_conflict','old_session','session_in_progress','session_limit','game_not_connected','session_mismatch','invalid_stop_reason'].includes(msg.code)) onGameError?.(msg.code, msg.request_type);
       else onState?.('error', text[msg.code] || `서버 오류: ${msg.code}`);
     }
   };
@@ -228,8 +230,19 @@ export function openRoom({ role, roomId = 'room-1', cameraId = null, stream = nu
     send('leave'); closed = true; clearTimeout(handshake); clear(); ws.close();
   }
   return { close, clock,
-    sendPose: payload => (payload.type !== 'pose_2d' || ws.bufferedAmount <= 64 * 1024) && send('pose', { payload }),
-    startGame: (sessionId, cameras) => send('start_game', { session_id: sessionId, mode: 'video_check', cameras }),
+    sendPose: (payload,image) => {
+      if (payload.type === 'pose_2d' && ws.bufferedAmount > 64 * 1024) return false;
+      const sent = send('pose', { payload });
+      if (sent && image && payload.type === 'pose_2d' && cameraId === 'C0' && ['room-1','room-2'].includes(roomId) && transport === 'server') {
+        const label=drawTimedFrame(sendCanvas,image,cameraId,clock,drawOverlay);onSendFrame?.(label);
+        send('video_frame',{frame_id:frameId++,prepared_at_server_ms:clock.estimate()?.nowMs ?? null,
+          data_url:sendCanvas.toDataURL('image/jpeg',.65),pose_stream_id:payload.stream_id,pose_frame_id:payload.frame_id});
+        lastPairedAt=performance.now();
+      }
+      return sent;
+    },
+    startGame: (sessionId, cameras, mode = 'video_check') => send('start_game', { session_id: sessionId, mode, cameras }),
+    reportHit: entry => send('game_hit',{entry}),
     stopGame: (sessionId, reason = 'manual_stop') => {
       awaitingStop = true;
       const sent = send('stop_game', { session_id: sessionId, reason });

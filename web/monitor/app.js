@@ -20,6 +20,8 @@ const tiles = new Map();
 const viewerClock = document.querySelector('#viewer-clock');
 let room = null;
 const pageRoomId = location.pathname.match(/^\/monitor\/(room-[12])\/$/)?.[1];
+const phoneGameLink=document.querySelector('#phone-game-link');
+if(phoneGameLink){phoneGameLink.hidden=!pageRoomId;phoneGameLink.href=`/monitor/phone-game/?room=${pageRoomId}`;}
 document.querySelector('#page-room-title').textContent = `${pageRoomId || '방 선택 필요'} · ${pageRoomId === 'room-2' ? '단일 카메라' : '다중 카메라'} 테스트`;
 document.querySelector('#room-empty').textContent = pageRoomId === 'room-2' ? 'C0 카메라 한 대가 입장하면 영상이 표시됩니다.' : 'C0 · C1 · C2가 입장하면 영상이 한 줄에 표시됩니다.';
 document.title = `${pageRoomId || '방 선택'} · PC 모니터`;

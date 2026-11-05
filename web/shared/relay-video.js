@@ -18,7 +18,7 @@ export function createRelayVideo(onStream, onStats, onFrame) {
         context.drawImage(image, 0, 0);
         if (!stream) { stream = canvas.captureStream(15); onStream(stream); }
         stream.getVideoTracks()[0]?.requestFrame?.();
-        onFrame?.();
+        onFrame?.(frame,canvas);
         count++;
         const now = performance.now();
         if (now - since >= 1000) { onStats?.(`${(count * 1000 / (now - since)).toFixed(1)} FPS`); count = 0; since = now; }

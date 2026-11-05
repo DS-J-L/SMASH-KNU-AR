@@ -1,4 +1,4 @@
-"""Bind public room-1 camera observations to the existing tracking runtime."""
+"""Validate room-local observations; only room-1 feeds the 3D runtime registry."""
 import asyncio
 import contextlib
 
@@ -9,8 +9,9 @@ from ..sync.clock import server_now_ms
 
 
 class RoomPose:
-    def __init__(self, runtime, member):
+    def __init__(self, runtime, member, registry=None):
         self.runtime, self.member = runtime, member
+        self.registry = registry if registry is not None else runtime.registry
         self.stream = None
         self.clock_id = None
         self.seen = set()
@@ -21,12 +22,12 @@ class RoomPose:
                                'room_id': self.member.room_id, 'payload': payload})
 
     def touch(self):
-        if self.stream and self.runtime.registry.is_current(self.stream):
+        if self.stream and self.registry.is_current(self.stream):
             self.stream.last_message_at_ms = server_now_ms()
 
     async def handle(self, message):
         try:
-            if self.member.role != 'camera' or self.member.room_id != 'room-1':
+            if self.member.role != 'camera' or self.member.room_id not in ('room-1', 'room-2'):
                 raise MessageError('pose_not_allowed')
             if not isinstance(message, dict):
                 raise MessageError('invalid_pose_message')
@@ -40,11 +41,11 @@ class RoomPose:
                     raise MessageError('pose_live_required')
                 if reg.stream_id in self.seen or len(self.seen) >= 128:
                     raise MessageError('stream_mismatch')
-                stream, old = rt.registry.register(reg, member.peer, server_now_ms())
+                stream, old = self.registry.register(reg, member.peer, server_now_ms())
                 await self.stop_pinger()
                 self.stream, self.clock_id = stream, message['clock_id']
                 self.seen.add(stream.stream_id)
-                entry = rt.calibrations.get(stream.camera_id)
+                entry = rt.calibrations.get(stream.camera_id) if member.room_id == 'room-1' else None
                 cal = entry.calibration if entry else None
                 expected = {'calibration_id': cal.calibration_id,
                             'image': {'width': cal.width, 'height': cal.height,
@@ -57,7 +58,7 @@ class RoomPose:
                 if old and old.peer and old.peer is not member.peer:
                     await old.peer.close(4001, 'superseded')
                 return
-            if not self.stream or not rt.registry.is_current(self.stream):
+            if not self.stream or not self.registry.is_current(self.stream):
                 raise MessageError('pose_not_registered')
             self.touch()
             if kind == 'clock_pong':
@@ -82,7 +83,7 @@ class RoomPose:
 
     async def ping(self, stream):
         n = 0
-        while self.runtime.registry.is_current(stream):
+        while self.registry.is_current(stream):
             n += 1
             sent = server_now_ms()
             stream.pings[n] = sent
@@ -102,5 +103,5 @@ class RoomPose:
 
     async def close(self):
         await self.stop_pinger()
-        if self.stream and self.runtime.registry.unregister(self.stream):
+        if self.stream and self.registry.unregister(self.stream):
             self.runtime.broadcast_status()

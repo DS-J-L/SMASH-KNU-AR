@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>폰 좌표 2D 게임 · SMASH KNU</title><script type="module" src="../single/main.js"></script></head>
+<body data-input="phone-pose">
+  <header><a id="room-back" href="/monitor/room-1/">카메라 테스트</a><span>C0 폰 좌표 · 화면 2D 판정</span><a href="/monitor/fracture/">건물 실험실 ↗</a></header>
+  <main>
+    <aside>
+      <p class="eyebrow">SINGLE CAMERA / PC MONITOR</p><h1>화면에서 만나고,<br>파편으로 흩어지기.</h1>
+      <p class="intro" id="room-intro">방 1은 C0·C1·C2, 방 2는 C0 한 대를 연결하세요. C0 서버 중계와 폰 손목 좌표로 게임을 진행합니다.</p>
+      <label>입력 선택<select id="mode"><option value="live">휴대폰 영상</option><option value="synthetic">합성 입력 시험</option></select></label>
+      <p id="source-badge" class="badge">실제 입력 · 연결 대기</p>
+      <div class="connection"><button id="connect" disabled>휴대폰 연결 준비</button><button id="stop">연결 중지</button></div>
+      <p id="join" hidden></p>
+      <dl class="states"><div><dt>영상</dt><dd id="video-state">연결 전</dd></div><div><dt>손목</dt><dd id="pose-state">대기</dd></div><div><dt>건물</dt><dd id="scene-state">준비 중</dd></div></dl>
+      <div class="metrics"><div><span>남은 시간</span><strong id="time">60s</strong></div><div><span>점수</span><strong id="score">0</strong></div><div><span>파편</span><strong id="fragments">0 / 96</strong></div></div>
+      <p id="status" role="status" aria-live="polite">건물을 준비하고 있습니다.</p>
+      <div class="actions"><button id="start" class="primary" disabled>시작</button><button id="reset" disabled>복원·새 게임</button></div>
+      <button id="sample-hit" hidden disabled>합성 타격 1회</button>
+      <fieldset><legend>화면 맞추기</legend><label><input id="mirror" type="checkbox"> 거울 표시</label><label>회전<select id="rotation"><option value="0">0°</option><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select></label></fieldset>
+      <p class="note" id="scope">화면에 겹친 손목으로 판정하는 모드입니다. 실제 공간 깊이를 측정하지 않습니다.</p>
+      <button id="download">시험 로그 저장</button><p class="note">영상은 저장하지 않습니다. 필수 카메라 연결 종료 또는 영상·짝지어진 좌표 1.5초 중단 시 게임을 중지합니다.</p>
+    </aside>
+    <section><div class="stage" id="stage"><canvas id="background" aria-label="수신 영상"></canvas><canvas id="scene" aria-label="건물과 파편 3D 장면"></canvas><canvas id="landmarks" aria-label="손목 표시"></canvas><div id="overlay-label">휴대폰을 연결하세요</div></div><p id="performance">입력 대기</p></section>
+  </main><video id="remote-video" muted playsinline hidden></video>
+</body></html>

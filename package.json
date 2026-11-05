@@ -8,7 +8,8 @@
     "validate:assets": "node tools/validate-assets.mjs",
     "validate:enhancements": "node tools/validate-enhancements.mjs",
     "build:single": "vite build --config vite.single.config.js",
-    "build:all": "npm run build:demo && npm run build:single",
+    "build:phone-game": "vite build --config vite.phone-game.config.js",
+    "build:all": "npm run build:demo && npm run build:single && npm run build:phone-game",
     "test:single": "node --test tests/single/*.test.mjs"
   },
   "dependencies": {

@@ -68,8 +68,8 @@ def test_three_public_room_cameras_feed_existing_registry_and_clean_up(client):
     assert client.get('/ws/pose').status_code == 401  # Legacy route is still protected.
 
 
-@pytest.mark.parametrize('room,role,cid', [('room-2', 'camera', 'C0'), ('room-1', 'monitor', None)])
-def test_only_room_one_cameras_can_send_pose(client, room, role, cid):
+@pytest.mark.parametrize('room,role,cid', [('room-2', 'monitor', None), ('room-1', 'monitor', None)])
+def test_monitors_cannot_send_pose(client, room, role, cid):
     if role == 'monitor':
         client.get('/monitor/?key=pc-only')
     with client.websocket_connect(PATH) as ws:

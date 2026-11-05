@@ -8,12 +8,15 @@ import binascii
 import math
 from dataclasses import dataclass
 import uuid
+from collections import deque
 
 from fastapi import APIRouter, Request, WebSocket, WebSocketDisconnect
 
 from .connections import Peer
 from .ingest.schemas import MessageError, parse_json
 from .ingest.room_pose import RoomPose
+from .ingest.registry import Registry
+from .ingest.game_pose import game_pose
 from .settings import Settings
 from .sync.clock import server_now_ms
 from .game_sessions import GameSessions
@@ -45,6 +48,15 @@ class Rooms:
         self.server_epoch = uuid.uuid4().hex
         self.members: dict[str, dict[str, Member]] = {rid: {} for rid in room_ids}
         self.games = GameSessions()
+        self.pairs = {}
+        self.pose_registries = {}
+
+    def pose_registry(self, runtime, room_id):
+        if room_id == 'room-1':
+            return runtime.registry
+        if room_id not in self.pose_registries:
+            self.pose_registries[room_id] = Registry(runtime.settings)
+        return self.pose_registries[room_id]
 
     def camera_ids(self, room_id: str) -> tuple[str, ...]:
         return ROOM_CAMERAS.get(room_id, CAMERA_IDS)
@@ -140,7 +152,7 @@ class Rooms:
                           'camera_id': sender.camera_id if sender.role == 'camera' else target.camera_id,
                           'payload': payload})
 
-    def relay_video(self, sender: Member, msg: dict) -> None:
+    def relay_video(self, sender: Member, msg: dict, runtime=None) -> None:
         if sender.role != 'camera' or sender.transport != 'server':
             raise MessageError('invalid_transport')
         frame = msg.get('frame_id')
@@ -157,12 +169,29 @@ class Rooms:
         if len(jpeg) > 360 * 1024 or not jpeg.startswith(b'\xff\xd8') or not jpeg.endswith(b'\xff\xd9'):
             raise MessageError('invalid_frame')
         target = self.members[sender.room_id].get('monitor')
+        paired = None
+        if 'pose_stream_id' in msg:
+            stream = self.pose_registry(runtime, sender.room_id).current(sender.camera_id) if runtime else None
+            latest = stream.latest if stream else None
+            if (sender.camera_id != 'C0' or not latest
+                or stream.device_id != sender.device_id or stream.peer is not sender.peer
+                or stream.stream_id != msg['pose_stream_id'] or type(msg.get('pose_frame_id')) is not int
+                or latest.pose.frame_id != msg.get('pose_frame_id')
+                or latest.pose.sample_only or server_now_ms() - latest.received_at_server_ms > 500):
+                raise MessageError('pose_frame_mismatch')
+            paired = game_pose(latest)
+            previous = self.pairs.get(sender.room_id)
+            if not previous or previous['stream_id'] != paired['stream_id']:
+                previous = {'stream_id': paired['stream_id'], 'connection_id': sender.connection_id, 'frames': deque(maxlen=90)}
+                self.pairs[sender.room_id] = previous
+            previous['frames'].append((paired['frame_id'], server_now_ms()))
+            previous['received_ms'] = server_now_ms()
         if target:
             target.peer.send_video(sender.camera_id, {
                 'schema': SCHEMA, 'type': 'video_frame', 'room_id': sender.room_id,
                 'camera_id': sender.camera_id, 'from_connection_id': sender.connection_id,
                 'target_connection_id': target.connection_id, 'frame_id': frame, 'data_url': data,
-                'prepared_at_server_ms': prepared})
+                'prepared_at_server_ms': prepared, 'phone_pose': paired})
 
 
 def room_router(settings: Settings) -> APIRouter:
@@ -198,7 +227,7 @@ def room_router(settings: Settings) -> APIRouter:
             if msg.get('role') == 'monitor' and not is_authorized(ws.scope, settings.access_key):
                 raise MessageError('access_key_required')
             member, old = rooms.join(msg, peer)
-            pose = RoomPose(ws.app.state.runtime, member)
+            pose = RoomPose(ws.app.state.runtime, member, rooms.pose_registry(ws.app.state.runtime, member.room_id))
             peer.send({"schema": SCHEMA, "type": "joined", "room_id": member.room_id,
                        "role": member.role, "camera_id": member.camera_id, "device_id": member.device_id,
                        "connection_id": member.connection_id, "server_epoch": rooms.server_epoch,
@@ -234,11 +263,11 @@ def room_router(settings: Settings) -> APIRouter:
                     elif kind in ('offer', 'answer', 'ice'):
                         rooms.relay(member, msg)
                     elif kind == 'video_frame':
-                        rooms.relay_video(member, msg)
+                        rooms.relay_video(member, msg, ws.app.state.runtime)
                     elif kind == 'pose':
                         await pose.handle(msg.get('payload'))
                     elif kind == 'start_game':
-                        game = rooms.games.start(member, msg, rooms.members[member.room_id])
+                        game = rooms.games.start(member, msg, rooms.members[member.room_id], rooms.pairs.get(member.room_id))
                         peer.send({'schema': SCHEMA, 'type': 'game_ack', 'room_id': member.room_id, 'game': game})
                         rooms.broadcast(member.room_id)
                     elif kind == 'get_game_status':
@@ -246,6 +275,10 @@ def room_router(settings: Settings) -> APIRouter:
                                    'game': rooms.games.status(member.room_id)})
                     elif kind == 'stop_game':
                         game = rooms.games.stop(member, msg)
+                        peer.send({'schema': SCHEMA, 'type': 'game_status', 'room_id': member.room_id, 'game': game})
+                        rooms.broadcast(member.room_id)
+                    elif kind == 'game_hit':
+                        game = rooms.games.hit(member, msg, rooms.pairs.get(member.room_id))
                         peer.send({'schema': SCHEMA, 'type': 'game_status', 'room_id': member.room_id, 'game': game})
                         rooms.broadcast(member.room_id)
                     else:

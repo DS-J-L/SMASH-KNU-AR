@@ -1,5 +1,5 @@
-import { openRoom } from '/shared/room-link.js?v=20261104-wrist-video-2';
-import { createRoomPose } from '/camera/room/pose.js?v=20261104-head';
+import { openRoom } from '/shared/room-link.js?v=phone-game-2';
+import { createRoomPose } from '/camera/room/pose.js?v=phone-game-2';
 const join = document.querySelector('#join'), leave = document.querySelector('#leave');
 const camera = document.querySelector('#camera-id'), facing = document.querySelector('#facing');
 const status = document.querySelector('#room-status'), peer = document.querySelector('#peer-status');
@@ -18,7 +18,7 @@ function applyRoomConstraints() {
   for (const option of camera.options) option.disabled = single && option.value !== 'C0';
   if (single) camera.value = 'C0';
   camera.disabled = single || join.disabled;
-  if (!join.disabled) poseStatus.textContent = single ? '단일 모드 · 폰은 영상만 송신합니다.' : '다중 모드 · 전신 22개와 머리 위치 1개를 서버로 보냅니다.';
+  if (!join.disabled) poseStatus.textContent = single ? '단일 모드 · C0 영상과 폰 관절 좌표를 게임으로 보냅니다.' : '다중 모드 · 전신 22개와 머리 위치 1개를 서버로 보냅니다.';
 }
 roomId.addEventListener('change', applyRoomConstraints);
 applyRoomConstraints();
@@ -55,8 +55,8 @@ join.addEventListener('click', async () => {
     room = openRoom({ role: 'camera', roomId: roomId.value, cameraId: camera.value, stream, sourceVideo: preview, transport: transport.value,
       drawOverlay(canvas) { if (attempt === run) pose?.drawOn(canvas); },
       onJoined(member) {
-        if (attempt !== run || member.room_id !== 'room-1') return;
-        pose = createRoomPose({ video: preview, overlay, send: message => room?.sendPose(message),
+        if (attempt !== run || !['room-1','room-2'].includes(member.room_id)) return;
+        pose = createRoomPose({ video: preview, overlay, send: (message,image) => room?.sendPose(message,image),
           onStatus: message => { if (attempt === run) poseStatus.textContent = message; } });
         void pose.start(member);
       },

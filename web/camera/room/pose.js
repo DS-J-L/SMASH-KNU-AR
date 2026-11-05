@@ -10,6 +10,7 @@ export function createRoomPose({ video, overlay, send, onStatus }) {
   let inferredAt = -Infinity;
   let body = null;
   let head = null;
+  const snapshot = document.createElement('canvas');
   const clockId = `perf-${crypto.randomUUID()}`;
   function status() {
     const point = p => p ? `${p.u_px}, ${p.v_px}` : '미검출';
@@ -44,7 +45,9 @@ export function createRoomPose({ video, overlay, send, onStatus }) {
       lastFrameAt = now; lastVideoTime = video.currentTime;
       if (video.videoWidth !== stream.width || video.videoHeight !== stream.height) register();
       lastTimestamp = Math.max(lastTimestamp + 1, performance.now());
-      const result = landmarker.detectForVideo(video, lastTimestamp);
+      snapshot.width = video.videoWidth; snapshot.height = video.videoHeight;
+      snapshot.getContext('2d').drawImage(video,0,0,snapshot.width,snapshot.height);
+      const result = landmarker.detectForVideo(snapshot, lastTimestamp);
       wrists = extractWrists(result, video.videoWidth, video.videoHeight);
       body = extractBody(result,video.videoWidth,video.videoHeight);
       head = extractHead(result,video.videoWidth,video.videoHeight);
@@ -60,7 +63,7 @@ export function createRoomPose({ video, overlay, send, onStatus }) {
         timing: { clock_id: clockId, capture_time_ms: capture,
           timestamp_source: capture === null ? 'unknown' : 'rvfc_capture_time',
           presentation_time_ms: Number.isFinite(metadata?.presentationTime) ? metadata.presentationTime : null,
-          inference_end_ms: performance.now() }, joints: wrists, body, head })) { stream.frame++; sent++; }
+          inference_end_ms: performance.now() }, joints: wrists, body, head }, snapshot)) { stream.frame++; sent++; }
       status(); schedule();
     } catch (error) { close(); onStatus(`손목 인식 중단: ${error.message}. 퇴장 후 다시 입장하세요. 영상 송신은 유지됩니다.`); }
   }

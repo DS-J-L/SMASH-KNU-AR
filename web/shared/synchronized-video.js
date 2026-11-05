@@ -1,8 +1,8 @@
 import { VideoTimeline } from '/shared/video-timeline.js';
 import { deviceTime } from '/shared/video-clock.js';
-import { createRelayVideo } from '/shared/relay-video.js';
+import { createRelayVideo } from '/shared/relay-video.js?v=phone-game-1';
 
-export function createSynchronizedVideo(onVideo, onSync, onFrame) {
+export function createSynchronizedVideo(onVideo, onSync, onFrame, onMatchedFrame) {
   const timeline = new VideoTimeline(), surfaces = new Map();
   const fallback = new Map();
   let busy = false, closed = false, version = 0;
@@ -38,11 +38,11 @@ export function createSynchronizedVideo(onVideo, onSync, onFrame) {
           })]);
         } finally { clearTimeout(timeout); }
         if (image.naturalWidth > 1280 || image.naturalHeight > 1280) throw new Error('영상 크기 초과');
-        return { id, image };
+        return { id, image, frame };
       }));
       if (closed || generation !== version) return;
       // Draw all decoded images in the same JS task, instead of each camera decoding/displaying independently.
-      for (const { id, image } of images) {
+      for (const { id, image, frame } of images) {
         const cameraId = ids.get(id); if (!cameraId) continue;
         if (fallback.has(id)) { fallback.get(id).receiver.close(); fallback.delete(id); }
         let surface = surfaces.get(id);
@@ -56,6 +56,7 @@ export function createSynchronizedVideo(onVideo, onSync, onFrame) {
         }
         surface.stream.getVideoTracks()[0]?.requestFrame?.();
         onFrame?.(cameraId);
+        onMatchedFrame?.(cameraId,surface.canvas,frame.phone_pose);
       }
       onSync?.(`서버 중계 ${images.length}대 동기화 · 표시 기준 ${deviceTime(selected.target)}${fallback.size ? ' · 시각 없는 영상은 개별 표시' : selected.stalled.length ? ' · 중단 카메라 제외' : ''}`);
     } catch (error) { if (!closed) onSync?.(`동기화 표시 실패: ${error.message}`); }
@@ -80,7 +81,9 @@ export function createSynchronizedVideo(onVideo, onSync, onFrame) {
           entry = { cameraId, receiver: createRelayVideo(
             stream => { if (!closed && fallback.get(id) === entry) onVideo(cameraId, stream, '시각 동기화 대기 · 개별 영상 표시'); },
             note => { if (!closed && fallback.get(id) === entry) onVideo(cameraId, undefined, `동기화 제외 · ${note}`); },
-            () => { if (!closed && fallback.get(id) === entry) onFrame?.(cameraId); }) };
+            (frame,canvas) => { if (!closed && fallback.get(id) === entry) {
+              onFrame?.(cameraId);onMatchedFrame?.(cameraId,canvas,frame.phone_pose);
+            } }) };
           fallback.set(id, entry);
         }
         entry.receivedAt = performance.now(); entry.receiver.push(message);
