@@ -1,6 +1,6 @@
 # 단일 카메라 인터페이스·상태 설계 v0.2
 
-2026-11-03 KST. [실행 계획](SINGLE_CAMERA_PLAN.md)의 SC-00 설계 기준안이다. **아래 파일·API·메시지는 앞으로 구현할 제안이며 현재 서버가 제공하는 기능이 아니다.** 개발 PR에서 송수신 양쪽을 검증한 뒤 DATA_CONTRACT와 실제 스키마를 함께 갱신한다. 기존 0.1 메시지 수신기에 이 예제를 보내지 않는다.
+단일2D 추적·게임의 구현 기준안이다. 현재 실행 중인 방·영상·video_check 세션 계약은 [ROOMS.md](ROOMS.md)를 따른다. 아래 추론·프레임/타격·로그 인터페이스는 아직 통합 전이며 room.v1과 자동 호환되지 않는다. 단일 방식은 폰 영상 송신·PC 손목 추론, 다중 방식은 폰2D 추출·서버3D 복원 역할을 유지한다.
 
 ## 1. 책임과 구현 경계
 
@@ -19,13 +19,13 @@
 
 단일 모드의 session_id는 **PC GameController가 UUID로 생성**하는 기준안으로 구체화한다. room_id는 연결 방, stream_id는 카메라 송출, session_id는 60초 게임 1회로 서로 다른 수명이다. 기존 서버 추적 런타임 ID와 같은 값으로 가정하지 않는다. server_epoch는 서버 재시작마다 바뀌며 로컬 run_id는 중지·복원·모드/스트림/표시 변환 변경 때 증가한다.
 
-1. PC가 방을 열고 일회성 참가 정보로 폰 1대를 연결한다. 서버는 PC/폰 역할과 stream_id 바인딩을 확인한다.
+1. 고정 방의 PC 페이지에서 폰의 고정 QR 링크를 제공하고 카메라1대를 연결한다. 서버는 PC/폰 역할과 stream_id 바인딩을 확인한다.
 2. 영상·모델·유효 손목·변환·장면·제어 연결이 준비되면 시작 버튼이 활성화된다.
 3. PC가 새 session_id와 모드/입력 출처/설정 버전을 시작 요청으로 보낸다. 서버 ACK 전에는 타이머·타격·점수를 시작하지 않는다. 같은 ID·같은 내용 재전송은 같은 ACK, 같은 ID·다른 내용은 충돌로 거부한다.
 4. ACK 수신 후 PC 단조 시계로 60초를 잰다. PC가 게임과 점수의 권위 주체, 서버는 세션 바인딩·기록 수신 주체다. 서버가 점수를 다시 계산하는 기능은 이번 MVP에 넣지 않는다.
 5. 게임 상태는 idle → ready → starting → playing → ended다. reset은 점수·물리·이벤트·궤적을 비우고 idle로 간다. 카메라는 계속 켜둘 수 있으며 다음 시작에 새 session_id를 쓴다. 모드 변경은 진행 중 게임을 종료한 뒤 수행한다.
 
-연결 상태(disconnected/connecting/live/stalled/failed), 추적 상태(loading/valid/invalid/stale), 장면 상태는 게임 상태와 분리한다. playing 중 추적/제어 연결이 끊겨도 **타이머는 계속**, 타격만 차단하는 기준안이다. 장비 장애로 무효화한 회차도 지우지 않고 invalid_reason을 기록한다. 탭이 숨겨지거나 렌더 루프가 멈춘 동안 입력은 거부하고, 복귀 시 단조 시각으로 남은 시간을 다시 계산한다.
+연결 상태(disconnected/connecting/live/stalled/failed), 추적 상태(loading/valid/invalid/stale), 장면 상태는 게임 상태와 분리한다. playing 중 손목 미검출/추적 무효·제어 단절은 타격을 차단하는 기준안이다. 카메라 연결 종료·필수 영상 중단은 사용자 최신 지시로 자동 중지하며 현재 video_check의 수동/자동 중지 규칙은 [ROOMS.md](ROOMS.md)를 따른다. 손목 미검출만으로 카메라 연결 종료를 판정하지 않는다. 장비 장애 회차도 지우지 않고 종료·무효 사유를 기록한다. 탭이 숨겨지거나 렌더 루프가 멈춘 동안 입력은 거부한다.
 
 단일 모드 준비 식:
 
@@ -42,15 +42,15 @@ fresh_valid_wrist는 적어도 한 손목이 유효한 조건이다. 판정은 �
 
 ## 3. 제안하는 서버 API
 
-아래 주소와 single_camera.v1-draft는 신규 이름 공간의 설계명이다. 기존 /ws/status·/ws/pose 및 서버 별도 브랜치의 계약과 자동 호환되지 않는다.
+GET /api/single/rooms와 WS /ws/single/signaling은 현재 room.v1로 구현되어 있다. 아래 /ws/single/control과 single_camera.v1-draft는 추론·타격 통합용 설계안이며 미구현이다. 현재 시작/ACK/상태 조회도 signaling에서 처리한다. 기존 /ws/status·/ws/pose 계약과 자동 호환되지 않는다.
 
 | 제안 경로 | 역할·핵심 동작 | 실패와 시험 |
 | --- | --- | --- |
-| POST /api/single/rooms | PC 방 생성·참가 토큰 발급, 폰 1대/PC 1대 역할 고정 | 무인증 생성 정책은 기존 접속 보호 검토 후 결정. 만료/타 방 토큰 거부 |
+| GET /api/single/rooms | 현재 고정 방 조회. 단일용 room-2는 C0한대 | 카메라 공개입장·PC인증과 상세 메시지는 [ROOMS.md](ROOMS.md) 참조 |
 | WS /ws/single/signaling | join, offer, answer, ice, leave 중계 | room/role/stream 확인, ICE는 remote description 설정 전 큐·중복 제거, 종료 시 폐기 |
 | WS /ws/single/control | stream bind, status, start/ack, end, hit/log ack | 중복 start/event는 멱등 처리, 오래된 세션·모드/출처 혼입 거부 |
 
-정경호가 기존 접속 보호/배포 코드를 재사용할 수 있는지 먼저 검토한다. 브라우저 WebSocket의 인증 전달 방식, 토큰 만료/재발급, 허용 Origin, 참가 코드 수명·시도 제한은 SC-00 산출물에 명시하고 공용 공개 배포 전에 구현·검증한다. URL·로그에 토큰 원문을 남기지 않는다. 이는 새 인증 체계를 이번 문서로 배포했다는 뜻이 아니다.
+현재 카메라는 토큰 없이 공개 입장하며 PC 역할·관리 API는 기존 키/쿠키로 보호한다. 실제 공개 경로·역할 검증은 ROOMS.md를 따른다. 별도 참가 토큰 발급은 사용하지 않는다.
 
 연결 종료 시 RTCPeerConnection·MediaStreamTrack·프레임 콜백·추론 작업을 정리한다. 재연결은 새 peer/stream 바인딩 ACK 뒤 시작하며, 예전 peer의 늦은 SDP/ICE/추론 결과는 무시한다. TURN은 필요성을 실제 시험망에서 확인한 뒤 정하며 유료 서비스 도입을 전제하지 않는다.
 
