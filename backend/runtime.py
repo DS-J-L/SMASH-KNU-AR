@@ -127,10 +127,10 @@ class Runtime:
                 tuple((c["camera_id"], c["status"], c["calibration"]["status"], c.get("stream_id"),
                        c.get("clock", {}).get("ready"), c.get("tracking_input")) for c in status["cameras"]))
 
-    def broadcast_status(self, force: bool = False) -> None:
+    def broadcast_status(self) -> None:
         st = self.status()
         sig = self._signature(st)
-        if force or sig != self._status_signature:
+        if sig != self._status_signature:
             self._status_signature = sig
             for p in list(self.status_peers):
                 p.send(st)

@@ -35,7 +35,6 @@ class Stream:
     device_id: str
     sample_only: bool
     peer: Peer | None
-    registered_at_ms: float
     stream_id: str = field(default_factory=lambda: uuid.uuid4().hex)
     clock: DeviceClock = field(default_factory=DeviceClock)
     last_message_at_ms: float = 0.0
@@ -68,7 +67,7 @@ class Registry:
         current = self.streams.get(reg.camera_id)
         if current is not None and current.device_id != reg.device_id:
             raise MessageError("camera_id_in_use", f"{reg.camera_id} is already registered by another device")
-        stream = Stream(reg.camera_id, reg.device_id, reg.sample_only, peer, now_ms, last_message_at_ms=now_ms)
+        stream = Stream(reg.camera_id, reg.device_id, reg.sample_only, peer, last_message_at_ms=now_ms)
         if reg.stream_id is not None:
             if current is not None and current.stream_id == reg.stream_id:
                 raise MessageError("stream_mismatch", "reconnect requires a new stream_id")

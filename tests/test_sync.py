@@ -30,7 +30,7 @@ def _frame(cid, t, u=100.0):
 
 
 def _stream(cid, times, us=None):
-    s = Stream(cid, "d", True, None, 0.0)
+    s = Stream(cid, "d", True, None)
     for i, t in enumerate(times):
         s.frames.append(_frame(cid, t, us[i] if us else 100.0))
     return s
