@@ -22,6 +22,7 @@ DENIED_HTML = ("<!doctype html><meta charset='utf-8'><title>접속 키 필요</t
 
 # Only the camera entry screen and its exact module dependency graph are public.
 PUBLIC_CAMERA_FILES = frozenset({
+    '/camera/room/marker-guide.css',
     '/camera/room/', '/camera/room/index.html', '/camera/room/app.js',
     '/shared/styles.css', '/shared/room-link.js', '/shared/server-clock.js',
     '/shared/video-clock.js', '/shared/video-timeline.js', '/shared/synchronized-video.js',
