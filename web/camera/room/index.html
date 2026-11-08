@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>방 선택 · 카메라 입장</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <script type="module" src="/camera/room/app.js?v=phone-game-2"></script>
+</head>
+<body><main>
+  <p class="eyebrow">SMASH-KNU-AR · CAMERA ROOMS</p>
+  <h1>카메라로 입장</h1>
+  <p>카메라 입장에는 접속 키나 참가 토큰이 필요하지 않습니다. QR에 지정된 방과 카메라 번호를 확인하세요.</p>
+  <p>PC와 같은 방에 입장해 영상을 공유합니다. 직접 연결 또는 서버 중계를 선택해 비교하세요.</p>
+  <div class="field-row">
+    <label for="room-id">방</label>
+    <select id="room-id"><option value="room-1">room-1 · 다중 카메라(최대 3대)</option><option value="room-2">room-2 · 단일 카메라(C0)</option></select>
+    <label for="camera-id">카메라 자리</label>
+    <select id="camera-id"><option>C0</option><option>C1</option><option>C2</option></select>
+    <label for="facing">렌즈</label>
+    <select id="facing"><option value="environment">후면</option><option value="user">전면</option></select>
+  </div>
+  <div class="field-row"><label for="transport">영상 전송 방식</label><select id="transport"><option value="webrtc">WebRTC 직접 연결</option><option value="server">서버 중계 · JPEG</option></select></div>
+  <p class="muted">직접 연결은 같은 Wi-Fi/핫스폿에서 먼저 시험하세요. 서버 중계는 폰과 PC가 모두 이 서버에 접속할 수 있으면 됩니다. 방식 변경은 퇴장 후 가능합니다.</p>
+  <div class="actions"><button id="join" type="button">선택한 방 입장 · 영상 보내기</button><button id="leave" type="button" disabled>퇴장 · 카메라 끄기</button></div>
+  <p id="room-status" role="status">입장 전</p>
+  <p id="peer-status" class="muted">PC 연결 대기</p>
+  <p id="send-clock" class="muted" aria-label="이 기기의 전송 준비 시각">전송 준비 시각: 대기</p>
+  <p id="pose-status" role="status">손목 인식 대기</p>
+  <div class="stage"><video id="preview" autoplay muted playsinline aria-label="송신 카메라 미리보기"></video><canvas id="pose-overlay" aria-hidden="true"></canvas></div>
+  <p class="muted">전신 22개와 머리 위치 1개를 표시·전송합니다. 얼굴 세부 점이나 표정 정보는 보내지 않습니다. 방 1은 서버 3D 손목 입력에 연결하고, 방 2는 별도 C0 입력으로 2D 게임을 진행합니다.</p>
+  <nav><a href="/monitor/">PC 모니터</a><a href="/camera/">기존 손목 추출 화면</a></nav>
+</main></body></html>

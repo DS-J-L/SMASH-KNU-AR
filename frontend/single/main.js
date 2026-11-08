@@ -6,10 +6,14 @@ import { VideoReceiver } from './video-receiver.js';
 import { ControlLink } from './control-link.js';
 import { FractureView } from './fracture-view.js';
 import { LogBuffer } from './log-buffer.js';
+import {RoomInputLink, PairedReceiver} from '../phone-game/input.js';
+import {attachHitDetector} from './hit-detector.js';
+import {createHitSound} from './hit-sound.js';
 
 const $=id=>document.getElementById(id), canvas=$('background'), ctx=canvas.getContext('2d'), logs=new LogBuffer();
 const landmarks=$('landmarks'),poseCtx=landmarks.getContext('2d');
-let source='live',processor=null,view,sceneReady=false,game,coordinator,transform,binding=null;
+const phoneInput=document.body.dataset.input==='phone-pose';
+let source='live',processor=phoneInput?async(_resource,meta)=>({...meta,wrists:meta.phone_pose.wrists,inference:{delegate:'phone'}}):null,view,sceneReady=false,game,coordinator,transform,binding=null;
 let runId=0,transformVersion=0,frameId=0,previewTimer=null,latest=null,videoState='disconnected',controlAlive=false,message=null;
 let imageWidth=640,imageHeight=480,lastFrameAt=-Infinity,lastTick=performance.now(),lastUi=0,renderCount=0,renderFps=0,metricAt=lastTick;
 let connectionState='disconnected',disposed=false,animationId;
@@ -58,22 +62,29 @@ function receiveFrame(resource,meta){
   if(meta.image_width!==imageWidth||meta.image_height!==imageHeight)resize(meta.image_width,meta.image_height);
   coordinator.submit(resource,{...meta,...context(),schema:'single_camera.v1-draft',session_id:game.sessionId,tracking_mode:'single_view_2d',source,task_type:'pilot'});
 }
-const receiver=new VideoReceiver({video:$('remote-video'),onFrame:receiveFrame,
+const receiver=new (phoneInput?PairedReceiver:VideoReceiver)({video:$('remote-video'),onFrame:receiveFrame,
   onState:s=>{videoState=s.state;if(s.reason)message=s.reason;if(s.state!=='live'&&game)invalidate();},
   sendSignal:m=>link.send(m,'signaling')});
-const link=new ControlLink({receiver,onStatus:s=>{
+const link=new (phoneInput?RoomInputLink:ControlLink)({receiver,onStatus:s=>{
+  const wasAlive=controlAlive;
   connectionState=s.state;controlAlive=s.alive;
   if(s.message)message=s.message;
+  else if(phoneInput&&s.alive&&!wasAlive)message=null;
   if(!s.alive&&game)invalidate();
   $('join').hidden=!s.join_url;
   if(s.join_url)$('join').textContent='휴대폰에서 열 주소: '+s.join_url;
 },onMessage:m=>{
   if(m.type==='stream_bound'){binding={room_id:m.room_id,stream_id:m.stream_id,server_epoch:m.server_epoch};invalidate();}
   if(m.type==='session_lost')game.abort(m.reason);
+  if(phoneInput&&m.type==='server_game'&&m.game.session_id===game.sessionId){
+    if(Number.isFinite(m.game.score))game.score=m.game.score;
+    if(m.game.state==='playing')game.endsAt=Math.min(game.endsAt,performance.now()+m.game.remaining_ms);
+  }
 }});
 game=makeGame();coordinator=makeCoordinator();
 
 function stop(){
+  if(phoneInput)game.abort('manual_stop');
   clearInterval(previewTimer);previewTimer=null;link.stop();binding=null;
   controlAlive=false;connectionState='disconnected';videoState='disconnected';invalidate();gates();draw();
 }
@@ -131,7 +142,7 @@ function updateUi(now){
   $('sample-hit').disabled=s.phase!=='playing'||!s.ready||!game.pairs.left_wrist||view?.target.active===false;
   $('mirror').disabled=$('rotation').disabled=['playing','starting'].includes(s.phase);
   $('overlay-label').textContent=source==='synthetic'?'합성 입력 · 화면 2D 시험':fresh?'1대 · 화면 2D 판정':'휴대폰 영상·손목 대기';
-  $('scope').textContent=source==='synthetic'?'합성 손목/이벤트로 PC 화면과 게임을 검사합니다. 실제 손동작 충돌을 검증한 결과가 아닙니다.':'화면상 2D 판정입니다. 실제 깊이를 측정하지 않습니다. 폰 송신·신호 서버·추적 모듈 연결이 필요합니다.';
+  $('scope').textContent=source==='synthetic'?'합성 손목/이벤트로 PC 화면과 게임을 검사합니다. 실제 손동작 충돌을 검증한 결과가 아닙니다.':phoneInput?`${link.roomId==='room-2'?'방 2':'방 1'} C0 폰 좌표 · 동일 프레임의 서버 중계 영상으로 2D 타격합니다. PC 재추론과 실제 깊이 계산은 하지 않습니다.`:'화면상 2D 판정입니다. 실제 깊이를 측정하지 않습니다. 폰 송신·신호 서버·추적 모듈 연결이 필요합니다.';
   $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?'건물이 부서졌습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
   $('performance').textContent=`화면 ${renderFps.toFixed(0)} fps · 정합 프레임 ${coordinator.stats.processed} · 폐기 ${coordinator.stats.dropped} · 로그 손실 ${logs.dropped}`;
 }
@@ -162,4 +173,13 @@ window.singleCameraMonitor=Object.freeze({
   snapshot:()=>({...game.snapshot(),sceneReady,videoState,frameStats:{...coordinator.stats},runId,transformVersion,...view?.snapshot()}),
 });
 async function init(){try{view=new FractureView($('scene'));await view.load();sceneReady=true;resize();gates();}catch(error){message='건물 준비 실패: '+error.message;console.error(error);view?.dispose();view=null;}requestAnimationFrame(frame);}
+if(phoneInput){
+  const back=$('room-back');back.href=`/monitor/${link.roomId}/`;back.textContent=`${link.roomId==='room-2'?'방 2':'방 1'} 카메라 테스트`;
+  $('room-intro').textContent=link.roomId==='room-2'?'방 2는 C0 한 대만 서버 중계로 연결하세요. 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.':'방 1의 C0·C1·C2를 연결하고 C0는 서버 중계를 선택하세요. C0 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.';
+  $('connect').disabled=false;
+  const sound=createHitSound();sound.prepare();
+  const hit=attachHitDetector(window.singleCameraMonitor,{onResult:(event,result)=>{if(result.accepted)sound.play(event);}});
+  const unlock=()=>{void sound.unlock().catch(()=>{});};document.addEventListener('pointerdown',unlock,true);
+  window.addEventListener('pagehide',()=>{hit.dispose();sound.dispose();document.removeEventListener('pointerdown',unlock,true);},{once:true});
+}
 void init();

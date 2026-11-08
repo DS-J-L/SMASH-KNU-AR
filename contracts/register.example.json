@@ -1,0 +1,7 @@
+{
+  "schema_version": "0.1",
+  "type": "register",
+  "sample_only": true,
+  "camera_id": "C0",
+  "device_id": "example-device-only"
+}
