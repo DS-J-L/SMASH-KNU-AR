@@ -1,0 +1,18 @@
+/* Additions on top of ../mono3d/view.css for the 3-camera PC viewer. */
+main.multi { grid-template-columns: minmax(220px, 1fr) minmax(320px, 2.2fr) 260px; }
+.camList { display: flex; flex-direction: column; gap: 8px; flex: 1; min-height: 0; overflow: auto; }
+.cam { position: relative; background: #000; border-radius: 8px; overflow: hidden; flex: 1; min-height: 120px; display: flex; align-items: center; justify-content: center; }
+.cam canvas { max-width: 100%; max-height: 100%; display: block; }
+.cam .tag { position: absolute; left: 6px; top: 6px; padding: 2px 8px; border-radius: 999px; font-size: .8rem; background: rgba(0,0,0,.65); }
+.cam .tag.ok { color: var(--ok); }
+.cam .tag.warn { color: var(--warn); }
+.cam .tag.off { color: var(--muted); }
+.score { position: relative; }
+.score .small { position: absolute; right: 0; top: 8px; background: #252a31; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; font: inherit; font-size: .75rem; padding: 2px 8px; cursor: pointer; }
+.bld h3 { font-size: .85rem; margin: 8px 0 4px; }
+.bld .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.bld label { display: flex; flex-direction: column; font-size: .75rem; color: var(--muted); }
+.bld label.check { flex-direction: row; gap: 6px; align-items: center; color: var(--fg); margin-bottom: 6px; }
+.bld input[type=number] { background: #0b0d10; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; font: inherit; width: 100%; }
+.bld input:disabled { opacity: .6; }
+@media (max-width: 900px) { main.multi { grid-template-columns: 1fr; } .cam { min-height: 200px; } }
