@@ -1,3 +1,4 @@
+import {validateAnalyticAppMetadata,validateAnalyticAppModels} from './analytic-compound-contract.js';
 const tolerance = 1e-5;
 const identity = [0,0,0,1];
 const isTuple = (value, length) => Array.isArray(value) && value.length === length && value.every(Number.isFinite);
@@ -7,7 +8,7 @@ function requireValue(condition, message) {
   if (!condition) throw new Error(`패키지 불일치: ${message}`);
 }
 
-export function validatePackageMetadata(manifest, colliders) {
+function validateLegacyPackageMetadata(manifest, colliders) {
   requireValue(manifest?.schema_version === '1.0' && colliders?.schema_version === '1.0', '지원하지 않는 버전');
   requireValue(manifest.units === 'm' && colliders.units === 'm', 'm 단위가 필요합니다');
   requireValue(manifest.coordinate_frame === 'three_y_up' && colliders.coordinate_frame === 'three_y_up', 'Y-up 좌표가 필요합니다');
@@ -43,7 +44,7 @@ function renderedBounds(root, origin=[0,0,0]) {
   return [low,high];
 }
 
-export function validatePackageModels(manifest, colliders, intact, fragments) {
+function validateLegacyPackageModels(manifest, colliders, intact, fragments) {
   intact.updateWorldMatrix(true,true);fragments.updateWorldMatrix(true,true);
   const bounds=renderedBounds(intact);
   requireValue(near(bounds[1].map((v,i)=>v-bounds[0][i]),manifest.dimensions_m), '정상 모델 크기와 manifest가 다릅니다');
@@ -59,3 +60,6 @@ export function validatePackageModels(manifest, colliders, intact, fragments) {
     requireValue(near(visual[0],low) && near(visual[1],high), `${item.node} 렌더 메시와 충돌체 크기`);
   }
 }
+
+export function validatePackageMetadata(meta,data){if(meta?.schema_version==='knu-analytic-app-1.0')return validateAnalyticAppMetadata(meta,data);return validateLegacyPackageMetadata(meta,data);}
+export function validatePackageModels(meta,data,intact,fragments,colliderRoot){if(meta?.schema_version==='knu-analytic-app-1.0')return validateAnalyticAppModels(meta,data,intact,fragments,colliderRoot);return validateLegacyPackageModels(meta,data,intact,fragments);}

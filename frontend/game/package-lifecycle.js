@@ -1,0 +1,4 @@
+// Synchronous transactions; no simulation, timers or event-score semantics inside the adapter.
+export function removeDynamic(world,records,{restoreNodes=false}={}){for(const r of records){world.removeRigidBody(r.body);if(restoreNodes&&r.previous){r.node.position.fromArray(r.previous.position);r.node.quaternion.fromArray(r.previous.quaternion);}}}
+export function destroyTransaction({world,fixed,spawn,accept=()=>true}){let staged;try{staged=spawn();if(!accept()){removeDynamic(world,staged,{restoreNodes:true});return null;}}catch(e){if(staged)removeDynamic(world,staged,{restoreNodes:true});throw e;}if(fixed)world.removeRigidBody(fixed);return staged;}
+export function resetTransaction({world,fixed,dynamic,createIntact}){const staged=createIntact();try{removeDynamic(world,dynamic);if(fixed)world.removeRigidBody(fixed);return staged;}catch(e){world.removeRigidBody(staged);throw e;}}

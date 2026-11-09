@@ -14,3 +14,8 @@ Blender 원본과 참고 자료를 관리할 위치입니다. 아래 검증된 B
 
 
 세분화 원본: [knu-it1-fracture-v3.blend](knu-it1-fracture-v3.blend)·[knu-main-fracture-v2.blend](knu-main-fracture-v2.blend). 이전 원본은 보존하며 [제작/검증·담당](../../docs/FRACTURE_REFINEMENT.md)을 따른다.
+
+
+## 2026-11-09 캠퍼스 v71 체크포인트
+
+사용자 요청에 따라 [knu-campus-v71.blend](knu-campus-v71.blend) 한 개를 명시적 공유 예외에 추가한다. 기존 원본은 보존한다. 이 파일은 고도화 진행상황 체크포인트이며 전수 실측·전체 건물 완료를 뜻하지 않는다. [범위·검증·이용 조건](../../docs/CAMPUS_V71_CHECKPOINT.md)을 따른다. 대형 복원 ZIP과 중간 원본, 원시 참고 사진은 Git에 추가하지 않는다. 일반 Git 바이너리 정책을 유지하며 Git LFS를 도입하지 않았다.

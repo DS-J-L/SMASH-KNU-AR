@@ -1,0 +1,17 @@
+Independent Jinri v71 r3 review: PASS (scoped checkpoint)
+
+Reviewed actual native and exported files in Blender 5.2.3, not just builder reports. The registered NW JA/AB facade upgrade passes independent preservation, topology, UV, actual per-island support, nearby collision/containment/coplanar, material and true-wire visual, export, and restored-backup checks.
+
+Final full-campus totals: 1,735 objects, 902,354 triangles, 457 materials, 50 images. Six new meshes add 2,692 triangles; removing 22 obsolete placeholder islands removes 264, for a net increase of 2,428. All 133 retained islands preserve their complete generic attributes. Only four existing core polygon material assignments change. All 1,727 untouched original objects and all 12 IT1-associated objects/materials/images remain exact, as do original materials, image payloads/metadata, worlds, collections and scene settings except six new root members.
+
+All nine new connected islands are closed and outward, with actual triangle support to the core. No unintended nearby collision, containment, self-intersection or positive-area coplanar overlap was found. All eight touched meshes match native export positions, normals and UVs exactly under the official exporter normal rule. Archive CRC and all 42 manifest data members pass; extracted artifacts are byte-identical, and the restored native file was independently reopened.
+
+Scope limits: partial NW facade refinement only. Southern AB/BC piloti remains held and the solid inherited core there is not validated. Other faces and remaining generic windows are not newly verified. Dimensions, colours and frame rhythms are approximate; original massing, roof and terrain remain preserved. The inherited core lacks UVs and is not a whole-building QA pass. New mesh UVs pass. Two flat cornice cap n-gons and site-relative ground height are accepted warnings. Blender GLB import retains the exact known loss of 11 terrain triangles, with no new target loss. No structural, gameplay or current-site certification is claimed. Source photographs are not included or cleared for republication.
+
+R3 repairs only an unrelated packed-image filepath remapped while saving r2. Prior failure evidence is retained. Model geometry and all reviewed render appearances are unchanged between r2 and r3.
+
+Artifact SHA256
+Native: 5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd
+GLB: 9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd
+Backup: cd470250f663b2fcbb735bf0bc25e76cabd5a6ddd9d7e7b90c4a1d2ab9c441db
+Acceptance report: 410e4a5de489ea7b094b6da27b17a97ba822754e8331a206f709d40f1335bd85

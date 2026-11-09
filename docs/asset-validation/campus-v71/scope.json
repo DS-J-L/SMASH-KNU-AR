@@ -1,0 +1,99 @@
+{
+  "status": "Frozen r3; builder native/export/geometry/reimport gates pass. Independent final acceptance and restored-file reopen are recorded separately.",
+  "scope": "Jinri Hall official501, osm468931880, NW A corner. Registered J-to-A north end and A-to-B west-facing plane. Partial facade refinement only.",
+  "artifacts": {
+    "v70-immutable-restoration-backup.blend": {
+      "sha256": "a0c6ba3d55c94e98dd9903afb1c3a74e30fa00cb29ed32b0c32bd374f1fd23a4",
+      "bytes": 22013004
+    },
+    "knu-campus-v71-jinri-nw-candidate-r3.blend": {
+      "sha256": "5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd",
+      "bytes": 22063400
+    },
+    "knu-campus-v71-jinri-nw-candidate-r3.glb": {
+      "sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+      "bytes": 68594784
+    }
+  },
+  "totals": {
+    "objects": 1735,
+    "triangles": 902354,
+    "materials": 457,
+    "images": 50,
+    "collections": 19
+  },
+  "delta": {
+    "objects": 6,
+    "triangles_net": 2428,
+    "added_triangles": 2692,
+    "removed_placeholder_triangles": 264,
+    "materials": 5,
+    "images": 0,
+    "removed_generic_window_islands": 22,
+    "retained_generic_window_islands": 133
+  },
+  "changed_existing_objects": [
+    "진리관",
+    "v7 | 창 근사 | 진리관 [468931880]"
+  ],
+  "new_objects": [
+    "PhotoV71 | Jinri501 | north broad upper glazed bank",
+    "PhotoV71 | Jinri501 | north top glazing row",
+    "PhotoV71 | Jinri501 | west north stair glazing",
+    "PhotoV71 | Jinri501 | north pale ladder and band",
+    "PhotoV71 | Jinri501 | west pale horizontal bands",
+    "PhotoV71 | Jinri501 | NW projecting pale roof cornice"
+  ],
+  "new_materials": [
+    "PhotoV71 | Jinri501 | observed red brown brick colour",
+    "PhotoV71 | Jinri501 | observed pale cream trim",
+    "PhotoV71 | Jinri501 | green painted glazing frame",
+    "PhotoV71 | Jinri501 | green glazing simplified opaque",
+    "PhotoV71 | Jinri501 | green glazing alternate reflectance"
+  ],
+  "preservation": {
+    "untouched_original_objects": 1727,
+    "original_materials_images_collections_worlds_exact": true,
+    "all_12_IT1_objects_materials_image_payloads_unchanged": true,
+    "core_geometry_and_UV_absence_exact": true,
+    "retained_generic_attributes_exact": true,
+    "core_changed_polygon_material_indices": [
+      28,
+      30,
+      31,
+      34
+    ]
+  },
+  "correction": "R3 restores one original packed Roof305 image filepath after Save As remapped it. All r2 geometry/attributes/materials exactly identical. R1/R2 preserved.",
+  "evidence": {
+    "official_identity": "https://dorm.knu.ac.kr/dorm/dorm_04.php",
+    "official_photo1": "https://dorm.knu.ac.kr/img/sub/dorm/dorm4_1.jpg",
+    "official_photo2_excluded": "https://dorm.knu.ac.kr/img/sub/dorm/dorm4_2.jpg",
+    "official_tour_corner": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_5_01_11475/mobile/2.jpg",
+    "official_tour_neighborhood": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_5_01_11475/mobile/1.jpg",
+    "capture_dates": "Unverified. Sources are reference evidence, not a claim of current conditions."
+  },
+  "accepted_limits": [
+    "Photo2 not registered and not used for geometry.",
+    "Only JA north end and AB west plane upgraded; other8 edges unchanged.",
+    "Five-storey massing and core roof retained.",
+    "All dimensions, frame subdivisions and material tones approximate.",
+    "Red-brown brick colour is simplified, not a measured texture.",
+    "Ground north placeholders and west regular-window placeholders outside stair retained as unverified inherited geometry.",
+    "No whole-building completion, current-site certification or gameplay certification.",
+    "No source reference photograph embedded in model or cleared for republication.",
+    "Southern AB/BC piloti and bicycle opening is visible in official tour face11477/1 but held outside this pass. The original solid core there remains; the entire AB wall is not validated.",
+    "Inherited core has no UV map. Its material-only edit preserves that absence. All six added meshes have nondegenerate, nonoverlapping UVs. Raw asset QA therefore retains the inherited-core no-UV error and does not claim a clean whole-building pass.",
+    "Two planar cornice cap n-gons triangulate correctly. Site-relative elevations intentionally do not rest at world Z=0.",
+    "Fresh Blender GLB imports drop the same 11 inherited terrain triangles as verified v70, on green/green.009/green.016/green.029/green.039. All eight touched objects import exact triangle counts; decoded export retains all 902354 triangles.",
+    "Existing reference photos are local evidence only, excluded from this archive and GitHub publication. This pass added zero images or third-party photograph pixels."
+  ],
+  "proofs": [
+    "native-preservation-proof-v71-r3.json",
+    "decoded-glb-proof-v71-r3.json",
+    "technical-qa-v71-r2.json",
+    "retained-all-attributes-proof-v71-r2.json",
+    "r2-r3-exact-revision-delta.json",
+    "glb-reimport-comparison-v71-r3.json"
+  ]
+}

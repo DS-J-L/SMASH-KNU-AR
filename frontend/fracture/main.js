@@ -8,12 +8,18 @@ import { validatePackageMetadata, validatePackageModels } from './package-contra
 import './style.css';
 import { GameController } from '../game/controller.js';
 import { spawnFragmentBodies } from '../game/fragment-bodies.js';
+import {loadPackage} from './package-loader.js';
+import {makePackageRuntime,createIntactBody as createPackageIntact,restoreGroupNodes,presentPackage,restTransformsMatch,syncDynamicNodes} from '../game/package-runtime.js';
+import {createPackageHelpers} from '../game/package-helpers.js';
+import {catalogForSelection,placementFor} from '../game/package-selection.js';
+import {destroyTransaction,resetTransaction} from '../game/package-lifecycle.js';
 
 const $=id=>document.getElementById(id),canvas=$('scene'),stage=canvas.parentElement;
 const scene=new THREE.Scene();scene.background=new THREE.Color('#e7eadf');
 const camera=new THREE.PerspectiveCamera(38,1,.02,6000),loader=new GLTFLoader(),raycaster=new THREE.Raycaster();
 let renderer,controls,world,intact,shards,campus,studioEnvironment,manifest,colliderData,catalog,fixedBuilding,activeId=null;
 let dynamic=[],helpers=[],loading=true,view='building',inspection=0;
+let packageRuntime,presentation,groundBody,loadGeneration=0,disposed=false;
 let campusFocus='all';
 let phase='ready',destroyed=false,score=0,sessionId=null,endsAt=0,errorMessage=null;
 let accumulator=0,lastFrame=performance.now(),lastUiUpdate=-Infinity,pointerDown=null;
@@ -46,25 +52,8 @@ function setLighting(campusView) {
   scene.environment=campusView?null:studioEnvironment;scene.fog=campusView?new THREE.FogExp2('#e7eadf',.00015):null;
 }
 function configureCamera() {
-  camera.position.set(4.4,2.9,4.4);controls.target.set(0,(manifest?.dimensions_m[1]??1)*.45,0);
+  const origin=packageRuntime?.frame.origin??[0,0,0];camera.position.fromArray([4.4,2.9,4.4].map((x,k)=>x+origin[k]));controls.target.fromArray([0,(manifest?.dimensions_m[1]??1)*.45,0].map((x,k)=>x+origin[k]));
   controls.minDistance=1.5;controls.maxDistance=15;controls.maxPolarAngle=Math.PI/2-.02;controls.update();
-}
-function collider(item) {
-  const descriptor=RAPIER.ColliderDesc.convexHull(new Float32Array(item.vertices_m));
-  if(!descriptor)throw new Error(`충돌체 생성 실패: ${item.node}`);
-  return descriptor.setDensity(item.density_kg_m3).setFriction(item.friction).setRestitution(item.restitution);
-}
-function createIntactBody() {
-  fixedBuilding=world.createRigidBody(RAPIER.RigidBodyDesc.fixed());
-  for(const item of colliderData.fragments)world.createCollider(collider(item).setTranslation(...item.rest_position_m),fixedBuilding);
-}
-function newHelpers(data) {
-  return data.fragments.map(item=>{
-    const points=[];for(let i=0;i<item.vertices_m.length;i+=3)points.push(new THREE.Vector3(...item.vertices_m.slice(i,i+3)));
-    const hull=new ConvexGeometry(points),geometry=new THREE.EdgesGeometry(hull);hull.dispose();
-    const line=new THREE.LineSegments(geometry,new THREE.LineBasicMaterial({color:'#c75532',depthTest:false,transparent:true,opacity:.6}));
-    line.position.fromArray(item.rest_position_m);line.visible=false;line.renderOrder=5;return line;
-  });
 }
 function disposeRoots(roots) {
   const geometries=new Set(),materials=new Set(),textures=new Set(),images=new Set();
@@ -79,7 +68,7 @@ function disposeRoots(roots) {
 function clearBuilding() {
   for(const item of dynamic)world.removeRigidBody(item.body);dynamic=[];
   if(fixedBuilding)world.removeRigidBody(fixedBuilding);fixedBuilding=null;
-  for(const root of [intact,shards,...helpers].filter(Boolean))scene.remove(root);
+  presentation?.removeFromParent();presentation=null;for(const root of [intact,shards,...helpers].filter(Boolean))root.removeFromParent();
   disposeRoots([intact,shards,...helpers]);helpers=[];intact=shards=null;renderer.renderLists.dispose();
 }
 async function fetchJson(url) {
@@ -88,24 +77,27 @@ async function fetchJson(url) {
 async function loadBuilding(id) {
   if(id===activeId)return;
   const entry=catalog.buildings.find(item=>item.id===id);if(!entry)throw new Error('등록되지 않은 건물입니다.');
-  loading=true;errorMessage=null;updateUI();let pending=[],pendingHelpers=[],committing=false;
+  const generation=++loadGeneration,isCurrent=()=>!disposed&&generation===loadGeneration;
+  loading=true;errorMessage=null;updateUI();let pending=[],pendingHelpers=[],pendingFixed=null,pendingPresentation=null,committing=false;
   try {
     const base=`/public/assets/buildings/${entry.folder}/`;
-    const [meta,data]=await Promise.all([fetchJson(base+'manifest.json'),fetchJson(base+'colliders.json')]);validatePackageMetadata(meta,data);
-    const loaded=await Promise.allSettled([loader.loadAsync(base+meta.assets.intact),loader.loadAsync(base+meta.assets.fragments)]);
-    pending=loaded.filter(item=>item.status==='fulfilled').map(item=>item.value.scene);
-    const failure=loaded.find(item=>item.status==='rejected');if(failure)throw failure.reason;
-    const [nextIntact,nextShards]=pending;validatePackageModels(meta,data,nextIntact,nextShards);
-    for(const item of data.fragments)collider(item);pendingHelpers=newHelpers(data);
-    committing=true;clearBuilding();manifest=meta;colliderData=data;intact=nextIntact;shards=nextShards;helpers=pendingHelpers;
-    pending=[];pendingHelpers=[];activeId=id;scene.add(intact,shards,...helpers);shards.visible=false;
+    const loaded=await loadPackage({id,base,loader,isCurrent});pending=[loaded.intact,loaded.shards];
+    const nextRuntime=makePackageRuntime(loaded.meta,loaded.data,placementFor(id,new URL(location.href).searchParams));
+    pendingHelpers=createPackageHelpers(nextRuntime);
+    pendingPresentation=presentPackage(THREE,nextRuntime,loaded.intact,loaded.shards,pendingHelpers);
+    if(!isCurrent())throw new Error('stale_package_load');
+    pendingFixed=createPackageIntact(RAPIER,world,nextRuntime);
+    committing=true;clearBuilding();manifest=loaded.meta;colliderData=loaded.data;intact=loaded.intact;shards=loaded.shards;helpers=pendingHelpers;packageRuntime=nextRuntime;presentation=pendingPresentation;fixedBuilding=pendingFixed;
+    pending=[];pendingHelpers=[];pendingFixed=null;pendingPresentation=null;activeId=id;scene.add(presentation);shards.visible=false;
+    const gp=packageRuntime.frame.toLocal([0,-.06,0]);groundBody.setTranslation({x:gp[0],y:gp[1],z:gp[2]},false);
     for(const root of [intact,shards])root.traverse(node=>{if(node.isMesh){node.castShadow=true;node.receiveShadow=true;}});
-    createIntactBody();game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;seenEvents.clear();inspection=0;accumulator=0;dust.visible=false;
+    game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;seenEvents.clear();inspection=0;accumulator=0;dust.visible=false;
     $('separation').value='0';$('building-select').value=id;$('manifest-link').href=base+'manifest.json';
     const url=new URL(location.href);url.searchParams.set('building',id);history.replaceState(null,'',url);
     loading=false;configureCamera();setLighting(false);chooseDefaultImpact();updateUI();
   } catch(error) {
-    disposeRoots([...pending,...pendingHelpers]);if(!activeId||committing)throw error;
+    if(pendingFixed&&world)world.removeRigidBody(pendingFixed);pendingPresentation?.removeFromParent();disposeRoots([...pending,...pendingHelpers]);
+    if(!isCurrent())return;if(!activeId||committing)throw error;
     loading=false;errorMessage=`새 건물을 불러오지 못했습니다. 기존 모델을 유지합니다: ${error.message}`;$('building-select').value=activeId;updateUI();
   }
 }
@@ -138,18 +130,16 @@ function emitDust(now){
 function destroy(eventId=crypto.randomUUID()){
   expireSession(performance.now());if(loading||view!=='building'||destroyed||phase==='ended'||inspection>0)return false;if(phase==='ready')start();
   if(performance.now()>=endsAt||seenEvents.has(eventId))return false;
-  if(!game.acceptKeyboard(eventId,activeId))return false;seenEvents.add(eventId);world.removeRigidBody(fixedBuilding);fixedBuilding=null;intact.visible=false;shards.visible=true;
-  const radius=manifest.gameplay?.impact_radius_m??.65;
-  dynamic=spawnFragmentBodies({world,shards,data:colliderData,impactPoint,impactNormal,radius,collider});
+  const radius=manifest.gameplay?.impact_radius_m??.65,localPoint=new THREE.Vector3(...packageRuntime.frame.toLocal(impactPoint.toArray())),localNormal=new THREE.Vector3(...packageRuntime.frame.direction(impactNormal.toArray()));
+  try{const staged=destroyTransaction({world,fixed:fixedBuilding,spawn:()=>spawnFragmentBodies({world,shards,data:colliderData,runtime:packageRuntime,impactPoint:localPoint,impactNormal:localNormal,radius}),accept:()=>game.acceptKeyboard(eventId,activeId)});if(!staged)return false;dynamic=staged;}catch(error){errorMessage=`파편 준비 실패: ${error.message}`;updateUI();return false;}
+  seenEvents.add(eventId);fixedBuilding=null;intact.visible=false;shards.visible=true;
   destroyed=true;score=game.score;emitDust(performance.now());updateUI();return true;
 }
-function restoreNodes(){
-  const center=new THREE.Vector3(0,manifest.dimensions_m[1]/2,0);
-  colliderData.fragments.forEach((item,i)=>{const position=new THREE.Vector3(...item.rest_position_m);if(inspection>0)position.sub(center).multiplyScalar(1+inspection).add(center);const node=shards.getObjectByName(item.node);node.position.copy(position);node.quaternion.identity();helpers[i].position.copy(position);helpers[i].quaternion.identity();});
-}
+function restoreNodes(){restoreGroupNodes(shards,packageRuntime,helpers,inspection);}
 function reset(){
-  if(loading||!manifest)return;for(const item of dynamic)world.removeRigidBody(item.body);dynamic=[];if(fixedBuilding)world.removeRigidBody(fixedBuilding);createIntactBody();
-  inspection=0;$('separation').value='0';restoreNodes();shards.visible=false;intact.visible=view==='building';game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;errorMessage=null;seenEvents.clear();accumulator=0;dust.visible=false;updateUI();
+  if(loading||!manifest)return false;
+  try{fixedBuilding=resetTransaction({world,fixed:fixedBuilding,dynamic,createIntact:()=>createPackageIntact(RAPIER,world,packageRuntime)});}catch(error){errorMessage=`복원 준비 실패: ${error.message}`;updateUI();return false;}dynamic=[];
+  inspection=0;$('separation').value='0';restoreNodes();shards.visible=false;intact.visible=view==='building';game.reset();seenEvents=game.seenEvents;phase=game.phase;destroyed=false;score=game.score;sessionId=game.sessionId;endsAt=game.endsAt;errorMessage=null;seenEvents.clear();accumulator=0;dust.visible=false;updateUI();return true;
 }
 function previewSeparation(){if(loading||phase!=='ready'||view!=='building')return;inspection=Number($('separation').value);restoreNodes();intact.visible=inspection===0;shards.visible=inspection>0;updateUI();}
 function showHelpers(){for(const helper of helpers)helper.visible=$('colliders').checked&&view==='building';}
@@ -163,19 +153,19 @@ function focusCampus(id='all'){
 async function changeView(next){
   if(loading||next===view)return;
   if(next==='campus'){
-    reset();loading=true;updateUI();
+    if(!reset())return;loading=true;updateUI();
     try{
-      if(!campus){campus=(await loader.loadAsync(catalog.campus)).scene;campus.traverse(node=>{if(node.isMesh){node.receiveShadow=true;node.castShadow=Boolean(node.userData.osm_way||String(node.userData.source_id??'').startsWith('vw/'));}});scene.add(campus);}
+      if(!campus){const loadedCampus=(await loader.loadAsync(catalog.campus)).scene;if(disposed){disposeRoots([loadedCampus]);return;}campus=loadedCampus;campus.traverse(node=>{if(node.isMesh){node.receiveShadow=true;node.castShadow=Boolean(node.userData.osm_way||String(node.userData.source_id??'').startsWith('vw/'));}});scene.add(campus);}
       view='campus';intact.visible=shards.visible=false;campus.visible=true;floor.visible=grid.visible=false;camera.position.set(1100,1000,1300);controls.target.set(0,-4,0);controls.minDistance=80;controls.maxDistance=3000;controls.update();setLighting(true);
-    }catch(error){errorMessage=`지형을 불러오지 못했습니다: ${error.message}`;}finally{loading=false;if(view==='campus')focusCampus();showHelpers();updateUI();}
+    }catch(error){errorMessage=`지형을 불러오지 못했습니다: ${error.message}`;}finally{if(!disposed){loading=false;if(view==='campus')focusCampus();showHelpers();updateUI();}}
   }else{view='building';errorMessage=null;campus.visible=false;intact.visible=true;floor.visible=grid.visible=true;configureCamera();setLighting(false);showHelpers();updateUI();}
 }
 function resize(){const {width,height}=stage.getBoundingClientRect();camera.aspect=width/height;camera.updateProjectionMatrix();renderer.setSize(width,height,false);}
 function frame(){
-  const now=performance.now(),delta=Math.min((now-lastFrame)/1000,.1);requestAnimationFrame(frame);
+  if(disposed)return;const now=performance.now(),delta=Math.min((now-lastFrame)/1000,.1);requestAnimationFrame(frame);
   if(world&&view==='building'&&!loading){
     if(inspection===0){accumulator+=delta;while(accumulator>=1/60){world.step();accumulator-=1/60;}}
-    dynamic.forEach(({node,body},i)=>{node.position.copy(body.translation());node.quaternion.copy(body.rotation());helpers[i].position.copy(node.position);helpers[i].quaternion.copy(node.quaternion);});expireSession(now);
+    syncDynamicNodes(dynamic,helpers);expireSession(now);
     if(dust.visible){const age=(now-dustStart)/1000;if(age>1.25)dust.visible=false;else{for(let i=0;i<dustCount;i++)for(let axis=0;axis<3;axis++)dustPositions[i*3+axis]+=dustVelocity[i*3+axis]*delta;dustMaterial.opacity=.5*(1-age/1.25);dustGeometry.attributes.position.needsUpdate=true;}}
   }
   lastFrame=now;controls.update();renderer.render(scene,camera);if(now-lastUiUpdate>=200)updateUI(now);
@@ -193,16 +183,18 @@ window.addEventListener('keydown',event=>{
   if(event.code==='Space'){if(target?.closest('button,a,input,[role="button"]'))return;event.preventDefault();destroy();}
   if(event.code==='KeyR'){event.preventDefault();reset();}if(event.code==='KeyG'){$('colliders').checked=!$('colliders').checked;showHelpers();}
 });
-window.__fractureDemo=Object.freeze({snapshot:()=>({loading,errorMessage,view,campusFocus,cameraPosition:camera.position.toArray(),cameraTarget:controls?.target.toArray(),phase,destroyed,score,sessionId,buildingId:activeId,expectedFragmentCount:manifest?.fragment_count,inspection,impactPoint:impactPoint.toArray(),dustVisible:dust.visible,fragmentCount:dynamic.length,bodyCount:world?.bodies.len(),colliderCount:world?.colliders.len(),seenEvents:seenEvents.size,intactVisible:intact?.visible,shardsVisible:shards?.visible,geometryCount:renderer?.info.memory.geometries,textureCount:renderer?.info.memory.textures,finiteBodies:dynamic.every(({body})=>Object.values(body.translation()).every(Number.isFinite)),minFragmentY:dynamic.length?Math.min(...dynamic.map(({body})=>body.translation().y)):null,restTransformsMatch:Boolean(shards&&colliderData?.fragments.every(item=>shards.getObjectByName(item.node).position.distanceTo(new THREE.Vector3(...item.rest_position_m))<1e-5))})});
+window.__fractureDemo=Object.freeze({snapshot:()=>({loading,errorMessage,view,campusFocus,cameraPosition:camera.position.toArray(),cameraTarget:controls?.target.toArray(),phase,destroyed,score,sessionId,buildingId:activeId,expectedFragmentCount:manifest?.fragment_count,inspection,impactPoint:impactPoint.toArray(),dustVisible:dust.visible,fragmentCount:dynamic.length,bodyCount:world?.bodies.len(),colliderCount:world?.colliders.len(),seenEvents:seenEvents.size,intactVisible:intact?.visible,shardsVisible:shards?.visible,geometryCount:renderer?.info.memory.geometries,textureCount:renderer?.info.memory.textures,finiteBodies:dynamic.every(({body})=>Object.values(body.translation()).every(Number.isFinite)),minFragmentY:dynamic.length?Math.min(...dynamic.map(({body})=>body.translation().y)):null,expectedColliderCount:packageRuntime?.colliderCount,physicsOrigin:packageRuntime?.frame.origin,placement:packageRuntime?.placement.name,restTransformsMatch:restTransformsMatch(shards,packageRuntime)})});
 async function init(){
   try{
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer);studioEnvironment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
     controls=new OrbitControls(camera,canvas);controls.enableDamping=true;configureCamera();setLighting(false);new ResizeObserver(resize).observe(stage);resize();
-    [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);$('building-select').replaceChildren(...catalog.buildings.map(entry=>new Option(entry.label,entry.id)));
+    [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);if(disposed)return;catalog=catalogForSelection(catalog,new URL(location.href).searchParams);$('building-select').replaceChildren(...catalog.buildings.map(entry=>new Option(entry.label,entry.id)));
     $('campus-focus').append(...(catalog.campus_focus??[]).map(entry=>new Option(entry.label,entry.id)));
-    world=new RAPIER.World({x:0,y:-9.81,z:0});world.timestep=1/60;const ground=world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(0,-.06,0));world.createCollider(RAPIER.ColliderDesc.cuboid(20,.06,20).setFriction(.8),ground);
+    world=new RAPIER.World({x:0,y:-9.81,z:0});world.timestep=1/60;groundBody=world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(0,-.06,0));world.createCollider(RAPIER.ColliderDesc.cuboid(20,.06,20).setFriction(.8),groundBody);
     const requested=new URL(location.href).searchParams.get('building');await loadBuilding(catalog.buildings.some(entry=>entry.id===requested)?requested:catalog.default);lastFrame=performance.now();requestAnimationFrame(frame);
   }catch(error){if(world){world.free();world=null;}loading=true;errorMessage=`준비 실패: ${error.message}. 서버 실행과 패키지 파일을 확인한 뒤 새로고침하세요.`;console.error(error);updateUI();}
 }
+window.addEventListener('pagehide',()=>{disposed=true;loadGeneration++;if(world){clearBuilding();world.free();world=null;}disposeRoots([scene]);renderer?.dispose();});
+window.addEventListener('pageshow',event=>{if(event.persisted&&disposed)location.reload();});
 init();
