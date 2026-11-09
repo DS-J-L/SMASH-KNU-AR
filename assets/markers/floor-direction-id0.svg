@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="210mm" viewBox="0 0 210 210">
+<title>ArUco DICT_4X4_50 ID 0 - 200 mm - A4 width</title>
+<desc>200 x 200 mm black outer square with 5 mm white margin on all sides. No arrows or labels. Canonical top is positive world Y. Print A4 PDF at actual size 100 percent and measure black square. Pattern preserves rotational identity.</desc>
+<rect width="210" height="210" fill="white"/>
+<svg x="5" y="5" width="200" height="200" viewBox="0 0 6 6" shape-rendering="crispEdges"><rect width="6" height="6" fill="black"/><g fill="white"><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></g></svg>
+</svg>

@@ -65,6 +65,29 @@
     </nav>
   </section>
 
+  <section aria-labelledby="test3d-title">
+    <h2 id="test3d-title">3D 시험 페이지 (시험용)</h2>
+    <p class="muted">바닥 마커(ArUco 4x4 ID0, 20cm)로 폰 위치를 구해 손목 3D와 마커 자리 건물 타격을 시험합니다. 위의 방·게임과 연결되지 않으며, 결과는 시험용 값입니다.</p>
+    <div class="room-cards">
+      <article>
+        <h3>카메라 1대 · 근사 3D</h3>
+        <p>폰 한 대와 몸 크기로 깊이를 추정합니다. 폰에서 <code>/test/mono3d/</code>를 여세요.</p>
+        <div class="actions">
+          <a class="room-entry" href="/test/mono3d/view.html">PC 화면</a>
+          <a class="room-entry" href="/test/mono3d/">폰 페이지</a>
+        </div>
+      </article>
+      <article>
+        <h3>카메라 3대 · 삼각측량 3D</h3>
+        <p>폰마다 C0·C1·C2를 고릅니다. 폰끼리 60~120° 벌려 두세요. 폰에서 <code>/test/multi3d/</code>를 여세요.</p>
+        <div class="actions">
+          <a class="room-entry" href="/test/multi3d/view.html">PC 화면</a>
+          <a class="room-entry" href="/test/multi3d/">폰 페이지</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
 </main>
 </body>
 </html>

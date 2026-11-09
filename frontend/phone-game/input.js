@@ -3,15 +3,16 @@ import {openRoom} from '/shared/room-link.js?v=phone-game-2';
 // A matched JPEG and its validated normalized wrists arrive in one packet.
 export class PairedReceiver {
   constructor({onFrame,onState}) { Object.assign(this,{onFrame,onState}); }
+  setState(state) { if(this.state!==state){this.state=state;this.onState({state});} }
   deliver(canvas,pose,room) {
     const image=document.createElement('canvas');image.width=canvas.width;image.height=canvas.height;
     image.getContext('2d').drawImage(canvas,0,0);image.close=()=>{image.width=image.height=0;};
-    this.onState({state:'live'});
+    this.setState('live');
     this.onFrame(image,{room_id:room,stream_id:pose.stream_id,frame_id:pose.frame_id,
       image_width:image.width,image_height:image.height,observed_at_pc_ms:performance.now(),
       phone_pose:pose,capture_time:pose.capture_time_ms,capture_time_source:pose.timestamp_source});
   }
-  stop() { this.onState({state:'disconnected'}); }
+  stop() { this.setState('disconnected'); }
 }
 
 export class RoomInputLink {
@@ -69,7 +70,10 @@ export class RoomInputLink {
   }
   refresh(){const alive=this.alive();this.onStatus({state:alive?'connected':'connecting',alive,
     message:alive?null:`${this.roomId==='room-2'?'방 2의 C0 한 대를':'방 1의 C0·C1·C2를'} 연결하고 C0는 서버 중계를 선택하세요. 같은 프레임의 영상·손목 수신 대기 중입니다.`});
-    const now=performance.now(),stalled=now-(this.lastPose??-Infinity)>1500
+    const now=performance.now(),camera=this.status?.cameras.find(c=>c.camera_id==='C0');
+    if(!camera?.connected)this.receiver.setState('disconnected');
+    else if(this.receiver.state==='live'&&now-(this.frames.get('C0')??-Infinity)>1500)this.receiver.setState('stalled');
+    const stalled=now-(this.lastPose??-Infinity)>1500
       ||this.status?.required_cameras.some(id=>now-(this.frames.get(id)??-Infinity)>1500);
     if(this.room&&this.game?.state==='playing'&&stalled&&!this.stopPending){
       this.stopPending=true;this.room.stopGame(this.game.session_id,'camera_stalled');}}

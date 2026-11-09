@@ -18,6 +18,7 @@ let source='live',processor=phoneInput?async(_resource,meta)=>({...meta,wrists:m
 let runId=0,transformVersion=0,frameId=0,previewTimer=null,latest=null,videoState='disconnected',controlAlive=false,message=null;
 let imageWidth=640,imageHeight=480,lastFrameAt=-Infinity,lastTick=performance.now(),lastUi=0,renderCount=0,renderFps=0,metricAt=lastTick;
 let connectionState='disconnected',disposed=false,animationId;
+let sessionFramePendingUntil=0;
 const poseListeners=new Set();
 
 function log(entry){const record={...entry,observed_at_pc_ms:performance.now(),config_version:'single-monitor-1',model_version:view?.buildingId??'knu-it1-v3'};logs.add(record);if(source==='live'){link.send({type:'log',entry:record});if(entry.type==='ended')link.send({type:'end',session_id:entry.session_id,reason:entry.reason});}}
@@ -39,6 +40,7 @@ function gates(){game.setGates({control_bound:Boolean(binding)&&connectionState=
 function matched(resource,meta,pose){
   if(disposed)return false;
   if(!game.setPose(pose)) {game.clearInput();return false;}
+  sessionFramePendingUntil=0;
   latest={resource,meta,pose};lastFrameAt=meta.observed_at_pc_ms;
   if(message==='손목 추적을 준비하지 못했습니다. 다시 연결하세요.')message=null;draw();gates();
   for(const listener of poseListeners)try{listener(structuredClone(pose));}catch{game.clearInput();message='타격 입력 연결을 확인하세요.';}
@@ -112,7 +114,7 @@ function setMode(next){
 async function start(){
   gates();message=null;
   const ok=await game.start(request=>source==='synthetic'?{...request,type:'start_ack'}:link.requestStart(request));
-  if(ok)invalidate();else if(game.reason)message=({start_timeout:'시작 승인 시간이 초과됐습니다. 다시 시도하세요.',ack_mismatch:'시작 승인 정보가 맞지 않습니다.',readiness_lost:'입력이 끊겨 시작하지 않았습니다.'})[game.reason]??'시작하지 못했습니다. 연결을 확인하세요.';
+  if(ok){sessionFramePendingUntil=performance.now()+game.ttlMs;invalidate();}else if(game.reason)message=({start_timeout:'시작 승인 시간이 초과됐습니다. 다시 시도하세요.',ack_mismatch:'시작 승인 정보가 맞지 않습니다.',readiness_lost:'입력이 끊겨 시작하지 않았습니다.'})[game.reason]??'시작하지 못했습니다. 연결을 확인하세요.';
 }
 function endGame(reason){
   if(source!=='live')return;
@@ -135,7 +137,7 @@ function updateUi(now){
   gates();const s=game.snapshot(),fresh=now-lastFrameAt<200;
   if(!fresh)poseCtx.clearRect(0,0,landmarks.width,landmarks.height);
   $('source-badge').textContent=source==='synthetic'?'합성 입력 시험 · 실제 촬영 아님':'실제 입력 · '+(videoState==='live'?'영상 수신 중':'연결 대기');
-  $('video-state').textContent=({live:'수신 중',connecting:'연결 중',stalled:'영상 끊김',failed:'연결 실패',disconnected:'연결 전'})[videoState]??'대기';
+  $('video-state').textContent=({live:'수신 중',connecting:'연결 중',stalled:'영상 끊김',failed:'연결 실패',disconnected:binding?'연결 끊김':'연결 전'})[videoState]??'대기';
   $('pose-state').textContent=source==='live'&&!processor?'추적 모듈 연결 대기':game.fresh()?'손목 수신 중':'손목 대기/만료';
   $('scene-state').textContent=sceneReady?(view?.buildingId===ANALYTIC_ID?'IT1 · 미승인 QA 후보':'IT1 · 준비됨'):'준비 중';$('time').textContent=Math.ceil(s.remainingMs/1000)+'s';$('score').textContent=s.score;
   $('fragments').textContent=(view?.dynamic.length??0)+' / '+(view?.runtime?.groupCount??96);
@@ -145,7 +147,8 @@ function updateUi(now){
   $('overlay-label').textContent=source==='synthetic'?'합성 입력 · 화면 2D 시험':fresh?'1대 · 화면 2D 판정':'휴대폰 영상·손목 대기';
   $('scope').textContent=source==='synthetic'?'합성 손목/이벤트로 PC 화면과 게임을 검사합니다. 실제 손동작 충돌을 검증한 결과가 아닙니다.':phoneInput?`${link.roomId==='room-2'?'방 2':'방 1'} C0 폰 좌표 · 동일 프레임의 서버 중계 영상으로 2D 타격합니다. PC 재추론과 실제 깊이 계산은 하지 않습니다.`:'화면상 2D 판정입니다. 실제 깊이를 측정하지 않습니다. 폰 송신·신호 서버·추적 모듈 연결이 필요합니다.';
   if(view?.buildingId===ANALYTIC_ID)$('scope').textContent='미승인 실험용 QA 후보입니다. 실제 게임·모바일 사용 검증 전입니다. '+$('scope').textContent;
-  $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?'건물이 부서졌습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
+  const awaitingSessionFrame=now<sessionFramePendingUntil&&SINGLE_GATES.every(key=>game.gates[key]===true);
+  $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?awaitingSessionFrame?'게임 시작 후 첫 손목 입력을 기다립니다.':'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?'건물이 부서졌습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
   $('performance').textContent=`화면 ${renderFps.toFixed(0)} fps · 정합 프레임 ${coordinator.stats.processed} · 폐기 ${coordinator.stats.dropped} · 로그 손실 ${logs.dropped}`;
 }
 function frame(now){

@@ -1,0 +1,7 @@
+/* Additions on top of ../mono3d/style.css for the 3-camera phone page. */
+.seg + .seg { margin-top: 8px; }
+.cams { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; }
+.cams span { padding: 3px 9px; border-radius: 999px; font-size: .85rem; background: rgba(255,255,255,.08); color: var(--muted); }
+.cams span.ok { background: rgba(34,197,94,.18); color: var(--ok); }
+.cams span.warn { background: rgba(245,158,11,.18); color: var(--warn); }
+.cams span.me { outline: 1px solid var(--fg); }

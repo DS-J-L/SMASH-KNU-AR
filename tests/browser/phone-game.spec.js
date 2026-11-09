@@ -33,9 +33,16 @@ test(`${roomId}: phone wrists drive the team game and server score; stop and rec
       await expect(phone.locator('#room-status')).toContainText('입장 완료');
     }
     await expect(page.locator('#start')).toBeEnabled();
+    await page.evaluate(()=>{
+      window.startNotices=[];
+      window.noticeObserver=new MutationObserver(()=>window.startNotices.push(document.querySelector('#status').textContent));
+      window.noticeObserver.observe(document.querySelector('#status'),{childList:true,subtree:true,characterData:true});
+    });
     await page.locator('#start').click();
     await expect.poll(()=>page.evaluate(()=>singleCameraMonitor.snapshot().phase)).toBe('playing');
     await expect.poll(()=>page.evaluate(()=>singleCameraMonitor.snapshot().frameStats.processed)).toBeGreaterThan(5);
+    await expect(page.locator('#status')).toHaveText('손목 타격 이벤트를 기다립니다.');
+    expect(await page.evaluate(()=>{window.noticeObserver.disconnect();return window.startNotices.filter(text=>text.includes('입력이 끊겼습니다'));})).toEqual([]);
     const point=await page.evaluate(()=>{
       const triangles=singleCameraMonitor.getTarget().triangles;
       const t=triangles.reduce((a,b)=>{
@@ -66,6 +73,13 @@ test(`${roomId}: phone wrists drive the team game and server score; stop and rec
     await expect.poll(()=>page.evaluate(()=>singleCameraMonitor.snapshot().phase)).toBe('playing');
     await cameras.at(-1).pages()[0].getByRole('button',{name:'퇴장 · 카메라 끄기'}).click();
     await expect.poll(()=>page.evaluate(()=>singleCameraMonitor.snapshot().phase)).toBe('ended');
+    if(roomId==='room-1'){
+      // Losing C2 stops the game, but C0 video is still genuinely live.
+      await expect(page.locator('#video-state')).toHaveText('수신 중');
+      await cameras[0].pages()[0].getByRole('button',{name:'퇴장 · 카메라 끄기'}).click();
+    }
+    await expect(page.locator('#video-state')).toHaveText('연결 끊김');
+    await expect(page.locator('#start')).toBeDisabled();
     expect(errors).toEqual([]);
   }finally{for(const context of cameras)await context.close();}
 });

@@ -4,7 +4,8 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>방 선택 · 카메라 입장</title>
   <link rel="stylesheet" href="/shared/styles.css">
-  <script type="module" src="/camera/room/app.js?v=phone-game-2"></script>
+  <link rel="stylesheet" href="/camera/room/marker-guide.css?v=3">
+  <script type="module" src="/camera/room/app.js?v=camera-fullscreen-1"></script>
 </head>
 <body><main>
   <p class="eyebrow">SMASH-KNU-AR · CAMERA ROOMS</p>
@@ -26,7 +27,20 @@
   <p id="peer-status" class="muted">PC 연결 대기</p>
   <p id="send-clock" class="muted" aria-label="이 기기의 전송 준비 시각">전송 준비 시각: 대기</p>
   <p id="pose-status" role="status">손목 인식 대기</p>
-  <div class="stage"><video id="preview" autoplay muted playsinline aria-label="송신 카메라 미리보기"></video><canvas id="pose-overlay" aria-hidden="true"></canvas></div>
+  <label class="marker-guide-control"><input id="marker-guide-toggle" type="checkbox" checked> 마커 위치 안내 표시</label>
+  <div id="preview-stage" class="stage">
+    <video id="preview" autoplay muted playsinline aria-label="송신 카메라 미리보기"></video>
+    <canvas id="pose-overlay" aria-hidden="true"></canvas>
+    <div id="marker-guide" class="marker-guide" aria-hidden="true">
+      <svg id="marker-guide-projection" viewBox="0 0 640 480">
+        <polygon id="marker-guide-outline"></polygon>
+        <path id="marker-guide-cross"></path>
+        <text id="marker-guide-label" text-anchor="middle">바닥 QR · 20 × 20cm</text>
+      </svg>
+    </div>
+    <button id="preview-fullscreen" class="preview-fullscreen" type="button" aria-controls="preview-stage" aria-pressed="false">카메라 전체화면</button>
+  </div>
+  <p class="marker-guide-help">폰 높이 1m · 수평 촬영 · 정면 바닥 2.5m 지점의 20 × 20cm QR 기준입니다. 후면 1배 카메라 화각 약 85°를 가정한 참고선으로, 실제 폰·렌즈·기울기에 따라 달라집니다. 자동 인식·보정은 아직 하지 않습니다.</p>
   <p class="muted">전신 22개와 머리 위치 1개를 표시·전송합니다. 얼굴 세부 점이나 표정 정보는 보내지 않습니다. 방 1은 서버 3D 손목 입력에 연결하고, 방 2는 별도 C0 입력으로 2D 게임을 진행합니다.</p>
   <nav><a href="/monitor/">PC 모니터</a><a href="/camera/">기존 손목 추출 화면</a></nav>
 </main></body></html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>카메라 3대 3D 시험</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../mono3d/style.css?v=20261109-4">
+  <link rel="stylesheet" href="./phone.css?v=20261109-6">
+</head>
+<body>
+  <canvas id="view" width="640" height="480" aria-label="카메라 화면"></canvas>
+
+  <header id="topbar">
+    <button id="back" class="icon" aria-label="이전 단계" disabled>‹</button>
+    <ol id="steps" aria-label="진행 단계">
+      <li data-step="camera">카메라</li>
+      <li data-step="place">고정</li>
+      <li data-step="corners">모서리</li>
+      <li data-step="send">보내기</li>
+    </ol>
+    <button id="settingsBtn" class="icon" aria-label="고급 설정">⚙</button>
+  </header>
+
+  <p id="banner" class="banner" hidden></p>
+  <div id="hud" hidden><pre id="result">—</pre></div>
+
+  <section id="sheet" class="sheet">
+    <button id="sheetHandle" class="handle" aria-label="안내 접기/펼치기"><span></span></button>
+
+    <div class="panel" data-panel="camera">
+      <h2>1. 카메라 번호와 방향</h2>
+      <p>폰 3대가 같은 바닥 마커를 보고 각자 위치를 계산합니다. 서버가 세 화면의 관절을 합쳐 <b>실제 3D</b>를 구합니다. 폰마다 <b>다른 번호</b>를 고르세요.</p>
+      <div class="seg" role="radiogroup" aria-label="카메라 번호">
+        <button class="slotBtn segBtn on" data-slot="C0" role="radio" aria-checked="true">C0</button>
+        <button class="slotBtn segBtn" data-slot="C1" role="radio" aria-checked="false">C1</button>
+        <button class="slotBtn segBtn" data-slot="C2" role="radio" aria-checked="false">C2</button>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="카메라 방향">
+        <button class="faceBtn segBtn on" data-facing="environment" role="radio" aria-checked="true">후면 카메라</button>
+        <button class="faceBtn segBtn" data-facing="user" role="radio" aria-checked="false">전면 카메라</button>
+      </div>
+      <details>
+        <summary>해상도·모델</summary>
+        <div class="row">
+          <label>해상도 <select id="resolution"><option value="1280x720">1280×720</option><option value="640x480">640×480</option><option value="1920x1080">1920×1080</option></select></label>
+          <label>모델 <select id="model"><option value="full">full(정확)</option><option value="lite">lite(빠름)</option></select></label>
+        </div>
+      </details>
+      <button id="start" class="primary">카메라 켜기</button>
+    </div>
+
+    <div class="panel" data-panel="place" hidden>
+      <h2>2. 폰 고정하고 마커 보이기</h2>
+      <ol class="todo">
+        <li>폰을 고정하세요. 사람이 설 자리 기준으로 폰끼리 <b>60~120°</b> 벌려 두세요(예: 앞, 앞-왼쪽, 왼쪽 옆). <b>서로 마주보게(180°) 두면 앞뒤 거리를 못 잽니다.</b></li>
+        <li>마커 자리가 <b>건물</b>입니다. 사람은 마커 위가 아니라 <b>옆</b>(50cm 이상 떨어져)에 서서 휘두릅니다.</li>
+        <li>바닥 마커가 화면에 크게 보이게 하세요. 마커 무늬로 방향을 읽으므로 <b>무늬가 또렷해야</b> 합니다.</li>
+        <li>이 폰의 높이를 재서 넣으세요.</li>
+      </ol>
+      <div class="row">
+        <label>폰 높이(m) <input id="cameraHeight" type="number" value="1.0" step="0.01" min="0.1" inputmode="decimal"></label>
+        <label>마커 한 변(cm) <input id="markerCm" type="number" value="20" step="0.1" min="1" inputmode="decimal"></label>
+      </div>
+      <p id="savedCalib" class="hint" hidden></p>
+      <div class="row">
+        <button id="useSaved" class="secondary" hidden>저장된 보정 사용</button>
+        <button id="tapCorners" class="primary">화면 멈추고 모서리 찍기</button>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="corners" hidden>
+      <div id="tapPrompt">
+        <p class="big"><b id="cornerNo">1/4</b> 마커 검은 사각형의 <span id="cornerName">첫 번째</span> 모서리를 누르세요</p>
+        <p class="hint">네 모서리를 <b>아무 순서로</b> 누르면 됩니다. 마커가 어느 쪽을 보는지는 무늬로 읽습니다.</p>
+        <svg class="cornerMap" viewBox="0 0 120 70" aria-hidden="true">
+          <polygon points="35,10 85,10 100,60 20,60" class="mk"/>
+          <circle id="c0" cx="35" cy="10" r="6"/><circle id="c1" cx="85" cy="10" r="6"/>
+          <circle id="c2" cx="100" cy="60" r="6"/><circle id="c3" cx="20" cy="60" r="6"/>
+          <text x="60" y="44" text-anchor="middle">마커</text>
+        </svg>
+        <p class="hint">누른 채로 움직이면 확대경이 나옵니다. 손을 떼는 위치가 찍힙니다.</p>
+        <div class="row">
+          <button id="undoCorner" class="secondary">하나 지우기</button>
+          <button id="cancelCorners" class="secondary">취소</button>
+        </div>
+      </div>
+      <div id="cornerDone" hidden>
+        <h2>초록 사각형이 마커와 겹치나요?</h2>
+        <p class="hint">빨강 = 마커 오른쪽(+X), 초록 = 마커 앞쪽(+Y). 세 폰 모두 같은 방향을 가리켜야 합니다.</p>
+        <pre id="calibOut">—</pre>
+        <div class="row">
+          <button id="retryCorners" class="secondary">다시 찍기</button>
+          <button id="toSend" class="primary">맞아요, 보내기 시작</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="send" hidden>
+      <h2>3. 보내는 중 <small id="slotLabel">C0</small></h2>
+      <p class="live"><span id="linkStatus">서버에 연결 중…</span></p>
+      <p id="cams" class="cams"></p>
+      <p class="hits">건물 타격 <b id="hits">0</b>회</p>
+      <p class="hint">PC에서 <b>/test/multi3d/view.html</b>을 열면 세 영상과 3D를 함께 봅니다. 노란 기둥(건물)과 손목 점은 서버가 세 화면을 합친 결과를 이 화면에 다시 그린 것입니다.</p>
+      <div class="row">
+        <button id="redoCorners" class="link">마커 보정 다시</button>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="settings">
+    <form method="dialog">
+      <h2>고급 설정</h2>
+      <h3>렌즈(화각)</h3>
+      <label class="check"><input id="autoFov" type="checkbox" checked> 폰 높이에 맞춰 화각 자동 계산</label>
+      <label>화각(대각, °) <input id="fov" type="number" value="80" step="0.5" min="30" max="130" inputmode="decimal"></label>
+      <h3>화면</h3>
+      <label class="check"><input id="mirror" type="checkbox"> 좌우 반전해서 보기 (계산에는 영향 없음)</label>
+      <div class="row">
+        <button id="clearAll" type="button" class="secondary danger">저장된 보정 지우고 처음부터</button>
+        <button value="close" class="primary">닫기</button>
+      </div>
+    </form>
+  </dialog>
+  <script>
+    window.addEventListener('error', event => {
+      if (window.__multi3dReady) return;
+      const b = document.getElementById('banner');
+      b.textContent = `페이지를 불러오지 못했습니다: ${event.message || '스크립트 오류'}. 브라우저 캐시를 지우고 새로고침하세요.`;
+      b.hidden = false;
+    }, true);
+  </script>
+  <script type="module" src="./phone.js?v=20261109-6"></script>
+</body>
+</html>
