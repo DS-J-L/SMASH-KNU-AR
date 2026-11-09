@@ -36,7 +36,7 @@
 - `role=phone&camera=C0|C1|C2`: 번호마다 폰 하나만 받는다. 새 폰이 연결되면 이전 폰을 끊는다.
   - 폰이 보내는 것:
     - `multi3d_calib`: `image`, `K{fx,fy,cx,cy}`, `R`(행 우선 9개), `t`, `C`, `marker_side_m`. 바뀔 때만 보낸다.
-    - `multi3d_frame`: `landmarks` 33×[x,y,visibility](0~1 정규화) 또는 null, 약 30회/초.
+    - `multi3d_frame`: `landmarks` 0~1로 정규화한 `[x,y,visibility]` 행 33개 또는 null, 약 30회/초.
     - `multi3d_jpeg`: 폭 360px.
   - 서버는 회전행렬·크기·형식을 검사하고, 512KB를 넘으면 거부한다.
 - `role=viewer`: `multi3d_config{building}`, `multi3d_reset_hits`를 보낼 수 있다. 늦게 들어와도 마지막 보정·영상·결과를 받는다.
