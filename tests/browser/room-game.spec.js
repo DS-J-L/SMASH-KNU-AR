@@ -61,7 +61,10 @@ async function freshVideos(page) {
 
 test('room buttons require PC entry and fresh video before starting',async({page})=>{
   const server=await setup(page);
-  await expect(page.locator('.room-cards a')).toHaveCount(2);
+  const rooms=page.getByRole('region',{name:'방 선택'});
+  for(const roomId of ['room-1','room-2']){
+    await expect(rooms.getByRole('link',{name:`${roomId} PC 입장`,exact:true})).toHaveAttribute('href',`/monitor/${roomId}/`);
+  }
   await expect(page.locator('#game-start')).toHaveCount(0);
   await page.getByRole('link',{name:'room-2 PC 입장'}).click();
   await expect(page).toHaveURL('https://room-ui.test/monitor/room-2/');

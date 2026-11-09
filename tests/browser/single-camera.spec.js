@@ -4,11 +4,13 @@ const snapshot=page=>page.evaluate(()=>window.singleCameraMonitor.snapshot());
 async function open(page){await page.goto('/monitor/single/');await expect.poll(async()=>(await snapshot(page)).sceneReady).toBe(true);}
 async function synthetic(page){await open(page);await page.locator('#mode').selectOption('synthetic');await expect(page.locator('#start')).toBeEnabled();}
 
-test('single live entry remains gated when server and pose adapter are missing, leaves multiview scaffold unchanged',async({page,request})=>{
+test('single live entry stays gated without a control link or pose adapter and the server stays healthy',async({page,request})=>{
   await open(page);await expect(page.locator('#start')).toBeDisabled();await expect(page.locator('#pose-state')).toContainText('모듈 연결 대기');
   await page.locator('#connect').click();await expect(page.getByRole('status')).toContainText('신호 서버가 아직');
   expect(await snapshot(page)).toMatchObject({source:'live',phase:'idle',score:0,fragmentCount:0});
-  const health=await request.get('/api/health');expect((await health.json()).stage).toBe('scaffold');
+  const health=await request.get('/api/health');
+  await expect(health).toBeOK();
+  expect(await health.json()).toMatchObject({status:'ok',service:'SMASH-KNU-AR',stage:'development'});
 });
 test('synthetic screen event fractures 96 shards once, three clean restores with distinct sessions',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));await synthetic(page);

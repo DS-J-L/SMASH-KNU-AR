@@ -6,9 +6,9 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-10 00:51 KST |
-| 현재 작업·상태 | PR #10 main 머지 완료, PR #11 충돌 해소·통합 검증 완료 |
-| 마지막 확인된 완료 | 3D 시험 및 IT1 QA 통합에서 Python 162개·Node 193개, 빌드 3개 확인 |
+| 마지막 갱신 | 2026-11-10 00:57 KST |
+| 현재 작업·상태 | 로비·단일 PC 브라우저 회귀 2건 수정 및 전체 자동 검증 완료. PR 검토 대기 |
+| 마지막 확인된 완료 | 브라우저 46개·Python 162개·Node 193개 통과. 빌드 3개와 기존 에셋·문서 검사 완료 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
 | 남은 일·미검증 | 실폰/실제 모델·소리 청취·성능/장시간·실측/3D·C0/AR·팀별 인수/공통Phase 확인 |
 | 다음 한 단계 | 실제 폰 1대 및 3대로 3D 시험, 실측·동기화 검증 |
@@ -700,3 +700,18 @@
 - 기존 브라우저는 44/46 통과. 실패한 로비 링크 개수와 health stage 기대값은 시작 당시 main에서도 재현했다. #11에 보고된 먼지 효과 시험은 이번 통합 실행에서 통과했다.
 - 입력/한계: 합성 관측·canvas RTC·모의 폰 손목·키보드와 정적 에셋 확인. 이번 머지 후보에서 실제 폰·replay·AR·촬영 시각 정렬·정량 성능·장시간은 미검증이다. 실기기 기준이 남아 계획 체크 및 공통 Phase 판정을 유지한다.
 - 다음 / 인계: 정경호는 MONO3D_TEST.md 및 MULTI3D_TEST.md 순서로 실폰 재시험과 실측/동기화. 이동수는 IT1_ANALYTIC_QA.md의 QA 경계 유지 및 실제 연속 충돌 검증. PR #11 최종 머지 SHA는 GitHub PR 결과와 로컬 종료 기록에 남긴다.
+
+### 2026-11-10 00:53 KST — 기존 브라우저 테스트 2건 검토 시작
+
+- 담당 / 기록자: PM·공통 검증 / Codex. 연결 기준: PM_plan 5절 P5 원인별 회귀 검증. 개발 Phase 통과와 별개다.
+- 읽은 자료: PM 계획·PM 기록의 #10/#11 검증, 팀 현황, 기록 양식, pr-workflow.
+- 목표·완료 기준: main b88e57c의 로비 링크와 단일 PC/health 단언 실패를 재현하고 현재 계약에 맞춰 수정한다. 전체 브라우저·Node·Python, 빌드·에셋·문서 검사 후 작업 브랜치에서 PR을 올린다.
+
+### 2026-11-10 00:57 KST — 로비·단일 PC 브라우저 회귀 수정 및 재검증 완료
+
+- 담당 / 기록자: PM·공통 검증 / Codex. PM_plan 5절 P5의 원인별 회귀 검증에 연결한다.
+- 원인: 기준 main b88e57c에서 두 실패를 재현했다. 로비의 공용 .room-cards 선택자는 PC 입장 2개뿐 아니라 폰 게임 2개·3D 시험 4개를 포함해 총 8개를 셌다. /api/health는 서버 변경 7d4c5b1 이후 development를 반환하지만 단일 PC 시험이 scaffold를 기대했다.
+- 수정 파일: tests/browser/room-game.spec.js는 방 선택 영역의 정확한 PC 입장 링크와 각 목적지를 검사한다. tests/browser/single-camera.spec.js는 시작 잠금·입력 안내를 유지하며 HTTP 성공과 현재 헬스 응답을 확인한다.
+- 검증: 수정 전 대상 2개 실패, 수정 후 2/2. Windows Chromium(Playwright 1.64.1, D3D11)의 playwright.single.config.js 전체 46/46, Python pytest 162/162, Node 단일 71·파편 83·루트 39/39. npm run build:all, validate:assets, validate:enhancements, tools/check_scaffold.py(JSON6·Markdown55), git diff --check 통과. 세 배포 폴더는 다시 빌드한 뒤 Git diff가 비어 있음을 확인했다.
+- 입력·한계: 루프백 서버, 합성 영상/손목 및 모의 연결, 키보드 데모. 이번 범위의 실제 폰·녹화 재생·AR·장시간은 미검증이다. 공통 Phase·계획 체크를 유지한다.
+- 다음 / 인계: fix/browser-regression-expectations에서 PR 검토. 관련 팀 현황은 공통 운영 행에 기록한다.
