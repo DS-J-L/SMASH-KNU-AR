@@ -6,6 +6,7 @@ import { VideoReceiver } from './video-receiver.js';
 import { ControlLink } from './control-link.js';
 import { FractureView } from './fracture-view.js';
 import { LogBuffer } from './log-buffer.js';
+import { ANALYTIC_ID, requestedSinglePackage } from '../game/package-selection.js';
 import {RoomInputLink, PairedReceiver} from '../phone-game/input.js';
 import {attachHitDetector} from './hit-detector.js';
 import {createHitSound} from './hit-sound.js';
@@ -20,9 +21,9 @@ let connectionState='disconnected',disposed=false,animationId;
 let sessionFramePendingUntil=0;
 const poseListeners=new Set();
 
-function log(entry){const record={...entry,observed_at_pc_ms:performance.now(),config_version:'single-monitor-1',model_version:'knu-it1-v3'};logs.add(record);if(source==='live'){link.send({type:'log',entry:record});if(entry.type==='ended')link.send({type:'end',session_id:entry.session_id,reason:entry.reason});}}
+function log(entry){const record={...entry,observed_at_pc_ms:performance.now(),config_version:'single-monitor-1',model_version:view?.buildingId??'knu-it1-v3'};logs.add(record);if(source==='live'){link.send({type:'log',entry:record});if(entry.type==='ended')link.send({type:'end',session_id:entry.session_id,reason:entry.reason});}}
 function makeGame(){return new GameController({source,onLog:log,
-  validateHit:e=>e.building_id==='knu-it1-v3'&&e.transform_version===transformVersion&&view.target.contains(e.hit_point_image_norm),
+  validateHit:e=>e.building_id===view?.buildingId&&e.transform_version===transformVersion&&view.target.contains(e.hit_point_image_norm),
   onHit:e=>view.destroy(e,transform)});}
 function context(){return {...binding,run_id:runId,transform_version:transformVersion};}
 function invalidate(){runId++;latest=null;lastFrameAt=-Infinity;coordinator?.configure(context());if(binding)game.bind(context());else game.clearInput();}
@@ -102,7 +103,7 @@ function syntheticFrame(){
 function setMode(next){
   endGame('mode_change');
   game.abort('mode_change');stop();coordinator.dispose();source=next;message=null;frameId=0;
-  game=makeGame();coordinator=makeCoordinator();view?.reset();
+  game=makeGame();coordinator=makeCoordinator();try{if(view?.reset())sceneReady=true;}catch(error){message='복원 준비 실패: '+error.message;sceneReady=false;}
   $('sample-hit').hidden=source!=='synthetic';$('connect').disabled=$('stop').disabled=source!=='live';
   if(source==='synthetic'){
     binding={room_id:'synthetic-local',stream_id:crypto.randomUUID(),server_epoch:'local-test'};
@@ -121,14 +122,14 @@ function endGame(reason){
   if(sessionId)link.send({type:'end',session_id:sessionId,reason});
   if(game.pendingRequest)link.cancelStart(game.pendingRequest.request_id);
 }
-function reset(){endGame('reset');game.reset();view?.reset();message=null;invalidate();gates();}
+function reset(){try{if(!view?.reset())return;sceneReady=true;endGame('reset');game.reset();message=null;invalidate();gates();}catch(error){sceneReady=false;message='복원 준비 실패: '+error.message;gates();}}
 function sampleHit(){
   if(source!=='synthetic'||!game.pose||!game.pairs.left_wrist)return;
   const area=t=>Math.abs((t[1][0]-t[0][0])*(t[2][1]-t[0][1])-(t[1][1]-t[0][1])*(t[2][0]-t[0][0]));
   const triangle=view.target.triangles.reduce((best,t)=>!best||area(t)>area(best)?t:best,null);if(!triangle)return;
   const point=[0,1].map(i=>(triangle[0][i]+triangle[1][i]+triangle[2][i])/3);
   return acceptHit({...context(),schema:'single_camera.v1-draft',type:'hit',session_id:game.sessionId,event_id:crypto.randomUUID(),
-    tracking_mode:'single_view_2d',source:'synthetic',task_type:'pilot',building_id:'knu-it1-v3',joint:'left_wrist',
+    tracking_mode:'single_view_2d',source:'synthetic',task_type:'pilot',building_id:view.buildingId,joint:'left_wrist',
     previous_frame_id:game.pairs.left_wrist[0],frame_id:game.pose.frame_id,hit_point_image_norm:point,speed_norm_per_s:1.2,hit_point_m:null,speed_mps:null});
 }
 function acceptHit(event){gates();return game.acceptHit(event,{visible:!document.hidden});}
@@ -138,13 +139,14 @@ function updateUi(now){
   $('source-badge').textContent=source==='synthetic'?'합성 입력 시험 · 실제 촬영 아님':'실제 입력 · '+(videoState==='live'?'영상 수신 중':'연결 대기');
   $('video-state').textContent=({live:'수신 중',connecting:'연결 중',stalled:'영상 끊김',failed:'연결 실패',disconnected:binding?'연결 끊김':'연결 전'})[videoState]??'대기';
   $('pose-state').textContent=source==='live'&&!processor?'추적 모듈 연결 대기':game.fresh()?'손목 수신 중':'손목 대기/만료';
-  $('scene-state').textContent=sceneReady?'IT1 · 준비됨':'준비 중';$('time').textContent=Math.ceil(s.remainingMs/1000)+'s';$('score').textContent=s.score;
-  $('fragments').textContent=(view?.dynamic.length??0)+' / 96';
-  $('start').disabled=!s.ready||!['idle','ready'].includes(s.phase);$('reset').disabled=!sceneReady;
+  $('scene-state').textContent=sceneReady?(view?.buildingId===ANALYTIC_ID?'IT1 · 미승인 QA 후보':'IT1 · 준비됨'):'준비 중';$('time').textContent=Math.ceil(s.remainingMs/1000)+'s';$('score').textContent=s.score;
+  $('fragments').textContent=(view?.dynamic.length??0)+' / '+(view?.runtime?.groupCount??96);
+  $('start').disabled=!s.ready||!['idle','ready'].includes(s.phase);$('reset').disabled=!view?.world;
   $('sample-hit').disabled=s.phase!=='playing'||!s.ready||!game.pairs.left_wrist||view?.target.active===false;
   $('mirror').disabled=$('rotation').disabled=['playing','starting'].includes(s.phase);
   $('overlay-label').textContent=source==='synthetic'?'합성 입력 · 화면 2D 시험':fresh?'1대 · 화면 2D 판정':'휴대폰 영상·손목 대기';
   $('scope').textContent=source==='synthetic'?'합성 손목/이벤트로 PC 화면과 게임을 검사합니다. 실제 손동작 충돌을 검증한 결과가 아닙니다.':phoneInput?`${link.roomId==='room-2'?'방 2':'방 1'} C0 폰 좌표 · 동일 프레임의 서버 중계 영상으로 2D 타격합니다. PC 재추론과 실제 깊이 계산은 하지 않습니다.`:'화면상 2D 판정입니다. 실제 깊이를 측정하지 않습니다. 폰 송신·신호 서버·추적 모듈 연결이 필요합니다.';
+  if(view?.buildingId===ANALYTIC_ID)$('scope').textContent='미승인 실험용 QA 후보입니다. 실제 게임·모바일 사용 검증 전입니다. '+$('scope').textContent;
   const awaitingSessionFrame=now<sessionFramePendingUntil&&SINGLE_GATES.every(key=>game.gates[key]===true);
   $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?awaitingSessionFrame?'게임 시작 후 첫 손목 입력을 기다립니다.':'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?'건물이 부서졌습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
   $('performance').textContent=`화면 ${renderFps.toFixed(0)} fps · 정합 프레임 ${coordinator.stats.processed} · 폐기 ${coordinator.stats.dropped} · 로그 손실 ${logs.dropped}`;
@@ -175,7 +177,7 @@ window.singleCameraMonitor=Object.freeze({
   getTarget:()=>view?structuredClone(view.target.snapshot()):null,
   snapshot:()=>({...game.snapshot(),sceneReady,videoState,frameStats:{...coordinator.stats},runId,transformVersion,...view?.snapshot()}),
 });
-async function init(){try{view=new FractureView($('scene'));await view.load();sceneReady=true;resize();gates();}catch(error){message='건물 준비 실패: '+error.message;console.error(error);view?.dispose();view=null;}requestAnimationFrame(frame);}
+async function init(){try{const params=new URL(location.href).searchParams;if(phoneInput&&requestedSinglePackage(params)===ANALYTIC_ID)throw new Error('analytic_qa_not_supported_for_phone_input');view=new FractureView($('scene'),{params});await view.load();if(disposed)return;sceneReady=true;resize();gates();}catch(error){message='건물 준비 실패: '+error.message;console.error(error);view?.dispose();view=null;}requestAnimationFrame(frame);}
 if(phoneInput){
   const back=$('room-back');back.href=`/monitor/${link.roomId}/`;back.textContent=`${link.roomId==='room-2'?'방 2':'방 1'} 카메라 테스트`;
   $('room-intro').textContent=link.roomId==='room-2'?'방 2는 C0 한 대만 서버 중계로 연결하세요. 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.':'방 1의 C0·C1·C2를 연결하고 C0는 서버 중계를 선택하세요. C0 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.';

@@ -1,0 +1,118 @@
+{
+  "schema": "it1-analytic-latest-main-validation-1",
+  "status": "BOUNDED_QA_CHECKPOINT_NOT_GAMEPLAY_ACCEPTED",
+  "base_commit": "db6ea7a41328124df0b5e8d6284a1d31fa291a51",
+  "test_suites": [
+    {
+      "command": "node --test tests/single/*.test.mjs",
+      "passed": 71,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "node --test tests/fracture/*.test.mjs",
+      "passed": 83,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "node --experimental-vm-modules --test tests/*.mjs",
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "python -m pytest -q",
+      "passed": 153,
+      "failed": 0,
+      "warning": "Starlette testclient httpx deprecation"
+    }
+  ],
+  "builds": {
+    "command": "npm run build:all",
+    "demo": "pass",
+    "single": "pass",
+    "phone_game": "pass",
+    "warning": "Existing Vite bundle-size warning retained"
+  },
+  "asset_validators": {
+    "npm run validate:assets": "pass",
+    "npm run validate:enhancements": "pass"
+  },
+  "browser": {
+    "engine": "Already-installed Playwright1.64.1 Chromium revision1248, headless SwiftShader",
+    "input_scope": [
+      "synthetic",
+      "keyboard_demo",
+      "canvas RTC",
+      "mock pose inputs",
+      "loopback HTTP/WS"
+    ],
+    "analytic_targeted": {
+      "passed": 5,
+      "failed": 0,
+      "destroy_reset_cycles_per_entrypoint": 3,
+      "ready_world": [
+        2,
+        165
+      ],
+      "destroyed_world": [
+        65,
+        165
+      ],
+      "dynamic_groups": 64,
+      "finite_and_restoration": true,
+      "unsupported_phone_selection_blocked_before_asset_load": true
+    },
+    "unchanged_baseline_suite": {
+      "passed": 44,
+      "failed": 2,
+      "total": 46
+    },
+    "unchanged_merged_suite": {
+      "passed": 43,
+      "failed": 3,
+      "total": 46
+    },
+    "baseline_failures_retained": [
+      "room-game expects2lobby links; current main has4",
+      "single-camera expects health.stage scaffold; current backend reports development"
+    ],
+    "merged_additional_failure": "dustVisible false at immediate post-Space read; destruction already succeeded(score100,96fragments). Initial cause not proven.",
+    "bounded_dust_followup": {
+      "unchanged_test": "1/1pass",
+      "timing_diagnostic": "1/1pass",
+      "host_key_to_snapshot_ms": 103,
+      "dust_visible_at_snapshot": true,
+      "dust_hidden_after_1400ms": true,
+      "reset_pass": true
+    },
+    "baseline_extra_capture_repeat": "One room1 synthetic hit repeat failed(score0) before screenshot; original baseline and merged full suite both phone rooms passed. Unresolved intermittent baseline evidence retained.",
+    "merged_server_log_warning": "3 Windows asyncio ConnectionResetError10054 callbacks during connection teardown",
+    "not_claimed": [
+      "all-browser-green",
+      "real phone",
+      "actual MediaPipe inference",
+      "AR",
+      "measured audio",
+      "long-duration",
+      "FPS",
+      "continuous collision guarantee"
+    ],
+    "review_report_sha256": "ba5422fcf8ddae2fc8f6513bb62094f2250483014d427ef55b207fdd78b4796b",
+    "historical_png_preserved": 220,
+    "final_source_mismatches": 0,
+    "owned_server_stopped": true,
+    "public_screenshots": {
+      "analytic-fracture-ready.png": "abbcea240c1f6c524313ec9c77e2162237f1d17c88c004f4319fce80473e8282",
+      "analytic-fracture-destroyed.png": "dcf9e8b5f894271fbeca0e1cae98563e6bc84161e11e927ff6ce91e3a0d85d46",
+      "analytic-single-ready.png": "4dc53f521d89990d9296363dcc20f5746f84d29f144c41317c4d43dd23c26d3e"
+    }
+  },
+  "command_setup_failures_retained": [
+    "Initial camera test omitted --experimental-vm-modules and failed6; corrected documented command passed6, then root suite27 passed.",
+    "Initial baseline pytest lacked ignored pinned MediaPipe files; official hash-verified preparation then153passed."
+  ],
+  "static_campus": "See ../campus-v71/ACCEPTANCE-v71-r3.json; not a gameplay test",
+  "offline_physics_boundary": "Original-pose gravity180-step pair accepted at handoff; translated-whole-fixture final addendum tracked separately; browser cycles do not expand that physics claim."
+}

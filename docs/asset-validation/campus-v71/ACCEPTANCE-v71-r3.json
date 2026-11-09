@@ -1,0 +1,116 @@
+{
+  "status": "PASS: independently accepted scoped Jinri v71 r3 checkpoint",
+  "date": "2026-11-09",
+  "native": {
+    "filename": "knu-campus-v71-jinri-nw-candidate-r3.blend",
+    "bytes": 22063400,
+    "sha256": "5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd"
+  },
+  "glb": {
+    "filename": "knu-campus-v71-jinri-nw-candidate-r3.glb",
+    "bytes": 68594784,
+    "sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd"
+  },
+  "backup": {
+    "filename": "knu-campus-v71-r3-restorable-review-backup.zip",
+    "bytes": 80309174,
+    "sha256": "cd470250f663b2fcbb735bf0bc25e76cabd5a6ddd9d7e7b90c4a1d2ab9c441db",
+    "crc_pass": true,
+    "manifest_data_members_verified": 42,
+    "total_members": 43,
+    "all_three_extracted_artifacts_exact": true,
+    "restored_native_actually_reopened_independently": true
+  },
+  "baseline_sha256": "a0c6ba3d55c94e98dd9903afb1c3a74e30fa00cb29ed32b0c32bd374f1fd23a4",
+  "counts": {
+    "objects": 1735,
+    "triangles": 902354,
+    "materials": 457,
+    "images": 50,
+    "collections": 19
+  },
+  "delta": {
+    "six_new_meshes_triangles": 2692,
+    "removed_placeholder_triangles": 264,
+    "net_triangles": 2428,
+    "core_material_polygon_indices": [
+      28,
+      30,
+      31,
+      34
+    ],
+    "removed_placeholder_islands": 22,
+    "retained_placeholder_islands": 133,
+    "new_materials": 5,
+    "new_images": 0
+  },
+  "checks": {
+    "original_objects_exact": 1727,
+    "all_12_IT1_objects_materials_images_exact": true,
+    "all_original_materials_images_worlds_collections_exact": true,
+    "scene_state_exact_except_six_root_members": true,
+    "retained_island_all_generic_attributes_exact": true,
+    "new_closed_outward_islands": 9,
+    "all_nine_actual_triangle_support_chains_to_core": true,
+    "unintended_collisions_containment_self_intersections": 0,
+    "positive_area_coplanar_overlaps": 0,
+    "all_eight_touched_meshes_zero_tolerance_native_export_equality": true,
+    "six_material_true_wire_views_reviewed": true
+  },
+  "independent_proofs": {
+    "fresh-scope-geometry-r3.json": {
+      "passed": true,
+      "sha256": "d4024c66d25e4eb93f196bc7fd33e97ea774b331b3023938533093f8db0f18ec"
+    },
+    "fresh-preservation-r3.json": {
+      "passed": true,
+      "sha256": "5a5f58a44ef325db22f122fcfe41ae21880da4b7d48e31baa3379432b3a6e8a3"
+    },
+    "fresh-export-r3.json": {
+      "passed": true,
+      "sha256": "d0b335e327a27f452517e1815f80a69bf9902cad87ecad426866478fd1e1c729"
+    },
+    "revision-applicability-r3.json": {
+      "passed": true,
+      "sha256": "402e5a5be75030b706aa8fab0dd27927e95c7290f9c4c80959b0dac0ea0f9bb6"
+    },
+    "visual-review-r3.json": {
+      "passed": true,
+      "sha256": "5bdb9b6ec2eae8798cc0fa7657495ee290095a8f28c8a97b136b53ca95121faa"
+    },
+    "resolved-skill-qa-r2.json": {
+      "passed": true,
+      "sha256": "d204ad8199e6bccd5362f4d70c8f07f094c8a0bd70a53f88c7f764d5e639250c"
+    },
+    "independent-backup-proof-r3.json": {
+      "passed": true,
+      "sha256": "cad7bf1bf2f1f36ce035cf5cc5481a979328261bdd74cb7f000a1acbf93bb0c6"
+    },
+    "restored-artifact-identity-r3.json": {
+      "passed": true,
+      "sha256": "4453ff5040d46c94995271354f9ed9c01c1b9129f8a673d9422c875f0519594a"
+    }
+  },
+  "correction": "R2 failed exact preservation solely for an automatic unrelated Roof305 packed-image filepath remap. R3 restored baseline metadata; every r2 object, mesh, material and world triangle is exact. Prior failure evidence remains intact.",
+  "builder_reimport_evidence": {
+    "glb-reimport-comparison-v71-r3.json": "f477833e00deef626c866c481f54e5068da1bc66e44feba26a3da4a8aff1d9b4",
+    "restored-artifact-reopen-proof-v71-r3.json": "ef7b46ada9f89894573547f007426a921a84b4b8f01814245fbe6e113c69cbe5",
+    "expected_terrain_losses": {
+      "green": -6,
+      "green.009": -1,
+      "green.016": -1,
+      "green.029": -2,
+      "green.039": -1
+    }
+  },
+  "limits": [
+    "Accepted only the registered NW JA/AB facade-feature refinement, not whole-building or whole-campus completion.",
+    "Southern AB/BC piloti remains held and inherited solid core there is not fully validated. Other eight footprint edges and inherited regular windows remain unverified.",
+    "Footprint, five-storey massing, roof, terrain and core geometry were preserved, not newly surveyed. Dimensions, colours and frame rhythm are approximate; glazing is opaque simplification.",
+    "Inherited Jinri core has no UV map; material-only scope preserves that baseline condition. All six added meshes have nonzero UV areas. Raw QA baseline UV failure is retained, with a scoped anchored QA pass and independent new-mesh UV checks.",
+    "Two planar cornice cap n-gons are accepted hard-surface topology; world ground elevation is intentionally site-relative.",
+    "Blender GLB import loses exactly the same eleven inherited terrain triangles on five named green objects. Native and decoded GLB remain 902354 triangles; imported count is 902343. No new target loss or blanket tolerance is accepted.",
+    "No structural engineering, gameplay, full-site or current-condition certification. Reference photographs are undated private evidence and are not bundled or republished."
+  ],
+  "reviewer_write_scope": "Only new independent-review evidence files were written. No model, protected v68 document, tracker, app or GitHub change performed by this audit."
+}

@@ -1,0 +1,67 @@
+{
+  "validator": "gltf-validator 2.0.0-dev.3.10",
+  "baseline_warning_equivalence": true,
+  "new_errors": 0,
+  "new_warnings": 0,
+  "results": [
+    {
+      "version": "v70",
+      "sha256": "100fe32391115659a68373050dbb79208217f578d0f84ba9a117bca428cd4b73",
+      "errors": 0,
+      "warnings": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "공대 12호관_408_exact_underside_prototype",
+          "primitive": 2,
+          "material": "C408E_20261109_west_e0_synthetic_red_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "약학대학.003",
+          "primitive": 3,
+          "material": "C118P_20261109_observed_e5_synthetic_brown_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "정보화본부.001",
+          "primitive": 2,
+          "material": "C110I_20261109_observed_front_synthetic_red_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        }
+      ],
+      "infos": 1513
+    },
+    {
+      "version": "v71",
+      "sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+      "errors": 0,
+      "warnings": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "공대 12호관_408_exact_underside_prototype",
+          "primitive": 2,
+          "material": "C408E_20261109_west_e0_synthetic_red_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "약학대학.003",
+          "primitive": 3,
+          "material": "C118P_20261109_observed_e5_synthetic_brown_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "mesh": "정보화본부.001",
+          "primitive": 2,
+          "material": "C110I_20261109_observed_front_synthetic_red_masonry",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations."
+        }
+      ],
+      "infos": 1526
+    }
+  ],
+  "disposition": "Three inherited normal-mapped primitives omit tangent attributes. Runtime-generated tangent-space portability remains a known baseline limitation, not a new Jinri defect or a warning-free whole-campus claim. UNUSED_OBJECT and IMAGE_NPOT_DIMENSIONS are informational."
+}

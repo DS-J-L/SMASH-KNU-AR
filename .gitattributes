@@ -15,3 +15,9 @@
 # Generated bundle preserves whitespace inside upstream GLSL template strings.
 web/monitor/fracture/assets/*.js -whitespace
 web/monitor/single/assets/*.js -whitespace
+web/monitor/phone-game/assets/*.js -whitespace
+
+# Preserve the exact accepted CRLF evidence bytes and their original SHA256.
+docs/asset-validation/campus-v71/ACCEPTANCE-v71-r3.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/asset-validation/campus-v71/INDEPENDENT-REVIEW-v71-r3.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/asset-validation/campus-v71/scope.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

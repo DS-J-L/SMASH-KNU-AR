@@ -1,0 +1,179 @@
+{
+  "schema": "it1-analytic-latest-main-identities-1",
+  "base_commit": "db6ea7a41328124df0b5e8d6284a1d31fa291a51",
+  "handoff_old_base": "7b0990a356d962e2c00c85524f3da86883a6a78e",
+  "handoff_zip_sha256": "df8322146e20c8ccf8bfb945814f16576570c86ce558bac84d9b52ee2857f992",
+  "frozen_handoff_unchanged": true,
+  "latest_main_single_three_way": true,
+  "additional_bounded_corrections": [
+    "Reject analytic QA selection on phone route before construction",
+    "Display unapproved QA warning only for analytic single",
+    "Make17compound tests self-contained",
+    "Add5selection/guard/label regressions"
+  ],
+  "protected_latest_main_paths_independently_unchanged": 49,
+  "original_installed_baseline_files_exact": 93,
+  "files": [
+    {
+      "path": "frontend/fracture/analytic-compound-contract.js",
+      "bytes": 11006,
+      "sha256": "37639078ddfd43283da4814a2781b2d744c8180041641b04af4e222a7bd08268"
+    },
+    {
+      "path": "frontend/fracture/main.js",
+      "bytes": 21895,
+      "sha256": "6916db37755664e99206f86c1a0c573b64bf0a383d5555284513cb61c6e397ee"
+    },
+    {
+      "path": "frontend/fracture/package-contract.js",
+      "bytes": 5080,
+      "sha256": "cb3c0e2907661d40a32ddea9372b1955f5f5f03be80f5d4818436e98aff0f950"
+    },
+    {
+      "path": "frontend/fracture/package-loader.js",
+      "bytes": 1946,
+      "sha256": "94e386a5719ecc1ff79c93e76144bff2fca184dea10a6e9e99ebc65b97eec109"
+    },
+    {
+      "path": "frontend/game/analytic-intact-factory.js",
+      "bytes": 1755,
+      "sha256": "eae86c842516c4e5ff54f811aa67f9a261308721c8296bd56ae22a0e8c751507"
+    },
+    {
+      "path": "frontend/game/analytic-transforms.js",
+      "bytes": 478,
+      "sha256": "16332869f43b2e3e3e20492a7562e559fa8621860763b25b57f522c594aa7ec8"
+    },
+    {
+      "path": "frontend/game/dispose-roots.js",
+      "bytes": 677,
+      "sha256": "136e166bace96665608790fbacc5930202d5fcc29e1276f6e8862df0d8cbdfc1"
+    },
+    {
+      "path": "frontend/game/fixed-frame.js",
+      "bytes": 762,
+      "sha256": "e80b2a42f23be426a92ec2d381585f80da69f4118a7743f910479032d5ecd0d6"
+    },
+    {
+      "path": "frontend/game/fragment-bodies.js",
+      "bytes": 2167,
+      "sha256": "283bfb165c1e8f82fea8e35d555ee3ad4872052deec9f8ee1a846710e13d04eb"
+    },
+    {
+      "path": "frontend/game/package-helpers.js",
+      "bytes": 1138,
+      "sha256": "5fe241115f80188d873782e06a7528352cf76f54f3919650584e860fe3e90cf1"
+    },
+    {
+      "path": "frontend/game/package-lifecycle.js",
+      "bytes": 891,
+      "sha256": "d88858ce8a126d21d40143789959fb9962b03495c04a085e1884afffdef38da7"
+    },
+    {
+      "path": "frontend/game/package-runtime.js",
+      "bytes": 3635,
+      "sha256": "ab2e0211450fc26fd07ede3600354080a0425aa8f2e3833022affdea78e349ca"
+    },
+    {
+      "path": "frontend/game/package-selection.js",
+      "bytes": 1939,
+      "sha256": "acd4f585fc21059e072022f42362c6c81539832b9ead2e2a379ca391c1240658"
+    },
+    {
+      "path": "frontend/single/fracture-view.js",
+      "bytes": 6479,
+      "sha256": "9e1d096ca7b5856aa5abc35cbf042402ff85949252f9bae31ae551a476450983"
+    },
+    {
+      "path": "frontend/single/main.js",
+      "bytes": 16947,
+      "sha256": "fc7cbee148f0a18355639659829aba0f45e8b230e8f9fb70a727934d72cff80e"
+    },
+    {
+      "path": "tests/fracture/canonical-boundary.test.mjs",
+      "bytes": 10114,
+      "sha256": "c26f2fe9bfe69f5172cc606e5fff7ad5f0bc9857c610fa2ddb87174f27cebe2b"
+    },
+    {
+      "path": "tests/fracture/compound-pure.test.mjs",
+      "bytes": 18685,
+      "sha256": "fa1352c6917d972bf094553d550878fcd48c877625375affba93fb33fef999fa"
+    },
+    {
+      "path": "tests/single/analytic-selection.test.mjs",
+      "bytes": 3039,
+      "sha256": "2f99b0bb50625f4941cdc9f8a48920e7d9c53e0fb3fdac99a2b0401a0b9a47df"
+    },
+    {
+      "path": "web/monitor/fracture/assets/index-CdzAySJA.js",
+      "bytes": 5195762,
+      "sha256": "5d2abf5480f074505054bebfc4fde2d0be2b9e55bbda4c364f195d3e6b54674f"
+    },
+    {
+      "path": "web/monitor/fracture/assets/index-K54p3q6p.css",
+      "bytes": 6124,
+      "sha256": "ca88ce11cd866408f26930410140e03b8b2a82c12ae3421af3ff19609c310098"
+    },
+    {
+      "path": "web/monitor/fracture/index.html",
+      "bytes": 3876,
+      "sha256": "6b6fa9bfc3c6c1849dd393818bc801b2511f923f30d3d9c2fe82b7a57f29d4a8"
+    },
+    {
+      "path": "web/monitor/phone-game/assets/index-BY9YeKIc.js",
+      "bytes": 5194768,
+      "sha256": "0e1dc401cd0007962e26789eb1cf8b395b1f79bc0bb8c27330879b5c9bb20efe"
+    },
+    {
+      "path": "web/monitor/phone-game/assets/index-CGddBM8h.css",
+      "bytes": 2753,
+      "sha256": "9ecae5084d3ad97552785c42e5de01f8bd06af803c1315d5413f2b39bcd8fc0a"
+    },
+    {
+      "path": "web/monitor/phone-game/index.html",
+      "bytes": 3182,
+      "sha256": "a00fb48037798d0a43ae36c374c2b900b7a829b192d8de4fb12918f225e8f1c9"
+    },
+    {
+      "path": "web/monitor/single/assets/index-BY9YeKIc.js",
+      "bytes": 5194768,
+      "sha256": "0e1dc401cd0007962e26789eb1cf8b395b1f79bc0bb8c27330879b5c9bb20efe"
+    },
+    {
+      "path": "web/monitor/single/assets/index-CGddBM8h.css",
+      "bytes": 2753,
+      "sha256": "9ecae5084d3ad97552785c42e5de01f8bd06af803c1315d5413f2b39bcd8fc0a"
+    },
+    {
+      "path": "web/monitor/single/index.html",
+      "bytes": 3038,
+      "sha256": "59c59dcd9db7ebf855a0d2d24a9d382120f567e4c38e12694d86865d539b43be"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-analytic-164-v1/colliders.json",
+      "bytes": 377200,
+      "sha256": "ad8e6ca943de6bb42eb09b7a063d58099a9e6fa54c6f83ba5c1d1d3770b6906a"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-analytic-164-v1/it1-418-analytic-colliders.glb",
+      "bytes": 181288,
+      "sha256": "4fcefe358c64a449c653e08321ba4b9d932b8f857dadc6c060cd646c00a57f55"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-analytic-164-v1/it1-418-fractured-render.glb",
+      "bytes": 3973956,
+      "sha256": "b0e7a966a41fcba450b48fc0af21df21d10f2ee36c14ae993fb692d479b104d2"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-analytic-164-v1/it1-418-intact-standalone.glb",
+      "bytes": 2009528,
+      "sha256": "e9b96d772c3c8bd59235b7d8aa2f19cb7dd590cd5849f1d32e67a95d8a83b768"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-analytic-164-v1/manifest.json",
+      "bytes": 1577,
+      "sha256": "5a5fa1164494396e61f4d99a24a3f796441c085fbb10409ab15ea39120ed515c"
+    }
+  ],
+  "new_test_line_ending_note": "The new selection test was explicitly normalized from CRLF to LF before final validation/publication. Runtime sources/builds were unchanged."
+}

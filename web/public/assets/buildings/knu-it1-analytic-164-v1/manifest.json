@@ -1,0 +1,43 @@
+{
+  "schema_version": "knu-analytic-app-1.0",
+  "building_id": "knu-it1-analytic-164-v1",
+  "display_name": "IT1 고도화 · 분석용 64그룹 후보",
+  "profile": "it1-64g-164c-13max-v1",
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "origin": "bottom_center",
+  "apply_additional_axis_rotation": false,
+  "scale_from_campus": 0.03277537445925333,
+  "dimensions_m": [
+    2.8102846145629883,
+    1.123178094625473,
+    0.8075733184814453
+  ],
+  "fragment_count": 64,
+  "collider_count": 164,
+  "maximum_children_per_group": 13,
+  "terrain_helper_count": 0,
+  "assets": {
+    "intact": "it1-418-intact-standalone.glb",
+    "fragments": "it1-418-fractured-render.glb",
+    "colliders": "it1-418-analytic-colliders.glb"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_m_s2": 9.81,
+    "physics_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "approval": "EXPERIMENTAL_NOT_GAMEPLAY_ACCEPTED",
+  "source_collider_manifest_sha256": "ad8e6ca943de6bb42eb09b7a063d58099a9e6fa54c6f83ba5c1d1d3770b6906a",
+  "source_asset_sha256": {
+    "it1-418-intact-standalone.glb": "e9b96d772c3c8bd59235b7d8aa2f19cb7dd590cd5849f1d32e67a95d8a83b768",
+    "it1-418-analytic-colliders.glb": "4fcefe358c64a449c653e08321ba4b9d932b8f857dadc6c060cd646c00a57f55",
+    "it1-418-fractured-render.glb": "b0e7a966a41fcba450b48fc0af21df21d10f2ee36c14ae993fb692d479b104d2"
+  },
+  "render_triangle_budget": {
+    "intact": 28452,
+    "fragments": 67688
+  },
+  "lineage": "Same frozen enhanced source, render and analytic target; no legacy previous_version assertion."
+}
