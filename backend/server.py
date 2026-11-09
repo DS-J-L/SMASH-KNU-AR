@@ -26,6 +26,8 @@ from .ingest.schemas import MessageError, parse_clock_pong, parse_json, parse_po
 from .runtime import Runtime
 from .rooms import Rooms, room_router
 from .qr_codes import qr_router
+from .test_mono3d import mono3d_router
+from .test_multi3d import multi3d_router
 from .settings import Settings, load_settings
 from .sync.clock import server_now_ms
 
@@ -246,6 +248,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     app.include_router(room_router(settings))
     app.include_router(qr_router())
+    app.include_router(mono3d_router())  # test-only: /test/mono3d/ phone -> PC viewer relay
+    app.include_router(multi3d_router())  # test-only: /test/multi3d/ 3 phones -> triangulation -> PC viewer
     @app.get('/monitor/room-1/', include_in_schema=False)
     @app.get('/monitor/room-2/', include_in_schema=False)
     async def room_page():

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>카메라 3대 3D PC 화면</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../mono3d/view.css?v=20261109-4">
+  <link rel="stylesheet" href="./view.css?v=20261109-6">
+</head>
+<body>
+  <header>
+    <h1>카메라 3대 3D <small>source=multi_view_test · 시각=서버 도착 · 시험용</small></h1>
+    <p id="status" class="status">서버에 연결 중…</p>
+    <button id="sound" type="button">소리 켜기</button>
+  </header>
+  <main class="multi">
+    <section class="pane cams">
+      <h2>폰 영상 <small>원 = 3D 결과를 이 카메라에 다시 그린 것</small></h2>
+      <div id="camList" class="camList"></div>
+    </section>
+    <section class="pane wide">
+      <h2>3D 보기 <small>끌어서 돌리기 · 휠로 확대 · 두 번 눌러 처음 시점</small></h2>
+      <div class="stage"><canvas id="scene" width="900" height="640" aria-label="위치 3D 보기"></canvas>
+        <div id="hitPop" class="pop" hidden>💥</div>
+      </div>
+    </section>
+    <aside class="pane side">
+      <div class="score"><span>건물 타격</span><b id="hits">0</b><button id="resetHits" type="button" class="small">0으로</button></div>
+      <dl id="info"></dl>
+      <form id="bld" class="bld">
+        <h3>건물 (마커 자리 기준, m)</h3>
+        <label class="check"><input id="bldAuto" type="checkbox" checked> 높이 = 허리(추정 키 × 0.6)</label>
+        <div class="grid">
+          <label>높이 <input id="bldH" type="number" value="0.95" step="0.05" min="0.1" disabled></label>
+          <label>폭 <input id="bldW" type="number" value="0.3" step="0.05" min="0.05"></label>
+          <label>깊이 <input id="bldD" type="number" value="0.3" step="0.05" min="0.05"></label>
+          <label>여유 <input id="bldM" type="number" value="0.05" step="0.01" min="0"></label>
+          <label>X <input id="bldX" type="number" value="0" step="0.05"></label>
+          <label>Y <input id="bldY" type="number" value="0" step="0.05"></label>
+        </div>
+      </form>
+      <p class="hint">폰에서 <b>/test/multi3d/</b>를 열고 C0·C1·C2를 하나씩 고릅니다. 2대 이상이 같은 관절을 보면 3D가 나옵니다. 폰 간 시각은 서버 도착 시각으로 맞추므로 빠른 동작에서는 위치가 조금 어긋날 수 있습니다.</p>
+    </aside>
+  </main>
+  <script type="module" src="./view.js?v=20261109-6"></script>
+</body>
+</html>

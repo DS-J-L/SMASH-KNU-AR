@@ -4,6 +4,74 @@ const join = document.querySelector('#join'), leave = document.querySelector('#l
 const camera = document.querySelector('#camera-id'), facing = document.querySelector('#facing');
 const status = document.querySelector('#room-status'), peer = document.querySelector('#peer-status');
 const preview = document.querySelector('#preview');
+const markerGuide = document.querySelector('#marker-guide');
+document.querySelector('#marker-guide-toggle').addEventListener('change', event => {
+  markerGuide.hidden = !event.target.checked;
+});
+function updateMarkerGuide() {
+  const width=preview.videoWidth||640, height=preview.videoHeight||480;
+  // Approximate pinhole camera: diagonal FOV 85 degrees, level optical axis,
+  // 1 m above the floor, 20 cm square centred 2.5 m forward. Not calibration.
+  const focal=Math.hypot(width,height)/(2*Math.tan(85*Math.PI/360));
+  const project=(x,z)=>[width/2+focal*x/z,height/2+focal*1/z];
+  const corners=[project(-.1,2.6),project(.1,2.6),project(.1,2.4),project(-.1,2.4)];
+  const [cx,cy]=project(0,2.5);
+  document.querySelector('#marker-guide-projection').setAttribute('viewBox',`0 0 ${width} ${height}`);
+  document.querySelector('#marker-guide-outline').setAttribute('points',corners.map(p=>p.join(',')).join(' '));
+  document.querySelector('#marker-guide-cross').setAttribute('d',`M ${cx-5} ${cy} h 10 M ${cx} ${cy-5} v 10`);
+  const label=document.querySelector('#marker-guide-label');
+  label.setAttribute('x',cx);label.setAttribute('y',corners[0][1]-12);
+  // Align the SVG with the actual object-fit:contain video area, including portrait streams.
+  const box=preview.getBoundingClientRect();
+  const scale=Math.min(preview.clientWidth/width,preview.clientHeight/height);
+  const drawnWidth=width*scale,drawnHeight=height*scale;
+  const stage=preview.parentElement.getBoundingClientRect();
+  Object.assign(markerGuide.style,{left:`${box.left-stage.left+preview.clientLeft+(preview.clientWidth-drawnWidth)/2}px`,
+    top:`${box.top-stage.top+preview.clientTop+(preview.clientHeight-drawnHeight)/2}px`,
+    width:`${drawnWidth}px`,height:`${drawnHeight}px`});
+}
+preview.addEventListener('loadedmetadata',updateMarkerGuide);
+new ResizeObserver(updateMarkerGuide).observe(preview);
+updateMarkerGuide();
+const previewStage=document.querySelector('#preview-stage');
+const fullscreenButton=document.querySelector('#preview-fullscreen');
+let nativeFullscreen=false,previewScrollY=0;
+function setPreviewExpanded(expanded) {
+  if(expanded)previewScrollY=window.scrollY;
+  previewStage.classList.toggle('preview-expanded',expanded);
+  document.body.classList.toggle('camera-expanded',expanded);
+  fullscreenButton.textContent=expanded?'전체화면 닫기':'카메라 전체화면';
+  fullscreenButton.setAttribute('aria-pressed',String(expanded));
+  if(!expanded){window.scrollTo(0,previewScrollY);fullscreenButton.focus({preventScroll:true});}
+  updateMarkerGuide();
+}
+async function closePreviewFullscreen() {
+  fullscreenButton.disabled=true;
+  try {
+    if(document.fullscreenElement===previewStage){
+      nativeFullscreen=false;
+      try {await document.exitFullscreen();} catch {nativeFullscreen=true;return;}
+    }
+    nativeFullscreen=false;setPreviewExpanded(false);
+  } finally {fullscreenButton.disabled=false;}
+}
+fullscreenButton.addEventListener('click',async()=>{
+  if(previewStage.classList.contains('preview-expanded')){await closePreviewFullscreen();return;}
+  setPreviewExpanded(true);
+  if(previewStage.requestFullscreen){
+    fullscreenButton.disabled=true;
+    try {await previewStage.requestFullscreen();nativeFullscreen=document.fullscreenElement===previewStage;}
+    catch { /* Keep the viewport-sized preview when native fullscreen is unavailable. */ }
+    finally {fullscreenButton.disabled=false;}
+  }
+});
+document.addEventListener('fullscreenchange',()=>{
+  if(document.fullscreenElement===previewStage)nativeFullscreen=true;
+  else if(nativeFullscreen){nativeFullscreen=false;setPreviewExpanded(false);}
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&previewStage.classList.contains('preview-expanded'))void closePreviewFullscreen();
+});
 const transport = document.querySelector('#transport');
 const roomId = document.querySelector('#room-id');
 const preferredRoom = new URLSearchParams(location.search).get('room');
