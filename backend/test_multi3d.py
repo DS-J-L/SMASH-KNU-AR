@@ -20,6 +20,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import math
 import statistics
 import time
 import uuid
@@ -382,13 +383,17 @@ def multi3d_router() -> APIRouter:
                     kind = m.get("type")
                     if role == "viewer":
                         if kind == "multi3d_config":
-                            b = m.get("building") or {}
+                            b = m.get("building", {})
+                            if not isinstance(b, dict):
+                                raise MessageError("building must be an object")
                             new = dict(hub.building)
                             for key in ("x", "y", "width", "depth", "margin"):
                                 if key in b:
                                     new[key] = float(b[key])
                             if "height" in b:
                                 new["height"] = None if b["height"] is None else float(b["height"])
+                            if not all(math.isfinite(value) for value in new.values() if value is not None):
+                                raise MessageError("building values must be finite")
                             if min(new["width"], new["depth"]) <= 0 or new["margin"] < 0 or (new["height"] is not None and new["height"] <= 0):
                                 raise MessageError("building sizes must be positive")
                             hub.building = new
@@ -416,7 +421,7 @@ def multi3d_router() -> APIRouter:
                         hub.broadcast(hub.jpegs[camera], latest_key=f"jpeg:{camera}")
                     else:
                         raise MessageError(f"unsupported: {kind}")
-                except (json.JSONDecodeError, MessageError, TypeError, ValueError) as exc:
+                except (TypeError, ValueError, OverflowError) as exc:
                     peer.send({"type": "error", "code": "bad_message", "detail": str(exc)[:200]})
         except WebSocketDisconnect:
             pass

@@ -43,6 +43,9 @@ def test_phone_messages_reach_viewer_and_late_viewer_gets_latest(client):
             frame = receive_until(viewer, "mono3d_frame")
             assert frame["hits"] == 2 and frame["source"] == "mono_approx"   # never relabelled as multi-view
 
+            phone.send_json({"type": []})
+            assert receive_until(phone, "error")["code"] == "unsupported_message"
+
             phone.send_text(json.dumps({"type": "pose_3d"}))
             assert receive_until(phone, "error")["code"] == "unsupported_message"
 

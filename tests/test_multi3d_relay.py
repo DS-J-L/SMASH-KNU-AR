@@ -182,3 +182,19 @@ def test_cameras_facing_each_other_are_reported(client):
         c0.send_text(json.dumps({"type": "multi3d_frame", "landmarks": None}))
         fused = until(viewer, lambda m: m["type"] == "multi3d_fused" and m["geometry_warnings"])
         assert fused["geometry_warnings"][0].startswith("C0-C1 facing:")
+
+
+def test_invalid_building_config_keeps_last_valid_value(client):
+    with client.websocket_connect(f"/ws/test/multi3d?role=viewer&key={KEY}") as viewer:
+        viewer.send_json({"type": "multi3d_config", "building": {"width": 0.8}})
+        fused = until(viewer, lambda m: m["type"] == "multi3d_fused")
+        assert fused["building"]["half"][0] == 0.4
+
+        for building in ({"width": "NaN"}, {"x": "Infinity"}, [0.8]):
+            viewer.send_json({"type": "multi3d_config", "building": building})
+            reply = until(viewer, lambda m: m["type"] in ("error", "multi3d_fused"))
+            assert reply["type"] == "error" and reply["code"] == "bad_message"
+
+        viewer.send_json({"type": "multi3d_reset_hits"})
+        fused = until(viewer, lambda m: m["type"] == "multi3d_fused")
+        assert fused["building"]["half"][0] == 0.4

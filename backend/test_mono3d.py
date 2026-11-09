@@ -90,7 +90,8 @@ def mono3d_router() -> APIRouter:
                 except json.JSONDecodeError:
                     peer.send({"type": "error", "code": "invalid_json"})
                     continue
-                if not isinstance(message, dict) or message.get("type") not in PHONE_TYPES:
+                kind = message.get("type") if isinstance(message, dict) else None
+                if not isinstance(kind, str) or kind not in PHONE_TYPES:
                     peer.send({"type": "error", "code": "unsupported_message"})
                     continue
                 message["source"] = "mono_approx"
