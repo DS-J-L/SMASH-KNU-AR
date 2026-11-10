@@ -48,7 +48,8 @@ test('T-SC-07 fast pass with both ends outside is one hit, entry point inside th
     assert.equal(hit[k], pose(3)[k]);
   }
   assert.equal(hit.building_id, 'knu-it1-v3');
-  assert.deepEqual(d.decisions, { left_wrist: 'hit', right_wrist: 'invalid_wrist' });
+  // No ankles in this PoseFrame (phone or adapter not sending them yet): both ankles are invalid, wrists still work.
+  assert.deepEqual(d.decisions, { left_wrist: 'hit', right_wrist: 'invalid_wrist', left_ankle: 'invalid_ankle', right_ankle: 'invalid_ankle' });
 });
 
 test('T-SC-07 miss, slow entry and resting inside never hit; re-entry needs an exit first', () => {
@@ -167,4 +168,53 @@ test('attachHitDetector does not send events while the game is not playing (time
   listener(pose(2, wrist(0.65, 0.5)));
   assert.equal(sent.length, 0);
   assert.deepEqual(attached.results.map((r) => r.reject_reason), ['not_playing_local']);
+});
+
+// Kicks (docs/FOOT_STRIKE.md): ankles arrive in pose.ankles with the same shape as pose.wrists.
+const feet = (left = missing, right = missing) => ({ ankles: { left_ankle: left, right_ankle: right } });
+
+test('kick: a fast ankle pass is one hit with joint left_ankle; resting or slow feet never hit', () => {
+  const d = detector();
+  const kick = run(d, [pose(1, missing, missing, feet(wrist(0.2, 0.6))), pose(2, missing, missing, feet(wrist(0.3, 0.6))),
+    pose(3, missing, missing, feet(wrist(0.65, 0.6)))]);
+  assert.deepEqual(kick.slice(0, 2), [null, null]);
+  assert.equal(kick[2].joint, 'left_ankle');
+  assert.ok(inside(kick[2].hit_point_image_norm, square));
+  assert.equal(kick[2].config_version, 'hit-2d-2');
+  assert.equal(d.decisions.left_ankle, 'hit');
+  assert.equal(d.decisions.left_wrist, 'invalid_wrist');
+  // A foot standing still inside the building after the kick does not hit again.
+  const rest = run(d, [pose(4, missing, missing, feet(wrist(0.5, 0.6))), pose(5, missing, missing, feet(wrist(0.52, 0.6)))]);
+  assert.deepEqual(rest, [null, null]);
+  assert.equal(d.decisions.left_ankle, 'disarmed');
+});
+
+test('kick: an entry fast enough for a wrist (0.65 diagonals/s) is too slow for an ankle', () => {
+  // 0.65 diagonals/s over 33 ms is 0.0268 of the 640 px width: 0.39 -> 0.4168 crosses x = 0.4.
+  const step = 0.65 * 0.033 * 800 / 640;
+  const d = detector();
+  const events = run(d, [
+    pose(1, wrist(0.39, 0.4), missing, feet(wrist(0.39, 0.6))),
+    pose(2, wrist(0.39 + step, 0.4), missing, feet(wrist(0.39 + step, 0.6))),
+  ]);
+  assert.equal(events[1].joint, 'left_wrist');
+  assert.equal(d.decisions.left_ankle, 'too_slow');
+  const strict = detector({ minAnkleSpeedNormPerS: 0.6 });
+  run(strict, [pose(1, missing, missing, feet(wrist(0.39, 0.6))), pose(2, missing, missing, feet(wrist(0.39 + step, 0.6)))]);
+  assert.equal(strict.decisions.left_ankle, 'hit');
+});
+
+test('kick and punch in one frame give one event, the earlier entry; the ankle path is broken by occlusion like a wrist', () => {
+  const d = detector();
+  const events = run(d, [
+    pose(1, wrist(0.2, 0.4), missing, feet(missing, wrist(0.35, 0.6))),
+    pose(2, wrist(0.45, 0.4), missing, feet(missing, wrist(0.65, 0.6))), // wrist enters at t≈0.8, ankle at t≈0.17
+  ]);
+  assert.equal(events[1].joint, 'right_ankle');
+  assert.equal(d.decisions.left_wrist, 'hit');
+  const e = detector();
+  const occluded = run(e, [pose(1, missing, missing, feet(wrist(0.66, 0.6))), pose(2, missing, missing, feet(missing)),
+    pose(3, missing, missing, feet(wrist(0.2, 0.6)))]);
+  assert.deepEqual(occluded, [null, null, null]);
+  assert.equal(e.decisions.left_ankle, 'baseline');
 });

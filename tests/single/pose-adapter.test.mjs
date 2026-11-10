@@ -8,10 +8,12 @@ const meta = (frame_id, observed_at_pc_ms = 1000 + frame_id) => ({
   capture_time: null, session_id: null, tracking_mode: 'single_view_2d', source: 'replay', task_type: 'pilot',
 });
 const image = () => ({ width: 640, height: 480, closed: 0, close() { this.closed++; } });
-const pose = (left, right) => {
+const pose = (left, right, ankles = {}) => {
   const landmarks = Array.from({ length: 33 }, () => ({ x: 0.5, y: 0.5, visibility: 0.9 }));
   landmarks[15] = left;
   landmarks[16] = right;
+  if ('left' in ankles) landmarks[27] = ankles.left;
+  if ('right' in ankles) landmarks[28] = ankles.right;
   return landmarks;
 };
 
@@ -51,26 +53,32 @@ test('wrist validity: detected, off frame, low visibility, non-finite and missin
   assert.equal(toWrist({ x: 0, y: 1, visibility: 0.5 }).valid, true);
 });
 
-test('PoseFrame keeps every frame field, adds both wrists and never touches the borrowed image', async () => {
-  const fake = fakePose({ results: [pose({ x: 0.3, y: 0.4, visibility: 0.95 }, { x: 0.7, y: 0.4, visibility: 0.2 })] });
+test('PoseFrame keeps every frame field, adds both wrists and ankles and never touches the borrowed image', async () => {
+  const fake = fakePose({ results: [pose({ x: 0.3, y: 0.4, visibility: 0.95 }, { x: 0.7, y: 0.4, visibility: 0.2 },
+    { left: { x: 0.35, y: 0.92, visibility: 0.8 }, right: { x: 0.6, y: 1.05, visibility: 0.9 } })] });
   let clock = 50;
   const adapter = createPoseAdapter({ loadPose: fake.loadPose, now: () => (clock += 7) });
   const frame = image();
   const result = await adapter.process(frame, meta(1));
-  assert.deepEqual({ ...result, wrists: undefined, inference: undefined }, { ...meta(1), wrists: undefined, inference: undefined });
+  assert.deepEqual({ ...result, wrists: undefined, ankles: undefined, inference: undefined }, { ...meta(1), wrists: undefined, ankles: undefined, inference: undefined });
   assert.deepEqual(result.wrists.left_wrist, { valid: true, image_norm: [0.3, 0.4], visibility: 0.95, reason: null });
   assert.deepEqual(result.wrists.right_wrist, { valid: false, image_norm: null, visibility: 0.2, reason: 'low_visibility' });
+  // MediaPipe 27/28: the subject's own left/right ankle. A foot below the frame edge is out_of_frame.
+  assert.deepEqual(result.ankles.left_ankle, { valid: true, image_norm: [0.35, 0.92], visibility: 0.8, reason: null });
+  assert.deepEqual(result.ankles.right_ankle, { valid: false, image_norm: null, visibility: 0.9, reason: 'out_of_frame' });
   assert.equal(result.inference.ended_at_pc_ms - result.inference.started_at_pc_ms, 7);
   assert.equal(result.inference.delegate, 'GPU');
   assert.equal(frame.closed, 0);
   assert.equal(fake.calls.resultsClosed, 1);
 });
 
-test('no person gives two not_detected wrists, not an error', async () => {
+test('no person gives not_detected wrists and ankles, not an error', async () => {
   const fake = fakePose({ results: [] });
   const result = await createPoseAdapter({ loadPose: fake.loadPose }).process(image(), meta(1));
   assert.equal(result.wrists.left_wrist.reason, 'not_detected');
   assert.equal(result.wrists.right_wrist.reason, 'not_detected');
+  assert.equal(result.ankles.left_ankle.reason, 'not_detected');
+  assert.equal(result.ankles.right_ankle.reason, 'not_detected');
 });
 
 test('MediaPipe timestamps stay strictly increasing across equal times, a new stream and a new run', async () => {
