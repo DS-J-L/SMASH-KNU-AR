@@ -1,0 +1,1064 @@
+{
+ "about": "Shared cases for backend/foot_strike.py and web/shared/foot-strike-3d.js (docs/FOOT_STRIKE.md). Box: 30 cm footprint at x=1.0, 0.95 m high. Default config.",
+ "cases": [
+  {
+   "name": "kick_hits_once_then_rests_inside",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.45,
+       -0.1,
+       0.1
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       -0.05,
+       0.35
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.97,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "already_inside"
+      }
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "walking_step_into_building_is_too_low",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.6,
+       0,
+       0.08
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.75,
+       0,
+       0.15
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.9,
+       0,
+       0.1
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "too_low"
+      }
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.92,
+       0,
+       0.3
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "already_inside"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "slow_raised_foot_is_too_slow",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.8,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 100,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.86,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "too_slow"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "planted_foot_in_building_blocks_the_kick",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       1.0,
+       0.05,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.3
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": true,
+      "decisions": {
+       "left_ankle": "baseline",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       1.0,
+       0.05,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       -0.05,
+       0.5
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": true,
+      "decisions": {
+       "left_ankle": "already_inside",
+       "right_ankle": "standing_in_building"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "kick_from_beside_the_building_is_not_blocked_by_the_mean_of_both_feet",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.72,
+       0,
+       0.08
+      ],
+      "right_ankle": [
+       0.75,
+       0,
+       0.3
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.72,
+       0,
+       0.08
+      ],
+      "right_ankle": [
+       1.0,
+       0,
+       0.5
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "fast_kick_through_the_building_between_frames_is_swept",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 60,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       1.3,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "swept"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "occlusion_gives_a_baseline_and_a_long_gap_is_not_a_kick",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": null
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "invalid"
+      }
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "baseline"
+      }
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 400,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "gap"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "cooldown_blocks_a_second_kick_within_300ms",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    },
+    {
+     "t_ms": 100,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 133,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "cooldown"
+      }
+     }
+    },
+    {
+     "t_ms": 400,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 433,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    }
+   ],
+   "hits": 2
+  },
+  {
+   "name": "only_the_kicking_foot_visible_uses_the_hips_outside",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": null,
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ],
+      "left_hip": [
+       0.45,
+       0,
+       0.9
+      ],
+      "right_hip": [
+       0.45,
+       0,
+       0.9
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "hips",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "invalid",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": null,
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ],
+      "left_hip": [
+       0.45,
+       0,
+       0.9
+      ],
+      "right_hip": [
+       0.45,
+       0,
+       0.9
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "hips",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "invalid",
+       "right_ankle": "hit"
+      }
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "only_the_kicking_foot_visible_uses_the_hips_inside",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": null,
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ],
+      "left_hip": [
+       1.0,
+       0,
+       0.9
+      ],
+      "right_hip": [
+       1.0,
+       0,
+       0.9
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "hips",
+      "standing_in_building": true,
+      "decisions": {
+       "left_ankle": "invalid",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": null,
+      "right_ankle": [
+       0.95,
+       0,
+       0.45
+      ],
+      "left_hip": [
+       1.0,
+       0,
+       0.9
+      ],
+      "right_hip": [
+       1.0,
+       0,
+       0.9
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "hips",
+      "standing_in_building": true,
+      "decisions": {
+       "left_ankle": "invalid",
+       "right_ankle": "standing_in_building"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "box_margin_widens_the_building",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ],
+    "margin": 0.05
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.7,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {},
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      }
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.4,
+       0.1,
+       0.08
+      ],
+      "right_ankle": [
+       0.82,
+       0,
+       0.4
+      ]
+     },
+     "expect": {
+      "hit": {
+       "right_ankle": "inside"
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      }
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "nothing_visible",
+   "box": {
+    "center": [
+     1.0,
+     0.0,
+     0.475
+    ],
+    "half": [
+     0.15,
+     0.15,
+     0.475
+    ]
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": null,
+      "right_ankle": null
+     },
+     "expect": {
+      "hit": {},
+      "support": null,
+      "standing_in_building": false,
+      "decisions": {
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      }
+     }
+    }
+   ],
+   "hits": 0
+  }
+ ]
+}

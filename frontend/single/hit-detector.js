@@ -1,16 +1,26 @@
 // K-SC-04: screen 2D hit test for the single-camera mode (docs/SINGLE_CAMERA_INTERFACES.md §4–5).
-// A hit is a wrist segment between two consecutive valid frames that enters the intact building's
-// projected triangles while moving fast enough. Depth is not measured; this is single_view_2d only.
+// A hit is a wrist or ankle segment between two consecutive valid frames that enters the intact
+// building's projected triangles while moving fast enough. Depth is not measured; this is single_view_2d
+// only. Ankles (kicks) come from pose.ankles, same shape as pose.wrists (docs/FOOT_STRIKE.md).
 export const HIT_CONFIG = Object.freeze({
-  config_version: 'hit-2d-1',
+  config_version: 'hit-2d-2',
   // Image diagonals per second. Starting values for the live pilot, not tuned on a real phone yet.
   minSpeedNormPerS: 0.5,
+  // Feet need a faster entry: a walking step also carries the foot into the building's lower edge.
+  minAnkleSpeedNormPerS: 0.8,
   // Same as the PC frame TTL: a longer gap is a tracking break, not one fast swing.
   maxGapMs: 200,
   cooldownMs: 300,
   minVisibility: 0.5,
 });
-const JOINTS = ['left_wrist', 'right_wrist'];
+export const WRIST_JOINTS = Object.freeze(['left_wrist', 'right_wrist']);
+export const ANKLE_JOINTS = Object.freeze(['left_ankle', 'right_ankle']);
+const JOINTS = [...WRIST_JOINTS, ...ANKLE_JOINTS];
+// Each joint reads its own field of the PoseFrame and has its own speed bar.
+const PART = Object.fromEntries([
+  ...WRIST_JOINTS.map((joint) => [joint, { field: 'wrists', invalid: 'invalid_wrist', speedKey: 'minSpeedNormPerS' }]),
+  ...ANKLE_JOINTS.map((joint) => [joint, { field: 'ankles', invalid: 'invalid_ankle', speedKey: 'minAnkleSpeedNormPerS' }]),
+]);
 const STREAM_KEYS = ['room_id', 'stream_id', 'run_id', 'transform_version', 'session_id'];
 
 const isNorm = (p) => Array.isArray(p) && p.length === 2 && p.every((v) => Number.isFinite(v) && v >= 0 && v <= 1);
@@ -95,7 +105,7 @@ export class HitDetector {
       this.stats.no_session = (this.stats.no_session ?? 0) + 1;
       return null;
     }
-    // Both wrists in one frame: the earlier entry wins, then the faster one. One event per frame.
+    // Several joints in one frame: the earlier entry wins, then the faster one. One event per frame.
     candidates.sort((a, b) => a.t - b.t || b.speed - a.speed);
     const hit = candidates[0];
     return {
@@ -125,18 +135,20 @@ export class HitDetector {
 
   step(joint, pose, target) {
     const state = this.joints[joint];
-    const wrist = pose.wrists?.[joint];
+    const part = PART[joint];
+    const observed = pose[part.field]?.[joint];
     const config = this.config;
-    if (!(wrist?.valid === true && isNorm(wrist.image_norm) && Number.isFinite(wrist.visibility) && wrist.visibility >= config.minVisibility)) {
+    if (!(observed?.valid === true && isNorm(observed.image_norm) && Number.isFinite(observed.visibility) && observed.visibility >= config.minVisibility)) {
       // Occlusion or a bad point breaks the trajectory; the next valid point is a baseline only.
+      // A PoseFrame without ankles (phone or adapter not sending them yet) lands here for both ankles.
       state.previous = null;
-      return { reason: 'invalid_wrist' };
+      return { reason: part.invalid };
     }
-    const current = { point: wrist.image_norm, frameId: pose.frame_id, at: pose.observed_at_pc_ms };
+    const current = { point: observed.image_norm, frameId: pose.frame_id, at: pose.observed_at_pc_ms };
     const previous = state.previous;
     state.previous = current;
     const inside = target ? insideAny(current.point, target.triangles) : false;
-    // Re-arming needs the wrist seen outside an active target, so a hand resting in the building after
+    // Re-arming needs the joint seen outside an active target, so a hand resting in the building after
     // a restore or start never hits by itself.
     const wasArmed = state.armed;
     state.armed = Boolean(target) && !inside;
@@ -150,9 +162,9 @@ export class HitDetector {
     const dx = (current.point[0] - previous.point[0]) * pose.image_width;
     const dy = (current.point[1] - previous.point[1]) * pose.image_height;
     const speed = Math.hypot(dx, dy) / Math.hypot(pose.image_width, pose.image_height) / (dt / 1000);
-    // A slow entry is not a strike; the wrist is inside now and must leave before it can hit.
+    // A slow entry is not a strike; the joint is inside now and must leave before it can hit.
     state.armed = false;
-    if (speed < config.minSpeedNormPerS) return { reason: 'too_slow' };
+    if (speed < config[part.speedKey]) return { reason: 'too_slow' };
     if (current.at < state.cooldownUntil) return { reason: 'cooldown' };
     state.cooldownUntil = current.at + config.cooldownMs;
     return { reason: 'hit', candidate: { joint, t: entry.t, point: entry.point, speed, previousFrameId: previous.frameId } };

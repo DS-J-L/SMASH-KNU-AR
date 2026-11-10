@@ -1,14 +1,16 @@
-// K-SC-03: MediaPipe wrists on frames the PC received (docs/SINGLE_CAMERA_INTERFACES.md §4–5).
+// K-SC-03: MediaPipe wrists and ankles on frames the PC received (docs/SINGLE_CAMERA_INTERFACES.md §4–5,
+// ankles for kicks: docs/FOOT_STRIKE.md).
 // The runtime and model are the pinned files /camera/ already serves, so phone and PC run the same build.
 export const POSE_MODULE_URL = '/camera/pose.js';
 export const MIN_VISIBILITY = 0.5;
 const LOAD_RETRY_MS = 5000;
-// MediaPipe 15/16 are the subject's own left/right on the un-mirrored frame.
-const JOINTS = { left_wrist: 15, right_wrist: 16 };
+// MediaPipe 15/16 and 27/28 are the subject's own left/right on the un-mirrored frame.
+const WRISTS = { left_wrist: 15, right_wrist: 16 };
+const ANKLES = { left_ankle: 27, right_ankle: 28 };
 
 const round = (value, digits) => Math.round(value * 10 ** digits) / 10 ** digits;
 
-// One wrist of a PoseFrame. Anything that is not a usable observation is valid=false with image_norm=null.
+// One wrist (or ankle) of a PoseFrame. Anything that is not a usable observation is valid=false with image_norm=null.
 export function toWrist(landmark, minVisibility = MIN_VISIBILITY) {
   if (!landmark) return { valid: false, image_norm: null, visibility: null, reason: 'not_detected' };
   const visibility = Number.isFinite(landmark.visibility) ? round(Math.min(Math.max(landmark.visibility, 0), 1), 3) : null;
@@ -24,9 +26,8 @@ export function toWrist(landmark, minVisibility = MIN_VISIBILITY) {
 // The coordinator matches the result to its frame by the meta fields, so they are passed through untouched.
 export function toPoseFrame(meta, result, inference) {
   const landmarks = result?.landmarks?.[0];
-  const wrists = {};
-  for (const [joint, index] of Object.entries(JOINTS)) wrists[joint] = toWrist(landmarks?.[index]);
-  return { ...meta, wrists, inference };
+  const pick = (joints) => Object.fromEntries(Object.entries(joints).map(([joint, index]) => [joint, toWrist(landmarks?.[index])]));
+  return { ...meta, wrists: pick(WRISTS), ankles: pick(ANKLES), inference };
 }
 
 export function createPoseAdapter({
