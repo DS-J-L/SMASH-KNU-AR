@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-10 16:30 KST — 11-09 실제 장비 시험 결과(사용자 보고) 기록, 발차기(발목) 판정 모듈 추가(PR 준비) |
-| 현재 Phase·작업 상태 | 단일 카메라 K-SC-03·04(PR #6)·K-SC-05(PR #7) main 반영. 11-09 정경호 PR #10 기준 실제 장비 시험(폰 1대·3대) 사용자 보고상 정상 동작. 팀 결정(11-09)에 따라 발목도 타격 관절로 추가 중: 김태이 파일만 구현, 연결은 정경호·이동수 요청. P1은 실기기 수치 기록 없음 |
-| 마지막 확인된 개발 완료 | `feat/foot-strike`: 2D 판정 발목(`hit-detector.js` `hit-2d-2`)·PC 추론 발목(`pose-adapter.js`)·3D 발차기 판정 `backend/foot_strike.py`·`web/shared/foot-strike-3d.js`와 공용 사례 12개. Node single 74/74, 3D JS 13/13, Python `tests` 176/176 (아래 11-10 기록) |
-| 현재 작업 | 발차기 판정 PR — 김태이가 직접 머지 |
+| 마지막 갱신 | 2026-11-10 17:40 KST — PR #13(발차기) 머지 기록, IT1 모델 모양 3D 타격 판정 모듈 추가(PR 준비) |
+| 현재 Phase·작업 상태 | 단일 카메라 K-SC-03·04(PR #6)·K-SC-05(PR #7)·발차기 판정(PR #13) main 반영. P4 착수: PR #10 3D 시험의 상자 대신 이동수 IT1 모델(`knu-it1-v3`) 모양으로 판정하는 모듈 구현(김태이 새 파일만, 연결은 정경호·이동수 요청). 11-09 실제 장비 시험 사용자 보고상 정상 |
+| 마지막 확인된 개발 완료 | `feat/model-strike-3d`: `web/shared/model-strike-3d.js`·`backend/model_strike.py`(IT1 파편 충돌체 96개 합집합, 마커 배치·손목/발목·파괴/복원), 공용 사례 13개. Python `tests` 197/197, JS single·3D 104/104 (아래 11-10 17:40 기록) |
+| 현재 작업 | IT1 모델 3D 타격 판정 PR — 김태이가 직접 머지 |
 | 남은 일·미검증 | 발차기: 실폰 시험·기준값(2D 발목 0.8, 3D 0.20 m·1.5 m/s) 조정, 정경호·이동수 연결. 11-09 시험 수치·로그 기록. 실폰에서 느린 통과·거부/중복 타격 무음·무점수, 반복 복원, 속도·cooldown·음량 튜닝, 장시간·지연. PC 추론 경로: 화면 등록 한 줄·전제 시험 2개(이동수 파일), Worker |
-| 다음 한 단계 | PR 머지 후 정경호(`game_pose.py`·`test_multi3d.py`·mono3d)·이동수(`controller.js`·`main.js`)에 [FOOT_STRIKE.md](../docs/FOOT_STRIKE.md) 4장 연결 요청 전달 → 실폰 발차기 시험 |
+| 다음 한 단계 | PR 머지 후 [MODEL_STRIKE_3D.md](../docs/MODEL_STRIKE_3D.md) 6장 연결(이동수 배치·화면, 정경호 서버·mono3d) → 실폰 3D 타격 시험 |
 | 막힌 점·인계 | 발차기 연결은 다른 사람 파일이라 김태이가 수정하지 않음: 정경호 `game_pose.py`·`test_multi3d.py`·mono3d, 이동수 `controller.js`·`main.js`·화면 번들([FOOT_STRIKE.md](../docs/FOOT_STRIKE.md) 4장). 11-08 관찰 1·3은 PR #10에서 정경호가 수정 |
 
 ## 2. 개인 Phase 현황
@@ -397,3 +397,25 @@
 - 인계 대상·넘긴 자료: 정경호 — `game_pose.py` 발목 전달, `test_multi3d.py`·mono3d 연결(FOOT_STRIKE.md 4장). 이동수 — `controller.js` 발목 허용·`main.js` 발목 전달·번들 재빌드. 메시지 발송 없음(사용자가 전달)
 - 갱신한 계획 체크리스트·현황: 본 파일 요약, `진행현황.md` 김태이 행. K-SC-04·05·06 `[ ]` 유지
 - 종료·중단 시각: 2026-11-10 16:30 KST
+
+### 2026-11-10 17:16 KST — PR #13 머지 완료
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 결과: [PR #13](https://github.com/DS-J-L/SMASH-KNU-AR/pull/13) head `6f2179c`를 검증한 SHA로 지정해 main에 머지(merge commit `a42a1a6`, kimtaei1223). 머지 전 main `42d50f3` 그대로·충돌 없음·리뷰/댓글 0·자동 검사 없음. PR 본문에서 정경호(@jkh0515)·이동수(@DS-J-L)에게 연결 요청 멘션
+- 남은 일: 연결 대기(정경호 `game_pose.py`·3D 연결, 이동수 `controller.js`·`main.js`), 실폰 발차기 시험
+
+### 2026-11-10 17:40 KST — IT1 모델 모양 3D 타격 판정 (P4 착수)
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 구현 / P4 실제 3D 궤적 충돌·타격 이벤트 / 김태이 모듈 구현·합성 검증 완료, 연결·실폰 미검증
+- 읽은 계획·기록: 김태이_plan.md P4, 정경호·이동수 plan P4 범위, `test_multi3d.py`·`web/test/mono3d/*`(PR #10), IT1 `manifest.json`·`colliders.json`·`frontend/game/package-runtime.js`
+- 이번 목표·완료 기준: PR #10 3D 시험의 상자 대신 IT1 모델 모양으로 손목·발목 타격을 판정하는 모듈을 김태이 새 파일로 만들고, 배치(마커 위치·회전·배율)를 화면과 공유할 수 있게 한다. 다른 사람 파일은 바꾸지 않는다
+- 바꾼 파일·결과물: 새 파일 `web/shared/model-strike-3d.js`, `backend/model_strike.py`, `tests/fixtures/model_strike_cases.json`(ㄴ자 시험 건물 손 계산 사례 13개), `tests/test_model_strike.py`·`.mjs`, `docs/MODEL_STRIKE_3D.md`
+- 동작: 파편 볼록 껍질 96개를 마커 좌표로 옮겨 면 평면을 만들고, 관절 직전→현재 선분이 처음 들어가는 파편·점을 찾는다. 첫 점은 기준점만, 발목은 들어 올림 0.20 m·1.5 m/s, 딛는 발 기준 건물 자리 판정, cooldown 300 ms, 한 프레임 한 이벤트, 첫 타격에 파괴·`restore()`로 복원. 이벤트 `hit_3d`에 `fragment_id`·`point_m`·속도·배치
+- 확인 방법·실제 결과: `pytest tests` 197/197(Python 3.13 venv), `node --test tests/single/*.test.mjs tests/test_foot_strike.mjs tests/test_model_strike.mjs` 104/104. 실제 IT1: 범위가 manifest 크기(2.81×0.63×1.08 m)와 일치, 96개 껍질 모두 닫힘, 껍질 합 부피 약 1.60 m³(파편 부피 합 1.56 m³), 격자 표본에서 겹침 없음, 생성 시간 브라우저 약 0.05초·서버 약 0.5초. TestClient: `/shared/model-strike-3d.js`·IT1 `colliders.json` 모두 키 없으면 401, 키 있으면 200(3D 시험 페이지와 같은 조건)
+- 확인된 사실: IT1 정면은 평평하지 않아 마커 x=0·높이 0.5 m에서 벽면이 범위 끝(−0.313 m)보다 안쪽(−0.292 m)에 있음
+- 미검증: 실제 폰 3D 좌표로 시험, 3D 오차에 맞춘 `margin_m`, 배치 값(팀 결정 전 기본값), IT1 분석형 QA 패키지 형식
+- 입력 구분: 합성(손 계산 좌표)과 실제 IT1 패키지 기하
+- 인계 대상·넘긴 자료: 이동수 — 배치 값 결정·3D 화면에 IT1 그리기·파편 연출·계약 기록. 정경호 — `test_multi3d.py`·mono3d 연결, 발목·골반 3D 점 확인(MODEL_STRIKE_3D.md 6장). PR 본문 멘션 예정
+- 갱신한 계획 체크리스트·현황: 본 파일 요약, `진행현황.md` 김태이 행. P4 체크박스는 실제 3D 궤적 시험 전이라 `[ ]` 유지
+- 종료·중단 시각: 2026-11-10 17:40 KST

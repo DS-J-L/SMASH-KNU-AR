@@ -1,0 +1,1087 @@
+{
+ "about": "Shared cases for backend/model_strike.py and web/shared/model-strike-3d.js (docs/MODEL_STRIKE_3D.md). Expectations are worked out by hand from the L-shaped test package. Default config and placement unless a case sets them.",
+ "package": {
+  "schema_version": "1.0",
+  "building_id": "test-l-block",
+  "coordinate_frame": "three_y_up",
+  "units": "m",
+  "fragments": [
+   {
+    "fragment_id": "A",
+    "node": "A",
+    "rest_position_m": [
+     -0.5,
+     0.5,
+     0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0.7071067811865476,
+     0,
+     0.7071067811865476
+    ],
+    "vertices_m": [
+     -0.25,
+     -0.5,
+     -0.5,
+     -0.25,
+     -0.5,
+     0.5,
+     -0.25,
+     0.5,
+     -0.5,
+     -0.25,
+     0.5,
+     0.5,
+     0.25,
+     -0.5,
+     -0.5,
+     0.25,
+     -0.5,
+     0.5,
+     0.25,
+     0.5,
+     -0.5,
+     0.25,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "fragment_id": "B",
+    "node": "B",
+    "rest_position_m": [
+     0.5,
+     0.25,
+     0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.5,
+     -0.25,
+     -0.25,
+     -0.5,
+     -0.25,
+     0.25,
+     -0.5,
+     0.25,
+     -0.25,
+     -0.5,
+     0.25,
+     0.25,
+     0.5,
+     -0.25,
+     -0.25,
+     0.5,
+     -0.25,
+     0.25,
+     0.5,
+     0.25,
+     -0.25,
+     0.5,
+     0.25,
+     0.25
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "name": "punch_into_the_tall_block_breaks_the_building_once",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "destroyed",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "the_empty_notch_above_the_low_block_is_not_building",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_wrist": [
+       0.5,
+       -0.6,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_wrist": [
+       0.5,
+       0.0,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "right_wrist": [
+       0.5,
+       0.0,
+       0.4
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "hit",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "right_wrist",
+       "hit_by": "inside",
+       "fragment_id": "B",
+       "point_m": [
+        0.5,
+        0.0,
+        0.5
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "a_fast_swing_through_the_wall_between_frames_is_swept",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 60,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "swept",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "first_point_already_inside_is_only_a_baseline",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       0.0,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "baseline",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       0.05,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "already_inside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "a_lifted_fast_kick_hits_the_low_block",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       -0.5,
+       -0.8,
+       0.08
+      ],
+      "right_ankle": [
+       0.5,
+       -0.7,
+       0.3
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       -0.5,
+       -0.8,
+       0.08
+      ],
+      "right_ankle": [
+       0.5,
+       -0.1,
+       0.35
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      },
+      "event": {
+       "joint": "right_ankle",
+       "hit_by": "inside",
+       "fragment_id": "B",
+       "point_m": [
+        0.5,
+        -0.25,
+        0.3375
+       ]
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "a_walking_step_into_the_low_block_is_too_low",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_ankle": [
+       0.5,
+       -0.6,
+       0.08
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "outside"
+      },
+      "event": null,
+      "support": "right_ankle",
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_ankle": [
+       0.5,
+       -0.2,
+       0.1
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "too_low"
+      },
+      "event": null,
+      "support": "right_ankle",
+      "standing_in_building": true,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "standing_on_the_building_blocks_hits",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ],
+      "left_ankle": [
+       0.5,
+       0.0,
+       0.08
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "baseline",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": true,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ],
+      "left_ankle": [
+       0.5,
+       0.0,
+       0.08
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "standing_in_building",
+       "left_ankle": "already_inside",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": true,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "placement_moves_turns_and_scales_the_building",
+   "placement": {
+    "x_m": 2,
+    "y_m": 1,
+    "yaw_deg": 90,
+    "scale": 0.5
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       2.6,
+       0.75,
+       0.4
+      ],
+      "right_wrist": [
+       -0.5,
+       0.0,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       2.0,
+       0.75,
+       0.4
+      ],
+      "right_wrist": [
+       -0.5,
+       0.0,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        2.125,
+        0.75,
+        0.4
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "without_destroy_on_hit_the_cooldown_spaces_repeated_hits",
+   "config": {
+    "destroy_on_hit": false
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 100,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 133,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "cooldown",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 400,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 433,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 2
+  },
+  {
+   "name": "restore_makes_the_building_whole_and_needs_a_fresh_entry",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "baseline",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     },
+     "action": "restore"
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 132,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "A",
+       "point_m": [
+        -0.5,
+        -0.25,
+        0.8
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 2
+  },
+  {
+   "name": "punch_and_kick_in_one_frame_give_one_event_the_earlier_entry",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.35,
+       0.8
+      ],
+      "left_ankle": [
+       -0.5,
+       -0.8,
+       0.08
+      ],
+      "right_ankle": [
+       0.5,
+       -0.3,
+       0.3
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.15,
+       0.8
+      ],
+      "left_ankle": [
+       -0.5,
+       -0.8,
+       0.08
+      ],
+      "right_ankle": [
+       0.5,
+       0.1,
+       0.3
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "simultaneous",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      },
+      "event": {
+       "joint": "right_ankle",
+       "hit_by": "inside",
+       "fragment_id": "B",
+       "point_m": [
+        0.5,
+        -0.25,
+        0.3
+       ]
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": true
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "a_long_gap_is_not_a_swing",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.6,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    },
+    {
+     "t_ms": 300,
+     "positions": {
+      "left_wrist": [
+       -0.5,
+       -0.1,
+       0.8
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "gap",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 0
+  },
+  {
+   "name": "nothing_visible",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {},
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false
+     }
+    }
+   ],
+   "hits": 0
+  }
+ ]
+}
