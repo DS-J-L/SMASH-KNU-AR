@@ -13,6 +13,7 @@ import {makePackageRuntime,createIntactBody as createPackageIntact,restoreGroupN
 import {createPackageHelpers} from '../game/package-helpers.js';
 import {catalogForSelection,placementFor} from '../game/package-selection.js';
 import {destroyTransaction,resetTransaction} from '../game/package-lifecycle.js';
+import {createCampusDistrictView} from './campus-districts.js';
 
 const $=id=>document.getElementById(id),canvas=$('scene'),stage=canvas.parentElement;
 const scene=new THREE.Scene();scene.background=new THREE.Color('#e7eadf');
@@ -20,7 +21,7 @@ const camera=new THREE.PerspectiveCamera(38,1,.02,6000),loader=new GLTFLoader(),
 let renderer,controls,world,intact,shards,campus,studioEnvironment,manifest,colliderData,catalog,fixedBuilding,activeId=null;
 let dynamic=[],helpers=[],loading=true,view='building',inspection=0;
 let packageRuntime,presentation,groundBody,loadGeneration=0,disposed=false;
-let campusFocus='all';
+let campusFocus='all',campusDistrictView;
 let phase='ready',destroyed=false,score=0,sessionId=null,endsAt=0,errorMessage=null;
 let accumulator=0,lastFrame=performance.now(),lastUiUpdate=-Infinity,pointerDown=null;
 const game=new GameController({trackingMode:'keyboard_demo',source:'synthetic'});
@@ -50,6 +51,8 @@ function setLighting(campusView) {
   Object.assign(sun.shadow.camera,campusView?{left:-760,right:760,top:760,bottom:-760,near:10,far:3000}:{left:-6,right:6,top:6,bottom:-6,near:.1,far:20});
   sun.shadow.camera.updateProjectionMatrix();sun.shadow.normalBias=campusView?0.15:0.012;
   scene.environment=campusView?null:studioEnvironment;scene.fog=campusView?new THREE.FogExp2('#e7eadf',.00015):null;
+  camera.near=campusView?2:.02;
+  camera.updateProjectionMatrix();
 }
 function configureCamera() {
   const origin=packageRuntime?.frame.origin??[0,0,0];camera.position.fromArray([4.4,2.9,4.4].map((x,k)=>x+origin[k]));controls.target.fromArray([0,(manifest?.dimensions_m[1]??1)*.45,0].map((x,k)=>x+origin[k]));
@@ -126,10 +129,13 @@ function updateUI(now=performance.now()) {
   $('campus-focus-wrap').hidden=buildingView;$('campus-focus').disabled=loading;
   $('building-view').setAttribute('aria-pressed',String(buildingView));$('campus-view').setAttribute('aria-pressed',String(!buildingView));
   const campusLabel=catalog?.campus_label??'캠퍼스';
-  const focusLabel=catalog?.campus_focus?.find(item=>item.id===campusFocus)?.label;
+  const focus=catalog?.campus_focus?.find(item=>item.id===campusFocus);
+  const focusLabel=focus?.label;
   $('ready-state').textContent=errorMessage?'불러오기 실패':loading?'준비 중':buildingView?inspection>0?'분리 미리보기':'키보드 데모':campusLabel;
   $('view-label').textContent=buildingView?`${name} / ${inspection>0?'분리 미리보기':destroyed?'파괴 상태':'조립 상태'}`:`${focusLabel??'전체 캠퍼스'} / ${campusLabel}`;
-  $('asset-name').textContent=buildingView?name:focusLabel??`경북대 ${campusLabel}`;$('asset-detail').textContent=buildingView?`사전 분할 ${count||'—'}개 · 볼록 충돌체 · m 단위`:catalog?.campus_detail??'지도·사진 기반 캠퍼스 모델';
+  $('asset-name').textContent=buildingView?name:focusLabel??`경북대 ${campusLabel}`;
+  $('asset-detail').textContent=buildingView?`사전 분할 ${count||'—'}개 · 볼록 충돌체 · m 단위`:
+    focus?.building_ids?`구역 건물 ${focus.building_ids.length}개`:catalog?.campus_detail??'지도·사진 기반 캠퍼스 모델';
   $('caption').textContent=buildingView?`폭 ${(manifest?.dimensions_m[0]??0).toFixed(2)}m 게임용 모델 · 클릭으로 타격점 선택`:'공식 지도·건물 사진 대조 · 구성 치수는 근사';
   $('status').textContent=errorMessage||(loading?'모델과 물리 엔진을 준비하고 있습니다.':!buildingView?'그림자와 재질을 적용한 캠퍼스를 둘러보세요.':inspection>0?'파편 구조를 확인하세요. 슬라이더를 0으로 돌리거나 R 키로 복원하면 플레이할 수 있습니다.':phase==='ended'?'테스트 종료. R 키로 복원하고 다시 시작하세요.':destroyed?`${count}개 파편이 타격점 주변에서 퍼지고 무너집니다. R 키로 복원하세요.`:phase==='playing'?'Space로 파괴하세요. 주황색 표시는 타격 위치입니다.':'건물을 클릭해 타격점을 고른 뒤 Space를 누르세요.');
   marker.visible=!loading&&buildingView&&!destroyed&&inspection===0;
@@ -159,15 +165,26 @@ function reset(){
 }
 function previewSeparation(){if(loading||phase!=='ready'||view!=='building')return;inspection=Number($('separation').value);restoreNodes();intact.visible=inspection===0;shards.visible=inspection>0;updateUI();}
 function showHelpers(){for(const helper of helpers)helper.visible=$('colliders').checked&&view==='building';}
+function frameCampusDistrict(bounds, focus) {
+  const direction = new THREE.Vector3(.55, 1.4, 1);
+  let distance = direction.length() * focus.distance_m / Math.min(1, camera.aspect);
+  controls.target.fromArray(focus.target_y_up_m);
+  if (bounds) {
+    const sphere = bounds.getBoundingSphere(new THREE.Sphere());
+    const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
+    const halfAngle = Math.atan(Math.tan(halfFov) * Math.min(1, camera.aspect));
+    controls.target.copy(sphere.center);
+    distance = 1.08 * sphere.radius / Math.sin(halfAngle);
+  }
+  camera.position.copy(controls.target).addScaledVector(direction.normalize(), distance);
+  controls.minDistance=20;
+  controls.maxDistance=Math.max(1800,distance*1.2);
+}
 function focusCampus(id='all'){
   if(view!=='campus'||loading)return;
   const focus=catalog.campus_focus?.find(item=>item.id===id);campusFocus=focus?id:'all';$('campus-focus').value=campusFocus;
-  if(focus){
-    // Keep the whole district in view when the canvas is narrower than it is tall.
-    const distance=focus.distance_m/Math.min(1,camera.aspect);
-    controls.target.fromArray(focus.target_y_up_m);camera.position.copy(controls.target).add(new THREE.Vector3(.55,1.4,1).multiplyScalar(distance));
-    controls.minDistance=20;controls.maxDistance=Math.max(1800,camera.position.distanceTo(controls.target)*1.2);
-  }
+  const bounds=campusDistrictView.show(campusFocus);
+  if(focus)frameCampusDistrict(bounds,focus);
   else{camera.position.set(1100,1000,1300);controls.target.set(0,-4,0);controls.minDistance=80;controls.maxDistance=3000;}
   controls.update();updateUI();
 }
@@ -176,7 +193,14 @@ async function changeView(next){
   if(next==='campus'){
     if(!reset())return;loading=true;updateUI();
     try{
-      if(!campus){const loadedCampus=(await loader.loadAsync(catalog.campus)).scene;if(disposed){disposeRoots([loadedCampus]);return;}campus=loadedCampus;campus.traverse(node=>{if(node.isMesh){node.receiveShadow=true;node.castShadow=Boolean(node.userData.osm_way||String(node.userData.source_id??'').startsWith('vw/'));}});scene.add(campus);}
+      if(!campus){
+        const loadedCampus=(await loader.loadAsync(catalog.campus)).scene;
+        if(disposed){disposeRoots([loadedCampus]);return;}
+        campusDistrictView=createCampusDistrictView(loadedCampus,catalog.campus_focus??[]);
+        campus=loadedCampus;
+        campus.traverse(node=>{if(node.isMesh){node.receiveShadow=true;node.castShadow=Boolean(node.userData.osm_way||String(node.userData.source_id??'').startsWith('vw/'));}});
+        scene.add(campus);
+      }
       view='campus';intact.visible=shards.visible=false;campus.visible=true;floor.visible=grid.visible=false;camera.position.set(1100,1000,1300);controls.target.set(0,-4,0);controls.minDistance=80;controls.maxDistance=3000;controls.update();setLighting(true);
     }catch(error){errorMessage=`지형을 불러오지 못했습니다: ${error.message}`;}finally{if(!disposed){loading=false;if(view==='campus')focusCampus();showHelpers();updateUI();}}
   }else{view='building';errorMessage=null;campus.visible=false;intact.visible=true;floor.visible=grid.visible=true;configureCamera();setLighting(false);showHelpers();updateUI();}
@@ -204,10 +228,11 @@ window.addEventListener('keydown',event=>{
   if(event.code==='Space'){if(target?.closest('button,a,input,[role="button"]'))return;event.preventDefault();destroy();}
   if(event.code==='KeyR'){event.preventDefault();reset();}if(event.code==='KeyG'){$('colliders').checked=!$('colliders').checked;showHelpers();}
 });
-window.__fractureDemo=Object.freeze({snapshot:()=>({loading,errorMessage,view,campusFocus,cameraPosition:camera.position.toArray(),cameraTarget:controls?.target.toArray(),phase,destroyed,score,sessionId,buildingId:activeId,expectedFragmentCount:manifest?.fragment_count,inspection,impactPoint:impactPoint.toArray(),dustVisible:dust.visible,fragmentCount:dynamic.length,bodyCount:world?.bodies.len(),colliderCount:world?.colliders.len(),seenEvents:seenEvents.size,intactVisible:intact?.visible,shardsVisible:shards?.visible,geometryCount:renderer?.info.memory.geometries,textureCount:renderer?.info.memory.textures,finiteBodies:dynamic.every(({body})=>Object.values(body.translation()).every(Number.isFinite)),minFragmentY:dynamic.length?Math.min(...dynamic.map(({body})=>body.translation().y)):null,expectedColliderCount:packageRuntime?.colliderCount,physicsOrigin:packageRuntime?.frame.origin,placement:packageRuntime?.placement.name,restTransformsMatch:restTransformsMatch(shards,packageRuntime)})});
+window.__fractureDemo=Object.freeze({snapshot:()=>({loading,errorMessage,view,campusFocus,campusDistrict:view==='campus'?campusDistrictView?.snapshot():undefined,cameraPosition:camera.position.toArray(),cameraTarget:controls?.target.toArray(),phase,destroyed,score,sessionId,buildingId:activeId,expectedFragmentCount:manifest?.fragment_count,inspection,impactPoint:impactPoint.toArray(),dustVisible:dust.visible,fragmentCount:dynamic.length,bodyCount:world?.bodies.len(),colliderCount:world?.colliders.len(),seenEvents:seenEvents.size,intactVisible:intact?.visible,shardsVisible:shards?.visible,geometryCount:renderer?.info.memory.geometries,textureCount:renderer?.info.memory.textures,finiteBodies:dynamic.every(({body})=>Object.values(body.translation()).every(Number.isFinite)),minFragmentY:dynamic.length?Math.min(...dynamic.map(({body})=>body.translation().y)):null,expectedColliderCount:packageRuntime?.colliderCount,physicsOrigin:packageRuntime?.frame.origin,placement:packageRuntime?.placement.name,restTransformsMatch:restTransformsMatch(shards,packageRuntime)})});
 async function init(){
   try{
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+    renderer.localClippingEnabled=true;
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer);studioEnvironment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
     controls=new OrbitControls(camera,canvas);controls.enableDamping=true;configureCamera();setLighting(false);new ResizeObserver(resize).observe(stage);resize();
     [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);if(disposed)return;catalog=catalogForSelection(catalog,new URL(location.href).searchParams);populateBuildingPicker();

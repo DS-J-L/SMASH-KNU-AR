@@ -131,5 +131,70 @@
     "UI/static model and keyboard_demo verification only",
     "Existing large bundle warning",
     "No live camera, AR or long-running performance test"
-  ]
+  ],
+  "district_visibility": {
+    "baseline": "b91ddb656077b63fc8033d5f9e1536a0165689f5",
+    "branch": "fix/campus-district-visibility",
+    "input": "keyboard_demo",
+    "behavior": "Display the selected district building meshes and clip the surrounding landscape. Restore all 123 buildings with the full campus option.",
+    "districts": [
+      {
+        "id": "north-gate-arts",
+        "buildingCount": 24
+      },
+      {
+        "id": "main-library",
+        "buildingCount": 20
+      },
+      {
+        "id": "agri-science",
+        "buildingCount": 17
+      },
+      {
+        "id": "sports",
+        "buildingCount": 11
+      },
+      {
+        "id": "museum-social",
+        "buildingCount": 12
+      },
+      {
+        "id": "engineering-chemistry",
+        "buildingCount": 17
+      },
+      {
+        "id": "it-veterinary",
+        "buildingCount": 13
+      },
+      {
+        "id": "dormitories",
+        "buildingCount": 9
+      }
+    ],
+    "browser": {
+      "environment": "Windows Edge D3D11, isolated static server port 8898",
+      "districtTests": {
+        "passed": 2,
+        "total": 2,
+        "seconds": 15.2,
+        "observations": [
+          "desktop.json",
+          "responsive.json"
+        ]
+      },
+      "practiceAndFractureTests": {
+        "passed": 7,
+        "total": 7,
+        "seconds": 18
+      }
+    },
+    "sha256": {
+      "frontend/fracture/campus-districts.js": "327adf787292fef54bae5d77836227cb6d0934732636058dee2d4aadacc3133e",
+      "frontend/fracture/main.js": "049276893694131080c033f46ab9454df904fd356c7cc9542456494cc4d0ac75",
+      "web/public/assets/buildings/catalog.json": "c10542b3398b97f5da1a9f9664ac010da1c3365dfbcf324ce0c34d7744131edd",
+      "web/monitor/fracture/index.html": "f6373c9e5eeee02162196017f463552e813542e6f1bf26d626c8169d640119ea",
+      "web/monitor/fracture/assets/index-BGnpyYYu.js": "61ab2877bd96a6104b63217f133274e5e5b87efa5486dbf4769ce972b9b28a3b",
+      "web/monitor/fracture/assets/index-DGl6txmA.css": "e3fd9285465c882a2a40845f4dfb5b03bf77f31abc35cb1ae8534f22e50e81ab"
+    }
+  }
 }
