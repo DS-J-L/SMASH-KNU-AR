@@ -1,0 +1,416 @@
+{
+  "input": "keyboard_demo",
+  "observations": [
+    {
+      "id": "north-gate-arts",
+      "label": "① 북문·예술대·온실",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "north-gate-arts",
+        "cameraPosition": [
+          396.49999999999994,
+          738,
+          130.99999999999983
+        ],
+        "cameraTarget": [
+          105,
+          -4,
+          -399.00000000000006
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "main-library",
+      "label": "② 본관·글로벌플라자·중앙도서관",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "main-library",
+        "cameraPosition": [
+          307,
+          457,
+          202.0000000000001
+        ],
+        "cameraTarget": [
+          142,
+          37,
+          -98
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "agri-science",
+      "label": "③ 농대·자연과학대",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "agri-science",
+        "cameraPosition": [
+          6.499999999999972,
+          578,
+          372.9999999999999
+        ],
+        "cameraTarget": [
+          -219,
+          4,
+          -37
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "sports",
+      "label": "④ 체육관·대운동장",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "sports",
+        "cameraPosition": [
+          -191.50000000000003,
+          568,
+          568.9999999999999
+        ],
+        "cameraTarget": [
+          -417,
+          -6.000000000000001,
+          159
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "museum-social",
+      "label": "⑤ 박물관·사회과학대",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "museum-social",
+        "cameraPosition": [
+          554.5000000000001,
+          412,
+          475.00000000000006
+        ],
+        "cameraTarget": [
+          395.00000000000006,
+          6.000000000000001,
+          185
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "engineering-chemistry",
+      "label": "⑥ 공대·화학관",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "engineering-chemistry",
+        "cameraPosition": [
+          209.00000000000006,
+          675,
+          787.0000000000002
+        ],
+        "cameraTarget": [
+          -55,
+          3,
+          307
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "it-veterinary",
+      "label": "⑦ IT대·수의대",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "it-veterinary",
+        "cameraPosition": [
+          393.49999999999994,
+          611,
+          738
+        ],
+        "cameraTarget": [
+          157,
+          9,
+          308
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "id": "dormitories",
+      "label": "⑧ 생활관",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "dormitories",
+        "cameraPosition": [
+          143.99999999999994,
+          451,
+          757
+        ],
+        "cameraTarget": [
+          -32,
+          3,
+          437
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    }
+  ],
+  "pageErrors": [],
+  "allCampusReturn": true,
+  "buildingReturnScore": 100
+}

@@ -1,0 +1,225 @@
+{
+  "observations": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "name": "mobile"
+      },
+      "id": "north-gate-arts",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "north-gate-arts",
+        "cameraPosition": [
+          396.49999999999994,
+          738,
+          130.99999999999972
+        ],
+        "cameraTarget": [
+          105,
+          -4,
+          -399.00000000000006
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "name": "mobile"
+      },
+      "id": "main-library",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "main-library",
+        "cameraPosition": [
+          307,
+          457,
+          202.0000000000001
+        ],
+        "cameraTarget": [
+          142,
+          37,
+          -98
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 601,
+        "height": 1000,
+        "name": "narrow-tablet"
+      },
+      "id": "north-gate-arts",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "north-gate-arts",
+        "cameraPosition": [
+          1114.296047507788,
+          2565.117211838006,
+          1436.0837227414327
+        ],
+        "cameraTarget": [
+          105,
+          -4,
+          -399.00000000000006
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    },
+    {
+      "viewport": {
+        "width": 601,
+        "height": 1000,
+        "name": "narrow-tablet"
+      },
+      "id": "main-library",
+      "state": {
+        "loading": false,
+        "errorMessage": null,
+        "view": "campus",
+        "campusFocus": "main-library",
+        "cameraPosition": [
+          703.0192757009348,
+          1465.0490654205605,
+          922.0350467289722
+        ],
+        "cameraTarget": [
+          142,
+          37,
+          -98
+        ],
+        "phase": "ready",
+        "destroyed": false,
+        "score": 0,
+        "sessionId": null,
+        "buildingId": "knu-it1-v3",
+        "expectedFragmentCount": 96,
+        "inspection": 0,
+        "impactPoint": [
+          0.29627551212053227,
+          0.6504102801613296,
+          0.29627551212053227
+        ],
+        "dustVisible": false,
+        "fragmentCount": 0,
+        "bodyCount": 2,
+        "colliderCount": 97,
+        "seenEvents": 0,
+        "intactVisible": false,
+        "shardsVisible": false,
+        "geometryCount": 2072,
+        "textureCount": 125,
+        "finiteBodies": true,
+        "minFragmentY": null,
+        "expectedColliderCount": 96,
+        "physicsOrigin": [
+          0,
+          0,
+          0
+        ],
+        "placement": "original",
+        "restTransformsMatch": true
+      }
+    }
+  ],
+  "horizontalOverflow": false
+}

@@ -13,6 +13,18 @@
 
 저장소 루트에서 `python -m http.server 8890 --bind 127.0.0.1 --directory web`을 실행하고 [모델 데모](http://127.0.0.1:8890/monitor/fracture/)를 연다. 건물을 선택한 뒤 Space로 파괴하고 R로 복원한다. 캠퍼스 지형 탭에서 전체 지도를 볼 수 있다.
 
+캠퍼스 지형 탭의 **캠퍼스 구역 선택**에서 전체 캠퍼스와 다음 8개 구역을 선택한다. 선택하면 해당 구역의 기존 모델 좌표를 중심으로 시점이 이동한다. 좁은 화면에서는 구역을 담도록 카메라 거리를 늘린다.
+
+| 기존 구역 | 선택 항목 |
+| --- | --- |
+| 북쪽 | ① 북문·예술대·온실 / ② 본관·글로벌플라자·중앙도서관 |
+| 서쪽 | ③ 농대·자연과학대 / ④ 체육관·대운동장 |
+| 동쪽 | ⑤ 박물관·사회과학대 |
+| 공대·IT | ⑥ 공대·화학관 / ⑦ IT대·수의대 |
+| 남쪽 | ⑧ 생활관 |
+
+생활관은 남쪽 기숙사 A/B/C·진리관·화목관·봉사관·면학관 주변을 보여준다. 구역 선택은 카메라 이동 기능이며 모델 파일이나 건물의 소속을 분리하지 않는다. 중심·거리는 기존 GLB의 건물 범위를 기준으로 한 표시 설정으로, 현장 경계 실측값은 아니다.
+
 공식 지도와 사진을 대조한 범위는 [70개 범위표](asset-validation/campus-v71-123/history/scope-70.json), [dot 변경 객체·좌표](asset-validation/campus-v71-123/history/merge-123/model-merge-manifest.json), [1그룹 변경](asset-validation/campus-v71-123/history/merge-123/group1-review/edits.json), [2그룹 변경](asset-validation/campus-v71-123/history/merge-123/group2-review/edits.json)과 [사진 출처](asset-validation/campus-v71-123/history/merge-123/group2-review/photo-sources.json)에 남겼다. 확인이 어려운 면과 지붕 요소는 근거가 확보될 때 다시 대조한다. 출처 표기와 이용 조건은 v71 원본의 기준을 따른다.
 
 게시 후보를 Blender 5.2.3에서 다시 열어 편집 파일 97개의 외부 의존성이 없음을 확인했다. 정상·파편 GLB 192개와 캠퍼스 GLB를 검사했다. 오류 0건이며, 정적 캠퍼스의 공대 12호관·약학대학·정보화본부에 기존 탄젠트 경고 3건이 남아 있다. 상세 외장을 유지한 게임 패키지 4개는 정상 메시의 기존 1만 삼각형 기준을 넘는다. 해당 패키지의 실제 값 13,628~19,128개를 검사 상한으로 기록했다. [편집 원본 확인](asset-validation/campus-v71-123/editable-source-qa.json) · [GLB·형상 검사](asset-validation/campus-v71-123/gltf-validation.json)

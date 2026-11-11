@@ -147,7 +147,12 @@ function showHelpers(){for(const helper of helpers)helper.visible=$('colliders')
 function focusCampus(id='all'){
   if(view!=='campus'||loading)return;
   const focus=catalog.campus_focus?.find(item=>item.id===id);campusFocus=focus?id:'all';$('campus-focus').value=campusFocus;
-  if(focus){controls.target.fromArray(focus.target_y_up_m);camera.position.copy(controls.target).add(new THREE.Vector3(.9,.7,1).multiplyScalar(focus.distance_m));controls.minDistance=20;controls.maxDistance=1800;}
+  if(focus){
+    // Keep the whole district in view when the canvas is narrower than it is tall.
+    const distance=focus.distance_m/Math.min(1,camera.aspect);
+    controls.target.fromArray(focus.target_y_up_m);camera.position.copy(controls.target).add(new THREE.Vector3(.55,1.4,1).multiplyScalar(distance));
+    controls.minDistance=20;controls.maxDistance=Math.max(1800,camera.position.distanceTo(controls.target)*1.2);
+  }
   else{camera.position.set(1100,1000,1300);controls.target.set(0,-4,0);controls.minDistance=80;controls.maxDistance=3000;}
   controls.update();updateUI();
 }

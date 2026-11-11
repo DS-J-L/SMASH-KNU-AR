@@ -488,64 +488,84 @@
   ],
   "campus_focus": [
     {
-      "id": "global",
-      "label": "글로벌플라자",
+      "id": "north-gate-arts",
+      "label": "① 북문·예술대·온실",
       "target_y_up_m": [
-        88,
-        35,
-        -177
+        105,
+        -4,
+        -399
       ],
-      "distance_m": 115
+      "distance_m": 530
     },
     {
-      "id": "library",
-      "label": "중앙도서관",
+      "id": "main-library",
+      "label": "② 본관·글로벌플라자·중앙도서관",
       "target_y_up_m": [
-        175,
-        12,
-        -172
+        142,
+        37,
+        -98
       ],
-      "distance_m": 120
+      "distance_m": 300
     },
     {
-      "id": "auditorium",
-      "label": "대강당",
+      "id": "agri-science",
+      "label": "③ 농대·자연과학대",
       "target_y_up_m": [
-        35,
-        0,
-        -278
+        -219,
+        4,
+        -37
       ],
-      "distance_m": 95
+      "distance_m": 410
     },
     {
-      "id": "museum",
-      "label": "박물관",
+      "id": "sports",
+      "label": "④ 체육관·대운동장",
       "target_y_up_m": [
-        305,
-        5,
-        177
-      ],
-      "distance_m": 110
-    },
-    {
-      "id": "gym2",
-      "label": "제2체육관",
-      "target_y_up_m": [
-        -480,
+        -417,
         -6,
-        55
+        159
       ],
-      "distance_m": 120
+      "distance_m": 410
     },
     {
-      "id": "it2",
-      "label": "IT 2호관",
+      "id": "museum-social",
+      "label": "⑤ 박물관·사회과학대",
       "target_y_up_m": [
-        117,
+        395,
+        6,
+        185
+      ],
+      "distance_m": 290
+    },
+    {
+      "id": "engineering-chemistry",
+      "label": "⑥ 공대·화학관",
+      "target_y_up_m": [
+        -55,
         3,
         307
       ],
-      "distance_m": 95
+      "distance_m": 480
+    },
+    {
+      "id": "it-veterinary",
+      "label": "⑦ IT대·수의대",
+      "target_y_up_m": [
+        157,
+        9,
+        308
+      ],
+      "distance_m": 430
+    },
+    {
+      "id": "dormitories",
+      "label": "⑧ 생활관",
+      "target_y_up_m": [
+        -32,
+        3,
+        437
+      ],
+      "distance_m": 320
     }
   ]
 }
