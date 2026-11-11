@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-library-practice-v1",
+  "display_name": "중앙도서관",
+  "source_model_id": "osm/468931852",
+  "source_campus": "knu-campus-v71-123-group2-r1.blend",
+  "source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+  "source_object": "중앙도서관",
+  "source_origin_campus_z_up_m": [
+    175.30999755859375,
+    172.6699981689453,
+    -2.618180513381958
+  ],
+  "scale_from_campus": 0.028028029740435608,
+  "source_dimensions_campus_z_up_m": [
+    99.89999389648438,
+    89.5999984741211,
+    26.840282440185547
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.799999952316284,
+    0.7522802352905273,
+    2.5113115310668945
+  ],
+  "fragment_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "accuracy": "Scaled campus building body and its materials; separate facade/roof details omitted. Not surveyed.",
+  "fragment_method": "Deterministic bounded plane cuts, capped and closed; convex support hulls.",
+  "source": "synthetic",
+  "input_mode": "keyboard_demo",
+  "tracking_mode": "keyboard_demo"
+}

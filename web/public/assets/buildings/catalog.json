@@ -484,7 +484,29 @@
       "id": "knu-osm-524021463-v71-g2-r1-fracture",
       "folder": "knu-osm-524021463-v71-g2-r1-fracture",
       "label": "창업보육센터 · 64개 파편"
+    },
+    {
+      "id": "knu-global-practice-v1",
+      "label": "글로벌플라자 · 64개 파편",
+      "folder": "knu-global-practice-v1"
+    },
+    {
+      "id": "knu-it5-practice-v1",
+      "label": "IT5호관 · 64개 파편",
+      "folder": "knu-it5-practice-v1"
+    },
+    {
+      "id": "knu-library-practice-v1",
+      "label": "중앙도서관 · 64개 파편",
+      "folder": "knu-library-practice-v1"
     }
+  ],
+  "practice_buildings": [
+    { "id": "knu-global-practice-v1", "label": "글로벌플라자" },
+    { "id": "knu-main-v2", "label": "경북대학교 본관" },
+    { "id": "knu-it5-practice-v1", "label": "IT5호관" },
+    { "id": "knu-it1-v3", "label": "IT1호관" },
+    { "id": "knu-library-practice-v1", "label": "중앙도서관" }
   ],
   "campus_focus": [
     {

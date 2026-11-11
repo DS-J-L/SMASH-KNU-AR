@@ -9,7 +9,7 @@
 | 파편 게임 패키지 | [카탈로그](../web/public/assets/buildings/catalog.json) · [정상 GLB·파편 GLB·충돌체·매니페스트](../web/public/assets/buildings/) |
 | 게임 편집 원본 | [패키지별 Blender](../assets/source/campus-v71-123/) · [기존 버전 원본](../assets/source/README.md) |
 
-게임의 기본 캠퍼스 지도는 이 합본을 사용한다. 선택 목록에는 96개 항목이 있고, 기존 버전이 포함돼 있다. 파편은 패키지 전체를 합해 6,162개다. 매니페스트에는 원본 모델 ID, 출처, 캠퍼스 위치·배율, 게임용 피벗과 충돌체의 기준을 기록했다. 출처를 특정할 수 없었던 모델은 기존 ID로 관리한다.
+게임의 기본 캠퍼스 지도는 이 합본을 사용한다. 최초 합본의 게임 항목 96개에 단독 연습용 3개를 더해 현재 선택 목록은 99개이며, 파편은 패키지 전체를 합해 6,354개다. 매니페스트에는 원본 모델 ID, 출처, 캠퍼스 위치·배율, 게임용 피벗과 충돌체의 기준을 기록했다. 출처를 특정할 수 없었던 모델은 기존 ID로 관리한다.
 
 저장소 루트에서 `python -m http.server 8890 --bind 127.0.0.1 --directory web`을 실행하고 [모델 데모](http://127.0.0.1:8890/monitor/fracture/)를 연다. 건물을 선택한 뒤 Space로 파괴하고 R로 복원한다. 캠퍼스 지형 탭에서 전체 지도를 볼 수 있다.
 
@@ -24,6 +24,18 @@
 | 남쪽 | ⑧ 생활관 |
 
 생활관은 남쪽 기숙사 A/B/C·진리관·화목관·봉사관·면학관 주변을 보여준다. 구역 선택은 카메라 이동 기능이며 모델 파일이나 건물의 소속을 분리하지 않는다. 중심·거리는 기존 GLB의 건물 범위를 기준으로 한 표시 설정으로, 현장 경계 실측값은 아니다.
+
+**건물 파괴 → 연습할 건물 → 단독 파괴 연습**에는 아래 다섯 건물이 먼저 나온다. 하나를 선택하면 해당 건물만 표시된다. 클릭으로 타격점을 고른 뒤 Space 또는 파괴 버튼으로 부수고, R 또는 복원 버튼으로 초기화한다. 그 외 건물과 이전 버전은 같은 목록의 별도 그룹에서 고를 수 있다.
+
+| 연습 모델 | 파편 | 근거 |
+| --- | ---: | --- |
+| 글로벌플라자 | 64 | v71 건물 본체에서 분할, [외형](asset-validation/practice-packages/global/intact.png) · [파편](asset-validation/practice-packages/global/fragments.png) |
+| 경북대학교 본관 | 85 | 기존 `knu-main-v2` 재사용 |
+| IT5호관(IT융복합관) | 64 | v71 건물 본체에서 분할, [외형](asset-validation/practice-packages/it5/intact.png) · [파편](asset-validation/practice-packages/it5/fragments.png) |
+| IT1호관 | 96 | 기존 기본값 `knu-it1-v3` 재사용 |
+| 중앙도서관 | 64 | v71 건물 본체에서 분할, [외형](asset-validation/practice-packages/library/intact.png) · [파편](asset-validation/practice-packages/library/fragments.png) |
+
+새 모델은 캠퍼스 본체와 재질을 사용하며 별도 외벽·지붕 장식은 포함하지 않는다. 가장 긴 축을 2.8m로 맞춘 게임용 소품으로, 캠퍼스 합본의 실제 배치와 배율은 유지된다. Blender 5.2에서 합본 `.blend`를 열고 `tools/build_practice_packages.py`의 `--building global|it5|library`로 새 패키지를 재생성한다. `npm run validate:enhancements`와 `npx playwright test tests/browser/building-practice.spec.js`로 에셋과 단독 파괴 연습을 확인한다.
 
 공식 지도와 사진을 대조한 범위는 [70개 범위표](asset-validation/campus-v71-123/history/scope-70.json), [dot 변경 객체·좌표](asset-validation/campus-v71-123/history/merge-123/model-merge-manifest.json), [1그룹 변경](asset-validation/campus-v71-123/history/merge-123/group1-review/edits.json), [2그룹 변경](asset-validation/campus-v71-123/history/merge-123/group2-review/edits.json)과 [사진 출처](asset-validation/campus-v71-123/history/merge-123/group2-review/photo-sources.json)에 남겼다. 확인이 어려운 면과 지붕 요소는 근거가 확보될 때 다시 대조한다. 출처 표기와 이용 조건은 v71 원본의 기준을 따른다.
 
