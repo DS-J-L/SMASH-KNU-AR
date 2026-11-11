@@ -21,3 +21,6 @@ web/monitor/phone-game/assets/*.js -whitespace
 docs/asset-validation/campus-v71/ACCEPTANCE-v71-r3.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/asset-validation/campus-v71/INDEPENDENT-REVIEW-v71-r3.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/asset-validation/campus-v71/scope.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Keep published package metadata identical to the verified local source bytes.
+web/public/assets/buildings/*-v71-*-fracture/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

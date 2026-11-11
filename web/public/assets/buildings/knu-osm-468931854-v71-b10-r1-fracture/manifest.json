@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-468931854-v71-b10-r1-fracture",
+  "display_name": "도서관 휴게실",
+  "source_model_id": "osm/468931854",
+  "identity_metadata": {
+    "verified_display_name": "도서관 휴게실",
+    "verified_facility_number": "109"
+  },
+  "source_campus": "knu-campus-v71-batch10-r1.blend",
+  "source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+  "source_object": "이름 미등록 건물",
+  "source_objects": [
+    {
+      "object": "이름 미등록 건물",
+      "mesh": "이름 미등록 건물.001",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 이름 미등록 건물 [468931854]",
+      "mesh": "v7 | 창 근사 | 이름 미등록 건물 [468931854]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.5002151727676392
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    215.0850067138672,
+    133.41526794433594,
+    -1.1085293292999268
+  ],
+  "scale_from_campus": 0.06929606762580108,
+  "source_dimensions_campus_z_up_m": [
+    17.711029052734375,
+    31.747833251953125,
+    12.60831356048584
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    1.2273046970367432,
+    0.873706579208374,
+    2.200000047683716
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120
+}

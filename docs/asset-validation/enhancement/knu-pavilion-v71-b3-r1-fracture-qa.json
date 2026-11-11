@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-pavilion-v71-b3-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.14995044397262824,
+  "volume_relative_error": 1.8146450910958964e-08,
+  "errors": [],
+  "source_blend_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af"
+}

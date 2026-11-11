@@ -1,0 +1,20 @@
+{
+  "source_glb_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "candidate_glb_sha256": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+  "changed_objects": [
+    "이름 미등록 건물",
+    "이름 미등록 건물.001",
+    "이름 미등록 건물.002",
+    "이름 미등록 건물.003",
+    "이름 미등록 건물.004",
+    "이름 미등록 건물.005",
+    "이름 미등록 건물.006",
+    "이름 미등록 건물.007",
+    "이름 미등록 건물.008",
+    "이름 미등록 건물.009"
+  ],
+  "preserved_objects": 1725,
+  "dot_protected_ids": 53,
+  "source_triangles": 890412,
+  "candidate_triangles": 890412
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "knu-press-v71-b3-r1-fracture",
+    "node": "SM_press_Fragment_054",
+    "before_m": 0.000007555816184501296,
+    "after_m": 1.4741250925487392e-7,
+    "updated": true
+  },
+  {
+    "id": "knu-sculpture-v71-b3-r1-fracture",
+    "node": "SM_sculpture_Fragment_033",
+    "before_m": 0.000002631967831151494,
+    "after_m": 2.1351344248188298e-8,
+    "updated": true
+  }
+]

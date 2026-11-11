@@ -1,0 +1,58 @@
+{
+  "preserved_catalog_entries": 74,
+  "checked_existing_assets": 296,
+  "added_catalog_entries": 10,
+  "total_catalog_entries": 84,
+  "installed": [
+    {
+      "id": "knu-osm-468931854-v71-b10-r1-fracture",
+      "label": "도서관 휴게실 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931854-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931893-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931893) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931893-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931896-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931896) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931896-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931915-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931915) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931915-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-524161868-v71-b10-r1-fracture",
+      "label": "차고 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-524161868-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-576358734-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (576358734) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-576358734-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-577759119-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (577759119) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-577759119-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-584385630-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584385630) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-584385630-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-584386432-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584386432) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-584386432-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-972016220-v71-b10-r1-fracture",
+      "label": "미래융합과학관 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-972016220-v71-b10-r1-fracture"
+    }
+  ]
+}

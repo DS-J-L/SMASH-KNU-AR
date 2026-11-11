@@ -1,0 +1,196 @@
+[
+  {
+    "package": "knu-arts-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 5.968189443483762e-07,
+    "max_point_gap_m": 7.963761063826065e-08
+  },
+  {
+    "package": "knu-kbsi-v71-b3-r1-fracture",
+    "count": 70,
+    "updated": [
+      {
+        "node": "SM_kbsi_Fragment_056",
+        "before_m": 4.384512283184261e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 1.1637883063631005e-06,
+    "max_point_gap_m": 8.101971138615737e-08
+  },
+  {
+    "package": "knu-pavilion-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_pavilion_Fragment_012",
+        "before_m": 2.5854090631299842e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_pavilion_Fragment_047",
+        "before_m": 4.1004196713601004e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_pavilion_Fragment_053",
+        "before_m": 2.416859282913797e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_pavilion_Fragment_060",
+        "before_m": 2.136342618808129e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_pavilion_Fragment_062",
+        "before_m": 6.279357424518461e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 9.596052341354078e-07,
+    "max_point_gap_m": 8.676839341515992e-08
+  },
+  {
+    "package": "knu-press-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_press_Fragment_002",
+        "before_m": 1.7829940954811052e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_008",
+        "before_m": 1.553335037518533e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_010",
+        "before_m": 3.266941482366059e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_012",
+        "before_m": 1.0236783287514983e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_press_Fragment_018",
+        "before_m": 1.2637844302970658e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_020",
+        "before_m": 7.257342681227241e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_press_Fragment_021",
+        "before_m": 2.1767491164503827e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_027",
+        "before_m": 1.4611802082092895e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_press_Fragment_052",
+        "before_m": 1.4079632582320034e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_054",
+        "before_m": 7.562649281395162e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_press_Fragment_058",
+        "before_m": 1.7923951258824733e-05,
+        "after_m": 3.469446951953614e-17
+      },
+      {
+        "node": "SM_press_Fragment_060",
+        "before_m": 1.1017624052700459e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 3.9167628149150424e-07,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-sculpture-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_sculpture_Fragment_031",
+        "before_m": 3.0064081889824568e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_sculpture_Fragment_033",
+        "before_m": 1.798876727826526e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_sculpture_Fragment_052",
+        "before_m": 1.9380588814066346e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_sculpture_Fragment_056",
+        "before_m": 2.0666134074309728e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 5.548501380014947e-07,
+    "max_point_gap_m": 8.298706043491312e-08
+  },
+  {
+    "package": "knu-techno-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_techno_Fragment_003",
+        "before_m": 9.655843098616002e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_techno_Fragment_005",
+        "before_m": 3.6815622974639695e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_techno_Fragment_041",
+        "before_m": 8.66950113352638e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_techno_Fragment_047",
+        "before_m": 8.726624205562805e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_techno_Fragment_048",
+        "before_m": 9.218797847140858e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_techno_Fragment_057",
+        "before_m": 4.360551373677746e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 6.10410690327079e-07,
+    "max_point_gap_m": 8.404638001828252e-08
+  },
+  {
+    "package": "knu-yeongseon-v71-b3-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.52775032208341e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  }
+]

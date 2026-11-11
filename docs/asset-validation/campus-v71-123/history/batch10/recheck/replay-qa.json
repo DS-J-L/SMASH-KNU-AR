@@ -1,0 +1,27 @@
+{
+  "source_archive_sha256": "3dbe6e4dfd2fdc26e3bffca4749e09cf6c9e098a0c111fc0df7576934533a4a1",
+  "restored_archive_members": 55,
+  "restored_candidate_sha256": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+  "reproduced_glb_sha256": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+  "reproduced_blend_sha256": "d2bbbc8f4eb896a433852b40c36491b7321342dbfdc304bce4446e1de7107e4f",
+  "objects": 1735,
+  "changed_objects": [
+    "이름 미등록 건물",
+    "이름 미등록 건물.001",
+    "이름 미등록 건물.002",
+    "이름 미등록 건물.003",
+    "이름 미등록 건물.004",
+    "이름 미등록 건물.005",
+    "이름 미등록 건물.006",
+    "이름 미등록 건물.007",
+    "이름 미등록 건물.008",
+    "이름 미등록 건물.009"
+  ],
+  "unchanged_objects": 1725,
+  "dot_protected_ids": 53,
+  "triangles": 890412,
+  "decoded_object_geometry_transforms_uvs_materials_images_match": true,
+  "same_glb_bytes": true,
+  "export_binary_buffer": "temporary disk file and read-only memory map in one Blender process",
+  "standard_replay_export": "MemoryError in GLB binary buffer allocation"
+}

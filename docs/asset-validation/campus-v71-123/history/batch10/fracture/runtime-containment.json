@@ -1,0 +1,3222 @@
+{
+  "knu-osm-468931854-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-468931854_Fragment_000",
+      "visual_outside_collider_m": 6.461985205263865e-08,
+      "collider_outside_visual_convex_hull_m": 6.048974240946414e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_001",
+      "visual_outside_collider_m": 3.9449078059750065e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_002",
+      "visual_outside_collider_m": 6.175017858156551e-08,
+      "collider_outside_visual_convex_hull_m": 5.142986769790525e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_003",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_004",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_005",
+      "visual_outside_collider_m": 2.0928339253267758e-07,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_006",
+      "visual_outside_collider_m": 5.287366988682152e-08,
+      "collider_outside_visual_convex_hull_m": 5.875211817052417e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_007",
+      "visual_outside_collider_m": 5.966081342845264e-08,
+      "collider_outside_visual_convex_hull_m": 5.748066556066078e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_008",
+      "visual_outside_collider_m": 6.20370760873179e-08,
+      "collider_outside_visual_convex_hull_m": 4.551775202588093e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_009",
+      "visual_outside_collider_m": 6.321175620438435e-08,
+      "collider_outside_visual_convex_hull_m": 4.6891409727356503e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_010",
+      "visual_outside_collider_m": 4.9492260789651965e-08,
+      "collider_outside_visual_convex_hull_m": 5.841259916039565e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_011",
+      "visual_outside_collider_m": 5.144315634586505e-08,
+      "collider_outside_visual_convex_hull_m": 6.004823371874579e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_012",
+      "visual_outside_collider_m": 5.984746315190748e-08,
+      "collider_outside_visual_convex_hull_m": 5.927129234639672e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_013",
+      "visual_outside_collider_m": 5.404028211031253e-08,
+      "collider_outside_visual_convex_hull_m": 6.346945721769082e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_014",
+      "visual_outside_collider_m": 8.033480258795578e-08,
+      "collider_outside_visual_convex_hull_m": 5.711320055779012e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_015",
+      "visual_outside_collider_m": 5.739370556590018e-08,
+      "collider_outside_visual_convex_hull_m": 6.519011933048269e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_016",
+      "visual_outside_collider_m": 5.353372281580171e-08,
+      "collider_outside_visual_convex_hull_m": 6.329125917803324e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_017",
+      "visual_outside_collider_m": 6.243551192719465e-08,
+      "collider_outside_visual_convex_hull_m": 4.939455995611741e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_018",
+      "visual_outside_collider_m": 7.737445437139279e-08,
+      "collider_outside_visual_convex_hull_m": 6.270192379198569e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_019",
+      "visual_outside_collider_m": 6.245058584153362e-08,
+      "collider_outside_visual_convex_hull_m": 6.442330702238763e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_020",
+      "visual_outside_collider_m": 5.6616550669907895e-08,
+      "collider_outside_visual_convex_hull_m": 7.452119249462541e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_021",
+      "visual_outside_collider_m": 6.11503959135895e-08,
+      "collider_outside_visual_convex_hull_m": 7.090164048928482e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_022",
+      "visual_outside_collider_m": 3.9112595884294166e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_023",
+      "visual_outside_collider_m": 5.4098344068331805e-08,
+      "collider_outside_visual_convex_hull_m": 6.229241850119749e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_024",
+      "visual_outside_collider_m": 5.79502859449077e-08,
+      "collider_outside_visual_convex_hull_m": 6.798312390809969e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_025",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_026",
+      "visual_outside_collider_m": 6.293183163474936e-08,
+      "collider_outside_visual_convex_hull_m": 4.005417611474549e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_027",
+      "visual_outside_collider_m": 2.2365419352632365e-07,
+      "collider_outside_visual_convex_hull_m": 6.00022226904251e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_028",
+      "visual_outside_collider_m": 7.011692530062286e-08,
+      "collider_outside_visual_convex_hull_m": 6.926330994166952e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_029",
+      "visual_outside_collider_m": 5.361646795987163e-08,
+      "collider_outside_visual_convex_hull_m": 5.066693517519205e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_030",
+      "visual_outside_collider_m": 5.638704986266063e-08,
+      "collider_outside_visual_convex_hull_m": 6.601430685426735e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_031",
+      "visual_outside_collider_m": 5.166384134391855e-08,
+      "collider_outside_visual_convex_hull_m": 5.19372070073576e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_032",
+      "visual_outside_collider_m": 6.601957375229617e-08,
+      "collider_outside_visual_convex_hull_m": 5.3654025861105126e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_033",
+      "visual_outside_collider_m": 5.298934598052529e-08,
+      "collider_outside_visual_convex_hull_m": 5.110384995732353e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_034",
+      "visual_outside_collider_m": 7.011475933182965e-08,
+      "collider_outside_visual_convex_hull_m": 6.493690085651593e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_035",
+      "visual_outside_collider_m": 5.5876996252202105e-08,
+      "collider_outside_visual_convex_hull_m": 5.039553491181792e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_036",
+      "visual_outside_collider_m": 6.102616767478253e-08,
+      "collider_outside_visual_convex_hull_m": 6.162995797032167e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_037",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_038",
+      "visual_outside_collider_m": 4.9225955672804744e-08,
+      "collider_outside_visual_convex_hull_m": 4.691307790849475e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_039",
+      "visual_outside_collider_m": 5.917949937039868e-08,
+      "collider_outside_visual_convex_hull_m": 4.978523621135267e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_040",
+      "visual_outside_collider_m": 4.9653156197759785e-08,
+      "collider_outside_visual_convex_hull_m": 4.27550999049231e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_041",
+      "visual_outside_collider_m": 4.958402352595037e-08,
+      "collider_outside_visual_convex_hull_m": 6.832928378663894e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_042",
+      "visual_outside_collider_m": 5.3622738027669925e-08,
+      "collider_outside_visual_convex_hull_m": 5.080954365577206e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_043",
+      "visual_outside_collider_m": 2.8045367472806504e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_044",
+      "visual_outside_collider_m": 5.7350327625771413e-08,
+      "collider_outside_visual_convex_hull_m": 6.275935662825027e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_045",
+      "visual_outside_collider_m": 6.50648650790675e-08,
+      "collider_outside_visual_convex_hull_m": 6.971783778064733e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_046",
+      "visual_outside_collider_m": 5.501506122884692e-08,
+      "collider_outside_visual_convex_hull_m": 6.160382579056822e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_047",
+      "visual_outside_collider_m": 4.635821349019409e-08,
+      "collider_outside_visual_convex_hull_m": 6.08766782539405e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_048",
+      "visual_outside_collider_m": 6.155928647388897e-08,
+      "collider_outside_visual_convex_hull_m": 5.621610285611034e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_049",
+      "visual_outside_collider_m": 6.371018662632011e-08,
+      "collider_outside_visual_convex_hull_m": 4.542209938729336e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_050",
+      "visual_outside_collider_m": 5.215699996896639e-08,
+      "collider_outside_visual_convex_hull_m": 6.033877114619557e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_051",
+      "visual_outside_collider_m": 5.778074579909642e-08,
+      "collider_outside_visual_convex_hull_m": 5.656760709848996e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_052",
+      "visual_outside_collider_m": 1.73581164691905e-07,
+      "collider_outside_visual_convex_hull_m": 5.986426526716215e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_053",
+      "visual_outside_collider_m": 2.7755575615628914e-17,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_054",
+      "visual_outside_collider_m": 4.4697091250434084e-08,
+      "collider_outside_visual_convex_hull_m": 4.981352699773289e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_055",
+      "visual_outside_collider_m": 5.26158172031721e-08,
+      "collider_outside_visual_convex_hull_m": 5.342029898991463e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_056",
+      "visual_outside_collider_m": 4.91724400919491e-08,
+      "collider_outside_visual_convex_hull_m": 6.10445002879878e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_057",
+      "visual_outside_collider_m": 5.919047964264568e-08,
+      "collider_outside_visual_convex_hull_m": 4.4402307802782204e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_058",
+      "visual_outside_collider_m": 5.2540630540720556e-08,
+      "collider_outside_visual_convex_hull_m": 3.617522176257992e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_059",
+      "visual_outside_collider_m": 4.51999497552702e-08,
+      "collider_outside_visual_convex_hull_m": 5.6305301338044345e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_060",
+      "visual_outside_collider_m": 1.1932291867078337e-07,
+      "collider_outside_visual_convex_hull_m": 5.84073778231442e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_061",
+      "visual_outside_collider_m": 4.600292066725409e-08,
+      "collider_outside_visual_convex_hull_m": 5.62482025401323e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_062",
+      "visual_outside_collider_m": 4.985511678490262e-08,
+      "collider_outside_visual_convex_hull_m": 5.149208201493671e-08
+    },
+    {
+      "node": "SM_osm-468931854_Fragment_063",
+      "visual_outside_collider_m": 5.63564098443603e-08,
+      "collider_outside_visual_convex_hull_m": 6.203904109880476e-08
+    }
+  ],
+  "knu-osm-468931893-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-468931893_Fragment_000",
+      "visual_outside_collider_m": 6.035230779022349e-08,
+      "collider_outside_visual_convex_hull_m": 4.766133616940227e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_001",
+      "visual_outside_collider_m": 5.9185077533330244e-08,
+      "collider_outside_visual_convex_hull_m": 6.28089568688317e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_002",
+      "visual_outside_collider_m": 5.648767160137957e-07,
+      "collider_outside_visual_convex_hull_m": 4.759208713234209e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_003",
+      "visual_outside_collider_m": 6.83438536874803e-08,
+      "collider_outside_visual_convex_hull_m": 6.169882511841696e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_004",
+      "visual_outside_collider_m": 4.8801558183431126e-08,
+      "collider_outside_visual_convex_hull_m": 5.7597371878881365e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_005",
+      "visual_outside_collider_m": 5.352012535930761e-08,
+      "collider_outside_visual_convex_hull_m": 5.6892678124143004e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_006",
+      "visual_outside_collider_m": 4.585723822891907e-08,
+      "collider_outside_visual_convex_hull_m": 5.784739445791054e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_007",
+      "visual_outside_collider_m": 6.838970846578807e-08,
+      "collider_outside_visual_convex_hull_m": 5.580126274939978e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_008",
+      "visual_outside_collider_m": 5.548030254654002e-08,
+      "collider_outside_visual_convex_hull_m": 4.817655885336336e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_009",
+      "visual_outside_collider_m": 4.7081124415759845e-08,
+      "collider_outside_visual_convex_hull_m": 5.335613550982998e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_010",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_011",
+      "visual_outside_collider_m": 1.5304806419425e-07,
+      "collider_outside_visual_convex_hull_m": 5.190163787638369e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_012",
+      "visual_outside_collider_m": 5.941961778860305e-08,
+      "collider_outside_visual_convex_hull_m": 4.4396509690791675e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_013",
+      "visual_outside_collider_m": 4.935700111952102e-07,
+      "collider_outside_visual_convex_hull_m": 5.193730051589185e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_014",
+      "visual_outside_collider_m": 2.0388797081216659e-07,
+      "collider_outside_visual_convex_hull_m": 5.4590773040930074e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_015",
+      "visual_outside_collider_m": 5.801787028580918e-08,
+      "collider_outside_visual_convex_hull_m": 5.1234838649438785e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_016",
+      "visual_outside_collider_m": 7.046069327998339e-08,
+      "collider_outside_visual_convex_hull_m": 6.22437723030167e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_017",
+      "visual_outside_collider_m": 5.7455752267010496e-08,
+      "collider_outside_visual_convex_hull_m": 5.021978438657371e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_018",
+      "visual_outside_collider_m": 9.519029633975329e-08,
+      "collider_outside_visual_convex_hull_m": 5.769300542857181e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_019",
+      "visual_outside_collider_m": 6.582429046275706e-08,
+      "collider_outside_visual_convex_hull_m": 5.023421226213465e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_020",
+      "visual_outside_collider_m": 9.585481133833618e-08,
+      "collider_outside_visual_convex_hull_m": 5.028448812893771e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_021",
+      "visual_outside_collider_m": 3.674967463673795e-07,
+      "collider_outside_visual_convex_hull_m": 6.441490724151677e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_022",
+      "visual_outside_collider_m": 6.517177081333259e-08,
+      "collider_outside_visual_convex_hull_m": 6.083779455212657e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_023",
+      "visual_outside_collider_m": 5.282723691824032e-08,
+      "collider_outside_visual_convex_hull_m": 5.2698469810152915e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_024",
+      "visual_outside_collider_m": 5.3388925003172716e-08,
+      "collider_outside_visual_convex_hull_m": 5.4866242105156005e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_025",
+      "visual_outside_collider_m": 5.426025867505402e-08,
+      "collider_outside_visual_convex_hull_m": 6.753343392840172e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_026",
+      "visual_outside_collider_m": 5.01024146060125e-08,
+      "collider_outside_visual_convex_hull_m": 6.178117706312491e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_027",
+      "visual_outside_collider_m": 5.605010372500274e-08,
+      "collider_outside_visual_convex_hull_m": 5.336271445555152e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_028",
+      "visual_outside_collider_m": 5.268568620264702e-08,
+      "collider_outside_visual_convex_hull_m": 4.6969114070316564e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_029",
+      "visual_outside_collider_m": 7.38466746641464e-08,
+      "collider_outside_visual_convex_hull_m": 7.233029564179816e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_030",
+      "visual_outside_collider_m": 6.730096202556268e-08,
+      "collider_outside_visual_convex_hull_m": 5.365102842547209e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_031",
+      "visual_outside_collider_m": 5.731371030548438e-08,
+      "collider_outside_visual_convex_hull_m": 6.146616163271723e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_032",
+      "visual_outside_collider_m": 3.967308419006166e-07,
+      "collider_outside_visual_convex_hull_m": 4.480342280510641e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_033",
+      "visual_outside_collider_m": 4.773879982988838e-08,
+      "collider_outside_visual_convex_hull_m": 5.983194117931134e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_034",
+      "visual_outside_collider_m": 7.951171393516532e-08,
+      "collider_outside_visual_convex_hull_m": 4.5681696717037035e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_035",
+      "visual_outside_collider_m": 5.188450119542054e-08,
+      "collider_outside_visual_convex_hull_m": 6.497014462536477e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_036",
+      "visual_outside_collider_m": 5.9199997168302154e-08,
+      "collider_outside_visual_convex_hull_m": 5.4158594470221644e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_037",
+      "visual_outside_collider_m": 5.220930161808912e-08,
+      "collider_outside_visual_convex_hull_m": 6.922253104058029e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_038",
+      "visual_outside_collider_m": 6.366403723645497e-08,
+      "collider_outside_visual_convex_hull_m": 6.55465485777107e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_039",
+      "visual_outside_collider_m": 5.898269514470478e-08,
+      "collider_outside_visual_convex_hull_m": 4.5600784093213775e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_040",
+      "visual_outside_collider_m": 6.194148077787176e-08,
+      "collider_outside_visual_convex_hull_m": 5.253589169251782e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_041",
+      "visual_outside_collider_m": 5.014394133251443e-08,
+      "collider_outside_visual_convex_hull_m": 6.387033538168829e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_042",
+      "visual_outside_collider_m": 4.557019808726359e-08,
+      "collider_outside_visual_convex_hull_m": 6.321125961550322e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_043",
+      "visual_outside_collider_m": 5.182315392232573e-07,
+      "collider_outside_visual_convex_hull_m": 5.340808456599788e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_044",
+      "visual_outside_collider_m": 6.094285040503244e-08,
+      "collider_outside_visual_convex_hull_m": 6.33231479474361e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_045",
+      "visual_outside_collider_m": 5.6548780005827304e-08,
+      "collider_outside_visual_convex_hull_m": 4.240514600573064e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_046",
+      "visual_outside_collider_m": 7.3027562774719e-08,
+      "collider_outside_visual_convex_hull_m": 6.385376827289235e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_047",
+      "visual_outside_collider_m": 1.1428984357936267e-06,
+      "collider_outside_visual_convex_hull_m": 4.592057756269696e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_048",
+      "visual_outside_collider_m": 1.33366604950641e-07,
+      "collider_outside_visual_convex_hull_m": 4.416608664903343e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_049",
+      "visual_outside_collider_m": 6.00872247791262e-08,
+      "collider_outside_visual_convex_hull_m": 5.2231457325913055e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_050",
+      "visual_outside_collider_m": 4.191208710646599e-08,
+      "collider_outside_visual_convex_hull_m": 7.286120554117481e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_051",
+      "visual_outside_collider_m": 1.174810893359024e-07,
+      "collider_outside_visual_convex_hull_m": 5.435087860328203e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_052",
+      "visual_outside_collider_m": 5.7071654957496776e-08,
+      "collider_outside_visual_convex_hull_m": 5.279899217836004e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_053",
+      "visual_outside_collider_m": 6.33061162658155e-08,
+      "collider_outside_visual_convex_hull_m": 7.330732773591642e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_054",
+      "visual_outside_collider_m": 6.557994694164626e-08,
+      "collider_outside_visual_convex_hull_m": 5.3217327711241325e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_055",
+      "visual_outside_collider_m": 5.3224034124443875e-08,
+      "collider_outside_visual_convex_hull_m": 6.624859005821548e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_056",
+      "visual_outside_collider_m": 4.668408568053728e-08,
+      "collider_outside_visual_convex_hull_m": 5.1178000753937525e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_057",
+      "visual_outside_collider_m": 7.130378623654288e-08,
+      "collider_outside_visual_convex_hull_m": 4.6475087833730555e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_058",
+      "visual_outside_collider_m": 7.215980329933203e-08,
+      "collider_outside_visual_convex_hull_m": 5.05454708088493e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_059",
+      "visual_outside_collider_m": 2.9754614983001915e-07,
+      "collider_outside_visual_convex_hull_m": 5.99498601039361e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_060",
+      "visual_outside_collider_m": 5.3679464831479784e-08,
+      "collider_outside_visual_convex_hull_m": 4.7469203345862354e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_061",
+      "visual_outside_collider_m": 6.326020737801308e-08,
+      "collider_outside_visual_convex_hull_m": 5.764517174711159e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_062",
+      "visual_outside_collider_m": 9.460593997090427e-08,
+      "collider_outside_visual_convex_hull_m": 6.006131192393127e-08
+    },
+    {
+      "node": "SM_osm-468931893_Fragment_063",
+      "visual_outside_collider_m": 5.969470945332844e-08,
+      "collider_outside_visual_convex_hull_m": 6.158808786571601e-08
+    }
+  ],
+  "knu-osm-468931896-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-468931896_Fragment_000",
+      "visual_outside_collider_m": 5.099525507423763e-08,
+      "collider_outside_visual_convex_hull_m": 6.164913501915947e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_001",
+      "visual_outside_collider_m": 5.295553132111941e-08,
+      "collider_outside_visual_convex_hull_m": 4.555925481319889e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_002",
+      "visual_outside_collider_m": 5.838093622423379e-08,
+      "collider_outside_visual_convex_hull_m": 5.1499995906700846e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_003",
+      "visual_outside_collider_m": 5.3972948554914524e-08,
+      "collider_outside_visual_convex_hull_m": 6.161258803150105e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_004",
+      "visual_outside_collider_m": 6.98589630448998e-08,
+      "collider_outside_visual_convex_hull_m": 6.480099007388773e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_005",
+      "visual_outside_collider_m": 3.3759225298579665e-07,
+      "collider_outside_visual_convex_hull_m": 6.057743937026849e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_006",
+      "visual_outside_collider_m": 7.269243104679468e-08,
+      "collider_outside_visual_convex_hull_m": 4.7371655570449533e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_007",
+      "visual_outside_collider_m": 1.9032736193191901e-06,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_008",
+      "visual_outside_collider_m": 6.948705758014206e-08,
+      "collider_outside_visual_convex_hull_m": 6.128988180864603e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_009",
+      "visual_outside_collider_m": 7.111928268521694e-08,
+      "collider_outside_visual_convex_hull_m": 4.7633388164380897e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_010",
+      "visual_outside_collider_m": 6.453086090485449e-08,
+      "collider_outside_visual_convex_hull_m": 4.534816286372312e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_011",
+      "visual_outside_collider_m": 5.661695479108886e-08,
+      "collider_outside_visual_convex_hull_m": 5.5673668786226926e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_012",
+      "visual_outside_collider_m": 5.29888215805574e-08,
+      "collider_outside_visual_convex_hull_m": 7.0638771304532e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_013",
+      "visual_outside_collider_m": 6.073798654564894e-08,
+      "collider_outside_visual_convex_hull_m": 4.299321267747791e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_014",
+      "visual_outside_collider_m": 5.8610938671876944e-08,
+      "collider_outside_visual_convex_hull_m": 5.153269455604459e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_015",
+      "visual_outside_collider_m": 4.214697138515966e-08,
+      "collider_outside_visual_convex_hull_m": 5.2568513431161534e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_016",
+      "visual_outside_collider_m": 5.763220889409837e-08,
+      "collider_outside_visual_convex_hull_m": 5.829933957118838e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_017",
+      "visual_outside_collider_m": 6.235640873097914e-08,
+      "collider_outside_visual_convex_hull_m": 6.06686186427341e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_018",
+      "visual_outside_collider_m": 6.705492636149835e-08,
+      "collider_outside_visual_convex_hull_m": 6.188579321220189e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_019",
+      "visual_outside_collider_m": 6.947873562590523e-08,
+      "collider_outside_visual_convex_hull_m": 5.36899945613456e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_020",
+      "visual_outside_collider_m": 3.79184083867945e-07,
+      "collider_outside_visual_convex_hull_m": 5.334143898805266e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_021",
+      "visual_outside_collider_m": 6.668955040978197e-08,
+      "collider_outside_visual_convex_hull_m": 6.297991841930362e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_022",
+      "visual_outside_collider_m": 3.789315600188914e-08,
+      "collider_outside_visual_convex_hull_m": 6.496092883057081e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_023",
+      "visual_outside_collider_m": 5.3043752668013866e-08,
+      "collider_outside_visual_convex_hull_m": 4.607229200925822e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_024",
+      "visual_outside_collider_m": 1.1785475031913378e-07,
+      "collider_outside_visual_convex_hull_m": 5.93505584678411e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_025",
+      "visual_outside_collider_m": 4.737112169195257e-08,
+      "collider_outside_visual_convex_hull_m": 6.263144758378303e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_026",
+      "visual_outside_collider_m": 5.4484365435980564e-08,
+      "collider_outside_visual_convex_hull_m": 5.47043578769113e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_027",
+      "visual_outside_collider_m": 2.7755575615628914e-17,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_028",
+      "visual_outside_collider_m": 5.9398445828584556e-08,
+      "collider_outside_visual_convex_hull_m": 3.6553185436827285e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_029",
+      "visual_outside_collider_m": 5.085786757008659e-08,
+      "collider_outside_visual_convex_hull_m": 5.209732459321437e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_030",
+      "visual_outside_collider_m": 6.180280065493093e-08,
+      "collider_outside_visual_convex_hull_m": 5.2813508705229495e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_031",
+      "visual_outside_collider_m": 5.0264782919251516e-08,
+      "collider_outside_visual_convex_hull_m": 6.497592677789932e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_032",
+      "visual_outside_collider_m": 4.979702145080367e-08,
+      "collider_outside_visual_convex_hull_m": 4.765932898331826e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_033",
+      "visual_outside_collider_m": 6.471715327527328e-08,
+      "collider_outside_visual_convex_hull_m": 5.978820954988251e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_034",
+      "visual_outside_collider_m": 4.3525635790020445e-08,
+      "collider_outside_visual_convex_hull_m": 6.23009819011866e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_035",
+      "visual_outside_collider_m": 3.318685931619214e-08,
+      "collider_outside_visual_convex_hull_m": 4.3512388761546283e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_036",
+      "visual_outside_collider_m": 7.54888889453742e-08,
+      "collider_outside_visual_convex_hull_m": 5.872523664574025e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_037",
+      "visual_outside_collider_m": 5.2859143270800324e-08,
+      "collider_outside_visual_convex_hull_m": 5.621215687368064e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_038",
+      "visual_outside_collider_m": 7.139540422751445e-08,
+      "collider_outside_visual_convex_hull_m": 6.383462644588e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_039",
+      "visual_outside_collider_m": 3.3873774901715947e-07,
+      "collider_outside_visual_convex_hull_m": 6.172612837529456e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_040",
+      "visual_outside_collider_m": 1.956182449081023e-07,
+      "collider_outside_visual_convex_hull_m": 5.201030318230382e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_041",
+      "visual_outside_collider_m": 7.497623907837259e-08,
+      "collider_outside_visual_convex_hull_m": 7.152614048266948e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_042",
+      "visual_outside_collider_m": 4.861566350183866e-08,
+      "collider_outside_visual_convex_hull_m": 4.704864892124405e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_043",
+      "visual_outside_collider_m": 6.63506886933174e-08,
+      "collider_outside_visual_convex_hull_m": 6.534555865855829e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_044",
+      "visual_outside_collider_m": 5.172376690842917e-08,
+      "collider_outside_visual_convex_hull_m": 4.776850855148229e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_045",
+      "visual_outside_collider_m": 5.881903319959747e-08,
+      "collider_outside_visual_convex_hull_m": 5.877106265539389e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_046",
+      "visual_outside_collider_m": 5.0994492739597774e-08,
+      "collider_outside_visual_convex_hull_m": 5.1821639854288115e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_047",
+      "visual_outside_collider_m": 5.632439342706519e-08,
+      "collider_outside_visual_convex_hull_m": 6.727865536904076e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_048",
+      "visual_outside_collider_m": 6.560333427885201e-08,
+      "collider_outside_visual_convex_hull_m": 5.933941435443124e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_049",
+      "visual_outside_collider_m": 4.782965815075535e-08,
+      "collider_outside_visual_convex_hull_m": 5.4521514247785063e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_050",
+      "visual_outside_collider_m": 5.744417100675414e-08,
+      "collider_outside_visual_convex_hull_m": 5.3274303926653666e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_051",
+      "visual_outside_collider_m": 5.7565861629610415e-08,
+      "collider_outside_visual_convex_hull_m": 5.118813223292662e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_052",
+      "visual_outside_collider_m": 6.7295294073344e-08,
+      "collider_outside_visual_convex_hull_m": 5.9383080897035256e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_053",
+      "visual_outside_collider_m": 5.8142602149535705e-08,
+      "collider_outside_visual_convex_hull_m": 5.219088012459183e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_054",
+      "visual_outside_collider_m": 2.0985257045968986e-07,
+      "collider_outside_visual_convex_hull_m": 4.374498682735428e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_055",
+      "visual_outside_collider_m": 3.220939418929758e-07,
+      "collider_outside_visual_convex_hull_m": 5.4642320883313555e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_056",
+      "visual_outside_collider_m": 5.361897616185107e-08,
+      "collider_outside_visual_convex_hull_m": 5.113870871209514e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_057",
+      "visual_outside_collider_m": 6.718673137284803e-08,
+      "collider_outside_visual_convex_hull_m": 5.616702625221848e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_058",
+      "visual_outside_collider_m": 4.8312543243778094e-08,
+      "collider_outside_visual_convex_hull_m": 5.266149841198775e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_059",
+      "visual_outside_collider_m": 6.797045412620939e-08,
+      "collider_outside_visual_convex_hull_m": 6.306671387901197e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_060",
+      "visual_outside_collider_m": 6.837856558750133e-08,
+      "collider_outside_visual_convex_hull_m": 6.22408455053236e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_061",
+      "visual_outside_collider_m": 5.874227007596211e-08,
+      "collider_outside_visual_convex_hull_m": 6.54683275091994e-08
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_062",
+      "visual_outside_collider_m": 2.002971818959587e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-468931896_Fragment_063",
+      "visual_outside_collider_m": 6.014018047451053e-08,
+      "collider_outside_visual_convex_hull_m": 7.281807595793666e-08
+    }
+  ],
+  "knu-osm-468931915-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-468931915_Fragment_000",
+      "visual_outside_collider_m": 4.4226881268372153e-08,
+      "collider_outside_visual_convex_hull_m": 5.650759343778233e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_001",
+      "visual_outside_collider_m": 7.445813458573092e-07,
+      "collider_outside_visual_convex_hull_m": 5.899674007658895e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_002",
+      "visual_outside_collider_m": 2.693142270027149e-07,
+      "collider_outside_visual_convex_hull_m": 5.144766540565726e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_003",
+      "visual_outside_collider_m": 4.6461883340676025e-08,
+      "collider_outside_visual_convex_hull_m": 5.402091615702709e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_004",
+      "visual_outside_collider_m": 1.2104310674887486e-06,
+      "collider_outside_visual_convex_hull_m": 6.726256718270207e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_005",
+      "visual_outside_collider_m": 2.7755575615628914e-17,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_006",
+      "visual_outside_collider_m": 1.4316404707837016e-06,
+      "collider_outside_visual_convex_hull_m": 5.3479674577694425e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_007",
+      "visual_outside_collider_m": 5.350966658657086e-08,
+      "collider_outside_visual_convex_hull_m": 4.779924685227588e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_008",
+      "visual_outside_collider_m": 4.861035071690445e-08,
+      "collider_outside_visual_convex_hull_m": 5.234843067358774e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_009",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_010",
+      "visual_outside_collider_m": 5.693786836458159e-08,
+      "collider_outside_visual_convex_hull_m": 5.9600938739912124e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_011",
+      "visual_outside_collider_m": 5.7067371189711835e-08,
+      "collider_outside_visual_convex_hull_m": 6.30843672300152e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_012",
+      "visual_outside_collider_m": 5.952683882273768e-08,
+      "collider_outside_visual_convex_hull_m": 4.471424308594152e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_013",
+      "visual_outside_collider_m": 5.687142801136247e-08,
+      "collider_outside_visual_convex_hull_m": 5.715473233580681e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_014",
+      "visual_outside_collider_m": 6.176699249293982e-08,
+      "collider_outside_visual_convex_hull_m": 5.627032351185335e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_015",
+      "visual_outside_collider_m": 6.97797167548142e-08,
+      "collider_outside_visual_convex_hull_m": 7.642947946751022e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_016",
+      "visual_outside_collider_m": 5.796362129162347e-08,
+      "collider_outside_visual_convex_hull_m": 4.3394550092168416e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_017",
+      "visual_outside_collider_m": 7.731419476852963e-07,
+      "collider_outside_visual_convex_hull_m": 1.1102230246251565e-16
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_018",
+      "visual_outside_collider_m": 4.5506986789956017e-08,
+      "collider_outside_visual_convex_hull_m": 7.339504665138108e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_019",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_020",
+      "visual_outside_collider_m": 6.587989493378466e-07,
+      "collider_outside_visual_convex_hull_m": 4.686833970923843e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_021",
+      "visual_outside_collider_m": 3.1108646991739874e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_022",
+      "visual_outside_collider_m": 8.830451091457192e-07,
+      "collider_outside_visual_convex_hull_m": 5.229779873050511e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_023",
+      "visual_outside_collider_m": 6.050887427222484e-08,
+      "collider_outside_visual_convex_hull_m": 6.676785130332874e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_024",
+      "visual_outside_collider_m": 6.377980188432275e-08,
+      "collider_outside_visual_convex_hull_m": 6.754609228887265e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_025",
+      "visual_outside_collider_m": 4.650577867248984e-08,
+      "collider_outside_visual_convex_hull_m": 5.5393737874442905e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_026",
+      "visual_outside_collider_m": 4.854115515096069e-08,
+      "collider_outside_visual_convex_hull_m": 5.044953504951266e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_027",
+      "visual_outside_collider_m": 8.322934594295894e-08,
+      "collider_outside_visual_convex_hull_m": 6.047879264059475e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_028",
+      "visual_outside_collider_m": 6.156295304093895e-08,
+      "collider_outside_visual_convex_hull_m": 5.972248356966858e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_029",
+      "visual_outside_collider_m": 6.09237733456558e-08,
+      "collider_outside_visual_convex_hull_m": 4.636853762063353e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_030",
+      "visual_outside_collider_m": 6.972155372486633e-08,
+      "collider_outside_visual_convex_hull_m": 6.285000153649634e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_031",
+      "visual_outside_collider_m": 3.713567181540256e-08,
+      "collider_outside_visual_convex_hull_m": 5.148001817889547e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_032",
+      "visual_outside_collider_m": 6.741614959615561e-07,
+      "collider_outside_visual_convex_hull_m": 5.848484224690864e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_033",
+      "visual_outside_collider_m": 5.368782246550907e-08,
+      "collider_outside_visual_convex_hull_m": 6.977459357515592e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_034",
+      "visual_outside_collider_m": 6.651405888291606e-07,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_035",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_036",
+      "visual_outside_collider_m": 5.868320876456501e-08,
+      "collider_outside_visual_convex_hull_m": 5.898538846249579e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_037",
+      "visual_outside_collider_m": 5.596278240815877e-08,
+      "collider_outside_visual_convex_hull_m": 5.004674352715455e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_038",
+      "visual_outside_collider_m": 5.122759599851534e-08,
+      "collider_outside_visual_convex_hull_m": 5.517377668629031e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_039",
+      "visual_outside_collider_m": 5.5174689012060796e-08,
+      "collider_outside_visual_convex_hull_m": 6.223546034078709e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_040",
+      "visual_outside_collider_m": 5.8822942794467536e-08,
+      "collider_outside_visual_convex_hull_m": 7.989535544261628e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_041",
+      "visual_outside_collider_m": 6.346168357485027e-08,
+      "collider_outside_visual_convex_hull_m": 6.727239199033619e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_042",
+      "visual_outside_collider_m": 7.071423241411523e-08,
+      "collider_outside_visual_convex_hull_m": 4.658509558663759e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_043",
+      "visual_outside_collider_m": 6.456277809596678e-08,
+      "collider_outside_visual_convex_hull_m": 5.49927354487334e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_044",
+      "visual_outside_collider_m": 5.4700968921128634e-08,
+      "collider_outside_visual_convex_hull_m": 6.486816994666356e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_045",
+      "visual_outside_collider_m": 6.213377323760483e-08,
+      "collider_outside_visual_convex_hull_m": 5.3601141664083585e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_046",
+      "visual_outside_collider_m": 5.179964995827291e-08,
+      "collider_outside_visual_convex_hull_m": 5.911181175100033e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_047",
+      "visual_outside_collider_m": 5.665515678821009e-08,
+      "collider_outside_visual_convex_hull_m": 6.082718215227878e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_048",
+      "visual_outside_collider_m": 4.800038314045629e-08,
+      "collider_outside_visual_convex_hull_m": 7.445369792913326e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_049",
+      "visual_outside_collider_m": 6.13097454887912e-08,
+      "collider_outside_visual_convex_hull_m": 6.543650910018073e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_050",
+      "visual_outside_collider_m": 8.48372223721805e-07,
+      "collider_outside_visual_convex_hull_m": 6.158627552377283e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_051",
+      "visual_outside_collider_m": 1.1244353636807869e-06,
+      "collider_outside_visual_convex_hull_m": 7.909718302556712e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_052",
+      "visual_outside_collider_m": 6.695932122657844e-08,
+      "collider_outside_visual_convex_hull_m": 5.36968103037605e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_053",
+      "visual_outside_collider_m": 4.533272193740778e-08,
+      "collider_outside_visual_convex_hull_m": 4.3448132619472446e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_054",
+      "visual_outside_collider_m": 5.3014831719044864e-08,
+      "collider_outside_visual_convex_hull_m": 5.471305969395601e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_055",
+      "visual_outside_collider_m": 6.382794778825307e-08,
+      "collider_outside_visual_convex_hull_m": 5.173593414786737e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_056",
+      "visual_outside_collider_m": 9.756903760205216e-07,
+      "collider_outside_visual_convex_hull_m": 6.197770838212158e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_057",
+      "visual_outside_collider_m": 5.078588155571495e-08,
+      "collider_outside_visual_convex_hull_m": 6.456703002810649e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_058",
+      "visual_outside_collider_m": 4.453899454803789e-08,
+      "collider_outside_visual_convex_hull_m": 4.9678413126252874e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_059",
+      "visual_outside_collider_m": 9.792265941721556e-07,
+      "collider_outside_visual_convex_hull_m": 8.112776250790432e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_060",
+      "visual_outside_collider_m": 4.945903467334922e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_061",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_062",
+      "visual_outside_collider_m": 6.195240401241087e-08,
+      "collider_outside_visual_convex_hull_m": 7.715496561089275e-08
+    },
+    {
+      "node": "SM_osm-468931915_Fragment_063",
+      "visual_outside_collider_m": 5.242054160192744e-08,
+      "collider_outside_visual_convex_hull_m": 4.5732762021799545e-08
+    }
+  ],
+  "knu-osm-524161868-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-524161868_Fragment_000",
+      "visual_outside_collider_m": 5.876248486413882e-08,
+      "collider_outside_visual_convex_hull_m": 5.602735995979824e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_001",
+      "visual_outside_collider_m": 6.348612366369188e-08,
+      "collider_outside_visual_convex_hull_m": 4.7499771393955115e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_002",
+      "visual_outside_collider_m": 1.3973363233166225e-07,
+      "collider_outside_visual_convex_hull_m": 4.163336342344337e-17
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_003",
+      "visual_outside_collider_m": 5.4233519508617434e-08,
+      "collider_outside_visual_convex_hull_m": 5.848998502200331e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_004",
+      "visual_outside_collider_m": 5.072112932436035e-08,
+      "collider_outside_visual_convex_hull_m": 6.238420630078068e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_005",
+      "visual_outside_collider_m": 6.847314518165781e-08,
+      "collider_outside_visual_convex_hull_m": 4.128938554948114e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_006",
+      "visual_outside_collider_m": 1.1003005062626414e-07,
+      "collider_outside_visual_convex_hull_m": 5.7186919866225594e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_007",
+      "visual_outside_collider_m": 5.450693252376237e-07,
+      "collider_outside_visual_convex_hull_m": 6.726147279770278e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_008",
+      "visual_outside_collider_m": 6.86377611136546e-08,
+      "collider_outside_visual_convex_hull_m": 5.4332714688465344e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_009",
+      "visual_outside_collider_m": 2.2536978651344075e-07,
+      "collider_outside_visual_convex_hull_m": 6.412979999814716e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_010",
+      "visual_outside_collider_m": 1.6296025510953438e-07,
+      "collider_outside_visual_convex_hull_m": 5.963159331601187e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_011",
+      "visual_outside_collider_m": 5.872763403358405e-08,
+      "collider_outside_visual_convex_hull_m": 5.405713252026878e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_012",
+      "visual_outside_collider_m": 6.77884032379561e-08,
+      "collider_outside_visual_convex_hull_m": 5.042488940287804e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_013",
+      "visual_outside_collider_m": 2.8316748194867625e-07,
+      "collider_outside_visual_convex_hull_m": 6.20096744785581e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_014",
+      "visual_outside_collider_m": 1.1379424066926269e-07,
+      "collider_outside_visual_convex_hull_m": 6.495907947656754e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_015",
+      "visual_outside_collider_m": 4.6245754004026196e-08,
+      "collider_outside_visual_convex_hull_m": 5.364915653394142e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_016",
+      "visual_outside_collider_m": 6.309821587446862e-08,
+      "collider_outside_visual_convex_hull_m": 5.3777721886749674e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_017",
+      "visual_outside_collider_m": 3.451442397162108e-07,
+      "collider_outside_visual_convex_hull_m": 6.575907293693284e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_018",
+      "visual_outside_collider_m": 5.921866179370294e-08,
+      "collider_outside_visual_convex_hull_m": 4.69084455029245e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_019",
+      "visual_outside_collider_m": 5.600731331489861e-08,
+      "collider_outside_visual_convex_hull_m": 5.8065583910527074e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_020",
+      "visual_outside_collider_m": 5.855889139705361e-07,
+      "collider_outside_visual_convex_hull_m": 6.31934151396063e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_021",
+      "visual_outside_collider_m": 6.5509707936062256e-09,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_022",
+      "visual_outside_collider_m": 6.51585196076443e-08,
+      "collider_outside_visual_convex_hull_m": 4.726601973703559e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_023",
+      "visual_outside_collider_m": 9.920498245802323e-08,
+      "collider_outside_visual_convex_hull_m": 6.562051312053452e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_024",
+      "visual_outside_collider_m": 3.723279184963957e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_025",
+      "visual_outside_collider_m": 1.1986387701834467e-07,
+      "collider_outside_visual_convex_hull_m": 5.30407901593033e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_026",
+      "visual_outside_collider_m": 6.397539419056297e-08,
+      "collider_outside_visual_convex_hull_m": 5.5118895975203586e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_027",
+      "visual_outside_collider_m": 9.673225576101174e-08,
+      "collider_outside_visual_convex_hull_m": 6.050446116345753e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_028",
+      "visual_outside_collider_m": 3.413478571606676e-07,
+      "collider_outside_visual_convex_hull_m": 5.561312577118116e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_029",
+      "visual_outside_collider_m": 6.144089859105861e-08,
+      "collider_outside_visual_convex_hull_m": 6.42235805925484e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_030",
+      "visual_outside_collider_m": 4.3987738340689475e-08,
+      "collider_outside_visual_convex_hull_m": 5.561513299889853e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_031",
+      "visual_outside_collider_m": 3.638442717945889e-08,
+      "collider_outside_visual_convex_hull_m": 5.3528917208500726e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_032",
+      "visual_outside_collider_m": 5.873260594396745e-07,
+      "collider_outside_visual_convex_hull_m": 6.568809543527898e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_033",
+      "visual_outside_collider_m": 1.0076774370482156e-07,
+      "collider_outside_visual_convex_hull_m": 5.368169145314461e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_034",
+      "visual_outside_collider_m": 5.3040813463578473e-08,
+      "collider_outside_visual_convex_hull_m": 5.322022347820088e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_035",
+      "visual_outside_collider_m": 2.0338823972232412e-07,
+      "collider_outside_visual_convex_hull_m": 7.586764097511356e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_036",
+      "visual_outside_collider_m": 7.037290367106763e-08,
+      "collider_outside_visual_convex_hull_m": 6.237343280757202e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_037",
+      "visual_outside_collider_m": 5.286430511397544e-08,
+      "collider_outside_visual_convex_hull_m": 4.679020809694734e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_038",
+      "visual_outside_collider_m": 7.442528303369667e-08,
+      "collider_outside_visual_convex_hull_m": 5.7404835621110983e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_039",
+      "visual_outside_collider_m": 6.134419589173823e-07,
+      "collider_outside_visual_convex_hull_m": 5.5412692184786394e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_040",
+      "visual_outside_collider_m": 4.796942192769604e-08,
+      "collider_outside_visual_convex_hull_m": 6.107767799856667e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_041",
+      "visual_outside_collider_m": 5.709479974913556e-08,
+      "collider_outside_visual_convex_hull_m": 5.8033198163665034e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_042",
+      "visual_outside_collider_m": 6.318599928001323e-08,
+      "collider_outside_visual_convex_hull_m": 6.345284972453236e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_043",
+      "visual_outside_collider_m": 2.1223020363336786e-07,
+      "collider_outside_visual_convex_hull_m": 5.702448024891282e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_044",
+      "visual_outside_collider_m": 6.251662551526316e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_045",
+      "visual_outside_collider_m": 1.2752373074187418e-07,
+      "collider_outside_visual_convex_hull_m": 4.255112734385946e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_046",
+      "visual_outside_collider_m": 6.061849722183155e-08,
+      "collider_outside_visual_convex_hull_m": 5.7421886051622906e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_047",
+      "visual_outside_collider_m": 1.6555816198526863e-07,
+      "collider_outside_visual_convex_hull_m": 5.2493097063566196e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_048",
+      "visual_outside_collider_m": 5.615256334912111e-08,
+      "collider_outside_visual_convex_hull_m": 4.071752988943356e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_049",
+      "visual_outside_collider_m": 5.395664419427515e-08,
+      "collider_outside_visual_convex_hull_m": 5.844549502698193e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_050",
+      "visual_outside_collider_m": 1.0156427654450795e-07,
+      "collider_outside_visual_convex_hull_m": 4.657737839863785e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_051",
+      "visual_outside_collider_m": 9.876712314671465e-08,
+      "collider_outside_visual_convex_hull_m": 5.474109135428229e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_052",
+      "visual_outside_collider_m": 6.467756258343726e-08,
+      "collider_outside_visual_convex_hull_m": 5.884247486487304e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_053",
+      "visual_outside_collider_m": 1.0797084540326018e-07,
+      "collider_outside_visual_convex_hull_m": 5.8488966156455824e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_054",
+      "visual_outside_collider_m": 7.172564267521331e-08,
+      "collider_outside_visual_convex_hull_m": 6.005290734134583e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_055",
+      "visual_outside_collider_m": 6.795870682863026e-08,
+      "collider_outside_visual_convex_hull_m": 6.152637435641317e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_056",
+      "visual_outside_collider_m": 6.557858055200594e-08,
+      "collider_outside_visual_convex_hull_m": 5.8004457112459384e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_057",
+      "visual_outside_collider_m": 6.618969773664052e-08,
+      "collider_outside_visual_convex_hull_m": 5.280896304971083e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_058",
+      "visual_outside_collider_m": 2.1229188658378195e-07,
+      "collider_outside_visual_convex_hull_m": 4.5172305798701906e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_059",
+      "visual_outside_collider_m": 7.038116532631644e-08,
+      "collider_outside_visual_convex_hull_m": 5.067199287944746e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_060",
+      "visual_outside_collider_m": 6.11271813721892e-08,
+      "collider_outside_visual_convex_hull_m": 5.8584004140882495e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_061",
+      "visual_outside_collider_m": 6.145434654214466e-08,
+      "collider_outside_visual_convex_hull_m": 4.3255325640756404e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_062",
+      "visual_outside_collider_m": 5.215649717671411e-08,
+      "collider_outside_visual_convex_hull_m": 5.715066530437296e-08
+    },
+    {
+      "node": "SM_osm-524161868_Fragment_063",
+      "visual_outside_collider_m": 5.8386943294075344e-08,
+      "collider_outside_visual_convex_hull_m": 5.871342158292325e-08
+    }
+  ],
+  "knu-osm-576358734-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-576358734_Fragment_000",
+      "visual_outside_collider_m": 6.002285296569099e-08,
+      "collider_outside_visual_convex_hull_m": 5.542795547541779e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_001",
+      "visual_outside_collider_m": 6.983350403499955e-08,
+      "collider_outside_visual_convex_hull_m": 6.620762707520988e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_002",
+      "visual_outside_collider_m": 6.792876833250361e-08,
+      "collider_outside_visual_convex_hull_m": 5.997816165947967e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_003",
+      "visual_outside_collider_m": 2.7755575615628914e-17,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_004",
+      "visual_outside_collider_m": 5.944911785071838e-08,
+      "collider_outside_visual_convex_hull_m": 6.970552801632834e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_005",
+      "visual_outside_collider_m": 4.764685188063389e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_006",
+      "visual_outside_collider_m": 6.148917619519523e-08,
+      "collider_outside_visual_convex_hull_m": 5.480504441934819e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_007",
+      "visual_outside_collider_m": 6.976273975167757e-08,
+      "collider_outside_visual_convex_hull_m": 6.997964072108509e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_008",
+      "visual_outside_collider_m": 6.046067005383016e-08,
+      "collider_outside_visual_convex_hull_m": 5.275844072727409e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_009",
+      "visual_outside_collider_m": 8.827585618043088e-08,
+      "collider_outside_visual_convex_hull_m": 4.967829897450926e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_010",
+      "visual_outside_collider_m": 6.413847067343603e-08,
+      "collider_outside_visual_convex_hull_m": 5.649221396231141e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_011",
+      "visual_outside_collider_m": 2.7773772781625183e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_012",
+      "visual_outside_collider_m": 6.006265512725761e-08,
+      "collider_outside_visual_convex_hull_m": 4.4614504896012264e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_013",
+      "visual_outside_collider_m": 5.016564766369136e-08,
+      "collider_outside_visual_convex_hull_m": 5.4802607202253384e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_014",
+      "visual_outside_collider_m": 2.3031483054047897e-08,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_015",
+      "visual_outside_collider_m": 5.586818163649809e-08,
+      "collider_outside_visual_convex_hull_m": 5.393170951495385e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_016",
+      "visual_outside_collider_m": 7.173800897763982e-08,
+      "collider_outside_visual_convex_hull_m": 7.49099051122748e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_017",
+      "visual_outside_collider_m": 6.71918548023065e-08,
+      "collider_outside_visual_convex_hull_m": 5.062291272284192e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_018",
+      "visual_outside_collider_m": 5.6813677581923905e-08,
+      "collider_outside_visual_convex_hull_m": 4.501238975995747e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_019",
+      "visual_outside_collider_m": 6.60648474815062e-08,
+      "collider_outside_visual_convex_hull_m": 6.826711343443925e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_020",
+      "visual_outside_collider_m": 7.159286136149134e-08,
+      "collider_outside_visual_convex_hull_m": 6.175283848164348e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_021",
+      "visual_outside_collider_m": 5.596400398655277e-08,
+      "collider_outside_visual_convex_hull_m": 6.91485030623884e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_022",
+      "visual_outside_collider_m": 6.682515865663596e-08,
+      "collider_outside_visual_convex_hull_m": 4.659660976513713e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_023",
+      "visual_outside_collider_m": 4.981212914367816e-08,
+      "collider_outside_visual_convex_hull_m": 6.486279963135999e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_024",
+      "visual_outside_collider_m": 5.965877830638178e-08,
+      "collider_outside_visual_convex_hull_m": 5.640052153088604e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_025",
+      "visual_outside_collider_m": 4.1262808697650755e-08,
+      "collider_outside_visual_convex_hull_m": 5.992493073980754e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_026",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_027",
+      "visual_outside_collider_m": 6.868634247481076e-08,
+      "collider_outside_visual_convex_hull_m": 5.753120332907535e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_028",
+      "visual_outside_collider_m": 5.0467767964690324e-08,
+      "collider_outside_visual_convex_hull_m": 6.293388077338591e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_029",
+      "visual_outside_collider_m": 6.917126230132631e-08,
+      "collider_outside_visual_convex_hull_m": 7.440053437224314e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_030",
+      "visual_outside_collider_m": 4.983237711364552e-08,
+      "collider_outside_visual_convex_hull_m": 5.624393589753751e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_031",
+      "visual_outside_collider_m": 5.14738861534525e-08,
+      "collider_outside_visual_convex_hull_m": 5.3502569347108064e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_032",
+      "visual_outside_collider_m": 4.686399926456808e-08,
+      "collider_outside_visual_convex_hull_m": 6.935184444778475e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_033",
+      "visual_outside_collider_m": 3.445620885833556e-08,
+      "collider_outside_visual_convex_hull_m": 5.1888270569122596e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_034",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_035",
+      "visual_outside_collider_m": 8.132977402652841e-09,
+      "collider_outside_visual_convex_hull_m": 5.445757900179871e-09
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_036",
+      "visual_outside_collider_m": 2.149825040209663e-09,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_037",
+      "visual_outside_collider_m": 7.043512351145864e-08,
+      "collider_outside_visual_convex_hull_m": 6.130324203823534e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_038",
+      "visual_outside_collider_m": 7.870692618483499e-08,
+      "collider_outside_visual_convex_hull_m": 4.453707691531861e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_039",
+      "visual_outside_collider_m": 5.9115191491931895e-08,
+      "collider_outside_visual_convex_hull_m": 5.803069474952238e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_040",
+      "visual_outside_collider_m": 5.764445354383696e-08,
+      "collider_outside_visual_convex_hull_m": 5.900618180176842e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_041",
+      "visual_outside_collider_m": 5.5352000732922235e-08,
+      "collider_outside_visual_convex_hull_m": 5.03955656649957e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_042",
+      "visual_outside_collider_m": 5.474747616363018e-08,
+      "collider_outside_visual_convex_hull_m": 4.7229798016967806e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_043",
+      "visual_outside_collider_m": 3.9609397317619255e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_044",
+      "visual_outside_collider_m": 8.37795097186067e-08,
+      "collider_outside_visual_convex_hull_m": 4.275305404144447e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_045",
+      "visual_outside_collider_m": 6.472295677184547e-08,
+      "collider_outside_visual_convex_hull_m": 6.002335117827329e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_046",
+      "visual_outside_collider_m": 7.130845558478427e-08,
+      "collider_outside_visual_convex_hull_m": 5.300074926162246e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_047",
+      "visual_outside_collider_m": 5.9005588526339636e-08,
+      "collider_outside_visual_convex_hull_m": 5.908008554600386e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_048",
+      "visual_outside_collider_m": 9.544228424251955e-08,
+      "collider_outside_visual_convex_hull_m": 4.563963984516306e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_049",
+      "visual_outside_collider_m": 5.6448696439392876e-08,
+      "collider_outside_visual_convex_hull_m": 6.013039532959397e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_050",
+      "visual_outside_collider_m": 5.2499103703196326e-08,
+      "collider_outside_visual_convex_hull_m": 6.781747285966588e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_051",
+      "visual_outside_collider_m": 5.972969518985849e-08,
+      "collider_outside_visual_convex_hull_m": 5.021863264120796e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_052",
+      "visual_outside_collider_m": 4.466828026905567e-08,
+      "collider_outside_visual_convex_hull_m": 3.851781819885769e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_053",
+      "visual_outside_collider_m": 6.831439103294201e-08,
+      "collider_outside_visual_convex_hull_m": 4.463958935829737e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_054",
+      "visual_outside_collider_m": 1.1002683181216e-07,
+      "collider_outside_visual_convex_hull_m": 5.436635516775645e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_055",
+      "visual_outside_collider_m": 5.228669558432486e-08,
+      "collider_outside_visual_convex_hull_m": 5.584710205397414e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_056",
+      "visual_outside_collider_m": 8.155860783259916e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_057",
+      "visual_outside_collider_m": 6.839391275548223e-08,
+      "collider_outside_visual_convex_hull_m": 5.625217533444804e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_058",
+      "visual_outside_collider_m": 6.547234521203649e-08,
+      "collider_outside_visual_convex_hull_m": 4.618366594710821e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_059",
+      "visual_outside_collider_m": 6.125415796809364e-08,
+      "collider_outside_visual_convex_hull_m": 7.180214456337097e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_060",
+      "visual_outside_collider_m": 4.876826753541508e-08,
+      "collider_outside_visual_convex_hull_m": 6.120989387570219e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_061",
+      "visual_outside_collider_m": 4.826106203559277e-08,
+      "collider_outside_visual_convex_hull_m": 6.130656948766244e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_062",
+      "visual_outside_collider_m": 5.9514680517125385e-08,
+      "collider_outside_visual_convex_hull_m": 5.960067395172075e-08
+    },
+    {
+      "node": "SM_osm-576358734_Fragment_063",
+      "visual_outside_collider_m": 2.7755575615628914e-17,
+      "collider_outside_visual_convex_hull_m": 2.7755575615628914e-17
+    }
+  ],
+  "knu-osm-577759119-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-577759119_Fragment_000",
+      "visual_outside_collider_m": 6.071054137191112e-08,
+      "collider_outside_visual_convex_hull_m": 6.342552333338247e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_001",
+      "visual_outside_collider_m": 4.7606533701283205e-08,
+      "collider_outside_visual_convex_hull_m": 4.598800039390394e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_002",
+      "visual_outside_collider_m": 6.522956480514708e-08,
+      "collider_outside_visual_convex_hull_m": 5.859122149953766e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_003",
+      "visual_outside_collider_m": 4.6018481358878205e-08,
+      "collider_outside_visual_convex_hull_m": 5.561945988497019e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_004",
+      "visual_outside_collider_m": 6.007250513695439e-08,
+      "collider_outside_visual_convex_hull_m": 4.342418036262785e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_005",
+      "visual_outside_collider_m": 9.931645114646948e-08,
+      "collider_outside_visual_convex_hull_m": 6.963872349607936e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_006",
+      "visual_outside_collider_m": 4.692775917858327e-08,
+      "collider_outside_visual_convex_hull_m": 5.338462361059726e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_007",
+      "visual_outside_collider_m": 4.692582686316449e-08,
+      "collider_outside_visual_convex_hull_m": 5.4664346882393744e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_008",
+      "visual_outside_collider_m": 4.852219998019436e-08,
+      "collider_outside_visual_convex_hull_m": 6.392292170587233e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_009",
+      "visual_outside_collider_m": 5.812704892416143e-08,
+      "collider_outside_visual_convex_hull_m": 6.483811657020944e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_010",
+      "visual_outside_collider_m": 5.703065364404125e-08,
+      "collider_outside_visual_convex_hull_m": 5.493763802211227e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_011",
+      "visual_outside_collider_m": 6.539938018912395e-08,
+      "collider_outside_visual_convex_hull_m": 4.062471911647769e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_012",
+      "visual_outside_collider_m": 5.32117920767905e-08,
+      "collider_outside_visual_convex_hull_m": 4.8443385719521004e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_013",
+      "visual_outside_collider_m": 4.880771652115978e-08,
+      "collider_outside_visual_convex_hull_m": 5.3053119702939355e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_014",
+      "visual_outside_collider_m": 4.687970361905158e-08,
+      "collider_outside_visual_convex_hull_m": 6.475198774044677e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_015",
+      "visual_outside_collider_m": 9.622317898028143e-08,
+      "collider_outside_visual_convex_hull_m": 5.6912959622845705e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_016",
+      "visual_outside_collider_m": 8.414371266418641e-08,
+      "collider_outside_visual_convex_hull_m": 5.535091582298257e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_017",
+      "visual_outside_collider_m": 6.185367884548043e-08,
+      "collider_outside_visual_convex_hull_m": 6.358558637953315e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_018",
+      "visual_outside_collider_m": 4.8704224583917544e-08,
+      "collider_outside_visual_convex_hull_m": 5.7955190951863855e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_019",
+      "visual_outside_collider_m": 5.354652507505442e-08,
+      "collider_outside_visual_convex_hull_m": 4.511426923703432e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_020",
+      "visual_outside_collider_m": 5.750717060881705e-08,
+      "collider_outside_visual_convex_hull_m": 6.053817103168768e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_021",
+      "visual_outside_collider_m": 6.732716675839079e-08,
+      "collider_outside_visual_convex_hull_m": 6.69917176454593e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_022",
+      "visual_outside_collider_m": 5.5017994771144885e-08,
+      "collider_outside_visual_convex_hull_m": 5.3251755893768404e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_023",
+      "visual_outside_collider_m": 5.535908226272923e-08,
+      "collider_outside_visual_convex_hull_m": 6.726993023731254e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_024",
+      "visual_outside_collider_m": 5.755289460285251e-08,
+      "collider_outside_visual_convex_hull_m": 4.93462740391859e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_025",
+      "visual_outside_collider_m": 5.0495734787991964e-08,
+      "collider_outside_visual_convex_hull_m": 5.198577437970364e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_026",
+      "visual_outside_collider_m": 5.896918550685193e-08,
+      "collider_outside_visual_convex_hull_m": 6.162339233339864e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_027",
+      "visual_outside_collider_m": 7.72834096163244e-08,
+      "collider_outside_visual_convex_hull_m": 5.46800749678944e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_028",
+      "visual_outside_collider_m": 3.7250642306863035e-08,
+      "collider_outside_visual_convex_hull_m": 5.48843447634173e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_029",
+      "visual_outside_collider_m": 4.4173360136401385e-08,
+      "collider_outside_visual_convex_hull_m": 5.203375526285914e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_030",
+      "visual_outside_collider_m": 5.3385955267604146e-08,
+      "collider_outside_visual_convex_hull_m": 4.758644817082214e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_031",
+      "visual_outside_collider_m": 5.7701573630275504e-08,
+      "collider_outside_visual_convex_hull_m": 4.1138405487695096e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_032",
+      "visual_outside_collider_m": 4.7767641314644393e-08,
+      "collider_outside_visual_convex_hull_m": 5.97706311805668e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_033",
+      "visual_outside_collider_m": 5.6158927064231534e-08,
+      "collider_outside_visual_convex_hull_m": 4.568332084842197e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_034",
+      "visual_outside_collider_m": 2.8718907363334267e-07,
+      "collider_outside_visual_convex_hull_m": 5.123048224531246e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_035",
+      "visual_outside_collider_m": 4.863366848129047e-08,
+      "collider_outside_visual_convex_hull_m": 5.618098977699937e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_036",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_037",
+      "visual_outside_collider_m": 5.716777226605352e-08,
+      "collider_outside_visual_convex_hull_m": 6.704043475913579e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_038",
+      "visual_outside_collider_m": 5.760001983712293e-08,
+      "collider_outside_visual_convex_hull_m": 5.212911341478943e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_039",
+      "visual_outside_collider_m": 6.108626041112508e-08,
+      "collider_outside_visual_convex_hull_m": 5.936337355016974e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_040",
+      "visual_outside_collider_m": 4.629311733950203e-08,
+      "collider_outside_visual_convex_hull_m": 5.025319921303506e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_041",
+      "visual_outside_collider_m": 7.290416284555512e-08,
+      "collider_outside_visual_convex_hull_m": 6.393060386633564e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_042",
+      "visual_outside_collider_m": 6.393748461230864e-08,
+      "collider_outside_visual_convex_hull_m": 5.049198564810453e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_043",
+      "visual_outside_collider_m": 6.04963227013311e-08,
+      "collider_outside_visual_convex_hull_m": 6.089346041293631e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_044",
+      "visual_outside_collider_m": 8.517647281935936e-08,
+      "collider_outside_visual_convex_hull_m": 5.933424279680466e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_045",
+      "visual_outside_collider_m": 8.987481189826063e-08,
+      "collider_outside_visual_convex_hull_m": 5.0223449177266843e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_046",
+      "visual_outside_collider_m": 8.260544559490768e-08,
+      "collider_outside_visual_convex_hull_m": 5.9341662694833985e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_047",
+      "visual_outside_collider_m": 5.400534572319593e-08,
+      "collider_outside_visual_convex_hull_m": 6.008144430580398e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_048",
+      "visual_outside_collider_m": 4.718606552711613e-08,
+      "collider_outside_visual_convex_hull_m": 6.102449581768532e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_049",
+      "visual_outside_collider_m": 7.019056402768342e-08,
+      "collider_outside_visual_convex_hull_m": 5.2817819756745266e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_050",
+      "visual_outside_collider_m": 5.402816467131588e-08,
+      "collider_outside_visual_convex_hull_m": 5.2045479190243604e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_051",
+      "visual_outside_collider_m": 6.46157538308767e-08,
+      "collider_outside_visual_convex_hull_m": 4.435575198802333e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_052",
+      "visual_outside_collider_m": 4.4708962337880465e-08,
+      "collider_outside_visual_convex_hull_m": 5.045351725296854e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_053",
+      "visual_outside_collider_m": 6.275714267700572e-08,
+      "collider_outside_visual_convex_hull_m": 6.321356717242654e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_054",
+      "visual_outside_collider_m": 5.4244118280477593e-08,
+      "collider_outside_visual_convex_hull_m": 6.037027079630608e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_055",
+      "visual_outside_collider_m": 6.305256203265053e-08,
+      "collider_outside_visual_convex_hull_m": 5.66477247887498e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_056",
+      "visual_outside_collider_m": 4.830234967556635e-08,
+      "collider_outside_visual_convex_hull_m": 5.368428059038255e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_057",
+      "visual_outside_collider_m": 5.4388158393647856e-08,
+      "collider_outside_visual_convex_hull_m": 6.082593269340908e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_058",
+      "visual_outside_collider_m": 5.702642426330673e-08,
+      "collider_outside_visual_convex_hull_m": 5.2011706729721e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_059",
+      "visual_outside_collider_m": 6.19224285458575e-08,
+      "collider_outside_visual_convex_hull_m": 7.161193091298479e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_060",
+      "visual_outside_collider_m": 5.1946945092695707e-08,
+      "collider_outside_visual_convex_hull_m": 5.697642846413942e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_061",
+      "visual_outside_collider_m": 5.755382881389437e-08,
+      "collider_outside_visual_convex_hull_m": 5.941422533128904e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_062",
+      "visual_outside_collider_m": 6.970671356798519e-08,
+      "collider_outside_visual_convex_hull_m": 5.94987934546265e-08
+    },
+    {
+      "node": "SM_osm-577759119_Fragment_063",
+      "visual_outside_collider_m": 5.292850585592035e-08,
+      "collider_outside_visual_convex_hull_m": 5.7157859362222396e-08
+    }
+  ],
+  "knu-osm-584385630-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-584385630_Fragment_000",
+      "visual_outside_collider_m": 7.440227567379054e-08,
+      "collider_outside_visual_convex_hull_m": 5.934198210599817e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_001",
+      "visual_outside_collider_m": 7.532212203953392e-08,
+      "collider_outside_visual_convex_hull_m": 8.042731761137567e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_002",
+      "visual_outside_collider_m": 4.837184236494707e-08,
+      "collider_outside_visual_convex_hull_m": 5.077815001808261e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_003",
+      "visual_outside_collider_m": 6.564778587403453e-08,
+      "collider_outside_visual_convex_hull_m": 7.31901661499279e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_004",
+      "visual_outside_collider_m": 5.3322202875349944e-08,
+      "collider_outside_visual_convex_hull_m": 6.209060976480885e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_005",
+      "visual_outside_collider_m": 4.6248884666422185e-08,
+      "collider_outside_visual_convex_hull_m": 6.799900864606911e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_006",
+      "visual_outside_collider_m": 6.783658385023372e-08,
+      "collider_outside_visual_convex_hull_m": 6.081803338719993e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_007",
+      "visual_outside_collider_m": 5.38654378878789e-08,
+      "collider_outside_visual_convex_hull_m": 6.662619300712436e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_008",
+      "visual_outside_collider_m": 1.1343100847494014e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_009",
+      "visual_outside_collider_m": 6.345152148146127e-08,
+      "collider_outside_visual_convex_hull_m": 4.882467385947109e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_010",
+      "visual_outside_collider_m": 4.635839623290394e-08,
+      "collider_outside_visual_convex_hull_m": 4.137327269670976e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_011",
+      "visual_outside_collider_m": 7.633332033130102e-08,
+      "collider_outside_visual_convex_hull_m": 8.336151713361772e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_012",
+      "visual_outside_collider_m": 8.755533445481412e-08,
+      "collider_outside_visual_convex_hull_m": 6.958198922601966e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_013",
+      "visual_outside_collider_m": 3.45171115856413e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_014",
+      "visual_outside_collider_m": 5.0396503248339997e-08,
+      "collider_outside_visual_convex_hull_m": 5.644261344417423e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_015",
+      "visual_outside_collider_m": 1.1613891953698996e-07,
+      "collider_outside_visual_convex_hull_m": 6.319190348769155e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_016",
+      "visual_outside_collider_m": 5.768835326103172e-08,
+      "collider_outside_visual_convex_hull_m": 7.00139180520587e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_017",
+      "visual_outside_collider_m": 8.414979929538546e-08,
+      "collider_outside_visual_convex_hull_m": 7.072173896505163e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_018",
+      "visual_outside_collider_m": 8.051920005747171e-08,
+      "collider_outside_visual_convex_hull_m": 6.849623698790275e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_019",
+      "visual_outside_collider_m": 8.633491094256485e-08,
+      "collider_outside_visual_convex_hull_m": 6.42721922905487e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_020",
+      "visual_outside_collider_m": 4.5835228029700303e-08,
+      "collider_outside_visual_convex_hull_m": 5.458226470800298e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_021",
+      "visual_outside_collider_m": 1.3702793527636814e-07,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_022",
+      "visual_outside_collider_m": 9.596685468515886e-08,
+      "collider_outside_visual_convex_hull_m": 5.753459186852439e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_023",
+      "visual_outside_collider_m": 6.064169730257696e-08,
+      "collider_outside_visual_convex_hull_m": 5.897966343093586e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_024",
+      "visual_outside_collider_m": 6.916133898915433e-08,
+      "collider_outside_visual_convex_hull_m": 5.693246390992002e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_025",
+      "visual_outside_collider_m": 5.694343063744611e-08,
+      "collider_outside_visual_convex_hull_m": 6.08360863352253e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_026",
+      "visual_outside_collider_m": 5.3265783728218e-08,
+      "collider_outside_visual_convex_hull_m": 6.995040996438107e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_027",
+      "visual_outside_collider_m": 5.962453769603471e-08,
+      "collider_outside_visual_convex_hull_m": 5.112602394219401e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_028",
+      "visual_outside_collider_m": 6.63690393754024e-08,
+      "collider_outside_visual_convex_hull_m": 6.00053675636758e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_029",
+      "visual_outside_collider_m": 9.195619954383005e-08,
+      "collider_outside_visual_convex_hull_m": 6.310986383484263e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_030",
+      "visual_outside_collider_m": 4.8468349500563335e-08,
+      "collider_outside_visual_convex_hull_m": 5.6594019970379605e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_031",
+      "visual_outside_collider_m": 6.031645377602146e-08,
+      "collider_outside_visual_convex_hull_m": 6.825604109694794e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_032",
+      "visual_outside_collider_m": 6.766199756036428e-08,
+      "collider_outside_visual_convex_hull_m": 5.485568344010261e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_033",
+      "visual_outside_collider_m": 6.141812836091276e-08,
+      "collider_outside_visual_convex_hull_m": 7.053861250660987e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_034",
+      "visual_outside_collider_m": 7.025376203007028e-08,
+      "collider_outside_visual_convex_hull_m": 6.181812417516142e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_035",
+      "visual_outside_collider_m": 5.7728981150972913e-08,
+      "collider_outside_visual_convex_hull_m": 6.250667511364938e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_036",
+      "visual_outside_collider_m": 4.153517196847645e-09,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_037",
+      "visual_outside_collider_m": 5.391483476335779e-08,
+      "collider_outside_visual_convex_hull_m": 7.173025778905995e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_038",
+      "visual_outside_collider_m": 6.88113999669504e-08,
+      "collider_outside_visual_convex_hull_m": 3.9114438660226014e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_039",
+      "visual_outside_collider_m": 7.048156047684273e-08,
+      "collider_outside_visual_convex_hull_m": 7.461338685788022e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_040",
+      "visual_outside_collider_m": 6.66260527304452e-08,
+      "collider_outside_visual_convex_hull_m": 4.653004076482503e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_041",
+      "visual_outside_collider_m": 4.596356739661189e-08,
+      "collider_outside_visual_convex_hull_m": 6.039242642086329e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_042",
+      "visual_outside_collider_m": 7.810332863789071e-08,
+      "collider_outside_visual_convex_hull_m": 6.535139129848488e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_043",
+      "visual_outside_collider_m": 5.6911751117327825e-08,
+      "collider_outside_visual_convex_hull_m": 7.095067000584265e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_044",
+      "visual_outside_collider_m": 6.660190371432506e-08,
+      "collider_outside_visual_convex_hull_m": 6.470933461288908e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_045",
+      "visual_outside_collider_m": 5.0193353307026456e-08,
+      "collider_outside_visual_convex_hull_m": 7.40141955224427e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_046",
+      "visual_outside_collider_m": 4.850204832207439e-08,
+      "collider_outside_visual_convex_hull_m": 4.464854619357084e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_047",
+      "visual_outside_collider_m": 6.133765656501922e-08,
+      "collider_outside_visual_convex_hull_m": 5.8855589180062395e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_048",
+      "visual_outside_collider_m": 4.992472751874644e-08,
+      "collider_outside_visual_convex_hull_m": 6.067020255628996e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_049",
+      "visual_outside_collider_m": 4.864260150228006e-08,
+      "collider_outside_visual_convex_hull_m": 6.251663203782343e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_050",
+      "visual_outside_collider_m": 1.3379893504250617e-07,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_051",
+      "visual_outside_collider_m": 7.16773033704321e-08,
+      "collider_outside_visual_convex_hull_m": 6.94908631748703e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_052",
+      "visual_outside_collider_m": 5.921720633295102e-08,
+      "collider_outside_visual_convex_hull_m": 5.7320628632506754e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_053",
+      "visual_outside_collider_m": 4.6042991946881884e-08,
+      "collider_outside_visual_convex_hull_m": 7.053624484498755e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_054",
+      "visual_outside_collider_m": 5.284912796277297e-08,
+      "collider_outside_visual_convex_hull_m": 6.197318663803131e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_055",
+      "visual_outside_collider_m": 7.990317191231e-08,
+      "collider_outside_visual_convex_hull_m": 6.053211615286713e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_056",
+      "visual_outside_collider_m": 6.761484921957717e-08,
+      "collider_outside_visual_convex_hull_m": 5.955646242838952e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_057",
+      "visual_outside_collider_m": 5.138613751176635e-08,
+      "collider_outside_visual_convex_hull_m": 5.8191574503485555e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_058",
+      "visual_outside_collider_m": 5.1409306672800525e-08,
+      "collider_outside_visual_convex_hull_m": 6.510166211670665e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_059",
+      "visual_outside_collider_m": 6.305062905109793e-08,
+      "collider_outside_visual_convex_hull_m": 5.9241250516262056e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_060",
+      "visual_outside_collider_m": 6.021094156594131e-08,
+      "collider_outside_visual_convex_hull_m": 5.9556463427590245e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_061",
+      "visual_outside_collider_m": 6.59068426500653e-08,
+      "collider_outside_visual_convex_hull_m": 5.1630846875649894e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_062",
+      "visual_outside_collider_m": 5.5058569370380894e-08,
+      "collider_outside_visual_convex_hull_m": 5.6523566216437615e-08
+    },
+    {
+      "node": "SM_osm-584385630_Fragment_063",
+      "visual_outside_collider_m": 6.675303831915613e-08,
+      "collider_outside_visual_convex_hull_m": 6.085519893561653e-08
+    }
+  ],
+  "knu-osm-584386432-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-584386432_Fragment_000",
+      "visual_outside_collider_m": 5.897974320046018e-08,
+      "collider_outside_visual_convex_hull_m": 5.4426730761170106e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_001",
+      "visual_outside_collider_m": 5.52744383042203e-08,
+      "collider_outside_visual_convex_hull_m": 7.588591510732101e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_002",
+      "visual_outside_collider_m": 1.039379600831225e-06,
+      "collider_outside_visual_convex_hull_m": 1.1102230246251565e-16
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_003",
+      "visual_outside_collider_m": 4.4803270510263005e-08,
+      "collider_outside_visual_convex_hull_m": 5.0355631192600114e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_004",
+      "visual_outside_collider_m": 6.097387877934679e-08,
+      "collider_outside_visual_convex_hull_m": 6.483962344816518e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_005",
+      "visual_outside_collider_m": 5.2329290622932234e-08,
+      "collider_outside_visual_convex_hull_m": 5.8555582382879834e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_006",
+      "visual_outside_collider_m": 6.227863724728167e-08,
+      "collider_outside_visual_convex_hull_m": 3.61558726291733e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_007",
+      "visual_outside_collider_m": 5.570056621495567e-08,
+      "collider_outside_visual_convex_hull_m": 4.9414139502435006e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_008",
+      "visual_outside_collider_m": 4.6100604444987425e-08,
+      "collider_outside_visual_convex_hull_m": 5.999518354338207e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_009",
+      "visual_outside_collider_m": 5.395018642939675e-08,
+      "collider_outside_visual_convex_hull_m": 5.175800746326509e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_010",
+      "visual_outside_collider_m": 4.6946786208534874e-08,
+      "collider_outside_visual_convex_hull_m": 5.105303763075497e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_011",
+      "visual_outside_collider_m": 5.0942672635834185e-08,
+      "collider_outside_visual_convex_hull_m": 7.927391465489819e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_012",
+      "visual_outside_collider_m": 5.568590090432313e-08,
+      "collider_outside_visual_convex_hull_m": 5.322815999075914e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_013",
+      "visual_outside_collider_m": 6.864203438983196e-08,
+      "collider_outside_visual_convex_hull_m": 6.207669600577503e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_014",
+      "visual_outside_collider_m": 6.876102237596271e-08,
+      "collider_outside_visual_convex_hull_m": 6.719040462899173e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_015",
+      "visual_outside_collider_m": 7.525937661956306e-08,
+      "collider_outside_visual_convex_hull_m": 7.380704103443492e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_016",
+      "visual_outside_collider_m": 5.8982358053238926e-08,
+      "collider_outside_visual_convex_hull_m": 6.377462555273716e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_017",
+      "visual_outside_collider_m": 6.320366291445723e-08,
+      "collider_outside_visual_convex_hull_m": 6.045885937722151e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_018",
+      "visual_outside_collider_m": 4.493166660957115e-08,
+      "collider_outside_visual_convex_hull_m": 5.964282401293985e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_019",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_020",
+      "visual_outside_collider_m": 5.975849171058201e-08,
+      "collider_outside_visual_convex_hull_m": 6.686892450868953e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_021",
+      "visual_outside_collider_m": 6.320400747217292e-08,
+      "collider_outside_visual_convex_hull_m": 5.8628088495105146e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_022",
+      "visual_outside_collider_m": 6.214411546467957e-08,
+      "collider_outside_visual_convex_hull_m": 6.364951243842398e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_023",
+      "visual_outside_collider_m": 7.797925610786294e-08,
+      "collider_outside_visual_convex_hull_m": 6.481436781724526e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_024",
+      "visual_outside_collider_m": 6.135755220570971e-08,
+      "collider_outside_visual_convex_hull_m": 6.948051922694987e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_025",
+      "visual_outside_collider_m": 6.922514406149105e-08,
+      "collider_outside_visual_convex_hull_m": 7.258174489210845e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_026",
+      "visual_outside_collider_m": 4.69138652925416e-08,
+      "collider_outside_visual_convex_hull_m": 6.802164731478655e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_027",
+      "visual_outside_collider_m": 6.536659080680352e-08,
+      "collider_outside_visual_convex_hull_m": 6.490953319282511e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_028",
+      "visual_outside_collider_m": 7.353679276622671e-08,
+      "collider_outside_visual_convex_hull_m": 6.623759579715838e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_029",
+      "visual_outside_collider_m": 6.377892564080057e-08,
+      "collider_outside_visual_convex_hull_m": 5.711785017181725e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_030",
+      "visual_outside_collider_m": 5.8513342768296006e-08,
+      "collider_outside_visual_convex_hull_m": 6.731588875208416e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_031",
+      "visual_outside_collider_m": 5.496385582781649e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_032",
+      "visual_outside_collider_m": 4.5593698483337164e-08,
+      "collider_outside_visual_convex_hull_m": 5.434181499230917e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_033",
+      "visual_outside_collider_m": 6.654359060997983e-08,
+      "collider_outside_visual_convex_hull_m": 5.215603143815528e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_034",
+      "visual_outside_collider_m": 5.535614994167659e-08,
+      "collider_outside_visual_convex_hull_m": 6.636358620970562e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_035",
+      "visual_outside_collider_m": 6.956596163010254e-08,
+      "collider_outside_visual_convex_hull_m": 6.656142256811215e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_036",
+      "visual_outside_collider_m": 5.372050720930943e-08,
+      "collider_outside_visual_convex_hull_m": 7.469106599877762e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_037",
+      "visual_outside_collider_m": 4.415558890746851e-08,
+      "collider_outside_visual_convex_hull_m": 6.51682864893921e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_038",
+      "visual_outside_collider_m": 3.964315620219594e-08,
+      "collider_outside_visual_convex_hull_m": 6.04894596079042e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_039",
+      "visual_outside_collider_m": 5.4098526380830236e-08,
+      "collider_outside_visual_convex_hull_m": 6.66866866450011e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_040",
+      "visual_outside_collider_m": 5.851338355511437e-08,
+      "collider_outside_visual_convex_hull_m": 5.7983274626138837e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_041",
+      "visual_outside_collider_m": 1.5302131157191035e-06,
+      "collider_outside_visual_convex_hull_m": 1.1102230246251565e-16
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_042",
+      "visual_outside_collider_m": 5.309938594377783e-08,
+      "collider_outside_visual_convex_hull_m": 5.1707782555698856e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_043",
+      "visual_outside_collider_m": 8.273095081223758e-08,
+      "collider_outside_visual_convex_hull_m": 6.846079525502091e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_044",
+      "visual_outside_collider_m": 5.344511005977992e-08,
+      "collider_outside_visual_convex_hull_m": 5.522109980393708e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_045",
+      "visual_outside_collider_m": 6.74333211270195e-07,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_046",
+      "visual_outside_collider_m": 1.3469621340522764e-07,
+      "collider_outside_visual_convex_hull_m": 5.2487231033682136e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_047",
+      "visual_outside_collider_m": 6.744975811212583e-08,
+      "collider_outside_visual_convex_hull_m": 5.831841981551733e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_048",
+      "visual_outside_collider_m": 6.0293410597545e-08,
+      "collider_outside_visual_convex_hull_m": 7.975655391678771e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_049",
+      "visual_outside_collider_m": 5.335508185266846e-08,
+      "collider_outside_visual_convex_hull_m": 1.1102230246251565e-16
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_050",
+      "visual_outside_collider_m": 5.175502326704162e-08,
+      "collider_outside_visual_convex_hull_m": 6.072974625959127e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_051",
+      "visual_outside_collider_m": 7.244037034115358e-08,
+      "collider_outside_visual_convex_hull_m": 4.459362012987356e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_052",
+      "visual_outside_collider_m": 6.365018279108625e-08,
+      "collider_outside_visual_convex_hull_m": 8.124442629764417e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_053",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_054",
+      "visual_outside_collider_m": 7.788381051199167e-08,
+      "collider_outside_visual_convex_hull_m": 6.655022188883919e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_055",
+      "visual_outside_collider_m": 4.711947942936945e-08,
+      "collider_outside_visual_convex_hull_m": 6.383811151922103e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_056",
+      "visual_outside_collider_m": 5.7995705210478476e-08,
+      "collider_outside_visual_convex_hull_m": 6.064098415081709e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_057",
+      "visual_outside_collider_m": 6.632332005818142e-08,
+      "collider_outside_visual_convex_hull_m": 5.3775445596482285e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_058",
+      "visual_outside_collider_m": 6.056226886652638e-08,
+      "collider_outside_visual_convex_hull_m": 7.240767530003467e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_059",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_060",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_061",
+      "visual_outside_collider_m": 3.891463316862964e-08,
+      "collider_outside_visual_convex_hull_m": 5.2411182394074274e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_062",
+      "visual_outside_collider_m": 5.7152564347795476e-08,
+      "collider_outside_visual_convex_hull_m": 4.6752292481855307e-08
+    },
+    {
+      "node": "SM_osm-584386432_Fragment_063",
+      "visual_outside_collider_m": 6.669224503208504e-08,
+      "collider_outside_visual_convex_hull_m": 6.143868580554823e-08
+    }
+  ],
+  "knu-osm-972016220-v71-b10-r1-fracture": [
+    {
+      "node": "SM_osm-972016220_Fragment_000",
+      "visual_outside_collider_m": 5.279272850822192e-08,
+      "collider_outside_visual_convex_hull_m": 6.797166392236154e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_001",
+      "visual_outside_collider_m": 9.527916314255869e-08,
+      "collider_outside_visual_convex_hull_m": 5.024908511508386e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_002",
+      "visual_outside_collider_m": 1.5048405177520152e-07,
+      "collider_outside_visual_convex_hull_m": 6.257363982520303e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_003",
+      "visual_outside_collider_m": 5.311204362423716e-08,
+      "collider_outside_visual_convex_hull_m": 6.127614915474311e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_004",
+      "visual_outside_collider_m": 8.13143768985114e-08,
+      "collider_outside_visual_convex_hull_m": 6.326846857529489e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_005",
+      "visual_outside_collider_m": 5.611768881530477e-08,
+      "collider_outside_visual_convex_hull_m": 5.8996852542181344e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_006",
+      "visual_outside_collider_m": 6.075800784710594e-08,
+      "collider_outside_visual_convex_hull_m": 4.9194250131834316e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_007",
+      "visual_outside_collider_m": 6.114939998802527e-08,
+      "collider_outside_visual_convex_hull_m": 6.738280822204956e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_008",
+      "visual_outside_collider_m": 2.740216086538627e-07,
+      "collider_outside_visual_convex_hull_m": 5.927761473345505e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_009",
+      "visual_outside_collider_m": 6.337135302625363e-08,
+      "collider_outside_visual_convex_hull_m": 4.347286425288033e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_010",
+      "visual_outside_collider_m": 6.425784662700273e-08,
+      "collider_outside_visual_convex_hull_m": 5.297133856552172e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_011",
+      "visual_outside_collider_m": 6.155543627595073e-08,
+      "collider_outside_visual_convex_hull_m": 6.348912701126253e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_012",
+      "visual_outside_collider_m": 2.9117960836932966e-07,
+      "collider_outside_visual_convex_hull_m": 5.276205378157428e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_013",
+      "visual_outside_collider_m": 1.6254462931186708e-07,
+      "collider_outside_visual_convex_hull_m": 5.454933320325761e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_014",
+      "visual_outside_collider_m": 4.667991668205751e-08,
+      "collider_outside_visual_convex_hull_m": 4.455369168043788e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_015",
+      "visual_outside_collider_m": 5.747983011783475e-08,
+      "collider_outside_visual_convex_hull_m": 6.679622749361513e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_016",
+      "visual_outside_collider_m": 5.5965958201120714e-08,
+      "collider_outside_visual_convex_hull_m": 5.396468172325086e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_017",
+      "visual_outside_collider_m": 5.33750195569338e-08,
+      "collider_outside_visual_convex_hull_m": 5.663250150778065e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_018",
+      "visual_outside_collider_m": 1.0436240062416946e-07,
+      "collider_outside_visual_convex_hull_m": 6.49918114603576e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_019",
+      "visual_outside_collider_m": 7.453011136027143e-08,
+      "collider_outside_visual_convex_hull_m": 6.90177634765643e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_020",
+      "visual_outside_collider_m": 6.525038658694582e-08,
+      "collider_outside_visual_convex_hull_m": 4.908053127805623e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_021",
+      "visual_outside_collider_m": 5.530757665739294e-08,
+      "collider_outside_visual_convex_hull_m": 6.3489799639882e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_022",
+      "visual_outside_collider_m": 5.529469485066052e-08,
+      "collider_outside_visual_convex_hull_m": 6.677603471560989e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_023",
+      "visual_outside_collider_m": 5.5910381158152944e-08,
+      "collider_outside_visual_convex_hull_m": 4.815103511746077e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_024",
+      "visual_outside_collider_m": 5.556053243871428e-08,
+      "collider_outside_visual_convex_hull_m": 5.3333022317914036e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_025",
+      "visual_outside_collider_m": 6.285792306104376e-08,
+      "collider_outside_visual_convex_hull_m": 5.367456412663785e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_026",
+      "visual_outside_collider_m": 1.8376582650025952e-07,
+      "collider_outside_visual_convex_hull_m": 6.46816594590538e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_027",
+      "visual_outside_collider_m": 4.574510825694489e-08,
+      "collider_outside_visual_convex_hull_m": 6.604393532061437e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_028",
+      "visual_outside_collider_m": 9.77001178570358e-08,
+      "collider_outside_visual_convex_hull_m": 4.3380774764067986e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_029",
+      "visual_outside_collider_m": 7.011140867874133e-08,
+      "collider_outside_visual_convex_hull_m": 6.744532730917907e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_030",
+      "visual_outside_collider_m": 7.119511524766864e-08,
+      "collider_outside_visual_convex_hull_m": 5.664530630666853e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_031",
+      "visual_outside_collider_m": 7.48106158965367e-08,
+      "collider_outside_visual_convex_hull_m": 5.5673729432159647e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_032",
+      "visual_outside_collider_m": 5.29886231837029e-08,
+      "collider_outside_visual_convex_hull_m": 5.133916548827333e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_033",
+      "visual_outside_collider_m": 1.7284915593968053e-07,
+      "collider_outside_visual_convex_hull_m": 6.265181234227368e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_034",
+      "visual_outside_collider_m": 1.0162076248543261e-07,
+      "collider_outside_visual_convex_hull_m": 4.2919505005567515e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_035",
+      "visual_outside_collider_m": 6.750795988885727e-08,
+      "collider_outside_visual_convex_hull_m": 5.012393057557407e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_036",
+      "visual_outside_collider_m": 2.2145739903001171e-07,
+      "collider_outside_visual_convex_hull_m": 5.28815611855471e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_037",
+      "visual_outside_collider_m": 5.934601352008961e-08,
+      "collider_outside_visual_convex_hull_m": 6.941733426968355e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_038",
+      "visual_outside_collider_m": 5.497223487527236e-08,
+      "collider_outside_visual_convex_hull_m": 5.308656395031086e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_039",
+      "visual_outside_collider_m": 2.0559203739445309e-07,
+      "collider_outside_visual_convex_hull_m": 6.153820866772186e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_040",
+      "visual_outside_collider_m": 5.501926553241887e-08,
+      "collider_outside_visual_convex_hull_m": 5.354218537978461e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_041",
+      "visual_outside_collider_m": 5.965893404291656e-08,
+      "collider_outside_visual_convex_hull_m": 5.6357062946932324e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_042",
+      "visual_outside_collider_m": 5.092544053120207e-08,
+      "collider_outside_visual_convex_hull_m": 4.6902097816658994e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_043",
+      "visual_outside_collider_m": 7.578113812856113e-08,
+      "collider_outside_visual_convex_hull_m": 5.572311603807556e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_044",
+      "visual_outside_collider_m": 6.99146173455123e-08,
+      "collider_outside_visual_convex_hull_m": 6.942481368954478e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_045",
+      "visual_outside_collider_m": 4.341123790996271e-08,
+      "collider_outside_visual_convex_hull_m": 6.819272405089727e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_046",
+      "visual_outside_collider_m": 3.669568545555668e-07,
+      "collider_outside_visual_convex_hull_m": 5.4545011160533896e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_047",
+      "visual_outside_collider_m": 6.46211530119789e-08,
+      "collider_outside_visual_convex_hull_m": 5.7980451717565273e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_048",
+      "visual_outside_collider_m": 5.719858009456402e-08,
+      "collider_outside_visual_convex_hull_m": 4.865150581012667e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_049",
+      "visual_outside_collider_m": 6.359217796791938e-08,
+      "collider_outside_visual_convex_hull_m": 4.772039161049513e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_050",
+      "visual_outside_collider_m": 5.510611238851437e-08,
+      "collider_outside_visual_convex_hull_m": 5.606508328426241e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_051",
+      "visual_outside_collider_m": 6.074572709430237e-08,
+      "collider_outside_visual_convex_hull_m": 6.029986986122449e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_052",
+      "visual_outside_collider_m": 5.5751579214335933e-08,
+      "collider_outside_visual_convex_hull_m": 4.681508744552865e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_053",
+      "visual_outside_collider_m": 1.392965254809475e-07,
+      "collider_outside_visual_convex_hull_m": 5.153061509444168e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_054",
+      "visual_outside_collider_m": 4.662585499637384e-08,
+      "collider_outside_visual_convex_hull_m": 5.0960774142239096e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_055",
+      "visual_outside_collider_m": 4.937159252260681e-08,
+      "collider_outside_visual_convex_hull_m": 5.7012133403144816e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_056",
+      "visual_outside_collider_m": 7.862982687178999e-08,
+      "collider_outside_visual_convex_hull_m": 5.5938317464199194e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_057",
+      "visual_outside_collider_m": 1.583220111261996e-07,
+      "collider_outside_visual_convex_hull_m": 5.6236543533039196e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_058",
+      "visual_outside_collider_m": 5.3456907109228347e-08,
+      "collider_outside_visual_convex_hull_m": 6.374639954093153e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_059",
+      "visual_outside_collider_m": 5.905068373862621e-08,
+      "collider_outside_visual_convex_hull_m": 6.020102107096026e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_060",
+      "visual_outside_collider_m": 5.0241586696531115e-08,
+      "collider_outside_visual_convex_hull_m": 4.607655920696452e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_061",
+      "visual_outside_collider_m": 5.798737637285889e-08,
+      "collider_outside_visual_convex_hull_m": 4.5476468951699545e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_062",
+      "visual_outside_collider_m": 9.428023549362674e-08,
+      "collider_outside_visual_convex_hull_m": 6.233081889517322e-08
+    },
+    {
+      "node": "SM_osm-972016220_Fragment_063",
+      "visual_outside_collider_m": 5.530342445103642e-08,
+      "collider_outside_visual_convex_hull_m": 4.6418145105420194e-08
+    }
+  ]
+}

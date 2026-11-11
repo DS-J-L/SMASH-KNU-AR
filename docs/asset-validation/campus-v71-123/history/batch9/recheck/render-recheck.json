@@ -1,0 +1,100 @@
+{
+  "frames": 40,
+  "viewpoints": [
+    "NW",
+    "NE",
+    "SE",
+    "SW",
+    "top"
+  ],
+  "models": {
+    "osm/468931888": {
+      "NW": {
+        "changed_pixels": 40742,
+        "visible_delta_gt_12": 39938
+      },
+      "NE": {
+        "changed_pixels": 40736,
+        "visible_delta_gt_12": 39973
+      },
+      "SE": {
+        "changed_pixels": 40605,
+        "visible_delta_gt_12": 39787
+      },
+      "SW": {
+        "changed_pixels": 40732,
+        "visible_delta_gt_12": 39926
+      },
+      "top": {
+        "changed_pixels": 70310,
+        "visible_delta_gt_12": 69474
+      }
+    },
+    "vw/1": {
+      "NW": {
+        "changed_pixels": 40604,
+        "visible_delta_gt_12": 40020
+      },
+      "NE": {
+        "changed_pixels": 40602,
+        "visible_delta_gt_12": 40027
+      },
+      "SE": {
+        "changed_pixels": 40590,
+        "visible_delta_gt_12": 39978
+      },
+      "SW": {
+        "changed_pixels": 40605,
+        "visible_delta_gt_12": 40021
+      },
+      "top": {
+        "changed_pixels": 114231,
+        "visible_delta_gt_12": 113540
+      }
+    },
+    "vw/10": {
+      "NW": {
+        "changed_pixels": 38384,
+        "visible_delta_gt_12": 36866
+      },
+      "NE": {
+        "changed_pixels": 38421,
+        "visible_delta_gt_12": 7964
+      },
+      "SE": {
+        "changed_pixels": 38166,
+        "visible_delta_gt_12": 36619
+      },
+      "SW": {
+        "changed_pixels": 38397,
+        "visible_delta_gt_12": 37044
+      },
+      "top": {
+        "changed_pixels": 71412,
+        "visible_delta_gt_12": 70346
+      }
+    },
+    "vw/165": {
+      "NW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      }
+    }
+  }
+}

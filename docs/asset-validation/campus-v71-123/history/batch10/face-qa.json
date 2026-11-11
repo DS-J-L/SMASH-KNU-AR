@@ -1,0 +1,105 @@
+{
+  "이름 미등록 건물": {
+    "id": "osm/468931854",
+    "changed_material_faces": [
+      11,
+      14
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.00206611429712078,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.001": {
+    "id": "osm/468931893",
+    "changed_material_faces": [
+      23,
+      26,
+      29,
+      32,
+      33,
+      38
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 44,
+    "min_uv_face_area": 0.0005813040048940135,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.002": {
+    "id": "osm/468931896",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 32,
+    "min_uv_face_area": 0.0018477708339403875,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.003": {
+    "id": "osm/468931915",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.013348536255621823,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.004": {
+    "id": "osm/524161868",
+    "changed_material_faces": [
+      17,
+      20,
+      23,
+      26
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 32,
+    "min_uv_face_area": 0.0011995932036499082,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.005": {
+    "id": "osm/576358734",
+    "changed_material_faces": [
+      10,
+      11
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.0020808786324578773,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.006": {
+    "id": "osm/577759119",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.013504844694333329,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.007": {
+    "id": "osm/584385630",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.013508896374688106,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.008": {
+    "id": "osm/584386432",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.01359405126916613,
+    "uv_islands_overlap": false
+  },
+  "이름 미등록 건물.009": {
+    "id": "osm/972016220",
+    "changed_material_faces": [
+      17,
+      20,
+      21,
+      26
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 32,
+    "min_uv_face_area": 0.00044843272128484296,
+    "uv_islands_overlap": false
+  }
+}

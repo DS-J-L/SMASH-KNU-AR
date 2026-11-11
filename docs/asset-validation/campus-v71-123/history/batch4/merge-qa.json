@@ -1,0 +1,28 @@
+{
+  "source_archive_sha256": "a3aa9b53247b57c22e6f266f671825f6b719689fc373a6a9ef3528e7c71ef1c7",
+  "restored_archive_members": 52,
+  "restored_candidate_sha256": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+  "reproduced_glb_sha256": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+  "reproduced_blend_sha256": "e56f6d6c3b648707ee293a6f106ba2b9b3b7e5ebb8490edc73120e5a5e57da71",
+  "objects": 1735,
+  "changed_objects": [
+    "v7 | 창 근사 | 교수아파트 [469843173]",
+    "v7 | 창 근사 | 누리관 [854306251]",
+    "v7 | 창 근사 | 누리관 [854306497]",
+    "v7 | 창 근사 | 백호관 [468931928]",
+    "v7 | 창 근사 | 보람관 [1300033666]",
+    "v7 | 창 근사 | 첨성관 [468931911]",
+    "교수아파트",
+    "누리관",
+    "누리관.001",
+    "면학관",
+    "백호관",
+    "보람관",
+    "첨성관"
+  ],
+  "unchanged_objects": 1722,
+  "dot_protected_ids": 53,
+  "triangles": 892404,
+  "decoded_object_geometry_transforms_uvs_materials_images_match": true,
+  "same_glb_bytes": true
+}

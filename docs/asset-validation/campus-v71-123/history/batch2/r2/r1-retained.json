@@ -1,0 +1,44 @@
+{
+  "knu-grad-v71-b2-r1-fracture": {
+    "manifest.json": "4cfae22b84d07636827dcef76c4844048c432f9cdd11c4936e3a66cd6cd2e12e",
+    "colliders.json": "4f4749474aaa08fac6b553b7c4f219e71401c5cfe7058f0944b228875b544519",
+    "intact.glb": "857f18582384967a077592b24418ed521c59b08f43aa3a68a561e24180400c5a",
+    "fragments.glb": "9cfcc70fee81f6cd8626189482121cfa5aa052ed0d39d2b90fa63821be507d39"
+  },
+  "knu-educgrad-v71-b2-r1-fracture": {
+    "manifest.json": "52c3875b667ff358ff48bce5519932b67750f097fc065a32f88016cbfa0dceac",
+    "colliders.json": "7d8f7ee27b8aae7340209f71361c98299f548a5b85c80be087f4c0bd2e70500c",
+    "intact.glb": "f282bcf01557bc037cd8c6449b3a2ccac335d5b1e033fa846198a0ec7c6b6a7d",
+    "fragments.glb": "e044130a146fc549c9f2f25d67bf2653186e5e53648268075d29df71560c0912"
+  },
+  "knu-teachers-v71-b2-r1-fracture": {
+    "manifest.json": "2288d997bd67ece6187e27d40bdbe11567144a8791571b49cf4936cf3e0103dc",
+    "colliders.json": "588ff3b0ffae600862726a511c2ec42a1f7a498d478f1c82c223ba03d0cb5cc3",
+    "intact.glb": "64f7e0bf04cf9702e87e9f1739e64d2e114f7551f2066d1bf5b42f31b2708fba",
+    "fragments.glb": "d506676ed57d51cfabc0c94d0d70892f99ca4b27afa383e2128d3b57e2faa667"
+  },
+  "knu-liberal-v71-b2-r1-fracture": {
+    "manifest.json": "fa64e3275349545fc5c08f4090a78273972dd212e1c8a4d442909cb369ace621",
+    "colliders.json": "073ee3201fa03c2e33b89d43757300bfb93f2e41cdbbd551d33b9e2f86549555",
+    "intact.glb": "8ad0ced5d426995a17e8947c7a2ad7eadd63f87701eb5c7470a9af4470fa4cc2",
+    "fragments.glb": "d339c46505edf96a6a31bfe8866704c3636aa9051f1edc157408bf6d453a2fbc"
+  },
+  "knu-lifelong-v71-b2-r1-fracture": {
+    "manifest.json": "839f17d63c55d65d3daf7d45f0bd146f6dec0cdc5c997090bc99662bbf4171bf",
+    "colliders.json": "176697fa333513742f9f0084e9fe50c536a87fb4c01cb596bed1382586097779",
+    "intact.glb": "476ec8af535af42ff3559055d7efa1f204f9ebe3a685fa610d3dfabaae0761d5",
+    "fragments.glb": "b2f082e0aa4b7a466cc9ef24dbd5a040794c4fa34a72ce38b0e6cb4ebdca5433"
+  },
+  "knu-convergence-v71-b2-r1-fracture": {
+    "manifest.json": "f4c958e9162965b3d494e392e4b33cee5b06bacac8b012dc0303e25e6b742bc1",
+    "colliders.json": "e9214045924d57cfacb30e4c36b90adcb86072a10e2708daf163b69c2582f352",
+    "intact.glb": "2089d14bd373237d4d379545eef7e297dc31a89861614b4dd182d23b68d81aa2",
+    "fragments.glb": "8c208a022fa41e5d7391bb3f94b8578079dc368bb1f6228248c3c53086a0ac79"
+  },
+  "knu-career-v71-b2-r1-fracture": {
+    "manifest.json": "0e6abb5dc2fba4e5a6bbd97f04efa133ac82f20a36bcdb6220453a9d5265a569",
+    "colliders.json": "5e4df4e5c53eb124162b044bafaa4d0884809b09c7e9d56530aabddfbf3602d5",
+    "intact.glb": "2bce6b0db7bc367bd3f81ab0c073b3914929ad04257ba00fd923e219b118edc4",
+    "fragments.glb": "ed0c741440bc5010542cc9c2c3db54a29b9864bb5189fa9ec0b024bcea10f048"
+  }
+}

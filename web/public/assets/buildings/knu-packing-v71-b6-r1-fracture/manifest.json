@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-packing-v71-b6-r1-fracture",
+  "display_name": "사과포장개발실",
+  "source_model_id": "vw/111",
+  "source_campus": "knu-campus-v71-batch6-r1.blend",
+  "source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+  "source_object": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "mesh": "v7 | 추가 건물 | 사과포장개발실 [vw/111].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -183.57275390625,
+    113.23989868164062,
+    -5.426072597503662
+  ],
+  "scale_from_campus": 0.07542899234928767,
+  "source_dimensions_campus_z_up_m": [
+    29.16650390625,
+    18.961997985839844,
+    4.275794506072998
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.32251888513565063,
+    1.4302843809127808
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

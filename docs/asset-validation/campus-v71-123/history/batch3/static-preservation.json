@@ -1,0 +1,21 @@
+{
+  "source_glb_sha256": "53294f0fa937ce24ec89bd087f212e4875d66afd6a2fb996435d3a98a2e4563f",
+  "candidate_glb_sha256": "54cacf52c4b471c815f170d01df7453daa6abbf5955ae77e928fc4881b38551c",
+  "changed_objects": [
+    "v7 | 창 근사 | 경북대 출판부 [473684404]",
+    "v7 | 창 근사 | 조소동 [468931846]",
+    "v7 | 창 근사 | 테크노빌딩 [468931912]",
+    "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]",
+    "경북대 출판부",
+    "금란정",
+    "문예관",
+    "영선관",
+    "조소동",
+    "테크노빌딩",
+    "한국기초과학지원연구원"
+  ],
+  "preserved_objects": 1724,
+  "dot_protected_ids": 53,
+  "source_triangles": 899298,
+  "candidate_triangles": 900492
+}

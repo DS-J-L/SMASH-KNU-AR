@@ -1,0 +1,2193 @@
+{
+  "browser": "157.0.4341.42",
+  "mode": "keyboard_demo",
+  "buildings": [
+    {
+      "id": "knu-grad-v71-b2-r3-fracture",
+      "name": "대학원동",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-grad-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "8fd3a5373b522dc015caea5fbe365af72e0455562e91c628e3870a18cf2abc1d",
+        "colliders.json": "af0252c12e641a18746292385a7d32c84a901d9aa9fb727e7470d5ccf67e15c4",
+        "intact.glb": "b19adc08d6ba0901ea2f511e57171bb2c2d943aed45ed0f4ba724bbd88f2ea84",
+        "fragments.glb": "d65eb3bc910ab84cecd8c2efb2ce387c8257a33590d80d950f9cbc909e904622"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "1d2d4459-d4dd-4309-8fe5-00a75a2a8b21",
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": 0.05163715407252312,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "344d24e6-4b37-4357-a41a-dadc6d9ed86d",
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": 0.09693992137908936,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "9d4c23a7-237a-419d-a7b1-9c4838302ad5",
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": 0.09446229785680771,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.900000000000001,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.4253902226686478,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-grad-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.04190500325099489,
+              0.5267451690631395,
+              0.3183765587567686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 223,
+            "textureCount": 10,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        0.04190500325099489,
+        0.5267451690631395,
+        0.3183765587567686
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r2-fracture",
+      "name": "교육대학원",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-educgrad-v71-b2-r2-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "9593467993954be75a04b20b926fe15678ac7f30c2a6b3c73776703626ca5977",
+        "colliders.json": "430268b3773b9848ffcc6e21173b110af242a46556786e8d90baeecc0b33b065",
+        "intact.glb": "23e7477b1e3be2a023420b4bd48adc596e2363d282c53261d4a2bfb72d48648b",
+        "fragments.glb": "b72270922863e745f14a134f4de5d36e2082d903063107df42939e5b9c01213c"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "c96f3c51-27a5-4cb8-be12-6eb743f15219",
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.03128336742520332,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "b7374fc6-75d2-4ee6-b0da-c7ae4ac53d71",
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.08188329637050629,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "dfc5da78-0d55-4553-acaa-fbaae2febc7c",
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.08882177621126175,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.18622149378061295,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-educgrad-v71-b2-r2-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.1766985700903092,
+              0.3789662265992151,
+              0.448182223519896
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 258,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        0.1766985700903092,
+        0.3789662265992151,
+        0.448182223519896
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-teachers-v71-b2-r3-fracture",
+      "name": "사범대학",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-teachers-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "56f8bf038e603b6f18bbabd0bd778c0723a641d05f8e1a915f89530d8fcc0f60",
+        "colliders.json": "36a7c24306f5bb93024f5a5753b14fe81923270b4af2bb3c8344cae44acb9c80",
+        "intact.glb": "4ddf87af55ca8f54839cc7a8341491b93629944861a4ee1eb6685bfcfccc16f4",
+        "fragments.glb": "c09d43cea8856580cd4df1887ca2473eddfe156f9b2fd9834d311eb07098e9a1"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "547b215b-e204-4441-b62c-6cbb1e48931f",
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.011504637077450752,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "3642711f-8da2-47f4-b5ea-0d7d668d784a",
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.07572682946920395,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "ca0b2b4e-1d59-4e37-8531-c34e68bd3158",
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.0760463997721672,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.9,
+              4.4
+            ],
+            "cameraTarget": [
+              0,
+              0.1734075352549553,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-teachers-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.12371170334344761,
+              0.18695620127629375,
+              0.16729580808063726
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 191,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        -0.12371170334344761,
+        0.18695620127629375,
+        0.16729580808063726
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-liberal-v71-b2-r3-fracture",
+      "name": "교양과정동",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-liberal-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "50d9f307f9f754f34248fe69dc990bd2e25acc4891217914f8048a36854f465a",
+        "colliders.json": "f363a394d8ff6df37f46a2b6c227aa26fdd2137731d79530adb96f885dfce549",
+        "intact.glb": "4772f5686c2fd26f641e7bb3fa45dc34afcf66faebee5dc1469d392e6592e865",
+        "fragments.glb": "eb476f677e80e71bb4a4f20d693ed924f267dc95754c5d4de865fb28299366c1"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "b0265f6e-6b9c-497c-ae2d-0e8251203ed7",
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.060760632157325745,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "f9ce26d2-34d7-4bf0-bf27-1bf0a1862921",
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.07855615764856339,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "9a779e8b-5454-4a4a-acaa-d55cdb2c829f",
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.0799955427646637,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.3999999999999995,
+              2.8999999999999986,
+              4.3999999999999995
+            ],
+            "cameraTarget": [
+              0,
+              0.18009256571531296,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-liberal-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.026580976188673056,
+              0.25168468719176396,
+              0.25806944890011785
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 158,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        -0.026580976188673056,
+        0.25168468719176396,
+        0.25806944890011785
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r3-fracture",
+      "name": "평생교육원",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-lifelong-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "e22d3a958c5906ab586f173ea061d8930ef6b1aa2329afa8c7b0db86c279c29a",
+        "colliders.json": "5cd5d8c93ba9f79a08424c609bdde7e3d25c09dc550a7688a91b927b4b7d6328",
+        "intact.glb": "2d0f5ac2beee7fc0fbc442f5a4f740efc53dae5ad24094c294fe276fc9c5d242",
+        "fragments.glb": "f28f4ea4a7ad94f0e986bb6d3dd8ac337ded00e14f0aac324a88e5fdfbd42433"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "2a2953f0-0fb4-4081-969e-72a9d9a5b535",
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": 0.008487898856401443,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "a0eab20e-e930-4209-b63c-45ec57ee3c07",
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": 0.06872659921646118,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "1e8b10dd-cfcb-4022-b487-14fa5595c3ed",
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": 0.07083787024021149,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2165560305118561,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-lifelong-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              -0.13363833468323083,
+              0.22381364649675373,
+              0.15729299167072686
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 240,
+            "textureCount": 9,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        -0.13363833468323083,
+        0.22381364649675373,
+        0.15729299167072686
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-convergence-v71-b2-r3-fracture",
+      "name": "융합교육정보관",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-convergence-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "a617803fca0ed12efd66e785e05543d0da9a6f32bc6243f0f1b4ee4b45e8c85c",
+        "colliders.json": "c570a5cf73eef2e3dc65f17d6212b39a40aa00bf593a92b31946bc981cb9388f",
+        "intact.glb": "b18d36004570eefc94e164592ecbe98f090afa628920c4c6081616df89ef2d49",
+        "fragments.glb": "d9f366ae9011d1f56961d1e865fe8b8a37dc603ffe6c2ba665fbb61531135a38"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "f7c7d8e9-240c-4891-b3b7-ffd138ea3960",
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.04655102640390396,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "f1873775-d426-48ae-80c4-e2eb18d7da00",
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.097453273832798,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "51c509c8-e16c-4258-a7c3-6cdc06a2606e",
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": 0.09874054789543152,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.4,
+              2.899999999999999,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.33288957774639133,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-convergence-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.310837734502063,
+              0.5903370329269233,
+              0.5715510673080151
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 202,
+            "textureCount": 7,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        0.310837734502063,
+        0.5903370329269233,
+        0.5715510673080151
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    },
+    {
+      "id": "knu-career-v71-b2-r3-fracture",
+      "name": "취업정보센터",
+      "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-career-v71-b2-r3-fracture",
+      "count": 64,
+      "sha256": {
+        "manifest.json": "90487bab090566d1cb03564ce0e2920aa9bfa58b64072bb160e8163841cff93d",
+        "colliders.json": "4f5747d467494b58a79e6455cbaaa6f462620fb4a1ee8b0fc68c598e794ebc4d",
+        "intact.glb": "b65b41d12a48c03e80c07d6f26a384d1c23092288bf2bbf1a4c7acefb34b2a4c",
+        "fragments.glb": "03a1630903fba9335dcc8cabf24a4801681904e713d69511a1b943a664d6ab8d"
+      },
+      "runs": [
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "f8084897-fd9f-43b0-9f84-244ffa541692",
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": false,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.04714934527873993,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "buttons",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "0363c346-b128-4b1c-841c-7a13a01b22d0",
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.12020319700241089,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        },
+        {
+          "input": "Space / R",
+          "afterHit": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "playing",
+            "destroyed": true,
+            "score": 100,
+            "sessionId": "0062297d-c6d4-4148-95d1-83f60f289434",
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": true,
+            "fragmentCount": 64,
+            "bodyCount": 65,
+            "colliderCount": 65,
+            "seenEvents": 1,
+            "intactVisible": false,
+            "shardsVisible": true,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": 0.11147069931030273,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": false
+          },
+          "afterReset": {
+            "loading": false,
+            "errorMessage": null,
+            "view": "building",
+            "campusFocus": "all",
+            "cameraPosition": [
+              4.400000000000001,
+              2.9000000000000004,
+              4.400000000000001
+            ],
+            "cameraTarget": [
+              0,
+              0.2721706420183182,
+              0
+            ],
+            "phase": "ready",
+            "destroyed": false,
+            "score": 0,
+            "sessionId": null,
+            "buildingId": "knu-career-v71-b2-r3-fracture",
+            "expectedFragmentCount": 64,
+            "inspection": 0,
+            "impactPoint": [
+              0.4299391260703236,
+              0.604823648929596,
+              0.683910279737233
+            ],
+            "dustVisible": false,
+            "fragmentCount": 0,
+            "bodyCount": 2,
+            "colliderCount": 65,
+            "seenEvents": 0,
+            "intactVisible": true,
+            "shardsVisible": false,
+            "geometryCount": 151,
+            "textureCount": 5,
+            "finiteBodies": true,
+            "minFragmentY": null,
+            "expectedColliderCount": 64,
+            "physicsOrigin": [
+              0,
+              0,
+              0
+            ],
+            "placement": "original",
+            "restTransformsMatch": true
+          }
+        }
+      ],
+      "impact": [
+        0.4299391260703236,
+        0.604823648929596,
+        0.683910279737233
+      ],
+      "separationPreview": true,
+      "directLinkReload": true
+    }
+  ],
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "pageErrors": [],
+  "switchBackPassed": true
+}

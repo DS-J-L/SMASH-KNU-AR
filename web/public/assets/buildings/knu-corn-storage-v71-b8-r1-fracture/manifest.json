@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-corn-storage-v71-b8-r1-fracture",
+  "display_name": "옥수수저장창고",
+  "source_model_id": "vw/33",
+  "source_campus": "knu-campus-v71-batch8-r1.blend",
+  "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+  "source_object": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "mesh": "v7 | 추가 건물 | 옥수수저장창고 [vw/33].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -252.9432373046875,
+    113.62794494628906,
+    -5.278695583343506
+  ],
+  "scale_from_campus": 0.11653603641104521,
+  "source_dimensions_campus_z_up_m": [
+    18.878280639648438,
+    12.367103576660156,
+    4.264153003692627
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.1999999284744263,
+    0.49692749977111816,
+    1.4412131905555725
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

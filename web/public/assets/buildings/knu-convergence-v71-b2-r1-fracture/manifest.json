@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-convergence-v71-b2-r1-fracture",
+  "display_name": "융합교육정보관",
+  "source_model_id": "1026072764",
+  "source_campus": "knu-campus-v71-batch2-r1.blend",
+  "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+  "source_object": "융합교육정보관",
+  "source_objects": [
+    {
+      "object": "융합교육정보관",
+      "mesh": "융합교육정보관.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+      "mesh": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.5415499210357666
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    334.02001953125,
+    19.654998779296875,
+    -2.1969540119171143
+  ],
+  "scale_from_campus": 0.025815535889308787,
+  "source_dimensions_campus_z_up_m": [
+    85.22000122070312,
+    60.970001220703125,
+    28.655405044555664
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.1999999284744263,
+    0.7397546172142029,
+    1.5739731788635254
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic"
+}

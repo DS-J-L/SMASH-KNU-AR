@@ -1,0 +1,281 @@
+{
+  "scene_objects": 1735,
+  "target_core_ids": {
+    "473684404": "경북대 출판부",
+    "524161867": "문예관",
+    "468931846": "조소동",
+    "524025612": "영선관",
+    "468931912": "테크노빌딩",
+    "468931886": "한국기초과학지원연구원",
+    "524161871": "금란정"
+  },
+  "changed_meshes": {
+    "경북대 출판부": {
+      "id": "473684404",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.890511",
+      "lon": "128.6081767",
+      "rigid_body": false,
+      "mesh": "경북대 출판부.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "v7 | 창 근사 | 경북대 출판부 [473684404]": {
+      "id": "473684404",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": true,
+      "lat": null,
+      "lon": null,
+      "rigid_body": false,
+      "mesh": "v7 | 창 근사 | 경북대 출판부 [473684404]",
+      "append_geometry_material_and_uv_match": true
+    },
+    "문예관": {
+      "id": "524161867",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.8944215",
+      "lon": "128.6124212",
+      "rigid_body": false,
+      "mesh": "문예관.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "조소동": {
+      "id": "468931846",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.893634",
+      "lon": "128.6123175",
+      "rigid_body": false,
+      "mesh": "조소동.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "v7 | 창 근사 | 조소동 [468931846]": {
+      "id": "468931846",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": true,
+      "lat": null,
+      "lon": null,
+      "rigid_body": false,
+      "mesh": "v7 | 창 근사 | 조소동 [468931846]",
+      "append_geometry_material_and_uv_match": true
+    },
+    "영선관": {
+      "id": "524025612",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.8908009",
+      "lon": "128.6110085",
+      "rigid_body": false,
+      "mesh": "영선관.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "테크노빌딩": {
+      "id": "468931912",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.8926538",
+      "lon": "128.61369",
+      "rigid_body": false,
+      "mesh": "테크노빌딩.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "v7 | 창 근사 | 테크노빌딩 [468931912]": {
+      "id": "468931912",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": true,
+      "lat": null,
+      "lon": null,
+      "rigid_body": false,
+      "mesh": "v7 | 창 근사 | 테크노빌딩 [468931912]",
+      "append_geometry_material_and_uv_match": true
+    },
+    "한국기초과학지원연구원": {
+      "id": "468931886",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": false,
+      "lat": "35.8868463",
+      "lon": "128.607342",
+      "rigid_body": false,
+      "mesh": "한국기초과학지원연구원.002",
+      "append_geometry_material_and_uv_match": true
+    },
+    "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]": {
+      "id": "468931886",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": true,
+      "lat": null,
+      "lon": null,
+      "rigid_body": false,
+      "mesh": "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]",
+      "append_geometry_material_and_uv_match": true
+    },
+    "금란정": {
+      "id": "524161871",
+      "position_scale_unchanged": true,
+      "core_geometry_changed": true,
+      "lat": "35.8910358",
+      "lon": "128.6127191",
+      "rigid_body": false,
+      "mesh": "금란정.002",
+      "append_geometry_material_and_uv_match": true
+    }
+  },
+  "pavilion": {
+    "pads": [
+      {
+        "center_xy_m": [
+          211.650146484375,
+          83.47577667236328
+        ],
+        "stone_bottom_z_m": -0.6420778036117554,
+        "stone_top_z_m": -0.3320778012275696,
+        "terrain_z_range_m": [
+          -0.5421104431152344,
+          -0.5220508575439453
+        ],
+        "visible_ground_z_range_m": [
+          -0.39356040954589844,
+          -0.37311363220214844
+        ],
+        "minimum_ground_overlap_m": 0.24851739406585693,
+        "minimum_exposed_stone_m": 0.04103583097457886
+      },
+      {
+        "center_xy_m": [
+          212.58607482910156,
+          81.60704040527344
+        ],
+        "stone_bottom_z_m": -0.6967347860336304,
+        "stone_top_z_m": -0.3867347836494446,
+        "terrain_z_range_m": [
+          -0.5967693328857422,
+          -0.5767059326171875
+        ],
+        "visible_ground_z_range_m": [
+          -0.44768333435058594,
+          -0.4270172119140625
+        ],
+        "minimum_ground_overlap_m": 0.24905145168304443,
+        "minimum_exposed_stone_m": 0.04028242826461792
+      },
+      {
+        "center_xy_m": [
+          213.5175323486328,
+          79.74726867675781
+        ],
+        "stone_bottom_z_m": -0.7516015768051147,
+        "stone_top_z_m": -0.44160157442092896,
+        "terrain_z_range_m": [
+          -0.6523399353027344,
+          -0.631103515625
+        ],
+        "visible_ground_z_range_m": [
+          -0.5025882720947266,
+          -0.4819316864013672
+        ],
+        "minimum_ground_overlap_m": 0.24901330471038818,
+        "minimum_exposed_stone_m": 0.04033011198043823
+      },
+      {
+        "center_xy_m": [
+          214.45346069335938,
+          77.8785400390625
+        ],
+        "stone_bottom_z_m": -0.8097337484359741,
+        "stone_top_z_m": -0.49973374605178833,
+        "terrain_z_range_m": [
+          -0.7104740142822266,
+          -0.6889991760253906
+        ],
+        "visible_ground_z_range_m": [
+          -0.5604343414306641,
+          -0.5390720367431641
+        ],
+        "minimum_ground_overlap_m": 0.24929940700531006,
+        "minimum_exposed_stone_m": 0.03933829069137573
+      },
+      {
+        "center_xy_m": [
+          214.63653564453125,
+          84.97146606445312
+        ],
+        "stone_bottom_z_m": -0.6118196249008179,
+        "stone_top_z_m": -0.3018196225166321,
+        "terrain_z_range_m": [
+          -0.5118503570556641,
+          -0.4916038513183594
+        ],
+        "visible_ground_z_range_m": [
+          -0.36168479919433594,
+          -0.3410758972167969
+        ],
+        "minimum_ground_overlap_m": 0.25013482570648193,
+        "minimum_exposed_stone_m": 0.039256274700164795
+      },
+      {
+        "center_xy_m": [
+          215.5724639892578,
+          83.10273742675781
+        ],
+        "stone_bottom_z_m": -0.6664766073226929,
+        "stone_top_z_m": -0.3564766049385071,
+        "terrain_z_range_m": [
+          -0.5665054321289062,
+          -0.54644775390625
+        ],
+        "visible_ground_z_range_m": [
+          -0.4160785675048828,
+          -0.39624786376953125
+        ],
+        "minimum_ground_overlap_m": 0.25039803981781006,
+        "minimum_exposed_stone_m": 0.03977125883102417
+      },
+      {
+        "center_xy_m": [
+          216.50392150878906,
+          81.24296569824219
+        ],
+        "stone_bottom_z_m": -0.7208703756332397,
+        "stone_top_z_m": -0.41087037324905396,
+        "terrain_z_range_m": [
+          -0.6209030151367188,
+          -0.6008415222167969
+        ],
+        "visible_ground_z_range_m": [
+          -0.4721794128417969,
+          -0.45035552978515625
+        ],
+        "minimum_ground_overlap_m": 0.24869096279144287,
+        "minimum_exposed_stone_m": 0.039485156536102295
+      },
+      {
+        "center_xy_m": [
+          217.43984985351562,
+          79.37423706054688
+        ],
+        "stone_bottom_z_m": -0.776694655418396,
+        "stone_top_z_m": -0.4666946530342102,
+        "terrain_z_range_m": [
+          -0.6774311065673828,
+          -0.6559562683105469
+        ],
+        "visible_ground_z_range_m": [
+          -0.5280208587646484,
+          -0.5067768096923828
+        ],
+        "minimum_ground_overlap_m": 0.24867379665374756,
+        "minimum_exposed_stone_m": 0.04008215665817261
+      }
+    ],
+    "pads_with_ground_contact": 8,
+    "pads_with_exposed_stone": 8,
+    "connected_mesh_shells": [
+      {
+        "vertices": 1131,
+        "min_z_m": -0.8097337484359741,
+        "max_z_m": 3.980228900909424
+      }
+    ]
+  }
+}

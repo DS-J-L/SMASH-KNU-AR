@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-kbsi-v71-b3-r1-fracture",
+  "fragment_count": 70,
+  "intact_volume_m3": 0.4896439440480714,
+  "volume_relative_error": 5.2877953747040166e-08,
+  "errors": [],
+  "source_blend_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af"
+}

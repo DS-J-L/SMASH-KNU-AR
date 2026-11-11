@@ -1,0 +1,81 @@
+{
+  "archive": "knu-campus-v71-batch10-r1-restorable.zip",
+  "sha256": "3dbe6e4dfd2fdc26e3bffca4749e09cf6c9e098a0c111fc0df7576934533a4a1",
+  "bytes": 117698939,
+  "members": 55,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 10,
+  "restored_checks": {
+    "이름 미등록 건물": {
+      "source_id": "osm/468931854",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.001": {
+      "source_id": "osm/468931893",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.002": {
+      "source_id": "osm/468931896",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.003": {
+      "source_id": "osm/468931915",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.004": {
+      "source_id": "osm/524161868",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.005": {
+      "source_id": "osm/576358734",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.006": {
+      "source_id": "osm/577759119",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.007": {
+      "source_id": "osm/584385630",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.008": {
+      "source_id": "osm/584386432",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "이름 미등록 건물.009": {
+      "source_id": "osm/972016220",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

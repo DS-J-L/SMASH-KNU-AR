@@ -1,0 +1,60 @@
+{
+  "archive": "knu-campus-v71-batch7-r1-restorable.zip",
+  "sha256": "9e1f20a9611b3c863df0920211a190e5efa7732c9dea5649a883ccf12a1a54e4",
+  "bytes": 111903509,
+  "members": 45,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 7,
+  "restored_checks": {
+    "v7 | 추가 건물 | 온실1 [vw/143]": {
+      "source_id": "vw/143",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실2 [vw/50]": {
+      "source_id": "vw/50",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 3-1 [vw/130]": {
+      "source_id": "vw/130",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 3-2 [vw/163]": {
+      "source_id": "vw/163",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 4-1 [vw/18]": {
+      "source_id": "vw/18",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 4-2 [vw/79]": {
+      "source_id": "vw/79",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 4-3 [vw/166]": {
+      "source_id": "vw/166",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

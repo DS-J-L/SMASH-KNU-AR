@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "fa12393fd34dc4c2e121c811f3afabe3adf27c10238d73fe783d95e899a4bb5f",
+  "index_fields": [
+    "title_ko",
+    "date",
+    "scope_ko",
+    "user_latest_other_chat_model_checked",
+    "integrated_with_user_latest_model",
+    "combined_eight_improvement_model_created",
+    "automatic_merge_scripts_included",
+    "baseline",
+    "files",
+    "items",
+    "validation_status_ko",
+    "merge_caution_ko"
+  ],
+  "model_sha256": {
+    "KNU-v71-partial-models-manual-merge-20261110/01_six_building_batch/knu-v71base-partial53-batch04.blend": "c909e1568aec63c58f408bcb8cf272da506fa59796e90645cd9e4cf3f7d57feb",
+    "KNU-v71-partial-models-manual-merge-20261110/01_six_building_batch/knu-v71base-partial53-batch04.glb": "c6b2bc1f4323397006183bd55deba96ad242d801aadb39a3e9e2a61c5f0695d4",
+    "KNU-v71-partial-models-manual-merge-20261110/02_science208/science208-dividers-full-candidate.blend": "972bbd0ae8ac6b117e753ad05f46139ad98ee8f56f159b6c4cecb1c9ce7581a6",
+    "KNU-v71-partial-models-manual-merge-20261110/02_science208/science208-dividers-full-candidate.glb": "4401547daa7b667f7ab863cb57f3ec2777e9fd53ab8b02e0964859bbc2e7e19e",
+    "KNU-v71-partial-models-manual-merge-20261110/03_engineering408/engineering408-window-full-candidate.blend": "01ad4333c356f2c48baabe7a6ac88fcf03880e13cd6ec7b99f075ca1d9f2d104",
+    "KNU-v71-partial-models-manual-merge-20261110/03_engineering408/engineering408-window-full-candidate.glb": "29b8607a247925c2f88fcabe9974a564cf78a114c9ce5ad7a882974bea2f878f"
+  },
+  "crc_ok": true
+}

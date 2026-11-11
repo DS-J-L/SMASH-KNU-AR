@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-it2-v71-r8-fracture",
+  "display_name": "IT 2호관",
+  "source_osm_way": "468931876",
+  "source_campus": "knu-campus-v71-batch1-r8.blend",
+  "source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "source_object": "IT 2호관",
+  "source_mesh": "IT 2호관.002",
+  "source_origin_campus_z_up_m": [
+    117.26660919189453,
+    -306.89105224609375,
+    -4.215249538421631
+  ],
+  "scale_from_campus": 0.03277537445925333,
+  "source_dimensions_campus_z_up_m": [
+    63.71321105957031,
+    67.00210571289062,
+    12.916452407836914
+  ],
+  "source_world_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.088224411010742,
+    0.4233415722846985,
+    2.196019172668457
+  ],
+  "fragment_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_seed_count": 64,
+  "fragment_method": "Deterministic 3D Voronoi intersections, separate closed islands",
+  "source": "synthetic"
+}

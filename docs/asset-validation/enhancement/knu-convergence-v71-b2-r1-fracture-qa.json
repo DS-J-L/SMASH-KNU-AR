@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-convergence-v71-b2-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 1.1966004809801216,
+  "volume_relative_error": 2.4856957014241597e-08,
+  "errors": [],
+  "source_blend_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c"
+}

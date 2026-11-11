@@ -1,0 +1,82 @@
+{
+  "knu-osm-1470108675-v71-g2-r1-fracture": {
+    "intact.glb": {
+      "bytes": 381400,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 24,
+      "drawPrimitives": 27,
+      "triangles": 5004
+    },
+    "fragments.glb": {
+      "bytes": 743416,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 64,
+      "drawPrimitives": 286,
+      "triangles": 7648
+    }
+  },
+  "knu-osm-468931907-v71-g2-r1-fracture": {
+    "intact.glb": {
+      "bytes": 117032,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 2,
+      "drawPrimitives": 4,
+      "triangles": 1532
+    },
+    "fragments.glb": {
+      "bytes": 439972,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 64,
+      "drawPrimitives": 215,
+      "triangles": 4052
+    }
+  },
+  "knu-osm-468931910-v71-g2-r1-fracture": {
+    "intact.glb": {
+      "bytes": 1106876,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 37,
+      "drawPrimitives": 39,
+      "triangles": 15308
+    },
+    "fragments.glb": {
+      "bytes": 1435284,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 64,
+      "drawPrimitives": 231,
+      "triangles": 17760
+    }
+  },
+  "knu-osm-524021463-v71-g2-r1-fracture": {
+    "intact.glb": {
+      "bytes": 973008,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 8,
+      "drawPrimitives": 10,
+      "triangles": 15472
+    },
+    "fragments.glb": {
+      "bytes": 1334208,
+      "errors": 0,
+      "warnings": 0,
+      "messages": [],
+      "meshes": 64,
+      "drawPrimitives": 278,
+      "triangles": 18008
+    }
+  }
+}

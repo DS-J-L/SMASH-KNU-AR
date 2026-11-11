@@ -1,0 +1,27 @@
+{
+  "screens": 12,
+  "roi_xyxy_relative_to_header_bottom": [
+    565,
+    144,
+    1280,
+    824
+  ],
+  "models": {
+    "osm/1470108675": {
+      "destruction_changed_pixels": 135810,
+      "restored_different_pixels": 0
+    },
+    "osm/468931907": {
+      "destruction_changed_pixels": 115322,
+      "restored_different_pixels": 0
+    },
+    "osm/468931910": {
+      "destruction_changed_pixels": 106060,
+      "restored_different_pixels": 0
+    },
+    "osm/524021463": {
+      "destruction_changed_pixels": 223217,
+      "restored_different_pixels": 0
+    }
+  }
+}

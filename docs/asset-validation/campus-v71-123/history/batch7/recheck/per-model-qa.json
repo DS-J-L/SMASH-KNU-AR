@@ -1,0 +1,100 @@
+{
+  "vw/143": {
+    "object": "v7 | 추가 건물 | 온실1 [vw/143]",
+    "triangles": 60,
+    "footprint_samples": 8,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실1 [vw/143]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.7851 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/50": {
+    "object": "v7 | 추가 건물 | 온실2 [vw/50]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실2 [vw/50]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.639 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/130": {
+    "object": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실 3-1 [vw/130]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.7335 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/163": {
+    "object": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실 3-2 [vw/163]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.7278 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/18": {
+    "object": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실 4-1 [vw/18]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.6744 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/79": {
+    "object": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실 4-2 [vw/79]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.6831 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/166": {
+    "object": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 온실 4-3 [vw/166]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.6915 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  }
+}

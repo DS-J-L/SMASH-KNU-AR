@@ -1,0 +1,654 @@
+{
+  "baseline_blend_sha256": "5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd",
+  "baseline_glb_sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+  "candidate_blend_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+  "candidate_glb_sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+  "stage_reports": {
+    "knu-campus-v71-batch1-r8.blend": {
+      "blend_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "glb_sha256": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c"
+    },
+    "knu-campus-v71-batch2-r1.blend": {
+      "blend_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "glb_sha256": "e25cf3fdf3eee1b569471a78a8a097b4300c8f393b3e44d248aec392cb627196",
+      "source_blend": "knu-campus-v71-batch1-r8.blend"
+    },
+    "knu-campus-v71-batch2-r2.blend": {
+      "blend_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "glb_sha256": "53294f0fa937ce24ec89bd087f212e4875d66afd6a2fb996435d3a98a2e4563f",
+      "source_blend": "knu-campus-v71-batch2-r1.blend"
+    },
+    "knu-campus-v71-batch3-r1.blend": {
+      "blend_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "glb_sha256": "54cacf52c4b471c815f170d01df7453daa6abbf5955ae77e928fc4881b38551c",
+      "source_blend": "knu-campus-v71-batch2-r2.blend"
+    },
+    "knu-campus-v71-batch4-r1.blend": {
+      "blend_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "glb_sha256": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+      "source_blend": "knu-campus-v71-batch3-r1.blend"
+    },
+    "knu-campus-v71-batch5-r1.blend": {
+      "blend_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "glb_sha256": "1fc8448842b5b53ca6bc333500ebeea3f6d519c3be52bf8b75bd38c0d86e3af7",
+      "source_blend": "knu-campus-v71-batch4-r1.blend"
+    },
+    "knu-campus-v71-batch6-r1.blend": {
+      "blend_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "glb_sha256": "8d2696d723f3cc8359f198a12fa1b15975481a1d0684930762ee6bc305c19308",
+      "source_blend": "knu-campus-v71-batch5-r1.blend"
+    },
+    "knu-campus-v71-batch7-r1.blend": {
+      "blend_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "glb_sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+      "source_blend": "knu-campus-v71-batch6-r1.blend"
+    }
+  },
+  "model_count": 123,
+  "scene_objects": 1735,
+  "triangles": 890412,
+  "protected_models": {
+    "osm/1470108675": true,
+    "osm/440331569": true,
+    "osm/468931841": true,
+    "osm/468931844": true,
+    "osm/468931848": true,
+    "osm/468931850": true,
+    "osm/468931852": true,
+    "osm/468931857": true,
+    "osm/468931858": true,
+    "osm/468931867": true,
+    "osm/468931869": true,
+    "osm/468931871": true,
+    "osm/468931872": true,
+    "osm/468931873": true,
+    "osm/468931874": true,
+    "osm/468931878": true,
+    "osm/468931879": true,
+    "osm/468931880": true,
+    "osm/468931882": true,
+    "osm/468931887": true,
+    "osm/468931890": true,
+    "osm/468931892": true,
+    "osm/468931895": true,
+    "osm/468931897": true,
+    "osm/468931898": true,
+    "osm/468931899": true,
+    "osm/468931900": true,
+    "osm/468931902": true,
+    "osm/468931903": true,
+    "osm/468931904": true,
+    "osm/468931905": true,
+    "osm/468931907": true,
+    "osm/468931908": true,
+    "osm/468931909": true,
+    "osm/468931910": true,
+    "osm/468931913": true,
+    "osm/468931914": true,
+    "osm/468931917": true,
+    "osm/468931918": true,
+    "osm/468931919": true,
+    "osm/468931920": true,
+    "osm/468931921": true,
+    "osm/468931922": true,
+    "osm/468931923": true,
+    "osm/468931924": true,
+    "osm/468931926": true,
+    "osm/473684409": true,
+    "osm/524021463": true,
+    "osm/524021465": true,
+    "osm/524021468": true,
+    "osm/524021470": true,
+    "osm/846905616": true,
+    "vw/16": true
+  },
+  "remaining_models": {
+    "osm/468931888": "PP구조실습실",
+    "osm/468931854": "이름 미등록 건물",
+    "osm/468931893": "이름 미등록 건물.001",
+    "osm/468931896": "이름 미등록 건물.002",
+    "osm/468931915": "이름 미등록 건물.003",
+    "osm/524161868": "이름 미등록 건물.004",
+    "osm/576358734": "이름 미등록 건물.005",
+    "osm/577759119": "이름 미등록 건물.006",
+    "osm/584385630": "이름 미등록 건물.007",
+    "osm/584386432": "이름 미등록 건물.008",
+    "osm/972016220": "이름 미등록 건물.009",
+    "vw/1": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+    "vw/10": "v7 | 추가 건물 | 암석창고 [vw/10]",
+    "vw/22": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+    "vw/33": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+    "vw/21": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+    "vw/52": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+    "vw/110": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+    "vw/20": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+    "vw/62": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+    "vw/165": "v7 | 추가 건물 | 동위원소저장고 [vw/165]"
+  },
+  "changed_objects": [
+    "IT 2호관",
+    "v7 | 창 근사 | 간호대학 [1107268251]",
+    "v7 | 창 근사 | 경북대 출판부 [473684404]",
+    "v7 | 창 근사 | 교수아파트 [469843173]",
+    "v7 | 창 근사 | 교육대학원 [469617252]",
+    "v7 | 창 근사 | 누리관 [854306251]",
+    "v7 | 창 근사 | 누리관 [854306497]",
+    "v7 | 창 근사 | 대학원동 [468931865]",
+    "v7 | 창 근사 | 미래창직관 [1408182451]",
+    "v7 | 창 근사 | 반도체융합연구동 [524021469]",
+    "v7 | 창 근사 | 백호관 [468931928]",
+    "v7 | 창 근사 | 보람관 [1300033666]",
+    "v7 | 창 근사 | 수의과대학부속병원 [468931894]",
+    "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+    "v7 | 창 근사 | 조소동 [468931846]",
+    "v7 | 창 근사 | 첨성관 [468931911]",
+    "v7 | 창 근사 | 테크노빌딩 [468931912]",
+    "v7 | 창 근사 | 평생교육원 [468931916]",
+    "v7 | 창 근사 | 학군단 [468931930]",
+    "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]",
+    "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+    "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+    "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+    "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+    "v7 | 추가 건물 | 북문수위실 [vw/8]",
+    "v7 | 추가 건물 | 사범대학 [vw/147]",
+    "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+    "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+    "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+    "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+    "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+    "v7 | 추가 건물 | 온실1 [vw/143]",
+    "v7 | 추가 건물 | 온실2 [vw/50]",
+    "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+    "v7 | 추가 건물 | 학군단창고 [vw/114]",
+    "v8 | 창 근사 | 기숙사B동 [vw/73]",
+    "v8 | 태양광 | 공대 7호관",
+    "v8 | 태양광 | 사과센터",
+    "간호대학",
+    "경북대 출판부",
+    "공대 7호관",
+    "교수아파트",
+    "교육대학원",
+    "금란정",
+    "농업생명과학관",
+    "누리관",
+    "누리관.001",
+    "대학원동",
+    "동물사육장",
+    "면학관",
+    "문예관",
+    "미래창직관",
+    "반도체융합연구동",
+    "백호관",
+    "보람관",
+    "사과센터",
+    "수의과대학부속병원",
+    "연구실 안전관리센터",
+    "영선관",
+    "융합교육정보관",
+    "제2체육관",
+    "조소동",
+    "첨성관",
+    "청룡관 (Cheonglyong-Gwan)",
+    "테크노빌딩",
+    "평생교육원",
+    "학군단",
+    "한국기초과학지원연구원"
+  ],
+  "game_models": {
+    "osm/468931876": {
+      "package": "knu-it2-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "IT 2호관",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931925": {
+      "package": "knu-gym2-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "제2체육관",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/8": {
+      "package": "knu-northgate-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931877": {
+      "package": "knu-eng7-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "공대 7호관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 공대 7호관 [468931877]",
+        "v8 | 태양광 | 공대 7호관"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/1408182451": {
+      "package": "knu-future-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "미래창직관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 미래창직관 [1408182451]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524021469": {
+      "package": "knu-semi-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "반도체융합연구동",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 반도체융합연구동 [524021469]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931889": {
+      "package": "knu-safety-v71-r8-fracture",
+      "source_stage": "knu-campus-v71-batch1-r8.blend",
+      "source_object": "연구실 안전관리센터",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/147": {
+      "package": "knu-teachers-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r1.blend",
+      "source_object": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/95": {
+      "package": "knu-liberal-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r1.blend",
+      "source_object": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": false
+    },
+    "osm/1026072764": {
+      "package": "knu-convergence-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r1.blend",
+      "source_object": "융합교육정보관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 융합교육정보관 [1026072764]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/127": {
+      "package": "knu-career-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r1.blend",
+      "source_object": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": false
+    },
+    "osm/468931865": {
+      "package": "knu-grad-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r2.blend",
+      "source_object": "대학원동",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 대학원동 [468931865]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931916": {
+      "package": "knu-lifelong-v71-b2-r3-fracture",
+      "source_stage": "knu-campus-v71-batch2-r2.blend",
+      "source_object": "평생교육원",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 평생교육원 [468931916]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/469617252": {
+      "package": "knu-educgrad-v71-b2-r2-fracture",
+      "source_stage": "knu-campus-v71-batch2-r2.blend",
+      "source_object": "교육대학원",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 교육대학원 [469617252]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/473684404": {
+      "package": "knu-press-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "경북대 출판부",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 경북대 출판부 [473684404]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524161867": {
+      "package": "knu-arts-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "문예관",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931846": {
+      "package": "knu-sculpture-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "조소동",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 조소동 [468931846]",
+        "v8 | 태양광 | 조소동"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524161871": {
+      "package": "knu-pavilion-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "금란정",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524025612": {
+      "package": "knu-yeongseon-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "영선관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 영선관 [524025612]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931912": {
+      "package": "knu-techno-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "테크노빌딩",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 테크노빌딩 [468931912]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931886": {
+      "package": "knu-kbsi-v71-b3-r1-fracture",
+      "source_stage": "knu-campus-v71-batch3-r1.blend",
+      "source_object": "한국기초과학지원연구원",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/469843173": {
+      "package": "knu-faculty-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "교수아파트",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 교수아파트 [469843173]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/854306251": {
+      "package": "knu-nuri-west-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "누리관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 누리관 [854306251]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/854306497": {
+      "package": "knu-nuri-east-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "누리관.001",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 누리관 [854306497]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524021464": {
+      "package": "knu-myeonhak-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "면학관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 면학관 [524021464]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/1300033666": {
+      "package": "knu-boram-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "보람관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 보람관 [1300033666]",
+        "v7 | 태양광 근사 | 보람관"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931911": {
+      "package": "knu-cheom-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "첨성관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 첨성관 [468931911]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931928": {
+      "package": "knu-baekho-v71-b4-r1-fracture",
+      "source_stage": "knu-campus-v71-batch4-r1.blend",
+      "source_object": "백호관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 백호관 [468931928]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/145": {
+      "package": "knu-dorm-a-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "associated_objects_checked": [
+        "v8 | 창 근사 | 기숙사A동 [vw/145]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/73": {
+      "package": "knu-dorm-b-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+      "associated_objects_checked": [
+        "v8 | 창 근사 | 기숙사B동 [vw/73]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/162": {
+      "package": "knu-dorm-c-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+      "associated_objects_checked": [
+        "v8 | 창 근사 | 기숙사C동 [vw/162]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/522514118": {
+      "package": "knu-cheong-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "청룡관 (Cheonglyong-Gwan)",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 청룡관 (Cheonglyong-Gwan) [522514118]",
+        "v8 | 태양광 | 청룡관 (Cheonglyong-Gwan)"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/468931930": {
+      "package": "knu-rotc-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "학군단",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 학군단 [468931930]",
+        "v8 | 태양광 | 학군단"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/114": {
+      "package": "knu-store-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "v7 | 추가 건물 | 학군단창고 [vw/114]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/105": {
+      "package": "knu-tennis-v71-b5-r1-fracture",
+      "source_stage": "knu-campus-v71-batch5-r1.blend",
+      "source_object": "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/524172305": {
+      "package": "knu-agri-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "농업생명과학관",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 농업생명과학관 [524172305]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/576254849": {
+      "package": "knu-animal-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "동물사육장",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/473687810": {
+      "package": "knu-apple-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "사과센터",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 사과센터 [473687810]",
+        "v8 | 태양광 | 사과센터"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/113": {
+      "package": "knu-apple-annex-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/111": {
+      "package": "knu-packing-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": false
+    },
+    "osm/468931894": {
+      "package": "knu-vet-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "수의과대학부속병원",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 수의과대학부속병원 [468931894]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "osm/1107268251": {
+      "package": "knu-nursing-v71-b6-r1-fracture",
+      "source_stage": "knu-campus-v71-batch6-r1.blend",
+      "source_object": "간호대학",
+      "associated_objects_checked": [
+        "v7 | 창 근사 | 간호대학 [1107268251]"
+      ],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/143": {
+      "package": "knu-gh1-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실1 [vw/143]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/50": {
+      "package": "knu-gh2-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실2 [vw/50]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/130": {
+      "package": "knu-gh31-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/163": {
+      "package": "knu-gh32-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/18": {
+      "package": "knu-gh41-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/79": {
+      "package": "knu-gh42-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    },
+    "vw/166": {
+      "package": "knu-gh43-v71-b7-r1-fracture",
+      "source_stage": "knu-campus-v71-batch7-r1.blend",
+      "source_object": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+      "associated_objects_checked": [],
+      "matches_accumulated_campus": true,
+      "changed_from_v71": true
+    }
+  }
+}

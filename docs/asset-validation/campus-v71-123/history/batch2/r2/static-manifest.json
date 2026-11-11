@@ -1,0 +1,331 @@
+{
+  "source": "knu-campus-v71-batch2-r1.blend",
+  "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+  "candidate": "knu-campus-v71-batch2-r2.blend",
+  "edits": {
+    "대학원동": {
+      "id": "468931865",
+      "mesh": "대학원동.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "vertices": 16,
+        "triangles": 28,
+        "volume_m3": 30877.31748656748,
+        "bounds": [
+          [
+            -38.0099983215332,
+            -74.45999908447266,
+            -7.05856466293335
+          ],
+          [
+            29.850000381469727,
+            -45.72999954223633,
+            19.258516311645508
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #718285",
+          "Batch2_grad_Observed",
+          "Batch2_grad-roof_Observed"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "after": {
+        "vertices": 28,
+        "triangles": 52,
+        "volume_m3": 31098.379660700277,
+        "bounds": [
+          [
+            -38.0099983215332,
+            -74.45999908447266,
+            -7.05856466293335
+          ],
+          [
+            29.850000381469727,
+            -45.72999954223633,
+            22.100000381469727
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #718285",
+          "Batch2_grad_Observed",
+          "Batch2_grad-roof_Observed",
+          "Batch2R2_GradGableMasonry",
+          "Batch2R2_GradBrownRoof"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "design": {
+        "feature": "central gabled rooftop enclosure",
+        "width_m": 9.8,
+        "length_m": 14.4,
+        "eave_z_m": 19.55,
+        "ridge_z_m": 22.1,
+        "dimensions": "visual approximation"
+      },
+      "existing_surface_pairs": {
+        "v7 | 창 근사 | 대학원동 [468931865]": 480,
+        "v7 | 태양광 근사 | 대학원동": 564,
+        "SM_CampusTerrain_v11": 50,
+        "SM_CampusRoutes_v16": 33
+      },
+      "after_surface_pairs": {
+        "v7 | 창 근사 | 대학원동 [468931865]": 480,
+        "v7 | 태양광 근사 | 대학원동": 453,
+        "SM_CampusTerrain_v11": 50,
+        "SM_CampusRoutes_v16": 33
+      }
+    },
+    "교육대학원": {
+      "id": "469617252",
+      "mesh": "교육대학원.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "vertices": 68,
+        "triangles": 132,
+        "volume_m3": 10820.299552859118,
+        "bounds": [
+          [
+            276.1700134277344,
+            -61.09000015258789,
+            -3.0298244953155518
+          ],
+          [
+            347.4599914550781,
+            -6.5,
+            8.120162010192871
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v8 | 위성 지붕 교육대학원",
+          "Batch2_educgrad_Observed"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "after": {
+        "vertices": 86,
+        "triangles": 168,
+        "volume_m3": 11359.596424690017,
+        "bounds": [
+          [
+            276.1700134277344,
+            -61.09000015258789,
+            -3.0298244953155518
+          ],
+          [
+            347.4599914550781,
+            -6.5,
+            10.380000114440918
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v8 | 위성 지붕 교육대학원",
+          "Batch2_educgrad_Observed",
+          "Batch2R2_EducationGableMasonry",
+          "Batch2R2_EducationTealRoof"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "design": {
+        "feature": "shallow teal gabled roof over the confirmed long hall",
+        "width_m": 8.5,
+        "length_m": 51.8,
+        "eave_z_m": 8.31,
+        "ridge_z_m": 10.38,
+        "dimensions": "visual approximation"
+      },
+      "existing_surface_pairs": {
+        "v7 | 창 근사 | 교육대학원 [469617252]": 270,
+        "SM_CampusTerrain_v11": 106,
+        "SM_CampusRoutes_v16": 16
+      },
+      "after_surface_pairs": {
+        "v7 | 창 근사 | 교육대학원 [469617252]": 270,
+        "SM_CampusTerrain_v11": 106,
+        "SM_CampusRoutes_v16": 16
+      }
+    },
+    "평생교육원": {
+      "id": "468931916",
+      "mesh": "평생교육원.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "vertices": 24,
+        "triangles": 44,
+        "volume_m3": 7379.867770810917,
+        "bounds": [
+          [
+            -53.34000015258789,
+            252.83999633789062,
+            -8.87239933013916
+          ],
+          [
+            0.23999999463558197,
+            316.0299987792969,
+            3.399783134460449
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #6f7f82",
+          "Batch2_lifelong_Observed"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "after": {
+        "vertices": 44,
+        "triangles": 84,
+        "volume_m3": 7432.721911394093,
+        "bounds": [
+          [
+            -53.34000015258789,
+            252.83999633789062,
+            -8.87239933013916
+          ],
+          [
+            0.23999999463558197,
+            316.0299987792969,
+            4.949999809265137
+          ]
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #6f7f82",
+          "Batch2_lifelong_Observed",
+          "Batch2R2_LifelongLightFrame",
+          "Batch2R2_LifelongTowerCap",
+          "Batch2R2_LifelongTowerGlazing"
+        ],
+        "uv": [
+          "Batch2Observed"
+        ]
+      },
+      "design": {
+        "feature": "center vertical glazed bay on the car-park elevation",
+        "width_m": 5.1,
+        "depth_m": 3.35,
+        "top_z_m": 4.95,
+        "dimensions": "visual approximation"
+      },
+      "existing_surface_pairs": {
+        "v7 | 창 근사 | 평생교육원 [468931916]": 300,
+        "SM_CampusTerrain_v11": 50,
+        "SM_CampusRoutes_v16": 24
+      },
+      "after_surface_pairs": {
+        "v7 | 창 근사 | 평생교육원 [468931916]": 300,
+        "SM_CampusTerrain_v11": 50,
+        "SM_CampusRoutes_v16": 24
+      }
+    }
+  },
+  "artifacts": {
+    "knu-campus-v71-batch2-r2.blend": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+    "knu-campus-v71-batch2-r2.glb": "53294f0fa937ce24ec89bd087f212e4875d66afd6a2fb996435d3a98a2e4563f",
+    "batch2-r2-model-meshes.blend": "10da5c8d97a5625cfbfc6aa0b7820cdc1b00511f98a099f33517c311dae37c2d"
+  }
+}

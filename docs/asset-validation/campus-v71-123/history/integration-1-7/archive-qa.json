@@ -1,0 +1,142 @@
+{
+  "batch1/campus-v71-batch1-r4-restorable.zip": {
+    "checksummed_members": 28,
+    "crc_checked_members": 29,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch1-model-meshes-r4.blend": "ed966632f476ac320b033aa0c698af6717d90cbd0d894bb5643cec006106f35f",
+      "candidate/knu-campus-v71-batch1-r4.blend": "a3eb327f8b5c811231720a96d50a42d3666915992b1dede871e745716d3ad066",
+      "candidate/knu-campus-v71-batch1-r4.glb": "a8cf21d42c87b3a7b421d8270d896c8220adc2ab5a73e9ea0d227b698442668c"
+    }
+  },
+  "batch1/campus-v71-batch1-r8-restorable.zip": {
+    "checksummed_members": 11,
+    "crc_checked_members": 12,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch1-model-meshes-r8.blend": "57645212095ae4f0c245f12ca8ee3207915bb76af6eb4453f9a13ad425dd9d4a",
+      "candidate/knu-campus-v71-batch1-r8.blend": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "candidate/knu-campus-v71-batch1-r8.glb": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c"
+    }
+  },
+  "batch1/it2-fracture/knu-it2-v71-r8-fracture-restorable.zip": {
+    "checksummed_members": 19,
+    "crc_checked_members": 20,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip": {
+    "checksummed_members": 88,
+    "crc_checked_members": 89,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip": {
+    "checksummed_members": 106,
+    "crc_checked_members": 107,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch2/knu-campus-v71-batch2-r1-restorable.zip": {
+    "checksummed_members": 115,
+    "crc_checked_members": 116,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch2/revision-r2/knu-campus-v71-batch2-r2-restorable.zip": {
+    "checksummed_members": 80,
+    "crc_checked_members": 81,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip": {
+    "checksummed_members": 123,
+    "crc_checked_members": 124,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch3/knu-campus-v71-batch3-r1-restorable.zip": {
+    "checksummed_members": 36,
+    "crc_checked_members": 37,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch3-model-meshes-r1.blend": "4f3a4f042a079fb97d3daf29096180d69290c91752d9480de53ea7c576b0840c",
+      "candidate/knu-campus-v71-batch3-r1.blend": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "candidate/knu-campus-v71-batch3-r1.glb": "54cacf52c4b471c815f170d01df7453daa6abbf5955ae77e928fc4881b38551c"
+    }
+  },
+  "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip": {
+    "checksummed_members": 124,
+    "crc_checked_members": 125,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch4/knu-campus-v71-batch4-r1-restorable.zip": {
+    "checksummed_members": 51,
+    "crc_checked_members": 52,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch4-model-meshes-r1.blend": "7c102b1fd34809afb8f829f549366fb76df142872b0c2e284dc4c24d69b1b95f",
+      "candidate/knu-campus-v71-batch4-r1.blend": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "candidate/knu-campus-v71-batch4-r1.glb": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd"
+    }
+  },
+  "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip": {
+    "checksummed_members": 127,
+    "crc_checked_members": 128,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch5/knu-campus-v71-batch5-r1-restorable.zip": {
+    "checksummed_members": 46,
+    "crc_checked_members": 47,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch5-model-meshes-r1.blend": "3c040f9d3ad06f38dec50c53b2a3ffce77d66b3053191bcc79c8195a5d501add",
+      "candidate/knu-campus-v71-batch5-r1.blend": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "candidate/knu-campus-v71-batch5-r1.glb": "1fc8448842b5b53ca6bc333500ebeea3f6d519c3be52bf8b75bd38c0d86e3af7"
+    }
+  },
+  "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip": {
+    "checksummed_members": 127,
+    "crc_checked_members": 128,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch6/knu-campus-v71-batch6-r1-restorable.zip": {
+    "checksummed_members": 45,
+    "crc_checked_members": 46,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch6-model-meshes-r1.blend": "4e010095cec0b93393816e4ad36139ba0acbb868349ce22dd8147e500c71dc78",
+      "candidate/knu-campus-v71-batch6-r1.blend": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "candidate/knu-campus-v71-batch6-r1.glb": "8d2696d723f3cc8359f198a12fa1b15975481a1d0684930762ee6bc305c19308"
+    }
+  },
+  "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip": {
+    "checksummed_members": 130,
+    "crc_checked_members": 131,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {}
+  },
+  "batch7/knu-campus-v71-batch7-r1-restorable.zip": {
+    "checksummed_members": 44,
+    "crc_checked_members": 45,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/batch7-model-meshes-r1.blend": "8338b5568d32518611fcf326c168d96e900961280e001f249f176006c6d15d28",
+      "candidate/knu-campus-v71-batch7-r1.blend": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "candidate/knu-campus-v71-batch7-r1.glb": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608"
+    }
+  },
+  "campus-v71-vw8-restorable.zip": {
+    "checksummed_members": 20,
+    "crc_checked_members": 21,
+    "members_without_index_checksum": [],
+    "candidate_asset_hashes": {
+      "candidate/knu-campus-v71-vw8-r1.blend": "4a416ff845e1d0f70bdc5c21732df18f1ffaf763f6f70bbe0e297b7f08c3f3c5",
+      "candidate/knu-campus-v71-vw8-r1.glb": "22e7bd4e5f3ad510a64830d6c0b796d5dd00db5e077d0293e51bbfe3137791a5",
+      "candidate/vw8-material-uv-delta.blend": "167a721d644beec6a42d5f2aad88bb8dc9a4cf74aaf849a89d43af7be4b58860"
+    }
+  }
+}

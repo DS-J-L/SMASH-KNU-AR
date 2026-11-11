@@ -1,0 +1,1654 @@
+{
+  "browser": "157.0.4341.42",
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "input": "keyboard_demo",
+  "default_switchback": true,
+  "page_errors": [],
+  "catalog_glbs": 39,
+  "source_campus_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "candidate_campus_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+  "buildings": [
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-grad-v71-b2-r1-fracture",
+        "display_name": "대학원동",
+        "source_model_id": "468931865",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "대학원동",
+        "source_objects": [
+          {
+            "object": "대학원동",
+            "mesh": "대학원동.002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          {
+            "object": "v7 | 창 근사 | 대학원동 [468931865]",
+            "mesh": "v7 | 창 근사 | 대학원동 [468931865]",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -4.240774154663086
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          -4.079998970031738,
+          -60.095001220703125,
+          -7.05856466293335
+        ],
+        "scale_from_campus": 0.032419688211733584,
+        "source_dimensions_campus_z_up_m": [
+          67.86000061035156,
+          28.729999542236328,
+          26.317081451416016
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.200000047683716,
+          0.853191614151001,
+          0.9314176440238953
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": true,
+      "fragment_nodes": [
+        "SM_grad_Fragment_000",
+        "SM_grad_Fragment_001",
+        "SM_grad_Fragment_002",
+        "SM_grad_Fragment_003",
+        "SM_grad_Fragment_004",
+        "SM_grad_Fragment_005",
+        "SM_grad_Fragment_006",
+        "SM_grad_Fragment_007",
+        "SM_grad_Fragment_008",
+        "SM_grad_Fragment_009",
+        "SM_grad_Fragment_010",
+        "SM_grad_Fragment_011",
+        "SM_grad_Fragment_012",
+        "SM_grad_Fragment_013",
+        "SM_grad_Fragment_014",
+        "SM_grad_Fragment_015",
+        "SM_grad_Fragment_016",
+        "SM_grad_Fragment_017",
+        "SM_grad_Fragment_018",
+        "SM_grad_Fragment_019",
+        "SM_grad_Fragment_020",
+        "SM_grad_Fragment_021",
+        "SM_grad_Fragment_022",
+        "SM_grad_Fragment_023",
+        "SM_grad_Fragment_024",
+        "SM_grad_Fragment_025",
+        "SM_grad_Fragment_026",
+        "SM_grad_Fragment_027",
+        "SM_grad_Fragment_028",
+        "SM_grad_Fragment_029",
+        "SM_grad_Fragment_030",
+        "SM_grad_Fragment_031",
+        "SM_grad_Fragment_032",
+        "SM_grad_Fragment_033",
+        "SM_grad_Fragment_034",
+        "SM_grad_Fragment_035",
+        "SM_grad_Fragment_036",
+        "SM_grad_Fragment_037",
+        "SM_grad_Fragment_038",
+        "SM_grad_Fragment_039",
+        "SM_grad_Fragment_040",
+        "SM_grad_Fragment_041",
+        "SM_grad_Fragment_042",
+        "SM_grad_Fragment_043",
+        "SM_grad_Fragment_044",
+        "SM_grad_Fragment_045",
+        "SM_grad_Fragment_046",
+        "SM_grad_Fragment_047",
+        "SM_grad_Fragment_048",
+        "SM_grad_Fragment_049",
+        "SM_grad_Fragment_050",
+        "SM_grad_Fragment_051",
+        "SM_grad_Fragment_052",
+        "SM_grad_Fragment_053",
+        "SM_grad_Fragment_054",
+        "SM_grad_Fragment_055",
+        "SM_grad_Fragment_056",
+        "SM_grad_Fragment_057",
+        "SM_grad_Fragment_058",
+        "SM_grad_Fragment_059",
+        "SM_grad_Fragment_060",
+        "SM_grad_Fragment_061",
+        "SM_grad_Fragment_062",
+        "SM_grad_Fragment_063"
+      ],
+      "mounted_detail_sources": [
+        {
+          "source_object": "v7 | 창 근사 | 대학원동 [468931865]",
+          "islands": 110,
+          "maximum_host_surface_gap_m": 0.0006486069178208709
+        }
+      ],
+      "geometry": {
+        "intact_triangles": 1348,
+        "fragment_triangles": 3684,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.999389646709318e-08,
+        "volume_relative_error": 1.8146423595147122e-08,
+        "maximum_roundtrip_uv_error": 2.384185791015625e-07,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 109,
+        "skill_warnings": 65,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 8.449970616795573e-05,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00010559363349145615,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00011213248028273301,
+          "p99_channel_error": 0.00392156862745098
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-grad-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "4cfae22b84d07636827dcef76c4844048c432f9cdd11c4936e3a66cd6cd2e12e",
+          "colliders.json": "4f4749474aaa08fac6b553b7c4f219e71401c5cfe7058f0944b228875b544519",
+          "intact.glb": "857f18582384967a077592b24418ed521c59b08f43aa3a68a561e24180400c5a",
+          "fragments.glb": "9cfcc70fee81f6cd8626189482121cfa5aa052ed0d39d2b90fa63821be507d39"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-educgrad-v71-b2-r1-fracture",
+        "display_name": "교육대학원",
+        "source_model_id": "469617252",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "교육대학원",
+        "source_objects": [
+          {
+            "object": "교육대학원",
+            "mesh": "교육대학원.002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          {
+            "object": "v7 | 창 근사 | 교육대학원 [469617252]",
+            "mesh": "v7 | 창 근사 | 교육대학원 [469617252]",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -1.5798380374908447
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          311.81500244140625,
+          -33.79499816894531,
+          -3.0298244953155518
+        ],
+        "scale_from_campus": 0.030859877655680795,
+        "source_dimensions_campus_z_up_m": [
+          71.28997802734375,
+          54.59000015258789,
+          11.149986267089844
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.200000047683716,
+          0.3440872132778168,
+          1.6846407651901245
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": true,
+      "fragment_nodes": [
+        "SM_educgrad_Fragment_000",
+        "SM_educgrad_Fragment_001",
+        "SM_educgrad_Fragment_002",
+        "SM_educgrad_Fragment_003",
+        "SM_educgrad_Fragment_004",
+        "SM_educgrad_Fragment_005",
+        "SM_educgrad_Fragment_006",
+        "SM_educgrad_Fragment_007",
+        "SM_educgrad_Fragment_008",
+        "SM_educgrad_Fragment_009",
+        "SM_educgrad_Fragment_010",
+        "SM_educgrad_Fragment_011",
+        "SM_educgrad_Fragment_012",
+        "SM_educgrad_Fragment_013",
+        "SM_educgrad_Fragment_014",
+        "SM_educgrad_Fragment_015",
+        "SM_educgrad_Fragment_016",
+        "SM_educgrad_Fragment_017",
+        "SM_educgrad_Fragment_018",
+        "SM_educgrad_Fragment_019",
+        "SM_educgrad_Fragment_020",
+        "SM_educgrad_Fragment_021",
+        "SM_educgrad_Fragment_022",
+        "SM_educgrad_Fragment_023",
+        "SM_educgrad_Fragment_024",
+        "SM_educgrad_Fragment_025",
+        "SM_educgrad_Fragment_026",
+        "SM_educgrad_Fragment_027",
+        "SM_educgrad_Fragment_028",
+        "SM_educgrad_Fragment_029",
+        "SM_educgrad_Fragment_030",
+        "SM_educgrad_Fragment_031",
+        "SM_educgrad_Fragment_032",
+        "SM_educgrad_Fragment_033",
+        "SM_educgrad_Fragment_034",
+        "SM_educgrad_Fragment_035",
+        "SM_educgrad_Fragment_036",
+        "SM_educgrad_Fragment_037",
+        "SM_educgrad_Fragment_038",
+        "SM_educgrad_Fragment_039",
+        "SM_educgrad_Fragment_040",
+        "SM_educgrad_Fragment_041",
+        "SM_educgrad_Fragment_042",
+        "SM_educgrad_Fragment_043",
+        "SM_educgrad_Fragment_044",
+        "SM_educgrad_Fragment_045",
+        "SM_educgrad_Fragment_046",
+        "SM_educgrad_Fragment_047",
+        "SM_educgrad_Fragment_048",
+        "SM_educgrad_Fragment_049",
+        "SM_educgrad_Fragment_050",
+        "SM_educgrad_Fragment_051",
+        "SM_educgrad_Fragment_052",
+        "SM_educgrad_Fragment_053",
+        "SM_educgrad_Fragment_054",
+        "SM_educgrad_Fragment_055",
+        "SM_educgrad_Fragment_056",
+        "SM_educgrad_Fragment_057",
+        "SM_educgrad_Fragment_058",
+        "SM_educgrad_Fragment_059",
+        "SM_educgrad_Fragment_060",
+        "SM_educgrad_Fragment_061",
+        "SM_educgrad_Fragment_062",
+        "SM_educgrad_Fragment_063"
+      ],
+      "mounted_detail_sources": [
+        {
+          "source_object": "v7 | 창 근사 | 교육대학원 [469617252]",
+          "islands": 56,
+          "maximum_host_surface_gap_m": 0.0006178106996230781
+        }
+      ],
+      "geometry": {
+        "intact_triangles": 804,
+        "fragment_triangles": 3704,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.973297118571196e-08,
+        "volume_relative_error": 5.68594591671186e-09,
+        "maximum_roundtrip_uv_error": 2.384185791015625e-07,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 55,
+        "skill_warnings": 65,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00024245840096539573,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0002984050347199929,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0004465082245243289,
+          "p99_channel_error": 0.00784313725490196
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-educgrad-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "52c3875b667ff358ff48bce5519932b67750f097fc065a32f88016cbfa0dceac",
+          "colliders.json": "7d8f7ee27b8aae7340209f71361c98299f548a5b85c80be087f4c0bd2e70500c",
+          "intact.glb": "f282bcf01557bc037cd8c6449b3a2ccac335d5b1e033fa846198a0ec7c6b6a7d",
+          "fragments.glb": "e044130a146fc549c9f2f25d67bf2653186e5e53648268075d29df71560c0912"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-teachers-v71-b2-r1-fracture",
+        "display_name": "사범대학",
+        "source_model_id": "vw/147",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "v7 | 추가 건물 | 사범대학 [vw/147]",
+        "source_objects": [
+          {
+            "object": "v7 | 추가 건물 | 사범대학 [vw/147]",
+            "mesh": "v7 | 추가 건물 | 사범대학 [vw/147].002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          309.86199951171875,
+          -3.192000389099121,
+          -2.112076997756958
+        ],
+        "scale_from_campus": 0.021218887475400496,
+        "source_dimensions_campus_z_up_m": [
+          103.68121337890625,
+          57.18720245361328,
+          18.16071128845215
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.1999998092651367,
+          0.3853500783443451,
+          1.2134487628936768
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": true,
+      "fragment_nodes": [
+        "SM_teachers_Fragment_000",
+        "SM_teachers_Fragment_001",
+        "SM_teachers_Fragment_002",
+        "SM_teachers_Fragment_003",
+        "SM_teachers_Fragment_004",
+        "SM_teachers_Fragment_005",
+        "SM_teachers_Fragment_006",
+        "SM_teachers_Fragment_007",
+        "SM_teachers_Fragment_008",
+        "SM_teachers_Fragment_009",
+        "SM_teachers_Fragment_010",
+        "SM_teachers_Fragment_011",
+        "SM_teachers_Fragment_012",
+        "SM_teachers_Fragment_013",
+        "SM_teachers_Fragment_014",
+        "SM_teachers_Fragment_015",
+        "SM_teachers_Fragment_016",
+        "SM_teachers_Fragment_017",
+        "SM_teachers_Fragment_018",
+        "SM_teachers_Fragment_019",
+        "SM_teachers_Fragment_020",
+        "SM_teachers_Fragment_021",
+        "SM_teachers_Fragment_022",
+        "SM_teachers_Fragment_023",
+        "SM_teachers_Fragment_024",
+        "SM_teachers_Fragment_025",
+        "SM_teachers_Fragment_026",
+        "SM_teachers_Fragment_027",
+        "SM_teachers_Fragment_028",
+        "SM_teachers_Fragment_029",
+        "SM_teachers_Fragment_030",
+        "SM_teachers_Fragment_031",
+        "SM_teachers_Fragment_032",
+        "SM_teachers_Fragment_033",
+        "SM_teachers_Fragment_034",
+        "SM_teachers_Fragment_035",
+        "SM_teachers_Fragment_036",
+        "SM_teachers_Fragment_037",
+        "SM_teachers_Fragment_038",
+        "SM_teachers_Fragment_039",
+        "SM_teachers_Fragment_040",
+        "SM_teachers_Fragment_041",
+        "SM_teachers_Fragment_042",
+        "SM_teachers_Fragment_043",
+        "SM_teachers_Fragment_044",
+        "SM_teachers_Fragment_045",
+        "SM_teachers_Fragment_046",
+        "SM_teachers_Fragment_047",
+        "SM_teachers_Fragment_048",
+        "SM_teachers_Fragment_049",
+        "SM_teachers_Fragment_050",
+        "SM_teachers_Fragment_051",
+        "SM_teachers_Fragment_052",
+        "SM_teachers_Fragment_053",
+        "SM_teachers_Fragment_054",
+        "SM_teachers_Fragment_055",
+        "SM_teachers_Fragment_056",
+        "SM_teachers_Fragment_057",
+        "SM_teachers_Fragment_058",
+        "SM_teachers_Fragment_059",
+        "SM_teachers_Fragment_060",
+        "SM_teachers_Fragment_061",
+        "SM_teachers_Fragment_062",
+        "SM_teachers_Fragment_063"
+      ],
+      "mounted_detail_sources": [],
+      "geometry": {
+        "intact_triangles": 148,
+        "fragment_triangles": 2836,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.9798202506057265e-08,
+        "volume_relative_error": 2.036468415566969e-08,
+        "maximum_roundtrip_uv_error": 2.384185791015625e-07,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 0,
+        "skill_warnings": 64,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0001590940900573242,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00017091085518456469,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0003163263346474731,
+          "p99_channel_error": 0.00392156862745098
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-teachers-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "2288d997bd67ece6187e27d40bdbe11567144a8791571b49cf4936cf3e0103dc",
+          "colliders.json": "588ff3b0ffae600862726a511c2ec42a1f7a498d478f1c82c223ba03d0cb5cc3",
+          "intact.glb": "64f7e0bf04cf9702e87e9f1739e64d2e114f7551f2066d1bf5b42f31b2708fba",
+          "fragments.glb": "d506676ed57d51cfabc0c94d0d70892f99ca4b27afa383e2128d3b57e2faa667"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-liberal-v71-b2-r1-fracture",
+        "display_name": "교양과정동",
+        "source_model_id": "vw/95",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+        "source_objects": [
+          {
+            "object": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+            "mesh": "v7 | 추가 건물 | 교양과정동 [vw/95].002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          -116.8489990234375,
+          -54.10710144042969,
+          -6.665948390960693
+        ],
+        "scale_from_campus": 0.02699168191798138,
+        "source_dimensions_campus_z_up_m": [
+          81.506591796875,
+          23.376602172851562,
+          14.827001571655273
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.200000047683716,
+          0.40020570158958435,
+          0.6309738159179688
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": false,
+      "fragment_nodes": [
+        "SM_liberal_Fragment_000",
+        "SM_liberal_Fragment_001",
+        "SM_liberal_Fragment_002",
+        "SM_liberal_Fragment_003",
+        "SM_liberal_Fragment_004",
+        "SM_liberal_Fragment_005",
+        "SM_liberal_Fragment_006",
+        "SM_liberal_Fragment_007",
+        "SM_liberal_Fragment_008",
+        "SM_liberal_Fragment_009",
+        "SM_liberal_Fragment_010",
+        "SM_liberal_Fragment_011",
+        "SM_liberal_Fragment_012",
+        "SM_liberal_Fragment_013",
+        "SM_liberal_Fragment_014",
+        "SM_liberal_Fragment_015",
+        "SM_liberal_Fragment_016",
+        "SM_liberal_Fragment_017",
+        "SM_liberal_Fragment_018",
+        "SM_liberal_Fragment_019",
+        "SM_liberal_Fragment_020",
+        "SM_liberal_Fragment_021",
+        "SM_liberal_Fragment_022",
+        "SM_liberal_Fragment_023",
+        "SM_liberal_Fragment_024",
+        "SM_liberal_Fragment_025",
+        "SM_liberal_Fragment_026",
+        "SM_liberal_Fragment_027",
+        "SM_liberal_Fragment_028",
+        "SM_liberal_Fragment_029",
+        "SM_liberal_Fragment_030",
+        "SM_liberal_Fragment_031",
+        "SM_liberal_Fragment_032",
+        "SM_liberal_Fragment_033",
+        "SM_liberal_Fragment_034",
+        "SM_liberal_Fragment_035",
+        "SM_liberal_Fragment_036",
+        "SM_liberal_Fragment_037",
+        "SM_liberal_Fragment_038",
+        "SM_liberal_Fragment_039",
+        "SM_liberal_Fragment_040",
+        "SM_liberal_Fragment_041",
+        "SM_liberal_Fragment_042",
+        "SM_liberal_Fragment_043",
+        "SM_liberal_Fragment_044",
+        "SM_liberal_Fragment_045",
+        "SM_liberal_Fragment_046",
+        "SM_liberal_Fragment_047",
+        "SM_liberal_Fragment_048",
+        "SM_liberal_Fragment_049",
+        "SM_liberal_Fragment_050",
+        "SM_liberal_Fragment_051",
+        "SM_liberal_Fragment_052",
+        "SM_liberal_Fragment_053",
+        "SM_liberal_Fragment_054",
+        "SM_liberal_Fragment_055",
+        "SM_liberal_Fragment_056",
+        "SM_liberal_Fragment_057",
+        "SM_liberal_Fragment_058",
+        "SM_liberal_Fragment_059",
+        "SM_liberal_Fragment_060",
+        "SM_liberal_Fragment_061",
+        "SM_liberal_Fragment_062",
+        "SM_liberal_Fragment_063"
+      ],
+      "mounted_detail_sources": [],
+      "geometry": {
+        "intact_triangles": 36,
+        "fragment_triangles": 2456,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.968261718696354e-08,
+        "volume_relative_error": 1.0642729539821234e-08,
+        "maximum_roundtrip_uv_error": 0.0,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 0,
+        "skill_warnings": 64,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00011112601671266788,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00013431729280859628,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00015295354515134648,
+          "p99_channel_error": 0.00392156862745098
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-liberal-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "fa64e3275349545fc5c08f4090a78273972dd212e1c8a4d442909cb369ace621",
+          "colliders.json": "073ee3201fa03c2e33b89d43757300bfb93f2e41cdbbd551d33b9e2f86549555",
+          "intact.glb": "8ad0ced5d426995a17e8947c7a2ad7eadd63f87701eb5c7470a9af4470fa4cc2",
+          "fragments.glb": "d339c46505edf96a6a31bfe8866704c3636aa9051f1edc157408bf6d453a2fbc"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-lifelong-v71-b2-r1-fracture",
+        "display_name": "평생교육원",
+        "source_model_id": "468931916",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "평생교육원",
+        "source_objects": [
+          {
+            "object": "평생교육원",
+            "mesh": "평생교육원.002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          {
+            "object": "v7 | 창 근사 | 평생교육원 [468931916]",
+            "mesh": "v7 | 창 근사 | 평생교육원 [468931916]",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -8.60021686553955
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          -26.549999237060547,
+          284.43499755859375,
+          -8.87239933013916
+        ],
+        "scale_from_campus": 0.034815634040210375,
+        "source_dimensions_campus_z_up_m": [
+          53.58000183105469,
+          63.19000244140625,
+          12.27218246459961
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          1.865421712398529,
+          0.4272638261318207,
+          2.200000047683716
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": true,
+      "fragment_nodes": [
+        "SM_lifelong_Fragment_000",
+        "SM_lifelong_Fragment_001",
+        "SM_lifelong_Fragment_002",
+        "SM_lifelong_Fragment_003",
+        "SM_lifelong_Fragment_004",
+        "SM_lifelong_Fragment_005",
+        "SM_lifelong_Fragment_006",
+        "SM_lifelong_Fragment_007",
+        "SM_lifelong_Fragment_008",
+        "SM_lifelong_Fragment_009",
+        "SM_lifelong_Fragment_010",
+        "SM_lifelong_Fragment_011",
+        "SM_lifelong_Fragment_012",
+        "SM_lifelong_Fragment_013",
+        "SM_lifelong_Fragment_014",
+        "SM_lifelong_Fragment_015",
+        "SM_lifelong_Fragment_016",
+        "SM_lifelong_Fragment_017",
+        "SM_lifelong_Fragment_018",
+        "SM_lifelong_Fragment_019",
+        "SM_lifelong_Fragment_020",
+        "SM_lifelong_Fragment_021",
+        "SM_lifelong_Fragment_022",
+        "SM_lifelong_Fragment_023",
+        "SM_lifelong_Fragment_024",
+        "SM_lifelong_Fragment_025",
+        "SM_lifelong_Fragment_026",
+        "SM_lifelong_Fragment_027",
+        "SM_lifelong_Fragment_028",
+        "SM_lifelong_Fragment_029",
+        "SM_lifelong_Fragment_030",
+        "SM_lifelong_Fragment_031",
+        "SM_lifelong_Fragment_032",
+        "SM_lifelong_Fragment_033",
+        "SM_lifelong_Fragment_034",
+        "SM_lifelong_Fragment_035",
+        "SM_lifelong_Fragment_036",
+        "SM_lifelong_Fragment_037",
+        "SM_lifelong_Fragment_038",
+        "SM_lifelong_Fragment_039",
+        "SM_lifelong_Fragment_040",
+        "SM_lifelong_Fragment_041",
+        "SM_lifelong_Fragment_042",
+        "SM_lifelong_Fragment_043",
+        "SM_lifelong_Fragment_044",
+        "SM_lifelong_Fragment_045",
+        "SM_lifelong_Fragment_046",
+        "SM_lifelong_Fragment_047",
+        "SM_lifelong_Fragment_048",
+        "SM_lifelong_Fragment_049",
+        "SM_lifelong_Fragment_050",
+        "SM_lifelong_Fragment_051",
+        "SM_lifelong_Fragment_052",
+        "SM_lifelong_Fragment_053",
+        "SM_lifelong_Fragment_054",
+        "SM_lifelong_Fragment_055",
+        "SM_lifelong_Fragment_056",
+        "SM_lifelong_Fragment_057",
+        "SM_lifelong_Fragment_058",
+        "SM_lifelong_Fragment_059",
+        "SM_lifelong_Fragment_060",
+        "SM_lifelong_Fragment_061",
+        "SM_lifelong_Fragment_062",
+        "SM_lifelong_Fragment_063"
+      ],
+      "mounted_detail_sources": [
+        {
+          "source_object": "v7 | 창 근사 | 평생교육원 [468931916]",
+          "islands": 66,
+          "maximum_host_surface_gap_m": 0.0006967458757571876
+        }
+      ],
+      "geometry": {
+        "intact_triangles": 836,
+        "fragment_triangles": 3380,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.9698352813307145e-08,
+        "volume_relative_error": 4.296616300261109e-09,
+        "maximum_roundtrip_uv_error": 2.384185791015625e-07,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 65,
+        "skill_warnings": 65,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00023001889101429297,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00021527720599670916,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0003916410854227779,
+          "p99_channel_error": 0.00784313725490196
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-lifelong-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "839f17d63c55d65d3daf7d45f0bd146f6dec0cdc5c997090bc99662bbf4171bf",
+          "colliders.json": "176697fa333513742f9f0084e9fe50c536a87fb4c01cb596bed1382586097779",
+          "intact.glb": "476ec8af535af42ff3559055d7efa1f204f9ebe3a685fa610d3dfabaae0761d5",
+          "fragments.glb": "b2f082e0aa4b7a466cc9ef24dbd5a040794c4fa34a72ce38b0e6cb4ebdca5433"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-convergence-v71-b2-r1-fracture",
+        "display_name": "융합교육정보관",
+        "source_model_id": "1026072764",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "융합교육정보관",
+        "source_objects": [
+          {
+            "object": "융합교육정보관",
+            "mesh": "융합교육정보관.002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          {
+            "object": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+            "mesh": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -1.5415499210357666
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          334.02001953125,
+          19.654998779296875,
+          -2.1969540119171143
+        ],
+        "scale_from_campus": 0.025815535889308787,
+        "source_dimensions_campus_z_up_m": [
+          85.22000122070312,
+          60.970001220703125,
+          28.655405044555664
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.1999999284744263,
+          0.7397546172142029,
+          1.5739731788635254
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": true,
+      "fragment_nodes": [
+        "SM_convergence_Fragment_000",
+        "SM_convergence_Fragment_001",
+        "SM_convergence_Fragment_002",
+        "SM_convergence_Fragment_003",
+        "SM_convergence_Fragment_004",
+        "SM_convergence_Fragment_005",
+        "SM_convergence_Fragment_006",
+        "SM_convergence_Fragment_007",
+        "SM_convergence_Fragment_008",
+        "SM_convergence_Fragment_009",
+        "SM_convergence_Fragment_010",
+        "SM_convergence_Fragment_011",
+        "SM_convergence_Fragment_012",
+        "SM_convergence_Fragment_013",
+        "SM_convergence_Fragment_014",
+        "SM_convergence_Fragment_015",
+        "SM_convergence_Fragment_016",
+        "SM_convergence_Fragment_017",
+        "SM_convergence_Fragment_018",
+        "SM_convergence_Fragment_019",
+        "SM_convergence_Fragment_020",
+        "SM_convergence_Fragment_021",
+        "SM_convergence_Fragment_022",
+        "SM_convergence_Fragment_023",
+        "SM_convergence_Fragment_024",
+        "SM_convergence_Fragment_025",
+        "SM_convergence_Fragment_026",
+        "SM_convergence_Fragment_027",
+        "SM_convergence_Fragment_028",
+        "SM_convergence_Fragment_029",
+        "SM_convergence_Fragment_030",
+        "SM_convergence_Fragment_031",
+        "SM_convergence_Fragment_032",
+        "SM_convergence_Fragment_033",
+        "SM_convergence_Fragment_034",
+        "SM_convergence_Fragment_035",
+        "SM_convergence_Fragment_036",
+        "SM_convergence_Fragment_037",
+        "SM_convergence_Fragment_038",
+        "SM_convergence_Fragment_039",
+        "SM_convergence_Fragment_040",
+        "SM_convergence_Fragment_041",
+        "SM_convergence_Fragment_042",
+        "SM_convergence_Fragment_043",
+        "SM_convergence_Fragment_044",
+        "SM_convergence_Fragment_045",
+        "SM_convergence_Fragment_046",
+        "SM_convergence_Fragment_047",
+        "SM_convergence_Fragment_048",
+        "SM_convergence_Fragment_049",
+        "SM_convergence_Fragment_050",
+        "SM_convergence_Fragment_051",
+        "SM_convergence_Fragment_052",
+        "SM_convergence_Fragment_053",
+        "SM_convergence_Fragment_054",
+        "SM_convergence_Fragment_055",
+        "SM_convergence_Fragment_056",
+        "SM_convergence_Fragment_057",
+        "SM_convergence_Fragment_058",
+        "SM_convergence_Fragment_059",
+        "SM_convergence_Fragment_060",
+        "SM_convergence_Fragment_061",
+        "SM_convergence_Fragment_062",
+        "SM_convergence_Fragment_063"
+      ],
+      "mounted_detail_sources": [
+        {
+          "source_object": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+          "islands": 264,
+          "maximum_host_surface_gap_m": 0.0005166638293303549
+        }
+      ],
+      "geometry": {
+        "intact_triangles": 3220,
+        "fragment_triangles": 5848,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.9891662579071294e-08,
+        "volume_relative_error": 1.4787160951781634e-08,
+        "maximum_roundtrip_uv_error": 2.384185791015625e-07,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 263,
+        "skill_warnings": 65,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 7.19979633725278e-05,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 0.9999672678472064,
+          "mean_rgb_error": 9.169581635163613e-05,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0001486674424432889,
+          "p99_channel_error": 0.00392156862745098
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-convergence-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "f4c958e9162965b3d494e392e4b33cee5b06bacac8b012dc0303e25e6b742bc1",
+          "colliders.json": "e9214045924d57cfacb30e4c36b90adcb86072a10e2708daf163b69c2582f352",
+          "intact.glb": "2089d14bd373237d4d379545eef7e297dc31a89861614b4dd182d23b68d81aa2",
+          "fragments.glb": "8c208a022fa41e5d7391bb3f94b8578079dc368bb1f6228248c3c53086a0ac79"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "schema_version": "1.0",
+        "building_id": "knu-career-v71-b2-r1-fracture",
+        "display_name": "취업정보센터",
+        "source_model_id": "vw/127",
+        "source_campus": "knu-campus-v71-batch2-r1.blend",
+        "source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+        "source_object": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+        "source_objects": [
+          {
+            "object": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+            "mesh": "v7 | 추가 건물 | 취업정보센터 [vw/127].002",
+            "world_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          }
+        ],
+        "source_origin_campus_z_up_m": [
+          176.564697265625,
+          55.750999450683594,
+          -0.9803783893585205
+        ],
+        "scale_from_campus": 0.13852329390966825,
+        "source_dimensions_campus_z_up_m": [
+          15.881805419921875,
+          14.547599792480469,
+          4.366223335266113
+        ],
+        "units": "m",
+        "coordinate_frame": "three_y_up",
+        "world_coordinate_frame": "room_z_up",
+        "apply_additional_axis_rotation": false,
+        "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+        "origin": "bottom_center",
+        "dimensions_m": [
+          2.200000047683716,
+          0.604823648929596,
+          2.015181541442871
+        ],
+        "fragment_count": 64,
+        "fracture_seed_count": 64,
+        "assets": {
+          "intact": "intact.glb",
+          "fragments": "fragments.glb",
+          "colliders": "colliders.json"
+        },
+        "gameplay": {
+          "density_kg_m3": 200,
+          "gravity_mps2": 9.81,
+          "fixed_timestep_s": 0.016666666666666666,
+          "impact_radius_m": 0.65
+        },
+        "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+        "source": "synthetic"
+      },
+      "observed_exterior_edited": false,
+      "fragment_nodes": [
+        "SM_career_Fragment_000",
+        "SM_career_Fragment_001",
+        "SM_career_Fragment_002",
+        "SM_career_Fragment_003",
+        "SM_career_Fragment_004",
+        "SM_career_Fragment_005",
+        "SM_career_Fragment_006",
+        "SM_career_Fragment_007",
+        "SM_career_Fragment_008",
+        "SM_career_Fragment_009",
+        "SM_career_Fragment_010",
+        "SM_career_Fragment_011",
+        "SM_career_Fragment_012",
+        "SM_career_Fragment_013",
+        "SM_career_Fragment_014",
+        "SM_career_Fragment_015",
+        "SM_career_Fragment_016",
+        "SM_career_Fragment_017",
+        "SM_career_Fragment_018",
+        "SM_career_Fragment_019",
+        "SM_career_Fragment_020",
+        "SM_career_Fragment_021",
+        "SM_career_Fragment_022",
+        "SM_career_Fragment_023",
+        "SM_career_Fragment_024",
+        "SM_career_Fragment_025",
+        "SM_career_Fragment_026",
+        "SM_career_Fragment_027",
+        "SM_career_Fragment_028",
+        "SM_career_Fragment_029",
+        "SM_career_Fragment_030",
+        "SM_career_Fragment_031",
+        "SM_career_Fragment_032",
+        "SM_career_Fragment_033",
+        "SM_career_Fragment_034",
+        "SM_career_Fragment_035",
+        "SM_career_Fragment_036",
+        "SM_career_Fragment_037",
+        "SM_career_Fragment_038",
+        "SM_career_Fragment_039",
+        "SM_career_Fragment_040",
+        "SM_career_Fragment_041",
+        "SM_career_Fragment_042",
+        "SM_career_Fragment_043",
+        "SM_career_Fragment_044",
+        "SM_career_Fragment_045",
+        "SM_career_Fragment_046",
+        "SM_career_Fragment_047",
+        "SM_career_Fragment_048",
+        "SM_career_Fragment_049",
+        "SM_career_Fragment_050",
+        "SM_career_Fragment_051",
+        "SM_career_Fragment_052",
+        "SM_career_Fragment_053",
+        "SM_career_Fragment_054",
+        "SM_career_Fragment_055",
+        "SM_career_Fragment_056",
+        "SM_career_Fragment_057",
+        "SM_career_Fragment_058",
+        "SM_career_Fragment_059",
+        "SM_career_Fragment_060",
+        "SM_career_Fragment_061",
+        "SM_career_Fragment_062",
+        "SM_career_Fragment_063"
+      ],
+      "mounted_detail_sources": [],
+      "geometry": {
+        "intact_triangles": 76,
+        "fragment_triangles": 2608,
+        "bounds_delta_m": 0.0,
+        "pivot_delta_m": 4.982528689634336e-08,
+        "volume_relative_error": 4.664469841483539e-09,
+        "maximum_roundtrip_uv_error": 0.0,
+        "simplified_hulls": 0,
+        "preserved_source_decoration_findings": 0,
+        "skill_warnings": 64,
+        "skill_errors": []
+      },
+      "render_comparison": {
+        "SE": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.0002627519043486645,
+          "p99_channel_error": 0.00392156862745098
+        },
+        "NW": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00024241188181419636,
+          "p99_channel_error": 0.00784313725490196
+        },
+        "top": {
+          "silhouette_iou": 1.0,
+          "mean_rgb_error": 0.00039168765357675087,
+          "p99_channel_error": 0.011764705882352941
+        }
+      },
+      "game": {
+        "route": "http://127.0.0.1:8877/monitor/fracture/?building=knu-career-v71-b2-r1-fracture",
+        "asset_sha256": {
+          "manifest.json": "0e6abb5dc2fba4e5a6bbd97f04efa133ac82f20a36bcdb6220453a9d5265a569",
+          "colliders.json": "5e4df4e5c53eb124162b044bafaa4d0884809b09c7e9d56530aabddfbf3602d5",
+          "intact.glb": "2bce6b0db7bc367bd3f81ab0c073b3914929ad04257ba00fd923e219b118edc4",
+          "fragments.glb": "ed0c741440bc5010542cc9c2c3db54a29b9864bb5189fa9ec0b024bcea10f048"
+        },
+        "direct_reload": true,
+        "separation_preview": true,
+        "runs": [
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "buttons",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          },
+          {
+            "input": "Space / R",
+            "score": 100,
+            "fragments": 64,
+            "restored_score": 0,
+            "restored_fragments": 0,
+            "restored": true
+          }
+        ]
+      }
+    }
+  ]
+}

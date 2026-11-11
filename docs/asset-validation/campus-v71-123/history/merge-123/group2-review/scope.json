@@ -1,0 +1,114 @@
+{
+  "osm/1470108675": {
+    "object": "봉사관",
+    "kind": "dot"
+  },
+  "osm/440331569": {
+    "object": "약학대학",
+    "kind": "dot"
+  },
+  "osm/468931844": {
+    "object": "예술대학",
+    "kind": "dot"
+  },
+  "osm/468931871": {
+    "object": "공대 1호관",
+    "kind": "dot"
+  },
+  "osm/468931869": {
+    "object": "공대 2호관",
+    "kind": "dot"
+  },
+  "osm/468931872": {
+    "object": "공대 3호관",
+    "kind": "dot"
+  },
+  "osm/468931878": {
+    "object": "공대 6호관",
+    "kind": "dot"
+  },
+  "osm/468931892": {
+    "object": "공대 8호관",
+    "kind": "dot"
+  },
+  "osm/468931879": {
+    "object": "공대 9호관",
+    "kind": "dot"
+  },
+  "osm/468931880": {
+    "object": "진리관",
+    "kind": "dot"
+  },
+  "osm/468931882": {
+    "object": "화학관",
+    "kind": "dot"
+  },
+  "osm/468931890": {
+    "object": "화목관",
+    "kind": "dot"
+  },
+  "osm/468931899": {
+    "object": "법과대학",
+    "kind": "dot"
+  },
+  "vw/16": {
+    "object": "v7 | 추가 건물 | 법과대학 [vw/16]",
+    "kind": "dot"
+  },
+  "osm/468931900": {
+    "object": "법학전문대학원",
+    "kind": "dot"
+  },
+  "osm/468931907": {
+    "object": "우당교육관",
+    "kind": "dot"
+  },
+  "osm/468931908": {
+    "object": "향토관",
+    "kind": "dot"
+  },
+  "osm/468931910": {
+    "object": "어학교육원",
+    "kind": "dot"
+  },
+  "osm/468931917": {
+    "object": "농대1호관",
+    "kind": "dot"
+  },
+  "osm/468931919": {
+    "object": "농대2호관",
+    "kind": "dot"
+  },
+  "osm/468931918": {
+    "object": "농대 3호관",
+    "kind": "dot"
+  },
+  "osm/468931921": {
+    "object": "복현회관",
+    "kind": "dot"
+  },
+  "osm/468931922": {
+    "object": "자연과학대학",
+    "kind": "dot"
+  },
+  "osm/524021463": {
+    "object": "창업보육센터",
+    "kind": "dot"
+  },
+  "osm/524021465": {
+    "object": "수의과대학",
+    "kind": "dot"
+  },
+  "osm/524021468": {
+    "object": "사회과학대학",
+    "kind": "dot"
+  },
+  "osm/524021470": {
+    "object": "공대2A호관",
+    "kind": "dot"
+  },
+  "osm/846905616": {
+    "object": "인문한국진흥관",
+    "kind": "dot"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "candidate_sha256": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+  "baseline_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "v71_sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+  "objects": 1735,
+  "preserved_objects": 1725,
+  "dot_protected": 53,
+  "linked_detail_objects_preserved": [
+    "v7 | 창 근사 | 이름 미등록 건물 [468931854]",
+    "v7 | 창 근사 | 이름 미등록 건물 [468931893]",
+    "v7 | 창 근사 | 이름 미등록 건물 [468931915]",
+    "v7 | 창 근사 | 이름 미등록 건물 [524161868]",
+    "v7 | 창 근사 | 이름 미등록 건물 [576358734]",
+    "v7 | 창 근사 | 이름 미등록 건물 [972016220]"
+  ],
+  "triangles": 890412,
+  "changed_objects": [
+    "이름 미등록 건물",
+    "이름 미등록 건물.001",
+    "이름 미등록 건물.002",
+    "이름 미등록 건물.003",
+    "이름 미등록 건물.004",
+    "이름 미등록 건물.005",
+    "이름 미등록 건물.006",
+    "이름 미등록 건물.007",
+    "이름 미등록 건물.008",
+    "이름 미등록 건물.009"
+  ],
+  "models": {
+    "osm/468931854": {
+      "object": "이름 미등록 건물",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {
+        "verified_display_name": "도서관 휴게실",
+        "verified_facility_number": "109"
+      },
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 49,
+      "glb_vertices_after": 66
+    },
+    "osm/468931893": {
+      "object": "이름 미등록 건물.001",
+      "triangles": 60,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 110,
+      "glb_vertices_after": 138
+    },
+    "osm/468931896": {
+      "object": "이름 미등록 건물.002",
+      "triangles": 44,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 85,
+      "glb_vertices_after": 108
+    },
+    "osm/468931915": {
+      "object": "이름 미등록 건물.003",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 50,
+      "glb_vertices_after": 68
+    },
+    "osm/524161868": {
+      "object": "이름 미등록 건물.004",
+      "triangles": 44,
+      "node_transform_preserved": true,
+      "verified_name": {
+        "verified_display_name": "차고",
+        "verified_facility_number": "123"
+      },
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 90,
+      "glb_vertices_after": 102
+    },
+    "osm/576358734": {
+      "object": "이름 미등록 건물.005",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 54,
+      "glb_vertices_after": 66
+    },
+    "osm/577759119": {
+      "object": "이름 미등록 건물.006",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 50,
+      "glb_vertices_after": 68
+    },
+    "osm/584385630": {
+      "object": "이름 미등록 건물.007",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 56,
+      "glb_vertices_after": 68
+    },
+    "osm/584386432": {
+      "object": "이름 미등록 건물.008",
+      "triangles": 28,
+      "node_transform_preserved": true,
+      "verified_name": {},
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 54,
+      "glb_vertices_after": 68
+    },
+    "osm/972016220": {
+      "object": "이름 미등록 건물.009",
+      "triangles": 44,
+      "node_transform_preserved": true,
+      "verified_name": {
+        "verified_display_name": "미래융합과학관",
+        "verified_facility_number": "219"
+      },
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 77,
+      "glb_vertices_after": 102
+    }
+  },
+  "added_roof_images": [
+    [
+      "Batch10_engineering-service_Atlas",
+      "image/png",
+      "8576f3aa843a274bdfa591991fa17813607ea8bd5b03fa67e1492a51d6578b3f"
+    ],
+    [
+      "Batch10_future-science_Atlas",
+      "image/png",
+      "0b82a63d886e8e7eeac54499549600b0f063f6df9c0f97b3fae3b84f31fbd511"
+    ],
+    [
+      "Batch10_garage_Atlas",
+      "image/png",
+      "82e5bca7bb2e23261cb04f5dc2626320977c0f44436a4a52cd74ade911746f79"
+    ],
+    [
+      "Batch10_gym-west_Atlas",
+      "image/png",
+      "05c2f55635cb7181c21e8916bab427d2fd2d15c2901fbf4c0a416b29147225e5"
+    ],
+    [
+      "Batch10_library-rest_Atlas",
+      "image/png",
+      "1cd765fbb4d57ef8363ceadd2fca84a3bd86e68b0fa5586b83e767a8d7e02843"
+    ]
+  ],
+  "local_game_registrations_found": []
+}

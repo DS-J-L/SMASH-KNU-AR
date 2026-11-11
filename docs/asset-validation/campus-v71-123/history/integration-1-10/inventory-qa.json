@@ -1,0 +1,57 @@
+{
+  "scope_ids": 70,
+  "latest_packages": 70,
+  "catalog_total": 84,
+  "retained_prior_versions": {
+    "osm/468931865": [
+      "knu-grad-v71-b2-r2-fracture",
+      "knu-grad-v71-b2-r1-fracture"
+    ],
+    "vw/147": [
+      "knu-teachers-v71-b2-r1-fracture"
+    ],
+    "vw/95": [
+      "knu-liberal-v71-b2-r1-fracture"
+    ],
+    "osm/468931916": [
+      "knu-lifelong-v71-b2-r2-fracture",
+      "knu-lifelong-v71-b2-r1-fracture"
+    ],
+    "osm/1026072764": [
+      "knu-convergence-v71-b2-r1-fracture"
+    ],
+    "vw/127": [
+      "knu-career-v71-b2-r1-fracture"
+    ],
+    "osm/469617252": [
+      "knu-educgrad-v71-b2-r1-fracture"
+    ]
+  },
+  "other_legacy_entries": [
+    "knu-it1-v3",
+    "knu-main-v2",
+    "knu-it1-v2",
+    "knu-main-v1",
+    "knu-it1-v1"
+  ],
+  "models_by_batch": {
+    "1": 7,
+    "2": 7,
+    "3": 7,
+    "4": 7,
+    "5": 7,
+    "6": 7,
+    "7": 7,
+    "8": 7,
+    "9": 4,
+    "10": 10
+  },
+  "counts_by_fragment_number": {
+    "64": 66,
+    "65": 3,
+    "70": 1
+  },
+  "fragments": 4489,
+  "missing_scope_ids": [],
+  "duplicate_selected_source_ids": []
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-pp-structural-v71-b9-r1-fracture",
+  "display_name": "PP구조실습실",
+  "source_model_id": "osm/468931888",
+  "source_campus": "knu-campus-v71-batch9-r1.blend",
+  "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+  "source_object": "PP구조실습실",
+  "source_objects": [
+    {
+      "object": "PP구조실습실",
+      "mesh": "PP구조실습실.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | PP구조실습실 [468931888]",
+      "mesh": "v7 | 창 근사 | PP구조실습실 [468931888]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -8.336308479309082
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -235.49008178710938,
+    -286.19512939453125,
+    -12.227105140686035
+  ],
+  "scale_from_campus": 0.050650969392845455,
+  "source_dimensions_campus_z_up_m": [
+    31.606735229492188,
+    43.43450927734375,
+    17.890796661376953
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    1.600911796092987,
+    0.9061861634254456,
+    2.200000047683716
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

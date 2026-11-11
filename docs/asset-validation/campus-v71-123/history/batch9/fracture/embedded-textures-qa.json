@@ -1,0 +1,46 @@
+{
+  "vw/1": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "dfcf646fcf02395564eaced3d477117043a672284ed780a8c3d321ccf8e4b150"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "dfcf646fcf02395564eaced3d477117043a672284ed780a8c3d321ccf8e4b150"
+      ]
+    }
+  },
+  "vw/165": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/468931888": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "dfc5019e9636685af25572e54fd9944a86656fabc7d08d5221b33d1438e258e1"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "dfc5019e9636685af25572e54fd9944a86656fabc7d08d5221b33d1438e258e1"
+      ]
+    }
+  },
+  "vw/10": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "a3e1c6039a642fc6a9ca76a1baa29275d79cabc7eb84f12cf258f4e6435e7f90"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "a3e1c6039a642fc6a9ca76a1baa29275d79cabc7eb84f12cf258f4e6435e7f90"
+      ]
+    }
+  }
+}

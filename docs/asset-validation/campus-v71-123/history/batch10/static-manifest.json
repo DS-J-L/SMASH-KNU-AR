@@ -1,0 +1,1019 @@
+{
+  "source": "knu-campus-v71-batch9-r1.blend",
+  "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+  "source_glb_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "candidate": "knu-campus-v71-batch10-r1.blend",
+  "edits": {
+    "이름 미등록 건물": {
+      "identity_metadata": {
+        "verified_display_name": "도서관 휴게실",
+        "verified_facility_number": "109"
+      },
+      "id": "osm/468931854",
+      "source_id": "osm/468931854",
+      "mesh": "이름 미등록 건물.001",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            206.27999877929688,
+            117.58999633789062,
+            -1.1085293292999268
+          ],
+          [
+            223.88999938964844,
+            149.24000549316406,
+            11.499784469604492
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #b6c4c4"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            206.27999877929688,
+            117.58999633789062,
+            -1.1085293292999268
+          ],
+          [
+            223.88999938964844,
+            149.24000549316406,
+            11.499784469604492
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10RoofUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #b6c4c4",
+          "Batch10_library-rest_ObservedRoof"
+        ],
+        "rigid_body": false
+      },
+      "observed": [
+        {
+          "faces": [
+            11,
+            14
+          ],
+          "material": "Batch10_library-rest_ObservedRoof",
+          "texture": "Batch10_library-rest_Atlas",
+          "texture_sha256": "1cd765fbb4d57ef8363ceadd2fca84a3bd86e68b0fa5586b83e767a8d7e02843",
+          "kind": "roof",
+          "uv_axes": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "operation": "observed_roof_and_uv"
+    },
+    "이름 미등록 건물.001": {
+      "identity_metadata": {},
+      "id": "osm/468931893",
+      "source_id": "osm/468931893",
+      "mesh": "이름 미등록 건물.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            144.83999633789062,
+            -445.79998779296875,
+            -4.09225606918335
+          ],
+          [
+            186.0399932861328,
+            -422.1099853515625,
+            8.721604347229004
+          ]
+        ],
+        "vertices": 32,
+        "polygons": 44,
+        "triangles": 60,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #dceaee"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            144.83999633789062,
+            -445.79998779296875,
+            -4.09225606918335
+          ],
+          [
+            186.0399932861328,
+            -422.1099853515625,
+            8.721604347229004
+          ]
+        ],
+        "vertices": 32,
+        "polygons": 44,
+        "triangles": 60,
+        "uv": [
+          "Batch10RoofUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #dceaee",
+          "Batch10_engineering-service_ObservedRoof"
+        ],
+        "rigid_body": false
+      },
+      "observed": [
+        {
+          "faces": [
+            23,
+            26,
+            29,
+            32,
+            33,
+            38
+          ],
+          "material": "Batch10_engineering-service_ObservedRoof",
+          "texture": "Batch10_engineering-service_Atlas",
+          "texture_sha256": "8576f3aa843a274bdfa591991fa17813607ea8bd5b03fa67e1492a51d6578b3f",
+          "kind": "roof",
+          "uv_axes": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "operation": "observed_roof_and_uv"
+    },
+    "이름 미등록 건물.002": {
+      "identity_metadata": {},
+      "id": "osm/468931896",
+      "source_id": "osm/468931896",
+      "mesh": "이름 미등록 건물.003",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            206.4199981689453,
+            -305.5799865722656,
+            -4.819703578948975
+          ],
+          [
+            231.07000732421875,
+            -278.20001220703125,
+            7.85704231262207
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #637b78"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            206.4199981689453,
+            -305.5799865722656,
+            -4.819703578948975
+          ],
+          [
+            231.07000732421875,
+            -278.20001220703125,
+            7.85704231262207
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [
+          "Batch10SurfaceUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #637b78"
+        ],
+        "rigid_body": false
+      },
+      "observed": [],
+      "operation": "uv_only_exterior_held"
+    },
+    "이름 미등록 건물.003": {
+      "identity_metadata": {},
+      "id": "osm/468931915",
+      "source_id": "osm/468931915",
+      "mesh": "이름 미등록 건물.004",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            271.6000061035156,
+            156.0500030517578,
+            -4.463944911956787
+          ],
+          [
+            294.3599853515625,
+            187.61000061035156,
+            9.823187828063965
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #9cb5c0"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            271.6000061035156,
+            156.0500030517578,
+            -4.463944911956787
+          ],
+          [
+            294.3599853515625,
+            187.61000061035156,
+            9.823187828063965
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10SurfaceUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #9cb5c0"
+        ],
+        "rigid_body": false
+      },
+      "observed": [],
+      "operation": "uv_only_exterior_held"
+    },
+    "이름 미등록 건물.004": {
+      "identity_metadata": {
+        "verified_display_name": "차고",
+        "verified_facility_number": "123"
+      },
+      "id": "osm/524161868",
+      "source_id": "osm/524161868",
+      "mesh": "이름 미등록 건물.005",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            113.38999938964844,
+            445.4800109863281,
+            -15.216187477111816
+          ],
+          [
+            182.10000610351562,
+            513.8300170898438,
+            -0.7145175933837891
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #bdcccc"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            113.38999938964844,
+            445.4800109863281,
+            -15.216187477111816
+          ],
+          [
+            182.10000610351562,
+            513.8300170898438,
+            -0.7145175933837891
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [
+          "Batch10RoofUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #bdcccc",
+          "Batch10_garage_ObservedRoof"
+        ],
+        "rigid_body": false
+      },
+      "observed": [
+        {
+          "faces": [
+            17,
+            20,
+            23,
+            26
+          ],
+          "material": "Batch10_garage_ObservedRoof",
+          "texture": "Batch10_garage_Atlas",
+          "texture_sha256": "82e5bca7bb2e23261cb04f5dc2626320977c0f44436a4a52cd74ade911746f79",
+          "kind": "roof",
+          "uv_axes": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "operation": "observed_roof_and_uv"
+    },
+    "이름 미등록 건물.005": {
+      "identity_metadata": {},
+      "id": "osm/576358734",
+      "source_id": "osm/576358734",
+      "mesh": "이름 미등록 건물.006",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -566.9500122070312,
+            -124.38999938964844,
+            -12.660317420959473
+          ],
+          [
+            -543.4400024414062,
+            -112.62999725341797,
+            -0.07793235778808594
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #b4c5ce"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            -566.9500122070312,
+            -124.38999938964844,
+            -12.660317420959473
+          ],
+          [
+            -543.4400024414062,
+            -112.62999725341797,
+            -0.07793235778808594
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10RoofUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #b4c5ce",
+          "Batch10_gym-west_ObservedRoof"
+        ],
+        "rigid_body": false
+      },
+      "observed": [
+        {
+          "faces": [
+            10,
+            11
+          ],
+          "material": "Batch10_gym-west_ObservedRoof",
+          "texture": "Batch10_gym-west_Atlas",
+          "texture_sha256": "05c2f55635cb7181c21e8916bab427d2fd2d15c2901fbf4c0a416b29147225e5",
+          "kind": "roof",
+          "uv_axes": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "operation": "observed_roof_and_uv"
+    },
+    "이름 미등록 건물.006": {
+      "identity_metadata": {},
+      "id": "osm/577759119",
+      "source_id": "osm/577759119",
+      "mesh": "이름 미등록 건물.007",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -159.55999755859375,
+            -172.99000549316406,
+            -11.737778663635254
+          ],
+          [
+            -146.77000427246094,
+            -147.0800018310547,
+            0.6936635971069336
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #66706f"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            -159.55999755859375,
+            -172.99000549316406,
+            -11.737778663635254
+          ],
+          [
+            -146.77000427246094,
+            -147.0800018310547,
+            0.6936635971069336
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10SurfaceUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #66706f"
+        ],
+        "rigid_body": false
+      },
+      "observed": [],
+      "operation": "uv_only_exterior_held"
+    },
+    "이름 미등록 건물.007": {
+      "identity_metadata": {},
+      "id": "osm/584385630",
+      "source_id": "osm/584385630",
+      "mesh": "이름 미등록 건물.008",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            393.7900085449219,
+            -552.1599731445312,
+            -0.1630261242389679
+          ],
+          [
+            401.2699890136719,
+            -544.5399780273438,
+            11.903589248657227
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #7e8c84"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            393.7900085449219,
+            -552.1599731445312,
+            -0.1630261242389679
+          ],
+          [
+            401.2699890136719,
+            -544.5399780273438,
+            11.903589248657227
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10SurfaceUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #7e8c84"
+        ],
+        "rigid_body": false
+      },
+      "observed": [],
+      "operation": "uv_only_exterior_held"
+    },
+    "이름 미등록 건물.008": {
+      "identity_metadata": {},
+      "id": "osm/584386432",
+      "source_id": "osm/584386432",
+      "mesh": "이름 미등록 건물.009",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            391.19000244140625,
+            -546.760009765625,
+            -0.1434643566608429
+          ],
+          [
+            398.8999938964844,
+            -538.6400146484375,
+            11.914589881896973
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            391.19000244140625,
+            -546.760009765625,
+            -0.1434643566608429
+          ],
+          [
+            398.8999938964844,
+            -538.6400146484375,
+            11.914589881896973
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch10SurfaceUV"
+        ],
+        "materials": [
+          "campus stone"
+        ],
+        "rigid_body": false
+      },
+      "observed": [],
+      "operation": "uv_only_exterior_held"
+    },
+    "이름 미등록 건물.009": {
+      "identity_metadata": {
+        "verified_display_name": "미래융합과학관",
+        "verified_facility_number": "219"
+      },
+      "id": "osm/972016220",
+      "source_id": "osm/972016220",
+      "mesh": "이름 미등록 건물.020",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -415.4700012207031,
+            -148.10000610351562,
+            -12.039216041564941
+          ],
+          [
+            -315.19000244140625,
+            -95.19999694824219,
+            2.2868404388427734
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #c3c9c4"
+        ],
+        "rigid_body": false
+      },
+      "after": {
+        "bounds": [
+          [
+            -415.4700012207031,
+            -148.10000610351562,
+            -12.039216041564941
+          ],
+          [
+            -315.19000244140625,
+            -95.19999694824219,
+            2.2868404388427734
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [
+          "Batch10RoofUV"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #c3c9c4",
+          "Batch10_future-science_ObservedRoof"
+        ],
+        "rigid_body": false
+      },
+      "observed": [
+        {
+          "faces": [
+            17,
+            20,
+            21,
+            26
+          ],
+          "material": "Batch10_future-science_ObservedRoof",
+          "texture": "Batch10_future-science_Atlas",
+          "texture_sha256": "0b82a63d886e8e7eeac54499549600b0f063f6df9c0f97b3fae3b84f31fbd511",
+          "kind": "roof",
+          "uv_axes": [
+            [
+              0.9861298203468323,
+              0.1659763902425766,
+              0.0
+            ],
+            [
+              -0.1659763902425766,
+              0.9861298203468323,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "operation": "observed_roof_and_uv"
+    }
+  },
+  "geometry_changes": "None. Five observed roofs receive materials and UVs; five cores receive UVs only. Three verified facility names are added as extras.",
+  "artifacts": {
+    "knu-campus-v71-batch10-r1.blend": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+    "knu-campus-v71-batch10-r1.glb": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+    "batch10-model-meshes-r1.blend": "41ceb543e1df964dc98d05ba0c002092c2c99b47a3637ab54a147837a3ddf91f"
+  }
+}

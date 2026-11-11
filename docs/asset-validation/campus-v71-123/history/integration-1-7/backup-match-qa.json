@@ -1,0 +1,501 @@
+{
+  "changed_objects_within_scope": 68,
+  "unchanged_objects": 1667,
+  "latest_candidate_hashes": {
+    "candidate/batch7-model-meshes-r1.blend": "8338b5568d32518611fcf326c168d96e900961280e001f249f176006c6d15d28",
+    "candidate/knu-campus-v71-batch7-r1.blend": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+    "candidate/knu-campus-v71-batch7-r1.glb": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608"
+  },
+  "packages": {
+    "knu-it2-v71-r8-fracture": {
+      "archive": "batch1/it2-fracture/knu-it2-v71-r8-fracture-restorable.zip",
+      "member_directory": "it2-fracture",
+      "asset_hashes": {
+        "manifest.json": "ee8addf3d634683ef858f7a210f14f8b3172c778d1211afe5a5fe2f6a2a8a791",
+        "colliders.json": "b291394215293684bcfc29b7571a01ada1387a0c6c97d94c97f27c926e821874",
+        "intact.glb": "d2675268fe8e46446daa2a1af4e355d0dbba8c465dacb7837d6fe1b11d0f1d77",
+        "fragments.glb": "fcba4c82a32a797ccde6a77efdefdd925f46feead533239c51ffa28b1167bbca"
+      }
+    },
+    "knu-gym2-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-gym2-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "48a769be4176028767551e5ee2679d08d2f5e01091b1ae6c975f77affb5ae879",
+        "colliders.json": "36bfce8792ac9b97e6d7c16885e2c14a65282ec209a312528a2bc9399a9e5cd6",
+        "intact.glb": "b95b28959ee8f4905808056e230b400aa6ee7d8e082e0a94cf84ace902101620",
+        "fragments.glb": "f24443d95aaba22d30dddba5637bd7b4c5f6e589266641330b3f502d53e5908c"
+      }
+    },
+    "knu-northgate-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-northgate-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "48f78a0012c3637b1eaac363f7bf22462f378caf567a3d5a23e08bd183d299f1",
+        "colliders.json": "38821792dd60437d49deb8db44c685f13fb7af0ccb5c676ac3f783145b7c8728",
+        "intact.glb": "cd7ed20cb8117895fa1b0cc44329667ed193f33389199b7d45d768cad02af43a",
+        "fragments.glb": "4b8076cb3ea6555825f3969ff87d0fb3ea83f518ceb0bc8ad4101e6e552a7719"
+      }
+    },
+    "knu-eng7-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-eng7-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "11be67866293e9c1058bfa514f4616d1cf350664ab99df719152452032b91ce2",
+        "colliders.json": "3be0067b1c65a1363ee9f50912c20b72bc0ab251097332dba8b8f9d3a7c01581",
+        "intact.glb": "a9e4959eb68435934da62b0a8d7b08f68e0a8eed83a5b27895ce472e72cb30cd",
+        "fragments.glb": "0c64f869f8ec04995b4c43f737499b5b5f39860ab2a5ffbfbc8777354bd22e85"
+      }
+    },
+    "knu-future-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-future-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "95b912648f963d52810730ef7d6159c4d00b9272738981b36c11733618e823e6",
+        "colliders.json": "f18a523cdcc7c43498476fca2214ad568adf9cfb6a38c23b9ca271f551d85e00",
+        "intact.glb": "b39b4c2ae53281e445f62bb52310f6b3809d9d460d077b813d0baab55aba2ba4",
+        "fragments.glb": "765f307a68547b290b8b03f5f3d29f87425c627fa407554e5339033b775b4157"
+      }
+    },
+    "knu-semi-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-semi-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "9fc7a6b1e2459a2e108c8f049b09a449b597d3990ab0eaa08823190edfc9985f",
+        "colliders.json": "de02a93145283f1adeb73b9bbd682d7fc8994a6e896d7bb1b9f8a45fc5f7136d",
+        "intact.glb": "1167e12b2e809d0ace439b3040a5035a91c4653c1da32eb1f4b5683edb52ebe3",
+        "fragments.glb": "1d58112a1dd106cabd5a50c06bfc558860b431e66d257a0b54276cacf46406b7"
+      }
+    },
+    "knu-safety-v71-r8-fracture": {
+      "archive": "batch1/remaining-six-fracture/knu-v71-r8-six-fracture-restorable.zip",
+      "member_directory": "remaining-six-fracture/knu-safety-v71-r8-fracture",
+      "asset_hashes": {
+        "manifest.json": "52cf71d126f388acaeb538c26777b23d229bce3cc39cca8ce9b1eedb104d32a5",
+        "colliders.json": "ef776caa4edf42e301ef6d540ec538a1233d58e5ea613255f3da8043bb72641a",
+        "intact.glb": "5a99f74237ff7bed566aa18ae3c32a9dfab7f72b35fc7fbdd3874fe4752dfe19",
+        "fragments.glb": "f08bbb609c02e25d01bfe9354e7521f426b1546b10bd2b29e14790cd7c427016"
+      }
+    },
+    "knu-grad-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-grad-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "8fd3a5373b522dc015caea5fbe365af72e0455562e91c628e3870a18cf2abc1d",
+        "colliders.json": "af0252c12e641a18746292385a7d32c84a901d9aa9fb727e7470d5ccf67e15c4",
+        "intact.glb": "b19adc08d6ba0901ea2f511e57171bb2c2d943aed45ed0f4ba724bbd88f2ea84",
+        "fragments.glb": "d65eb3bc910ab84cecd8c2efb2ce387c8257a33590d80d950f9cbc909e904622"
+      }
+    },
+    "knu-educgrad-v71-b2-r2-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-educgrad-v71-b2-r2-fracture",
+      "asset_hashes": {
+        "manifest.json": "9593467993954be75a04b20b926fe15678ac7f30c2a6b3c73776703626ca5977",
+        "colliders.json": "430268b3773b9848ffcc6e21173b110af242a46556786e8d90baeecc0b33b065",
+        "intact.glb": "23e7477b1e3be2a023420b4bd48adc596e2363d282c53261d4a2bfb72d48648b",
+        "fragments.glb": "b72270922863e745f14a134f4de5d36e2082d903063107df42939e5b9c01213c"
+      }
+    },
+    "knu-teachers-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-teachers-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "56f8bf038e603b6f18bbabd0bd778c0723a641d05f8e1a915f89530d8fcc0f60",
+        "colliders.json": "36a7c24306f5bb93024f5a5753b14fe81923270b4af2bb3c8344cae44acb9c80",
+        "intact.glb": "4ddf87af55ca8f54839cc7a8341491b93629944861a4ee1eb6685bfcfccc16f4",
+        "fragments.glb": "c09d43cea8856580cd4df1887ca2473eddfe156f9b2fd9834d311eb07098e9a1"
+      }
+    },
+    "knu-liberal-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-liberal-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "50d9f307f9f754f34248fe69dc990bd2e25acc4891217914f8048a36854f465a",
+        "colliders.json": "f363a394d8ff6df37f46a2b6c227aa26fdd2137731d79530adb96f885dfce549",
+        "intact.glb": "4772f5686c2fd26f641e7bb3fa45dc34afcf66faebee5dc1469d392e6592e865",
+        "fragments.glb": "eb476f677e80e71bb4a4f20d693ed924f267dc95754c5d4de865fb28299366c1"
+      }
+    },
+    "knu-lifelong-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-lifelong-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "e22d3a958c5906ab586f173ea061d8930ef6b1aa2329afa8c7b0db86c279c29a",
+        "colliders.json": "5cd5d8c93ba9f79a08424c609bdde7e3d25c09dc550a7688a91b927b4b7d6328",
+        "intact.glb": "2d0f5ac2beee7fc0fbc442f5a4f740efc53dae5ad24094c294fe276fc9c5d242",
+        "fragments.glb": "f28f4ea4a7ad94f0e986bb6d3dd8ac337ded00e14f0aac324a88e5fdfbd42433"
+      }
+    },
+    "knu-convergence-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-convergence-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "a617803fca0ed12efd66e785e05543d0da9a6f32bc6243f0f1b4ee4b45e8c85c",
+        "colliders.json": "c570a5cf73eef2e3dc65f17d6212b39a40aa00bf593a92b31946bc981cb9388f",
+        "intact.glb": "b18d36004570eefc94e164592ecbe98f090afa628920c4c6081616df89ef2d49",
+        "fragments.glb": "d9f366ae9011d1f56961d1e865fe8b8a37dc603ffe6c2ba665fbb61531135a38"
+      }
+    },
+    "knu-career-v71-b2-r3-fracture": {
+      "archive": "batch2/fracture-r3/knu-campus-v71-batch2-fracture-r3-restorable.zip",
+      "member_directory": "game/knu-career-v71-b2-r3-fracture",
+      "asset_hashes": {
+        "manifest.json": "90487bab090566d1cb03564ce0e2920aa9bfa58b64072bb160e8163841cff93d",
+        "colliders.json": "4f5747d467494b58a79e6455cbaaa6f462620fb4a1ee8b0fc68c598e794ebc4d",
+        "intact.glb": "b65b41d12a48c03e80c07d6f26a384d1c23092288bf2bbf1a4c7acefb34b2a4c",
+        "fragments.glb": "03a1630903fba9335dcc8cabf24a4801681904e713d69511a1b943a664d6ab8d"
+      }
+    },
+    "knu-press-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-press-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "bc33ef4610e6bf087019a45e59e63106c2269397ddebd616621f87c268005aaa",
+        "colliders.json": "4e7bcc7ad63f15e6621bc6c5894d1d50592cf5a50b88e25e4ab58a8b398a8db9",
+        "intact.glb": "751de9c3669ce82ecf002c8d6b1de9ad33f9cf2432663a960fc3d849d57d9440",
+        "fragments.glb": "8ba71ab18e2078d53cd0814ce886113dd8521197c08f25b0ed92268e5e267c06"
+      }
+    },
+    "knu-arts-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-arts-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "2c69d2fdbedd4eaa35484d5bc269aea98a3ab8ae1e9688fb22159f5837c070ab",
+        "colliders.json": "86089f33153ded59bd081ecfd8fbaffad450913ffe8a495e3e2e5d3a124c0bf9",
+        "intact.glb": "1d22fd0fe358c3f58c73bc5e837667fb2ed40cf943dc99fd2c65d0bd051bfa64",
+        "fragments.glb": "c71a94485c9e791dcc674481dc187773b3a02c5d318ea155c8a8c943e3405f5f"
+      }
+    },
+    "knu-sculpture-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-sculpture-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "06d26df14cf1f559d33071ad39b8792ca67c0cfbe703e1db338bf8895188a5fa",
+        "colliders.json": "6864bb122ed13c2f73d711d69a5ddc378e61ac291dac74e6981b202fa1991732",
+        "intact.glb": "12daca1254bd0cb1ce775644ef308d7036a46da03aa5ca80e72d2f3462aded63",
+        "fragments.glb": "fdf493ec66e45aeaacce185d820bf33ab4714892be5dbd6d83201197c1fb7d00"
+      }
+    },
+    "knu-pavilion-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-pavilion-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "df09a539316b3b097cb15e79c13b12ad2af5800489f59677890733c44971b42c",
+        "colliders.json": "b21f6f356d563f8c2b4c0ee9d56cbe59994fbf91a9ae4c1012c9d11d55de8c49",
+        "intact.glb": "fe6248895c4df05678dbc17ad7a42ba216ce15290af2726360121f0360ff18e2",
+        "fragments.glb": "5635882c41be7112392a3523adcd1fa6f840d5ea2d85d3734fd199f0b5add322"
+      }
+    },
+    "knu-yeongseon-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-yeongseon-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "39be77cdeef1ae25e6a7369c5e2534abe6b15937a00b064669e49a01b669c8b8",
+        "colliders.json": "2b7ae0ffc6dc4f36db290f1b65734ea5f34031ab072038fd53476e614a9389fc",
+        "intact.glb": "139f53f27f0b385386476024d14d9104562bf7ff8190d5e609209957f421d652",
+        "fragments.glb": "93e2080bce5fabfa870b420a3c180d36f2701079c1cc7c5ec2dc124d1968d2fb"
+      }
+    },
+    "knu-techno-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-techno-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "5c8d860791ca110b04c25aa032cb31ce526448afb87276366cf5e2f8fdbc55ad",
+        "colliders.json": "a10d83042d07968e0c754eb0a7a3aec2fedf9534dd58a93c735c71a00e22a8a2",
+        "intact.glb": "938a53bc7c56bc5fda138c5af625890f0ceb9110c683403d259900cf636199e1",
+        "fragments.glb": "5b6ffd53853082d5be970b7ff92798109d2948bf9a4a880b3b13a03887a6a5be"
+      }
+    },
+    "knu-kbsi-v71-b3-r1-fracture": {
+      "archive": "batch3/game/knu-campus-v71-batch3-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-kbsi-v71-b3-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "8792697161d8504eeb870e15b5b35765a737e1e43980dd377404f837926db9e3",
+        "colliders.json": "f9b47be9c0781cc63731d07767d98ed681902fee1c64f666db23f0eb01c73145",
+        "intact.glb": "ec9290c16547e816171a48c68adcca300221414aa0fa27c8c142bdbe7c74fdad",
+        "fragments.glb": "ac27f0d4c9e58aa52c30c8bfe0747aa830bfc210f4ef49e381b834de0e8f6fb7"
+      }
+    },
+    "knu-faculty-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-faculty-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "6b0d23889ef771485abbbc080b66076c19a33aeed55303f3fdec8ee8d657366a",
+        "colliders.json": "9cf46b631a60fce2c4e66fdb5b32dffffb4db47d85c66c627e22609830466982",
+        "intact.glb": "23e51da40c464562c1387380707001fc2caf316e86c65fa7769996d8cbee8983",
+        "fragments.glb": "8b3bf10f9e7fc559d64b3feabc22023bedd0c5b4d4aeebf4a4078e113ef51de9"
+      }
+    },
+    "knu-nuri-west-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-nuri-west-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "e2404603a4213ee2255206bb56def9a8a575f42363ea512b086a117cba8291f0",
+        "colliders.json": "64ef27c6d9cd70f14297b66d3176a4a71b8c709c6abc3bbfc496cff31f3fd505",
+        "intact.glb": "87dd1ef37c431e1ca9e5a515bc6571d4b44dbfc114847e7b4ce80844c5695433",
+        "fragments.glb": "54f22a8b03af102a9d04d44d0d87b2a9345c35ce7e1d9fd83b8982de4770d084"
+      }
+    },
+    "knu-nuri-east-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-nuri-east-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "01c960345152ec2da0256531598579c617ee48ac6f660358009509b37bcd71ec",
+        "colliders.json": "656e620ccb3db0ee2a8e5f17b7d932686b63af7b975a810a1c989f868bd087af",
+        "intact.glb": "9cb3d6aa1a8f52e12c3ac047b1c3d7cf3c163b81509ace6652699efc6e7e8baf",
+        "fragments.glb": "6e00ce989b7053f01f7fef7d7999fac91c474d0aea86d09220d584e21f246b4f"
+      }
+    },
+    "knu-myeonhak-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-myeonhak-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "1a691f35d8752cdfce6a5839b19b543e6e6df6fc1a06019a7e516568f02881ac",
+        "colliders.json": "67b057506d603d3ef537d4b7dea2fc946f3c87b2bdc6f1d229720ef775d2151f",
+        "intact.glb": "553f994ce8e73ba59278023fdea2d8d4a10555ae9044dbe9d386c190815d02db",
+        "fragments.glb": "b90526842874cefdc629bc703a16829ba225e517de3fb4778fcdee0016fe17f2"
+      }
+    },
+    "knu-boram-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-boram-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "f3c4d3337c02db785a205854be45715ba63696bd7d739c888cda66d0c4d34bd0",
+        "colliders.json": "72b673b0cb4b263f2859cc472f3290a0ebede2c57269428b9542b9b8c351e6f1",
+        "intact.glb": "a16b401bd97d28a3f19497cd08fb5038cf46648a45876e2ffadeb4213fb8cfd1",
+        "fragments.glb": "5fbb90da11604df70caf8a84b293a0c0671bba725284d430c30998219a8fb790"
+      }
+    },
+    "knu-cheom-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-cheom-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "b397f430a9c82c7a74c29419d8fa79cd395a3d3307883d01a0cf8a51d5349bb2",
+        "colliders.json": "541e6b0c2e7c44caa35f3c925debee16e2b309d810f71a630a8319d030cc8dd2",
+        "intact.glb": "eec8e44ae6a93ace863b905b65f97675d0f804f2370711fd19a7568134c957b7",
+        "fragments.glb": "1fed66b6587e90bb09bed98e87e0e3a854145dd27b4df66a0c648415cb121e62"
+      }
+    },
+    "knu-baekho-v71-b4-r1-fracture": {
+      "archive": "batch4/game/knu-campus-v71-batch4-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-baekho-v71-b4-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "4e09cb05ffe38d4c25a4b5721f021008e10b08e774e1e61bae0c40e18dac5ba9",
+        "colliders.json": "b4f530fac541deaa7837d7be11e5bc0e8e714733718989ca1a2af35bfcfb1bb5",
+        "intact.glb": "1111bda46a5a8a1bc84fe8acb1113478be1e9f3aa8ad1dec6e48fc207620ed45",
+        "fragments.glb": "8aa39238a5ef9a10d1cad34cb5af6dff1c4d0664a294735c69ba1078e1aad1dd"
+      }
+    },
+    "knu-dorm-a-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-dorm-a-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "d82103c8f29214e7e64ecdc6a2696f7fd86063379bf0bf01b1f1386ed499d841",
+        "colliders.json": "c0ce7b4064999993f22e298f7b5094b3470945b580f5a87df048a0c3f3599010",
+        "intact.glb": "7810fa841c7a3a9a388958fd9ae34686ea4cfdeb1031dbc3308df484bcb12f5a",
+        "fragments.glb": "d0e846edc8aae49cc7a4eeb14db9f5a2420024c65327b3f5d8837dffde4d5bdf"
+      }
+    },
+    "knu-dorm-b-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-dorm-b-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "e32d4c6193f5c3d7b2ddc54e8ddc1c0307427d89df26bd274113a2d8e993b8c4",
+        "colliders.json": "34b641e624342355a36335b30438b99f4552c3104210edb094995f50b2464239",
+        "intact.glb": "23bc0cc6788be3c97aca986a007fe429b724388e499c0f12f5faee9df8912f30",
+        "fragments.glb": "4c485ad653128c706acbf2276d1341131c1112c21e747f136e28ff341e21e5de"
+      }
+    },
+    "knu-dorm-c-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-dorm-c-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "125dede407a8f57351cc4dacc4050adf4d6a9764213ae13a0ea367bba628a1c2",
+        "colliders.json": "9f7c7e008faf314128055ea58d128041ca3b1b5194f33b84392378f8bb13bae1",
+        "intact.glb": "6ab410a65685cf7f146db3d8676034e1bb22938dddde13b0c0f4d71bdc2cfd14",
+        "fragments.glb": "8a8d46143341aa06130ecd9353317aa6aa51684fb372093c14e34080e05a7f1b"
+      }
+    },
+    "knu-cheong-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-cheong-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "b53df681a63d0a95f3c75da9a62721a8e80ab4c17d09d5d2d62a749468d5b7e2",
+        "colliders.json": "11440bbc80ddb30cce158b23bf5d23d4c9bdc13a9476297cef3bf420eddc389b",
+        "intact.glb": "ac2e2545e63fb82f3a6ac6761933d0245a49cccbe4eb730c8c7e0cdda9abd80d",
+        "fragments.glb": "a1fc1f89f09dff7e5141675166f092cf17bb4b6e1e1dfbe0889be9e557405876"
+      }
+    },
+    "knu-rotc-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-rotc-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "ea9669c8ef618dc101f37d756b1ed3d788d5f42a4f0e122e77402ee09cedb85d",
+        "colliders.json": "f10600e9be3b1ace9817f21954ac99cdec3d54d429bbd3378cf2ff6e3fd0ccbe",
+        "intact.glb": "672ce992fe7ea1f57ebcbc742607af1e215f123fe30ccbf5e027251208e23329",
+        "fragments.glb": "846485954534207e989b4f13a9c8ee5ddd59e04293e1c6523404d25954cd8ee9"
+      }
+    },
+    "knu-store-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-store-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "18343a1d6ee27d2e1af175565dc7f601c98ef9262a2c780d11c67e600d7e16ba",
+        "colliders.json": "5e5774e72456ab77de160c68d316af6f622fc912a89b4a08dbd6ee0aed63da06",
+        "intact.glb": "6b86f4f7c1881eeb362bdc8a293c8577198dd09c51d9b250b28dda395b7c836e",
+        "fragments.glb": "c4f514a0d1b0bbcad46f3c9c8feeda9c2805dbe4a2a1c90a6cdeec3bc62b87e4"
+      }
+    },
+    "knu-tennis-v71-b5-r1-fracture": {
+      "archive": "batch5/game/knu-campus-v71-batch5-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-tennis-v71-b5-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "2dda232448cfd68b73ee056cb4d7bc51ceee4fad2bdc913ebba3748d6f8ff47e",
+        "colliders.json": "5622ee5df7c2dd894646374d6d3ee0c03fa4a7e8d11ffa4a22cb110ff23d6a2a",
+        "intact.glb": "58c9c51d48af29692fd21fdef48b4588ca7199fe347d0f21cc9ebb7b78145120",
+        "fragments.glb": "d53fda0e1e632dd129c19fa6ebe7e1313c190d4587cdad7c2d9ec15965b997ea"
+      }
+    },
+    "knu-agri-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-agri-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "4f8f069bf75f18403699b7f05d1423eb9b82a14d2a3ca801b0ffce7cc53fa8ce",
+        "colliders.json": "d298cc953b0fbe55ecbb7765313b2a96a20e4ff696d7931a141533239cff571b",
+        "intact.glb": "7230dbdee25d3130d1a1c2c5c1ed9a3c1b6e3cf814867b666e14f8c6695131c3",
+        "fragments.glb": "e37ac76d075db447183582badef30c25b334b01f0b4c41c4e10a0a6f2d49002d"
+      }
+    },
+    "knu-animal-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-animal-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "12806c595a5ed0473d9b9590c968ad1bb2ee9828c955c053eca6a791255c4571",
+        "colliders.json": "6243459d7fdaf6f5d9614212b55fa962157090819f540520df951dc5fd6cd670",
+        "intact.glb": "b4966d3309aad856d8e9c6c00aafc82d879cc5111730c397ac57876d13309a07",
+        "fragments.glb": "544f2d4b952f4057134c8ba6aeb3a7acbf5cac52dea07b3e94a4c70dd952f10d"
+      }
+    },
+    "knu-apple-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-apple-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "36caf0c70d81e6996eec5ff7f07bb6845a0aee5dc915dba33c330bbe38a113d3",
+        "colliders.json": "dd97d94fd8e73b4af8ae244ea86ba769dd1867d3fbb9dd51926bac44342c4ad3",
+        "intact.glb": "bb0d0249c371016b3a72a484293b8b135142f6b58830ef0c32878961674619ff",
+        "fragments.glb": "d02bdbdb33ab5bb0892044195655cce7bff90cea2b9d8d6d419bdc814261b112"
+      }
+    },
+    "knu-apple-annex-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-apple-annex-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "49414216d4384a9fc83f1238788b412cd9876322cc94427720e6f24bf0003914",
+        "colliders.json": "aacd950d101d2593d4a49fb106a68a6d09d38b9d3c4f74de922e835807a58696",
+        "intact.glb": "fc4beb519efac839e8ee79edc864e2ba68746191a8befcfea5fa07198dcfd190",
+        "fragments.glb": "bb65ffc4928e179ca78693c226fd6832c14f1593bb1fdaf558e29a67a933dabd"
+      }
+    },
+    "knu-packing-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-packing-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "1a14a0bfba349a4c14b62499ae612008051ee8a74ba7960dbc3a8d3c78f2949f",
+        "colliders.json": "f2ef918b8a4a9da8a38d9e1da11e19148a7cd59db4572e3bffd4e990370973e1",
+        "intact.glb": "78c3ff2b8e06b48730bfe355f716466e8d47e7a14702a0ba9f8dec769e1c3538",
+        "fragments.glb": "2b6ebe96c5fb5db03f3b7cf02970662301ada29df730eba53133b502ea9b32a3"
+      }
+    },
+    "knu-vet-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-vet-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "c1cc8761b3041d78ebf7f4c1ec47d993192b2ef69c46c7750dde135db1af48d6",
+        "colliders.json": "245bbf042c97294e6ae9a51284a353a0ca2f82df50ed0af99078c060808cb41f",
+        "intact.glb": "d502ea5f8ba37be36c154e1371caa11d214f76bc836f461ecd30af6d5089ecac",
+        "fragments.glb": "8f9ff126a8288edb308cd93d4b5833f861290bafbe4bcf444bfbe16c15a8b6ae"
+      }
+    },
+    "knu-nursing-v71-b6-r1-fracture": {
+      "archive": "batch6/game/knu-campus-v71-batch6-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-nursing-v71-b6-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "2a6c67363d1171b9dda26a283d39e2df07e2fbba7d81a7574585dd5dd941b901",
+        "colliders.json": "a8cab7d74a97dce23c005edc2749c4c8696a565f8e6af4b5138341d8f1f34a74",
+        "intact.glb": "24774e2f86e1f64c364d9a73c23c88cbea778a90d289bfd49cc2425cebf74790",
+        "fragments.glb": "12b6c656f3ad363a37173b5f5dc38ff09fa7cb1882c64e585e531083f9af7966"
+      }
+    },
+    "knu-gh1-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh1-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "c4211b72815c0986d00faf00ae6e1802ad73ee9765dc71f896c375c646286e05",
+        "colliders.json": "71803a5ffd98eabcd4de0c15ee7b61c171c3da2e87221d01a3045e6fe8d514aa",
+        "intact.glb": "69079ad64d0ee086308211b32dc8151b626f8ba5519519e69882f652805525d1",
+        "fragments.glb": "cb4597a6b43891415aa712f3219d9570cc97b01f2c9cca59882c071baf48b911"
+      }
+    },
+    "knu-gh2-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh2-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "170c2655e88900f2c7362ec62ce698d957a0a87caaf4299750ad0e9117eb32b4",
+        "colliders.json": "2d1ab6d658894a2300ee054816cec884f3a49256e7a191e74817c5ec6ffae0e9",
+        "intact.glb": "92b035e76bb93500930bfba89c067c43180057a5b1575d3f08e3a5e50746a14c",
+        "fragments.glb": "55f4a52ea4f7cb4cd653854fdb439384f9d780598f73c5e3ada94b87aaa15c81"
+      }
+    },
+    "knu-gh31-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh31-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "2bc10255fc6d9fdb2c71813ce047b23644477274560914d486c077ddc9a6b8e8",
+        "colliders.json": "723e38f6b9505c7a8a19e85fbf1b27b9fccac784eb866603617c0e8c42ef1e27",
+        "intact.glb": "f757aa2130dcf6721ec3aa26363956e5d1348ea0ee62d383d8ac7c4c658d0eaf",
+        "fragments.glb": "962b0f14564893e135d2f2536830dd947846529f8b065be978cac9c6acdb1fac"
+      }
+    },
+    "knu-gh32-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh32-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "3e597b8f526495eb482389fa64e909e3107485a97f567b2d84e5a30e106ef487",
+        "colliders.json": "9a3ab7a33f215f21431fae31ae9ed47a73120b16c883b9ddecdd074276c3a21f",
+        "intact.glb": "545560507c80ac8573cf48e9fff67700c9b4ff53405414490c1c499584671a5f",
+        "fragments.glb": "5f090adf1870844ab92d56eb60fd0b3ff45981ab9f94acfd9a4b5b3ca05c1729"
+      }
+    },
+    "knu-gh41-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh41-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "4c2d7cc1fa635ca26cf4018c44b3701212de310266399ee4217aa6397965a621",
+        "colliders.json": "29d505b74e5e54061e3fdf307c4bf3795d4dbebd8c896311b073cd8d11b699ad",
+        "intact.glb": "20462250d0281e1ba0590ab450d52b81520f67f8f39bd39ee4ed0df2e93530fe",
+        "fragments.glb": "9e86ec9964d2840529b674a632928d5315fa3949abaf275a2f07c631345840c4"
+      }
+    },
+    "knu-gh42-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh42-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "bda7f69e8cc6e403e3eb1f74d1a54724adb31cd0cb35c3d345ea3e0e60f15f43",
+        "colliders.json": "2b35a16d436c3aac50f5ddc8b1078175a495099686fa9cf64ce54862a5c9eb73",
+        "intact.glb": "dcdfab819b44b76eaf29f80c0d3ca9366899e224bd200d8db12fc25c0476da43",
+        "fragments.glb": "7bd06e37e0666bc4c251f9e0cb2d8c70a37331444c48ae4e243dd24b20e5a38a"
+      }
+    },
+    "knu-gh43-v71-b7-r1-fracture": {
+      "archive": "batch7/game/knu-campus-v71-batch7-r1-fracture-restorable.zip",
+      "member_directory": "packages/knu-gh43-v71-b7-r1-fracture",
+      "asset_hashes": {
+        "manifest.json": "8017085bdbc00768f37d2f6942d50597abd12518565232786567708f2d5e4986",
+        "colliders.json": "590fa61be63f17d71e2f97845e21dca9f75f8e28b145e13c431bd1dc1e3c84ac",
+        "intact.glb": "c8b6b191604114c4b7137b43b89424f6db7e22a28be22ff26e96647173f2c47b",
+        "fragments.glb": "abd3e9b8fc6449880c2032ae59d4843888472e3043f94d8f9b2d328374d7fe01"
+      }
+    }
+  }
+}

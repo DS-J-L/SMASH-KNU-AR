@@ -1,0 +1,18 @@
+{
+  "osm/468931915": {
+    "closed": true,
+    "min_face_area_m2": 1.0499064922332764,
+    "volume_m3": 9343.422976114907,
+    "errors": [],
+    "warnings": [],
+    "object": "이름 미등록 건물.003"
+  },
+  "osm/577759119": {
+    "closed": true,
+    "min_face_area_m2": 0.34442338347435,
+    "volume_m3": 2234.3087265650884,
+    "errors": [],
+    "warnings": [],
+    "object": "이름 미등록 건물.006"
+  }
+}

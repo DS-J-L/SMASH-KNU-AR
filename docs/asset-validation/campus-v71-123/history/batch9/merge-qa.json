@@ -1,0 +1,19 @@
+{
+  "source_archive_sha256": "f621be88f7eee73f9758f2b3fcb0c63153311f0e24aaafbf5e9d71956c0baa91",
+  "restored_archive_members": 43,
+  "restored_candidate_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "reproduced_glb_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "reproduced_blend_sha256": "1ab721b36ddbb478d7c3e319a77f2238c5221a1795d1ca05c3400748d7d4ccd4",
+  "objects": 1735,
+  "changed_objects": [
+    "PP구조실습실",
+    "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+    "v7 | 추가 건물 | 암석창고 [vw/10]",
+    "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]"
+  ],
+  "unchanged_objects": 1731,
+  "dot_protected_ids": 53,
+  "triangles": 890412,
+  "decoded_object_geometry_transforms_uvs_materials_images_match": true,
+  "same_glb_bytes": true
+}

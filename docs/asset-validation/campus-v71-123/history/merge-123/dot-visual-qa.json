@@ -1,0 +1,66 @@
+{
+  "osm/473684409": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      458,
+      91,
+      5948
+    ]
+  },
+  "osm/468931909": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      4566,
+      0,
+      2236
+    ]
+  },
+  "osm/468931898": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      1700,
+      2435,
+      1113
+    ]
+  },
+  "osm/468931924": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      75702,
+      48887,
+      80251
+    ]
+  },
+  "osm/468931887": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      10264,
+      40,
+      19298
+    ]
+  },
+  "osm/468931905": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      1779,
+      2011,
+      887
+    ]
+  },
+  "osm/468931920": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      12464,
+      12665,
+      9641
+    ]
+  },
+  "osm/468931867": {
+    "angles": 3,
+    "pixels_changed_gt_6": [
+      12977,
+      11710,
+      13859
+    ]
+  }
+}

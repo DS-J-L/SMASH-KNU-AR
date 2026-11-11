@@ -1,0 +1,27 @@
+{
+  "source_archive_sha256": "196ea003671e6b018671f6e0a8fef6ae6fbb0450f4b2270f77c92558f143b294",
+  "restored_archive_members": 46,
+  "candidate_glb_sha256": "8d2696d723f3cc8359f198a12fa1b15975481a1d0684930762ee6bc305c19308",
+  "candidate_artifacts_hash_match": true,
+  "objects": 1735,
+  "changed_objects": [
+    "v7 | 창 근사 | 간호대학 [1107268251]",
+    "v7 | 창 근사 | 수의과대학부속병원 [468931894]",
+    "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+    "v8 | 태양광 | 사과센터",
+    "간호대학",
+    "농업생명과학관",
+    "동물사육장",
+    "사과센터",
+    "수의과대학부속병원"
+  ],
+  "unchanged_objects": 1726,
+  "dot_protected_ids": 53,
+  "triangles": 890412,
+  "baseline_triangles": 891228,
+  "crc_and_listed_sha256_match": true,
+  "baseline_artifacts_hash_match": true,
+  "held_models_match": {
+    "vw/111": "v7 | 추가 건물 | 사과포장개발실 [vw/111]"
+  }
+}

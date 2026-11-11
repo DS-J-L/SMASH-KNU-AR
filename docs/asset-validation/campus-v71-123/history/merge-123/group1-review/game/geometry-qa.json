@@ -1,0 +1,38 @@
+{
+  "osm/468931915": {
+    "intact.glb": {
+      "meshes": 2,
+      "triangles": 748,
+      "roof_triangles": 2,
+      "roof_fragments": 1,
+      "area_m2": 3.356276178349674
+    },
+    "fragments.glb": {
+      "meshes": 64,
+      "triangles": 3116,
+      "roof_triangles": 98,
+      "roof_fragments": 25,
+      "area_m2": 3.356276234249382
+    },
+    "roof_area_difference_m2": 5.589970797359456e-08,
+    "colliders_byte_identical": true
+  },
+  "osm/577759119": {
+    "intact.glb": {
+      "meshes": 1,
+      "triangles": 28,
+      "roof_triangles": 2,
+      "roof_fragments": 1,
+      "area_m2": 1.2940770128113595
+    },
+    "fragments.glb": {
+      "meshes": 64,
+      "triangles": 2324,
+      "roof_triangles": 65,
+      "roof_fragments": 17,
+      "area_m2": 1.2940770426678854
+    },
+    "roof_area_difference_m2": 2.985652591824817e-08,
+    "colliders_byte_identical": true
+  }
+}

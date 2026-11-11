@@ -1,0 +1,142 @@
+[
+  {
+    "package": "knu-baekho-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_baekho_Fragment_000",
+        "before_m": 4.8233257533975005e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_baekho_Fragment_011",
+        "before_m": 2.315210124809175e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_baekho_Fragment_023",
+        "before_m": 3.2915487462870097e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_baekho_Fragment_025",
+        "before_m": 1.531916495572938e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_baekho_Fragment_036",
+        "before_m": 7.172601648244847e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_baekho_Fragment_046",
+        "before_m": 6.157414478874523e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 1.4517360364812992e-06,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-boram-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_boram_Fragment_002",
+        "before_m": 3.6471043313446305e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_boram_Fragment_015",
+        "before_m": 2.626856208914896e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_boram_Fragment_018",
+        "before_m": 8.207402011906062e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_boram_Fragment_041",
+        "before_m": 3.6133179459330034e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_boram_Fragment_043",
+        "before_m": 2.3294318530320268e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_boram_Fragment_051",
+        "before_m": 8.244241726573787e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 7.064972062931218e-07,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-cheom-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_cheom_Fragment_006",
+        "before_m": 4.3893720846760464e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 3.7445269446267915e-07,
+    "max_point_gap_m": 8.404638001828252e-08
+  },
+  {
+    "package": "knu-faculty-v71-b4-r1-fracture",
+    "count": 65,
+    "updated": [
+      {
+        "node": "SM_faculty_Fragment_012",
+        "before_m": 2.7448361667625765e-05,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.1049592698597621e-06,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-myeonhak-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_myeonhak_Fragment_030",
+        "before_m": 7.4454210586411e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_myeonhak_Fragment_040",
+        "before_m": 1.8083982283062516e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 7.336835605720182e-08,
+    "max_point_gap_m": 8.608564740636456e-08
+  },
+  {
+    "package": "knu-nuri-east-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.1896235441177794e-06,
+    "max_point_gap_m": 8.600500509601232e-08
+  },
+  {
+    "package": "knu-nuri-west-v71-b4-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_nuri-west_Fragment_012",
+        "before_m": 4.697036980860769e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 6.482207330071876e-07,
+    "max_point_gap_m": 8.688795409866125e-08
+  }
+]

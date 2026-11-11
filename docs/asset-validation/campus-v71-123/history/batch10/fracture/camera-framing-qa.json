@@ -1,0 +1,66 @@
+[
+  {
+    "id": "knu-osm-584385630-v71-b10-r1-fracture",
+    "viewport": {
+      "width": 1440,
+      "height": 1060
+    },
+    "canvasAspect": 1.1050417529980536,
+    "oldProjectedExtents": [
+      0.6809980867029567,
+      1.039471184625128
+    ],
+    "finalProjectedExtents": [
+      0.4792440799266771,
+      0.700921684673889
+    ]
+  },
+  {
+    "id": "knu-osm-584386432-v71-b10-r1-fracture",
+    "viewport": {
+      "width": 1440,
+      "height": 1060
+    },
+    "canvasAspect": 1.1050417529980536,
+    "oldProjectedExtents": [
+      0.6704570313245798,
+      0.9830546945909863
+    ],
+    "finalProjectedExtents": [
+      0.5042814206613314,
+      0.7154263882528674
+    ]
+  },
+  {
+    "id": "knu-osm-584385630-v71-b10-r1-fracture",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "canvasAspect": 1.0268646891841857,
+    "oldProjectedExtents": [
+      0.7328437012635232,
+      1.039471184625128
+    ],
+    "finalProjectedExtents": [
+      0.5157297974836922,
+      0.700921684673889
+    ]
+  },
+  {
+    "id": "knu-osm-584386432-v71-b10-r1-fracture",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "canvasAspect": 1.0268646891841857,
+    "oldProjectedExtents": [
+      0.721500136296823,
+      0.9830546945909863
+    ],
+    "finalProjectedExtents": [
+      0.5426732761983152,
+      0.7154263882528674
+    ]
+  }
+]

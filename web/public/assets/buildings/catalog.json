@@ -1,12 +1,409 @@
 {
   "schema_version": "1.0",
   "default": "knu-it1-v3",
-  "campus": "/public/assets/campus/knu-campus-v13.glb",
+  "campus": "/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
+  "campus_label": "캠퍼스 v71 합본",
+  "campus_detail": "모델 ID 123개 · 묶음 1~10·dot 인계·후속 보완",
   "buildings": [
     {
       "id": "knu-it1-v3",
       "label": "IT 1호관 · 세분화 96개",
       "folder": "knu-it1-v3"
+    },
+    {
+      "id": "knu-it2-v71-r8-fracture",
+      "label": "IT 2호관 · 64개 파편",
+      "folder": "knu-it2-v71-r8-fracture"
+    },
+    {
+      "id": "knu-gym2-v71-r8-fracture",
+      "label": "제2체육관 · 65개 파편",
+      "folder": "knu-gym2-v71-r8-fracture"
+    },
+    {
+      "id": "knu-northgate-v71-r8-fracture",
+      "label": "북문수위실 · 64개 파편",
+      "folder": "knu-northgate-v71-r8-fracture"
+    },
+    {
+      "id": "knu-eng7-v71-r8-fracture",
+      "label": "공대 7호관 · 64개 파편",
+      "folder": "knu-eng7-v71-r8-fracture"
+    },
+    {
+      "id": "knu-future-v71-r8-fracture",
+      "label": "미래창직관 · 64개 파편",
+      "folder": "knu-future-v71-r8-fracture"
+    },
+    {
+      "id": "knu-semi-v71-r8-fracture",
+      "label": "반도체융합연구동 · 64개 파편",
+      "folder": "knu-semi-v71-r8-fracture"
+    },
+    {
+      "id": "knu-safety-v71-r8-fracture",
+      "label": "연구실 안전관리센터 · 64개 파편",
+      "folder": "knu-safety-v71-r8-fracture"
+    },
+    {
+      "id": "knu-grad-v71-b2-r3-fracture",
+      "label": "대학원동 · 64개 파편 · r3 충돌체",
+      "folder": "knu-grad-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-teachers-v71-b2-r3-fracture",
+      "label": "사범대학 · 64개 파편 · r3 충돌체",
+      "folder": "knu-teachers-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-liberal-v71-b2-r3-fracture",
+      "label": "교양과정동 · 64개 파편 · r3 충돌체 · 외형 보류",
+      "folder": "knu-liberal-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r3-fracture",
+      "label": "평생교육원 · 64개 파편 · r3 충돌체",
+      "folder": "knu-lifelong-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-convergence-v71-b2-r3-fracture",
+      "label": "융합교육정보관 · 64개 파편 · r3 충돌체",
+      "folder": "knu-convergence-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-career-v71-b2-r3-fracture",
+      "label": "취업정보센터 · 64개 파편 · r3 충돌체 · 외형 보류",
+      "folder": "knu-career-v71-b2-r3-fracture"
+    },
+    {
+      "id": "knu-press-v71-b3-r1-fracture",
+      "label": "경북대 출판부 · 64개 파편 · 3번 묶음",
+      "folder": "knu-press-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-arts-v71-b3-r1-fracture",
+      "label": "문예관 · 64개 파편 · 3번 묶음",
+      "folder": "knu-arts-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-sculpture-v71-b3-r1-fracture",
+      "label": "조소동 · 64개 파편 · 3번 묶음",
+      "folder": "knu-sculpture-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-pavilion-v71-b3-r1-fracture",
+      "label": "금란정 · 64개 파편 · 3번 묶음",
+      "folder": "knu-pavilion-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-yeongseon-v71-b3-r1-fracture",
+      "label": "영선관 · 64개 파편 · 3번 묶음",
+      "folder": "knu-yeongseon-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-techno-v71-b3-r1-fracture",
+      "label": "테크노빌딩 · 64개 파편 · 3번 묶음",
+      "folder": "knu-techno-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-kbsi-v71-b3-r1-fracture",
+      "label": "한국기초과학지원연구원 · 70개 파편 · 3번 묶음",
+      "folder": "knu-kbsi-v71-b3-r1-fracture"
+    },
+    {
+      "id": "knu-faculty-v71-b4-r1-fracture",
+      "label": "교수아파트 · 65개 파편 · 4번 묶음",
+      "folder": "knu-faculty-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-nuri-west-v71-b4-r1-fracture",
+      "label": "누리관 서쪽 · 64개 파편 · 4번 묶음",
+      "folder": "knu-nuri-west-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-nuri-east-v71-b4-r1-fracture",
+      "label": "누리관 동쪽 · 64개 파편 · 4번 묶음",
+      "folder": "knu-nuri-east-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-myeonhak-v71-b4-r1-fracture",
+      "label": "면학관 · 64개 파편 · 4번 묶음",
+      "folder": "knu-myeonhak-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-boram-v71-b4-r1-fracture",
+      "label": "보람관 · 64개 파편 · 4번 묶음",
+      "folder": "knu-boram-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-cheom-v71-b4-r1-fracture",
+      "label": "첨성관 · 64개 파편 · 4번 묶음",
+      "folder": "knu-cheom-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-baekho-v71-b4-r1-fracture",
+      "label": "백호관 · 64개 파편 · 4번 묶음",
+      "folder": "knu-baekho-v71-b4-r1-fracture"
+    },
+    {
+      "id": "knu-dorm-a-v71-b5-r1-fracture",
+      "label": "기숙사 A동 · 65개 파편 · 5번 묶음",
+      "folder": "knu-dorm-a-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-dorm-b-v71-b5-r1-fracture",
+      "label": "기숙사 B동 · 64개 파편 · 5번 묶음",
+      "folder": "knu-dorm-b-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-dorm-c-v71-b5-r1-fracture",
+      "label": "기숙사 C동 · 64개 파편 · 5번 묶음",
+      "folder": "knu-dorm-c-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-cheong-v71-b5-r1-fracture",
+      "label": "청룡관 · 64개 파편 · 5번 묶음",
+      "folder": "knu-cheong-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-rotc-v71-b5-r1-fracture",
+      "label": "학군단 · 64개 파편 · 5번 묶음",
+      "folder": "knu-rotc-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-store-v71-b5-r1-fracture",
+      "label": "학군단창고 · 64개 파편 · 5번 묶음",
+      "folder": "knu-store-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-tennis-v71-b5-r1-fracture",
+      "label": "테니스장대기실 · 64개 파편 · 5번 묶음",
+      "folder": "knu-tennis-v71-b5-r1-fracture"
+    },
+    {
+      "id": "knu-agri-v71-b6-r1-fracture",
+      "label": "농업생명과학관 · 64개 파편 · 6번 묶음",
+      "folder": "knu-agri-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-animal-v71-b6-r1-fracture",
+      "label": "동물사육장 · 64개 파편 · 6번 묶음",
+      "folder": "knu-animal-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-apple-v71-b6-r1-fracture",
+      "label": "사과센터 · 64개 파편 · 6번 묶음",
+      "folder": "knu-apple-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-apple-annex-v71-b6-r1-fracture",
+      "label": "농대사과센터 · 64개 파편 · 6번 묶음",
+      "folder": "knu-apple-annex-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-packing-v71-b6-r1-fracture",
+      "label": "사과포장개발실 · 64개 파편 · 6번 묶음",
+      "folder": "knu-packing-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-vet-v71-b6-r1-fracture",
+      "label": "수의과대학부속병원 · 64개 파편 · 6번 묶음",
+      "folder": "knu-vet-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-nursing-v71-b6-r1-fracture",
+      "label": "간호대학 · 64개 파편 · 6번 묶음",
+      "folder": "knu-nursing-v71-b6-r1-fracture"
+    },
+    {
+      "id": "knu-gh1-v71-b7-r1-fracture",
+      "label": "온실 1 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh1-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh2-v71-b7-r1-fracture",
+      "label": "온실 2 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh2-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh31-v71-b7-r1-fracture",
+      "label": "온실 3-1 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh31-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh32-v71-b7-r1-fracture",
+      "label": "온실 3-2 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh32-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh41-v71-b7-r1-fracture",
+      "label": "온실 4-1 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh41-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh42-v71-b7-r1-fracture",
+      "label": "온실 4-2 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh42-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh43-v71-b7-r1-fracture",
+      "label": "온실 4-3 · 64개 파편 · 7번 묶음",
+      "folder": "knu-gh43-v71-b7-r1-fracture"
+    },
+    {
+      "id": "knu-gh51-v71-b8-r1-fracture",
+      "label": "온실 5-1 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh51-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh52-v71-b8-r1-fracture",
+      "label": "온실 5-2 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh52-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh53-v71-b8-r1-fracture",
+      "label": "온실 5-3 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh53-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh54-v71-b8-r1-fracture",
+      "label": "온실 5-4 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh54-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-greenhouse-office-v71-b8-r1-fracture",
+      "label": "온실관리사 · 64개 파편 · 8번 묶음",
+      "folder": "knu-greenhouse-office-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-produce-processing-v71-b8-r1-fracture",
+      "label": "농산물가공동 · 64개 파편 · 8번 묶음",
+      "folder": "knu-produce-processing-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-corn-storage-v71-b8-r1-fracture",
+      "label": "옥수수저장창고 · 64개 파편 · 8번 묶음",
+      "folder": "knu-corn-storage-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-pp-structural-v71-b9-r1-fracture",
+      "label": "PP구조실습실 · 64개 파편 · 9번 묶음",
+      "folder": "knu-pp-structural-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-env-store-v71-b9-r1-fracture",
+      "label": "환경과학연구소창고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-env-store-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-rock-store-v71-b9-r1-fracture",
+      "label": "암석창고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-rock-store-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-isotope-store-v71-b9-r1-fracture",
+      "label": "동위원소저장고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-isotope-store-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931854-v71-b10-r1-fracture",
+      "label": "도서관 휴게실 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931854-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931893-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931893) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931893-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931896-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931896) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931896-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931915-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931915) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-468931915-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-524161868-v71-b10-r1-fracture",
+      "label": "차고 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-524161868-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-576358734-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (576358734) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-576358734-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-577759119-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (577759119) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-577759119-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-584385630-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584385630) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-584385630-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-584386432-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584386432) · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-584386432-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-osm-972016220-v71-b10-r1-fracture",
+      "label": "미래융합과학관 · 64개 파편 · 10번 묶음",
+      "folder": "knu-osm-972016220-v71-b10-r1-fracture"
+    },
+    {
+      "id": "knu-grad-v71-b2-r2-fracture",
+      "label": "대학원동 · 64개 파편 · r2",
+      "folder": "knu-grad-v71-b2-r2-fracture"
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r2-fracture",
+      "label": "교육대학원 · 64개 파편 · r2",
+      "folder": "knu-educgrad-v71-b2-r2-fracture"
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r2-fracture",
+      "label": "평생교육원 · 64개 파편 · r2",
+      "folder": "knu-lifelong-v71-b2-r2-fracture"
+    },
+    {
+      "id": "knu-grad-v71-b2-r1-fracture",
+      "label": "대학원동 · 64개 파편",
+      "folder": "knu-grad-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r1-fracture",
+      "label": "교육대학원 · 64개 파편",
+      "folder": "knu-educgrad-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-teachers-v71-b2-r1-fracture",
+      "label": "사범대학 · 64개 파편",
+      "folder": "knu-teachers-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-liberal-v71-b2-r1-fracture",
+      "label": "교양과정동 · 64개 파편 · 외형 보류",
+      "folder": "knu-liberal-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r1-fracture",
+      "label": "평생교육원 · 64개 파편",
+      "folder": "knu-lifelong-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-convergence-v71-b2-r1-fracture",
+      "label": "융합교육정보관 · 64개 파편",
+      "folder": "knu-convergence-v71-b2-r1-fracture"
+    },
+    {
+      "id": "knu-career-v71-b2-r1-fracture",
+      "label": "취업정보센터 · 64개 파편 · 외형 보류",
+      "folder": "knu-career-v71-b2-r1-fracture"
     },
     {
       "id": "knu-main-v2",
@@ -27,6 +424,66 @@
       "id": "knu-it1-v1",
       "label": "IT 1호관 · 초기 32개",
       "folder": "knu-it1-v1"
+    },
+    {
+      "id": "knu-osm-468931867-v71-dot8-r1-fracture",
+      "label": "공대 12호관 · 64개 파편",
+      "folder": "knu-osm-468931867-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931887-v71-dot8-r1-fracture",
+      "label": "생물학관 · 64개 파편",
+      "folder": "knu-osm-468931887-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931898-v71-dot8-r1-fracture",
+      "label": "박물관 · 64개 파편",
+      "folder": "knu-osm-468931898-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931905-v71-dot8-r1-fracture",
+      "label": "생활과학대학 · 64개 파편",
+      "folder": "knu-osm-468931905-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931909-v71-dot8-r1-fracture",
+      "label": "정보화본부 · 64개 파편",
+      "folder": "knu-osm-468931909-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931920-v71-dot8-r1-fracture",
+      "label": "제1과학관 · 64개 파편",
+      "folder": "knu-osm-468931920-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-468931924-v71-dot8-r1-fracture",
+      "label": "국민체육센터 · 64개 파편",
+      "folder": "knu-osm-468931924-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-473684409-v71-dot8-r1-fracture",
+      "label": "어린이집 · 64개 파편",
+      "folder": "knu-osm-473684409-v71-dot8-r1-fracture"
+    },
+    {
+      "id": "knu-osm-1470108675-v71-g2-r1-fracture",
+      "folder": "knu-osm-1470108675-v71-g2-r1-fracture",
+      "label": "봉사관 · 64개 파편"
+    },
+    {
+      "id": "knu-osm-468931907-v71-g2-r1-fracture",
+      "folder": "knu-osm-468931907-v71-g2-r1-fracture",
+      "label": "우당교육관 · 64개 파편"
+    },
+    {
+      "id": "knu-osm-468931910-v71-g2-r1-fracture",
+      "folder": "knu-osm-468931910-v71-g2-r1-fracture",
+      "label": "어학교육원 · 64개 파편"
+    },
+    {
+      "id": "knu-osm-524021463-v71-g2-r1-fracture",
+      "folder": "knu-osm-524021463-v71-g2-r1-fracture",
+      "label": "창업보육센터 · 64개 파편"
     }
   ],
   "campus_focus": [

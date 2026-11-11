@@ -1,0 +1,159 @@
+{
+  "frames": 70,
+  "per_model": {
+    "vw/143": {
+      "NW": {
+        "changed_pixels_gt_12": 1524,
+        "max_channel_delta": 26
+      },
+      "SE": {
+        "changed_pixels_gt_12": 1358,
+        "max_channel_delta": 26
+      },
+      "top": {
+        "changed_pixels_gt_12": 4689,
+        "max_channel_delta": 25
+      },
+      "NE": {
+        "changed_pixels_gt_12": 2288,
+        "max_channel_delta": 26
+      },
+      "SW": {
+        "changed_pixels_gt_12": 1638,
+        "max_channel_delta": 27
+      }
+    },
+    "vw/50": {
+      "NW": {
+        "changed_pixels_gt_12": 16630,
+        "max_channel_delta": 40
+      },
+      "SE": {
+        "changed_pixels_gt_12": 15594,
+        "max_channel_delta": 42
+      },
+      "top": {
+        "changed_pixels_gt_12": 41825,
+        "max_channel_delta": 37
+      },
+      "NE": {
+        "changed_pixels_gt_12": 7564,
+        "max_channel_delta": 35
+      },
+      "SW": {
+        "changed_pixels_gt_12": 16216,
+        "max_channel_delta": 40
+      }
+    },
+    "vw/130": {
+      "NW": {
+        "changed_pixels_gt_12": 12699,
+        "max_channel_delta": 58
+      },
+      "SE": {
+        "changed_pixels_gt_12": 11703,
+        "max_channel_delta": 57
+      },
+      "top": {
+        "changed_pixels_gt_12": 34617,
+        "max_channel_delta": 59
+      },
+      "NE": {
+        "changed_pixels_gt_12": 8358,
+        "max_channel_delta": 50
+      },
+      "SW": {
+        "changed_pixels_gt_12": 12664,
+        "max_channel_delta": 61
+      }
+    },
+    "vw/163": {
+      "NW": {
+        "changed_pixels_gt_12": 21483,
+        "max_channel_delta": 41
+      },
+      "SE": {
+        "changed_pixels_gt_12": 19830,
+        "max_channel_delta": 37
+      },
+      "top": {
+        "changed_pixels_gt_12": 72014,
+        "max_channel_delta": 35
+      },
+      "NE": {
+        "changed_pixels_gt_12": 9775,
+        "max_channel_delta": 32
+      },
+      "SW": {
+        "changed_pixels_gt_12": 21298,
+        "max_channel_delta": 39
+      }
+    },
+    "vw/18": {
+      "NW": {
+        "changed_pixels_gt_12": 3305,
+        "max_channel_delta": 39
+      },
+      "SE": {
+        "changed_pixels_gt_12": 3162,
+        "max_channel_delta": 41
+      },
+      "top": {
+        "changed_pixels_gt_12": 6389,
+        "max_channel_delta": 38
+      },
+      "NE": {
+        "changed_pixels_gt_12": 2995,
+        "max_channel_delta": 31
+      },
+      "SW": {
+        "changed_pixels_gt_12": 3344,
+        "max_channel_delta": 39
+      }
+    },
+    "vw/79": {
+      "NW": {
+        "changed_pixels_gt_12": 13077,
+        "max_channel_delta": 48
+      },
+      "SE": {
+        "changed_pixels_gt_12": 12378,
+        "max_channel_delta": 47
+      },
+      "top": {
+        "changed_pixels_gt_12": 26754,
+        "max_channel_delta": 51
+      },
+      "NE": {
+        "changed_pixels_gt_12": 9295,
+        "max_channel_delta": 40
+      },
+      "SW": {
+        "changed_pixels_gt_12": 12915,
+        "max_channel_delta": 45
+      }
+    },
+    "vw/166": {
+      "NW": {
+        "changed_pixels_gt_12": 23460,
+        "max_channel_delta": 54
+      },
+      "SE": {
+        "changed_pixels_gt_12": 22651,
+        "max_channel_delta": 55
+      },
+      "top": {
+        "changed_pixels_gt_12": 44793,
+        "max_channel_delta": 55
+      },
+      "NE": {
+        "changed_pixels_gt_12": 20940,
+        "max_channel_delta": 46
+      },
+      "SW": {
+        "changed_pixels_gt_12": 23554,
+        "max_channel_delta": 54
+      }
+    }
+  }
+}

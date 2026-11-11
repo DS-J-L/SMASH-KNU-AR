@@ -1,0 +1,17 @@
+{
+  "source_glb_sha256": "8d2696d723f3cc8359f198a12fa1b15975481a1d0684930762ee6bc305c19308",
+  "candidate_glb_sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+  "changed_objects": [
+    "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+    "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+    "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+    "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+    "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+    "v7 | 추가 건물 | 온실1 [vw/143]",
+    "v7 | 추가 건물 | 온실2 [vw/50]"
+  ],
+  "preserved_objects": 1728,
+  "dot_protected_ids": 53,
+  "source_triangles": 890412,
+  "candidate_triangles": 890412
+}

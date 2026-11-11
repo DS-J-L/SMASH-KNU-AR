@@ -1,0 +1,29 @@
+[
+  {
+    "id": "knu-osm-468931854-v71-b10-r1-fracture",
+    "node": "SM_osm-468931854_Fragment_040",
+    "before_m": 0.000005177082605001271,
+    "after_m": 4.9653156197759785e-8,
+    "updated": true,
+    "before_points": 28,
+    "after_points": 31
+  },
+  {
+    "id": "knu-osm-468931896-v71-b10-r1-fracture",
+    "node": "SM_osm-468931896_Fragment_024",
+    "before_m": 0.00001018225796861616,
+    "after_m": 1.1785475030612336e-7,
+    "updated": true,
+    "before_points": 17,
+    "after_points": 17
+  },
+  {
+    "id": "knu-osm-576358734-v71-b10-r1-fracture",
+    "node": "SM_osm-576358734_Fragment_035",
+    "before_m": 0.000005707726477732766,
+    "after_m": 8.132977402652841e-9,
+    "updated": true,
+    "before_points": 25,
+    "after_points": 34
+  }
+]

@@ -1,0 +1,341 @@
+[
+  {
+    "package": "knu-osm-468931854-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-468931854_Fragment_001",
+        "before_m": 2.2158310434283734e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_003",
+        "before_m": 1.6750188314429426e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_004",
+        "before_m": 3.074357929344629e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_005",
+        "before_m": 5.19803906895433e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_022",
+        "before_m": 2.1877637416123363e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_025",
+        "before_m": 2.31812184287028e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_037",
+        "before_m": 2.04519212743115e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_043",
+        "before_m": 4.86666818694248e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931854_Fragment_053",
+        "before_m": 2.8049985319189563e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 2.2365419352632365e-07,
+    "max_point_gap_m": 8.886203499046388e-08
+  },
+  {
+    "package": "knu-osm-468931893-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-468931893_Fragment_010",
+        "before_m": 2.0233804982894288e-05,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.1428984357936267e-06,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-osm-468931896-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-468931896_Fragment_007",
+        "before_m": 1.3852683380638497e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931896_Fragment_027",
+        "before_m": 2.5266467073403742e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-468931896_Fragment_062",
+        "before_m": 2.3408106842981447e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 3.7918414130810874e-07,
+    "max_point_gap_m": 7.963761063826065e-08
+  },
+  {
+    "package": "knu-osm-468931915-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-468931915_Fragment_005",
+        "before_m": 2.1327456094788477e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_009",
+        "before_m": 2.527610196118024e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_017",
+        "before_m": 1.51225765904206e-06,
+        "after_m": 1.1102230246251565e-16
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_019",
+        "before_m": 2.5050082627653403e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_021",
+        "before_m": 2.3429544826480964e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_034",
+        "before_m": 1.8035591192733236e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_035",
+        "before_m": 2.095756689302064e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_060",
+        "before_m": 2.2958303553255455e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-468931915_Fragment_061",
+        "before_m": 2.5350809169100152e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.4316404707837016e-06,
+    "max_point_gap_m": 8.704752806982341e-08
+  },
+  {
+    "package": "knu-osm-524161868-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-524161868_Fragment_002",
+        "before_m": 1.0231715374509065e-05,
+        "after_m": 4.163336342344337e-17
+      },
+      {
+        "node": "SM_osm-524161868_Fragment_021",
+        "before_m": 5.7691876610976855e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-524161868_Fragment_024",
+        "before_m": 2.8882777478311805e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-524161868_Fragment_044",
+        "before_m": 1.0588683283518918e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 6.134419589173823e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-osm-576358734-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-576358734_Fragment_003",
+        "before_m": 2.1808149990587555e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_005",
+        "before_m": 2.9548534865586618e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_011",
+        "before_m": 7.237959983918962e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_014",
+        "before_m": 6.968080992320047e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_026",
+        "before_m": 8.886844685362938e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_034",
+        "before_m": 5.540672443626882e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_035",
+        "before_m": 8.631677340276145e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_036",
+        "before_m": 2.3160901566621206e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_043",
+        "before_m": 8.201149261810592e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_056",
+        "before_m": 2.189010388925494e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-576358734_Fragment_063",
+        "before_m": 2.572970486752757e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 9.544228424251955e-08,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-osm-577759119-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-577759119_Fragment_036",
+        "before_m": 2.106003961424574e-05,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 2.8718907363334267e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-osm-584385630-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-584385630_Fragment_008",
+        "before_m": 3.816408496448709e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584385630_Fragment_013",
+        "before_m": 3.9670279619596904e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584385630_Fragment_021",
+        "before_m": 1.85325803941927e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584385630_Fragment_036",
+        "before_m": 2.6648103693682756e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584385630_Fragment_050",
+        "before_m": 1.8170854235721734e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 9.596685468515886e-08,
+    "max_point_gap_m": 1.0323827311807139e-07
+  },
+  {
+    "package": "knu-osm-584386432-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_osm-584386432_Fragment_002",
+        "before_m": 3.879330999101427e-06,
+        "after_m": 1.1102230246251565e-16
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_019",
+        "before_m": 4.556863923976806e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_031",
+        "before_m": 3.758993772751129e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_041",
+        "before_m": 1.5987787364002415e-06,
+        "after_m": 1.1102230246251565e-16
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_045",
+        "before_m": 5.1488900929541614e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_049",
+        "before_m": 3.4893180081985165e-06,
+        "after_m": 1.1102230246251565e-16
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_053",
+        "before_m": 4.238239328130389e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_059",
+        "before_m": 3.509201849660748e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_osm-584386432_Fragment_060",
+        "before_m": 3.7010414549731863e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.3469621340522764e-07,
+    "max_point_gap_m": 9.004497502201662e-08
+  },
+  {
+    "package": "knu-osm-972016220-v71-b10-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 2.9117960836932966e-07,
+    "max_point_gap_m": 8.095545251705024e-08
+  }
+]

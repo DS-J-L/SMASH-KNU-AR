@@ -1,0 +1,194 @@
+{
+  "frames": 70,
+  "per_model": {
+    "vw/21": {
+      "NW": {
+        "changed_pixels": 30144,
+        "changed_pixels_gt_12": 29264,
+        "max_channel_delta": 48
+      },
+      "SE": {
+        "changed_pixels": 28101,
+        "changed_pixels_gt_12": 27210,
+        "max_channel_delta": 43
+      },
+      "top": {
+        "changed_pixels": 50709,
+        "changed_pixels_gt_12": 49587,
+        "max_channel_delta": 44
+      },
+      "NE": {
+        "changed_pixels": 30609,
+        "changed_pixels_gt_12": 29631,
+        "max_channel_delta": 39
+      },
+      "SW": {
+        "changed_pixels": 30194,
+        "changed_pixels_gt_12": 29328,
+        "max_channel_delta": 43
+      }
+    },
+    "vw/52": {
+      "NW": {
+        "changed_pixels": 30623,
+        "changed_pixels_gt_12": 23688,
+        "max_channel_delta": 59
+      },
+      "SE": {
+        "changed_pixels": 28553,
+        "changed_pixels_gt_12": 20540,
+        "max_channel_delta": 58
+      },
+      "top": {
+        "changed_pixels": 50964,
+        "changed_pixels_gt_12": 39844,
+        "max_channel_delta": 56
+      },
+      "NE": {
+        "changed_pixels": 31100,
+        "changed_pixels_gt_12": 27443,
+        "max_channel_delta": 45
+      },
+      "SW": {
+        "changed_pixels": 30677,
+        "changed_pixels_gt_12": 25251,
+        "max_channel_delta": 59
+      }
+    },
+    "vw/110": {
+      "NW": {
+        "changed_pixels": 28072,
+        "changed_pixels_gt_12": 27571,
+        "max_channel_delta": 54
+      },
+      "SE": {
+        "changed_pixels": 26149,
+        "changed_pixels_gt_12": 25648,
+        "max_channel_delta": 55
+      },
+      "top": {
+        "changed_pixels": 42362,
+        "changed_pixels_gt_12": 41825,
+        "max_channel_delta": 52
+      },
+      "NE": {
+        "changed_pixels": 28516,
+        "changed_pixels_gt_12": 27966,
+        "max_channel_delta": 49
+      },
+      "SW": {
+        "changed_pixels": 28128,
+        "changed_pixels_gt_12": 27596,
+        "max_channel_delta": 56
+      }
+    },
+    "vw/20": {
+      "NW": {
+        "changed_pixels": 28581,
+        "changed_pixels_gt_12": 26012,
+        "max_channel_delta": 47
+      },
+      "SE": {
+        "changed_pixels": 26990,
+        "changed_pixels_gt_12": 24384,
+        "max_channel_delta": 46
+      },
+      "top": {
+        "changed_pixels": 46982,
+        "changed_pixels_gt_12": 43202,
+        "max_channel_delta": 43
+      },
+      "NE": {
+        "changed_pixels": 28610,
+        "changed_pixels_gt_12": 26088,
+        "max_channel_delta": 35
+      },
+      "SW": {
+        "changed_pixels": 28614,
+        "changed_pixels_gt_12": 25930,
+        "max_channel_delta": 46
+      }
+    },
+    "vw/62": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "vw/22": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "vw/33": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      }
+    }
+  }
+}

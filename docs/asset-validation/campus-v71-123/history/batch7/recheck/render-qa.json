@@ -1,0 +1,217 @@
+{
+  "restored_material_frames": 35,
+  "restored_wire_frames": 14,
+  "all_match_prior_review": true,
+  "per_model": {
+    "vw/143": {
+      "restored-vw-143-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e9d11ff77e66d1f62f926ad2de525a064e88954a473ca81d11473d9af986927a"
+      },
+      "restored-vw-143-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "bdd551729597c8186c5700d9f4135b38425dafb8ee0dffeccb85dc200bfdf85c"
+      },
+      "restored-vw-143-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "327915b809d10c8b093f454460a59f44e6121d85be167e183db2061bbe3f51d1"
+      },
+      "restored-vw-143-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "88e205d88d4f239a0d62228992a759b752c94af5483aee85bdb697c44d09f322"
+      },
+      "restored-vw-143-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e93f6589a65a8113554b95e854e73b1d0e1f65b26de4972c3be29c0e904ea569"
+      },
+      "wire-vw-143_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "5037844dfa80420d6a3d558e0eb763f2ba3a6c5e90b0f600b309dd389fe617ed"
+      },
+      "wire-vw-143_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "f3c44787e0ef5203454f84b8c61d69000633e5d2391a043f2a84ecdf8e4008f9"
+      }
+    },
+    "vw/50": {
+      "restored-vw-50-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "31807faea29d113ae3f3d236b32a9246e9dba85bbbc18462734dc69b9696a455"
+      },
+      "restored-vw-50-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "acb048beec735ff42082d455d0f139291ce427352161997c00f1c76938cf8c83"
+      },
+      "restored-vw-50-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "25c4f412d63ea63323bf03d2a08f0371d34bae610763d1d8905d6edabb14c548"
+      },
+      "restored-vw-50-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "6663277903c037df74dabcd2859d90c7079ed6a321c0abab834120afa589f8dd"
+      },
+      "restored-vw-50-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "8f140dffda52d0a352a7d9bf0a264d26b5e4d04e9741edce3b2ae9a9b767c5e1"
+      },
+      "wire-vw-50_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "434bec4830de8ef6b5cf1acb8865114856bbe2ab0e1e8e23e5074a511dedeb66"
+      },
+      "wire-vw-50_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "218bc2c823085eb1b44a187734d9dc624829c8ab240b248aed8a4fef5efa0124"
+      }
+    },
+    "vw/130": {
+      "restored-vw-130-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "59c50f91e7bebbdac6568289acc315a72b1f84b1e04c4feddf7dde50d85a4e1b"
+      },
+      "restored-vw-130-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "08113cced994f40ae903f37f3b4453b21bde85284b18976db84b69faa0caa16b"
+      },
+      "restored-vw-130-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "962fd5d8f7b8bc6e56aa16d4349488bda24fa1582f17dbf0126e8ac60f8a7405"
+      },
+      "restored-vw-130-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "f0e163e63a38518679a480f40fca0341e1c4b37fcaa534c8f008afced697593b"
+      },
+      "restored-vw-130-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "abad5908adbcea2e619d62a0e93ed5b162659ef8f32f8284391eef90782ac002"
+      },
+      "wire-vw-130_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "032f758a5bb9c30adbc457fe99d733be63cb05caf1a70b129a5b2e22f960c498"
+      },
+      "wire-vw-130_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "aa5e8291997fdf6a3a760b4c0bb5283dc210d70d86da6320da0a49b2cf5e0403"
+      }
+    },
+    "vw/163": {
+      "restored-vw-163-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "6db0c56c6822490ff4cdd3cffbd609d294a313b9a061b890f3d49a23291119a1"
+      },
+      "restored-vw-163-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "2122bf4b8ba6091acd1caaf88be64051d7ba4e5476eeb955de762ca741f52a14"
+      },
+      "restored-vw-163-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "62723aff73abb705ffa29e1e69f2db140d08c0de9e0355393fb848ae85e958f0"
+      },
+      "restored-vw-163-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "5b89e3eddb2f3b599dbc1d00d9c5be40e1021ca4f69ab472a9774ae12757cdbe"
+      },
+      "restored-vw-163-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "644625cf09a529e76f21f622692dd0cc69341d4c403e5887326d96f91b87af47"
+      },
+      "wire-vw-163_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "eabbb00654ac0dc535ad6e6ee38abc559fc33eaf89f2ca7e1a9b9919c8cf1eb6"
+      },
+      "wire-vw-163_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "affd6e65f6de3ebc09421769c61c44486d98c9474ff1e03e7e19077932929a72"
+      }
+    },
+    "vw/18": {
+      "restored-vw-18-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "dedfe1aea638c2f13d912a7e33cd5200e938510606c371869e90c76662b21530"
+      },
+      "restored-vw-18-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "506e731be2e250a9c9ebaf54e725bd443a442f5984bc4c32be12701e64e736f0"
+      },
+      "restored-vw-18-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "a5240f03d218bcdf84e47cb5ca0a2979f68999abb8df3df83a46714276352d25"
+      },
+      "restored-vw-18-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "65776f0b3731e0c29b1a9d81283a55d2a49a7b03a03d51a5fad95188e14bc976"
+      },
+      "restored-vw-18-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "0c6d308a292bf266106270a5be8202f73be2032c208452cf61e6231c592f51a0"
+      },
+      "wire-vw-18_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e71a801fdf3860c76df05cdd9d86b339a2d0cd8b47316adf92780f8ff230b657"
+      },
+      "wire-vw-18_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "1f3ca3149697a67287321b500ad82322c134f74560717f27142da32e4c2b8cd9"
+      }
+    },
+    "vw/79": {
+      "restored-vw-79-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "1a6db06cc842847dd0342d3f77c068b67789ab022cd4af145ff721329945bde1"
+      },
+      "restored-vw-79-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "dcb9eb02bc2e2735e5ff41557d50a70c201f14c30cef52e201a4a72f504ad176"
+      },
+      "restored-vw-79-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e634afd2b9e46cdbfe961b048a94d2459bb09d201755853734869a9a91490c5f"
+      },
+      "restored-vw-79-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "0d8a4c7b594f85685f2cf70cb178e741b72128cf5a04661700dedd6bb34a6262"
+      },
+      "restored-vw-79-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "4bb48a753c00e6384c312c4138fdf8f066e0a86bd66c492a9ff22da4a998cc64"
+      },
+      "wire-vw-79_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "18197bea514421e0f7aea9c9bf3a3d1c78f57ee0e635bdae1267a5c1dcc97fda"
+      },
+      "wire-vw-79_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "3e61a7de158793a47c531b06535233d665167c9e230148302ed15fbc4c08c82d"
+      }
+    },
+    "vw/166": {
+      "restored-vw-166-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "500e2ea408ea00305a31a95f33351dd1b23b3ee15db75976f869fc7d025ccbce"
+      },
+      "restored-vw-166-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "2a679e0c3fe8b886a18bff2beaa2b6426202fdc78413e3bdfbd2c22ac12669fb"
+      },
+      "restored-vw-166-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "77c8bf0bf4e781f98cfcd01db51adc2a5f93886e9a9fa05e5599b995d2881321"
+      },
+      "restored-vw-166-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "213cfda1a09b1bd830b740d4302bdbd495c06e6b6ac3865582fdee1345aae817"
+      },
+      "restored-vw-166-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "15341d0fc86bb70f7879c97590ce278b011a38b3f96fc18c97b1c6fbac5e74cb"
+      },
+      "wire-vw-166_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "eafb3fde5e0a355b384ce1251d490c5996e7a6b012877b44142f5251626e9798"
+      },
+      "wire-vw-166_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "b2ff7db7809810620579ffa5fcc69f3d330d780452c56c64b1c0939fbac9e22b"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-lifelong-v71-b2-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.3114379316688009,
+  "volume_relative_error": 3.6684240720425765e-08,
+  "errors": [],
+  "source_blend_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c"
+}

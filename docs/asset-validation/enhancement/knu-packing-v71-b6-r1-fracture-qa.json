@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-packing-v71-b6-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.576767260092323,
+  "volume_relative_error": 1.1895702480859286e-09,
+  "errors": [],
+  "source_blend_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6"
+}

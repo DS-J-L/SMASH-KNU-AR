@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-gh52-v71-b8-r1-fracture",
+  "display_name": "온실 5-2",
+  "source_model_id": "vw/52",
+  "source_campus": "knu-campus-v71-batch8-r1.blend",
+  "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+  "source_object": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "mesh": "v7 | 추가 건물 | 온실 5-2 [vw/52].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    266.16156005859375,
+    488.4144287109375,
+    -15.661797523498535
+  ],
+  "scale_from_campus": 0.18583098540719872,
+  "source_dimensions_campus_z_up_m": [
+    9.68890380859375,
+    11.838714599609375,
+    4.223272323608398
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    1.8004984855651855,
+    0.7848148345947266,
+    2.1999999284744263
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

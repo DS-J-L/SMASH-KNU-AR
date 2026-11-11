@@ -1,0 +1,28 @@
+{
+  "preserved_catalog_entries": 70,
+  "checked_existing_assets": 280,
+  "added_catalog_entries": 4,
+  "total_catalog_entries": 74,
+  "installed": [
+    {
+      "id": "knu-pp-structural-v71-b9-r1-fracture",
+      "label": "PP구조실습실 · 64개 파편 · 9번 묶음",
+      "folder": "knu-pp-structural-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-env-store-v71-b9-r1-fracture",
+      "label": "환경과학연구소창고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-env-store-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-rock-store-v71-b9-r1-fracture",
+      "label": "암석창고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-rock-store-v71-b9-r1-fracture"
+    },
+    {
+      "id": "knu-isotope-store-v71-b9-r1-fracture",
+      "label": "동위원소저장고 · 64개 파편 · 9번 묶음",
+      "folder": "knu-isotope-store-v71-b9-r1-fracture"
+    }
+  ]
+}

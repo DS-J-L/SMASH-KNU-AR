@@ -1,0 +1,102 @@
+{
+  "archive": "knu-campus-v71-batch4-r1-restorable.zip",
+  "sha256": "a3aa9b53247b57c22e6f266f671825f6b719689fc373a6a9ef3528e7c71ef1c7",
+  "bytes": 106416266,
+  "members": 52,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 13,
+  "restored_checks": {
+    "교수아파트": {
+      "source_id": "osm/469843173",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 교수아파트 [469843173]": {
+      "source_id": "osm/469843173",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "누리관": {
+      "source_id": "osm/854306251",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 누리관 [854306251]": {
+      "source_id": "osm/854306251",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "누리관.001": {
+      "source_id": "osm/854306497",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 누리관 [854306497]": {
+      "source_id": "osm/854306497",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "면학관": {
+      "source_id": "osm/524021464",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "보람관": {
+      "source_id": "osm/1300033666",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 보람관 [1300033666]": {
+      "source_id": "osm/1300033666",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "첨성관": {
+      "source_id": "osm/468931911",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 첨성관 [468931911]": {
+      "source_id": "osm/468931911",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "백호관": {
+      "source_id": "osm/468931928",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 백호관 [468931928]": {
+      "source_id": "osm/468931928",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

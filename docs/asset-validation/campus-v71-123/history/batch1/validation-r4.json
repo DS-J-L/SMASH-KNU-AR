@@ -1,0 +1,365 @@
+{
+  "preservation": {
+    "pass": true,
+    "changed_objects": [
+      "IT 2호관",
+      "v7 | 창 근사 | 미래창직관 [1408182451]",
+      "v7 | 창 근사 | 반도체융합연구동 [524021469]",
+      "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "v8 | 태양광 | 공대 7호관",
+      "공대 7호관",
+      "미래창직관",
+      "반도체융합연구동",
+      "연구실 안전관리센터",
+      "제2체육관"
+    ],
+    "unchanged_native_and_decoded_glb": 1725,
+    "protected_dot_ids": 53,
+    "source_triangle_count": 902354,
+    "candidate_triangle_count": 901836,
+    "v71_glb_sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+    "batch_glb_sha256": "a8cf21d42c87b3a7b421d8270d896c8220adc2ab5a73e9ea0d227b698442668c",
+    "new_materials": [
+      "Batch1_eng7_Observed",
+      "Batch1_future_Observed",
+      "Batch1_gym_Observed",
+      "Batch1_it2_Observed",
+      "Batch1_safety_Observed",
+      "Batch1_semi_Observed",
+      "M_vw8_NorthGate_ObservedGlazing"
+    ],
+    "new_images": [
+      "Batch1_eng7_Atlas",
+      "Batch1_future_Atlas",
+      "Batch1_gym_Atlas",
+      "Batch1_it2_Atlas",
+      "Batch1_safety_Atlas",
+      "Batch1_semi_Atlas",
+      "T_vw8_NorthGate_ObservedGlazing"
+    ],
+    "unused_original_glb_materials": [],
+    "unused_original_glb_images": []
+  },
+  "roundtrip": {
+    "pass": true,
+    "objects": 1735,
+    "unchanged_others": 1725,
+    "target_meshes": {
+      "반도체융합연구동": {
+        "triangles": 28,
+        "bounds": [
+          [
+            173.5,
+            -290.1400146484375,
+            -4.817201137542725
+          ],
+          [
+            202.77000427246094,
+            -261.8900146484375,
+            7.872367858886719
+          ]
+        ],
+        "maximum_uv_error": 0.0,
+        "collider_present": false
+      },
+      "v8 | 태양광 | 공대 7호관": {
+        "triangles": 1080,
+        "bounds": [
+          [
+            8.899999618530273,
+            -339.70001220703125,
+            13.596863746643066
+          ],
+          [
+            57.599998474121094,
+            -331.8999938964844,
+            13.719775199890137
+          ]
+        ],
+        "maximum_uv_error": null,
+        "collider_present": false
+      },
+      "미래창직관": {
+        "triangles": 122,
+        "bounds": [
+          [
+            -2.369999885559082,
+            -303.3399963378906,
+            -4.181832790374756
+          ],
+          [
+            57.38999938964844,
+            -270.3500061035156,
+            23.68000030517578
+          ]
+        ],
+        "maximum_uv_error": 0.0,
+        "collider_present": false
+      },
+      "공대 7호관": {
+        "triangles": 28,
+        "bounds": [
+          [
+            6.480000019073486,
+            -341.30999755859375,
+            -3.8458492755889893
+          ],
+          [
+            60.27000045776367,
+            -323.1400146484375,
+            13.627591133117676
+          ]
+        ],
+        "maximum_uv_error": 0.0,
+        "collider_present": false
+      },
+      "제2체육관": {
+        "triangles": 314,
+        "bounds": [
+          [
+            -537.786376953125,
+            -90.01000213623047,
+            -11.713868141174316
+          ],
+          [
+            -427.489990234375,
+            -14.100000381469727,
+            -3.3081178665161133
+          ]
+        ],
+        "maximum_uv_error": 0.0,
+        "collider_present": false
+      },
+      "v7 | 창 근사 | 미래창직관 [1408182451]": {
+        "triangles": 756,
+        "bounds": [
+          [
+            -2.349137306213379,
+            -302.60003662109375,
+            -2.178421974182129
+          ],
+          [
+            57.4397087097168,
+            -270.3369140625,
+            7.741578102111816
+          ]
+        ],
+        "maximum_uv_error": null,
+        "collider_present": false
+      },
+      "v7 | 창 근사 | 반도체융합연구동 [524021469]": {
+        "triangles": 648,
+        "bounds": [
+          [
+            174.26800537109375,
+            -290.1982727050781,
+            -2.887632131576538
+          ],
+          [
+            202.82852172851562,
+            -261.832275390625,
+            7.032367706298828
+          ]
+        ],
+        "maximum_uv_error": null,
+        "collider_present": false
+      },
+      "연구실 안전관리센터": {
+        "triangles": 28,
+        "bounds": [
+          [
+            -233.58999633789062,
+            -344.510009765625,
+            -9.01845645904541
+          ],
+          [
+            -217.38999938964844,
+            -334.45001220703125,
+            3.7611188888549805
+          ]
+        ],
+        "maximum_uv_error": 0.0,
+        "collider_present": false
+      },
+      "IT 2호관": {
+        "triangles": 130,
+        "bounds": [
+          [
+            85.41000366210938,
+            -340.5400085449219,
+            -4.215249538421631
+          ],
+          [
+            149.25,
+            -273.3900146484375,
+            8.701202392578125
+          ]
+        ],
+        "maximum_uv_error": 2.9802322387695312e-08,
+        "collider_present": false
+      },
+      "v7 | 추가 건물 | 북문수위실 [vw/8]": {
+        "triangles": 196,
+        "bounds": [
+          [
+            -91.37850189208984,
+            215.42349243164062,
+            -8.536530494689941
+          ],
+          [
+            -81.98930358886719,
+            225.05499267578125,
+            -4.456409931182861
+          ]
+        ],
+        "maximum_uv_error": 2.60770320892334e-08,
+        "collider_present": false
+      }
+    },
+    "library_appended": true,
+    "tested_asset_only": true,
+    "imported_triangle_counts": {
+      "baseline": 902343,
+      "batch1": 901825
+    }
+  },
+  "asset_qa": {
+    "quality": {
+      "IT 2호관": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.2152 (not resting on ground plane z=0)"
+        ]
+      },
+      "제2체육관": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-11.7139 (not resting on ground plane z=0)"
+        ]
+      },
+      "공대 7호관": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-3.8458 (not resting on ground plane z=0)"
+        ]
+      },
+      "미래창직관": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.1818 (not resting on ground plane z=0)"
+        ]
+      },
+      "반도체융합연구동": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-4.8172 (not resting on ground plane z=0)"
+        ]
+      },
+      "연구실 안전관리센터": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-9.0185 (not resting on ground plane z=0)"
+        ]
+      },
+      "v7 | 추가 건물 | 북문수위실 [vw/8]": {
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "asset lowest point z=-8.5365 (not resting on ground plane z=0)"
+        ]
+      }
+    },
+    "future_overlap": {
+      "v71": {
+        "v7 | 창 근사 | 미래창직관 [1408182451]": 412,
+        "SM_CampusTerrain_v11": 68,
+        "SM_CampusRoutes_v16": 29
+      },
+      "candidate": {
+        "v7 | 창 근사 | 미래창직관 [1408182451]": 288,
+        "SM_CampusTerrain_v11": 71,
+        "SM_CampusRoutes_v16": 31
+      },
+      "new_object_pairs": []
+    }
+  },
+  "gltf_validator": {
+    "validator": "2.0.0-dev.3.10",
+    "pass": true
+  },
+  "gltf_issues": {
+    "before": {
+      "file": "knu-campus-v71.glb",
+      "errors": 0,
+      "totalWarnings": 3,
+      "truncated": false,
+      "warnings": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "공대 12호관_408_exact_underside_prototype",
+          "material": "C408E_20261109_west_e0_synthetic_red_masonry"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "약학대학.003",
+          "material": "C118P_20261109_observed_e5_synthetic_brown_masonry"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "정보화본부.001",
+          "material": "C110I_20261109_observed_front_synthetic_red_masonry"
+        }
+      ]
+    },
+    "after": {
+      "file": "knu-campus-v71-batch1-r4.glb",
+      "errors": 0,
+      "totalWarnings": 3,
+      "truncated": false,
+      "warnings": [
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "공대 12호관_408_exact_underside_prototype",
+          "material": "C408E_20261109_west_e0_synthetic_red_masonry"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "약학대학.003",
+          "material": "C118P_20261109_observed_e5_synthetic_brown_masonry"
+        },
+        {
+          "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+          "mesh": "정보화본부.001",
+          "material": "C110I_20261109_observed_front_synthetic_red_masonry"
+        }
+      ]
+    }
+  },
+  "visual_review": {
+    "before": 21,
+    "candidate": 21,
+    "angles_per_model": 3,
+    "reviewed_final_sheets": [
+      "visual-check-0.png",
+      "visual-check-4.png"
+    ]
+  },
+  "unverified": [
+    "game application",
+    "runtime collision",
+    "AR alignment",
+    "device performance"
+  ]
+}

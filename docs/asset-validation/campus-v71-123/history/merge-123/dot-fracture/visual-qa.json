@@ -1,0 +1,43 @@
+{
+  "screens": 24,
+  "roi_xyxy_relative_to_header_bottom": [
+    565,
+    144,
+    1280,
+    824
+  ],
+  "models": {
+    "osm/468931867": {
+      "destruction_changed_pixels": 150021,
+      "restored_different_pixels": 0
+    },
+    "osm/468931887": {
+      "destruction_changed_pixels": 80663,
+      "restored_different_pixels": 0
+    },
+    "osm/468931898": {
+      "destruction_changed_pixels": 85802,
+      "restored_different_pixels": 0
+    },
+    "osm/468931905": {
+      "destruction_changed_pixels": 109062,
+      "restored_different_pixels": 0
+    },
+    "osm/468931909": {
+      "destruction_changed_pixels": 121644,
+      "restored_different_pixels": 0
+    },
+    "osm/468931920": {
+      "destruction_changed_pixels": 78080,
+      "restored_different_pixels": 0
+    },
+    "osm/468931924": {
+      "destruction_changed_pixels": 123221,
+      "restored_different_pixels": 0
+    },
+    "osm/473684409": {
+      "destruction_changed_pixels": 125441,
+      "restored_different_pixels": 0
+    }
+  }
+}

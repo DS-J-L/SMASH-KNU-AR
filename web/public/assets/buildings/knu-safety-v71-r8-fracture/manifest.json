@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-safety-v71-r8-fracture",
+  "display_name": "연구실 안전관리센터",
+  "source_model_id": "468931889",
+  "source_campus": "knu-campus-v71-batch1-r8.blend",
+  "source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "source_object": "연구실 안전관리센터",
+  "source_objects": [
+    {
+      "object": "연구실 안전관리센터",
+      "mesh": "연구실 안전관리센터.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -225.489990234375,
+    -339.4800109863281,
+    -9.01845645904541
+  ],
+  "scale_from_campus": 0.13580249471829162,
+  "source_dimensions_campus_z_up_m": [
+    16.199996948242188,
+    10.05999755859375,
+    12.77957534790039
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.1999999284744263,
+    1.7354981899261475,
+    1.3661727905273438
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic"
+}

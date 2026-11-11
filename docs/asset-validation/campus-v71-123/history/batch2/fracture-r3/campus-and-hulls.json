@@ -1,0 +1,282 @@
+{
+  "campus_blend_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+  "scene_objects": 1735,
+  "source_objects": {
+    "v7 | 추가 건물 | 취업정보센터 [vw/127]": {
+      "triangles": 76,
+      "materials": [
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #c0d1d2"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "융합교육정보관": {
+      "triangles": 52,
+      "materials": [
+        "Batch2_convergence_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #879695"
+      ],
+      "uv_layers": 1,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 창 근사 | 융합교육정보관 [1026072764]": {
+      "triangles": 3168,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "교육대학원": {
+      "triangles": 168,
+      "materials": [
+        "Batch2R2_EducationGableMasonry",
+        "Batch2R2_EducationTealRoof",
+        "Batch2_educgrad_Observed",
+        "campus stone",
+        "v8 | 위성 지붕 교육대학원"
+      ],
+      "uv_layers": 1,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 창 근사 | 교육대학원 [469617252]": {
+      "triangles": 672,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "대학원동": {
+      "triangles": 52,
+      "materials": [
+        "Batch2R2_GradBrownRoof",
+        "Batch2R2_GradGableMasonry",
+        "Batch2_grad-roof_Observed",
+        "Batch2_grad_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #718285"
+      ],
+      "uv_layers": 1,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 창 근사 | 대학원동 [468931865]": {
+      "triangles": 1320,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 추가 건물 | 교양과정동 [vw/95]": {
+      "triangles": 36,
+      "materials": [
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #979382"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "평생교육원": {
+      "triangles": 84,
+      "materials": [
+        "Batch2R2_LifelongLightFrame",
+        "Batch2R2_LifelongTowerCap",
+        "Batch2R2_LifelongTowerGlazing",
+        "Batch2_lifelong_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #6f7f82"
+      ],
+      "uv_layers": 1,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 창 근사 | 평생교육원 [468931916]": {
+      "triangles": 792,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "uv_layers": 0,
+      "max_bidirectional_vertex_gap_m": 0.0
+    },
+    "v7 | 추가 건물 | 사범대학 [vw/147]": {
+      "triangles": 148,
+      "materials": [
+        "Batch2_teachers_Observed",
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #76816f"
+      ],
+      "uv_layers": 1,
+      "max_bidirectional_vertex_gap_m": 0.0
+    }
+  },
+  "packages": {
+    "knu-career-v71-b2-r3-fracture": {
+      "name": "취업정보센터",
+      "model_id": "vw/127",
+      "objects": [
+        "v7 | 추가 건물 | 취업정보센터 [vw/127]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r1.blend",
+      "origin_campus_z_up_m": [
+        176.564697265625,
+        55.750999450683594,
+        -0.9803783893585205
+      ],
+      "scale": 0.13852329390966825,
+      "size_campus_z_up_m": [
+        15.881805419921875,
+        14.547599792480469,
+        4.366223335266113
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 9.443267984243775e-08,
+      "max_hull_input_vertex_gap_m": 8.219366226463863e-08
+    },
+    "knu-convergence-v71-b2-r3-fracture": {
+      "name": "융합교육정보관",
+      "model_id": "1026072764",
+      "objects": [
+        "융합교육정보관",
+        "v7 | 창 근사 | 융합교육정보관 [1026072764]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r1.blend",
+      "origin_campus_z_up_m": [
+        334.02000427246094,
+        19.65499973297119,
+        -2.1969540119171143
+      ],
+      "scale": 0.025815535889308787,
+      "size_campus_z_up_m": [
+        85.22000122070312,
+        60.96999931335449,
+        28.655404329299927
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 4.2205135932643634e-07,
+      "max_hull_input_vertex_gap_m": 8.184554195491992e-08
+    },
+    "knu-educgrad-v71-b2-r2-fracture": {
+      "name": "교육대학원",
+      "model_id": "469617252",
+      "objects": [
+        "교육대학원",
+        "v7 | 창 근사 | 교육대학원 [469617252]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r2.blend",
+      "origin_campus_z_up_m": [
+        311.81500244140625,
+        -33.795000076293945,
+        -3.0298244953155518
+      ],
+      "scale": 0.030859877655680795,
+      "size_campus_z_up_m": [
+        71.28997802734375,
+        54.59000015258789,
+        13.40982460975647
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 1.0183423629628319e-06,
+      "max_hull_input_vertex_gap_m": 8.083785536345408e-08
+    },
+    "knu-grad-v71-b2-r3-fracture": {
+      "name": "대학원동",
+      "model_id": "468931865",
+      "objects": [
+        "대학원동",
+        "v7 | 창 근사 | 대학원동 [468931865]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r2.blend",
+      "origin_campus_z_up_m": [
+        -4.079998970031738,
+        -60.09499931335449,
+        -7.05856466293335
+      ],
+      "scale": 0.032419688211733584,
+      "size_campus_z_up_m": [
+        67.85999870300293,
+        28.729999542236328,
+        29.158565044403076
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 1.3704812308612535e-07,
+      "max_hull_input_vertex_gap_m": 8.139808820085512e-08
+    },
+    "knu-liberal-v71-b2-r3-fracture": {
+      "name": "교양과정동",
+      "model_id": "vw/95",
+      "objects": [
+        "v7 | 추가 건물 | 교양과정동 [vw/95]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r1.blend",
+      "origin_campus_z_up_m": [
+        -116.8489990234375,
+        -54.10710144042969,
+        -6.665948390960693
+      ],
+      "scale": 0.02699168191798138,
+      "size_campus_z_up_m": [
+        81.506591796875,
+        23.376602172851562,
+        14.827001094818115
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 9.008790280429224e-08,
+      "max_hull_input_vertex_gap_m": 8.104469282960586e-08
+    },
+    "knu-lifelong-v71-b2-r3-fracture": {
+      "name": "평생교육원",
+      "model_id": "468931916",
+      "objects": [
+        "평생교육원",
+        "v7 | 창 근사 | 평생교육원 [468931916]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r2.blend",
+      "origin_campus_z_up_m": [
+        -26.550000078976154,
+        284.43499755859375,
+        -8.87239933013916
+      ],
+      "scale": 0.034815634040210375,
+      "size_campus_z_up_m": [
+        53.58000014722347,
+        63.19000244140625,
+        13.822399139404297
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 6.411342142187415e-07,
+      "max_hull_input_vertex_gap_m": 8.444276998381747e-08
+    },
+    "knu-teachers-v71-b2-r3-fracture": {
+      "name": "사범대학",
+      "model_id": "vw/147",
+      "objects": [
+        "v7 | 추가 건물 | 사범대학 [vw/147]"
+      ],
+      "source_campus": "knu-campus-v71-batch2-r1.blend",
+      "origin_campus_z_up_m": [
+        309.86199951171875,
+        -3.192000389099121,
+        -2.112076997756958
+      ],
+      "scale": 0.021218887475400496,
+      "size_campus_z_up_m": [
+        103.68121337890625,
+        57.18720054626465,
+        18.16071057319641
+      ],
+      "object_transforms_match": true,
+      "hulls": 64,
+      "max_vertex_outside_hull_m": 1.9570937302704206e-07,
+      "max_hull_input_vertex_gap_m": 8.171238671152102e-08
+    }
+  },
+  "hull_failures": []
+}

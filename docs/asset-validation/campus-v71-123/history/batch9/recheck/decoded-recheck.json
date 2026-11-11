@@ -1,0 +1,76 @@
+{
+  "candidate_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "baseline_sha256": "0fad94409490edbb58ae3709d956f73ddb160aea146d728260a615221139f9f5",
+  "v71_sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+  "objects": 1735,
+  "preserved_objects": 1731,
+  "dot_protected": 53,
+  "pp_existing_window_mesh_preserved": true,
+  "triangles": 890412,
+  "changed_objects": [
+    "PP구조실습실",
+    "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+    "v7 | 추가 건물 | 암석창고 [vw/10]",
+    "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]"
+  ],
+  "models": {
+    "osm/468931888": {
+      "object": "PP구조실습실",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 49,
+      "glb_vertices_after": 66
+    },
+    "vw/1": {
+      "object": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+      "triangles": 44,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 79,
+      "glb_vertices_after": 90
+    },
+    "vw/10": {
+      "object": "v7 | 추가 건물 | 암석창고 [vw/10]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 43,
+      "glb_vertices_after": 56
+    },
+    "vw/165": {
+      "object": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 43,
+      "glb_vertices_after": 56
+    }
+  },
+  "added_roof_images": [
+    [
+      "Batch9_env-store_Atlas",
+      "image/png",
+      "dfcf646fcf02395564eaced3d477117043a672284ed780a8c3d321ccf8e4b150"
+    ],
+    [
+      "Batch9_pp_Atlas",
+      "image/png",
+      "dfc5019e9636685af25572e54fd9944a86656fabc7d08d5221b33d1438e258e1"
+    ],
+    [
+      "Batch9_rock-store_Atlas",
+      "image/png",
+      "a3e1c6039a642fc6a9ca76a1baa29275d79cabc7eb84f12cf258f4e6435e7f90"
+    ]
+  ],
+  "local_game_registrations_found": []
+}

@@ -1,0 +1,39 @@
+{
+  "archive": "knu-campus-v71-batch9-r1-restorable.zip",
+  "sha256": "f621be88f7eee73f9758f2b3fcb0c63153311f0e24aaafbf5e9d71956c0baa91",
+  "bytes": 111747757,
+  "members": 43,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 4,
+  "restored_checks": {
+    "PP구조실습실": {
+      "source_id": "osm/468931888",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]": {
+      "source_id": "vw/1",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 암석창고 [vw/10]": {
+      "source_id": "vw/10",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 동위원소저장고 [vw/165]": {
+      "source_id": "vw/165",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "농업생명과학관": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-15.4874 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -15.4874,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "농업생명과학관": {
+        "verts": 32,
+        "faces": 44,
+        "tris": 60,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.38,
+        "uv_coverage_pct": 64.6
+      }
+    }
+  },
+  "동물사육장": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-11.1625 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -11.1625,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "동물사육장": {
+        "verts": 16,
+        "faces": 20,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.03,
+        "uv_coverage_pct": 87.4
+      }
+    }
+  },
+  "사과센터": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-5.4018 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -5.4018,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "사과센터": {
+        "verts": 16,
+        "faces": 20,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 4,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.88,
+        "uv_coverage_pct": 98.0
+      }
+    }
+  },
+  "v7 | 추가 건물 | 농대사과센터 [vw/113]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-4.8968 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -4.8968,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 농대사과센터 [vw/113]": {
+        "verts": 16,
+        "faces": 14,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.02,
+        "uv_coverage_pct": 98.4
+      }
+    }
+  },
+  "수의과대학부속병원": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "수의과대학부속병원: ~70.93% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-4.428 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -4.428,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "수의과대학부속병원": {
+        "verts": 84,
+        "faces": 122,
+        "tris": 164,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 4,
+        "uv_maps": 1,
+        "uv_oob_pct": 5.15,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 70.93,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  },
+  "간호대학": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "간호대학: ~95.5% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-12.6571 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -12.6571,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "간호대학": {
+        "verts": 16,
+        "faces": 20,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 4,
+        "uv_maps": 1,
+        "uv_oob_pct": 1.47,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 95.5,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  }
+}

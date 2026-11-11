@@ -1,0 +1,120 @@
+[
+  {
+    "package": "knu-agri-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_agri_Fragment_017",
+        "before_m": 2.072160357236008e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_agri_Fragment_034",
+        "before_m": 6.7837428479322615e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 8.63442407988968e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-animal-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_animal_Fragment_002",
+        "before_m": 1.6215514944128984e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_animal_Fragment_004",
+        "before_m": 1.7440045012584449e-06,
+        "after_m": 1.1102230246251565e-16
+      },
+      {
+        "node": "SM_animal_Fragment_032",
+        "before_m": 1.6923170660931852e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_animal_Fragment_051",
+        "before_m": 1.7604436359230924e-06,
+        "after_m": 1.1102230246251565e-16
+      }
+    ],
+    "max_outside_m": 1.3671511910340328e-06,
+    "max_point_gap_m": 8.72068100476237e-08
+  },
+  {
+    "package": "knu-apple-annex-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 4.4437457144552717e-07,
+    "max_point_gap_m": 8.886203499046388e-08
+  },
+  {
+    "package": "knu-apple-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 5.215782252765422e-07,
+    "max_point_gap_m": 8.503133215392624e-08
+  },
+  {
+    "package": "knu-nursing-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_nursing_Fragment_016",
+        "before_m": 1.8384622117728622e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_nursing_Fragment_038",
+        "before_m": 2.2445666425202626e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 1.1482570007742554e-06,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-packing-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.4734047076858658e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-vet-v71-b6-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_vet_Fragment_020",
+        "before_m": 1.8583309448205743e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_vet_Fragment_026",
+        "before_m": 4.042058675324256e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_vet_Fragment_027",
+        "before_m": 4.0861171107797745e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_vet_Fragment_042",
+        "before_m": 1.7045226393064272e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_vet_Fragment_052",
+        "before_m": 9.256173200383744e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 7.435872279443201e-07,
+    "max_point_gap_m": 8.404638001828252e-08
+  }
+]

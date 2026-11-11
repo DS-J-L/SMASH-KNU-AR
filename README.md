@@ -18,7 +18,7 @@ FastAPI 등록·2D 관절 수신/검증·시계 교환·시간 정렬·3D 손목
 - `phone_2d`는 폰 손목을 팀원 게임 모듈에 연결해 60초·화면2D 타격·파편96개·타격음·건물당100점·서버 점수를 제공합니다. 실제 깊이/3D 충돌은 계산하지 않습니다. [실행·계약·검증](docs/PHONE_POSE_GAME.md)은 로컬 미커밋 구현 기준이며 합성 시험과 실제 폰 검증을 구분합니다.
 - 서버시각 표시·중계영상 정렬·시각미상 개별표시를 구현했습니다. 실제3대 보정/3D 정합·정량지연·장시간·QR실스캔은 미검증입니다. [방/영상/세션/QR 계약](docs/ROOMS.md)을 참조하세요.
 
-[키보드 파괴·복원 데모](http://127.0.0.1:8765/monitor/fracture/)는 IT1 96개·본관85개 파편, 모델선택·클릭타격·60초·점수·리셋을 제공합니다. synthetic/keyboard_demo로 실제입력과 구분합니다. 캠퍼스v13은 건물123개와 지형을 포함합니다. [에셋 실행](docs/ASSET_PIPELINE.md)·[지도/치수 한계](docs/CAMPUS_MAP_REVIEW.md)·[모델/파편](docs/FRACTURE_REFINEMENT.md)을 참조하세요.
+[키보드 파괴·복원 데모](http://127.0.0.1:8765/monitor/fracture/)는 IT1 96개·본관85개 파편, 모델선택·클릭타격·60초·점수·리셋을 제공합니다. synthetic/keyboard_demo로 실제입력과 구분합니다. 캠퍼스 보기에는 [v71 누적 모델 123개와 지형](docs/CAMPUS_V71_123.md)이 포함됩니다. [에셋 실행](docs/ASSET_PIPELINE.md)·[지도/치수 한계](docs/CAMPUS_MAP_REVIEW.md)·[모델/파편](docs/FRACTURE_REFINEMENT.md)을 참조하세요.
 
 외부HTTPS 접속과 영상 정상 동작은 사용자 보고가 있으며 에이전트의 실제폰 검증과 구분합니다. [SETUP.md](docs/SETUP.md)·[개인 진행 기록](AGENTS/정경호_progress.md)에 실행/검증 범위를 정리합니다.
 

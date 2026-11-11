@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-northgate-v71-r8-fracture",
+  "display_name": "북문수위실",
+  "source_model_id": "vw/8",
+  "source_campus": "knu-campus-v71-batch1-r8.blend",
+  "source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "source_object": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 북문수위실 [vw/8]",
+      "mesh": "v7 | 추가 건물 | 북문수위실 [vw/8].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -86.68389892578125,
+    220.23924255371094,
+    -8.536530494689941
+  ],
+  "scale_from_campus": 0.22841716702840578,
+  "source_dimensions_campus_z_up_m": [
+    9.389198303222656,
+    9.631500244140625,
+    4.08012056350708
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.144654154777527,
+    0.9319695830345154,
+    2.200000047683716
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic"
+}

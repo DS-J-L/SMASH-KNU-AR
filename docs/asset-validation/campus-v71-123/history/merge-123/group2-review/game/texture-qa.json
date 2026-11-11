@@ -1,0 +1,154 @@
+{
+  "osm/1470108675": {
+    "intact.glb": {
+      "image_sha256": "b310e13045530732e8e71137101dc96b8131aaaa6f6f85da9f73921fc7ea34ea",
+      "material": "v71 Group 2 | osm/1470108675 | observed roof",
+      "nodes": [
+        "SM_1470108675_Intact_00"
+      ]
+    },
+    "fragments.glb": {
+      "image_sha256": "b310e13045530732e8e71137101dc96b8131aaaa6f6f85da9f73921fc7ea34ea",
+      "material": "v71 Group 2 | osm/1470108675 | observed roof",
+      "nodes": [
+        "SM_1470108675_Fragment_000",
+        "SM_1470108675_Fragment_004",
+        "SM_1470108675_Fragment_007",
+        "SM_1470108675_Fragment_008",
+        "SM_1470108675_Fragment_010",
+        "SM_1470108675_Fragment_011",
+        "SM_1470108675_Fragment_012",
+        "SM_1470108675_Fragment_017",
+        "SM_1470108675_Fragment_021",
+        "SM_1470108675_Fragment_025",
+        "SM_1470108675_Fragment_027",
+        "SM_1470108675_Fragment_028",
+        "SM_1470108675_Fragment_032",
+        "SM_1470108675_Fragment_034",
+        "SM_1470108675_Fragment_038",
+        "SM_1470108675_Fragment_042",
+        "SM_1470108675_Fragment_045",
+        "SM_1470108675_Fragment_047",
+        "SM_1470108675_Fragment_052",
+        "SM_1470108675_Fragment_054",
+        "SM_1470108675_Fragment_055",
+        "SM_1470108675_Fragment_059",
+        "SM_1470108675_Fragment_060",
+        "SM_1470108675_Fragment_061"
+      ]
+    }
+  },
+  "osm/468931907": {
+    "intact.glb": {
+      "image_sha256": "71706b2f08fa2733dc85990487a9cede81845df3d45d2a87c600e02ff10e0fa7",
+      "material": "v71 Group 2 | osm/468931907 | observed roof",
+      "nodes": [
+        "SM_468931907_Intact_00"
+      ]
+    },
+    "fragments.glb": {
+      "image_sha256": "71706b2f08fa2733dc85990487a9cede81845df3d45d2a87c600e02ff10e0fa7",
+      "material": "v71 Group 2 | osm/468931907 | observed roof",
+      "nodes": [
+        "SM_468931907_Fragment_003",
+        "SM_468931907_Fragment_004",
+        "SM_468931907_Fragment_008",
+        "SM_468931907_Fragment_010",
+        "SM_468931907_Fragment_014",
+        "SM_468931907_Fragment_015",
+        "SM_468931907_Fragment_017",
+        "SM_468931907_Fragment_018",
+        "SM_468931907_Fragment_019",
+        "SM_468931907_Fragment_021",
+        "SM_468931907_Fragment_027",
+        "SM_468931907_Fragment_030",
+        "SM_468931907_Fragment_040",
+        "SM_468931907_Fragment_042",
+        "SM_468931907_Fragment_043",
+        "SM_468931907_Fragment_044",
+        "SM_468931907_Fragment_045",
+        "SM_468931907_Fragment_048",
+        "SM_468931907_Fragment_053",
+        "SM_468931907_Fragment_054",
+        "SM_468931907_Fragment_056"
+      ]
+    }
+  },
+  "osm/468931910": {
+    "intact.glb": {
+      "image_sha256": "7754c8d39794fc5c815141908b0b9931c2c32fbb3ccd0bcdf0341092648bf1cc",
+      "material": "v71 Group 2 | osm/468931910 | observed roof",
+      "nodes": [
+        "SM_468931910_Intact_00"
+      ]
+    },
+    "fragments.glb": {
+      "image_sha256": "7754c8d39794fc5c815141908b0b9931c2c32fbb3ccd0bcdf0341092648bf1cc",
+      "material": "v71 Group 2 | osm/468931910 | observed roof",
+      "nodes": [
+        "SM_468931910_Fragment_002",
+        "SM_468931910_Fragment_005",
+        "SM_468931910_Fragment_007",
+        "SM_468931910_Fragment_008",
+        "SM_468931910_Fragment_010",
+        "SM_468931910_Fragment_013",
+        "SM_468931910_Fragment_015",
+        "SM_468931910_Fragment_016",
+        "SM_468931910_Fragment_017",
+        "SM_468931910_Fragment_019",
+        "SM_468931910_Fragment_020",
+        "SM_468931910_Fragment_021",
+        "SM_468931910_Fragment_027",
+        "SM_468931910_Fragment_028",
+        "SM_468931910_Fragment_033",
+        "SM_468931910_Fragment_035",
+        "SM_468931910_Fragment_038",
+        "SM_468931910_Fragment_040",
+        "SM_468931910_Fragment_043",
+        "SM_468931910_Fragment_045",
+        "SM_468931910_Fragment_050",
+        "SM_468931910_Fragment_052",
+        "SM_468931910_Fragment_054",
+        "SM_468931910_Fragment_061",
+        "SM_468931910_Fragment_062",
+        "SM_468931910_Fragment_063"
+      ]
+    }
+  },
+  "osm/524021463": {
+    "intact.glb": {
+      "image_sha256": "c8093f7968d273fd5a639e024242abc5feeb3830e17f8c5c7eba6bdf81b4cc72",
+      "material": "v71 Group 2 | osm/524021463 | observed roof",
+      "nodes": [
+        "SM_524021463_Intact_00"
+      ]
+    },
+    "fragments.glb": {
+      "image_sha256": "c8093f7968d273fd5a639e024242abc5feeb3830e17f8c5c7eba6bdf81b4cc72",
+      "material": "v71 Group 2 | osm/524021463 | observed roof",
+      "nodes": [
+        "SM_524021463_Fragment_002",
+        "SM_524021463_Fragment_003",
+        "SM_524021463_Fragment_004",
+        "SM_524021463_Fragment_007",
+        "SM_524021463_Fragment_009",
+        "SM_524021463_Fragment_010",
+        "SM_524021463_Fragment_015",
+        "SM_524021463_Fragment_018",
+        "SM_524021463_Fragment_019",
+        "SM_524021463_Fragment_025",
+        "SM_524021463_Fragment_031",
+        "SM_524021463_Fragment_032",
+        "SM_524021463_Fragment_037",
+        "SM_524021463_Fragment_042",
+        "SM_524021463_Fragment_045",
+        "SM_524021463_Fragment_047",
+        "SM_524021463_Fragment_049",
+        "SM_524021463_Fragment_050",
+        "SM_524021463_Fragment_051",
+        "SM_524021463_Fragment_060",
+        "SM_524021463_Fragment_061"
+      ]
+    }
+  }
+}

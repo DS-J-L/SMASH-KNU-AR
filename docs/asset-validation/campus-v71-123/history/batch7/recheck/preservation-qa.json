@@ -1,0 +1,22 @@
+{
+  "source_archive_sha256": "9e1f20a9611b3c863df0920211a190e5efa7732c9dea5649a883ccf12a1a54e4",
+  "restored_archive_members": 45,
+  "candidate_glb_sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+  "candidate_artifacts_hash_match": true,
+  "objects": 1735,
+  "changed_objects": [
+    "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+    "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+    "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+    "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+    "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+    "v7 | 추가 건물 | 온실1 [vw/143]",
+    "v7 | 추가 건물 | 온실2 [vw/50]"
+  ],
+  "unchanged_objects": 1728,
+  "dot_protected_ids": 53,
+  "triangles": 890412,
+  "baseline_triangles": 890412,
+  "crc_and_listed_sha256_match": true,
+  "baseline_artifacts_hash_match": true
+}

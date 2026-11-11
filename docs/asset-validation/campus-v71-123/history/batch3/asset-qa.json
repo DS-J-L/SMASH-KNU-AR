@@ -1,0 +1,301 @@
+{
+  "경북대 출판부": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "경북대 출판부: ~5.73% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-5.8945 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -5.8945,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "경북대 출판부": {
+        "verts": 40,
+        "faces": 56,
+        "tris": 76,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 1.06,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 5.73,
+        "uv_coverage_pct": 98.8
+      }
+    }
+  },
+  "문예관": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-14.7822 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -14.7822,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "문예관": {
+        "verts": 44,
+        "faces": 62,
+        "tris": 84,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 1.92,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 1.11,
+        "uv_coverage_pct": 75.1
+      }
+    }
+  },
+  "조소동": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "조소동: ~15.01% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-12.0449 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -12.0449,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "조소동": {
+        "verts": 44,
+        "faces": 62,
+        "tris": 84,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 4,
+        "uv_maps": 1,
+        "uv_oob_pct": 2.88,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 15.01,
+        "uv_coverage_pct": 99.2
+      }
+    }
+  },
+  "영선관": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=0.0516 (not resting on ground plane z=0)"
+    ],
+    "ground_z": 0.0516,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "영선관": {
+        "verts": 16,
+        "faces": 20,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 2.94,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 4.59,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  },
+  "테크노빌딩": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "테크노빌딩: ~7.83% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-9.4727 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -9.4727,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "테크노빌딩": {
+        "verts": 44,
+        "faces": 62,
+        "tris": 84,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 3.37,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 7.83,
+        "uv_coverage_pct": 99.5
+      }
+    }
+  },
+  "한국기초과학지원연구원": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "한국기초과학지원연구원: ~8.38% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-11.2415 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -11.2415,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "한국기초과학지원연구원": {
+        "verts": 56,
+        "faces": 80,
+        "tris": 108,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 4.48,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 8.38,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  },
+  "금란정": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "금란정: ~5.89% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-0.8097 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -0.8097,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "금란정": {
+        "verts": 1131,
+        "faces": 2542,
+        "tris": 2542,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 5,
+        "uv_maps": 1,
+        "uv_oob_pct": 8.84,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 5.89,
+        "uv_coverage_pct": 66.3
+      }
+    }
+  }
+}

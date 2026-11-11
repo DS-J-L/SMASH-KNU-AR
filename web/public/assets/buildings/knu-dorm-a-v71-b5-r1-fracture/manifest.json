@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-dorm-a-v71-b5-r1-fracture",
+  "display_name": "기숙사 A동",
+  "source_model_id": "vw/145",
+  "source_campus": "knu-campus-v71-batch5-r1.blend",
+  "source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+  "source_object": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+      "mesh": "v7 | 추가 건물 | 기숙사A동 [vw/145].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v8 | 창 근사 | 기숙사A동 [vw/145]",
+      "mesh": "v8 | 창 근사 | 기숙사A동 [vw/145]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -6.721836566925049
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -150.21722412109375,
+    -482.15570068359375,
+    -7.76730489730835
+  ],
+  "scale_from_campus": 0.04092836191114767,
+  "source_dimensions_campus_z_up_m": [
+    53.75245666503906,
+    49.56201171875,
+    15.0454683303833
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.1999999284744263,
+    0.6157863736152649,
+    2.028491973876953
+  ],
+  "fragment_count": 65,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

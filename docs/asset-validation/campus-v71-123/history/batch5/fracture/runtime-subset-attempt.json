@@ -1,0 +1,29 @@
+[
+  {
+    "id": "knu-dorm-a-v71-b5-r1-fracture",
+    "node": "SM_dorm-a_Fragment_001",
+    "before_m": 0.000003861151633755,
+    "after_m": 0.000003390069323760958,
+    "updated": false,
+    "before_points": 47,
+    "after_points": 46
+  },
+  {
+    "id": "knu-dorm-c-v71-b5-r1-fracture",
+    "node": "SM_dorm-c_Fragment_042",
+    "before_m": 0.00000966199703961168,
+    "after_m": 6.72438402737896e-7,
+    "updated": true,
+    "before_points": 37,
+    "after_points": 36
+  },
+  {
+    "id": "knu-store-v71-b5-r1-fracture",
+    "node": "SM_store_Fragment_058",
+    "before_m": 0.000002302781152818678,
+    "after_m": 0.0000018497288554186753,
+    "updated": true,
+    "before_points": 25,
+    "after_points": 24
+  }
+]

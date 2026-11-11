@@ -1,0 +1,373 @@
+{
+  "vw/21": {
+    "package_id": "knu-gh51-v71-b8-r1-fracture",
+    "name": "온실 5-1",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      257.2716979980469,
+      485.5050048828125,
+      -15.653542518615723
+    ],
+    "scale_from_campus": 0.176840163471964,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2444,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.9298858648127997e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 2.6291029272956364e-08,
+    "max_rgb_render_delta": 0.00046816268912833084,
+    "asset_sha256": {
+      "manifest.json": "9ec2ffd2410cb4f7a3820d6f10d15cd89c70943f80ae3a48dacd908a4d828801",
+      "colliders.json": "ab0a12de9ed182bc5ba4584f3e559a9d88b363a0d62c864e983862712ff37429",
+      "intact.glb": "14e4e19bdd84aa849b8e1461ee6e8cfac49495648d9d1458d7be45ee10a393f8",
+      "fragments.glb": "f79493a45ff426bdae3df133676389aeadcd79cc527cdf30bab4e8eef196272a"
+    },
+    "successful_cycles": 3
+  },
+  "vw/52": {
+    "package_id": "knu-gh52-v71-b8-r1-fracture",
+    "name": "온실 5-2",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      266.16156005859375,
+      488.4144287109375,
+      -15.661797523498535
+    ],
+    "scale_from_campus": 0.18583098540719872,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2480,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.9834442128471323e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 3.923309200392098e-09,
+    "max_rgb_render_delta": 0.00044102955582675345,
+    "asset_sha256": {
+      "manifest.json": "0b90ef8d4b8af173e92068cc62c0d2123d98119e1898dbde22dc2af87f97318c",
+      "colliders.json": "1ebfe54272239a8d01cdbdf763e84469f103a8659653d989112cbf2c7ce67c23",
+      "intact.glb": "ddeddf05e89e7ff33fedf2944c00e84d23ff02067698ab735596680ad3927742",
+      "fragments.glb": "54ce3991d80f9b64d80b8c73340df2c2edcc6a6aa372056b398766fb92230188"
+    },
+    "successful_cycles": 3
+  },
+  "vw/110": {
+    "package_id": "knu-gh53-v71-b8-r1-fracture",
+    "name": "온실 5-3",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      262.36590576171875,
+      469.8537902832031,
+      -15.609353065490723
+    ],
+    "scale_from_campus": 0.17973870549516308,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2388,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.986724855271518e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 9.653894677355173e-09,
+    "max_rgb_render_delta": 0.0006127645146014768,
+    "asset_sha256": {
+      "manifest.json": "ee3befabde3d35f938ec0a8725c9d74ce99412d7bf6d9a95b165eff7938c6202",
+      "colliders.json": "3f1b4e4b834eab86169f13ed5d150c2fa5fe40543230a2525ae993877c07b121",
+      "intact.glb": "06e5a37bc7ed6e2566208705e27854f3a685e07b6b6a182c0356641840c8b035",
+      "fragments.glb": "1d1a718cd77153325aa0cb0089f28cf933bd42d412d7803b632c982ff8d7e31c"
+    },
+    "successful_cycles": 3
+  },
+  "vw/20": {
+    "package_id": "knu-gh54-v71-b8-r1-fracture",
+    "name": "온실 5-4",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      271.4055480957031,
+      473.01416015625,
+      -15.614472389221191
+    ],
+    "scale_from_campus": 0.19067942983651048,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2448,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.945583342852444e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 9.029289214134747e-09,
+    "max_rgb_render_delta": 0.0005202846854438947,
+    "asset_sha256": {
+      "manifest.json": "9668569e643d5374cb99235e82f37976d0fbcfd4b9a5d2f4d78ca73f06d04f91",
+      "colliders.json": "6f77e9b0f9f3047e4b9353bb4d6ade45f302fd1d7e92ff4eca8fd3208f9a49c7",
+      "intact.glb": "737e8d28c93cf2240623ba38c4412aeca03f6972b4ed1a8e152c8d8a21c3c5de",
+      "fragments.glb": "e64ac4d2119edfdda75ce2d83841ebcdcfea042a2bd862b77b6eb5f5848427d0"
+    },
+    "successful_cycles": 3
+  },
+  "vw/62": {
+    "package_id": "knu-greenhouse-office-v71-b8-r1-fracture",
+    "name": "온실관리사",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      228.50454711914062,
+      573.2918701171875,
+      -15.806702613830566
+    ],
+    "scale_from_campus": 0.12168612772134753,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2400,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.992141722226506e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 1.375530867455143e-09,
+    "max_rgb_render_delta": 0.0005061194325917221,
+    "asset_sha256": {
+      "manifest.json": "75830b28b24dcf30914339cafb0a6b1dedcb27b69c473ada5b54733047b56c8d",
+      "colliders.json": "7ca9650e9f4fdbbe3bcc740a5a553a24b79fd25e4fb6f62b049a546f0f879cd9",
+      "intact.glb": "a6e0a7f86fbf815485b325327dda59be7a800df73c30125ab1ffc2eca14b9501",
+      "fragments.glb": "abca9609a3ae0baab0fb034b9582fb1295c9ec38141d86efdbe76f53fb30b348"
+    },
+    "successful_cycles": 3
+  },
+  "vw/22": {
+    "package_id": "knu-produce-processing-v71-b8-r1-fracture",
+    "name": "농산물가공동",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      -143.16900634765625,
+      102.45449829101562,
+      -5.774087429046631
+    ],
+    "scale_from_campus": 0.07466181139528466,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 2384,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.984941483210381e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 4.1876862347510454e-09,
+    "max_rgb_render_delta": 0.00020706022732756312,
+    "asset_sha256": {
+      "manifest.json": "287198525fcce2bfe486923f8a2721eb999b0bcf1ebae91a8e61f377cb74e606",
+      "colliders.json": "24eb6e5907dac23c6b0a24f0a854a82faed5eb9599f1003173566c4564c46049",
+      "intact.glb": "83fa3448166536713c3f95dfb56240ec69d686e0c2884c7c27b1e6c5956703c7",
+      "fragments.glb": "6d6bf7fa69c170e770cae3c08adcf99eb0f8a1574cc6a740e9ad879faa37b2fd"
+    },
+    "successful_cycles": 3
+  },
+  "vw/33": {
+    "package_id": "knu-corn-storage-v71-b8-r1-fracture",
+    "name": "옥수수저장창고",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+    "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+    "source_origin_m": [
+      -252.9432373046875,
+      113.62794494628906,
+      -5.278695583343506
+    ],
+    "scale_from_campus": 0.11653603641104521,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "intact_triangles": 36,
+    "fragment_triangles": 2520,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.996881484975457e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 7.408256248190364e-09,
+    "max_rgb_render_delta": 0.0004082529619878828,
+    "asset_sha256": {
+      "manifest.json": "71304c9a8383e04eb278a2e5d087921ee3db679995f20d755cd6f34a8fcf1a69",
+      "colliders.json": "bcd9b76d060452aff6937ae0ea76e8e95a3df0aacfd8e388205b8be13d817425",
+      "intact.glb": "bdd363388111d002a12bf230772335836a4bc42cb32dafe5d746164d1b7a803f",
+      "fragments.glb": "371a14fceea70302f2afdfaf050572ad721ca4ad9d777b218e47b9c1009553ed"
+    },
+    "successful_cycles": 3
+  }
+}

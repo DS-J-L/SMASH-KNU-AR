@@ -1,0 +1,16 @@
+[
+  {
+    "id": "knu-baekho-v71-b4-r1-fracture",
+    "node": "SM_baekho_Fragment_011",
+    "before_m": 0.0000033363621950721623,
+    "after_m": 4.122958510710539e-8,
+    "updated": true
+  },
+  {
+    "id": "knu-baekho-v71-b4-r1-fracture",
+    "node": "SM_baekho_Fragment_025",
+    "before_m": 0.000002329928540240056,
+    "after_m": 6.165937005420119e-8,
+    "updated": true
+  }
+]
