@@ -1,0 +1,43 @@
+{
+  "preserved_catalog_entries": 63,
+  "checked_existing_assets": 252,
+  "added_catalog_entries": 7,
+  "total_catalog_entries": 70,
+  "installed": [
+    {
+      "id": "knu-gh51-v71-b8-r1-fracture",
+      "label": "온실 5-1 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh51-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh52-v71-b8-r1-fracture",
+      "label": "온실 5-2 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh52-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh53-v71-b8-r1-fracture",
+      "label": "온실 5-3 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh53-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-gh54-v71-b8-r1-fracture",
+      "label": "온실 5-4 · 64개 파편 · 8번 묶음",
+      "folder": "knu-gh54-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-greenhouse-office-v71-b8-r1-fracture",
+      "label": "온실관리사 · 64개 파편 · 8번 묶음",
+      "folder": "knu-greenhouse-office-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-produce-processing-v71-b8-r1-fracture",
+      "label": "농산물가공동 · 64개 파편 · 8번 묶음",
+      "folder": "knu-produce-processing-v71-b8-r1-fracture"
+    },
+    {
+      "id": "knu-corn-storage-v71-b8-r1-fracture",
+      "label": "옥수수저장창고 · 64개 파편 · 8번 묶음",
+      "folder": "knu-corn-storage-v71-b8-r1-fracture"
+    }
+  ]
+}

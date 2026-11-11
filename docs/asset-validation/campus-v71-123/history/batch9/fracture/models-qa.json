@@ -1,0 +1,407 @@
+{
+  "osm/468931888": {
+    "package_id": "knu-pp-structural-v71-b9-r1-fracture",
+    "name": "PP구조실습실",
+    "fragments": 64,
+    "source_object": "PP구조실습실",
+    "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+    "source_origin_m": [
+      -235.49008178710938,
+      -286.19512939453125,
+      -12.227105140686035
+    ],
+    "scale_from_campus": 0.050650969392845455,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_objects": [
+      {
+        "object": "PP구조실습실",
+        "mesh": "PP구조실습실.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 창 근사 | PP구조실습실 [468931888]",
+        "mesh": "v7 | 창 근사 | PP구조실습실 [468931888]",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -8.336308479309082
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mounted_details": [
+      {
+        "source_object": "v7 | 창 근사 | PP구조실습실 [468931888]",
+        "islands": 120,
+        "maximum_host_surface_gap_m": 0.0010138725629076362
+      }
+    ],
+    "intact_triangles": 28,
+    "fragment_triangles": 3844,
+    "glb_meshes_reimported": 66,
+    "max_pivot_error_m": 4.9975204474694834e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 1.9433551662399375e-08,
+    "max_rgb_render_delta": 0.00017737514707582652,
+    "asset_sha256": {
+      "manifest.json": "866e7efe82def6ef1f2b7ec387d1e0cc37572ecb612ed63923d1d4855d9911ee",
+      "colliders.json": "8850ba144441c5c53e48324633d1a6cd8d2a3978fdaa6d5f760f2670c43ca307",
+      "intact.glb": "095faea9175d85f49a49cffffbf1126b676e9546789f5547fbc02654857f55fa",
+      "fragments.glb": "a0285d535441d8dbe57fcb7acb66fbc57b82f75509768d48bd10380ede68a298"
+    },
+    "successful_cycles": 3
+  },
+  "vw/1": {
+    "package_id": "knu-env-store-v71-b9-r1-fracture",
+    "name": "환경과학연구소창고",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+    "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+    "source_origin_m": [
+      -231.26754760742188,
+      -323.838134765625,
+      -9.283631324768066
+    ],
+    "scale_from_campus": 0.17906700332476785,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_objects": [
+      {
+        "object": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]",
+        "mesh": "v7 | 추가 건물 | 환경과학연구소창고 [vw/1].002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mounted_details": [],
+    "intact_triangles": 44,
+    "fragment_triangles": 2460,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.9922180167527586e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 6.289122902606795e-09,
+    "max_rgb_render_delta": 0.00038139405843544226,
+    "asset_sha256": {
+      "manifest.json": "d52bee5949fa4ec7364a14b146d2c2208c85b269bab84f16c88b9c006494d88f",
+      "colliders.json": "d5ecc960f9bc27d98e69b13ac015a37cec93de1cd7cb861046739553ea52836e",
+      "intact.glb": "fd2c508f66187819b090a3e02351e2066222a53a9aabd36413cece9dc32017c1",
+      "fragments.glb": "fad6e0a9fc191b222f30ed4c638d3126610829195e38ae7e0664d9fbff1934cd"
+    },
+    "successful_cycles": 3
+  },
+  "vw/10": {
+    "package_id": "knu-rock-store-v71-b9-r1-fracture",
+    "name": "암석창고",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 암석창고 [vw/10]",
+    "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+    "source_origin_m": [
+      -362.21795654296875,
+      27.309600830078125,
+      -8.264466285705566
+    ],
+    "scale_from_campus": 0.16123594783119227,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_objects": [
+      {
+        "object": "v7 | 추가 건물 | 암석창고 [vw/10]",
+        "mesh": "v7 | 추가 건물 | 암석창고 [vw/10].002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mounted_details": [],
+    "intact_triangles": 28,
+    "fragment_triangles": 2400,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.9784088185234054e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 1.1068289659398953e-08,
+    "max_rgb_render_delta": 0.00025719249437316795,
+    "asset_sha256": {
+      "manifest.json": "298babd948168453da3ed4a9ffb3e8a64064441da50f05bb72035bd55dabb745",
+      "colliders.json": "f5ee2bc5bc192d75e810fd9afd3f470fa75267c1000806875a121445e9de626b",
+      "intact.glb": "53a29e3db142d74b47426af2c4ca2f10b1b5e189cfa28bc05d2c9296ae839374",
+      "fragments.glb": "ac540344a93588ffdda5dec591173cb7b94b6e21056b3aafc2e03e9afe69cd20"
+    },
+    "successful_cycles": 3
+  },
+  "vw/165": {
+    "package_id": "knu-isotope-store-v71-b9-r1-fracture",
+    "name": "동위원소저장고",
+    "fragments": 64,
+    "source_object": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+    "source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+    "source_origin_m": [
+      -264.3800048828125,
+      -16.08245086669922,
+      -7.136186122894287
+    ],
+    "scale_from_campus": 0.11970194730527986,
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_objects": [
+      {
+        "object": "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+        "mesh": "v7 | 추가 건물 | 동위원소저장고 [vw/165].002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mounted_details": [],
+    "intact_triangles": 28,
+    "fragment_triangles": 2432,
+    "glb_meshes_reimported": 65,
+    "max_pivot_error_m": 4.8934173602077635e-08,
+    "assembled_bounds_delta_m": 0.0,
+    "volume_error": 6.132003826940753e-11,
+    "max_rgb_render_delta": 0.0003681060439156936,
+    "asset_sha256": {
+      "manifest.json": "c9d8ea62b8c090ef216259763f86f78c37d51c68e3e148731e9025cc75432472",
+      "colliders.json": "6ae6a50b724cdbcfec125764496d14b688d308aef6f4851dc84498b53bf9deb4",
+      "intact.glb": "c6671cb88569d209451d6b853b5ec7415a03739451bfe2c33689a03c1d45da79",
+      "fragments.glb": "e9eb11efb126686307ffe15d22ffc9f4b1b7d58e9e53df27e7026d7447175ab6"
+    },
+    "successful_cycles": 3
+  }
+}

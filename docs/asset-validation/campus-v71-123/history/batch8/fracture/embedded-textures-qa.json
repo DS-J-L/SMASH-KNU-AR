@@ -1,0 +1,74 @@
+{
+  "vw/33": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "vw/21": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "7287772087be88afdcf627a2f8553937cf291cec1916c8e69b0f063265ca78ac"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "7287772087be88afdcf627a2f8553937cf291cec1916c8e69b0f063265ca78ac"
+      ]
+    }
+  },
+  "vw/52": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "9cd4ef62306d785523d7d5abf0284a8a90e4e996ee1940ca42f6f43004781dd4"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "9cd4ef62306d785523d7d5abf0284a8a90e4e996ee1940ca42f6f43004781dd4"
+      ]
+    }
+  },
+  "vw/110": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "801939b6ba17d87b4800d772f4d26cfdeb82d856c64901d42c80ad99143e8f3c"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "801939b6ba17d87b4800d772f4d26cfdeb82d856c64901d42c80ad99143e8f3c"
+      ]
+    }
+  },
+  "vw/20": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "40fca48b4d69e7cf7b3b1ee5e9a301d12adac67f23feb18de5a1f34f4bb5f0b0"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "40fca48b4d69e7cf7b3b1ee5e9a301d12adac67f23feb18de5a1f34f4bb5f0b0"
+      ]
+    }
+  },
+  "vw/62": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "vw/22": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  }
+}

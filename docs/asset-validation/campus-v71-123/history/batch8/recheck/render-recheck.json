@@ -1,0 +1,166 @@
+{
+  "frames": 70,
+  "viewpoints": [
+    "NW",
+    "NE",
+    "SE",
+    "SW",
+    "top"
+  ],
+  "models": {
+    "vw/21": {
+      "NW": {
+        "changed_pixels": 30144,
+        "visible_delta_gt_12": 29264
+      },
+      "NE": {
+        "changed_pixels": 30609,
+        "visible_delta_gt_12": 29631
+      },
+      "SE": {
+        "changed_pixels": 28101,
+        "visible_delta_gt_12": 27210
+      },
+      "SW": {
+        "changed_pixels": 30194,
+        "visible_delta_gt_12": 29328
+      },
+      "top": {
+        "changed_pixels": 50709,
+        "visible_delta_gt_12": 49587
+      }
+    },
+    "vw/52": {
+      "NW": {
+        "changed_pixels": 30623,
+        "visible_delta_gt_12": 23688
+      },
+      "NE": {
+        "changed_pixels": 31100,
+        "visible_delta_gt_12": 27443
+      },
+      "SE": {
+        "changed_pixels": 28553,
+        "visible_delta_gt_12": 20540
+      },
+      "SW": {
+        "changed_pixels": 30677,
+        "visible_delta_gt_12": 25251
+      },
+      "top": {
+        "changed_pixels": 50964,
+        "visible_delta_gt_12": 39844
+      }
+    },
+    "vw/110": {
+      "NW": {
+        "changed_pixels": 28072,
+        "visible_delta_gt_12": 27571
+      },
+      "NE": {
+        "changed_pixels": 28516,
+        "visible_delta_gt_12": 27966
+      },
+      "SE": {
+        "changed_pixels": 26149,
+        "visible_delta_gt_12": 25648
+      },
+      "SW": {
+        "changed_pixels": 28128,
+        "visible_delta_gt_12": 27596
+      },
+      "top": {
+        "changed_pixels": 42362,
+        "visible_delta_gt_12": 41825
+      }
+    },
+    "vw/20": {
+      "NW": {
+        "changed_pixels": 28581,
+        "visible_delta_gt_12": 26012
+      },
+      "NE": {
+        "changed_pixels": 28610,
+        "visible_delta_gt_12": 26088
+      },
+      "SE": {
+        "changed_pixels": 26990,
+        "visible_delta_gt_12": 24384
+      },
+      "SW": {
+        "changed_pixels": 28614,
+        "visible_delta_gt_12": 25930
+      },
+      "top": {
+        "changed_pixels": 46982,
+        "visible_delta_gt_12": 43202
+      }
+    },
+    "vw/62": {
+      "NW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      }
+    },
+    "vw/22": {
+      "NW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      }
+    },
+    "vw/33": {
+      "NW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "visible_delta_gt_12": 0
+      }
+    }
+  }
+}

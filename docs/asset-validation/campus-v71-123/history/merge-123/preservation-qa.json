@@ -1,0 +1,15 @@
+{
+  "originals": {
+    "baseline_blend": "5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd",
+    "baseline_glb": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+    "local_candidate_blend": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+    "local_candidate_glb": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79",
+    "dot_original_zip": "fa12393fd34dc4c2e121c811f3afabe3adf27c10238d73fe783d95e899a4bb5f",
+    "original_catalog": "12a3fc79315f5c272f054a9d67e92264015cc2a260dbbcc3f71fc21b8925ae3d",
+    "original_served_map": "163b1e6949ef04cd46a83945eebd271e37368fd706b9984072dd878ae3b20e79"
+  },
+  "verified_game_files": 280,
+  "verified_models": 70,
+  "shards": 4489,
+  "originals_verified": true
+}

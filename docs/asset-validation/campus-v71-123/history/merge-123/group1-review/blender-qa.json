@@ -1,0 +1,33 @@
+{
+  "blender": "5.2.3 LTS",
+  "scene_objects": 1784,
+  "native_glb_match": 2,
+  "meshes": {
+    "이름 미등록 건물.003": {
+      "triangles_native": 28,
+      "triangles_glb": 28,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 28,
+      "vertex_gap_m": 0,
+      "uv_gap": 2.9802322387695312e-08
+    },
+    "이름 미등록 건물.006": {
+      "triangles_native": 28,
+      "triangles_glb": 28,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 28,
+      "vertex_gap_m": 0,
+      "uv_gap": 2.9802322387695312e-08
+    }
+  }
+}

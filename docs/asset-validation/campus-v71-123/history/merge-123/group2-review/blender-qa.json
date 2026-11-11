@@ -1,0 +1,59 @@
+{
+  "blender": "5.2.3 LTS",
+  "scene_objects": 71,
+  "native_glb_match": 4,
+  "meshes": {
+    "봉사관": {
+      "triangles_native": 60,
+      "triangles_glb": 60,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 60,
+      "vertex_gap_m": 0,
+      "uv_gap": 9.5367431640625e-07
+    },
+    "어학교육원": {
+      "triangles_native": 28,
+      "triangles_glb": 28,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 28,
+      "vertex_gap_m": 0,
+      "uv_gap": 4.76837158203125e-07
+    },
+    "우당교육관": {
+      "triangles_native": 44,
+      "triangles_glb": 44,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 44,
+      "vertex_gap_m": 0,
+      "uv_gap": 2.9802322387695312e-08
+    },
+    "창업보육센터": {
+      "triangles_native": 44,
+      "triangles_glb": 44,
+      "uv_native": 1,
+      "uv_glb": 1,
+      "matrix_gap": 0.0,
+      "scale_gap": 0.0,
+      "rigid_body_native": false,
+      "rigid_body_glb": false,
+      "matched_triangles": 44,
+      "vertex_gap_m": 0,
+      "uv_gap": 1.1920928955078125e-07
+    }
+  }
+}

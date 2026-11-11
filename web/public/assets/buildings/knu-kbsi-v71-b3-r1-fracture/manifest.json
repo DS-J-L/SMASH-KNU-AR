@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-kbsi-v71-b3-r1-fracture",
+  "display_name": "한국기초과학지원연구원",
+  "source_model_id": "468931886",
+  "source_campus": "knu-campus-v71-batch3-r1.blend",
+  "source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+  "source_object": "한국기초과학지원연구원",
+  "source_objects": [
+    {
+      "object": "한국기초과학지원연구원",
+      "mesh": "한국기초과학지원연구원.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]",
+      "mesh": "v7 | 창 근사 | 한국기초과학지원연구원 [468931886]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -7.968144416809082
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -273.2920227050781,
+    -383.95025634765625,
+    -11.241463661193848
+  ],
+  "scale_from_campus": 0.025082844477846672,
+  "source_dimensions_campus_z_up_m": [
+    87.7093505859375,
+    39.780517578125,
+    15.273319244384766
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.383098304271698,
+    0.997808575630188
+  ],
+  "fragment_count": 70,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

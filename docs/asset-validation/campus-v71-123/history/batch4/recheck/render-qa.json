@@ -1,0 +1,132 @@
+{
+  "material_frames": 21,
+  "native_core_wire_frames": 7,
+  "comparisons": [
+    {
+      "id": "469843173",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "469843173",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "469843173",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306251",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306251",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306251",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306497",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306497",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "854306497",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "524021464",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "524021464",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "524021464",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "1300033666",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "1300033666",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "1300033666",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931911",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931911",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931911",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931928",
+      "angle": "NW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931928",
+      "angle": "SE",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    },
+    {
+      "id": "468931928",
+      "angle": "SW",
+      "pixel_identical": true,
+      "max_channel_delta": 0
+    }
+  ]
+}

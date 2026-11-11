@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-apple-v71-b6-r1-fracture",
+  "display_name": "사과센터",
+  "source_model_id": "473687810",
+  "source_campus": "knu-campus-v71-batch6-r1.blend",
+  "source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+  "source_object": "사과센터",
+  "source_objects": [
+    {
+      "object": "사과센터",
+      "mesh": "사과센터.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 사과센터 [473687810]",
+      "mesh": "v7 | 창 근사 | 사과센터 [473687810]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.366932392120361
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v8 | 태양광 | 사과센터",
+      "mesh": "v8 | 태양광 | 사과센터",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.366932392120361
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -87.33499908447266,
+    69.54000091552734,
+    -5.401811122894287
+  ],
+  "scale_from_campus": 0.07182499671211258,
+  "source_dimensions_campus_z_up_m": [
+    30.6300048828125,
+    23.660003662109375,
+    13.109878540039062
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.9416170120239258,
+    1.6993796825408936
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

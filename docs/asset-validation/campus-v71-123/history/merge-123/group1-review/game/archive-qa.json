@@ -1,0 +1,11 @@
+{
+  "file": "knu-v71-group1-two-roofs-game.zip",
+  "sha256": "9853e10ab576fd37fb80b2edc24200fef77113f684c099dae8d5cbe30d0ff82a",
+  "bytes": 702741,
+  "payloads": 20,
+  "crc_ok": true,
+  "original_editable_blends": {
+    "knu-osm-468931915-v71-b10-r1-fracture": "96e65eba4af55d31543fb24b4f224fa0dff2e77aa622bd31a5f6891e3943ce29",
+    "knu-osm-577759119-v71-b10-r1-fracture": "6e18531fd02eec45ed6a1bd5ffb4de7ebf344665de0f88c19e31e89d3be8c9cd"
+  }
+}

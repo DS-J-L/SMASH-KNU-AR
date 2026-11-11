@@ -1,0 +1,74 @@
+{
+  "archive": "knu-campus-v71-batch5-r1-restorable.zip",
+  "sha256": "747c41e27400b76ff61025be4f8bfcd34993615d6c81c0980f9e71d43f3bb831",
+  "bytes": 103673715,
+  "members": 47,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 9,
+  "restored_checks": {
+    "v7 | 추가 건물 | 기숙사A동 [vw/145]": {
+      "source_id": "vw/145",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 기숙사B동 [vw/73]": {
+      "source_id": "vw/73",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v8 | 창 근사 | 기숙사B동 [vw/73]": {
+      "source_id": "vw/73",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 기숙사C동 [vw/162]": {
+      "source_id": "vw/162",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "청룡관 (Cheonglyong-Gwan)": {
+      "source_id": "osm/522514118",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "학군단": {
+      "source_id": "osm/468931930",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 학군단 [468931930]": {
+      "source_id": "osm/468931930",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 학군단창고 [vw/114]": {
+      "source_id": "vw/114",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 테니스장대기실 [vw/105]": {
+      "source_id": "vw/105",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

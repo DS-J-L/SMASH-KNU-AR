@@ -1,0 +1,879 @@
+{
+  "source": "knu-campus-v71-batch5-r1.blend",
+  "source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+  "candidate": "knu-campus-v71-batch6-r1.blend",
+  "edits": {
+    "농업생명과학관": {
+      "id": "524172305",
+      "source_id": "osm/524172305",
+      "mesh": "농업생명과학관.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            222.1300048828125,
+            376.6300048828125,
+            -15.487359046936035
+          ],
+          [
+            295.04998779296875,
+            447.32000732421875,
+            2.9017810821533203
+          ]
+        ],
+        "vertices": 32,
+        "polygons": 44,
+        "triangles": 60,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #707d74"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            222.1300048828125,
+            376.6300048828125,
+            -15.487359046936035
+          ],
+          [
+            295.04998779296875,
+            447.32000732421875,
+            2.9017810821533203
+          ]
+        ],
+        "vertices": 32,
+        "polygons": 44,
+        "triangles": 60,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #707d74",
+          "Batch6_agri-roof_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            22,
+            23,
+            24,
+            32,
+            33,
+            38
+          ],
+          "material": "Batch6_agri-roof_Observed",
+          "texture": "Batch6_agri-roof_Atlas",
+          "texture_sha256": "403742b1522494841f3b2f736bb5d2cf64100f664a631061d34ba33140438570",
+          "kind": "roof"
+        }
+      ]
+    },
+    "동물사육장": {
+      "id": "576254849",
+      "source_id": "osm/576254849",
+      "mesh": "동물사육장.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -430.6400146484375,
+            -146.0,
+            -11.162484169006348
+          ],
+          [
+            -418.9800109863281,
+            -133.6699981689453,
+            1.1250410079956055
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #a3b3b4"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -430.6400146484375,
+            -146.0,
+            -11.162484169006348
+          ],
+          [
+            -418.9800109863281,
+            -133.6699981689453,
+            1.1250410079956055
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #a3b3b4",
+          "Batch6_animal-roof_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            10,
+            11
+          ],
+          "material": "Batch6_animal-roof_Observed",
+          "texture": "Batch6_animal-roof_Atlas",
+          "texture_sha256": "5db54a3c0400000b7b30cf7070b0a34a168fe2bb392027453e705c9c57275333",
+          "kind": "roof"
+        }
+      ]
+    },
+    "사과센터": {
+      "id": "473687810",
+      "source_id": "osm/473687810",
+      "mesh": "사과센터.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -102.6500015258789,
+            57.709999084472656,
+            -5.401811122894287
+          ],
+          [
+            -72.0199966430664,
+            81.37000274658203,
+            7.633067607879639
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #5f706f",
+          "v8 | 위성 지붕 사과센터"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -102.6500015258789,
+            57.709999084472656,
+            -5.401811122894287
+          ],
+          [
+            -72.0199966430664,
+            81.37000274658203,
+            7.633067607879639
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #5f706f",
+          "v8 | 위성 지붕 사과센터",
+          "Batch6_apple-roof_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            11,
+            14
+          ],
+          "material": "Batch6_apple-roof_Observed",
+          "texture": "Batch6_apple-roof_Atlas",
+          "texture_sha256": "acc02a6486398813b52a03d1dc5bc8fb1964148ebae31ce3bd0a19f13f420159",
+          "kind": "roof"
+        }
+      ]
+    },
+    "v8 | 태양광 | 사과센터": {
+      "id": "473687810",
+      "source_id": "osm/473687810",
+      "mesh": "v8 | 태양광 | 사과센터",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.366932392120361
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -99.8499984741211,
+            60.5,
+            7.608067989349365
+          ],
+          [
+            -74.94999694824219,
+            78.0999984741211,
+            7.708067417144775
+          ]
+        ],
+        "vertices": 576,
+        "polygons": 432,
+        "triangles": 864,
+        "uv": [],
+        "materials": [
+          "v8 | 패널 근사"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -99.8499984741211,
+            60.5,
+            7.608067989349365
+          ],
+          [
+            -74.94999694824219,
+            78.0999984741211,
+            7.708067417144775
+          ]
+        ],
+        "vertices": 392,
+        "polygons": 294,
+        "triangles": 588,
+        "uv": [],
+        "materials": [
+          "v8 | 패널 근사"
+        ]
+      },
+      "removed_observed_roof_solar_islands": 23
+    },
+    "v7 | 추가 건물 | 농대사과센터 [vw/113]": {
+      "id": "vw/113",
+      "source_id": "vw/113",
+      "mesh": "v7 | 추가 건물 | 농대사과센터 [vw/113].002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -108.65850067138672,
+            51.688499450683594,
+            -4.896806240081787
+          ],
+          [
+            -98.66999816894531,
+            61.31999969482422,
+            -0.7298502922058105
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 14,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "v7 | 추가 건물 미확인 외벽",
+          "v7 | 항공영상 지붕 #90b0bc"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -108.65850067138672,
+            51.688499450683594,
+            -4.896806240081787
+          ],
+          [
+            -98.66999816894531,
+            61.31999969482422,
+            -0.7298502922058105
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 14,
+        "triangles": 28,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "v7 | 추가 건물 미확인 외벽",
+          "v7 | 항공영상 지붕 #90b0bc",
+          "Batch6_apple-annex-roof_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            10
+          ],
+          "material": "Batch6_apple-annex-roof_Observed",
+          "texture": "Batch6_apple-annex-roof_Atlas",
+          "texture_sha256": "043195885510c66dfd6539593962fbf6d3947027880fd6010861b8205192e1f7",
+          "kind": "roof"
+        }
+      ]
+    },
+    "수의과대학부속병원": {
+      "id": "468931894",
+      "source_id": "osm/468931894",
+      "mesh": "수의과대학부속병원.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            290.8399963378906,
+            -426.5299987792969,
+            -4.427995204925537
+          ],
+          [
+            337.8999938964844,
+            -364.6000061035156,
+            9.283084869384766
+          ]
+        ],
+        "vertices": 84,
+        "polygons": 122,
+        "triangles": 164,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #8ea0a8"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            290.8399963378906,
+            -426.5299987792969,
+            -4.427995204925537
+          ],
+          [
+            337.8999938964844,
+            -364.6000061035156,
+            9.283084869384766
+          ]
+        ],
+        "vertices": 84,
+        "polygons": 122,
+        "triangles": 164,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #8ea0a8",
+          "Batch6_vet-roof_Observed",
+          "Batch6_vet-east_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            62,
+            65,
+            68,
+            71,
+            74,
+            77,
+            80,
+            83,
+            86,
+            89,
+            92,
+            95,
+            98,
+            99,
+            100,
+            101,
+            102,
+            113,
+            116
+          ],
+          "material": "Batch6_vet-roof_Observed",
+          "texture": "Batch6_vet-roof_Atlas",
+          "texture_sha256": "7b421a128c8d33a2def71319bf39365eaeddab2b3e3ad88cb2a62d9959db37da",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            70,
+            72,
+            73,
+            75,
+            76,
+            78,
+            79,
+            81,
+            82,
+            84,
+            85,
+            87,
+            88,
+            90
+          ],
+          "material": "Batch6_vet-east_Observed",
+          "texture": "Batch6_vet-east_Atlas",
+          "texture_sha256": "2df7745485e39034adf5e654f189a21e796cd2e15bf75858bce0352225762d97",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 수의과대학부속병원 [468931894]": {
+      "id": "468931894",
+      "source_id": "osm/468931894",
+      "mesh": "v7 | 창 근사 | 수의과대학부속병원 [468931894]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -2.7169156074523926
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            290.7716064453125,
+            -426.5390319824219,
+            -1.4769155979156494
+          ],
+          [
+            337.9017028808594,
+            -364.56085205078125,
+            8.443084716796875
+          ]
+        ],
+        "vertices": 672,
+        "polygons": 504,
+        "triangles": 1008,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            290.7716064453125,
+            -426.5390319824219,
+            -1.4769155979156494
+          ],
+          [
+            329.3338317871094,
+            -364.56085205078125,
+            8.443084716796875
+          ]
+        ],
+        "vertices": 456,
+        "polygons": 342,
+        "triangles": 684,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 27
+    },
+    "간호대학": {
+      "id": "1107268251",
+      "source_id": "osm/1107268251",
+      "mesh": "간호대학.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            344.4100036621094,
+            237.50999450683594,
+            -12.65712833404541
+          ],
+          [
+            388.9100036621094,
+            294.1099853515625,
+            1.3861827850341797
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #a2b0b4"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            344.4100036621094,
+            237.50999450683594,
+            -12.65712833404541
+          ],
+          [
+            388.9100036621094,
+            294.1099853515625,
+            1.3861827850341797
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch6Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #a2b0b4",
+          "Batch6_nursing-roof_Observed",
+          "Batch6_nursing-south_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            10,
+            11
+          ],
+          "material": "Batch6_nursing-roof_Observed",
+          "texture": "Batch6_nursing-roof_Atlas",
+          "texture_sha256": "9aaf8b2a8690c0c95b5829ef037f5b94f173b9ad3b128f968e6c7a3fef5b55c6",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            18,
+            19
+          ],
+          "material": "Batch6_nursing-south_Observed",
+          "texture": "Batch6_nursing-south_Atlas",
+          "texture_sha256": "766edc2f243ef2a3b482570a40481aa7c03fea5b218af8b32804a9271e4c81ce",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 간호대학 [1107268251]": {
+      "id": "1107268251",
+      "source_id": "osm/1107268251",
+      "mesh": "v7 | 창 근사 | 간호대학 [1107268251]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -10.61381721496582
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            344.6377868652344,
+            237.75637817382812,
+            -9.373817443847656
+          ],
+          [
+            388.6673583984375,
+            293.8332824707031,
+            0.5461826324462891
+          ]
+        ],
+        "vertices": 792,
+        "polygons": 594,
+        "triangles": 1188,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            344.6377868652344,
+            238.15049743652344,
+            -9.373817443847656
+          ],
+          [
+            388.6673583984375,
+            293.8332824707031,
+            0.5461826324462891
+          ]
+        ],
+        "vertices": 648,
+        "polygons": 486,
+        "triangles": 972,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 18
+    }
+  },
+  "held": {
+    "vw/111": "Roof obscured or not identifiable in the dated aerial comparison."
+  },
+  "geometry_changes": "Removal of superseded generic window islands and solar islands crossing observed rooftop clear areas. Building cores retain topology and transforms.",
+  "artifacts": {
+    "knu-campus-v71-batch6-r1.blend": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+    "knu-campus-v71-batch6-r1.glb": "8d2696d723f3cc8359f198a12fa1b15975481a1d0684930762ee6bc305c19308",
+    "batch6-model-meshes-r1.blend": "4e010095cec0b93393816e4ad36139ba0acbb868349ce22dd8147e500c71dc78"
+  }
+}

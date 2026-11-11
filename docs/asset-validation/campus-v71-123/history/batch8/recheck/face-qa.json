@@ -1,0 +1,66 @@
+{
+  "v7 | 추가 건물 | 온실 5-1 [vw/21]": {
+    "id": "vw/21",
+    "changed_material_faces": [
+      10
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.004826738150881417,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 온실 5-2 [vw/52]": {
+    "id": "vw/52",
+    "changed_material_faces": [
+      10
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.005023292649696532,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 온실 5-3 [vw/110]": {
+    "id": "vw/110",
+    "changed_material_faces": [
+      10
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.0049544511139726615,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 온실 5-4 [vw/20]": {
+    "id": "vw/20",
+    "changed_material_faces": [
+      10
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.005097231731009994,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 온실관리사 [vw/62]": {
+    "id": "vw/62",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.03258203374497093,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 농산물가공동 [vw/22]": {
+    "id": "vw/22",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.030507370283254787,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 옥수수저장창고 [vw/33]": {
+    "id": "vw/33",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 21,
+    "min_uv_face_area": 0.00139366599727353,
+    "uv_islands_overlap": false
+  }
+}

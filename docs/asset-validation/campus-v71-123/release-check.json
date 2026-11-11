@@ -1,0 +1,20 @@
+{
+  "checked_asset_blobs": 482,
+  "identical_to_inventory": true,
+  "original_campus_files_unchanged": true,
+  "largest_asset": "web/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
+  "largest_asset_bytes": 73764096,
+  "catalog_count": 96,
+  "campus_ids": 123,
+  "duplicate_or_missing_ids": 0,
+  "browser_packages_passed": 96,
+  "editable_sources_opened": 97,
+  "glb_files_checked": 193,
+  "glb_errors": 0,
+  "inherited_warnings": 3,
+  "input_modes": [
+    "keyboard_demo",
+    "synthetic"
+  ],
+  "physical_ar_tested": false
+}

@@ -1,0 +1,7019 @@
+{
+  "knu-osm-468931867-v71-dot8-r1-fracture": {
+    "id": "osm/468931867",
+    "name": "공대 12호관",
+    "fragments": 64,
+    "native_meshes": 75,
+    "source_objects": [
+      {
+        "object": "공대 12호관",
+        "mesh": "공대 12호관_408_exact_underside_prototype",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v3 | 공대 12호관 | facade",
+        "mesh": "v3 | 공대 12호관 | facade.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -6.148917198181152
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 태양광 근사 | 공대 12호관",
+        "mesh": "v7 | 태양광 근사 | 공대 12호관.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -6.148917198181152
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers glass",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers frames",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers frames",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers mullions",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers transom",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers transom",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 pale sills",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 pale sills",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 pale vertical recess edges",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 pale vertical recess edges",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 공대 12호관 | e0 408 identifier",
+        "mesh": "PhotoDetail | 공대 12호관 | e0 408 identifier",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudEngineering408Window_20261110_two_columns_lower_transom",
+        "mesh": "CloudEngineering408Window_20261110_three_closed_members_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      -30.739517211914062,
+      -199.76104736328125,
+      -8.957009315490723
+    ],
+    "scale_from_campus": 0.030913738007095817,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.7638195157051086,
+      1.3851771354675293
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.9627685516639986e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 9.5367431640625e-07,
+    "mounted_islands": 486,
+    "max_mounted_center_to_exterior_m": 0.007110408507287502,
+    "inherited_detail_flags": 471,
+    "temporary_weld_edges": 84,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 2082468,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 11,
+        "drawPrimitives": 13,
+        "triangles": 6400
+      },
+      "fragments.glb": {
+        "bytes": 2470544,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 221,
+        "triangles": 10380
+      }
+    },
+    "collider": 3.220464003805823e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 26071,
+        "visible_wire_pixels": 26496
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 27057,
+        "visible_wire_pixels": 27718
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 27979,
+        "visible_wire_pixels": 28521
+      }
+    },
+    "hashes": {
+      "editable.blend": "4707f401a1ca2165567487b0c3e9a958685cacba91333ab0bcf6c18f91427743",
+      "manifest.json": "c91e449475faea8337dd4038a54f3f6bfc717c7055a60696c62b890c288fa84a",
+      "colliders.json": "c27b689a9ee37354b95ed17948375f8928af2e8510477c1e6706d48d1c5e3bb8",
+      "intact.glb": "f235c50cd35acc76a2836df257210b80e8f1c6387a5df782159e9e47161e248a",
+      "fragments.glb": "518ced1041802a721a37bdc64a33328308980037948c584ba87340742858c414"
+    }
+  },
+  "knu-osm-468931887-v71-dot8-r1-fracture": {
+    "id": "osm/468931887",
+    "name": "생물학관",
+    "fragments": 64,
+    "native_meshes": 73,
+    "source_objects": [
+      {
+        "object": "생물학관",
+        "mesh": "생물학관.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v8 | 태양광 | 생물학관",
+        "mesh": "v8 | 태양광 | 생물학관",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -10.43925666809082
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v3 | 생물학관 | facade",
+        "mesh": "v3 | 생물학관 | facade bounded removal",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -10.43925666809082
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생물학관 | north bounded upper frame and mullions",
+        "mesh": "PhotoDetail | 생물학관 | north bounded upper frame and mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생물학관 | north bounded upper individual glass panes",
+        "mesh": "PhotoDetail | 생물학관 | north bounded upper individual glass panes",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudBio217Bays678_20261109_frames",
+        "mesh": "CloudBio217Bays678_20261109_frames_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudBio217Bays678_20261109_glass",
+        "mesh": "CloudBio217Bays678_20261109_glass_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudBio217Bays12_20261110_frames",
+        "mesh": "CloudBio217Bays12_20261110_frames_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudBio217Bays12_20261110_glass",
+        "mesh": "CloudBio217Bays12_20261110_glass_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      -378.9849853515625,
+      -376.98504638671875,
+      -12.385254859924316
+    ],
+    "scale_from_campus": 0.0267263108996425,
+    "game_dimensions_m": [
+      2.1999999284744263,
+      0.4281821846961975,
+      0.5508639514446259
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.940862655122835e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 2.384185791015625e-07,
+    "mounted_islands": 506,
+    "max_mounted_center_to_exterior_m": 0.0017376026371493936,
+    "inherited_detail_flags": 356,
+    "temporary_weld_edges": 140,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 407240,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 9,
+        "drawPrimitives": 10,
+        "triangles": 6340
+      },
+      "fragments.glb": {
+        "bytes": 698332,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 232,
+        "triangles": 8696
+      }
+    },
+    "collider": 1.3719686710877976e-06,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 11956,
+        "visible_wire_pixels": 12317
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 12366,
+        "visible_wire_pixels": 12785
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 12549,
+        "visible_wire_pixels": 13079
+      }
+    },
+    "hashes": {
+      "editable.blend": "06027634eb8506ecb2f72734cc48d0f732c8a4a754ebd9d21f44f07a746237a3",
+      "manifest.json": "b152b7107c7d3c0d3f10f56116b7c2b4622906edc062901b0a2fbd3d6e45395b",
+      "colliders.json": "7386ddbe3ad4761e6eb2d732ec7f4fc5d5513aa29a185f29f2814eb966a7c329",
+      "intact.glb": "6c412b129c961117934de2712075e4e452e0e900bf4b05d47cc42e67843aec3f",
+      "fragments.glb": "90dc613f9c572ad5d0fb8c2c728d46e04de031f5fa3ebbdc6b6f6398bd667a97"
+    }
+  },
+  "knu-osm-468931898-v71-dot8-r1-fracture": {
+    "id": "osm/468931898",
+    "name": "박물관",
+    "fragments": 64,
+    "native_meshes": 78,
+    "source_objects": [
+      {
+        "object": "박물관",
+        "mesh": "박물관.003",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 박물관 | e4 cream opaque panels",
+        "mesh": "PhotoDetail | 박물관 | e4 cream opaque panels",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 박물관 | e4 broad rectangular frames",
+        "mesh": "PhotoDetail | 박물관 | e4 broad rectangular frames",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 박물관 | e4 near entry patterned infill",
+        "mesh": "PhotoDetail | 박물관 | e4 near entry patterned infill",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 박물관 | e4 slim dark panel divider",
+        "mesh": "PhotoDetail | 박물관 | e4 slim dark panel divider",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | Museum306 | e4 observed upper downpipe v65",
+        "mesh": "PhotoDetail | Museum306 | e4 observed upper downpipe v65",
+        "world_matrix": [
+          [
+            0.9999820590019226,
+            0.005991106852889061,
+            0.0,
+            303.6794738769531
+          ],
+          [
+            -0.005991106852889061,
+            0.9999820590019226,
+            0.0,
+            -189.5188751220703
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            7.800000190734863
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2Pipe_20261109_visible_run",
+        "mesh": "CloudMuseum306E2Pipe_20261109_visible_run_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2Pipe_20261109_narrowing_transition",
+        "mesh": "CloudMuseum306E2Pipe_20261109_narrowing_transition_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2Pipe_20261109_collector_body",
+        "mesh": "CloudMuseum306E2Pipe_20261109_collector_body_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2Pipe_20261109_top_lip",
+        "mesh": "CloudMuseum306E2Pipe_20261109_top_lip_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2_20261109_frames",
+        "mesh": "CloudMuseum306E2_20261109_frames_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2_20261109_cream_panels",
+        "mesh": "CloudMuseum306E2_20261109_cream_panels_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2_20261109_observed_dark_inserts",
+        "mesh": "CloudMuseum306E2_20261109_observed_dark_inserts_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudMuseum306E2_20261109_lower_slim_divider",
+        "mesh": "CloudMuseum306E2_20261109_lower_slim_divider_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      304.4295349121094,
+      -176.016845703125,
+      -6.7799391746521
+    ],
+    "scale_from_campus": 0.022154884058843995,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.4834933578968048,
+      1.5341435670852661
+    ],
+    "seed": 261124,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.960308075396824e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 3.814697265625e-06,
+    "mounted_islands": 28,
+    "max_mounted_center_to_exterior_m": 0.00509578175842762,
+    "inherited_detail_flags": 20,
+    "temporary_weld_edges": 17,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 575876,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 14,
+        "drawPrimitives": 19,
+        "triangles": 4044
+      },
+      "fragments.glb": {
+        "bytes": 1214520,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 208,
+        "triangles": 12244
+      }
+    },
+    "collider": 1.7499226166450832e-06,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 10763,
+        "visible_wire_pixels": 11060
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 11492,
+        "visible_wire_pixels": 11797
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 15023,
+        "visible_wire_pixels": 15611
+      }
+    },
+    "hashes": {
+      "editable.blend": "5c306ed6868fb94a20ab8c85846169ab03e195e3be20ac248770b3c472c5eb96",
+      "manifest.json": "dc7e9a4eaabea370aeb9bd34b33403b8b5b17fc62572321943bcd2f44fb72236",
+      "colliders.json": "b7cb6ddea3620ca0c6f1ba5f05892273a477bd7a34b6fce927286066282a6336",
+      "intact.glb": "60cc6d5c8f36094e96fcc118fe1aea5b254ee02b8ea1bdfdaba8083c4e11c3c9",
+      "fragments.glb": "07745dcf4c6f26c0e5f92efd5af0d52238b75cf5160fdb8ade7747e643ee8cc7"
+    }
+  },
+  "knu-osm-468931905-v71-dot8-r1-fracture": {
+    "id": "osm/468931905",
+    "name": "생활과학대학",
+    "fragments": 64,
+    "native_meshes": 79,
+    "source_objects": [
+      {
+        "object": "생활과학대학",
+        "mesh": "생활과학대학_307_exact_underside_prototype",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 창 근사 | 생활과학대학 [468931905]",
+        "mesh": "v7 | 창 근사 | 생활과학대학 [468931905].002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6605736613273621
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v8 | 태양광 | 생활과학대학",
+        "mesh": "v8 | 태양광 | 생활과학대학.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.6605736613273621
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 upper brick skin",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 upper brick skin",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 upper three window bands glass",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 upper three window bands glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 upper three window bands frames",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 upper three window bands frames",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 upper three window bands mullions",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 upper three window bands mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 upper three window bands transom",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 upper three window bands transom",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 cream lintels",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 cream lintels",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 생활과학대학 | e7 pale third-band spandrels",
+        "mesh": "PhotoDetail | 생활과학대학 | e7 pale third-band spandrels",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "Cloud307 | 생활과학대학 | e7 upper exterior pipe and head",
+        "mesh": "Cloud307 | 생활과학대학 | e7 upper exterior pipe and head mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudLife307_20261109_upper_pipe_between_bays_5_6",
+        "mesh": "CloudLife307_20261109_upper_pipe_between_bays_5_6_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudLife307_20261109_upper_pipe_between_bays_3_4",
+        "mesh": "CloudLife307_20261109_upper_pipe_between_bays_3_4_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudLife307_20261109_upper_pipe_between_bays_1_2",
+        "mesh": "CloudLife307_20261109_upper_pipe_between_bays_1_2_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudLife307Sashes_20261110_three_divisions",
+        "mesh": "CloudLife307Sashes_20261110_three_divisions_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      488.9849853515625,
+      -38.760738372802734,
+      -2.2959530353546143
+    ],
+    "scale_from_campus": 0.03304368501298608,
+    "game_dimensions_m": [
+      1.6016265153884888,
+      0.665347158908844,
+      2.200000047683716
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.949226378725413e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 7.62939453125e-06,
+    "mounted_islands": 511,
+    "max_mounted_center_to_exterior_m": 0.007930509746074677,
+    "inherited_detail_flags": 411,
+    "temporary_weld_edges": 190,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 717708,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 15,
+        "drawPrimitives": 16,
+        "triangles": 6708
+      },
+      "fragments.glb": {
+        "bytes": 1112808,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 241,
+        "triangles": 10640
+      }
+    },
+    "collider": 5.245834392708648e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 17991,
+        "visible_wire_pixels": 18294
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 18704,
+        "visible_wire_pixels": 19121
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 18805,
+        "visible_wire_pixels": 19487
+      }
+    },
+    "hashes": {
+      "editable.blend": "40f3f6733ab5299d88960fefded1373b441b0296f9684a23f38b05ccca6c2313",
+      "manifest.json": "401b0b3f316c664057ae878f7b915febf88084e109e732b987c49f98c5117075",
+      "colliders.json": "1b0335ebc7d80b22157c2f546103ebc0c4cd0985496b7c0166d566e2864e5f88",
+      "intact.glb": "3b37671d9b806dd1c1cf19714dc375b02507fcde37a5d83dc07029c2f8a2a260",
+      "fragments.glb": "5514f0fc8ab53c8110c438da3685323e41a8b92bcd9ab6f4645166a50ad65370"
+    }
+  },
+  "knu-osm-468931909-v71-dot8-r1-fracture": {
+    "id": "osm/468931909",
+    "name": "정보화본부",
+    "fragments": 64,
+    "native_meshes": 105,
+    "source_objects": [
+      {
+        "object": "정보화본부",
+        "mesh": "정보화본부.001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 창 근사 | 정보화본부 [468931909]",
+        "mesh": "v7 | 창 근사 | 정보화본부 [468931909].001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -1.6734840869903564
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 태양광 근사 | 정보화본부",
+        "mesh": "v7 | 태양광 근사 | 정보화본부.001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -1.6734840869903564
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | cream lower facade",
+        "mesh": "PhotoDetail | 정보화본부 | cream lower facade",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | horizontal cornices",
+        "mesh": "PhotoDetail | 정보화본부 | horizontal cornices",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | front windows glass",
+        "mesh": "PhotoDetail | 정보화본부 | front windows glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | front windows frame",
+        "mesh": "PhotoDetail | 정보화본부 | front windows frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | front windows mullions",
+        "mesh": "PhotoDetail | 정보화본부 | front windows mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | upper pale spandrels",
+        "mesh": "PhotoDetail | 정보화본부 | upper pale spandrels",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | lower limestone piers",
+        "mesh": "PhotoDetail | 정보화본부 | lower limestone piers",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entrance canopy roof",
+        "mesh": "PhotoDetail | 정보화본부 | entrance canopy roof",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entrance stone piers",
+        "mesh": "PhotoDetail | 정보화본부 | entrance stone piers",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entrance arched fascia",
+        "mesh": "PhotoDetail | 정보화본부 | entrance arched fascia",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entry doors glass",
+        "mesh": "PhotoDetail | 정보화본부 | entry doors glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entry doors frame",
+        "mesh": "PhotoDetail | 정보화본부 | entry doors frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entry doors mullions",
+        "mesh": "PhotoDetail | 정보화본부 | entry doors mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | door stiles",
+        "mesh": "PhotoDetail | 정보화본부 | door stiles",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | terrain-fitted entry foundation",
+        "mesh": "PhotoDetail | 정보화본부 | terrain-fitted entry foundation",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | entry stairs",
+        "mesh": "PhotoDetail | 정보화본부 | entry stairs",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | end glazed stair strip",
+        "mesh": "PhotoDetail | 정보화본부 | end glazed stair strip",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | end stair mullions",
+        "mesh": "PhotoDetail | 정보화본부 | end stair mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 정보화본부 | terrain-conforming perimeter plinth",
+        "mesh": "PhotoDetail | 정보화본부 | terrain-conforming perimeter plinth",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Run_20261109_body",
+        "mesh": "CloudInfo110Run_20261109_body_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_02",
+        "mesh": "CloudInfo110Sashes_20261110_window_02_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_03",
+        "mesh": "CloudInfo110Sashes_20261110_window_03_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_04",
+        "mesh": "CloudInfo110Sashes_20261110_window_04_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_05",
+        "mesh": "CloudInfo110Sashes_20261110_window_05_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_06",
+        "mesh": "CloudInfo110Sashes_20261110_window_06_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_07",
+        "mesh": "CloudInfo110Sashes_20261110_window_07_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_08",
+        "mesh": "CloudInfo110Sashes_20261110_window_08_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_09",
+        "mesh": "CloudInfo110Sashes_20261110_window_09_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_10",
+        "mesh": "CloudInfo110Sashes_20261110_window_10_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_11",
+        "mesh": "CloudInfo110Sashes_20261110_window_11_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_12",
+        "mesh": "CloudInfo110Sashes_20261110_window_12_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_13",
+        "mesh": "CloudInfo110Sashes_20261110_window_13_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_14",
+        "mesh": "CloudInfo110Sashes_20261110_window_14_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_15",
+        "mesh": "CloudInfo110Sashes_20261110_window_15_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_16",
+        "mesh": "CloudInfo110Sashes_20261110_window_16_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_17",
+        "mesh": "CloudInfo110Sashes_20261110_window_17_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_18",
+        "mesh": "CloudInfo110Sashes_20261110_window_18_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudInfo110Sashes_20261110_window_19",
+        "mesh": "CloudInfo110Sashes_20261110_window_19_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      307.8480529785156,
+      122.59001159667969,
+      -4.408476829528809
+    ],
+    "scale_from_campus": 0.0277648925640206,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.41119784116744995,
+      1.8722652196884155
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.980316159475251e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 4.76837158203125e-07,
+    "mounted_islands": 1117,
+    "max_mounted_center_to_exterior_m": 0.1773655116558075,
+    "inherited_detail_flags": 545,
+    "temporary_weld_edges": 809,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 3032020,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 41,
+        "drawPrimitives": 43,
+        "triangles": 13628
+      },
+      "fragments.glb": {
+        "bytes": 3386756,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 261,
+        "triangles": 16056
+      }
+    },
+    "collider": 8.418118106826022e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 10971,
+        "visible_wire_pixels": 11238
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 11656,
+        "visible_wire_pixels": 11932
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 16538,
+        "visible_wire_pixels": 17465
+      }
+    },
+    "hashes": {
+      "editable.blend": "6b28a13c8a19b88eeaf2394fb582d8819df5c5f6b866c252efb55ace75312e64",
+      "manifest.json": "bfd2c3907fd7087137f33a3ba9afe72bbbff89c8f6302b45ce5be379cd47c322",
+      "colliders.json": "ef9c3f759fb591722b27d88a58191a58e90c947754645fe304850c1745a479d2",
+      "intact.glb": "eecfd2c49dca6d3a78fa0f8b450930f1df3b9677b7675cd1c75cee68fdaf1667",
+      "fragments.glb": "aee2a00cd6ed733457ef744f227aa322c9606fbd0044977bc2eb5e16a31ca0a3"
+    }
+  },
+  "knu-osm-468931920-v71-dot8-r1-fracture": {
+    "id": "osm/468931920",
+    "name": "제1과학관",
+    "fragments": 64,
+    "native_meshes": 96,
+    "source_objects": [
+      {
+        "object": "제1과학관",
+        "mesh": "제1과학관.001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v3 | 제1과학관 | facade",
+        "mesh": "v3 | 제1과학관 | facade.001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -6.007403373718262
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west pale stair wall",
+        "mesh": "PhotoDetail | 제1과학관 | west pale stair wall",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west polygonal window rims",
+        "mesh": "PhotoDetail | 제1과학관 | west polygonal window rims",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west polygonal stair glass",
+        "mesh": "PhotoDetail | 제1과학관 | west polygonal stair glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west polygonal mullions",
+        "mesh": "PhotoDetail | 제1과학관 | west polygonal mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west lower glazing glass",
+        "mesh": "PhotoDetail | 제1과학관 | west lower glazing glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west lower glazing frame",
+        "mesh": "PhotoDetail | 제1과학관 | west lower glazing frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | west lower glazing mullions",
+        "mesh": "PhotoDetail | 제1과학관 | west lower glazing mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south corner glazed strip glass",
+        "mesh": "PhotoDetail | 제1과학관 | south corner glazed strip glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south corner glazed strip frame",
+        "mesh": "PhotoDetail | 제1과학관 | south corner glazed strip frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south corner glazed strip mullions",
+        "mesh": "PhotoDetail | 제1과학관 | south corner glazed strip mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south stone end panel",
+        "mesh": "PhotoDetail | 제1과학관 | south stone end panel",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south stone coursing",
+        "mesh": "PhotoDetail | 제1과학관 | south stone coursing",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south stone joints",
+        "mesh": "PhotoDetail | 제1과학관 | south stone joints",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south recessed glazing glass",
+        "mesh": "PhotoDetail | 제1과학관 | south recessed glazing glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south recessed glazing frame",
+        "mesh": "PhotoDetail | 제1과학관 | south recessed glazing frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south recessed glazing mullions",
+        "mesh": "PhotoDetail | 제1과학관 | south recessed glazing mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south deep pale fins",
+        "mesh": "PhotoDetail | 제1과학관 | south deep pale fins",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south pale floor bands",
+        "mesh": "PhotoDetail | 제1과학관 | south pale floor bands",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | south entrance canopy",
+        "mesh": "PhotoDetail | 제1과학관 | south entrance canopy",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 제1과학관 | terrain perimeter plinth",
+        "mesh": "PhotoDetail | 제1과학관 | terrain perimeter plinth",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_upper_right_1_frame",
+        "mesh": "CloudScience208_20261109_upper_right_1_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_upper_right_1_pane",
+        "mesh": "CloudScience208_20261109_upper_right_1_pane_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_upper_right_2_frame",
+        "mesh": "CloudScience208_20261109_upper_right_2_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_upper_right_2_pane",
+        "mesh": "CloudScience208_20261109_upper_right_2_pane_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_lower_right_1_frame",
+        "mesh": "CloudScience208_20261109_lower_right_1_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_lower_right_1_pane",
+        "mesh": "CloudScience208_20261109_lower_right_1_pane_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_lower_right_2_frame",
+        "mesh": "CloudScience208_20261109_lower_right_2_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208_20261109_lower_right_2_pane",
+        "mesh": "CloudScience208_20261109_lower_right_2_pane_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208Dividers_20261110_cell1",
+        "mesh": "CloudScience208Dividers_20261110_cell1_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudScience208Dividers_20261110_cell2",
+        "mesh": "CloudScience208Dividers_20261110_cell2_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      -220.58770751953125,
+      -38.77360153198242,
+      -8.591879844665527
+    ],
+    "scale_from_campus": 0.019164529287412645,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.4425947666168213,
+      0.9089377522468567
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.9692153919478343e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 7.62939453125e-06,
+    "mounted_islands": 1573,
+    "max_mounted_center_to_exterior_m": 0.02970503829419613,
+    "inherited_detail_flags": 943,
+    "temporary_weld_edges": 1025,
+    "inversion_false_positives": [
+      {
+        "finding": "SM_468931920_Intact_14_QA: 20 closed parts with normals pointing inward",
+        "islands": 272,
+        "minimum_centered_volume_m3": 0.00034393836304902337
+      }
+    ],
+    "format": {
+      "intact.glb": {
+        "bytes": 1360488,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 32,
+        "drawPrimitives": 33,
+        "triangles": 19128
+      },
+      "fragments.glb": {
+        "bytes": 1701428,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 242,
+        "triangles": 21736
+      }
+    },
+    "collider": 5.192117543406649e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 12327,
+        "visible_wire_pixels": 12797
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 12725,
+        "visible_wire_pixels": 13190
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 12366,
+        "visible_wire_pixels": 12920
+      }
+    },
+    "hashes": {
+      "editable.blend": "cf3c48a4c7769ed4ee7d4929004bc8c20fc567180486e6cd11845cd5ed0bcde1",
+      "manifest.json": "6414622732a9b8071245b7ea86818d0f962fd84ec3682aaf672d2a4a68ddcf2d",
+      "colliders.json": "df433609fa5ceb4458f99ee457b2c67c2c6d602f54809ce7463ab2a589630fe5",
+      "intact.glb": "f394a2fd74b9ee7a03ae405584e48813d0735e4854d7bc2ff4f05251024ecb55",
+      "fragments.glb": "afaaa2b7f3f31a8aaf02c13d9953148b642ed35627f103c6f3b6abc68bfa1e88"
+    }
+  },
+  "knu-osm-468931924-v71-dot8-r1-fracture": {
+    "id": "osm/468931924",
+    "name": "국민체육센터",
+    "fragments": 64,
+    "native_meshes": 97,
+    "source_objects": [
+      {
+        "object": "국민체육센터",
+        "mesh": "국민체육센터.001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 창 근사 | 국민체육센터 [468931924]",
+        "mesh": "v7 | 창 근사 | 국민체육센터 [468931924].001",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -9.182538032531738
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | signed low wing front cladding",
+        "mesh": "PhotoDetail | 국민체육센터 | signed low wing front cladding",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | panel horizontal joints",
+        "mesh": "PhotoDetail | 국민체육센터 | panel horizontal joints",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | panel vertical joints",
+        "mesh": "PhotoDetail | 국민체육센터 | panel vertical joints",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | tall right glazing glass",
+        "mesh": "PhotoDetail | 국민체육센터 | tall right glazing glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | tall right glazing frame",
+        "mesh": "PhotoDetail | 국민체육센터 | tall right glazing frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | tall right glazing mullions",
+        "mesh": "PhotoDetail | 국민체육센터 | tall right glazing mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | tall glazing centre mullions",
+        "mesh": "PhotoDetail | 국민체육센터 | tall glazing centre mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | projecting right facade piers",
+        "mesh": "PhotoDetail | 국민체육센터 | projecting right facade piers",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | projecting right roof eave",
+        "mesh": "PhotoDetail | 국민체육센터 | projecting right roof eave",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | upper entry windows glass",
+        "mesh": "PhotoDetail | 국민체육센터 | upper entry windows glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | upper entry windows frame",
+        "mesh": "PhotoDetail | 국민체육센터 | upper entry windows frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | upper entry windows mullions",
+        "mesh": "PhotoDetail | 국민체육센터 | upper entry windows mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | upper entry window divisions",
+        "mesh": "PhotoDetail | 국민체육센터 | upper entry window divisions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | lower flank windows glass",
+        "mesh": "PhotoDetail | 국민체육센터 | lower flank windows glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | lower flank windows frame",
+        "mesh": "PhotoDetail | 국민체육센터 | lower flank windows frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | lower flank windows mullions",
+        "mesh": "PhotoDetail | 국민체육센터 | lower flank windows mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry pale portal surround",
+        "mesh": "PhotoDetail | 국민체육센터 | entry pale portal surround",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry glazed doors glass",
+        "mesh": "PhotoDetail | 국민체육센터 | entry glazed doors glass",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry glazed doors frame",
+        "mesh": "PhotoDetail | 국민체육센터 | entry glazed doors frame",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry glazed doors mullions",
+        "mesh": "PhotoDetail | 국민체육센터 | entry glazed doors mullions",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry door handles",
+        "mesh": "PhotoDetail | 국민체육센터 | entry door handles",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | red entry canopy",
+        "mesh": "PhotoDetail | 국민체육센터 | red entry canopy",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | green entry canopy underside",
+        "mesh": "PhotoDetail | 국민체육센터 | green entry canopy underside",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | canopy supporting arms",
+        "mesh": "PhotoDetail | 국민체육센터 | canopy supporting arms",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | terrain-fitted entry landing",
+        "mesh": "PhotoDetail | 국민체육센터 | terrain-fitted entry landing",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | entry steps",
+        "mesh": "PhotoDetail | 국민체육센터 | entry steps",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "PhotoDetail | 국민체육센터 | terrain perimeter plinth",
+        "mesh": "PhotoDetail | 국민체육센터 | terrain perimeter plinth",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudSports211Plaque_20261109_red_board",
+        "mesh": "CloudSports211Plaque_20261109_red_board_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudSports211Plaque_20261109_simplified_211",
+        "mesh": "CloudSports211Plaque_20261109_simplified_211_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudSports211Ties_20261109_two_inclined_rods",
+        "mesh": "CloudSports211Ties_20261109_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudSports211Notice_20261110_blank_green_board",
+        "mesh": "CloudSports211Notice_20261110_blank_green_board_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      -403.8699951171875,
+      -3.4660229682922363,
+      -10.879866600036621
+    ],
+    "scale_from_campus": 0.05279216366320625,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.7447564005851746,
+      2.0181143283843994
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.979629519841211e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 1.9073486328125e-06,
+    "mounted_islands": 374,
+    "max_mounted_center_to_exterior_m": 0.19005191326141357,
+    "inherited_detail_flags": 185,
+    "temporary_weld_edges": 85,
+    "inversion_false_positives": [
+      {
+        "finding": "SM_468931924_Intact_30_QA: 1 closed parts with normals pointing inward",
+        "islands": 3,
+        "minimum_centered_volume_m3": 3.123315709269058e-05
+      }
+    ],
+    "format": {
+      "intact.glb": {
+        "bytes": 395664,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 33,
+        "drawPrimitives": 34,
+        "triangles": 5040
+      },
+      "fragments.glb": {
+        "bytes": 696772,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 217,
+        "triangles": 7384
+      }
+    },
+    "collider": 9.982778720052377e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 31840,
+        "visible_wire_pixels": 32278
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 33448,
+        "visible_wire_pixels": 33997
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 41826,
+        "visible_wire_pixels": 42772
+      }
+    },
+    "hashes": {
+      "editable.blend": "6d8e810bdecd1d47151e7bbb2a3ce35334bba5a9d56207fcb1493ddad23610f8",
+      "manifest.json": "f24b693ed9c4bac21051465f60f3aa3a2a9ff4dba2b20e12c49d59c57ea3371b",
+      "colliders.json": "f81ee564e9e84f004d15da505447c7cfb36607c80a7255c3dc3506db26afd20c",
+      "intact.glb": "ca66655328c2825b70a6f7a89715ed70d81ff3c7190d12b524599a912311a49e",
+      "fragments.glb": "9c1b2272d60939b3e2aab7ce163a741122e132402a0089b7a17fb4034f6350e3"
+    }
+  },
+  "knu-osm-473684409-v71-dot8-r1-fracture": {
+    "id": "osm/473684409",
+    "name": "어린이집",
+    "fragments": 64,
+    "native_meshes": 92,
+    "source_objects": [
+      {
+        "object": "어린이집",
+        "mesh": "어린이집.002",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v7 | 창 근사 | 어린이집 [473684409]",
+        "mesh": "v7 | 창 근사 | 어린이집 [473684409]",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -5.277978897094727
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "v8 | 태양광 | 어린이집",
+        "mesh": "v8 | 태양광 | 어린이집",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -5.277978897094727
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261109_observed_front_red_coping",
+        "mesh": "CloudChildcare206_20261109_observed_front_red_coping_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle1_glazing",
+        "mesh": "CloudChildcare206_20261110_middle1_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle1_white_frame",
+        "mesh": "CloudChildcare206_20261110_middle1_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle1_colored_surround",
+        "mesh": "CloudChildcare206_20261110_middle1_colored_surround_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle2_glazing",
+        "mesh": "CloudChildcare206_20261110_middle2_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle2_white_frame",
+        "mesh": "CloudChildcare206_20261110_middle2_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle3_glazing",
+        "mesh": "CloudChildcare206_20261110_middle3_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle3_white_frame",
+        "mesh": "CloudChildcare206_20261110_middle3_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle4_glazing",
+        "mesh": "CloudChildcare206_20261110_middle4_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle4_white_frame",
+        "mesh": "CloudChildcare206_20261110_middle4_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle4_colored_surround",
+        "mesh": "CloudChildcare206_20261110_middle4_colored_surround_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle5_glazing",
+        "mesh": "CloudChildcare206_20261110_middle5_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_middle5_white_frame",
+        "mesh": "CloudChildcare206_20261110_middle5_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper1_glazing",
+        "mesh": "CloudChildcare206_20261110_upper1_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper1_white_frame",
+        "mesh": "CloudChildcare206_20261110_upper1_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper1_colored_surround",
+        "mesh": "CloudChildcare206_20261110_upper1_colored_surround_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper2_glazing",
+        "mesh": "CloudChildcare206_20261110_upper2_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper2_white_frame",
+        "mesh": "CloudChildcare206_20261110_upper2_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper3_glazing",
+        "mesh": "CloudChildcare206_20261110_upper3_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper3_white_frame",
+        "mesh": "CloudChildcare206_20261110_upper3_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper4_glazing",
+        "mesh": "CloudChildcare206_20261110_upper4_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper4_white_frame",
+        "mesh": "CloudChildcare206_20261110_upper4_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper4_colored_surround",
+        "mesh": "CloudChildcare206_20261110_upper4_colored_surround_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper5_glazing",
+        "mesh": "CloudChildcare206_20261110_upper5_glazing_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "object": "CloudChildcare206_20261110_upper5_white_frame",
+        "mesh": "CloudChildcare206_20261110_upper5_white_frame_mesh",
+        "world_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "source_hash": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "original_campus_origin": [
+      -266.70001220703125,
+      94.76675415039062,
+      -6.076043605804443
+    ],
+    "scale_from_campus": 0.044426504202022474,
+    "game_dimensions_m": [
+      2.200000047683716,
+      0.5747929811477661,
+      1.349965214729309
+    ],
+    "seed": 261120,
+    "glb_bounds_error_m": 0.0,
+    "glb_maximum_pivot_error_m": 4.998493194352527e-08,
+    "max_geometry_error_m": 0.0,
+    "max_uv_delta": 2.9802322387695312e-08,
+    "mounted_islands": 306,
+    "max_mounted_center_to_exterior_m": 0.14587189257144928,
+    "inherited_detail_flags": 189,
+    "temporary_weld_edges": 101,
+    "inversion_false_positives": [],
+    "format": {
+      "intact.glb": {
+        "bytes": 218228,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 28,
+        "drawPrimitives": 29,
+        "triangles": 3740
+      },
+      "fragments.glb": {
+        "bytes": 478764,
+        "errors": 0,
+        "warnings": 0,
+        "messages": [],
+        "meshes": 64,
+        "drawPrimitives": 228,
+        "triangles": 6268
+      }
+    },
+    "collider": 4.962217357087906e-07,
+    "render": {
+      "SE": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 18572,
+        "visible_wire_pixels": 19122
+      },
+      "NW": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 19077,
+        "visible_wire_pixels": 19649
+      },
+      "top": {
+        "intact_assembled_silhouette_iou": 1.0,
+        "visible_exploded_pixels": 19405,
+        "visible_wire_pixels": 20116
+      }
+    },
+    "hashes": {
+      "editable.blend": "e46187e103b5c012b22b89300d616c9c8723158b8026cebefbbad71cc44abf28",
+      "manifest.json": "e75af77d419b51bb908df64d8c085b84ede61629b21e07c5c1095e85afaea24e",
+      "colliders.json": "e99f024851f1d6d287216478be44f529ff062c3b127a0acdca58b65536e27c35",
+      "intact.glb": "e88ad36bece2d2bd7513d81e2d4a72f427eb0bb935c9e3b86b3014903ff3f982",
+      "fragments.glb": "9aedf14bd0c84cab19ef023839580bab2c9059041c0f4788821a46bdd2ba5493"
+    }
+  }
+}

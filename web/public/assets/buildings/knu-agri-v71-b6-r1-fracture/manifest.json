@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-agri-v71-b6-r1-fracture",
+  "display_name": "농업생명과학관",
+  "source_model_id": "524172305",
+  "source_campus": "knu-campus-v71-batch6-r1.blend",
+  "source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+  "source_object": "농업생명과학관",
+  "source_objects": [
+    {
+      "object": "농업생명과학관",
+      "mesh": "농업생명과학관.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 농업생명과학관 [524172305]",
+      "mesh": "v7 | 창 근사 | 농업생명과학관 [524172305]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -9.09821891784668
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    258.5899963378906,
+    411.9750061035156,
+    -15.487359046936035
+  ],
+  "scale_from_campus": 0.03017005643995544,
+  "source_dimensions_campus_z_up_m": [
+    72.91998291015625,
+    70.69000244140625,
+    18.389141082763672
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.5548014044761658,
+    2.132721424102783
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

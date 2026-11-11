@@ -1,0 +1,316 @@
+{
+  "tour_xml": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/index.xml",
+  "aerial": "Esri World Imagery z19, north up, center marks from v71 CSV",
+  "archival_urls": [
+    "https://ir.knu.ac.kr/theme/knuir/state/data/report2015.pdf",
+    "https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=1&btin.appl_no=000000&btin.bbs_cde=1&btin.doc_no=1316327&menu_idx=67",
+    "https://lifelong.knu.ac.kr/hmpg/cms/bbsPage/MNU0070091.knu?goDetailPageNtcrtId=742&isGoDetailPage=Y"
+  ],
+  "model_references": {
+    "468931865": [
+      {
+        "file": "pano11381-0.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_1_05_11381/mobile/0.jpg",
+        "sha256": "bc8eea3d3eabe12ed8068ab8e5bb06c7ae0426a38b7acb04ce5fc948cd206507"
+      },
+      {
+        "file": "pano11451-2.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_4_03_11451/mobile/2.jpg",
+        "sha256": "809c773ef093abe51bd091c7479daf2388b5b62359f91dc2465a3117a5efde0c"
+      },
+      {
+        "file": "pano17107-2.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_17107/mobile/2.jpg",
+        "sha256": "c673bcce251388e796a6491a632548aaca2bb68742e9110c276e3d0d633f420c"
+      },
+      {
+        "file": "db-16129-0.jpg",
+        "url": "https://photo.knu.ac.kr/photoImageView/preview/56556.do",
+        "sha256": "9f1f423cd4e0fc25bd0eeb63e7ab0e15ab27bccfef06de0891bd2711ff21db6e"
+      },
+      {
+        "file": "db-16130-0.jpg",
+        "url": "https://photo.knu.ac.kr/photoImageView/preview/56557.do",
+        "sha256": "d421bbd4779b46fdd4e4477f00155b8751a709d677ba1df58df80910b7d3a243"
+      }
+    ],
+    "469617252": [
+      {
+        "file": "pano11433-3.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_3_04_11433/mobile/3.jpg",
+        "sha256": "836813bb90af91abe4a6bc5fde153d72a72f6f15f075c80c2de549177ff820b5"
+      },
+      {
+        "file": "pano17108-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_17108/mobile/1.jpg",
+        "sha256": "f1ede429958537787bfadf8e1888c5cfe1989070e2d4c63f8ebf900330d0a21d"
+      },
+      {
+        "file": "pano9065-2.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_9065/mobile/2.jpg",
+        "sha256": "dec0b9b07b76310a297e17be6bce091d94b438f1fc358b6e086bb91e39406b59"
+      }
+    ],
+    "vw/147": [
+      {
+        "file": "pano9065-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_9065/mobile/1.jpg",
+        "sha256": "2ce97b0d701164e136629d3647c9de5c381d32f9ebf477cd70486ba9b432357d"
+      },
+      {
+        "file": "pano17108-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_17108/mobile/1.jpg",
+        "sha256": "f1ede429958537787bfadf8e1888c5cfe1989070e2d4c63f8ebf900330d0a21d"
+      },
+      {
+        "file": "db-8104-0.jpg",
+        "url": "https://photo.knu.ac.kr/photoImageView/preview/35108.do",
+        "sha256": "074ecc3a8fdbd9fef8b73452b0023a65dd3b194f0ae8be5dd4178bf96edfd563"
+      }
+    ],
+    "vw/95": [
+      {
+        "file": "pano20866-3.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_2_12_20866/mobile/3.jpg",
+        "sha256": "e946b754f0f5b05b0241560075123ac0532f6a60c7fa9d4409f5c1908a4f1d49"
+      }
+    ],
+    "468931916": [
+      {
+        "file": "lifelong-49356.jpg",
+        "url": "https://photo.knu.ac.kr/photoImageView/preview/49356.do",
+        "sha256": "2199658662fde1b0a061487870e00de0b6d931826e34f5f0d452cfc912c8bb33"
+      },
+      {
+        "file": "pano17107-0.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_17107/mobile/0.jpg",
+        "sha256": "3451ccd880ea7e1f886608c44d999fde94d54a03bafb37365b7387e63fd5697f"
+      }
+    ],
+    "1026072764": [
+      {
+        "file": "pano9065-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_9065/mobile/1.jpg",
+        "sha256": "2ce97b0d701164e136629d3647c9de5c381d32f9ebf477cd70486ba9b432357d"
+      }
+    ],
+    "vw/127": []
+  },
+  "aerial_tiles": [
+    {
+      "file": "z19-tile-449445-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449445",
+      "sha256": "989e2f250986fcf7fe684246639dd8e486b92e6f75a28e8b00c240506ec4b60d"
+    },
+    {
+      "file": "z19-tile-449446-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449446",
+      "sha256": "a9ddba9d0f274dc64c326d0bc217d616473e6fea8d07f4eb425f51bce953031b"
+    },
+    {
+      "file": "z19-tile-449447-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449447",
+      "sha256": "502a5172663dc9f35d7295623f09b52afce90a1056b6d0ee296991d60840518f"
+    },
+    {
+      "file": "z19-tile-449445-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449445",
+      "sha256": "63ca2156085b4ad6c27ca2776397d4a552ed7d8fe585b20dc6ab2d72d9136142"
+    },
+    {
+      "file": "z19-tile-449446-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449446",
+      "sha256": "bc3d8fd1a1ed8d02641c48017432f3c4a3f1f215d9d710dd8674c3dc1597ad2b"
+    },
+    {
+      "file": "z19-tile-449447-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449447",
+      "sha256": "85270fb4e1a881cf1dec42a54a34e969b380d2c3ae3755fd9210f5c2b2e7e107"
+    },
+    {
+      "file": "z19-tile-449445-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449445",
+      "sha256": "b85580bfc91fc8a5dc07c5a43cb5c35f14a403e1e9309be8798e10010225ebec"
+    },
+    {
+      "file": "z19-tile-449446-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449446",
+      "sha256": "a7deeaa41106a55b4f87cef3152bcd19eff31ebc30760b846fb93d1d50aecfea"
+    },
+    {
+      "file": "z19-tile-449447-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449447",
+      "sha256": "1c743aa23d34c4cda54488d7021de454c7f19407e1142ed340bac72b470fe20c"
+    },
+    {
+      "file": "z19-tile-449450-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449450",
+      "sha256": "c8d7dbbe7f81b67d8ae4f493c7c57cd06dace2cddb50bcd713c6741704cd62ab"
+    },
+    {
+      "file": "z19-tile-449451-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449451",
+      "sha256": "56b75705653620c56de6daac2f4bcc329e078e87b82ff372756726684f3e1e44"
+    },
+    {
+      "file": "z19-tile-449452-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449452",
+      "sha256": "78eac832b7fa9e96841fc78cec273b64ce9c8c38854ac06427ad5308cb9d3b86"
+    },
+    {
+      "file": "z19-tile-449450-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449450",
+      "sha256": "5cfb74375fc446e1fe3a0e81622a354d1a5d05610bf8958caa81921fe95950a7"
+    },
+    {
+      "file": "z19-tile-449451-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449451",
+      "sha256": "8865383d457d58f53f7b93efa7ffdf551d09db9a981c49dc08bd96990ff18e56"
+    },
+    {
+      "file": "z19-tile-449452-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449452",
+      "sha256": "2126478ec8a9ffd9be872b767ff48308d2cc67aba79638e5056f7499eae24a3e"
+    },
+    {
+      "file": "z19-tile-449450-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449450",
+      "sha256": "7e79f4defffc15e33ffed8b76ab45f5833f604ac5c7d2db8b0691d112c2d36b8"
+    },
+    {
+      "file": "z19-tile-449451-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449451",
+      "sha256": "02870982d64d1e7f310c84e98fd33e76855e09f1049f96209dc7bac379295cbe"
+    },
+    {
+      "file": "z19-tile-449452-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449452",
+      "sha256": "dff41a2ff0b75f92297852a3448ef1bde42965171f4ef265962c1341665b5817"
+    },
+    {
+      "file": "z19-tile-449450-206076.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449450",
+      "sha256": "c09d8422dd875ec0207a863dc1723c82341cb2a184b85e5fe35b3857cca1e519"
+    },
+    {
+      "file": "z19-tile-449451-206076.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449451",
+      "sha256": "77d17ff3d32aabef1f186e7a60a6b0645e4f9619404d509cb9dfd74b7737e409"
+    },
+    {
+      "file": "z19-tile-449452-206076.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449452",
+      "sha256": "95962f503b52ca67931ec5e5553e1722d5e694b1d16c66bc0fc1dffd776ee9ab"
+    },
+    {
+      "file": "z19-tile-449443-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449443",
+      "sha256": "e8b45ca05ae71fabd62b8367033272a07ed9d554a2da451ac87a2069219b0ed3"
+    },
+    {
+      "file": "z19-tile-449444-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449444",
+      "sha256": "7d7d4ae60cd4f59849de5274fb408212edc16caa9aaa4c24cfea614336e5d9d6"
+    },
+    {
+      "file": "z19-tile-449443-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449443",
+      "sha256": "f6eb68004e535a06ea6c65871deab1e36b45d3c9fc93ef25d031a657dc013686"
+    },
+    {
+      "file": "z19-tile-449444-206078.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449444",
+      "sha256": "b0a7ef8abc350def0314f272d6a5164dcf8c8bc7dad140230ead916eaa87569d"
+    },
+    {
+      "file": "z19-tile-449443-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449443",
+      "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+    },
+    {
+      "file": "z19-tile-449444-206079.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449444",
+      "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+    },
+    {
+      "file": "z19-tile-449444-206072.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449444",
+      "sha256": "5855c2ea04c9a41484155b24feeb3195faa210ae9ef6928f7e59be0a9c6fcf9c"
+    },
+    {
+      "file": "z19-tile-449445-206072.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449445",
+      "sha256": "c9aab995d0d39a365cacdd5cef7ae8b4387591d5f2730b389a081dd999105bd0"
+    },
+    {
+      "file": "z19-tile-449446-206072.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449446",
+      "sha256": "dfa2a3b35da0df136bc26404afa3401bd91eb009107a7ff2d8e26e1e2e35d607"
+    },
+    {
+      "file": "z19-tile-449444-206073.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449444",
+      "sha256": "5dcc160f3e56fd05ad8ee33ca23fc7c4ec2cf342b0d40420dcbd2e898555c07c"
+    },
+    {
+      "file": "z19-tile-449445-206073.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449445",
+      "sha256": "dd1dd9c8b6e6872915ce3f43a93f705525a8c3041f40f6db32f110ac9457277d"
+    },
+    {
+      "file": "z19-tile-449446-206073.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449446",
+      "sha256": "bd982db234c4acaa8bcaca1c351c09201306c2c249398ad0b8bd9bd08c268229"
+    },
+    {
+      "file": "z19-tile-449444-206074.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449444",
+      "sha256": "7ff85cb060579815e6a8ae0c8f4b22ca21774136c6370f873cf6c2dda13ef1e6"
+    },
+    {
+      "file": "z19-tile-449445-206074.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449445",
+      "sha256": "32740fc26a0bb61407b2875edff554aefa5d8bb788928c96146918064a39e04d"
+    },
+    {
+      "file": "z19-tile-449446-206074.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449446",
+      "sha256": "c44011d1967cb7dbbccae174543696bd2f7c3063d0af62a42dfc1eba3851f6da"
+    },
+    {
+      "file": "z19-tile-449448-206075.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449448",
+      "sha256": "75df6405f78422ea043a4d039b95e92f9d34e4d7dbbd52971e68d68c8873c794"
+    },
+    {
+      "file": "z19-tile-449449-206075.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449449",
+      "sha256": "1e8e9721e6af74d76c4d38746c01e951461461be2efb753523926c5dc901541a"
+    },
+    {
+      "file": "z19-tile-449450-206075.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449450",
+      "sha256": "ee557965454cf50b068a4e04ee2bb90c5bb059ed7cc4a2e887437e5fd058f3bf"
+    },
+    {
+      "file": "z19-tile-449448-206076.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449448",
+      "sha256": "e3aa2f6b019742d959c90fe8973eed6f2f039b1386fb6794c9d8d44d60116a58"
+    },
+    {
+      "file": "z19-tile-449449-206076.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449449",
+      "sha256": "d6c429b4d0d02ca9ee25253179ce227cae1c998ae92e198ca5eb5d6c92f1d70b"
+    },
+    {
+      "file": "z19-tile-449448-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449448",
+      "sha256": "67f8ad4d8ae84a894ca377c5f4dc8ecb080ce4e83c72b253ddc019be27cb70f6"
+    },
+    {
+      "file": "z19-tile-449449-206077.jpg",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449449",
+      "sha256": "4c6c85d4eaf7c80cf36bced05b52e0c39c6b102f092298d4aa6f4f673d72e3f3"
+    }
+  ]
+}

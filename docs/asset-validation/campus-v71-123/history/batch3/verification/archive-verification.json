@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "74229753d57d77690a545ba9097a9b261e9351f3726fc535a526fd081965ef6c",
+  "members": 37,
+  "crc_and_member_hashes": true,
+  "working_files_matching_archive": 5,
+  "hashes": {
+    "candidate/knu-campus-v71-batch3-r1.blend": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+    "candidate/knu-campus-v71-batch3-r1.glb": "54cacf52c4b471c815f170d01df7453daa6abbf5955ae77e928fc4881b38551c",
+    "candidate/batch3-model-meshes-r1.blend": "4f3a4f042a079fb97d3daf29096180d69290c91752d9480de53ea7c576b0840c",
+    "baseline/knu-campus-v71-batch2-r2.blend": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+    "baseline/knu-campus-v71-batch2-r2.glb": "53294f0fa937ce24ec89bd087f212e4875d66afd6a2fb996435d3a98a2e4563f"
+  }
+}

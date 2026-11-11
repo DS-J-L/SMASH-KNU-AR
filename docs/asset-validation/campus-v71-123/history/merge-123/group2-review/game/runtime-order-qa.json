@@ -1,0 +1,20 @@
+[
+  {
+    "id": "knu-osm-468931910-v71-g2-r1-fracture",
+    "node": "SM_468931910_Fragment_013",
+    "before_m": 0.000003169908763228646,
+    "after_m": 5.623029891710374e-8,
+    "updated": true,
+    "before_points": 32,
+    "after_points": 40
+  },
+  {
+    "id": "knu-osm-468931910-v71-g2-r1-fracture",
+    "node": "SM_468931910_Fragment_015",
+    "before_m": 0.000002996921953046794,
+    "after_m": 2.687623533725869e-7,
+    "updated": true,
+    "before_points": 38,
+    "after_points": 38
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-faculty-v71-b4-r1-fracture",
+  "display_name": "교수아파트",
+  "source_model_id": "469843173",
+  "source_campus": "knu-campus-v71-batch4-r1.blend",
+  "source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+  "source_object": "교수아파트",
+  "source_objects": [
+    {
+      "object": "교수아파트",
+      "mesh": "교수아파트.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 교수아파트 [469843173]",
+      "mesh": "v7 | 창 근사 | 교수아파트 [469843173]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -7.335784912109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -115.29460144042969,
+    -528.0125732421875,
+    -8.77034854888916
+  ],
+  "scale_from_campus": 0.03386733762796484,
+  "source_dimensions_campus_z_up_m": [
+    64.95934295654297,
+    32.152740478515625,
+    29.43456268310547
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.1999999284744263,
+    0.996870219707489,
+    1.088927686214447
+  ],
+  "fragment_count": 65,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

@@ -1,0 +1,301 @@
+{
+  "protected_existing_meshes": 92,
+  "new_details": 49,
+  "checks": [
+    {
+      "object": "CloudBio217Bays12_20261110_frames",
+      "owner": "osm/468931887",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudBio217Bays12_20261110_glass",
+      "owner": "osm/468931887",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_colored_surround",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle2_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle2_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle3_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle3_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_colored_surround",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle5_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle5_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_colored_surround",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper2_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper2_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper3_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper3_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_colored_surround",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper5_glazing",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper5_white_frame",
+      "owner": "osm/473684409",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudEngineering408Window_20261110_two_columns_lower_transom",
+      "owner": "osm/468931867",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_02",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_03",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_04",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_05",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_06",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_07",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_08",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_09",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_10",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_11",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_12",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_13",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_14",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_15",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_16",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_17",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_18",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudInfo110Sashes_20261110_window_19",
+      "owner": "osm/468931909",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudLife307Sashes_20261110_three_divisions",
+      "owner": "osm/468931905",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudScience208Dividers_20261110_cell1",
+      "owner": "osm/468931920",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudScience208Dividers_20261110_cell2",
+      "owner": "osm/468931920",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    },
+    {
+      "object": "CloudSports211Notice_20261110_blank_green_board",
+      "owner": "osm/468931924",
+      "candidate_aabb": 0,
+      "cross_scope_surface_intersections": []
+    }
+  ],
+  "cross_scope_pairs": 0
+}

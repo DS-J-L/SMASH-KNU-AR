@@ -1,0 +1,19 @@
+{
+  "screens": 6,
+  "roi_xyxy_relative_to_header_bottom": [
+    565,
+    144,
+    1280,
+    824
+  ],
+  "models": {
+    "osm/468931915": {
+      "destruction_changed_pixels": 101690,
+      "restored_different_pixels": 0
+    },
+    "osm/577759119": {
+      "destruction_changed_pixels": 102725,
+      "restored_different_pixels": 0
+    }
+  }
+}

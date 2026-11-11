@@ -1,0 +1,1029 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-473684409-v71-dot8-r1-fracture",
+  "display_name": "어린이집",
+  "source_model_id": "osm/473684409",
+  "source_campus": "knu-campus-v71-123-dot8-r1.blend",
+  "source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+  "source_object": "어린이집",
+  "source_objects": [
+    {
+      "object": "어린이집",
+      "mesh": "어린이집.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 어린이집 [473684409]",
+      "mesh": "v7 | 창 근사 | 어린이집 [473684409]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -5.277978897094727
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v8 | 태양광 | 어린이집",
+      "mesh": "v8 | 태양광 | 어린이집",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -5.277978897094727
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261109_observed_front_red_coping",
+      "mesh": "CloudChildcare206_20261109_observed_front_red_coping_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_glazing",
+      "mesh": "CloudChildcare206_20261110_middle1_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_white_frame",
+      "mesh": "CloudChildcare206_20261110_middle1_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle1_colored_surround",
+      "mesh": "CloudChildcare206_20261110_middle1_colored_surround_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle2_glazing",
+      "mesh": "CloudChildcare206_20261110_middle2_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle2_white_frame",
+      "mesh": "CloudChildcare206_20261110_middle2_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle3_glazing",
+      "mesh": "CloudChildcare206_20261110_middle3_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle3_white_frame",
+      "mesh": "CloudChildcare206_20261110_middle3_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_glazing",
+      "mesh": "CloudChildcare206_20261110_middle4_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_white_frame",
+      "mesh": "CloudChildcare206_20261110_middle4_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle4_colored_surround",
+      "mesh": "CloudChildcare206_20261110_middle4_colored_surround_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle5_glazing",
+      "mesh": "CloudChildcare206_20261110_middle5_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_middle5_white_frame",
+      "mesh": "CloudChildcare206_20261110_middle5_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_glazing",
+      "mesh": "CloudChildcare206_20261110_upper1_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_white_frame",
+      "mesh": "CloudChildcare206_20261110_upper1_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper1_colored_surround",
+      "mesh": "CloudChildcare206_20261110_upper1_colored_surround_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper2_glazing",
+      "mesh": "CloudChildcare206_20261110_upper2_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper2_white_frame",
+      "mesh": "CloudChildcare206_20261110_upper2_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper3_glazing",
+      "mesh": "CloudChildcare206_20261110_upper3_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper3_white_frame",
+      "mesh": "CloudChildcare206_20261110_upper3_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_glazing",
+      "mesh": "CloudChildcare206_20261110_upper4_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_white_frame",
+      "mesh": "CloudChildcare206_20261110_upper4_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper4_colored_surround",
+      "mesh": "CloudChildcare206_20261110_upper4_colored_surround_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper5_glazing",
+      "mesh": "CloudChildcare206_20261110_upper5_glazing_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudChildcare206_20261110_upper5_white_frame",
+      "mesh": "CloudChildcare206_20261110_upper5_white_frame_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -266.70001220703125,
+    94.76675415039062,
+    -6.076043605804443
+  ],
+  "scale_from_campus": 0.044426504202022474,
+  "source_dimensions_campus_z_up_m": [
+    49.519989013671875,
+    30.38648223876953,
+    12.938064575195312
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.5747929811477661,
+    1.349965214729309
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120
+}

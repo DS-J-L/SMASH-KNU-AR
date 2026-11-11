@@ -1,0 +1,816 @@
+{
+  "base_blend_sha256": "5ddf08824b6efb19d99cf96eae31ea7d3dc95ba03254d0edceeaa773e2666a74",
+  "base_glb_sha256": "32f352fdd870588009f59fe63d20012eb92f891f2052984ccf428bad25eeecd0",
+  "candidate_blend_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+  "candidate_glb_sha256": "22a87f7725211febbdac900392cd10f49a70f31118b137ee55bd3370cc4320e7",
+  "edits": {
+    "osm/1470108675": {
+      "axis": [
+        32.92,
+        -1.04
+      ],
+      "faces": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        37
+      ],
+      "background": "#5b6969",
+      "patches": [
+        [
+          "array",
+          [
+            0.045,
+            0.547,
+            0.64,
+            0.849
+          ],
+          "#3f5659",
+          20,
+          4
+        ],
+        [
+          "color",
+          [
+            0.727,
+            0.065,
+            0.947,
+            0.602
+          ],
+          "#a4b5b5"
+        ]
+      ],
+      "note": "서쪽 긴 지붕의 반복 띠와 동쪽 꺾인 날개의 밝은 청회색 면",
+      "seen": [
+        "2021 base roof and wing",
+        "2023 rectangular west array",
+        "2026 array and pale east wing"
+      ],
+      "image": "roof-1470108675.png",
+      "object": "봉사관",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          -66.43000030517578,
+          -405.45001220703125,
+          -4.972070217132568
+        ],
+        [
+          -18.149999618530273,
+          -369.4200134277344,
+          13.353700637817383
+        ]
+      ],
+      "old_materials": {
+        "22": "v7 | 항공영상 지붕 #5b6969",
+        "23": "v7 | 항공영상 지붕 #5b6969",
+        "24": "v7 | 항공영상 지붕 #5b6969",
+        "25": "v7 | 항공영상 지붕 #5b6969",
+        "26": "v7 | 항공영상 지붕 #5b6969",
+        "37": "v7 | 항공영상 지붕 #5b6969"
+      },
+      "new_material": "v71 Group 2 | osm/1470108675 | observed roof",
+      "image_name": "v71 Group 2 | osm/1470108675 | authored roof pattern",
+      "image_sha256": "b310e13045530732e8e71137101dc96b8131aaaa6f6f85da9f73921fc7ea34ea",
+      "uv_before": 1,
+      "uv_after": 1,
+      "projected_uv_bounds": [
+        [
+          -54.134971581866424,
+          -405.7780318149016
+        ],
+        [
+          -6.521317606625486,
+          -370.33591051257014
+        ]
+      ],
+      "reference_2026": {
+        "title": "World Imagery (Wayback 2026-10-29)",
+        "tiles": [
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206083/449445",
+            "sha256": "8b50fe49daaa0658afb8dc0ad3f8d0f250444c4c8338fc55ee2a6720cdaf0e7f"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206084/449445",
+            "sha256": "e0de99e068c8cd5e67795bed2b0d9303c36ff759162dba77e196f810baf7fee5"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206083/449446",
+            "sha256": "f520533dbc8a5858c258a2a50a21dba2d0c045bb2582c43b00fd053733ec3cdf"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206084/449446",
+            "sha256": "bb0a7e4576738d7b4c130d3863859d7b12c3a327450215af2482c1e5258a6ec1"
+          }
+        ],
+        "missing": 0,
+        "resolution_m": 0.24190408692701776
+      },
+      "acquisition": {
+        "43291": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20260219,
+              "SRC_DATE2": 1771459200000,
+              "SRC_RES": 0.34,
+              "SRC_DESC": "LG01",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "39767": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20230523,
+              "SRC_DATE2": 1684800000000,
+              "SRC_RES": 0.5,
+              "SRC_DESC": "WV02",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "4905": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20210315,
+              "SRC_DATE2": 1615766400000,
+              "SRC_RES": 0.46,
+              "SRC_DESC": "GE01",
+              "NICE_NAME": "Metro",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        }
+      }
+    },
+    "osm/468931907": {
+      "axis": [
+        47.53,
+        -22.15
+      ],
+      "faces": [
+        17,
+        20,
+        23,
+        24
+      ],
+      "background": "#819392",
+      "patches": [
+        [
+          "color",
+          [
+            0.045,
+            0.042,
+            0.947,
+            0.36
+          ],
+          "#b2bcb7"
+        ],
+        [
+          "array",
+          [
+            0.082,
+            0.078,
+            0.91,
+            0.318
+          ],
+          "#262e31",
+          20,
+          4
+        ],
+        [
+          "color",
+          [
+            0.035,
+            0.354,
+            0.561,
+            0.634
+          ],
+          "#a8b4ab"
+        ],
+        [
+          "array",
+          [
+            0.07,
+            0.402,
+            0.518,
+            0.593
+          ],
+          "#2e393b",
+          11,
+          3
+        ]
+      ],
+      "note": "긴 옥상의 남쪽 어두운 배열과 북서쪽 짧은 배열, 주변 밝은 구획",
+      "seen": [
+        "2021 unoccupied roof surface",
+        "2023 both arrays",
+        "2026 both arrays"
+      ],
+      "image": "roof-468931907.png",
+      "object": "우당교육관",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          406.07000732421875,
+          -21.600000381469727,
+          -3.0824673175811768
+        ],
+        [
+          459.82000732421875,
+          21.889999389648438,
+          15.140507698059082
+        ]
+      ],
+      "old_materials": {
+        "17": "v7 | 항공영상 지붕 #819392",
+        "20": "v7 | 항공영상 지붕 #819392",
+        "23": "v7 | 항공영상 지붕 #819392",
+        "24": "v7 | 항공영상 지붕 #819392"
+      },
+      "new_material": "v71 Group 2 | osm/468931907 | observed roof",
+      "image_name": "v71 Group 2 | osm/468931907 | authored roof pattern",
+      "image_sha256": "71706b2f08fa2733dc85990487a9cede81845df3d45d2a87c600e02ff10e0fa7",
+      "uv_before": 0,
+      "uv_after": 1,
+      "projected_uv_bounds": [
+        [
+          367.867095590456,
+          172.1389774874312
+        ],
+        [
+          420.30891950035317,
+          195.50700192508583
+        ]
+      ],
+      "reference_2026": {
+        "title": "World Imagery (Wayback 2026-10-29)",
+        "tiles": [
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449452",
+            "sha256": "95962f503b52ca67931ec5e5553e1722d5e694b1d16c66bc0fc1dffd776ee9ab"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449452",
+            "sha256": "78eac832b7fa9e96841fc78cec273b64ce9c8c38854ac06427ad5308cb9d3b86"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449452",
+            "sha256": "2126478ec8a9ffd9be872b767ff48308d2cc67aba79638e5056f7499eae24a3e"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449453",
+            "sha256": "fc127d1d76f2369c821620f5971136668387750d4e0d758a05f4f58f4a3de84a"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449453",
+            "sha256": "0e450343aa9356fd381b5aa9c0185b233f7e1a38e0b3e8fe17982c8fee09df29"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449453",
+            "sha256": "16635ac6310fe8c81cb53fd3fb8d9dcfd9c83b338339232d35c3e1eef020629e"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449454",
+            "sha256": "7fa06b5503173a9a830e356246b07eb0f9d27e0da474613528237e76d14dde3c"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449454",
+            "sha256": "89b106b89397e0b7f906daa628b9a44adb528054f416c3f1ea4bafea2c2b4c2c"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449454",
+            "sha256": "e6bc05f0a9c157e6b3c09b071da98c1bc70ffefa487c3db7988d3ddd291fe478"
+          }
+        ],
+        "missing": 0,
+        "resolution_m": 0.2418934510265988
+      },
+      "acquisition": {
+        "43291": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20260219,
+              "SRC_DATE2": 1771459200000,
+              "SRC_RES": 0.34,
+              "SRC_DESC": "LG01",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "39767": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20230523,
+              "SRC_DATE2": 1684800000000,
+              "SRC_RES": 0.5,
+              "SRC_DESC": "WV02",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "4905": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20210315,
+              "SRC_DATE2": 1615766400000,
+              "SRC_RES": 0.46,
+              "SRC_DESC": "GE01",
+              "NICE_NAME": "Metro",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        }
+      }
+    },
+    "osm/468931910": {
+      "axis": [
+        53.1,
+        -31.55
+      ],
+      "faces": [
+        11,
+        14
+      ],
+      "background": "#719fa4",
+      "patches": [
+        [
+          "color",
+          [
+            0.423,
+            0.166,
+            0.851,
+            0.806
+          ],
+          "#7c9c86"
+        ],
+        [
+          "color",
+          [
+            0.465,
+            0.228,
+            0.808,
+            0.741
+          ],
+          "#68a8c3"
+        ],
+        [
+          "color",
+          [
+            0.465,
+            0.481,
+            0.808,
+            0.502
+          ],
+          "#9cc4cd"
+        ]
+      ],
+      "note": "옥상 동쪽의 밝은 청색 장방형 구획과 녹색 주변부",
+      "seen": [
+        "2021 blue rectangle",
+        "2023 blue rectangle",
+        "2026 blue rectangle and green border"
+      ],
+      "image": "roof-468931910.png",
+      "object": "어학교육원",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          343.4100036621094,
+          48.130001068115234,
+          -3.9590084552764893
+        ],
+        [
+          407.45001220703125,
+          97.94000244140625,
+          16.164514541625977
+        ]
+      ],
+      "old_materials": {
+        "11": "v7 | 항공영상 지붕 #719fa4",
+        "14": "v7 | 항공영상 지붕 #719fa4"
+      },
+      "new_material": "v71 Group 2 | osm/468931910 | observed roof",
+      "image_name": "v71 Group 2 | osm/468931910 | authored roof pattern",
+      "image_sha256": "7754c8d39794fc5c815141908b0b9931c2c32fbb3ccd0bcdf0341092648bf1cc",
+      "uv_before": 1,
+      "uv_after": 1,
+      "projected_uv_bounds": [
+        [
+          254.55835306118252,
+          244.00078735828316
+        ],
+        [
+          316.3365471140197,
+          265.11494255618635
+        ]
+      ],
+      "reference_2026": {
+        "title": "World Imagery (Wayback 2026-10-29)",
+        "tiles": [
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449451",
+            "sha256": "b6944b069c1d0c1abdffab3cc437440e022b12571dda537df18788f509feb8e5"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449451",
+            "sha256": "77d17ff3d32aabef1f186e7a60a6b0645e4f9619404d509cb9dfd74b7737e409"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449451",
+            "sha256": "56b75705653620c56de6daac2f4bcc329e078e87b82ff372756726684f3e1e44"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449452",
+            "sha256": "822d95a5c7c2da32759c95562dd02a409989d30587758978e740330c0fd2999c"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449452",
+            "sha256": "95962f503b52ca67931ec5e5553e1722d5e694b1d16c66bc0fc1dffd776ee9ab"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449452",
+            "sha256": "78eac832b7fa9e96841fc78cec273b64ce9c8c38854ac06427ad5308cb9d3b86"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449453",
+            "sha256": "4747a435d3e386c5ac464aebcea12c16594036ae53111b1dbc5fb147c51d37d1"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449453",
+            "sha256": "fc127d1d76f2369c821620f5971136668387750d4e0d758a05f4f58f4a3de84a"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449453",
+            "sha256": "0e450343aa9356fd381b5aa9c0185b233f7e1a38e0b3e8fe17982c8fee09df29"
+          }
+        ],
+        "missing": 0,
+        "resolution_m": 0.24189156392857145
+      },
+      "acquisition": {
+        "43291": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20260219,
+              "SRC_DATE2": 1771459200000,
+              "SRC_RES": 0.34,
+              "SRC_DESC": "LG01",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "39767": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20230523,
+              "SRC_DATE2": 1684800000000,
+              "SRC_RES": 0.5,
+              "SRC_DESC": "WV02",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "4905": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20210315,
+              "SRC_DATE2": 1615766400000,
+              "SRC_RES": 0.46,
+              "SRC_DESC": "GE01",
+              "NICE_NAME": "Metro",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        }
+      }
+    },
+    "osm/524021463": {
+      "axis": [
+        31.05,
+        -1.59
+      ],
+      "faces": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "background": "#4f6c70",
+      "patches": [
+        [
+          "color",
+          [
+            0.038,
+            0.481,
+            0.586,
+            0.942
+          ],
+          "#a4b0a6"
+        ],
+        [
+          "color",
+          [
+            0.049,
+            0.076,
+            0.875,
+            0.552
+          ],
+          "#aeb8b0"
+        ],
+        [
+          "array",
+          [
+            0.076,
+            0.655,
+            0.529,
+            0.895
+          ],
+          "#28363a",
+          10,
+          4
+        ],
+        [
+          "array",
+          [
+            0.126,
+            0.122,
+            0.796,
+            0.499
+          ],
+          "#27363a",
+          15,
+          5
+        ]
+      ],
+      "note": "옥상 북서와 남쪽의 어두운 배열 두 구획 및 사이의 밝은 통로",
+      "seen": [
+        "2021 two roof planes without visible arrays",
+        "2023 two arrays",
+        "2026 two arrays"
+      ],
+      "image": "roof-524021463.png",
+      "object": "창업보육센터",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          189.0,
+          -452.3699951171875,
+          -4.036393642425537
+        ],
+        [
+          220.92999267578125,
+          -431.0299987792969,
+          10.96467399597168
+        ]
+      ],
+      "old_materials": {
+        "16": "v7 | 항공영상 지붕 #4f6c70",
+        "17": "v7 | 항공영상 지붕 #4f6c70",
+        "18": "v7 | 항공영상 지붕 #4f6c70",
+        "19": "v7 | 항공영상 지붕 #4f6c70"
+      },
+      "new_material": "v71 Group 2 | osm/524021463 | observed roof",
+      "image_name": "v71 Group 2 | osm/524021463 | authored roof pattern",
+      "image_sha256": "c8093f7968d273fd5a639e024242abc5feeb3830e17f8c5c7eba6bdf81b4cc72",
+      "uv_before": 1,
+      "uv_after": 1,
+      "projected_uv_bounds": [
+        [
+          211.8645459042559,
+          -440.4645057828679
+        ],
+        [
+          242.96206862799403,
+          -420.8012723576837
+        ]
+      ],
+      "reference_2026": {
+        "title": "World Imagery (Wayback 2026-10-29)",
+        "tiles": [
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206084/449449",
+            "sha256": "36b63bb5c9ea5fd3958cc7ef86e9afb91ca7ad42b864f28452ffa84f0c9af139"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206085/449449",
+            "sha256": "3fa0aae72ff92870c57ef4d25b46e3d294d9536f965b3bb568a1ccbd61e12fdc"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206084/449450",
+            "sha256": "5122c5203efbcd8ccd17774a0adc660101b829866d266599aeaf6715b034f067"
+          },
+          {
+            "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206085/449450",
+            "sha256": "0195647a587193746706150f39ef40066d10972c5247eea57e02a849f3717dc8"
+          }
+        ],
+        "missing": 0,
+        "resolution_m": 0.24190572793367354
+      },
+      "acquisition": {
+        "43291": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20260219,
+              "SRC_DATE2": 1771459200000,
+              "SRC_RES": 0.34,
+              "SRC_DESC": "LG01",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "39767": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20230523,
+              "SRC_DATE2": 1684800000000,
+              "SRC_RES": 0.5,
+              "SRC_DESC": "WV02",
+              "NICE_NAME": "Vivid Advanced",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        },
+        "4905": {
+          "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+          "status": 200,
+          "features": [
+            {
+              "SRC_DATE": 20210315,
+              "SRC_DATE2": 1615766400000,
+              "SRC_RES": 0.46,
+              "SRC_DESC": "GE01",
+              "NICE_NAME": "Metro",
+              "DrawOrder": 80
+            }
+          ],
+          "error": null
+        }
+      }
+    }
+  }
+}

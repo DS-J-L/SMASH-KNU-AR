@@ -1,0 +1,44 @@
+{
+  "PP구조실습실": {
+    "id": "osm/468931888",
+    "changed_material_faces": [
+      11,
+      14
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 20,
+    "min_uv_face_area": 0.002007413290908394,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]": {
+    "id": "vw/1",
+    "changed_material_faces": [
+      17,
+      19,
+      20,
+      21
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 26,
+    "min_uv_face_area": 0.0015819758718461398,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 암석창고 [vw/10]": {
+    "id": "vw/10",
+    "changed_material_faces": [
+      10
+    ],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.004713147843343868,
+    "uv_islands_overlap": false
+  },
+  "v7 | 추가 건물 | 동위원소저장고 [vw/165]": {
+    "id": "vw/165",
+    "changed_material_faces": [],
+    "geometry_unchanged": true,
+    "uv_face_count": 14,
+    "min_uv_face_area": 0.029292717503324184,
+    "uv_islands_overlap": false
+  }
+}

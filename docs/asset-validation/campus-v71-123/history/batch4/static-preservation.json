@@ -1,0 +1,23 @@
+{
+  "source_glb_sha256": "54cacf52c4b471c815f170d01df7453daa6abbf5955ae77e928fc4881b38551c",
+  "candidate_glb_sha256": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+  "changed_objects": [
+    "v7 | 창 근사 | 교수아파트 [469843173]",
+    "v7 | 창 근사 | 누리관 [854306251]",
+    "v7 | 창 근사 | 누리관 [854306497]",
+    "v7 | 창 근사 | 백호관 [468931928]",
+    "v7 | 창 근사 | 보람관 [1300033666]",
+    "v7 | 창 근사 | 첨성관 [468931911]",
+    "교수아파트",
+    "누리관",
+    "누리관.001",
+    "면학관",
+    "백호관",
+    "보람관",
+    "첨성관"
+  ],
+  "preserved_objects": 1722,
+  "dot_protected_ids": 53,
+  "source_triangles": 900492,
+  "candidate_triangles": 892404
+}

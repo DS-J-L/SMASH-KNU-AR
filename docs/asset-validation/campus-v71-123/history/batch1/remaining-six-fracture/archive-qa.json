@@ -1,0 +1,21 @@
+{
+  "archive": "knu-v71-r8-six-fracture-restorable.zip",
+  "sha256": "f16e3c126aa5c46b49e45574b1ae0b07dc934dea7c17aadb7df8f7514f69d491",
+  "archive_bytes": 29330561,
+  "crc_and_member_hashes": true,
+  "members_including_checksums": 89,
+  "native_reopen": {
+    "knu-campus-v71-batch1-r8.blend": true,
+    "remaining-six-fracture/knu-gym2-v71-r8-fracture/editable.blend": true,
+    "remaining-six-fracture/knu-northgate-v71-r8-fracture/editable.blend": true,
+    "remaining-six-fracture/knu-eng7-v71-r8-fracture/editable.blend": true,
+    "remaining-six-fracture/knu-future-v71-r8-fracture/editable.blend": true,
+    "remaining-six-fracture/knu-semi-v71-r8-fracture/editable.blend": true,
+    "remaining-six-fracture/knu-safety-v71-r8-fracture/editable.blend": true
+  },
+  "preserved_r8": {
+    "knu-campus-v71-batch1-r8.blend": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+    "knu-campus-v71-batch1-r8.glb": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c",
+    "batch1-model-meshes-r8.blend": "57645212095ae4f0c245f12ca8ee3207915bb76af6eb4453f9a13ad425dd9d4a"
+  }
+}

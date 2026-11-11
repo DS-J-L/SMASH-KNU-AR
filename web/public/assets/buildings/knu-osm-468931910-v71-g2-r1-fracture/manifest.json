@@ -1,0 +1,1344 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-468931910-v71-g2-r1-fracture",
+  "display_name": "어학교육원",
+  "source_model_id": "osm/468931910",
+  "source_campus": "knu-campus-v71-123-group2-r1.blend",
+  "source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+  "source_object": "어학교육원",
+  "source_objects": [
+    {
+      "object": "어학교육원",
+      "mesh": "어학교육원.001",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE broad warm stone pier",
+      "mesh": "PhotoDetail | 어학교육원 | SE broad warm stone pier",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE continuous low stone sill",
+      "mesh": "PhotoDetail | 어학교육원 | SE continuous low stone sill",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE darker vertical window bay",
+      "mesh": "PhotoDetail | 어학교육원 | SE darker vertical window bay",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE fine stone horizontal joints",
+      "mesh": "PhotoDetail | 어학교육원 | SE fine stone horizontal joints",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE fine stone vertical joints",
+      "mesh": "PhotoDetail | 어학교육원 | SE fine stone vertical joints",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE inset window side dividers",
+      "mesh": "PhotoDetail | 어학교육원 | SE inset window side dividers",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE inset window upper transoms",
+      "mesh": "PhotoDetail | 어학교육원 | SE inset window upper transoms",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE inset windows frame",
+      "mesh": "PhotoDetail | 어학교육원 | SE inset windows frame",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE inset windows glass",
+      "mesh": "PhotoDetail | 어학교육원 | SE inset windows glass",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE lower slot pale hood",
+      "mesh": "112 shallow hood closed rear-relieved prism",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE narrow full height glass",
+      "mesh": "PhotoDetail | 어학교육원 | SE narrow full height glass",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE narrow full height glass recess",
+      "mesh": "PhotoDetail | 어학교육원 | SE narrow full height glass recess",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE pale end cladding",
+      "mesh": "PhotoDetail | 어학교육원 | SE pale end cladding",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE projecting pale vertical strips",
+      "mesh": "PhotoDetail | 어학교육원 | SE projecting pale vertical strips",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE roof edge",
+      "mesh": "PhotoDetail | 어학교육원 | SE roof edge",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE slot horizontal transoms",
+      "mesh": "PhotoDetail | 어학교육원 | SE slot horizontal transoms",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SE slot vertical frame",
+      "mesh": "PhotoDetail | 어학교육원 | SE slot vertical frame",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW closed side vent divider",
+      "mesh": "PhotoDetail | 어학교육원 | SW closed side vent divider",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW deep projecting ledges",
+      "mesh": "PhotoDetail | 어학교육원 | SW deep projecting ledges",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW fine upper transoms",
+      "mesh": "PhotoDetail | 어학교육원 | SW fine upper transoms",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW ground centre mullions",
+      "mesh": "PhotoDetail | 어학교육원 | SW ground centre mullions",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW ground dark recess",
+      "mesh": "PhotoDetail | 어학교육원 | SW ground dark recess",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW ground lintel",
+      "mesh": "PhotoDetail | 어학교육원 | SW ground lintel",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW lower stone piers",
+      "mesh": "PhotoDetail | 어학교육원 | SW lower stone piers",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW pale cladding",
+      "mesh": "PhotoDetail | 어학교육원 | SW pale cladding",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW projecting flat eave",
+      "mesh": "PhotoDetail | 어학교육원 | SW projecting flat eave",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW stone end piers",
+      "mesh": "PhotoDetail | 어학교육원 | SW stone end piers",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW stone pier horizontal joints",
+      "mesh": "PhotoDetail | 어학교육원 | SW stone pier horizontal joints",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW stone pier vertical joints",
+      "mesh": "PhotoDetail | 어학교육원 | SW stone pier vertical joints",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW tall ground glazing frame",
+      "mesh": "PhotoDetail | 어학교육원 | SW tall ground glazing frame",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW tall ground glazing glass",
+      "mesh": "PhotoDetail | 어학교육원 | SW tall ground glazing glass",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW tall ground glazing mullions",
+      "mesh": "PhotoDetail | 어학교육원 | SW tall ground glazing mullions",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW upper ribbon frame",
+      "mesh": "PhotoDetail | 어학교육원 | SW upper ribbon frame",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW upper ribbon glass",
+      "mesh": "PhotoDetail | 어학교육원 | SW upper ribbon glass",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | SW upper ribbon shadow",
+      "mesh": "PhotoDetail | 어학교육원 | SW upper ribbon shadow",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 어학교육원 | terrain perimeter plinth",
+      "mesh": "PhotoDetail | 어학교육원 | terrain perimeter plinth",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    375.4153747558594,
+    72.52117919921875,
+    -4.308676719665527
+  ],
+  "scale_from_campus": 0.03366272461786596,
+  "source_dimensions_campus_z_up_m": [
+    65.35418701171875,
+    50.83765411376953,
+    20.533191680908203
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.6912031769752502,
+    1.711333990097046
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120
+}

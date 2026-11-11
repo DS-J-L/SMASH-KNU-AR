@@ -1,0 +1,104 @@
+{
+  "524172305": {
+    "object": "농업생명과학관",
+    "triangles": 60,
+    "footprint_samples": 8,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "농업생명과학관: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-15.4874 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "576254849": {
+    "object": "동물사육장",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "동물사육장: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-11.1625 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "473687810": {
+    "object": "사과센터",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "사과센터: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-5.4018 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/113": {
+    "object": "v7 | 추가 건물 | 농대사과센터 [vw/113]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 농대사과센터 [vw/113]: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-4.8968 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "vw/111": {
+    "object": "v7 | 추가 건물 | 사과포장개발실 [vw/111]",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "v7 | 추가 건물 | 사과포장개발실 [vw/111]: no UV map"
+    ],
+    "asset_qa_after_errors": [
+      "v7 | 추가 건물 | 사과포장개발실 [vw/111]: no UV map"
+    ],
+    "asset_qa_after_warnings": [
+      "asset lowest point z=-5.4261 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 0
+  },
+  "468931894": {
+    "object": "수의과대학부속병원",
+    "triangles": 164,
+    "footprint_samples": 21,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "수의과대학부속병원: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "수의과대학부속병원: ~70.93% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-4.428 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  },
+  "1107268251": {
+    "object": "간호대학",
+    "triangles": 28,
+    "footprint_samples": 4,
+    "new_intersections": 0,
+    "asset_qa_before_errors": [
+      "간호대학: no UV map"
+    ],
+    "asset_qa_after_errors": [],
+    "asset_qa_after_warnings": [
+      "간호대학: ~95.5% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-12.6571 (not resting on ground plane z=0)"
+    ],
+    "uv_layers": 1
+  }
+}

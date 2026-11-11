@@ -1,0 +1,1870 @@
+{
+  "prepared_at": "2026-11-11T10:46:10.774206+09:00",
+  "base_commit": "bb997e2dafc5ac4c8ead7bac95a95164e1073fcd",
+  "campus": {
+    "blend": "assets/source/knu-campus-v71-123-group2-r1.blend",
+    "blend_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+    "glb": "web/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
+    "glb_sha256": "22a87f7725211febbdac900392cd10f49a70f31118b137ee55bd3370cc4320e7",
+    "model_ids": 123,
+    "objects": 1784,
+    "triangles": 893532,
+    "ids": [
+      "osm/1026072764",
+      "osm/1107268251",
+      "osm/1300033666",
+      "osm/1408182451",
+      "osm/1470108675",
+      "osm/440331569",
+      "osm/468931841",
+      "osm/468931844",
+      "osm/468931846",
+      "osm/468931848",
+      "osm/468931850",
+      "osm/468931852",
+      "osm/468931854",
+      "osm/468931857",
+      "osm/468931858",
+      "osm/468931865",
+      "osm/468931867",
+      "osm/468931869",
+      "osm/468931871",
+      "osm/468931872",
+      "osm/468931873",
+      "osm/468931874",
+      "osm/468931876",
+      "osm/468931877",
+      "osm/468931878",
+      "osm/468931879",
+      "osm/468931880",
+      "osm/468931882",
+      "osm/468931886",
+      "osm/468931887",
+      "osm/468931888",
+      "osm/468931889",
+      "osm/468931890",
+      "osm/468931892",
+      "osm/468931893",
+      "osm/468931894",
+      "osm/468931895",
+      "osm/468931896",
+      "osm/468931897",
+      "osm/468931898",
+      "osm/468931899",
+      "osm/468931900",
+      "osm/468931902",
+      "osm/468931903",
+      "osm/468931904",
+      "osm/468931905",
+      "osm/468931907",
+      "osm/468931908",
+      "osm/468931909",
+      "osm/468931910",
+      "osm/468931911",
+      "osm/468931912",
+      "osm/468931913",
+      "osm/468931914",
+      "osm/468931915",
+      "osm/468931916",
+      "osm/468931917",
+      "osm/468931918",
+      "osm/468931919",
+      "osm/468931920",
+      "osm/468931921",
+      "osm/468931922",
+      "osm/468931923",
+      "osm/468931924",
+      "osm/468931925",
+      "osm/468931926",
+      "osm/468931928",
+      "osm/468931930",
+      "osm/469617252",
+      "osm/469843173",
+      "osm/473684404",
+      "osm/473684409",
+      "osm/473687810",
+      "osm/522514118",
+      "osm/524021463",
+      "osm/524021464",
+      "osm/524021465",
+      "osm/524021468",
+      "osm/524021469",
+      "osm/524021470",
+      "osm/524025612",
+      "osm/524161867",
+      "osm/524161868",
+      "osm/524161871",
+      "osm/524172305",
+      "osm/576254849",
+      "osm/576358734",
+      "osm/577759119",
+      "osm/584385630",
+      "osm/584386432",
+      "osm/846905616",
+      "osm/854306251",
+      "osm/854306497",
+      "osm/972016220",
+      "vw/1",
+      "vw/10",
+      "vw/105",
+      "vw/110",
+      "vw/111",
+      "vw/113",
+      "vw/114",
+      "vw/127",
+      "vw/130",
+      "vw/143",
+      "vw/145",
+      "vw/147",
+      "vw/16",
+      "vw/162",
+      "vw/163",
+      "vw/165",
+      "vw/166",
+      "vw/18",
+      "vw/20",
+      "vw/21",
+      "vw/22",
+      "vw/33",
+      "vw/50",
+      "vw/52",
+      "vw/62",
+      "vw/73",
+      "vw/79",
+      "vw/8",
+      "vw/95"
+    ]
+  },
+  "catalog_count": 96,
+  "package_fragment_count": 6162,
+  "packages": [
+    {
+      "id": "knu-it1-v3",
+      "label": "IT 1호관 · 세분화 96개",
+      "source_model_id": "osm/468931895",
+      "manifest_source_sha256": null,
+      "fragment_count": 96,
+      "source_directory": "web/public/assets/buildings/knu-it1-v3",
+      "files_sha256": {
+        "intact.glb": "f911d922e79de48e1ed83fdc0e9940ead9b60f831205329dc0803ddc879beb84",
+        "fragments.glb": "a1f0d3348fe19e83701b2fbbc7b20c52e61047be98e76d12c4e48708cd1b9642",
+        "colliders.json": "7aca7445344768a662af10a71886f910732bbb8a3bcfd6c5db3e16cf50b466bc",
+        "manifest.json": "02729d236d24e6527e885fa669253dfd6e33032f78c08d4bb7226c609a4053b0"
+      },
+      "editable": {
+        "path": "assets/source/knu-it1-fracture-v3.blend",
+        "sha256": "e1a27bf7cd484bbf5b4986626f68a902362602da3a1ab904926669bdcba29c59"
+      }
+    },
+    {
+      "id": "knu-it2-v71-r8-fracture",
+      "label": "IT 2호관 · 64개 파편",
+      "source_model_id": "osm/468931876",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-it2-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "d2675268fe8e46446daa2a1af4e355d0dbba8c465dacb7837d6fe1b11d0f1d77",
+        "fragments.glb": "fcba4c82a32a797ccde6a77efdefdd925f46feead533239c51ffa28b1167bbca",
+        "colliders.json": "b291394215293684bcfc29b7571a01ada1387a0c6c97d94c97f27c926e821874",
+        "manifest.json": "ee8addf3d634683ef858f7a210f14f8b3172c778d1211afe5a5fe2f6a2a8a791"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-it2-v71-r8-fracture.blend",
+        "sha256": "a622aff816963b0d7274c0e4e9c1ba5f98c4669e9f7c3712aa158279b9b3e7f1"
+      }
+    },
+    {
+      "id": "knu-gym2-v71-r8-fracture",
+      "label": "제2체육관 · 65개 파편",
+      "source_model_id": "468931925",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 65,
+      "source_directory": "web/public/assets/buildings/knu-gym2-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "b95b28959ee8f4905808056e230b400aa6ee7d8e082e0a94cf84ace902101620",
+        "fragments.glb": "f24443d95aaba22d30dddba5637bd7b4c5f6e589266641330b3f502d53e5908c",
+        "colliders.json": "36bfce8792ac9b97e6d7c16885e2c14a65282ec209a312528a2bc9399a9e5cd6",
+        "manifest.json": "48a769be4176028767551e5ee2679d08d2f5e01091b1ae6c975f77affb5ae879"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gym2-v71-r8-fracture.blend",
+        "sha256": "397d7d6b7d218f1f9c68a60825ef0afa0d06d0c31937b912994921609b7f20c3"
+      }
+    },
+    {
+      "id": "knu-northgate-v71-r8-fracture",
+      "label": "북문수위실 · 64개 파편",
+      "source_model_id": "vw/8",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-northgate-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "cd7ed20cb8117895fa1b0cc44329667ed193f33389199b7d45d768cad02af43a",
+        "fragments.glb": "4b8076cb3ea6555825f3969ff87d0fb3ea83f518ceb0bc8ad4101e6e552a7719",
+        "colliders.json": "38821792dd60437d49deb8db44c685f13fb7af0ccb5c676ac3f783145b7c8728",
+        "manifest.json": "48f78a0012c3637b1eaac363f7bf22462f378caf567a3d5a23e08bd183d299f1"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-northgate-v71-r8-fracture.blend",
+        "sha256": "6b81a4d72f5744764e64a8e491b2320d29602431314847d376cc5f268ea5424b"
+      }
+    },
+    {
+      "id": "knu-eng7-v71-r8-fracture",
+      "label": "공대 7호관 · 64개 파편",
+      "source_model_id": "468931877",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-eng7-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "a9e4959eb68435934da62b0a8d7b08f68e0a8eed83a5b27895ce472e72cb30cd",
+        "fragments.glb": "0c64f869f8ec04995b4c43f737499b5b5f39860ab2a5ffbfbc8777354bd22e85",
+        "colliders.json": "3be0067b1c65a1363ee9f50912c20b72bc0ab251097332dba8b8f9d3a7c01581",
+        "manifest.json": "11be67866293e9c1058bfa514f4616d1cf350664ab99df719152452032b91ce2"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-eng7-v71-r8-fracture.blend",
+        "sha256": "bf5c5a22fc82bb5a2ce7707295eca9f51870e1c99a465fc7345484d23ef24fa6"
+      }
+    },
+    {
+      "id": "knu-future-v71-r8-fracture",
+      "label": "미래창직관 · 64개 파편",
+      "source_model_id": "1408182451",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-future-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "b39b4c2ae53281e445f62bb52310f6b3809d9d460d077b813d0baab55aba2ba4",
+        "fragments.glb": "765f307a68547b290b8b03f5f3d29f87425c627fa407554e5339033b775b4157",
+        "colliders.json": "f18a523cdcc7c43498476fca2214ad568adf9cfb6a38c23b9ca271f551d85e00",
+        "manifest.json": "95b912648f963d52810730ef7d6159c4d00b9272738981b36c11733618e823e6"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-future-v71-r8-fracture.blend",
+        "sha256": "d092afb1ef177a28e29f78eda763fa3a7264ab179434930c4e978150296c7930"
+      }
+    },
+    {
+      "id": "knu-semi-v71-r8-fracture",
+      "label": "반도체융합연구동 · 64개 파편",
+      "source_model_id": "524021469",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-semi-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "1167e12b2e809d0ace439b3040a5035a91c4653c1da32eb1f4b5683edb52ebe3",
+        "fragments.glb": "1d58112a1dd106cabd5a50c06bfc558860b431e66d257a0b54276cacf46406b7",
+        "colliders.json": "de02a93145283f1adeb73b9bbd682d7fc8994a6e896d7bb1b9f8a45fc5f7136d",
+        "manifest.json": "9fc7a6b1e2459a2e108c8f049b09a449b597d3990ab0eaa08823190edfc9985f"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-semi-v71-r8-fracture.blend",
+        "sha256": "b1fe6a55c5dc20865fb6eae4b5362c77325b9ea16dc250a0303a16b57311632b"
+      }
+    },
+    {
+      "id": "knu-safety-v71-r8-fracture",
+      "label": "연구실 안전관리센터 · 64개 파편",
+      "source_model_id": "468931889",
+      "manifest_source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-safety-v71-r8-fracture",
+      "files_sha256": {
+        "intact.glb": "5a99f74237ff7bed566aa18ae3c32a9dfab7f72b35fc7fbdd3874fe4752dfe19",
+        "fragments.glb": "f08bbb609c02e25d01bfe9354e7521f426b1546b10bd2b29e14790cd7c427016",
+        "colliders.json": "ef776caa4edf42e301ef6d540ec538a1233d58e5ea613255f3da8043bb72641a",
+        "manifest.json": "52cf71d126f388acaeb538c26777b23d229bce3cc39cca8ce9b1eedb104d32a5"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-safety-v71-r8-fracture.blend",
+        "sha256": "74c20b9ffd5be6206d7a4c178774ee58994f7a2733dc5851c9844b3f3481fb22"
+      }
+    },
+    {
+      "id": "knu-grad-v71-b2-r3-fracture",
+      "label": "대학원동 · 64개 파편 · r3 충돌체",
+      "source_model_id": "468931865",
+      "manifest_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-grad-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "b19adc08d6ba0901ea2f511e57171bb2c2d943aed45ed0f4ba724bbd88f2ea84",
+        "fragments.glb": "d65eb3bc910ab84cecd8c2efb2ce387c8257a33590d80d950f9cbc909e904622",
+        "colliders.json": "af0252c12e641a18746292385a7d32c84a901d9aa9fb727e7470d5ccf67e15c4",
+        "manifest.json": "8fd3a5373b522dc015caea5fbe365af72e0455562e91c628e3870a18cf2abc1d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-grad-v71-b2-r3-fracture.blend",
+        "sha256": "70003ccba557ad5875654a0d28946837a6a52982c7e43641868ebcbcc00134f0"
+      }
+    },
+    {
+      "id": "knu-teachers-v71-b2-r3-fracture",
+      "label": "사범대학 · 64개 파편 · r3 충돌체",
+      "source_model_id": "vw/147",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-teachers-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "4ddf87af55ca8f54839cc7a8341491b93629944861a4ee1eb6685bfcfccc16f4",
+        "fragments.glb": "c09d43cea8856580cd4df1887ca2473eddfe156f9b2fd9834d311eb07098e9a1",
+        "colliders.json": "36a7c24306f5bb93024f5a5753b14fe81923270b4af2bb3c8344cae44acb9c80",
+        "manifest.json": "56f8bf038e603b6f18bbabd0bd778c0723a641d05f8e1a915f89530d8fcc0f60"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-teachers-v71-b2-r3-fracture.blend",
+        "sha256": "e00ec952d9e94a267cf61612014e421f27d39d7cc883a60036751f0a41227da0"
+      }
+    },
+    {
+      "id": "knu-liberal-v71-b2-r3-fracture",
+      "label": "교양과정동 · 64개 파편 · r3 충돌체 · 외형 보류",
+      "source_model_id": "vw/95",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-liberal-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "4772f5686c2fd26f641e7bb3fa45dc34afcf66faebee5dc1469d392e6592e865",
+        "fragments.glb": "eb476f677e80e71bb4a4f20d693ed924f267dc95754c5d4de865fb28299366c1",
+        "colliders.json": "f363a394d8ff6df37f46a2b6c227aa26fdd2137731d79530adb96f885dfce549",
+        "manifest.json": "50d9f307f9f754f34248fe69dc990bd2e25acc4891217914f8048a36854f465a"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-liberal-v71-b2-r3-fracture.blend",
+        "sha256": "977284fe4e4448ddb88aadfafee625eb340b9600dae918a32d8a5bde89cfec7b"
+      }
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r3-fracture",
+      "label": "평생교육원 · 64개 파편 · r3 충돌체",
+      "source_model_id": "468931916",
+      "manifest_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-lifelong-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "2d0f5ac2beee7fc0fbc442f5a4f740efc53dae5ad24094c294fe276fc9c5d242",
+        "fragments.glb": "f28f4ea4a7ad94f0e986bb6d3dd8ac337ded00e14f0aac324a88e5fdfbd42433",
+        "colliders.json": "5cd5d8c93ba9f79a08424c609bdde7e3d25c09dc550a7688a91b927b4b7d6328",
+        "manifest.json": "e22d3a958c5906ab586f173ea061d8930ef6b1aa2329afa8c7b0db86c279c29a"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-lifelong-v71-b2-r3-fracture.blend",
+        "sha256": "8632208bcb619c3b85c000044f6605695a7f5093932c0ada00b7494019e726f1"
+      }
+    },
+    {
+      "id": "knu-convergence-v71-b2-r3-fracture",
+      "label": "융합교육정보관 · 64개 파편 · r3 충돌체",
+      "source_model_id": "1026072764",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-convergence-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "b18d36004570eefc94e164592ecbe98f090afa628920c4c6081616df89ef2d49",
+        "fragments.glb": "d9f366ae9011d1f56961d1e865fe8b8a37dc603ffe6c2ba665fbb61531135a38",
+        "colliders.json": "c570a5cf73eef2e3dc65f17d6212b39a40aa00bf593a92b31946bc981cb9388f",
+        "manifest.json": "a617803fca0ed12efd66e785e05543d0da9a6f32bc6243f0f1b4ee4b45e8c85c"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-convergence-v71-b2-r3-fracture.blend",
+        "sha256": "22b284f6cc74c7a48a5f95c39e3a03bbfee5f990fdf2911803ed127d40ea3f74"
+      }
+    },
+    {
+      "id": "knu-career-v71-b2-r3-fracture",
+      "label": "취업정보센터 · 64개 파편 · r3 충돌체 · 외형 보류",
+      "source_model_id": "vw/127",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-career-v71-b2-r3-fracture",
+      "files_sha256": {
+        "intact.glb": "b65b41d12a48c03e80c07d6f26a384d1c23092288bf2bbf1a4c7acefb34b2a4c",
+        "fragments.glb": "03a1630903fba9335dcc8cabf24a4801681904e713d69511a1b943a664d6ab8d",
+        "colliders.json": "4f5747d467494b58a79e6455cbaaa6f462620fb4a1ee8b0fc68c598e794ebc4d",
+        "manifest.json": "90487bab090566d1cb03564ce0e2920aa9bfa58b64072bb160e8163841cff93d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-career-v71-b2-r3-fracture.blend",
+        "sha256": "6eded4b94c485d4ac6238d3e74463d7e2ff77fe9346c56d1b44dc1e95d9f608c"
+      }
+    },
+    {
+      "id": "knu-press-v71-b3-r1-fracture",
+      "label": "경북대 출판부 · 64개 파편 · 3번 묶음",
+      "source_model_id": "473684404",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-press-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "751de9c3669ce82ecf002c8d6b1de9ad33f9cf2432663a960fc3d849d57d9440",
+        "fragments.glb": "8ba71ab18e2078d53cd0814ce886113dd8521197c08f25b0ed92268e5e267c06",
+        "colliders.json": "4e7bcc7ad63f15e6621bc6c5894d1d50592cf5a50b88e25e4ab58a8b398a8db9",
+        "manifest.json": "bc33ef4610e6bf087019a45e59e63106c2269397ddebd616621f87c268005aaa"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-press-v71-b3-r1-fracture.blend",
+        "sha256": "61f2c49e04fbf9b847cb1997fe48aecaf6db7f99b3e4f839a1d2b3d154b16ac1"
+      }
+    },
+    {
+      "id": "knu-arts-v71-b3-r1-fracture",
+      "label": "문예관 · 64개 파편 · 3번 묶음",
+      "source_model_id": "524161867",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-arts-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "1d22fd0fe358c3f58c73bc5e837667fb2ed40cf943dc99fd2c65d0bd051bfa64",
+        "fragments.glb": "c71a94485c9e791dcc674481dc187773b3a02c5d318ea155c8a8c943e3405f5f",
+        "colliders.json": "86089f33153ded59bd081ecfd8fbaffad450913ffe8a495e3e2e5d3a124c0bf9",
+        "manifest.json": "2c69d2fdbedd4eaa35484d5bc269aea98a3ab8ae1e9688fb22159f5837c070ab"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-arts-v71-b3-r1-fracture.blend",
+        "sha256": "4d16478099acc1da684b6d2bd088b1f7aca71c09212ec157df408c20bb1cceac"
+      }
+    },
+    {
+      "id": "knu-sculpture-v71-b3-r1-fracture",
+      "label": "조소동 · 64개 파편 · 3번 묶음",
+      "source_model_id": "468931846",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-sculpture-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "12daca1254bd0cb1ce775644ef308d7036a46da03aa5ca80e72d2f3462aded63",
+        "fragments.glb": "fdf493ec66e45aeaacce185d820bf33ab4714892be5dbd6d83201197c1fb7d00",
+        "colliders.json": "6864bb122ed13c2f73d711d69a5ddc378e61ac291dac74e6981b202fa1991732",
+        "manifest.json": "06d26df14cf1f559d33071ad39b8792ca67c0cfbe703e1db338bf8895188a5fa"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-sculpture-v71-b3-r1-fracture.blend",
+        "sha256": "66948b6530049f240a59300f9d02dcf0616832864b03b415daab7b5f738c0cc6"
+      }
+    },
+    {
+      "id": "knu-pavilion-v71-b3-r1-fracture",
+      "label": "금란정 · 64개 파편 · 3번 묶음",
+      "source_model_id": "524161871",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-pavilion-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "fe6248895c4df05678dbc17ad7a42ba216ce15290af2726360121f0360ff18e2",
+        "fragments.glb": "5635882c41be7112392a3523adcd1fa6f840d5ea2d85d3734fd199f0b5add322",
+        "colliders.json": "b21f6f356d563f8c2b4c0ee9d56cbe59994fbf91a9ae4c1012c9d11d55de8c49",
+        "manifest.json": "df09a539316b3b097cb15e79c13b12ad2af5800489f59677890733c44971b42c"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-pavilion-v71-b3-r1-fracture.blend",
+        "sha256": "6398b3c837da612740b57765cb7566dc156e03f59b2310dc5368bbf5d680b861"
+      }
+    },
+    {
+      "id": "knu-yeongseon-v71-b3-r1-fracture",
+      "label": "영선관 · 64개 파편 · 3번 묶음",
+      "source_model_id": "524025612",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-yeongseon-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "139f53f27f0b385386476024d14d9104562bf7ff8190d5e609209957f421d652",
+        "fragments.glb": "93e2080bce5fabfa870b420a3c180d36f2701079c1cc7c5ec2dc124d1968d2fb",
+        "colliders.json": "2b7ae0ffc6dc4f36db290f1b65734ea5f34031ab072038fd53476e614a9389fc",
+        "manifest.json": "39be77cdeef1ae25e6a7369c5e2534abe6b15937a00b064669e49a01b669c8b8"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-yeongseon-v71-b3-r1-fracture.blend",
+        "sha256": "7b0041e42976553e379114e955d37aa28c276a0dbf2f2a33b49d03365615c6b5"
+      }
+    },
+    {
+      "id": "knu-techno-v71-b3-r1-fracture",
+      "label": "테크노빌딩 · 64개 파편 · 3번 묶음",
+      "source_model_id": "468931912",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-techno-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "938a53bc7c56bc5fda138c5af625890f0ceb9110c683403d259900cf636199e1",
+        "fragments.glb": "5b6ffd53853082d5be970b7ff92798109d2948bf9a4a880b3b13a03887a6a5be",
+        "colliders.json": "a10d83042d07968e0c754eb0a7a3aec2fedf9534dd58a93c735c71a00e22a8a2",
+        "manifest.json": "5c8d860791ca110b04c25aa032cb31ce526448afb87276366cf5e2f8fdbc55ad"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-techno-v71-b3-r1-fracture.blend",
+        "sha256": "d070b54d02e32ac6167bb32c77445596458a8e5a75d349ae5e612fe9125d4e27"
+      }
+    },
+    {
+      "id": "knu-kbsi-v71-b3-r1-fracture",
+      "label": "한국기초과학지원연구원 · 70개 파편 · 3번 묶음",
+      "source_model_id": "468931886",
+      "manifest_source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+      "fragment_count": 70,
+      "source_directory": "web/public/assets/buildings/knu-kbsi-v71-b3-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "ec9290c16547e816171a48c68adcca300221414aa0fa27c8c142bdbe7c74fdad",
+        "fragments.glb": "ac27f0d4c9e58aa52c30c8bfe0747aa830bfc210f4ef49e381b834de0e8f6fb7",
+        "colliders.json": "f9b47be9c0781cc63731d07767d98ed681902fee1c64f666db23f0eb01c73145",
+        "manifest.json": "8792697161d8504eeb870e15b5b35765a737e1e43980dd377404f837926db9e3"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-kbsi-v71-b3-r1-fracture.blend",
+        "sha256": "11bba2b64ca4c597b1a1bf2e885d421ea652742af160efd025bc3a4623776d37"
+      }
+    },
+    {
+      "id": "knu-faculty-v71-b4-r1-fracture",
+      "label": "교수아파트 · 65개 파편 · 4번 묶음",
+      "source_model_id": "469843173",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 65,
+      "source_directory": "web/public/assets/buildings/knu-faculty-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "23e51da40c464562c1387380707001fc2caf316e86c65fa7769996d8cbee8983",
+        "fragments.glb": "8b3bf10f9e7fc559d64b3feabc22023bedd0c5b4d4aeebf4a4078e113ef51de9",
+        "colliders.json": "9cf46b631a60fce2c4e66fdb5b32dffffb4db47d85c66c627e22609830466982",
+        "manifest.json": "6b0d23889ef771485abbbc080b66076c19a33aeed55303f3fdec8ee8d657366a"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-faculty-v71-b4-r1-fracture.blend",
+        "sha256": "6fdc2ac9814ea5c9b9501fcd9fdd5b658136a2eb695f372f9ed0bc56cc6e6b1e"
+      }
+    },
+    {
+      "id": "knu-nuri-west-v71-b4-r1-fracture",
+      "label": "누리관 서쪽 · 64개 파편 · 4번 묶음",
+      "source_model_id": "854306251",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-nuri-west-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "87dd1ef37c431e1ca9e5a515bc6571d4b44dbfc114847e7b4ce80844c5695433",
+        "fragments.glb": "54f22a8b03af102a9d04d44d0d87b2a9345c35ce7e1d9fd83b8982de4770d084",
+        "colliders.json": "64ef27c6d9cd70f14297b66d3176a4a71b8c709c6abc3bbfc496cff31f3fd505",
+        "manifest.json": "e2404603a4213ee2255206bb56def9a8a575f42363ea512b086a117cba8291f0"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-nuri-west-v71-b4-r1-fracture.blend",
+        "sha256": "046b49e1342809965027ae9f718962dad13cbb58a34d968bea6ae9eec0d43339"
+      }
+    },
+    {
+      "id": "knu-nuri-east-v71-b4-r1-fracture",
+      "label": "누리관 동쪽 · 64개 파편 · 4번 묶음",
+      "source_model_id": "854306497",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-nuri-east-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "9cb3d6aa1a8f52e12c3ac047b1c3d7cf3c163b81509ace6652699efc6e7e8baf",
+        "fragments.glb": "6e00ce989b7053f01f7fef7d7999fac91c474d0aea86d09220d584e21f246b4f",
+        "colliders.json": "656e620ccb3db0ee2a8e5f17b7d932686b63af7b975a810a1c989f868bd087af",
+        "manifest.json": "01c960345152ec2da0256531598579c617ee48ac6f660358009509b37bcd71ec"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-nuri-east-v71-b4-r1-fracture.blend",
+        "sha256": "544689664e958e539ceb9c638de4887791be0bac252e1c410d206a948383dc1e"
+      }
+    },
+    {
+      "id": "knu-myeonhak-v71-b4-r1-fracture",
+      "label": "면학관 · 64개 파편 · 4번 묶음",
+      "source_model_id": "524021464",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-myeonhak-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "553f994ce8e73ba59278023fdea2d8d4a10555ae9044dbe9d386c190815d02db",
+        "fragments.glb": "b90526842874cefdc629bc703a16829ba225e517de3fb4778fcdee0016fe17f2",
+        "colliders.json": "67b057506d603d3ef537d4b7dea2fc946f3c87b2bdc6f1d229720ef775d2151f",
+        "manifest.json": "1a691f35d8752cdfce6a5839b19b543e6e6df6fc1a06019a7e516568f02881ac"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-myeonhak-v71-b4-r1-fracture.blend",
+        "sha256": "9fe9dad29a72fd06f704e455c8e94d7f65ba53ef7a54de5e125ddbfde0c5815e"
+      }
+    },
+    {
+      "id": "knu-boram-v71-b4-r1-fracture",
+      "label": "보람관 · 64개 파편 · 4번 묶음",
+      "source_model_id": "1300033666",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-boram-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "a16b401bd97d28a3f19497cd08fb5038cf46648a45876e2ffadeb4213fb8cfd1",
+        "fragments.glb": "5fbb90da11604df70caf8a84b293a0c0671bba725284d430c30998219a8fb790",
+        "colliders.json": "72b673b0cb4b263f2859cc472f3290a0ebede2c57269428b9542b9b8c351e6f1",
+        "manifest.json": "f3c4d3337c02db785a205854be45715ba63696bd7d739c888cda66d0c4d34bd0"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-boram-v71-b4-r1-fracture.blend",
+        "sha256": "85b866f57ef016dc7c1ec7a5521ca76ad2faffef57f2ee698684f45a62598631"
+      }
+    },
+    {
+      "id": "knu-cheom-v71-b4-r1-fracture",
+      "label": "첨성관 · 64개 파편 · 4번 묶음",
+      "source_model_id": "468931911",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-cheom-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "eec8e44ae6a93ace863b905b65f97675d0f804f2370711fd19a7568134c957b7",
+        "fragments.glb": "1fed66b6587e90bb09bed98e87e0e3a854145dd27b4df66a0c648415cb121e62",
+        "colliders.json": "541e6b0c2e7c44caa35f3c925debee16e2b309d810f71a630a8319d030cc8dd2",
+        "manifest.json": "b397f430a9c82c7a74c29419d8fa79cd395a3d3307883d01a0cf8a51d5349bb2"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-cheom-v71-b4-r1-fracture.blend",
+        "sha256": "07d2d52b654724bd2d75fbf77891a7d8bb1c4f35f7052ab6f7ab5b2190167dff"
+      }
+    },
+    {
+      "id": "knu-baekho-v71-b4-r1-fracture",
+      "label": "백호관 · 64개 파편 · 4번 묶음",
+      "source_model_id": "468931928",
+      "manifest_source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-baekho-v71-b4-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "1111bda46a5a8a1bc84fe8acb1113478be1e9f3aa8ad1dec6e48fc207620ed45",
+        "fragments.glb": "8aa39238a5ef9a10d1cad34cb5af6dff1c4d0664a294735c69ba1078e1aad1dd",
+        "colliders.json": "b4f530fac541deaa7837d7be11e5bc0e8e714733718989ca1a2af35bfcfb1bb5",
+        "manifest.json": "4e09cb05ffe38d4c25a4b5721f021008e10b08e774e1e61bae0c40e18dac5ba9"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-baekho-v71-b4-r1-fracture.blend",
+        "sha256": "c5e237ae95aedc237adfc1b7dfb277e553e33d58d68e0d29c775876872695369"
+      }
+    },
+    {
+      "id": "knu-dorm-a-v71-b5-r1-fracture",
+      "label": "기숙사 A동 · 65개 파편 · 5번 묶음",
+      "source_model_id": "vw/145",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 65,
+      "source_directory": "web/public/assets/buildings/knu-dorm-a-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "7810fa841c7a3a9a388958fd9ae34686ea4cfdeb1031dbc3308df484bcb12f5a",
+        "fragments.glb": "d0e846edc8aae49cc7a4eeb14db9f5a2420024c65327b3f5d8837dffde4d5bdf",
+        "colliders.json": "c0ce7b4064999993f22e298f7b5094b3470945b580f5a87df048a0c3f3599010",
+        "manifest.json": "d82103c8f29214e7e64ecdc6a2696f7fd86063379bf0bf01b1f1386ed499d841"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-dorm-a-v71-b5-r1-fracture.blend",
+        "sha256": "b4a890b24df5d09645316f8d551502790dbefe4945d5f75b8fac6b56c2a19320"
+      }
+    },
+    {
+      "id": "knu-dorm-b-v71-b5-r1-fracture",
+      "label": "기숙사 B동 · 64개 파편 · 5번 묶음",
+      "source_model_id": "vw/73",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-dorm-b-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "23bc0cc6788be3c97aca986a007fe429b724388e499c0f12f5faee9df8912f30",
+        "fragments.glb": "4c485ad653128c706acbf2276d1341131c1112c21e747f136e28ff341e21e5de",
+        "colliders.json": "34b641e624342355a36335b30438b99f4552c3104210edb094995f50b2464239",
+        "manifest.json": "e32d4c6193f5c3d7b2ddc54e8ddc1c0307427d89df26bd274113a2d8e993b8c4"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-dorm-b-v71-b5-r1-fracture.blend",
+        "sha256": "c605c6b3149d43aedf1e1f34b0165ace21be588555b27e450d363f1f9fa8f53e"
+      }
+    },
+    {
+      "id": "knu-dorm-c-v71-b5-r1-fracture",
+      "label": "기숙사 C동 · 64개 파편 · 5번 묶음",
+      "source_model_id": "vw/162",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-dorm-c-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "6ab410a65685cf7f146db3d8676034e1bb22938dddde13b0c0f4d71bdc2cfd14",
+        "fragments.glb": "8a8d46143341aa06130ecd9353317aa6aa51684fb372093c14e34080e05a7f1b",
+        "colliders.json": "9f7c7e008faf314128055ea58d128041ca3b1b5194f33b84392378f8bb13bae1",
+        "manifest.json": "125dede407a8f57351cc4dacc4050adf4d6a9764213ae13a0ea367bba628a1c2"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-dorm-c-v71-b5-r1-fracture.blend",
+        "sha256": "9b4fa7bdadfa3818442641af2ed5a8eea42c52dba06ed42c87484c6d0dae6be0"
+      }
+    },
+    {
+      "id": "knu-cheong-v71-b5-r1-fracture",
+      "label": "청룡관 · 64개 파편 · 5번 묶음",
+      "source_model_id": "522514118",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-cheong-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "ac2e2545e63fb82f3a6ac6761933d0245a49cccbe4eb730c8c7e0cdda9abd80d",
+        "fragments.glb": "a1fc1f89f09dff7e5141675166f092cf17bb4b6e1e1dfbe0889be9e557405876",
+        "colliders.json": "11440bbc80ddb30cce158b23bf5d23d4c9bdc13a9476297cef3bf420eddc389b",
+        "manifest.json": "b53df681a63d0a95f3c75da9a62721a8e80ab4c17d09d5d2d62a749468d5b7e2"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-cheong-v71-b5-r1-fracture.blend",
+        "sha256": "b3421b95d432aeb0d5d227bc1760ec1cdbab200559abde9e96fa56ea500443db"
+      }
+    },
+    {
+      "id": "knu-rotc-v71-b5-r1-fracture",
+      "label": "학군단 · 64개 파편 · 5번 묶음",
+      "source_model_id": "468931930",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-rotc-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "672ce992fe7ea1f57ebcbc742607af1e215f123fe30ccbf5e027251208e23329",
+        "fragments.glb": "846485954534207e989b4f13a9c8ee5ddd59e04293e1c6523404d25954cd8ee9",
+        "colliders.json": "f10600e9be3b1ace9817f21954ac99cdec3d54d429bbd3378cf2ff6e3fd0ccbe",
+        "manifest.json": "ea9669c8ef618dc101f37d756b1ed3d788d5f42a4f0e122e77402ee09cedb85d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-rotc-v71-b5-r1-fracture.blend",
+        "sha256": "3ab994fe80ddd2619f396decb4463efa188c1898be12ec2598537b927b6a9211"
+      }
+    },
+    {
+      "id": "knu-store-v71-b5-r1-fracture",
+      "label": "학군단창고 · 64개 파편 · 5번 묶음",
+      "source_model_id": "vw/114",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-store-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "6b86f4f7c1881eeb362bdc8a293c8577198dd09c51d9b250b28dda395b7c836e",
+        "fragments.glb": "c4f514a0d1b0bbcad46f3c9c8feeda9c2805dbe4a2a1c90a6cdeec3bc62b87e4",
+        "colliders.json": "5e5774e72456ab77de160c68d316af6f622fc912a89b4a08dbd6ee0aed63da06",
+        "manifest.json": "18343a1d6ee27d2e1af175565dc7f601c98ef9262a2c780d11c67e600d7e16ba"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-store-v71-b5-r1-fracture.blend",
+        "sha256": "0fc4bc57f48cfa90c1f35cc8efd7666933a625ce0d0059945698655c1346f03f"
+      }
+    },
+    {
+      "id": "knu-tennis-v71-b5-r1-fracture",
+      "label": "테니스장대기실 · 64개 파편 · 5번 묶음",
+      "source_model_id": "vw/105",
+      "manifest_source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-tennis-v71-b5-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "58c9c51d48af29692fd21fdef48b4588ca7199fe347d0f21cc9ebb7b78145120",
+        "fragments.glb": "d53fda0e1e632dd129c19fa6ebe7e1313c190d4587cdad7c2d9ec15965b997ea",
+        "colliders.json": "5622ee5df7c2dd894646374d6d3ee0c03fa4a7e8d11ffa4a22cb110ff23d6a2a",
+        "manifest.json": "2dda232448cfd68b73ee056cb4d7bc51ceee4fad2bdc913ebba3748d6f8ff47e"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-tennis-v71-b5-r1-fracture.blend",
+        "sha256": "92dbe064829ff1ffe2f27047172623ed46573425e9a238d5eb659b2d078afa38"
+      }
+    },
+    {
+      "id": "knu-agri-v71-b6-r1-fracture",
+      "label": "농업생명과학관 · 64개 파편 · 6번 묶음",
+      "source_model_id": "524172305",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-agri-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "7230dbdee25d3130d1a1c2c5c1ed9a3c1b6e3cf814867b666e14f8c6695131c3",
+        "fragments.glb": "e37ac76d075db447183582badef30c25b334b01f0b4c41c4e10a0a6f2d49002d",
+        "colliders.json": "d298cc953b0fbe55ecbb7765313b2a96a20e4ff696d7931a141533239cff571b",
+        "manifest.json": "4f8f069bf75f18403699b7f05d1423eb9b82a14d2a3ca801b0ffce7cc53fa8ce"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-agri-v71-b6-r1-fracture.blend",
+        "sha256": "44c2611ed97a9db76166988a36ded1444a49d4e0edb464fb15dddafb50671c93"
+      }
+    },
+    {
+      "id": "knu-animal-v71-b6-r1-fracture",
+      "label": "동물사육장 · 64개 파편 · 6번 묶음",
+      "source_model_id": "576254849",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-animal-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "b4966d3309aad856d8e9c6c00aafc82d879cc5111730c397ac57876d13309a07",
+        "fragments.glb": "544f2d4b952f4057134c8ba6aeb3a7acbf5cac52dea07b3e94a4c70dd952f10d",
+        "colliders.json": "6243459d7fdaf6f5d9614212b55fa962157090819f540520df951dc5fd6cd670",
+        "manifest.json": "12806c595a5ed0473d9b9590c968ad1bb2ee9828c955c053eca6a791255c4571"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-animal-v71-b6-r1-fracture.blend",
+        "sha256": "33b5a7edf5daf12b73e14cb632bddbd4372c8bb7b309532f3f1740326022c641"
+      }
+    },
+    {
+      "id": "knu-apple-v71-b6-r1-fracture",
+      "label": "사과센터 · 64개 파편 · 6번 묶음",
+      "source_model_id": "473687810",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-apple-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "bb0d0249c371016b3a72a484293b8b135142f6b58830ef0c32878961674619ff",
+        "fragments.glb": "d02bdbdb33ab5bb0892044195655cce7bff90cea2b9d8d6d419bdc814261b112",
+        "colliders.json": "dd97d94fd8e73b4af8ae244ea86ba769dd1867d3fbb9dd51926bac44342c4ad3",
+        "manifest.json": "36caf0c70d81e6996eec5ff7f07bb6845a0aee5dc915dba33c330bbe38a113d3"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-apple-v71-b6-r1-fracture.blend",
+        "sha256": "578b5079b9f7d5fd9b3f5581e1fe50385dc0011796de7fa844bc941266512ab1"
+      }
+    },
+    {
+      "id": "knu-apple-annex-v71-b6-r1-fracture",
+      "label": "농대사과센터 · 64개 파편 · 6번 묶음",
+      "source_model_id": "vw/113",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-apple-annex-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "fc4beb519efac839e8ee79edc864e2ba68746191a8befcfea5fa07198dcfd190",
+        "fragments.glb": "bb65ffc4928e179ca78693c226fd6832c14f1593bb1fdaf558e29a67a933dabd",
+        "colliders.json": "aacd950d101d2593d4a49fb106a68a6d09d38b9d3c4f74de922e835807a58696",
+        "manifest.json": "49414216d4384a9fc83f1238788b412cd9876322cc94427720e6f24bf0003914"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-apple-annex-v71-b6-r1-fracture.blend",
+        "sha256": "fff18572b53e26aa951f4cd4200c8fd957c542a446af99efcf74ea8c16abf6ad"
+      }
+    },
+    {
+      "id": "knu-packing-v71-b6-r1-fracture",
+      "label": "사과포장개발실 · 64개 파편 · 6번 묶음",
+      "source_model_id": "vw/111",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-packing-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "78c3ff2b8e06b48730bfe355f716466e8d47e7a14702a0ba9f8dec769e1c3538",
+        "fragments.glb": "2b6ebe96c5fb5db03f3b7cf02970662301ada29df730eba53133b502ea9b32a3",
+        "colliders.json": "f2ef918b8a4a9da8a38d9e1da11e19148a7cd59db4572e3bffd4e990370973e1",
+        "manifest.json": "1a14a0bfba349a4c14b62499ae612008051ee8a74ba7960dbc3a8d3c78f2949f"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-packing-v71-b6-r1-fracture.blend",
+        "sha256": "335dec1069f821248de0635147f5a3df4d1c30ac0c3d8cb1d46676109636b88b"
+      }
+    },
+    {
+      "id": "knu-vet-v71-b6-r1-fracture",
+      "label": "수의과대학부속병원 · 64개 파편 · 6번 묶음",
+      "source_model_id": "468931894",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-vet-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "d502ea5f8ba37be36c154e1371caa11d214f76bc836f461ecd30af6d5089ecac",
+        "fragments.glb": "8f9ff126a8288edb308cd93d4b5833f861290bafbe4bcf444bfbe16c15a8b6ae",
+        "colliders.json": "245bbf042c97294e6ae9a51284a353a0ca2f82df50ed0af99078c060808cb41f",
+        "manifest.json": "c1cc8761b3041d78ebf7f4c1ec47d993192b2ef69c46c7750dde135db1af48d6"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-vet-v71-b6-r1-fracture.blend",
+        "sha256": "5d17c0ca4f7c870cfc4c4b5469775ef4028038022069803ad943e0b17719fa7a"
+      }
+    },
+    {
+      "id": "knu-nursing-v71-b6-r1-fracture",
+      "label": "간호대학 · 64개 파편 · 6번 묶음",
+      "source_model_id": "1107268251",
+      "manifest_source_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-nursing-v71-b6-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "24774e2f86e1f64c364d9a73c23c88cbea778a90d289bfd49cc2425cebf74790",
+        "fragments.glb": "12b6c656f3ad363a37173b5f5dc38ff09fa7cb1882c64e585e531083f9af7966",
+        "colliders.json": "a8cab7d74a97dce23c005edc2749c4c8696a565f8e6af4b5138341d8f1f34a74",
+        "manifest.json": "2a6c67363d1171b9dda26a283d39e2df07e2fbba7d81a7574585dd5dd941b901"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-nursing-v71-b6-r1-fracture.blend",
+        "sha256": "053137610323100d68bdc584b2b701edff5668ef11a4c540fe96d2dd4bf93cc0"
+      }
+    },
+    {
+      "id": "knu-gh1-v71-b7-r1-fracture",
+      "label": "온실 1 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/143",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh1-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "69079ad64d0ee086308211b32dc8151b626f8ba5519519e69882f652805525d1",
+        "fragments.glb": "cb4597a6b43891415aa712f3219d9570cc97b01f2c9cca59882c071baf48b911",
+        "colliders.json": "71803a5ffd98eabcd4de0c15ee7b61c171c3da2e87221d01a3045e6fe8d514aa",
+        "manifest.json": "c4211b72815c0986d00faf00ae6e1802ad73ee9765dc71f896c375c646286e05"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh1-v71-b7-r1-fracture.blend",
+        "sha256": "29f6b00826246682d827d263950f5834ed12b1bee1ab7d4712fa852eafb47658"
+      }
+    },
+    {
+      "id": "knu-gh2-v71-b7-r1-fracture",
+      "label": "온실 2 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/50",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh2-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "92b035e76bb93500930bfba89c067c43180057a5b1575d3f08e3a5e50746a14c",
+        "fragments.glb": "55f4a52ea4f7cb4cd653854fdb439384f9d780598f73c5e3ada94b87aaa15c81",
+        "colliders.json": "2d1ab6d658894a2300ee054816cec884f3a49256e7a191e74817c5ec6ffae0e9",
+        "manifest.json": "170c2655e88900f2c7362ec62ce698d957a0a87caaf4299750ad0e9117eb32b4"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh2-v71-b7-r1-fracture.blend",
+        "sha256": "6d2848e00b665fb656e77bf782ec0313494d960880b697ceeb34bf59d9390c66"
+      }
+    },
+    {
+      "id": "knu-gh31-v71-b7-r1-fracture",
+      "label": "온실 3-1 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/130",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh31-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "f757aa2130dcf6721ec3aa26363956e5d1348ea0ee62d383d8ac7c4c658d0eaf",
+        "fragments.glb": "962b0f14564893e135d2f2536830dd947846529f8b065be978cac9c6acdb1fac",
+        "colliders.json": "723e38f6b9505c7a8a19e85fbf1b27b9fccac784eb866603617c0e8c42ef1e27",
+        "manifest.json": "2bc10255fc6d9fdb2c71813ce047b23644477274560914d486c077ddc9a6b8e8"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh31-v71-b7-r1-fracture.blend",
+        "sha256": "ed33b8cc3dbecad87f9b0da09db7c372df24f3fc1b442ede1b45c9cbfc075db6"
+      }
+    },
+    {
+      "id": "knu-gh32-v71-b7-r1-fracture",
+      "label": "온실 3-2 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/163",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh32-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "545560507c80ac8573cf48e9fff67700c9b4ff53405414490c1c499584671a5f",
+        "fragments.glb": "5f090adf1870844ab92d56eb60fd0b3ff45981ab9f94acfd9a4b5b3ca05c1729",
+        "colliders.json": "9a3ab7a33f215f21431fae31ae9ed47a73120b16c883b9ddecdd074276c3a21f",
+        "manifest.json": "3e597b8f526495eb482389fa64e909e3107485a97f567b2d84e5a30e106ef487"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh32-v71-b7-r1-fracture.blend",
+        "sha256": "c2e681b8761cfe7029c3d406186fabbf0420c7fb7cdfa9b72958b93356229b5e"
+      }
+    },
+    {
+      "id": "knu-gh41-v71-b7-r1-fracture",
+      "label": "온실 4-1 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/18",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh41-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "20462250d0281e1ba0590ab450d52b81520f67f8f39bd39ee4ed0df2e93530fe",
+        "fragments.glb": "9e86ec9964d2840529b674a632928d5315fa3949abaf275a2f07c631345840c4",
+        "colliders.json": "29d505b74e5e54061e3fdf307c4bf3795d4dbebd8c896311b073cd8d11b699ad",
+        "manifest.json": "4c2d7cc1fa635ca26cf4018c44b3701212de310266399ee4217aa6397965a621"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh41-v71-b7-r1-fracture.blend",
+        "sha256": "60ee54e86be95a0421231b9c6f7f9e384504e0ce143c017fb0b5925b65614dde"
+      }
+    },
+    {
+      "id": "knu-gh42-v71-b7-r1-fracture",
+      "label": "온실 4-2 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/79",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh42-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "dcdfab819b44b76eaf29f80c0d3ca9366899e224bd200d8db12fc25c0476da43",
+        "fragments.glb": "7bd06e37e0666bc4c251f9e0cb2d8c70a37331444c48ae4e243dd24b20e5a38a",
+        "colliders.json": "2b35a16d436c3aac50f5ddc8b1078175a495099686fa9cf64ce54862a5c9eb73",
+        "manifest.json": "bda7f69e8cc6e403e3eb1f74d1a54724adb31cd0cb35c3d345ea3e0e60f15f43"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh42-v71-b7-r1-fracture.blend",
+        "sha256": "df23c17a90e11f5eb7a2958c85f8f1ce062f735a2747c937baad961ef871aebb"
+      }
+    },
+    {
+      "id": "knu-gh43-v71-b7-r1-fracture",
+      "label": "온실 4-3 · 64개 파편 · 7번 묶음",
+      "source_model_id": "vw/166",
+      "manifest_source_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh43-v71-b7-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "c8b6b191604114c4b7137b43b89424f6db7e22a28be22ff26e96647173f2c47b",
+        "fragments.glb": "abd3e9b8fc6449880c2032ae59d4843888472e3043f94d8f9b2d328374d7fe01",
+        "colliders.json": "590fa61be63f17d71e2f97845e21dca9f75f8e28b145e13c431bd1dc1e3c84ac",
+        "manifest.json": "8017085bdbc00768f37d2f6942d50597abd12518565232786567708f2d5e4986"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh43-v71-b7-r1-fracture.blend",
+        "sha256": "2ac90e1fa996a362785c972dd302648726c64c743bea925a38a459daeef890c6"
+      }
+    },
+    {
+      "id": "knu-gh51-v71-b8-r1-fracture",
+      "label": "온실 5-1 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/21",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh51-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "14e4e19bdd84aa849b8e1461ee6e8cfac49495648d9d1458d7be45ee10a393f8",
+        "fragments.glb": "f79493a45ff426bdae3df133676389aeadcd79cc527cdf30bab4e8eef196272a",
+        "colliders.json": "ab0a12de9ed182bc5ba4584f3e559a9d88b363a0d62c864e983862712ff37429",
+        "manifest.json": "9ec2ffd2410cb4f7a3820d6f10d15cd89c70943f80ae3a48dacd908a4d828801"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh51-v71-b8-r1-fracture.blend",
+        "sha256": "93bcc4aec20eefddd27a258b86273686fd7430481d72c1a1b6ad1b4960655149"
+      }
+    },
+    {
+      "id": "knu-gh52-v71-b8-r1-fracture",
+      "label": "온실 5-2 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/52",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh52-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "ddeddf05e89e7ff33fedf2944c00e84d23ff02067698ab735596680ad3927742",
+        "fragments.glb": "54ce3991d80f9b64d80b8c73340df2c2edcc6a6aa372056b398766fb92230188",
+        "colliders.json": "1ebfe54272239a8d01cdbdf763e84469f103a8659653d989112cbf2c7ce67c23",
+        "manifest.json": "0b90ef8d4b8af173e92068cc62c0d2123d98119e1898dbde22dc2af87f97318c"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh52-v71-b8-r1-fracture.blend",
+        "sha256": "647b63df9ba9d6e316b249c58abf72a44b056ddd28a7bad82a7d8faf64c46fb8"
+      }
+    },
+    {
+      "id": "knu-gh53-v71-b8-r1-fracture",
+      "label": "온실 5-3 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/110",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh53-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "06e5a37bc7ed6e2566208705e27854f3a685e07b6b6a182c0356641840c8b035",
+        "fragments.glb": "1d1a718cd77153325aa0cb0089f28cf933bd42d412d7803b632c982ff8d7e31c",
+        "colliders.json": "3f1b4e4b834eab86169f13ed5d150c2fa5fe40543230a2525ae993877c07b121",
+        "manifest.json": "ee3befabde3d35f938ec0a8725c9d74ce99412d7bf6d9a95b165eff7938c6202"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh53-v71-b8-r1-fracture.blend",
+        "sha256": "db84f3009da6fa781c60b03e91d900e0b40d8ff3b7b04931ec974cefc2d1513f"
+      }
+    },
+    {
+      "id": "knu-gh54-v71-b8-r1-fracture",
+      "label": "온실 5-4 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/20",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-gh54-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "737e8d28c93cf2240623ba38c4412aeca03f6972b4ed1a8e152c8d8a21c3c5de",
+        "fragments.glb": "e64ac4d2119edfdda75ce2d83841ebcdcfea042a2bd862b77b6eb5f5848427d0",
+        "colliders.json": "6f77e9b0f9f3047e4b9353bb4d6ade45f302fd1d7e92ff4eca8fd3208f9a49c7",
+        "manifest.json": "9668569e643d5374cb99235e82f37976d0fbcfd4b9a5d2f4d78ca73f06d04f91"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-gh54-v71-b8-r1-fracture.blend",
+        "sha256": "ba9dbe2ce5bf1fc19fb5fe46532c6c669857d9e0d70802516b20eba9e097a8b3"
+      }
+    },
+    {
+      "id": "knu-greenhouse-office-v71-b8-r1-fracture",
+      "label": "온실관리사 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/62",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-greenhouse-office-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "a6e0a7f86fbf815485b325327dda59be7a800df73c30125ab1ffc2eca14b9501",
+        "fragments.glb": "abca9609a3ae0baab0fb034b9582fb1295c9ec38141d86efdbe76f53fb30b348",
+        "colliders.json": "7ca9650e9f4fdbbe3bcc740a5a553a24b79fd25e4fb6f62b049a546f0f879cd9",
+        "manifest.json": "75830b28b24dcf30914339cafb0a6b1dedcb27b69c473ada5b54733047b56c8d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-greenhouse-office-v71-b8-r1-fracture.blend",
+        "sha256": "1b830f0ef8e25230b4898ea24c3a4f2122cb6f44e1f41da346e48e2241e38347"
+      }
+    },
+    {
+      "id": "knu-produce-processing-v71-b8-r1-fracture",
+      "label": "농산물가공동 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/22",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-produce-processing-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "83fa3448166536713c3f95dfb56240ec69d686e0c2884c7c27b1e6c5956703c7",
+        "fragments.glb": "6d6bf7fa69c170e770cae3c08adcf99eb0f8a1574cc6a740e9ad879faa37b2fd",
+        "colliders.json": "24eb6e5907dac23c6b0a24f0a854a82faed5eb9599f1003173566c4564c46049",
+        "manifest.json": "287198525fcce2bfe486923f8a2721eb999b0bcf1ebae91a8e61f377cb74e606"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-produce-processing-v71-b8-r1-fracture.blend",
+        "sha256": "b32e8685ba8d636030a5156ae846d95ccafd42c2dfd7dd284f72eda773e72f62"
+      }
+    },
+    {
+      "id": "knu-corn-storage-v71-b8-r1-fracture",
+      "label": "옥수수저장창고 · 64개 파편 · 8번 묶음",
+      "source_model_id": "vw/33",
+      "manifest_source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-corn-storage-v71-b8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "bdd363388111d002a12bf230772335836a4bc42cb32dafe5d746164d1b7a803f",
+        "fragments.glb": "371a14fceea70302f2afdfaf050572ad721ca4ad9d777b218e47b9c1009553ed",
+        "colliders.json": "bcd9b76d060452aff6937ae0ea76e8e95a3df0aacfd8e388205b8be13d817425",
+        "manifest.json": "71304c9a8383e04eb278a2e5d087921ee3db679995f20d755cd6f34a8fcf1a69"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-corn-storage-v71-b8-r1-fracture.blend",
+        "sha256": "89d47db4f1be353dca03b2b390f3733c2c8a804b189409ef6b00b10308f8cb0b"
+      }
+    },
+    {
+      "id": "knu-pp-structural-v71-b9-r1-fracture",
+      "label": "PP구조실습실 · 64개 파편 · 9번 묶음",
+      "source_model_id": "osm/468931888",
+      "manifest_source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-pp-structural-v71-b9-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "095faea9175d85f49a49cffffbf1126b676e9546789f5547fbc02654857f55fa",
+        "fragments.glb": "a0285d535441d8dbe57fcb7acb66fbc57b82f75509768d48bd10380ede68a298",
+        "colliders.json": "8850ba144441c5c53e48324633d1a6cd8d2a3978fdaa6d5f760f2670c43ca307",
+        "manifest.json": "866e7efe82def6ef1f2b7ec387d1e0cc37572ecb612ed63923d1d4855d9911ee"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-pp-structural-v71-b9-r1-fracture.blend",
+        "sha256": "aa9272d1628ac0229814d65bd118af54e14f3cefc549cac00bf219377a13d219"
+      }
+    },
+    {
+      "id": "knu-env-store-v71-b9-r1-fracture",
+      "label": "환경과학연구소창고 · 64개 파편 · 9번 묶음",
+      "source_model_id": "vw/1",
+      "manifest_source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-env-store-v71-b9-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "fd2c508f66187819b090a3e02351e2066222a53a9aabd36413cece9dc32017c1",
+        "fragments.glb": "fad6e0a9fc191b222f30ed4c638d3126610829195e38ae7e0664d9fbff1934cd",
+        "colliders.json": "d5ecc960f9bc27d98e69b13ac015a37cec93de1cd7cb861046739553ea52836e",
+        "manifest.json": "d52bee5949fa4ec7364a14b146d2c2208c85b269bab84f16c88b9c006494d88f"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-env-store-v71-b9-r1-fracture.blend",
+        "sha256": "b905297e1f68af5d1cf15e6b9702e8fd15eb0f5dacd1bb4da5af30c9b0b8bd02"
+      }
+    },
+    {
+      "id": "knu-rock-store-v71-b9-r1-fracture",
+      "label": "암석창고 · 64개 파편 · 9번 묶음",
+      "source_model_id": "vw/10",
+      "manifest_source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-rock-store-v71-b9-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "53a29e3db142d74b47426af2c4ca2f10b1b5e189cfa28bc05d2c9296ae839374",
+        "fragments.glb": "ac540344a93588ffdda5dec591173cb7b94b6e21056b3aafc2e03e9afe69cd20",
+        "colliders.json": "f5ee2bc5bc192d75e810fd9afd3f470fa75267c1000806875a121445e9de626b",
+        "manifest.json": "298babd948168453da3ed4a9ffb3e8a64064441da50f05bb72035bd55dabb745"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-rock-store-v71-b9-r1-fracture.blend",
+        "sha256": "b1156ac81c38ce216a450ca905a13d03084bd19d615c98ce2e15a2d936af86b3"
+      }
+    },
+    {
+      "id": "knu-isotope-store-v71-b9-r1-fracture",
+      "label": "동위원소저장고 · 64개 파편 · 9번 묶음",
+      "source_model_id": "vw/165",
+      "manifest_source_sha256": "38d0f7917bef7ccc4d467d9d537bae03626c0a1335d91eaf0f3489a2516d3d97",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-isotope-store-v71-b9-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "c6671cb88569d209451d6b853b5ec7415a03739451bfe2c33689a03c1d45da79",
+        "fragments.glb": "e9eb11efb126686307ffe15d22ffc9f4b1b7d58e9e53df27e7026d7447175ab6",
+        "colliders.json": "6ae6a50b724cdbcfec125764496d14b688d308aef6f4851dc84498b53bf9deb4",
+        "manifest.json": "c9d8ea62b8c090ef216259763f86f78c37d51c68e3e148731e9025cc75432472"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-isotope-store-v71-b9-r1-fracture.blend",
+        "sha256": "2dd7fc387d71d91f649f8b57f0d4cda109c8f51ac29b686ac9e28d3ab72b673b"
+      }
+    },
+    {
+      "id": "knu-osm-468931854-v71-b10-r1-fracture",
+      "label": "도서관 휴게실 · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/468931854",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-468931854-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "4f907c7ac839b7caab735925b862362c7ab85fe2b12813d035ebb745cb877109",
+        "fragments.glb": "8db42f5d0b5983339f37c1fbdd56e3bea5ef77a44d441a6dbd8cf0ef9ecc759f",
+        "colliders.json": "2585a62559909b89158e327e9acac3704884adcbdfc160bea88d046f0be35e5b",
+        "manifest.json": "31741d1d93720ced6ce3e59bf4585d45faf5ed4885b26ca16b75b1828379eb31"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931854-v71-b10-r1-fracture.blend",
+        "sha256": "0fa80377c094c836ae391d24bc636b894945a869b9a421d95b1790ac5933069f"
+      }
+    },
+    {
+      "id": "knu-osm-468931893-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931893) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/468931893",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-468931893-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "5e43495706ff0139a8e0f4a2af4f70bbd010cf2095e9d09a3730d036524fc9f1",
+        "fragments.glb": "fda38cd45806709e7ec83e7377c53730e63f23f47f05e6011a9b0a02c4db1595",
+        "colliders.json": "ad10a45239ca5a14752cccd6d972099a6c07105a6a8f94d105b6770fa2e08b53",
+        "manifest.json": "5bb78ee5ad23661b18405d7733c9488921eaf253ddcb69070b9b430691a7052d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931893-v71-b10-r1-fracture.blend",
+        "sha256": "d8672755d3030f3d207caf1db167a63badba1705ec8419fa29b0fe72d4bb1084"
+      }
+    },
+    {
+      "id": "knu-osm-468931896-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931896) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/468931896",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-468931896-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "c769f58e294cbb80bcb8070222bb0d20d2018b87ae866a750e6e1663cec1b3eb",
+        "fragments.glb": "4f3b2e0aeb40f49ff2f410547d181e49f07bc51b96cec19fc1b2ac539fecf9ac",
+        "colliders.json": "0f830dd6303dcaf97349491f53a37fdd7d1243bd087d8d6dd2a015492599068c",
+        "manifest.json": "e42c2d7715de3c1e73844af143364814344eb1d2a8979a3efc194cead5ff6a69"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931896-v71-b10-r1-fracture.blend",
+        "sha256": "7ce57d9476c2f4430b02c3beb70a5a874954040bb79138d889594ffb284fe735"
+      }
+    },
+    {
+      "id": "knu-osm-468931915-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (468931915) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/468931915",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group1-review/game/knu-osm-468931915-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "38927b5471d1fe475021d2cf2e71ce79bf086af07a51f67f1e7e83214bd4e730",
+        "fragments.glb": "84a782486041143e254d2984937f01f8c7fa25f73a4513b5487b64ccd2463cd9",
+        "colliders.json": "38b82cadd679c57af1d41eab65fed422290b171a452a8143b7e8081d0c23baaa",
+        "manifest.json": "6fa83eadac67585f82e8050cfb6f472c76b7742810f5cb9319395b88a660b5e7"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931915-v71-b10-r1-fracture.blend",
+        "sha256": "8a9ed30be6108fe2c9613c6b494218118eb2b3717e4318a08630dc245e0410a5"
+      }
+    },
+    {
+      "id": "knu-osm-524161868-v71-b10-r1-fracture",
+      "label": "차고 · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/524161868",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-524161868-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "ce0577db4723b40fa61e21a6586c91b4802a52f593ed733a8708b7961febf29f",
+        "fragments.glb": "8614cb764db3690f19467bb154d10e8edfb6ab046719fb6789b8466dcd446299",
+        "colliders.json": "9c5fd4ac91fb2d0c1bd9c5031135e69ea2d03b68842a4bb8d23fa305c9aa2946",
+        "manifest.json": "b40d2c5f2f80e8af5720789812c117718a69388027dd84cf0feb551fc5d71183"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-524161868-v71-b10-r1-fracture.blend",
+        "sha256": "c82704d947e09f94d71d980a10b87440474e7c8421c41191ecb1e2898b064d68"
+      }
+    },
+    {
+      "id": "knu-osm-576358734-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (576358734) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/576358734",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-576358734-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "6fdfd41dd2eb794ccdf5e871ee4b8fe72ecb968d256c0c4e092628356b0a76cd",
+        "fragments.glb": "3366f76cc2045c1cc6585c87147b3b7e1691f1ef12afead9e15d8027a0a6cedb",
+        "colliders.json": "8334c5dd48ec4e2eadb63dae3993b20a28485096f7d55755636a44e8dd87290d",
+        "manifest.json": "bb4b0d5e26fef0adb62eb6ef546dd7e1157fe00175905ae0675bd1c9c3c92b09"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-576358734-v71-b10-r1-fracture.blend",
+        "sha256": "99398b55bc68da43d0da3aef80ce7d18ee668ed0b28f7872d5fe9db8f94d11c5"
+      }
+    },
+    {
+      "id": "knu-osm-577759119-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (577759119) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/577759119",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group1-review/game/knu-osm-577759119-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "804b681b5a965beefb6bfd1ad484fa7d085f07a98d893294249c87a7a7e5baee",
+        "fragments.glb": "42d52a06355b071557e0a6c9dc43a4f9c5a17449d25f1109ed1ddceb62d0a358",
+        "colliders.json": "f8635591d1b7aac559f53b14251c02ad6116138bdb7313d8c5a00b2ac6f730ba",
+        "manifest.json": "15a82eb70e4ebb295eb51a51d4ff9f05a5af59339b2b17084a3f7ddb0cacd4a7"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-577759119-v71-b10-r1-fracture.blend",
+        "sha256": "8a5319870fb331523c5286c4b49d5d63021cd26993b4ab221c07c277aa37350a"
+      }
+    },
+    {
+      "id": "knu-osm-584385630-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584385630) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/584385630",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-584385630-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "9b3c42e8ab93e3e4448ad3012605e2951a0780f4e004b0ce6d4abc4ed6cfc248",
+        "fragments.glb": "920e84f3bd2f45cfef012cea6de9348018a34d0f167af0ee0d2072553f985bed",
+        "colliders.json": "fe28c916d412774d3ab13dea9b4cf2d50dfc01cb5f197b71bbf45c4c23579554",
+        "manifest.json": "f66842da0d9d1d4dd1fc2982ce0a597f4a739ca0ebe9bff507cb1c608cfb9dd4"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-584385630-v71-b10-r1-fracture.blend",
+        "sha256": "88b9ef6410926aabbad1875c0fdb56ad7118371e3fda52bd2fd2bd84604b9065"
+      }
+    },
+    {
+      "id": "knu-osm-584386432-v71-b10-r1-fracture",
+      "label": "이름 미등록 건물 (584386432) · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/584386432",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-584386432-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "33e48a9d89a68e636b92195e3c40a0697f35d6672f325e39581bb0094540ce04",
+        "fragments.glb": "1e51071ebc9d4cfebdd124be07952d1b5151227b8db38d9a73572250b187d6d8",
+        "colliders.json": "41765679047a74065654a7b1ad06de8c70de3f6ca22b83ef698ebb5c1cb8cec8",
+        "manifest.json": "3cc16d8de6cea65ebef69833735798166d1ee23989020d9e9bc5e5925ff8e96d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-584386432-v71-b10-r1-fracture.blend",
+        "sha256": "58d3c57efc351e224a1a027e2b0c7993e0dbec433220faa0cfdb7d0d36630f1d"
+      }
+    },
+    {
+      "id": "knu-osm-972016220-v71-b10-r1-fracture",
+      "label": "미래융합과학관 · 64개 파편 · 10번 묶음",
+      "source_model_id": "osm/972016220",
+      "manifest_source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-osm-972016220-v71-b10-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "24b3c562b197eb12bbd03063d635b05840c45c7f278395cfc3fa92400e70eb6c",
+        "fragments.glb": "40ffac7d013533d0f4c8e146ceda0fb7daacf38bd5705c1d8c3461c1a8265b5f",
+        "colliders.json": "05f6f3507a1b23d88bd866614ff2d2ebb55f119dc091f7392408062f38ee5499",
+        "manifest.json": "bd9af79ffb9d79396cbe2e179fa5a28fcb0502688597c895723a6ffa7dcaf46c"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-972016220-v71-b10-r1-fracture.blend",
+        "sha256": "bfca3bcf69f77b38bda59edfb448b4c3668210d3381716a6c04feadb6d54133d"
+      }
+    },
+    {
+      "id": "knu-grad-v71-b2-r2-fracture",
+      "label": "대학원동 · 64개 파편 · r2",
+      "source_model_id": "468931865",
+      "manifest_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-grad-v71-b2-r2-fracture",
+      "files_sha256": {
+        "intact.glb": "034556865225c2b467a9d2b3a02fe510335b299b3ec2ec114450dfa158cea248",
+        "fragments.glb": "ed63f71ad9572f9f3b9994efd7811e53e5e9818617156a0a2ba37c8af33503fc",
+        "colliders.json": "f908d000a3c023b14c58f4332dbc364a13008d65f099af026001eaf55c6cd8fc",
+        "manifest.json": "c052e45d56e0ca7bae59737fb751563a188e953a06454b3ba42668aa5da67c2b"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-grad-v71-b2-r2-fracture.blend",
+        "sha256": "70003ccba557ad5875654a0d28946837a6a52982c7e43641868ebcbcc00134f0"
+      }
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r2-fracture",
+      "label": "교육대학원 · 64개 파편 · r2",
+      "source_model_id": "469617252",
+      "manifest_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-educgrad-v71-b2-r2-fracture",
+      "files_sha256": {
+        "intact.glb": "23e7477b1e3be2a023420b4bd48adc596e2363d282c53261d4a2bfb72d48648b",
+        "fragments.glb": "b72270922863e745f14a134f4de5d36e2082d903063107df42939e5b9c01213c",
+        "colliders.json": "430268b3773b9848ffcc6e21173b110af242a46556786e8d90baeecc0b33b065",
+        "manifest.json": "9593467993954be75a04b20b926fe15678ac7f30c2a6b3c73776703626ca5977"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-educgrad-v71-b2-r2-fracture.blend",
+        "sha256": "99e73aceae243fe7c03d8e041d93fa565a13167049017da76902976845a2a27c"
+      }
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r2-fracture",
+      "label": "평생교육원 · 64개 파편 · r2",
+      "source_model_id": "468931916",
+      "manifest_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-lifelong-v71-b2-r2-fracture",
+      "files_sha256": {
+        "intact.glb": "a9b0cdeebd75047cf80b5122a4188724cf50dacd3e0d356a6b00c60d2abb741b",
+        "fragments.glb": "aa7b8f0f556c22dfde791f3c70dd0144fbf51f519551c20ab607c5432b815dac",
+        "colliders.json": "614e1c2b14962291eb420bb43386f97400defa6d1b2cb8ce70f4d585cf042561",
+        "manifest.json": "8f167a6960d47539517f53c9552175d06721b3ab8457fc315c4365b322971423"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-lifelong-v71-b2-r2-fracture.blend",
+        "sha256": "8632208bcb619c3b85c000044f6605695a7f5093932c0ada00b7494019e726f1"
+      }
+    },
+    {
+      "id": "knu-grad-v71-b2-r1-fracture",
+      "label": "대학원동 · 64개 파편",
+      "source_model_id": "468931865",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-grad-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "857f18582384967a077592b24418ed521c59b08f43aa3a68a561e24180400c5a",
+        "fragments.glb": "9cfcc70fee81f6cd8626189482121cfa5aa052ed0d39d2b90fa63821be507d39",
+        "colliders.json": "4f4749474aaa08fac6b553b7c4f219e71401c5cfe7058f0944b228875b544519",
+        "manifest.json": "4cfae22b84d07636827dcef76c4844048c432f9cdd11c4936e3a66cd6cd2e12e"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-grad-v71-b2-r1-fracture.blend",
+        "sha256": "0be52619126ca214403d1295081760e9cdfdc8c0997185af4300965ac242a8eb"
+      }
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r1-fracture",
+      "label": "교육대학원 · 64개 파편",
+      "source_model_id": "469617252",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-educgrad-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "f282bcf01557bc037cd8c6449b3a2ccac335d5b1e033fa846198a0ec7c6b6a7d",
+        "fragments.glb": "e044130a146fc549c9f2f25d67bf2653186e5e53648268075d29df71560c0912",
+        "colliders.json": "7d8f7ee27b8aae7340209f71361c98299f548a5b85c80be087f4c0bd2e70500c",
+        "manifest.json": "52c3875b667ff358ff48bce5519932b67750f097fc065a32f88016cbfa0dceac"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-educgrad-v71-b2-r1-fracture.blend",
+        "sha256": "39eacc5f91f9dc00899f83a858287ac8843ca2c1512b36516c94e96146d7f99a"
+      }
+    },
+    {
+      "id": "knu-teachers-v71-b2-r1-fracture",
+      "label": "사범대학 · 64개 파편",
+      "source_model_id": "vw/147",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-teachers-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "64f7e0bf04cf9702e87e9f1739e64d2e114f7551f2066d1bf5b42f31b2708fba",
+        "fragments.glb": "d506676ed57d51cfabc0c94d0d70892f99ca4b27afa383e2128d3b57e2faa667",
+        "colliders.json": "588ff3b0ffae600862726a511c2ec42a1f7a498d478f1c82c223ba03d0cb5cc3",
+        "manifest.json": "2288d997bd67ece6187e27d40bdbe11567144a8791571b49cf4936cf3e0103dc"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-teachers-v71-b2-r1-fracture.blend",
+        "sha256": "e00ec952d9e94a267cf61612014e421f27d39d7cc883a60036751f0a41227da0"
+      }
+    },
+    {
+      "id": "knu-liberal-v71-b2-r1-fracture",
+      "label": "교양과정동 · 64개 파편 · 외형 보류",
+      "source_model_id": "vw/95",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-liberal-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "8ad0ced5d426995a17e8947c7a2ad7eadd63f87701eb5c7470a9af4470fa4cc2",
+        "fragments.glb": "d339c46505edf96a6a31bfe8866704c3636aa9051f1edc157408bf6d453a2fbc",
+        "colliders.json": "073ee3201fa03c2e33b89d43757300bfb93f2e41cdbbd551d33b9e2f86549555",
+        "manifest.json": "fa64e3275349545fc5c08f4090a78273972dd212e1c8a4d442909cb369ace621"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-liberal-v71-b2-r1-fracture.blend",
+        "sha256": "977284fe4e4448ddb88aadfafee625eb340b9600dae918a32d8a5bde89cfec7b"
+      }
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r1-fracture",
+      "label": "평생교육원 · 64개 파편",
+      "source_model_id": "468931916",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-lifelong-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "476ec8af535af42ff3559055d7efa1f204f9ebe3a685fa610d3dfabaae0761d5",
+        "fragments.glb": "b2f082e0aa4b7a466cc9ef24dbd5a040794c4fa34a72ce38b0e6cb4ebdca5433",
+        "colliders.json": "176697fa333513742f9f0084e9fe50c536a87fb4c01cb596bed1382586097779",
+        "manifest.json": "839f17d63c55d65d3daf7d45f0bd146f6dec0cdc5c997090bc99662bbf4171bf"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-lifelong-v71-b2-r1-fracture.blend",
+        "sha256": "bde0eed7be995a1ba4467021861c095a7dc1ee05d4872d329654f5d018deb25e"
+      }
+    },
+    {
+      "id": "knu-convergence-v71-b2-r1-fracture",
+      "label": "융합교육정보관 · 64개 파편",
+      "source_model_id": "1026072764",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-convergence-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "2089d14bd373237d4d379545eef7e297dc31a89861614b4dd182d23b68d81aa2",
+        "fragments.glb": "8c208a022fa41e5d7391bb3f94b8578079dc368bb1f6228248c3c53086a0ac79",
+        "colliders.json": "e9214045924d57cfacb30e4c36b90adcb86072a10e2708daf163b69c2582f352",
+        "manifest.json": "f4c958e9162965b3d494e392e4b33cee5b06bacac8b012dc0303e25e6b742bc1"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-convergence-v71-b2-r1-fracture.blend",
+        "sha256": "22b284f6cc74c7a48a5f95c39e3a03bbfee5f990fdf2911803ed127d40ea3f74"
+      }
+    },
+    {
+      "id": "knu-career-v71-b2-r1-fracture",
+      "label": "취업정보센터 · 64개 파편 · 외형 보류",
+      "source_model_id": "vw/127",
+      "manifest_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-career-v71-b2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "2bce6b0db7bc367bd3f81ab0c073b3914929ad04257ba00fd923e219b118edc4",
+        "fragments.glb": "ed0c741440bc5010542cc9c2c3db54a29b9864bb5189fa9ec0b024bcea10f048",
+        "colliders.json": "5e4df4e5c53eb124162b044bafaa4d0884809b09c7e9d56530aabddfbf3602d5",
+        "manifest.json": "0e6abb5dc2fba4e5a6bbd97f04efa133ac82f20a36bcdb6220453a9d5265a569"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-career-v71-b2-r1-fracture.blend",
+        "sha256": "6eded4b94c485d4ac6238d3e74463d7e2ff77fe9346c56d1b44dc1e95d9f608c"
+      }
+    },
+    {
+      "id": "knu-main-v2",
+      "label": "본관 · 세분화 85개",
+      "source_model_id": "osm/468931858",
+      "manifest_source_sha256": null,
+      "fragment_count": 85,
+      "source_directory": "web/public/assets/buildings/knu-main-v2",
+      "files_sha256": {
+        "intact.glb": "e54ab38b33c9e116609bbc5d678350c1193eb481ff7e6448449309b571937fa2",
+        "fragments.glb": "fa96eea7348ab418b2e6b829e0cd3958539cb77c4b60fdfe3d25eaa3b77c948f",
+        "colliders.json": "79d996a926002c5c6e7f49cc8c2b18f7b2f7de6df11a1f8a65bdc138cd0a2cc6",
+        "manifest.json": "40f3ffc67f2cc2760863a7fa4ce2dbcc989aba2bd8d23d29453084458b42446b"
+      },
+      "editable": {
+        "path": "assets/source/knu-main-fracture-v2.blend",
+        "sha256": "b2e0cc0a05b639cfccbfb06638e74905b9cac65a709a239931c6351a78d476c0"
+      }
+    },
+    {
+      "id": "knu-it1-v2",
+      "label": "IT 1호관 · 이전 64개",
+      "source_model_id": "osm/468931895",
+      "manifest_source_sha256": null,
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-it1-v2",
+      "files_sha256": {
+        "intact.glb": "6f65524e8e5fc20c4e565a429e376590e3be499ba887d39f5adcaff810e66a36",
+        "fragments.glb": "dcbb433b6fdc4c74a0b2f7c2f61b6582efdc6125414575bc78b60d8a691aca81",
+        "colliders.json": "4e2cfe25f4661c0d9f8a0271799774274b9da7796e73525633ca42c369dfe8f1",
+        "manifest.json": "850bc591d8b124566804f5950ba08905c9c58791b65405a102b0eb198dfa6b6d"
+      },
+      "editable": {
+        "path": "assets/source/knu-it1-fracture-v2.blend",
+        "sha256": "c033705feb57484656146b7c0e37f9bb2131c30d263605b273f9a05fdd6a4459"
+      }
+    },
+    {
+      "id": "knu-main-v1",
+      "label": "본관 · 이전 52개",
+      "source_model_id": "osm/468931858",
+      "manifest_source_sha256": null,
+      "fragment_count": 52,
+      "source_directory": "web/public/assets/buildings/knu-main-v1",
+      "files_sha256": {
+        "intact.glb": "0dd9e411b82ed62fdf1411cf183f37ac5a02ac9852d13236cd36e42e7b810fad",
+        "fragments.glb": "0a5d36fcd3aa6ba0a05c1a71989a7467646a4ec9287890df49eb2c578e96eb14",
+        "colliders.json": "d07f146bd4b355451550b871a690ac9931c4c1340a9c7ac9cde165d8c531158e",
+        "manifest.json": "67db291f7c0ef1daec78aa07adc91406d1b6d24bd32115d0099ee5044eaf081b"
+      },
+      "editable": {
+        "path": "assets/source/knu-main-fracture-v1.blend",
+        "sha256": "a8d1ca8a488dc16f8950f5eddddcbffc7a0117cda07bad50563c9facc75271b4"
+      }
+    },
+    {
+      "id": "knu-it1-v1",
+      "label": "IT 1호관 · 초기 32개",
+      "source_model_id": "osm/468931895",
+      "manifest_source_sha256": null,
+      "fragment_count": 32,
+      "source_directory": "web/public/assets/buildings/knu-it1-v1",
+      "files_sha256": {
+        "intact.glb": "4b1b9a97e303886d0104b7349dca0bbb6bb7fe8dc976669d49e4bc8b2b2a0e19",
+        "fragments.glb": "ec5a4ea12564108d9337aa1f91010f617617b5afff9f298735a6e307933a12c0",
+        "colliders.json": "fbad5ef4d1686a26c6503f5a3bdc8193c1a7a260d6a0b8b37e17a1498519910c",
+        "manifest.json": "2068f4b94fbc26c6761b889e732f4faf436b4e50a01680d1b47aa916aa8a2145"
+      },
+      "editable": {
+        "path": "assets/source/knu-it1-fracture-v1.blend",
+        "sha256": "eb601af5f4592b758bfbf97cf5f818e00d4a7ca95b3c62c5b8d748c199ba746b"
+      }
+    },
+    {
+      "id": "knu-osm-468931867-v71-dot8-r1-fracture",
+      "label": "공대 12호관 · 64개 파편",
+      "source_model_id": "osm/468931867",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931867-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "f235c50cd35acc76a2836df257210b80e8f1c6387a5df782159e9e47161e248a",
+        "fragments.glb": "518ced1041802a721a37bdc64a33328308980037948c584ba87340742858c414",
+        "colliders.json": "c27b689a9ee37354b95ed17948375f8928af2e8510477c1e6706d48d1c5e3bb8",
+        "manifest.json": "c91e449475faea8337dd4038a54f3f6bfc717c7055a60696c62b890c288fa84a"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931867-v71-dot8-r1-fracture.blend",
+        "sha256": "4707f401a1ca2165567487b0c3e9a958685cacba91333ab0bcf6c18f91427743"
+      }
+    },
+    {
+      "id": "knu-osm-468931887-v71-dot8-r1-fracture",
+      "label": "생물학관 · 64개 파편",
+      "source_model_id": "osm/468931887",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931887-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "6c412b129c961117934de2712075e4e452e0e900bf4b05d47cc42e67843aec3f",
+        "fragments.glb": "90dc613f9c572ad5d0fb8c2c728d46e04de031f5fa3ebbdc6b6f6398bd667a97",
+        "colliders.json": "7386ddbe3ad4761e6eb2d732ec7f4fc5d5513aa29a185f29f2814eb966a7c329",
+        "manifest.json": "b152b7107c7d3c0d3f10f56116b7c2b4622906edc062901b0a2fbd3d6e45395b"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931887-v71-dot8-r1-fracture.blend",
+        "sha256": "06027634eb8506ecb2f72734cc48d0f732c8a4a754ebd9d21f44f07a746237a3"
+      }
+    },
+    {
+      "id": "knu-osm-468931898-v71-dot8-r1-fracture",
+      "label": "박물관 · 64개 파편",
+      "source_model_id": "osm/468931898",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931898-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "60cc6d5c8f36094e96fcc118fe1aea5b254ee02b8ea1bdfdaba8083c4e11c3c9",
+        "fragments.glb": "07745dcf4c6f26c0e5f92efd5af0d52238b75cf5160fdb8ade7747e643ee8cc7",
+        "colliders.json": "b7cb6ddea3620ca0c6f1ba5f05892273a477bd7a34b6fce927286066282a6336",
+        "manifest.json": "dc7e9a4eaabea370aeb9bd34b33403b8b5b17fc62572321943bcd2f44fb72236"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931898-v71-dot8-r1-fracture.blend",
+        "sha256": "5c306ed6868fb94a20ab8c85846169ab03e195e3be20ac248770b3c472c5eb96"
+      }
+    },
+    {
+      "id": "knu-osm-468931905-v71-dot8-r1-fracture",
+      "label": "생활과학대학 · 64개 파편",
+      "source_model_id": "osm/468931905",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931905-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "3b37671d9b806dd1c1cf19714dc375b02507fcde37a5d83dc07029c2f8a2a260",
+        "fragments.glb": "5514f0fc8ab53c8110c438da3685323e41a8b92bcd9ab6f4645166a50ad65370",
+        "colliders.json": "1b0335ebc7d80b22157c2f546103ebc0c4cd0985496b7c0166d566e2864e5f88",
+        "manifest.json": "401b0b3f316c664057ae878f7b915febf88084e109e732b987c49f98c5117075"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931905-v71-dot8-r1-fracture.blend",
+        "sha256": "40f3f6733ab5299d88960fefded1373b441b0296f9684a23f38b05ccca6c2313"
+      }
+    },
+    {
+      "id": "knu-osm-468931909-v71-dot8-r1-fracture",
+      "label": "정보화본부 · 64개 파편",
+      "source_model_id": "osm/468931909",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931909-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "eecfd2c49dca6d3a78fa0f8b450930f1df3b9677b7675cd1c75cee68fdaf1667",
+        "fragments.glb": "aee2a00cd6ed733457ef744f227aa322c9606fbd0044977bc2eb5e16a31ca0a3",
+        "colliders.json": "ef9c3f759fb591722b27d88a58191a58e90c947754645fe304850c1745a479d2",
+        "manifest.json": "bfd2c3907fd7087137f33a3ba9afe72bbbff89c8f6302b45ce5be379cd47c322"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931909-v71-dot8-r1-fracture.blend",
+        "sha256": "6b28a13c8a19b88eeaf2394fb582d8819df5c5f6b866c252efb55ace75312e64"
+      }
+    },
+    {
+      "id": "knu-osm-468931920-v71-dot8-r1-fracture",
+      "label": "제1과학관 · 64개 파편",
+      "source_model_id": "osm/468931920",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931920-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "f394a2fd74b9ee7a03ae405584e48813d0735e4854d7bc2ff4f05251024ecb55",
+        "fragments.glb": "afaaa2b7f3f31a8aaf02c13d9953148b642ed35627f103c6f3b6abc68bfa1e88",
+        "colliders.json": "df433609fa5ceb4458f99ee457b2c67c2c6d602f54809ce7463ab2a589630fe5",
+        "manifest.json": "6414622732a9b8071245b7ea86818d0f962fd84ec3682aaf672d2a4a68ddcf2d"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931920-v71-dot8-r1-fracture.blend",
+        "sha256": "cf3c48a4c7769ed4ee7d4929004bc8c20fc567180486e6cd11845cd5ed0bcde1"
+      }
+    },
+    {
+      "id": "knu-osm-468931924-v71-dot8-r1-fracture",
+      "label": "국민체육센터 · 64개 파편",
+      "source_model_id": "osm/468931924",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-468931924-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "ca66655328c2825b70a6f7a89715ed70d81ff3c7190d12b524599a912311a49e",
+        "fragments.glb": "9c1b2272d60939b3e2aab7ce163a741122e132402a0089b7a17fb4034f6350e3",
+        "colliders.json": "f81ee564e9e84f004d15da505447c7cfb36607c80a7255c3dc3506db26afd20c",
+        "manifest.json": "f24b693ed9c4bac21051465f60f3aa3a2a9ff4dba2b20e12c49d59c57ea3371b"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931924-v71-dot8-r1-fracture.blend",
+        "sha256": "6d8e810bdecd1d47151e7bbb2a3ce35334bba5a9d56207fcb1493ddad23610f8"
+      }
+    },
+    {
+      "id": "knu-osm-473684409-v71-dot8-r1-fracture",
+      "label": "어린이집 · 64개 파편",
+      "source_model_id": "osm/473684409",
+      "manifest_source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/dot-fracture/knu-osm-473684409-v71-dot8-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "e88ad36bece2d2bd7513d81e2d4a72f427eb0bb935c9e3b86b3014903ff3f982",
+        "fragments.glb": "9aedf14bd0c84cab19ef023839580bab2c9059041c0f4788821a46bdd2ba5493",
+        "colliders.json": "e99f024851f1d6d287216478be44f529ff062c3b127a0acdca58b65536e27c35",
+        "manifest.json": "e75af77d419b51bb908df64d8c085b84ede61629b21e07c5c1095e85afaea24e"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-473684409-v71-dot8-r1-fracture.blend",
+        "sha256": "e46187e103b5c012b22b89300d616c9c8723158b8026cebefbbad71cc44abf28"
+      }
+    },
+    {
+      "id": "knu-osm-1470108675-v71-g2-r1-fracture",
+      "label": "봉사관 · 64개 파편",
+      "source_model_id": "osm/1470108675",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group2-review/game/knu-osm-1470108675-v71-g2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "61003b1ab36b83f04931229747b3a5d324f61f3a9793d568651124f829ebaa32",
+        "fragments.glb": "7102dbfe8c390af6bb917d1260a8b4c59d4c4ec8f6516e5672d99f8910727984",
+        "colliders.json": "01bb8f3d45ce548d7a339547f7b2ba5fffbfef6ef76d92ca1e25a35ee36292ee",
+        "manifest.json": "d9ad59202a228f226e7c12eaf901dca04c6e8519a20ff6075035cf7a9149ee9f"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-1470108675-v71-g2-r1-fracture.blend",
+        "sha256": "d7e06690b1a4a85d0ff273e5046b212892c538be13ccb3b68b767e1e70fd9ec5"
+      }
+    },
+    {
+      "id": "knu-osm-468931907-v71-g2-r1-fracture",
+      "label": "우당교육관 · 64개 파편",
+      "source_model_id": "osm/468931907",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group2-review/game/knu-osm-468931907-v71-g2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "49baa069a074056c2cfc6668b5d76e1340896f312073e638495469726ddecf28",
+        "fragments.glb": "4123ed85e63106fd629371db036af28f78c578850ad765bf8a9b01561a5c73bb",
+        "colliders.json": "018313622674f6600fbb22f452f2720c1bfbcb353dafd672af91b85a5315796d",
+        "manifest.json": "5abd39775c7095b829e0e91e13c36d95203c6530186a18868798a5103146ab36"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931907-v71-g2-r1-fracture.blend",
+        "sha256": "ff4ddf9dedfae2600859413bcc6dd4dfe8c2bdb1b51d7dd3bb06b0e195431ba3"
+      }
+    },
+    {
+      "id": "knu-osm-468931910-v71-g2-r1-fracture",
+      "label": "어학교육원 · 64개 파편",
+      "source_model_id": "osm/468931910",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group2-review/game/knu-osm-468931910-v71-g2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "381fbc5854229225c5c2ae1c0ece67f2d409c101bb47b6865f143c7fc13806ac",
+        "fragments.glb": "a7e79cedbcde90c1cd7d66e8e353faff69d1096e64eb80e931df3985d7a4d44f",
+        "colliders.json": "d7ab289a8c21174da7df958be1ce84a9121ca8b63f62c6edb79b7d990359da4e",
+        "manifest.json": "5a76038dce6c9b9cc5837b33ff2f1fbf2359f1e67f6137dd5ff3dbae3a3fa122"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-468931910-v71-g2-r1-fracture.blend",
+        "sha256": "eec0425b7b15a6f408dfdb402530dfbc9ef95d2b81c7537f9267033411dedf2b"
+      }
+    },
+    {
+      "id": "knu-osm-524021463-v71-g2-r1-fracture",
+      "label": "창업보육센터 · 64개 파편",
+      "source_model_id": "osm/524021463",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "data/local/campus-v71-remaining-70/merge-123/group2-review/game/knu-osm-524021463-v71-g2-r1-fracture",
+      "files_sha256": {
+        "intact.glb": "5e0fc37e71255b56b1615f1398feb14972e227063f8bd836c1eac8aaf538c6c2",
+        "fragments.glb": "811072f2c53cbba0a4e59b61adcd5ec39263c3698952973b2c7b932d6b533705",
+        "colliders.json": "0878bf8f1f8a75f0f55a666cc4f1dd27a16603c692dee23927d910aecf904500",
+        "manifest.json": "191551e93ed960fef0b91643d2110a99f485df9b5de591e0d1a877dd89f65ee9"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-osm-524021463-v71-g2-r1-fracture.blend",
+        "sha256": "27b008c9e6d77c8a2eb747ebb9157aa9fd551f127845030743d9f1dd33deae1a"
+      }
+    }
+  ]
+}

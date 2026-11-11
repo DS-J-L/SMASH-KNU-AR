@@ -1,0 +1,1185 @@
+[
+  {
+    "file": "web/public/assets/buildings/knu-it1-v3/intact.glb",
+    "bytes": 836016,
+    "triangles": 666,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v3/fragments.glb",
+    "bytes": 1799952,
+    "triangles": 6442,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it2-v71-r8-fracture/intact.glb",
+    "bytes": 262640,
+    "triangles": 312,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it2-v71-r8-fracture/fragments.glb",
+    "bytes": 905252,
+    "triangles": 4344,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gym2-v71-r8-fracture/intact.glb",
+    "bytes": 51684,
+    "triangles": 314,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gym2-v71-r8-fracture/fragments.glb",
+    "bytes": 557208,
+    "triangles": 3930,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-northgate-v71-r8-fracture/intact.glb",
+    "bytes": 34952,
+    "triangles": 196,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-northgate-v71-r8-fracture/fragments.glb",
+    "bytes": 330964,
+    "triangles": 3088,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-eng7-v71-r8-fracture/intact.glb",
+    "bytes": 147076,
+    "triangles": 2452,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-eng7-v71-r8-fracture/fragments.glb",
+    "bytes": 551264,
+    "triangles": 4916,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-future-v71-r8-fracture/intact.glb",
+    "bytes": 73292,
+    "triangles": 878,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-future-v71-r8-fracture/fragments.glb",
+    "bytes": 412416,
+    "triangles": 3838,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-semi-v71-r8-fracture/intact.glb",
+    "bytes": 54996,
+    "triangles": 676,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-semi-v71-r8-fracture/fragments.glb",
+    "bytes": 372116,
+    "triangles": 3176,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-safety-v71-r8-fracture/intact.glb",
+    "bytes": 14476,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-safety-v71-r8-fracture/fragments.glb",
+    "bytes": 287148,
+    "triangles": 2380,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r3-fracture/intact.glb",
+    "bytes": 906684,
+    "triangles": 1372,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 1272864,
+    "triangles": 3988,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-teachers-v71-b2-r3-fracture/intact.glb",
+    "bytes": 284424,
+    "triangles": 148,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-teachers-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 604336,
+    "triangles": 2836,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-liberal-v71-b2-r3-fracture/intact.glb",
+    "bytes": 3884,
+    "triangles": 36,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-liberal-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 226836,
+    "triangles": 2456,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r3-fracture/intact.glb",
+    "bytes": 150836,
+    "triangles": 876,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 531492,
+    "triangles": 3724,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-convergence-v71-b2-r3-fracture/intact.glb",
+    "bytes": 262904,
+    "triangles": 3220,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-convergence-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 684812,
+    "triangles": 5848,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-career-v71-b2-r3-fracture/intact.glb",
+    "bytes": 5612,
+    "triangles": 76,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-career-v71-b2-r3-fracture/fragments.glb",
+    "bytes": 224260,
+    "triangles": 2608,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-press-v71-b3-r1-fracture/intact.glb",
+    "bytes": 96596,
+    "triangles": 1612,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-press-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 494304,
+    "triangles": 4300,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-arts-v71-b3-r1-fracture/intact.glb",
+    "bytes": 21544,
+    "triangles": 84,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-arts-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 330972,
+    "triangles": 2764,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-sculpture-v71-b3-r1-fracture/intact.glb",
+    "bytes": 151892,
+    "triangles": 2604,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-sculpture-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 557016,
+    "triangles": 5224,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-pavilion-v71-b3-r1-fracture/intact.glb",
+    "bytes": 239212,
+    "triangles": 2542,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-pavilion-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 1097076,
+    "triangles": 12098,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-yeongseon-v71-b3-r1-fracture/intact.glb",
+    "bytes": 143844,
+    "triangles": 892,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-yeongseon-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 473400,
+    "triangles": 3248,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-techno-v71-b3-r1-fracture/intact.glb",
+    "bytes": 82104,
+    "triangles": 1344,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-techno-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 452664,
+    "triangles": 3976,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-kbsi-v71-b3-r1-fracture/intact.glb",
+    "bytes": 128812,
+    "triangles": 2124,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-kbsi-v71-b3-r1-fracture/fragments.glb",
+    "bytes": 574288,
+    "triangles": 5052,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-faculty-v71-b4-r1-fracture/intact.glb",
+    "bytes": 228244,
+    "triangles": 3260,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-faculty-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 677000,
+    "triangles": 5972,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nuri-west-v71-b4-r1-fracture/intact.glb",
+    "bytes": 145196,
+    "triangles": 1880,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nuri-west-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 515876,
+    "triangles": 4268,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nuri-east-v71-b4-r1-fracture/intact.glb",
+    "bytes": 191188,
+    "triangles": 2528,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nuri-east-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 578624,
+    "triangles": 4900,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-myeonhak-v71-b4-r1-fracture/intact.glb",
+    "bytes": 34944,
+    "triangles": 460,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-myeonhak-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 362476,
+    "triangles": 2892,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-boram-v71-b4-r1-fracture/intact.glb",
+    "bytes": 347096,
+    "triangles": 4756,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-boram-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 858820,
+    "triangles": 7632,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-cheom-v71-b4-r1-fracture/intact.glb",
+    "bytes": 256144,
+    "triangles": 3596,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-cheom-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 771280,
+    "triangles": 6548,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-baekho-v71-b4-r1-fracture/intact.glb",
+    "bytes": 131108,
+    "triangles": 1468,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-baekho-v71-b4-r1-fracture/fragments.glb",
+    "bytes": 514624,
+    "triangles": 4492,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-a-v71-b5-r1-fracture/intact.glb",
+    "bytes": 90812,
+    "triangles": 1284,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-a-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 475356,
+    "triangles": 4468,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-b-v71-b5-r1-fracture/intact.glb",
+    "bytes": 94168,
+    "triangles": 868,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-b-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 465964,
+    "triangles": 3796,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-c-v71-b5-r1-fracture/intact.glb",
+    "bytes": 92436,
+    "triangles": 1252,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-dorm-c-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 469788,
+    "triangles": 4356,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-cheong-v71-b5-r1-fracture/intact.glb",
+    "bytes": 229328,
+    "triangles": 3812,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-cheong-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 710248,
+    "triangles": 6484,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-rotc-v71-b5-r1-fracture/intact.glb",
+    "bytes": 169568,
+    "triangles": 1616,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-rotc-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 547120,
+    "triangles": 4168,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-store-v71-b5-r1-fracture/intact.glb",
+    "bytes": 19988,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-store-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 287900,
+    "triangles": 2396,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-tennis-v71-b5-r1-fracture/intact.glb",
+    "bytes": 21652,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-tennis-v71-b5-r1-fracture/fragments.glb",
+    "bytes": 301528,
+    "triangles": 2452,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-agri-v71-b6-r1-fracture/intact.glb",
+    "bytes": 364040,
+    "triangles": 1932,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-agri-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 749252,
+    "triangles": 4468,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-animal-v71-b6-r1-fracture/intact.glb",
+    "bytes": 77520,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-animal-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 335832,
+    "triangles": 2336,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-apple-v71-b6-r1-fracture/intact.glb",
+    "bytes": 164840,
+    "triangles": 1192,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-apple-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 503772,
+    "triangles": 3580,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-apple-annex-v71-b6-r1-fracture/intact.glb",
+    "bytes": 75152,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-apple-annex-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 346232,
+    "triangles": 2412,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-packing-v71-b6-r1-fracture/intact.glb",
+    "bytes": 3432,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-packing-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 220944,
+    "triangles": 2276,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-vet-v71-b6-r1-fracture/intact.glb",
+    "bytes": 657168,
+    "triangles": 848,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-vet-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 1025908,
+    "triangles": 3872,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nursing-v71-b6-r1-fracture/intact.glb",
+    "bytes": 394776,
+    "triangles": 1000,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-nursing-v71-b6-r1-fracture/fragments.glb",
+    "bytes": 742704,
+    "triangles": 3436,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh1-v71-b7-r1-fracture/intact.glb",
+    "bytes": 130740,
+    "triangles": 60,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh1-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 442292,
+    "triangles": 2516,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh2-v71-b7-r1-fracture/intact.glb",
+    "bytes": 61120,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh2-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 341960,
+    "triangles": 2360,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh31-v71-b7-r1-fracture/intact.glb",
+    "bytes": 19804,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh31-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 291720,
+    "triangles": 2452,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh32-v71-b7-r1-fracture/intact.glb",
+    "bytes": 74160,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh32-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 348796,
+    "triangles": 2416,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh41-v71-b7-r1-fracture/intact.glb",
+    "bytes": 18532,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh41-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 287156,
+    "triangles": 2356,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh42-v71-b7-r1-fracture/intact.glb",
+    "bytes": 18600,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh42-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 290192,
+    "triangles": 2424,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh43-v71-b7-r1-fracture/intact.glb",
+    "bytes": 18760,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh43-v71-b7-r1-fracture/fragments.glb",
+    "bytes": 292948,
+    "triangles": 2444,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh51-v71-b8-r1-fracture/intact.glb",
+    "bytes": 69280,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh51-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 345496,
+    "triangles": 2444,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh52-v71-b8-r1-fracture/intact.glb",
+    "bytes": 72188,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh52-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 353780,
+    "triangles": 2480,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh53-v71-b8-r1-fracture/intact.glb",
+    "bytes": 71620,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh53-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 344832,
+    "triangles": 2388,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh54-v71-b8-r1-fracture/intact.glb",
+    "bytes": 69428,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-gh54-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 342092,
+    "triangles": 2448,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-greenhouse-office-v71-b8-r1-fracture/intact.glb",
+    "bytes": 4488,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-greenhouse-office-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 269488,
+    "triangles": 2400,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-produce-processing-v71-b8-r1-fracture/intact.glb",
+    "bytes": 4488,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-produce-processing-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 278800,
+    "triangles": 2384,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-corn-storage-v71-b8-r1-fracture/intact.glb",
+    "bytes": 5244,
+    "triangles": 36,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-corn-storage-v71-b8-r1-fracture/fragments.glb",
+    "bytes": 278120,
+    "triangles": 2520,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-pp-structural-v71-b9-r1-fracture/intact.glb",
+    "bytes": 177080,
+    "triangles": 1468,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-pp-structural-v71-b9-r1-fracture/fragments.glb",
+    "bytes": 519720,
+    "triangles": 3844,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-env-store-v71-b9-r1-fracture/intact.glb",
+    "bytes": 54284,
+    "triangles": 44,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-env-store-v71-b9-r1-fracture/fragments.glb",
+    "bytes": 327780,
+    "triangles": 2460,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-rock-store-v71-b9-r1-fracture/intact.glb",
+    "bytes": 72644,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-rock-store-v71-b9-r1-fracture/fragments.glb",
+    "bytes": 346912,
+    "triangles": 2400,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-isotope-store-v71-b9-r1-fracture/intact.glb",
+    "bytes": 4488,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-isotope-store-v71-b9-r1-fracture/fragments.glb",
+    "bytes": 274760,
+    "triangles": 2432,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931854-v71-b10-r1-fracture/intact.glb",
+    "bytes": 134824,
+    "triangles": 676,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931854-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 449216,
+    "triangles": 3032,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931893-v71-b10-r1-fracture/intact.glb",
+    "bytes": 155708,
+    "triangles": 960,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931893-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 505316,
+    "triangles": 3580,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931896-v71-b10-r1-fracture/intact.glb",
+    "bytes": 6180,
+    "triangles": 44,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931896-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 279780,
+    "triangles": 2392,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931915-v71-b10-r1-fracture/intact.glb",
+    "bytes": 44904,
+    "triangles": 748,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-468931915-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 357224,
+    "triangles": 3116,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-524161868-v71-b10-r1-fracture/intact.glb",
+    "bytes": 203680,
+    "triangles": 1484,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-524161868-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 595968,
+    "triangles": 4088,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-576358734-v71-b10-r1-fracture/intact.glb",
+    "bytes": 100636,
+    "triangles": 532,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-576358734-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 416340,
+    "triangles": 2920,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-577759119-v71-b10-r1-fracture/intact.glb",
+    "bytes": 4808,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-577759119-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 269076,
+    "triangles": 2324,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-584385630-v71-b10-r1-fracture/intact.glb",
+    "bytes": 4808,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-584385630-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 260488,
+    "triangles": 2356,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-584386432-v71-b10-r1-fracture/intact.glb",
+    "bytes": 3876,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-584386432-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 251588,
+    "triangles": 2388,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-972016220-v71-b10-r1-fracture/intact.glb",
+    "bytes": 251936,
+    "triangles": 2168,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-osm-972016220-v71-b10-r1-fracture/fragments.glb",
+    "bytes": 647964,
+    "triangles": 4644,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r2-fracture/intact.glb",
+    "bytes": 906684,
+    "triangles": 1372,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r2-fracture/fragments.glb",
+    "bytes": 1272864,
+    "triangles": 3988,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-educgrad-v71-b2-r2-fracture/intact.glb",
+    "bytes": 498068,
+    "triangles": 840,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-educgrad-v71-b2-r2-fracture/fragments.glb",
+    "bytes": 919948,
+    "triangles": 4112,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r2-fracture/intact.glb",
+    "bytes": 150836,
+    "triangles": 876,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r2-fracture/fragments.glb",
+    "bytes": 531492,
+    "triangles": 3724,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r1-fracture/intact.glb",
+    "bytes": 903544,
+    "triangles": 1348,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-grad-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 1252764,
+    "triangles": 3684,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-educgrad-v71-b2-r1-fracture/intact.glb",
+    "bytes": 494280,
+    "triangles": 804,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-educgrad-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 871952,
+    "triangles": 3704,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-teachers-v71-b2-r1-fracture/intact.glb",
+    "bytes": 284424,
+    "triangles": 148,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-teachers-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 604336,
+    "triangles": 2836,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-liberal-v71-b2-r1-fracture/intact.glb",
+    "bytes": 3884,
+    "triangles": 36,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-liberal-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 226836,
+    "triangles": 2456,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r1-fracture/intact.glb",
+    "bytes": 143956,
+    "triangles": 836,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-lifelong-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 506968,
+    "triangles": 3380,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-convergence-v71-b2-r1-fracture/intact.glb",
+    "bytes": 262904,
+    "triangles": 3220,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-convergence-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 684812,
+    "triangles": 5848,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-career-v71-b2-r1-fracture/intact.glb",
+    "bytes": 5612,
+    "triangles": 76,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-career-v71-b2-r1-fracture/fragments.glb",
+    "bytes": 224260,
+    "triangles": 2608,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v2/intact.glb",
+    "bytes": 916028,
+    "triangles": 1612,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v2/fragments.glb",
+    "bytes": 1915956,
+    "triangles": 7982,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v2/intact.glb",
+    "bytes": 836016,
+    "triangles": 666,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v2/fragments.glb",
+    "bytes": 1605784,
+    "triangles": 4914,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v1/intact.glb",
+    "bytes": 916028,
+    "triangles": 1612,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-main-v1/fragments.glb",
+    "bytes": 1707376,
+    "triangles": 6340,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v1/intact.glb",
+    "bytes": 4580,
+    "triangles": 28,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it1-v1/fragments.glb",
+    "bytes": 100360,
+    "triangles": 636,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/campus/knu-campus-v13.glb",
+    "bytes": 24049444,
+    "triangles": 396917,
+    "errors": 0,
+    "warnings": 0
+  }
+]

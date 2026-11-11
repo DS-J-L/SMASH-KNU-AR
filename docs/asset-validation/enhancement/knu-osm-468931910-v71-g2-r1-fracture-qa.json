@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-osm-468931910-v71-g2-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.9591150749098263,
+  "volume_relative_error": 1.9980330949490496e-08,
+  "errors": [],
+  "source_blend_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb"
+}

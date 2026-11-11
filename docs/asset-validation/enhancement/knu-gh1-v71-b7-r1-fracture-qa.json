@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-gh1-v71-b7-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.15249960177903316,
+  "volume_relative_error": 4.6084749349493055e-08,
+  "errors": [],
+  "source_blend_sha256": "85536db22cbee94b83aef959cf87ed3f0ab8a17260bdff065316e02c887563e6"
+}

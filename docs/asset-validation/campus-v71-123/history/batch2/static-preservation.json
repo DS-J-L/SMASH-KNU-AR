@@ -1,0 +1,19 @@
+{
+  "source_sha256": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c",
+  "candidate_sha256": "e25cf3fdf3eee1b569471a78a8a097b4300c8f393b3e44d248aec392cb627196",
+  "changed_objects": [
+    "v7 | 창 근사 | 교육대학원 [469617252]",
+    "v7 | 창 근사 | 대학원동 [468931865]",
+    "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+    "v7 | 창 근사 | 평생교육원 [468931916]",
+    "v7 | 추가 건물 | 사범대학 [vw/147]",
+    "교육대학원",
+    "대학원동",
+    "융합교육정보관",
+    "평생교육원"
+  ],
+  "preserved_objects": 1726,
+  "dot_protected_ids": 53,
+  "source_triangles": 902018,
+  "candidate_triangles": 899198
+}

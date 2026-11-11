@@ -1,0 +1,72 @@
+[
+  {
+    "package": "knu-env-store-v71-b9-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_env-store_Fragment_007",
+        "before_m": 2.740570532733244e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_env-store_Fragment_008",
+        "before_m": 9.511928864863739e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_env-store_Fragment_046",
+        "before_m": 1.3053494878345617e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_env-store_Fragment_047",
+        "before_m": 1.5010515767216459e-05,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_env-store_Fragment_052",
+        "before_m": 6.010815923856994e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_env-store_Fragment_058",
+        "before_m": 8.337691853266271e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 9.685330104591827e-08,
+    "max_point_gap_m": 8.5484049053331e-08
+  },
+  {
+    "package": "knu-isotope-store-v71-b9-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 3.4923339128911657e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-pp-structural-v71-b9-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_pp-structural_Fragment_002",
+        "before_m": 1.8465446691706688e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_pp-structural_Fragment_022",
+        "before_m": 1.8391938563233623e-06,
+        "after_m": 1.1102230246251565e-16
+      }
+    ],
+    "max_outside_m": 1.2736024015969072e-06,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-rock-store-v71-b9-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 7.948766609922053e-07,
+    "max_point_gap_m": 8.786079596780803e-08
+  }
+]

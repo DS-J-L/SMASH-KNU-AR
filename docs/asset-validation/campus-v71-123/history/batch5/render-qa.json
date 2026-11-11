@@ -1,0 +1,103 @@
+{
+  "frames": 42,
+  "per_model": {
+    "vw/145": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 24570,
+        "maximum_channel_difference": 67
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 22836,
+        "maximum_channel_difference": 65
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 53978,
+        "maximum_channel_difference": 68
+      }
+    },
+    "vw/73": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 51079,
+        "maximum_channel_difference": 87
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 21350,
+        "maximum_channel_difference": 59
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 43959,
+        "maximum_channel_difference": 63
+      }
+    },
+    "vw/162": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 27011,
+        "maximum_channel_difference": 77
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 25133,
+        "maximum_channel_difference": 74
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 54656,
+        "maximum_channel_difference": 81
+      }
+    },
+    "522514118": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 14346,
+        "maximum_channel_difference": 72
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 13406,
+        "maximum_channel_difference": 64
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 16328,
+        "maximum_channel_difference": 72
+      }
+    },
+    "468931930": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 72783,
+        "maximum_channel_difference": 143
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 22001,
+        "maximum_channel_difference": 31
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 68142,
+        "maximum_channel_difference": 37
+      }
+    },
+    "vw/114": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 34052,
+        "maximum_channel_difference": 24
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 33672,
+        "maximum_channel_difference": 23
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 117147,
+        "maximum_channel_difference": 24
+      }
+    },
+    "vw/105": {
+      "NW": {
+        "changed_pixels_over_12_of_255": 5413,
+        "maximum_channel_difference": 24
+      },
+      "SE": {
+        "changed_pixels_over_12_of_255": 6016,
+        "maximum_channel_difference": 24
+      },
+      "top": {
+        "changed_pixels_over_12_of_255": 2484,
+        "maximum_channel_difference": 21
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-produce-processing-v71-b8-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.6045632948999399,
+  "volume_relative_error": 2.884857560906133e-09,
+  "errors": [],
+  "source_blend_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2"
+}

@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-sculpture-v71-b3-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.8622905377796967,
+  "volume_relative_error": 1.135387062742482e-10,
+  "errors": [],
+  "source_blend_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af"
+}

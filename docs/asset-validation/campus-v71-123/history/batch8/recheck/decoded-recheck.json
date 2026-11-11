@@ -1,0 +1,113 @@
+{
+  "candidate_sha256": "0fad94409490edbb58ae3709d956f73ddb160aea146d728260a615221139f9f5",
+  "baseline_sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+  "v71_sha256": "9b6cf71c67f8276884dbd869d86ec9fffd40dbb88fe254c04838a9e27c3a4bdd",
+  "objects": 1735,
+  "preserved_objects": 1728,
+  "dot_protected": 53,
+  "triangles": 890412,
+  "changed_objects": [
+    "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+    "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+    "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+    "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+    "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+    "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+    "v7 | 추가 건물 | 온실관리사 [vw/62]"
+  ],
+  "models": {
+    "vw/21": {
+      "object": "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 52,
+      "glb_vertices_after": 56
+    },
+    "vw/52": {
+      "object": "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 52,
+      "glb_vertices_after": 56
+    },
+    "vw/110": {
+      "object": "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 52,
+      "glb_vertices_after": 56
+    },
+    "vw/20": {
+      "object": "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": false,
+      "glb_vertices_before": 54,
+      "glb_vertices_after": 56
+    },
+    "vw/62": {
+      "object": "v7 | 추가 건물 | 온실관리사 [vw/62]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 56,
+      "glb_vertices_after": 56
+    },
+    "vw/22": {
+      "object": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "triangles": 28,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 44,
+      "glb_vertices_after": 56
+    },
+    "vw/33": {
+      "object": "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+      "triangles": 36,
+      "node_and_transform_preserved": true,
+      "uv_enabled_all_primitives": true,
+      "triangle_winding_positions_normals_match": true,
+      "glb_visible_change_uv_only": true,
+      "glb_vertices_before": 60,
+      "glb_vertices_after": 78
+    }
+  },
+  "added_roof_images": [
+    [
+      "Batch8_gh51_Atlas",
+      "image/png",
+      "7287772087be88afdcf627a2f8553937cf291cec1916c8e69b0f063265ca78ac"
+    ],
+    [
+      "Batch8_gh52_Atlas",
+      "image/png",
+      "9cd4ef62306d785523d7d5abf0284a8a90e4e996ee1940ca42f6f43004781dd4"
+    ],
+    [
+      "Batch8_gh53_Atlas",
+      "image/png",
+      "801939b6ba17d87b4800d772f4d26cfdeb82d856c64901d42c80ad99143e8f3c"
+    ],
+    [
+      "Batch8_gh54_Atlas",
+      "image/png",
+      "40fca48b4d69e7cf7b3b1ee5e9a301d12adac67f23feb18de5a1f34f4bb5f0b0"
+    ]
+  ],
+  "local_game_registrations_found": []
+}

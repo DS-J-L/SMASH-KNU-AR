@@ -1,0 +1,159 @@
+{
+  "manifest": {
+    "id": "osm/468931876",
+    "object": "IT 2호관",
+    "mesh": "IT 2호관.002",
+    "matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "source_blend_sha256": "a3eb327f8b5c811231720a96d50a42d3666915992b1dede871e745716d3ad066",
+    "v71_baseline_sha256": "5013f5124e761563d11ea3f8677740fe53d865048318115697d4f05aa286b7cd",
+    "source_glb_sha256": "a8cf21d42c87b3a7b421d8270d896c8220adc2ab5a73e9ea0d227b698442668c",
+    "bounds_before_m": [
+      [
+        85.41000366210938,
+        -340.5400085449219,
+        -4.215249538421631
+      ],
+      [
+        149.25,
+        -273.3900146484375,
+        8.701202392578125
+      ]
+    ],
+    "bounds_after_m": [
+      [
+        85.41000366210938,
+        -340.3921203613281,
+        -4.215249538421631
+      ],
+      [
+        149.1232147216797,
+        -273.3900146484375,
+        8.701202392578125
+      ]
+    ],
+    "corners": [
+      {
+        "source_corner_xy_m": [
+          149.25,
+          -275.489990234375
+        ],
+        "radius_m": 3.7,
+        "tangent_distance_m": 3.7007458630213104,
+        "segments": 16
+      },
+      {
+        "source_corner_xy_m": [
+          147.02000427246094,
+          -340.5400085449219
+        ],
+        "radius_m": 4.3,
+        "tangent_distance_m": 4.3005526823341205,
+        "segments": 16
+      }
+    ],
+    "triangles_before": 130,
+    "triangles_after": 312,
+    "curve_faces": 80,
+    "review_uv_layer": "IT2_ReviewUV",
+    "active_render_uv": "UVMap",
+    "repaired_tangent_vertices": [
+      [
+        145.55140686035156,
+        -275.36395263671875,
+        -3.2944321632385254
+      ]
+    ],
+    "added_material": "Batch1_IT2_OchreStairWall",
+    "artifacts": {
+      "knu-campus-v71-batch1-r8.blend": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+      "knu-campus-v71-batch1-r8.glb": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c",
+      "batch1-model-meshes-r8.blend": "57645212095ae4f0c245f12ca8ee3207915bb76af6eb4453f9a13ad425dd9d4a"
+    }
+  },
+  "mesh_roundtrip": {
+    "qa": {
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "asset lowest point z=-4.2152 (not resting on ground plane z=0)"
+      ]
+    },
+    "pv_triangles_exact": 8,
+    "volume_change_m3": -85.5520844082348,
+    "r4_crossings": [
+      "SM_CampusTerrain_v11"
+    ],
+    "r8_crossings": [
+      "SM_CampusTerrain_v11"
+    ],
+    "r4_sharp_edges": 0,
+    "roundtrip": true,
+    "material_uv_tex_verified": true,
+    "triangles": 312,
+    "collider_present": false
+  },
+  "preservation": {
+    "pass": true,
+    "newly_edited_object": "IT 2호관",
+    "preserved_from_r4": 1734,
+    "preserved_from_v71_outside_batch": 1725,
+    "protected_dot_ids": 53,
+    "r4_triangles": 901836,
+    "r8_triangles": 902018,
+    "r8_glb_sha256": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c"
+  },
+  "glb_format": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": [
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "mesh": "공대 12호관_408_exact_underside_prototype",
+        "material": "C408E_20261109_west_e0_synthetic_red_masonry"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "mesh": "약학대학.003",
+        "material": "C118P_20261109_observed_e5_synthetic_brown_masonry"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "mesh": "정보화본부.001",
+        "material": "C110I_20261109_observed_front_synthetic_red_masonry"
+      }
+    ]
+  }
+}

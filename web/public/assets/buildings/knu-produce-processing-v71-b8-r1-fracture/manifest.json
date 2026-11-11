@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-produce-processing-v71-b8-r1-fracture",
+  "display_name": "농산물가공동",
+  "source_model_id": "vw/22",
+  "source_campus": "knu-campus-v71-batch8-r1.blend",
+  "source_sha256": "53be7feb9812b99a8fffd1d38f5e42993da849f60d64d878e2563a2b06fb90d2",
+  "source_object": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+  "source_objects": [
+    {
+      "object": "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+      "mesh": "v7 | 추가 건물 | 농산물가공동 [vw/22].002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -143.16900634765625,
+    102.45449829101562,
+    -5.774087429046631
+  ],
+  "scale_from_campus": 0.07466181139528466,
+  "source_dimensions_campus_z_up_m": [
+    29.466201782226562,
+    19.26300048828125,
+    4.650910377502441
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.34724539518356323,
+    1.4382106065750122
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

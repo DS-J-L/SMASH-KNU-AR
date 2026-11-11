@@ -110,10 +110,11 @@ function updateUI(now=performance.now()) {
   $('separation').disabled=loading||!buildingView||phase!=='ready';$('separation-value').textContent=`${Math.round(inspection*100)}%`;
   $('campus-focus-wrap').hidden=buildingView;$('campus-focus').disabled=loading;
   $('building-view').setAttribute('aria-pressed',String(buildingView));$('campus-view').setAttribute('aria-pressed',String(!buildingView));
+  const campusLabel=catalog?.campus_label??'캠퍼스';
   const focusLabel=catalog?.campus_focus?.find(item=>item.id===campusFocus)?.label;
-  $('ready-state').textContent=errorMessage?'불러오기 실패':loading?'준비 중':buildingView?inspection>0?'분리 미리보기':'키보드 데모':'캠퍼스 v13';
-  $('view-label').textContent=buildingView?`${name} / ${inspection>0?'분리 미리보기':destroyed?'파괴 상태':'조립 상태'}`:`${focusLabel??'캠퍼스'} / 지도·사진 대조 v13`;
-  $('asset-name').textContent=buildingView?name:focusLabel??'경북대 캠퍼스 v13';$('asset-detail').textContent=buildingView?`사전 분할 ${count||'—'}개 · 볼록 충돌체 · m 단위`:'건물 123개 · 주요 6개 건물 외형 보완';
+  $('ready-state').textContent=errorMessage?'불러오기 실패':loading?'준비 중':buildingView?inspection>0?'분리 미리보기':'키보드 데모':campusLabel;
+  $('view-label').textContent=buildingView?`${name} / ${inspection>0?'분리 미리보기':destroyed?'파괴 상태':'조립 상태'}`:`${focusLabel??'전체 캠퍼스'} / ${campusLabel}`;
+  $('asset-name').textContent=buildingView?name:focusLabel??`경북대 ${campusLabel}`;$('asset-detail').textContent=buildingView?`사전 분할 ${count||'—'}개 · 볼록 충돌체 · m 단위`:catalog?.campus_detail??'지도·사진 기반 캠퍼스 모델';
   $('caption').textContent=buildingView?`폭 ${(manifest?.dimensions_m[0]??0).toFixed(2)}m 게임용 모델 · 클릭으로 타격점 선택`:'공식 지도·건물 사진 대조 · 구성 치수는 근사';
   $('status').textContent=errorMessage||(loading?'모델과 물리 엔진을 준비하고 있습니다.':!buildingView?'그림자와 재질을 적용한 캠퍼스를 둘러보세요.':inspection>0?'파편 구조를 확인하세요. 슬라이더를 0으로 돌리거나 R 키로 복원하면 플레이할 수 있습니다.':phase==='ended'?'테스트 종료. R 키로 복원하고 다시 시작하세요.':destroyed?`${count}개 파편이 타격점 주변에서 퍼지고 무너집니다. R 키로 복원하세요.`:phase==='playing'?'Space로 파괴하세요. 주황색 표시는 타격 위치입니다.':'건물을 클릭해 타격점을 고른 뒤 Space를 누르세요.');
   marker.visible=!loading&&buildingView&&!destroyed&&inspection===0;
@@ -190,7 +191,8 @@ async function init(){
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer);studioEnvironment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
     controls=new OrbitControls(camera,canvas);controls.enableDamping=true;configureCamera();setLighting(false);new ResizeObserver(resize).observe(stage);resize();
     [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);if(disposed)return;catalog=catalogForSelection(catalog,new URL(location.href).searchParams);$('building-select').replaceChildren(...catalog.buildings.map(entry=>new Option(entry.label,entry.id)));
-    $('campus-focus').append(...(catalog.campus_focus??[]).map(entry=>new Option(entry.label,entry.id)));
+    $('campus-footer').textContent=`건물 패키지 / ${catalog.campus_label??'캠퍼스'}`;
+  $('campus-focus').append(...(catalog.campus_focus??[]).map(entry=>new Option(entry.label,entry.id)));
     world=new RAPIER.World({x:0,y:-9.81,z:0});world.timestep=1/60;groundBody=world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(0,-.06,0));world.createCollider(RAPIER.ColliderDesc.cuboid(20,.06,20).setFriction(.8),groundBody);
     const requested=new URL(location.href).searchParams.get('building');await loadBuilding(catalog.buildings.some(entry=>entry.id===requested)?requested:catalog.default);lastFrame=performance.now();requestAnimationFrame(frame);
   }catch(error){if(world){world.free();world=null;}loading=true;errorMessage=`준비 실패: ${error.message}. 서버 실행과 패키지 파일을 확인한 뒤 새로고침하세요.`;console.error(error);updateUI();}

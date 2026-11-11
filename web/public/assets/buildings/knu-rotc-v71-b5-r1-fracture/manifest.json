@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-rotc-v71-b5-r1-fracture",
+  "display_name": "학군단",
+  "source_model_id": "468931930",
+  "source_campus": "knu-campus-v71-batch5-r1.blend",
+  "source_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806",
+  "source_object": "학군단",
+  "source_objects": [
+    {
+      "object": "학군단",
+      "mesh": "학군단.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 학군단 [468931930]",
+      "mesh": "v7 | 창 근사 | 학군단 [468931930]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -12.50128173828125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v8 | 태양광 | 학군단",
+      "mesh": "v8 | 태양광 | 학군단",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -12.50128173828125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -490.2668762207031,
+    -352.1234130859375,
+    -14.25277042388916
+  ],
+  "scale_from_campus": 0.04159868157587691,
+  "source_dimensions_campus_z_up_m": [
+    52.88629150390625,
+    24.066802978515625,
+    14.651488304138184
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.6094825863838196,
+    1.0011472702026367
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

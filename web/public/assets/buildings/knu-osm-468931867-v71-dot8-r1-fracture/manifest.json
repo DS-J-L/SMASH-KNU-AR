@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-468931867-v71-dot8-r1-fracture",
+  "display_name": "공대 12호관",
+  "source_model_id": "osm/468931867",
+  "source_campus": "knu-campus-v71-123-dot8-r1.blend",
+  "source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+  "source_object": "공대 12호관",
+  "source_objects": [
+    {
+      "object": "공대 12호관",
+      "mesh": "공대 12호관_408_exact_underside_prototype",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v3 | 공대 12호관 | facade",
+      "mesh": "v3 | 공대 12호관 | facade.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -6.148917198181152
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "v7 | 태양광 근사 | 공대 12호관",
+      "mesh": "v7 | 태양광 근사 | 공대 12호관.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -6.148917198181152
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers glass",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers glass",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers frames",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers frames",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers mullions",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers mullions",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers transom",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 observed upper four tiers transom",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 pale sills",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 pale sills",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 pale vertical recess edges",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 pale vertical recess edges",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 공대 12호관 | e0 408 identifier",
+      "mesh": "PhotoDetail | 공대 12호관 | e0 408 identifier",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudEngineering408Window_20261110_two_columns_lower_transom",
+      "mesh": "CloudEngineering408Window_20261110_three_closed_members_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -30.739517211914062,
+    -199.76104736328125,
+    -8.957009315490723
+  ],
+  "scale_from_campus": 0.030913738007095817,
+  "source_dimensions_campus_z_up_m": [
+    71.165771484375,
+    44.80781555175781,
+    24.708091735839844
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.7638195157051086,
+    1.3851771354675293
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120
+}

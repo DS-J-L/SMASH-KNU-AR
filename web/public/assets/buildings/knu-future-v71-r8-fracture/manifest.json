@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-future-v71-r8-fracture",
+  "display_name": "미래창직관",
+  "source_model_id": "1408182451",
+  "source_campus": "knu-campus-v71-batch1-r8.blend",
+  "source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "source_object": "미래창직관",
+  "source_objects": [
+    {
+      "object": "미래창직관",
+      "mesh": "미래창직관.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 미래창직관 [1408182451]",
+      "mesh": "v7 | 창 근사 | 미래창직관 [1408182451]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -3.418421983718872
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    27.534854888916016,
+    -286.83843994140625,
+    -4.181832790374756
+  ],
+  "scale_from_campus": 0.03678332584576025,
+  "source_dimensions_campus_z_up_m": [
+    59.80970764160156,
+    33.003082275390625,
+    27.861833572387695
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    1.0248509645462036,
+    1.2139631509780884
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic"
+}

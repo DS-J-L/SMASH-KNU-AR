@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-gym2-v71-r8-fracture",
+  "display_name": "제2체육관",
+  "source_model_id": "468931925",
+  "source_campus": "knu-campus-v71-batch1-r8.blend",
+  "source_sha256": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+  "source_object": "제2체육관",
+  "source_objects": [
+    {
+      "object": "제2체육관",
+      "mesh": "제2체육관.003",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -482.63818359375,
+    -52.05500030517578,
+    -11.713868141174316
+  ],
+  "scale_from_campus": 0.01994625631399771,
+  "source_dimensions_campus_z_up_m": [
+    110.29638671875,
+    75.91000366210938,
+    8.405750274658203
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.16766324639320374,
+    1.5141204595565796
+  ],
+  "fragment_count": 65,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_offset_rng": 4925
+}

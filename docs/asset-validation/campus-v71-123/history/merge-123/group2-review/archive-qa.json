@@ -1,0 +1,20 @@
+{
+  "file": "knu-campus-v71-123-group2-r1.zip",
+  "sha256": "7b4454ccdb730cf8d450a88dfadb886b9c8bb4a2f79f313d86c20a6944206602",
+  "bytes": 54230618,
+  "crc_ok": true,
+  "payloads": {
+    "knu-campus-v71-123-group2-r1.blend": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+    "knu-campus-v71-123-group2-r1.glb": "22a87f7725211febbdac900392cd10f49a70f31118b137ee55bd3370cc4320e7",
+    "checks/edits.json": "0800ec5ceeb5030dffd4b118ddee07dd9e0b3b143e61a9cb7a6bf89632eaf3b7",
+    "checks/asset-qa.json": "eafd2df80caf0d80a8d2fef9e92170c06fb166c05693e517c77f011e08150f1e",
+    "checks/blender-qa.json": "0430a5f23421fcf8450f3425cc6c4f86ab8b43e67375ed3e589452ccb1bda28f",
+    "checks/format-qa.json": "343e3063503b3b1e8d57564a21e396b7ae206f86d2e8b06bb90a6f0b0c3d597f",
+    "checks/preservation-qa.json": "2946bf08c7d6aa89c8ea5403e155d5d76bd6ba7670b42893d8086a7ebbb8467b",
+    "checks/dot-compare.json": "639c602a2c35a19de5d69653e599feefdaba978d933147e35b85119a90fa2f40",
+    "checks/render-qa.json": "92fadbdfcc568a369cfec85305070981c41fcce22bb90d3d04ca33e2b5d7fd74",
+    "checks/photo-sources.json": "8f9e80e30355854c9c3ae2297ac77dfdbdf52c617763d4e13f947b18a81cf89c",
+    "checks/acquisition.json": "26e0c51f532f9a859d324009154196a1d66b02b19e20a54c36c758f14741f96d"
+  },
+  "original_campus_hashes_passed": true
+}

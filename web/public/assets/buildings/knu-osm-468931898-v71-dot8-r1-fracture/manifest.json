@@ -1,0 +1,539 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-468931898-v71-dot8-r1-fracture",
+  "display_name": "박물관",
+  "source_model_id": "osm/468931898",
+  "source_campus": "knu-campus-v71-123-dot8-r1.blend",
+  "source_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+  "source_object": "박물관",
+  "source_objects": [
+    {
+      "object": "박물관",
+      "mesh": "박물관.003",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 박물관 | e4 cream opaque panels",
+      "mesh": "PhotoDetail | 박물관 | e4 cream opaque panels",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 박물관 | e4 broad rectangular frames",
+      "mesh": "PhotoDetail | 박물관 | e4 broad rectangular frames",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 박물관 | e4 near entry patterned infill",
+      "mesh": "PhotoDetail | 박물관 | e4 near entry patterned infill",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | 박물관 | e4 slim dark panel divider",
+      "mesh": "PhotoDetail | 박물관 | e4 slim dark panel divider",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "PhotoDetail | Museum306 | e4 observed upper downpipe v65",
+      "mesh": "PhotoDetail | Museum306 | e4 observed upper downpipe v65",
+      "world_matrix": [
+        [
+          0.9999820590019226,
+          0.005991106852889061,
+          0.0,
+          303.6794738769531
+        ],
+        [
+          -0.005991106852889061,
+          0.9999820590019226,
+          0.0,
+          -189.5188751220703
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          7.800000190734863
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2Pipe_20261109_visible_run",
+      "mesh": "CloudMuseum306E2Pipe_20261109_visible_run_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2Pipe_20261109_narrowing_transition",
+      "mesh": "CloudMuseum306E2Pipe_20261109_narrowing_transition_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2Pipe_20261109_collector_body",
+      "mesh": "CloudMuseum306E2Pipe_20261109_collector_body_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2Pipe_20261109_top_lip",
+      "mesh": "CloudMuseum306E2Pipe_20261109_top_lip_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2_20261109_frames",
+      "mesh": "CloudMuseum306E2_20261109_frames_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2_20261109_cream_panels",
+      "mesh": "CloudMuseum306E2_20261109_cream_panels_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2_20261109_observed_dark_inserts",
+      "mesh": "CloudMuseum306E2_20261109_observed_dark_inserts_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "object": "CloudMuseum306E2_20261109_lower_slim_divider",
+      "mesh": "CloudMuseum306E2_20261109_lower_slim_divider_mesh",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    304.4295349121094,
+    -176.016845703125,
+    -6.7799391746521
+  ],
+  "scale_from_campus": 0.022154884058843995,
+  "source_dimensions_campus_z_up_m": [
+    99.3009033203125,
+    69.24629211425781,
+    21.82332992553711
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.4834933578968048,
+    1.5341435670852661
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261124
+}

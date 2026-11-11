@@ -42,3 +42,6 @@ assets/source/*
 Thumbs.db
 .idea/
 .vscode/
+!assets/source/knu-campus-v71-123-group2-r1.blend
+!assets/source/campus-v71-123/
+!assets/source/campus-v71-123/**

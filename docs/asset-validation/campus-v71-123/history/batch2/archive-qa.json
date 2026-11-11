@@ -1,0 +1,14 @@
+{
+  "archive": "knu-campus-v71-batch2-r1-restorable.zip",
+  "sha256": "d08751c8b835ea86ca22ebba5b28815d3b00409f73363cfab05313ad3c0b56a8",
+  "archive_bytes": 84755010,
+  "members_including_checksums": 116,
+  "crc_and_member_hashes": true,
+  "reopened_blends": 9,
+  "library_appended_meshes": 9,
+  "preserved_r8": {
+    "knu-campus-v71-batch1-r8.blend": "9576eb5ea38120ee9837bfdd8c70edab63ea65cdd480efb9d29d279d6583bf23",
+    "knu-campus-v71-batch1-r8.glb": "e99475ac887dc4e928b4ad5c605a4ba43185867370e830783cadfd479e7f984c",
+    "batch1-model-meshes-r8.blend": "57645212095ae4f0c245f12ca8ee3207915bb76af6eb4453f9a13ad425dd9d4a"
+  }
+}

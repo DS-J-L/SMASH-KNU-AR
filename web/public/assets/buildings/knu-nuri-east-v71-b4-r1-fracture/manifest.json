@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-nuri-east-v71-b4-r1-fracture",
+  "display_name": "누리관 동쪽",
+  "source_model_id": "854306497",
+  "source_campus": "knu-campus-v71-batch4-r1.blend",
+  "source_sha256": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+  "source_object": "누리관.001",
+  "source_objects": [
+    {
+      "object": "누리관.001",
+      "mesh": "누리관.004",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 누리관 [854306497]",
+      "mesh": "v7 | 창 근사 | 누리관 [854306497]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -11.736669540405273
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    314.6549987792969,
+    350.4849853515625,
+    -14.866288185119629
+  ],
+  "scale_from_campus": 0.032674891411700026,
+  "source_dimensions_campus_z_up_m": [
+    50.1099853515625,
+    67.32998657226562,
+    52.129615783691406
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    1.6373382806777954,
+    1.7033294439315796,
+    2.1999999284744263
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

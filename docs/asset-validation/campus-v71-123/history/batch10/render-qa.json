@@ -1,0 +1,275 @@
+{
+  "frames": 100,
+  "per_model": {
+    "osm/468931854": {
+      "NW": {
+        "changed_pixels": 35734,
+        "changed_pixels_gt_2": 35655,
+        "max_channel_delta": 74
+      },
+      "SE": {
+        "changed_pixels": 35543,
+        "changed_pixels_gt_2": 35484,
+        "max_channel_delta": 74
+      },
+      "top": {
+        "changed_pixels": 53634,
+        "changed_pixels_gt_2": 53614,
+        "max_channel_delta": 76
+      },
+      "NE": {
+        "changed_pixels": 35788,
+        "changed_pixels_gt_2": 35784,
+        "max_channel_delta": 80
+      },
+      "SW": {
+        "changed_pixels": 35748,
+        "changed_pixels_gt_2": 35657,
+        "max_channel_delta": 75
+      }
+    },
+    "osm/468931893": {
+      "NW": {
+        "changed_pixels": 39853,
+        "changed_pixels_gt_2": 39853,
+        "max_channel_delta": 154
+      },
+      "SE": {
+        "changed_pixels": 37168,
+        "changed_pixels_gt_2": 37168,
+        "max_channel_delta": 151
+      },
+      "top": {
+        "changed_pixels": 119951,
+        "changed_pixels_gt_2": 119951,
+        "max_channel_delta": 152
+      },
+      "NE": {
+        "changed_pixels": 40211,
+        "changed_pixels_gt_2": 40211,
+        "max_channel_delta": 141
+      },
+      "SW": {
+        "changed_pixels": 39848,
+        "changed_pixels_gt_2": 39848,
+        "max_channel_delta": 152
+      }
+    },
+    "osm/468931896": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "osm/468931915": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "osm/524161868": {
+      "NW": {
+        "changed_pixels": 12414,
+        "changed_pixels_gt_2": 12124,
+        "max_channel_delta": 24
+      },
+      "SE": {
+        "changed_pixels": 11587,
+        "changed_pixels_gt_2": 11328,
+        "max_channel_delta": 24
+      },
+      "top": {
+        "changed_pixels": 24998,
+        "changed_pixels_gt_2": 24759,
+        "max_channel_delta": 25
+      },
+      "NE": {
+        "changed_pixels": 12275,
+        "changed_pixels_gt_2": 12179,
+        "max_channel_delta": 25
+      },
+      "SW": {
+        "changed_pixels": 12123,
+        "changed_pixels_gt_2": 11974,
+        "max_channel_delta": 24
+      }
+    },
+    "osm/576358734": {
+      "NW": {
+        "changed_pixels": 25606,
+        "changed_pixels_gt_2": 25468,
+        "max_channel_delta": 29
+      },
+      "SE": {
+        "changed_pixels": 25108,
+        "changed_pixels_gt_2": 24964,
+        "max_channel_delta": 30
+      },
+      "top": {
+        "changed_pixels": 119127,
+        "changed_pixels_gt_2": 118936,
+        "max_channel_delta": 32
+      },
+      "NE": {
+        "changed_pixels": 25678,
+        "changed_pixels_gt_2": 25650,
+        "max_channel_delta": 34
+      },
+      "SW": {
+        "changed_pixels": 25589,
+        "changed_pixels_gt_2": 25440,
+        "max_channel_delta": 30
+      }
+    },
+    "osm/577759119": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "osm/584385630": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "osm/584386432": {
+      "NW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels": 0,
+        "changed_pixels_gt_2": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "osm/972016220": {
+      "NW": {
+        "changed_pixels": 28529,
+        "changed_pixels_gt_2": 28523,
+        "max_channel_delta": 122
+      },
+      "SE": {
+        "changed_pixels": 26608,
+        "changed_pixels_gt_2": 26600,
+        "max_channel_delta": 120
+      },
+      "top": {
+        "changed_pixels": 80566,
+        "changed_pixels_gt_2": 80561,
+        "max_channel_delta": 121
+      },
+      "NE": {
+        "changed_pixels": 28820,
+        "changed_pixels_gt_2": 28819,
+        "max_channel_delta": 114
+      },
+      "SW": {
+        "changed_pixels": 28438,
+        "changed_pixels_gt_2": 28435,
+        "max_channel_delta": 123
+      }
+    }
+  }
+}

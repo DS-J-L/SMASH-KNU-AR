@@ -1,0 +1,22 @@
+{
+  "source_archive_sha256": "23bcbd0f56b700043d36924a108a204795973bf4032ed44f34d75f9dc459e78c",
+  "restored_archive_members": 46,
+  "restored_candidate_sha256": "0fad94409490edbb58ae3709d956f73ddb160aea146d728260a615221139f9f5",
+  "reproduced_glb_sha256": "0fad94409490edbb58ae3709d956f73ddb160aea146d728260a615221139f9f5",
+  "reproduced_blend_sha256": "c03ccddaa58957c0dfba957622ca8ad68d944c8429042d77df1e1c44e0b644cd",
+  "objects": 1735,
+  "changed_objects": [
+    "v7 | 추가 건물 | 농산물가공동 [vw/22]",
+    "v7 | 추가 건물 | 옥수수저장창고 [vw/33]",
+    "v7 | 추가 건물 | 온실 5-1 [vw/21]",
+    "v7 | 추가 건물 | 온실 5-2 [vw/52]",
+    "v7 | 추가 건물 | 온실 5-3 [vw/110]",
+    "v7 | 추가 건물 | 온실 5-4 [vw/20]",
+    "v7 | 추가 건물 | 온실관리사 [vw/62]"
+  ],
+  "unchanged_objects": 1728,
+  "dot_protected_ids": 53,
+  "triangles": 890412,
+  "decoded_object_geometry_transforms_uvs_materials_images_match": true,
+  "same_glb_bytes": true
+}

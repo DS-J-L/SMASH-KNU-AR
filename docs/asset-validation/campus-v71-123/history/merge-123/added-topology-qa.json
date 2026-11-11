@@ -1,0 +1,345 @@
+{
+  "CloudChildcare206_20261110_middle1_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle1_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 56,
+    "faces": 42,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle1_colored_surround": {
+    "owner": "osm/473684409",
+    "vertices": 32,
+    "faces": 24,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle2_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle2_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle3_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle3_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle4_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle4_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 56,
+    "faces": 42,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle4_colored_surround": {
+    "owner": "osm/473684409",
+    "vertices": 32,
+    "faces": 24,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle5_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_middle5_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper1_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper1_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 56,
+    "faces": 42,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper1_colored_surround": {
+    "owner": "osm/473684409",
+    "vertices": 32,
+    "faces": 24,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper2_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper2_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper3_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper3_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper4_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper4_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 56,
+    "faces": 42,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper4_colored_surround": {
+    "owner": "osm/473684409",
+    "vertices": 32,
+    "faces": 24,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper5_glazing": {
+    "owner": "osm/473684409",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudChildcare206_20261110_upper5_white_frame": {
+    "owner": "osm/473684409",
+    "vertices": 120,
+    "faces": 90,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_02": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_03": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_04": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_05": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_06": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_07": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_08": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_09": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_10": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_11": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_12": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_13": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_14": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_15": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_16": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_17": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_18": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudInfo110Sashes_20261110_window_19": {
+    "owner": "osm/468931909",
+    "vertices": 16,
+    "faces": 12,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudSports211Notice_20261110_blank_green_board": {
+    "owner": "osm/468931924",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudBio217Bays12_20261110_frames": {
+    "owner": "osm/468931887",
+    "vertices": 408,
+    "faces": 306,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudBio217Bays12_20261110_glass": {
+    "owner": "osm/468931887",
+    "vertices": 216,
+    "faces": 162,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudLife307Sashes_20261110_three_divisions": {
+    "owner": "osm/468931905",
+    "vertices": 144,
+    "faces": 108,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudScience208Dividers_20261110_cell1": {
+    "owner": "osm/468931920",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudScience208Dividers_20261110_cell2": {
+    "owner": "osm/468931920",
+    "vertices": 8,
+    "faces": 6,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  },
+  "CloudEngineering408Window_20261110_two_columns_lower_transom": {
+    "owner": "osm/468931867",
+    "vertices": 24,
+    "faces": 18,
+    "open_edges": 0,
+    "non_manifold_edges": 0
+  }
+}

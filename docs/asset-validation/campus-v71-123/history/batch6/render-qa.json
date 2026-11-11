@@ -1,0 +1,159 @@
+{
+  "frames": 70,
+  "per_model": {
+    "524172305": {
+      "NW": {
+        "changed_pixels_gt_12": 26244,
+        "max_channel_delta": 95
+      },
+      "SE": {
+        "changed_pixels_gt_12": 24432,
+        "max_channel_delta": 96
+      },
+      "top": {
+        "changed_pixels_gt_12": 55366,
+        "max_channel_delta": 92
+      },
+      "NE": {
+        "changed_pixels_gt_12": 25544,
+        "max_channel_delta": 77
+      },
+      "SW": {
+        "changed_pixels_gt_12": 26254,
+        "max_channel_delta": 95
+      }
+    },
+    "576254849": {
+      "NW": {
+        "changed_pixels_gt_12": 15071,
+        "max_channel_delta": 51
+      },
+      "SE": {
+        "changed_pixels_gt_12": 14558,
+        "max_channel_delta": 51
+      },
+      "top": {
+        "changed_pixels_gt_12": 65703,
+        "max_channel_delta": 47
+      },
+      "NE": {
+        "changed_pixels_gt_12": 2414,
+        "max_channel_delta": 40
+      },
+      "SW": {
+        "changed_pixels_gt_12": 15064,
+        "max_channel_delta": 51
+      }
+    },
+    "473687810": {
+      "NW": {
+        "changed_pixels_gt_12": 10687,
+        "max_channel_delta": 126
+      },
+      "SE": {
+        "changed_pixels_gt_12": 10702,
+        "max_channel_delta": 137
+      },
+      "top": {
+        "changed_pixels_gt_12": 29169,
+        "max_channel_delta": 116
+      },
+      "NE": {
+        "changed_pixels_gt_12": 17712,
+        "max_channel_delta": 139
+      },
+      "SW": {
+        "changed_pixels_gt_12": 10706,
+        "max_channel_delta": 128
+      }
+    },
+    "vw/113": {
+      "NW": {
+        "changed_pixels_gt_12": 18932,
+        "max_channel_delta": 47
+      },
+      "SE": {
+        "changed_pixels_gt_12": 17591,
+        "max_channel_delta": 51
+      },
+      "top": {
+        "changed_pixels_gt_12": 63185,
+        "max_channel_delta": 43
+      },
+      "NE": {
+        "changed_pixels_gt_12": 30239,
+        "max_channel_delta": 34
+      },
+      "SW": {
+        "changed_pixels_gt_12": 19682,
+        "max_channel_delta": 47
+      }
+    },
+    "vw/111": {
+      "NW": {
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SE": {
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "top": {
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "NE": {
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      },
+      "SW": {
+        "changed_pixels_gt_12": 0,
+        "max_channel_delta": 0
+      }
+    },
+    "468931894": {
+      "NW": {
+        "changed_pixels_gt_12": 35885,
+        "max_channel_delta": 109
+      },
+      "SE": {
+        "changed_pixels_gt_12": 48369,
+        "max_channel_delta": 118
+      },
+      "top": {
+        "changed_pixels_gt_12": 57351,
+        "max_channel_delta": 113
+      },
+      "NE": {
+        "changed_pixels_gt_12": 58360,
+        "max_channel_delta": 117
+      },
+      "SW": {
+        "changed_pixels_gt_12": 35974,
+        "max_channel_delta": 109
+      }
+    },
+    "1107268251": {
+      "NW": {
+        "changed_pixels_gt_12": 24390,
+        "max_channel_delta": 120
+      },
+      "SE": {
+        "changed_pixels_gt_12": 37593,
+        "max_channel_delta": 119
+      },
+      "top": {
+        "changed_pixels_gt_12": 40454,
+        "max_channel_delta": 123
+      },
+      "NE": {
+        "changed_pixels_gt_12": 24473,
+        "max_channel_delta": 118
+      },
+      "SW": {
+        "changed_pixels_gt_12": 29580,
+        "max_channel_delta": 120
+      }
+    }
+  }
+}

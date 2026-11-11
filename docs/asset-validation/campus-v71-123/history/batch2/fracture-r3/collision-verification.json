@@ -1,0 +1,277 @@
+{
+  "tolerance_m": 2e-06,
+  "packages": [
+    {
+      "building_id": "knu-grad-v71-b2-r3-fracture",
+      "name": "대학원동",
+      "model_id": "468931865",
+      "previous_package": "knu-grad-v71-b2-r2-fracture",
+      "campus_source": "knu-campus-v71-batch2-r2.blend",
+      "campus_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_grad_Fragment_005",
+          "max_outside_before_m": 1.4851448541519652e-05,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 33,
+          "new_vertex_count": 30
+        },
+        {
+          "node": "SM_grad_Fragment_060",
+          "max_outside_before_m": 7.509203163967582e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 20,
+          "new_vertex_count": 20
+        }
+      ],
+      "float32_max_outside_m": 1.3499682663398183e-07,
+      "previous_sha256": {
+        "manifest.json": "c052e45d56e0ca7bae59737fb751563a188e953a06454b3ba42668aa5da67c2b",
+        "colliders.json": "f908d000a3c023b14c58f4332dbc364a13008d65f099af026001eaf55c6cd8fc",
+        "intact.glb": "034556865225c2b467a9d2b3a02fe510335b299b3ec2ec114450dfa158cea248",
+        "fragments.glb": "ed63f71ad9572f9f3b9994efd7811e53e5e9818617156a0a2ba37c8af33503fc"
+      },
+      "sha256": {
+        "manifest.json": "8fd3a5373b522dc015caea5fbe365af72e0455562e91c628e3870a18cf2abc1d",
+        "colliders.json": "af0252c12e641a18746292385a7d32c84a901d9aa9fb727e7470d5ccf67e15c4",
+        "intact.glb": "b19adc08d6ba0901ea2f511e57171bb2c2d943aed45ed0f4ba724bbd88f2ea84",
+        "fragments.glb": "d65eb3bc910ab84cecd8c2efb2ce387c8257a33590d80d950f9cbc909e904622"
+      }
+    },
+    {
+      "building_id": "knu-educgrad-v71-b2-r2-fracture",
+      "name": "교육대학원",
+      "model_id": "469617252",
+      "previous_package": "knu-educgrad-v71-b2-r2-fracture",
+      "campus_source": "knu-campus-v71-batch2-r2.blend",
+      "campus_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "hull_count": 64,
+      "changes": [],
+      "float32_max_outside_m": 1.0131495739307272e-06,
+      "previous_sha256": {
+        "manifest.json": "9593467993954be75a04b20b926fe15678ac7f30c2a6b3c73776703626ca5977",
+        "colliders.json": "430268b3773b9848ffcc6e21173b110af242a46556786e8d90baeecc0b33b065",
+        "intact.glb": "23e7477b1e3be2a023420b4bd48adc596e2363d282c53261d4a2bfb72d48648b",
+        "fragments.glb": "b72270922863e745f14a134f4de5d36e2082d903063107df42939e5b9c01213c"
+      },
+      "sha256": {
+        "manifest.json": "9593467993954be75a04b20b926fe15678ac7f30c2a6b3c73776703626ca5977",
+        "colliders.json": "430268b3773b9848ffcc6e21173b110af242a46556786e8d90baeecc0b33b065",
+        "intact.glb": "23e7477b1e3be2a023420b4bd48adc596e2363d282c53261d4a2bfb72d48648b",
+        "fragments.glb": "b72270922863e745f14a134f4de5d36e2082d903063107df42939e5b9c01213c"
+      }
+    },
+    {
+      "building_id": "knu-teachers-v71-b2-r3-fracture",
+      "name": "사범대학",
+      "model_id": "vw/147",
+      "previous_package": "knu-teachers-v71-b2-r1-fracture",
+      "campus_source": "knu-campus-v71-batch2-r1.blend",
+      "campus_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_teachers_Fragment_011",
+          "max_outside_before_m": 8.456951910387756e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 25,
+          "new_vertex_count": 27
+        },
+        {
+          "node": "SM_teachers_Fragment_042",
+          "max_outside_before_m": 4.351653295153746e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 30,
+          "new_vertex_count": 29
+        },
+        {
+          "node": "SM_teachers_Fragment_062",
+          "max_outside_before_m": 8.444132777035707e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 27,
+          "new_vertex_count": 27
+        }
+      ],
+      "float32_max_outside_m": 1.9732561201690757e-07,
+      "previous_sha256": {
+        "manifest.json": "2288d997bd67ece6187e27d40bdbe11567144a8791571b49cf4936cf3e0103dc",
+        "colliders.json": "588ff3b0ffae600862726a511c2ec42a1f7a498d478f1c82c223ba03d0cb5cc3",
+        "intact.glb": "64f7e0bf04cf9702e87e9f1739e64d2e114f7551f2066d1bf5b42f31b2708fba",
+        "fragments.glb": "d506676ed57d51cfabc0c94d0d70892f99ca4b27afa383e2128d3b57e2faa667"
+      },
+      "sha256": {
+        "manifest.json": "56f8bf038e603b6f18bbabd0bd778c0723a641d05f8e1a915f89530d8fcc0f60",
+        "colliders.json": "36a7c24306f5bb93024f5a5753b14fe81923270b4af2bb3c8344cae44acb9c80",
+        "intact.glb": "4ddf87af55ca8f54839cc7a8341491b93629944861a4ee1eb6685bfcfccc16f4",
+        "fragments.glb": "c09d43cea8856580cd4df1887ca2473eddfe156f9b2fd9834d311eb07098e9a1"
+      }
+    },
+    {
+      "building_id": "knu-liberal-v71-b2-r3-fracture",
+      "name": "교양과정동",
+      "model_id": "vw/95",
+      "previous_package": "knu-liberal-v71-b2-r1-fracture",
+      "campus_source": "knu-campus-v71-batch2-r1.blend",
+      "campus_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_liberal_Fragment_019",
+          "max_outside_before_m": 1.1733055027274286e-05,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 23,
+          "new_vertex_count": 23
+        }
+      ],
+      "float32_max_outside_m": 9.178329989090184e-08,
+      "previous_sha256": {
+        "manifest.json": "fa64e3275349545fc5c08f4090a78273972dd212e1c8a4d442909cb369ace621",
+        "colliders.json": "073ee3201fa03c2e33b89d43757300bfb93f2e41cdbbd551d33b9e2f86549555",
+        "intact.glb": "8ad0ced5d426995a17e8947c7a2ad7eadd63f87701eb5c7470a9af4470fa4cc2",
+        "fragments.glb": "d339c46505edf96a6a31bfe8866704c3636aa9051f1edc157408bf6d453a2fbc"
+      },
+      "sha256": {
+        "manifest.json": "50d9f307f9f754f34248fe69dc990bd2e25acc4891217914f8048a36854f465a",
+        "colliders.json": "f363a394d8ff6df37f46a2b6c227aa26fdd2137731d79530adb96f885dfce549",
+        "intact.glb": "4772f5686c2fd26f641e7bb3fa45dc34afcf66faebee5dc1469d392e6592e865",
+        "fragments.glb": "eb476f677e80e71bb4a4f20d693ed924f267dc95754c5d4de865fb28299366c1"
+      }
+    },
+    {
+      "building_id": "knu-lifelong-v71-b2-r3-fracture",
+      "name": "평생교육원",
+      "model_id": "468931916",
+      "previous_package": "knu-lifelong-v71-b2-r2-fracture",
+      "campus_source": "knu-campus-v71-batch2-r2.blend",
+      "campus_source_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_lifelong_Fragment_004",
+          "max_outside_before_m": 7.014737634050694e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 24,
+          "new_vertex_count": 22
+        },
+        {
+          "node": "SM_lifelong_Fragment_013",
+          "max_outside_before_m": 5.962835115363996e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 27,
+          "new_vertex_count": 31
+        }
+      ],
+      "float32_max_outside_m": 6.383854290747948e-07,
+      "previous_sha256": {
+        "manifest.json": "8f167a6960d47539517f53c9552175d06721b3ab8457fc315c4365b322971423",
+        "colliders.json": "614e1c2b14962291eb420bb43386f97400defa6d1b2cb8ce70f4d585cf042561",
+        "intact.glb": "a9b0cdeebd75047cf80b5122a4188724cf50dacd3e0d356a6b00c60d2abb741b",
+        "fragments.glb": "aa7b8f0f556c22dfde791f3c70dd0144fbf51f519551c20ab607c5432b815dac"
+      },
+      "sha256": {
+        "manifest.json": "e22d3a958c5906ab586f173ea061d8930ef6b1aa2329afa8c7b0db86c279c29a",
+        "colliders.json": "5cd5d8c93ba9f79a08424c609bdde7e3d25c09dc550a7688a91b927b4b7d6328",
+        "intact.glb": "2d0f5ac2beee7fc0fbc442f5a4f740efc53dae5ad24094c294fe276fc9c5d242",
+        "fragments.glb": "f28f4ea4a7ad94f0e986bb6d3dd8ac337ded00e14f0aac324a88e5fdfbd42433"
+      }
+    },
+    {
+      "building_id": "knu-convergence-v71-b2-r3-fracture",
+      "name": "융합교육정보관",
+      "model_id": "1026072764",
+      "previous_package": "knu-convergence-v71-b2-r1-fracture",
+      "campus_source": "knu-campus-v71-batch2-r1.blend",
+      "campus_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_convergence_Fragment_015",
+          "max_outside_before_m": 4.101786821439357e-05,
+          "max_outside_after_m": 5.551115123125783e-17,
+          "old_vertex_count": 37,
+          "new_vertex_count": 33
+        },
+        {
+          "node": "SM_convergence_Fragment_026",
+          "max_outside_before_m": 6.78236348167216e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 28,
+          "new_vertex_count": 31
+        }
+      ],
+      "float32_max_outside_m": 4.1987820535022147e-07,
+      "previous_sha256": {
+        "manifest.json": "f4c958e9162965b3d494e392e4b33cee5b06bacac8b012dc0303e25e6b742bc1",
+        "colliders.json": "e9214045924d57cfacb30e4c36b90adcb86072a10e2708daf163b69c2582f352",
+        "intact.glb": "2089d14bd373237d4d379545eef7e297dc31a89861614b4dd182d23b68d81aa2",
+        "fragments.glb": "8c208a022fa41e5d7391bb3f94b8578079dc368bb1f6228248c3c53086a0ac79"
+      },
+      "sha256": {
+        "manifest.json": "a617803fca0ed12efd66e785e05543d0da9a6f32bc6243f0f1b4ee4b45e8c85c",
+        "colliders.json": "c570a5cf73eef2e3dc65f17d6212b39a40aa00bf593a92b31946bc981cb9388f",
+        "intact.glb": "b18d36004570eefc94e164592ecbe98f090afa628920c4c6081616df89ef2d49",
+        "fragments.glb": "d9f366ae9011d1f56961d1e865fe8b8a37dc603ffe6c2ba665fbb61531135a38"
+      }
+    },
+    {
+      "building_id": "knu-career-v71-b2-r3-fracture",
+      "name": "취업정보센터",
+      "model_id": "vw/127",
+      "previous_package": "knu-career-v71-b2-r1-fracture",
+      "campus_source": "knu-campus-v71-batch2-r1.blend",
+      "campus_source_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c",
+      "hull_count": 64,
+      "changes": [
+        {
+          "node": "SM_career_Fragment_003",
+          "max_outside_before_m": 1.3502114152408318e-05,
+          "max_outside_after_m": 5.551115123125783e-17,
+          "old_vertex_count": 24,
+          "new_vertex_count": 27
+        },
+        {
+          "node": "SM_career_Fragment_011",
+          "max_outside_before_m": 3.6918544883968174e-06,
+          "max_outside_after_m": 4.163336342344337e-17,
+          "old_vertex_count": 24,
+          "new_vertex_count": 26
+        },
+        {
+          "node": "SM_career_Fragment_032",
+          "max_outside_before_m": 1.3038863034484094e-05,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 17,
+          "new_vertex_count": 19
+        },
+        {
+          "node": "SM_career_Fragment_041",
+          "max_outside_before_m": 4.171896659826979e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 21,
+          "new_vertex_count": 24
+        },
+        {
+          "node": "SM_career_Fragment_044",
+          "max_outside_before_m": 4.2027232975971884e-06,
+          "max_outside_after_m": 2.7755575615628914e-17,
+          "old_vertex_count": 11,
+          "new_vertex_count": 12
+        }
+      ],
+      "float32_max_outside_m": 9.208209655886535e-08,
+      "previous_sha256": {
+        "manifest.json": "0e6abb5dc2fba4e5a6bbd97f04efa133ac82f20a36bcdb6220453a9d5265a569",
+        "colliders.json": "5e4df4e5c53eb124162b044bafaa4d0884809b09c7e9d56530aabddfbf3602d5",
+        "intact.glb": "2bce6b0db7bc367bd3f81ab0c073b3914929ad04257ba00fd923e219b118edc4",
+        "fragments.glb": "ed0c741440bc5010542cc9c2c3db54a29b9864bb5189fa9ec0b024bcea10f048"
+      },
+      "sha256": {
+        "manifest.json": "90487bab090566d1cb03564ce0e2920aa9bfa58b64072bb160e8163841cff93d",
+        "colliders.json": "4f5747d467494b58a79e6455cbaaa6f462620fb4a1ee8b0fc68c598e794ebc4d",
+        "intact.glb": "b65b41d12a48c03e80c07d6f26a384d1c23092288bf2bbf1a4c7acefb34b2a4c",
+        "fragments.glb": "03a1630903fba9335dcc8cabf24a4801681904e713d69511a1b943a664d6ab8d"
+      }
+    }
+  ]
+}

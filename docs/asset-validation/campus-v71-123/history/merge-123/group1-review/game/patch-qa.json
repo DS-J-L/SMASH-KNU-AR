@@ -1,0 +1,124 @@
+{
+  "osm/468931915": {
+    "package": "knu-osm-468931915-v71-b10-r1-fracture",
+    "source_appearance": {
+      "campus": "knu-campus-v71-123-group1-r1.glb",
+      "campus_glb_sha256": "32f352fdd870588009f59fe63d20012eb92f891f2052984ccf428bad25eeecd0",
+      "campus_blend_sha256": "5ddf08824b6efb19d99cf96eae31ea7d3dc95ba03254d0edceeaa773e2666a74",
+      "faces": [
+        11,
+        14
+      ],
+      "material": "v71 Group 1 | osm/468931915 | observed roof top",
+      "srgb": "#c5d1ca",
+      "game_roof_y_m": 0.9921622252165034,
+      "base_package_sha256": {
+        "manifest.json": "f1ff933f2731c0e8b39874408398dfc8548860ca3868ccd3f9a1043d9df0e649",
+        "colliders.json": "38b82cadd679c57af1d41eab65fed422290b171a452a8143b7e8081d0c23baaa",
+        "intact.glb": "019fe7677dac2347db6212eea25c5d0d338392735c278113efd5c54ec68fa284",
+        "fragments.glb": "7416a24dca637c7cae7293b05a4a554edc537d49c2ff58c34e404d5b1036d7c3"
+      }
+    },
+    "roof_triangles": {
+      "intact.glb": {
+        "SM_osm-468931915_Intact_00": 2
+      },
+      "fragments.glb": {
+        "SM_osm-468931915_Fragment_001": 3,
+        "SM_osm-468931915_Fragment_004": 4,
+        "SM_osm-468931915_Fragment_005": 5,
+        "SM_osm-468931915_Fragment_006": 2,
+        "SM_osm-468931915_Fragment_009": 2,
+        "SM_osm-468931915_Fragment_013": 8,
+        "SM_osm-468931915_Fragment_014": 4,
+        "SM_osm-468931915_Fragment_017": 2,
+        "SM_osm-468931915_Fragment_019": 5,
+        "SM_osm-468931915_Fragment_020": 3,
+        "SM_osm-468931915_Fragment_021": 5,
+        "SM_osm-468931915_Fragment_022": 5,
+        "SM_osm-468931915_Fragment_032": 3,
+        "SM_osm-468931915_Fragment_033": 5,
+        "SM_osm-468931915_Fragment_034": 2,
+        "SM_osm-468931915_Fragment_035": 5,
+        "SM_osm-468931915_Fragment_040": 1,
+        "SM_osm-468931915_Fragment_043": 3,
+        "SM_osm-468931915_Fragment_044": 6,
+        "SM_osm-468931915_Fragment_046": 6,
+        "SM_osm-468931915_Fragment_047": 5,
+        "SM_osm-468931915_Fragment_050": 3,
+        "SM_osm-468931915_Fragment_054": 3,
+        "SM_osm-468931915_Fragment_060": 5,
+        "SM_osm-468931915_Fragment_061": 3
+      }
+    },
+    "original": {
+      "manifest.json": "f1ff933f2731c0e8b39874408398dfc8548860ca3868ccd3f9a1043d9df0e649",
+      "colliders.json": "38b82cadd679c57af1d41eab65fed422290b171a452a8143b7e8081d0c23baaa",
+      "intact.glb": "019fe7677dac2347db6212eea25c5d0d338392735c278113efd5c54ec68fa284",
+      "fragments.glb": "7416a24dca637c7cae7293b05a4a554edc537d49c2ff58c34e404d5b1036d7c3"
+    },
+    "updated": {
+      "intact.glb": "38927b5471d1fe475021d2cf2e71ce79bf086af07a51f67f1e7e83214bd4e730",
+      "fragments.glb": "84a782486041143e254d2984937f01f8c7fa25f73a4513b5487b64ccd2463cd9",
+      "manifest.json": "6fa83eadac67585f82e8050cfb6f472c76b7742810f5cb9319395b88a660b5e7",
+      "colliders.json": "38b82cadd679c57af1d41eab65fed422290b171a452a8143b7e8081d0c23baaa"
+    }
+  },
+  "osm/577759119": {
+    "package": "knu-osm-577759119-v71-b10-r1-fracture",
+    "source_appearance": {
+      "campus": "knu-campus-v71-123-group1-r1.glb",
+      "campus_glb_sha256": "32f352fdd870588009f59fe63d20012eb92f891f2052984ccf428bad25eeecd0",
+      "campus_blend_sha256": "5ddf08824b6efb19d99cf96eae31ea7d3dc95ba03254d0edceeaa773e2666a74",
+      "faces": [
+        11,
+        14
+      ],
+      "material": "v71 Group 1 | osm/577759119 | observed roof top",
+      "srgb": "#544536",
+      "game_roof_y_m": 1.0555449289120737,
+      "base_package_sha256": {
+        "manifest.json": "96ca73f8f7493e7375a9aa96872d0281e807284d545142a6098ee145b4a8649c",
+        "colliders.json": "f8635591d1b7aac559f53b14251c02ad6116138bdb7313d8c5a00b2ac6f730ba",
+        "intact.glb": "613f4f8ab147a57ec0c831c23b65ec3a025df1828895892954aad69d306c6517",
+        "fragments.glb": "2b00ee17f2a1ebab7f9c3094f705e6f3c5fda77a7573697f47b274ee60b1fb3b"
+      }
+    },
+    "roof_triangles": {
+      "intact.glb": {
+        "SM_osm-577759119_Intact_00": 2
+      },
+      "fragments.glb": {
+        "SM_osm-577759119_Fragment_002": 4,
+        "SM_osm-577759119_Fragment_004": 4,
+        "SM_osm-577759119_Fragment_005": 3,
+        "SM_osm-577759119_Fragment_009": 7,
+        "SM_osm-577759119_Fragment_015": 2,
+        "SM_osm-577759119_Fragment_016": 3,
+        "SM_osm-577759119_Fragment_020": 4,
+        "SM_osm-577759119_Fragment_022": 3,
+        "SM_osm-577759119_Fragment_024": 1,
+        "SM_osm-577759119_Fragment_034": 4,
+        "SM_osm-577759119_Fragment_038": 6,
+        "SM_osm-577759119_Fragment_044": 3,
+        "SM_osm-577759119_Fragment_045": 2,
+        "SM_osm-577759119_Fragment_046": 4,
+        "SM_osm-577759119_Fragment_048": 7,
+        "SM_osm-577759119_Fragment_051": 3,
+        "SM_osm-577759119_Fragment_057": 5
+      }
+    },
+    "original": {
+      "manifest.json": "96ca73f8f7493e7375a9aa96872d0281e807284d545142a6098ee145b4a8649c",
+      "colliders.json": "f8635591d1b7aac559f53b14251c02ad6116138bdb7313d8c5a00b2ac6f730ba",
+      "intact.glb": "613f4f8ab147a57ec0c831c23b65ec3a025df1828895892954aad69d306c6517",
+      "fragments.glb": "2b00ee17f2a1ebab7f9c3094f705e6f3c5fda77a7573697f47b274ee60b1fb3b"
+    },
+    "updated": {
+      "intact.glb": "804b681b5a965beefb6bfd1ad484fa7d085f07a98d893294249c87a7a7e5baee",
+      "fragments.glb": "42d52a06355b071557e0a6c9dc43a4f9c5a17449d25f1109ed1ddceb62d0a358",
+      "manifest.json": "15a82eb70e4ebb295eb51a51d4ff9f05a5af59339b2b17084a3f7ddb0cacd4a7",
+      "colliders.json": "f8635591d1b7aac559f53b14251c02ad6116138bdb7313d8c5a00b2ac6f730ba"
+    }
+  }
+}

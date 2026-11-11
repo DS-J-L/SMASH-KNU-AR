@@ -1,0 +1,48 @@
+{
+  "scope": "full campus GLB reimport",
+  "scene_objects": 1735,
+  "objects": [
+    {
+      "object": "교육대학원",
+      "triangles": 168,
+      "materials": [
+        "Batch2R2_EducationGableMasonry",
+        "Batch2R2_EducationTealRoof",
+        "Batch2_educgrad_Observed",
+        "campus stone",
+        "v8 | 위성 지붕 교육대학원"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "대학원동",
+      "triangles": 52,
+      "materials": [
+        "Batch2R2_GradBrownRoof",
+        "Batch2R2_GradGableMasonry",
+        "Batch2_grad-roof_Observed",
+        "Batch2_grad_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #718285"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "평생교육원",
+      "triangles": 84,
+      "materials": [
+        "Batch2R2_LifelongLightFrame",
+        "Batch2R2_LifelongTowerCap",
+        "Batch2R2_LifelongTowerGlazing",
+        "Batch2_lifelong_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #6f7f82"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    }
+  ],
+  "target_count": 3
+}

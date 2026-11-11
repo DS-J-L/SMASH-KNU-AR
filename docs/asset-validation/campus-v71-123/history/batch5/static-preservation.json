@@ -1,0 +1,19 @@
+{
+  "source_glb_sha256": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+  "candidate_glb_sha256": "1fc8448842b5b53ca6bc333500ebeea3f6d519c3be52bf8b75bd38c0d86e3af7",
+  "changed_objects": [
+    "v7 | 창 근사 | 학군단 [468931930]",
+    "v7 | 추가 건물 | 기숙사A동 [vw/145]",
+    "v7 | 추가 건물 | 기숙사B동 [vw/73]",
+    "v7 | 추가 건물 | 기숙사C동 [vw/162]",
+    "v7 | 추가 건물 | 테니스장대기실 [vw/105]",
+    "v7 | 추가 건물 | 학군단창고 [vw/114]",
+    "v8 | 창 근사 | 기숙사B동 [vw/73]",
+    "청룡관 (Cheonglyong-Gwan)",
+    "학군단"
+  ],
+  "preserved_objects": 1726,
+  "dot_protected_ids": 53,
+  "source_triangles": 892404,
+  "candidate_triangles": 891228
+}

@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-vet-v71-b6-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 1.2385184316223272,
+  "volume_relative_error": 5.3299035793429785e-09,
+  "errors": [],
+  "source_blend_sha256": "88b21cbbcd5b6a90379a1900a702c70c3636198344d48db502d3b349ae2686a6"
+}

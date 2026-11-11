@@ -1,0 +1,98 @@
+{
+  "vw/143": {
+    "object": "v7 | 추가 건물 | 온실1 [vw/143]",
+    "source_id": "vw/143",
+    "roof_faces": [
+      22,
+      25,
+      26,
+      27,
+      28,
+      32
+    ],
+    "unchanged_face_materials": 30,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "d93af488aa8de5d82993d94c4e5725ae0d0bf495ffd856158ed0d1fd78bf0394"
+  },
+  "vw/50": {
+    "object": "v7 | 추가 건물 | 온실2 [vw/50]",
+    "source_id": "vw/50",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "66a65c9a3586c857e534c3aeb900bc476c04b9bdb74c665184f25dab8f33e446"
+  },
+  "vw/130": {
+    "object": "v7 | 추가 건물 | 온실 3-1 [vw/130]",
+    "source_id": "vw/130",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "53ef98053ec0b14c93d0869ee9994755e5ad552e61b59d0c1155828000bb1542"
+  },
+  "vw/163": {
+    "object": "v7 | 추가 건물 | 온실 3-2 [vw/163]",
+    "source_id": "vw/163",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "d64be12df4b7e36b6f5d7f50c9037915451aa596c69f17307427baa6b824fbfe"
+  },
+  "vw/18": {
+    "object": "v7 | 추가 건물 | 온실 4-1 [vw/18]",
+    "source_id": "vw/18",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "a6fa4c77217aa63e40edcf6b3556bca1da8bb8cfbbcf332c2c185a9b3b61f010"
+  },
+  "vw/79": {
+    "object": "v7 | 추가 건물 | 온실 4-2 [vw/79]",
+    "source_id": "vw/79",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "d85047ff726d3b630a6e4b1885a103eaa0671b8ddcf64dae1530f2b9d6a0665a"
+  },
+  "vw/166": {
+    "object": "v7 | 추가 건물 | 온실 4-3 [vw/166]",
+    "source_id": "vw/166",
+    "roof_faces": [
+      10
+    ],
+    "unchanged_face_materials": 13,
+    "geometry_exact": true,
+    "transform_exact": true,
+    "uv_partition_verified": true,
+    "has_rigid_body": false,
+    "packed_png_sha256": "db4eddee6745260762251ca42937cdf846c813f1dd20420a33036a610e4afe23"
+  }
+}

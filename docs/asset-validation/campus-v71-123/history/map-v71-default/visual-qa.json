@@ -1,0 +1,291 @@
+{
+  "screens": 210,
+  "roi_xyxy_relative_to_header_bottom": [
+    565,
+    144,
+    1280,
+    824
+  ],
+  "models": {
+    "osm/468931876": {
+      "destruction_changed_pixels": 172809,
+      "restored_different_pixels": 0
+    },
+    "osm/468931925": {
+      "destruction_changed_pixels": 94646,
+      "restored_different_pixels": 0
+    },
+    "vw/8": {
+      "destruction_changed_pixels": 89414,
+      "restored_different_pixels": 0
+    },
+    "osm/468931877": {
+      "destruction_changed_pixels": 118985,
+      "restored_different_pixels": 0
+    },
+    "osm/1408182451": {
+      "destruction_changed_pixels": 159142,
+      "restored_different_pixels": 0
+    },
+    "osm/524021469": {
+      "destruction_changed_pixels": 100755,
+      "restored_different_pixels": 0
+    },
+    "osm/468931889": {
+      "destruction_changed_pixels": 180721,
+      "restored_different_pixels": 0
+    },
+    "osm/468931865": {
+      "destruction_changed_pixels": 131640,
+      "restored_different_pixels": 0
+    },
+    "vw/147": {
+      "destruction_changed_pixels": 72703,
+      "restored_different_pixels": 0
+    },
+    "vw/95": {
+      "destruction_changed_pixels": 56710,
+      "restored_different_pixels": 0
+    },
+    "osm/468931916": {
+      "destruction_changed_pixels": 85073,
+      "restored_different_pixels": 0
+    },
+    "osm/1026072764": {
+      "destruction_changed_pixels": 111851,
+      "restored_different_pixels": 0
+    },
+    "vw/127": {
+      "destruction_changed_pixels": 90611,
+      "restored_different_pixels": 0
+    },
+    "osm/469617252": {
+      "destruction_changed_pixels": 79285,
+      "restored_different_pixels": 0
+    },
+    "osm/473684404": {
+      "destruction_changed_pixels": 131023,
+      "restored_different_pixels": 0
+    },
+    "osm/524161867": {
+      "destruction_changed_pixels": 125059,
+      "restored_different_pixels": 0
+    },
+    "osm/468931846": {
+      "destruction_changed_pixels": 128210,
+      "restored_different_pixels": 0
+    },
+    "osm/524161871": {
+      "destruction_changed_pixels": 132851,
+      "restored_different_pixels": 0
+    },
+    "osm/524025612": {
+      "destruction_changed_pixels": 115900,
+      "restored_different_pixels": 0
+    },
+    "osm/468931912": {
+      "destruction_changed_pixels": 105242,
+      "restored_different_pixels": 0
+    },
+    "osm/468931886": {
+      "destruction_changed_pixels": 72332,
+      "restored_different_pixels": 0
+    },
+    "osm/469843173": {
+      "destruction_changed_pixels": 137587,
+      "restored_different_pixels": 0
+    },
+    "osm/854306251": {
+      "destruction_changed_pixels": 255054,
+      "restored_different_pixels": 0
+    },
+    "osm/854306497": {
+      "destruction_changed_pixels": 178118,
+      "restored_different_pixels": 0
+    },
+    "osm/524021464": {
+      "destruction_changed_pixels": 81971,
+      "restored_different_pixels": 0
+    },
+    "osm/1300033666": {
+      "destruction_changed_pixels": 146515,
+      "restored_different_pixels": 0
+    },
+    "osm/468931911": {
+      "destruction_changed_pixels": 100023,
+      "restored_different_pixels": 0
+    },
+    "osm/468931928": {
+      "destruction_changed_pixels": 126122,
+      "restored_different_pixels": 0
+    },
+    "vw/145": {
+      "destruction_changed_pixels": 140734,
+      "restored_different_pixels": 0
+    },
+    "vw/73": {
+      "destruction_changed_pixels": 75754,
+      "restored_different_pixels": 0
+    },
+    "vw/162": {
+      "destruction_changed_pixels": 91454,
+      "restored_different_pixels": 0
+    },
+    "osm/522514118": {
+      "destruction_changed_pixels": 58074,
+      "restored_different_pixels": 0
+    },
+    "osm/468931930": {
+      "destruction_changed_pixels": 93436,
+      "restored_different_pixels": 0
+    },
+    "vw/114": {
+      "destruction_changed_pixels": 85112,
+      "restored_different_pixels": 0
+    },
+    "vw/105": {
+      "destruction_changed_pixels": 81304,
+      "restored_different_pixels": 0
+    },
+    "osm/524172305": {
+      "destruction_changed_pixels": 82877,
+      "restored_different_pixels": 0
+    },
+    "osm/576254849": {
+      "destruction_changed_pixels": 75093,
+      "restored_different_pixels": 0
+    },
+    "osm/473687810": {
+      "destruction_changed_pixels": 110727,
+      "restored_different_pixels": 0
+    },
+    "vw/113": {
+      "destruction_changed_pixels": 69639,
+      "restored_different_pixels": 0
+    },
+    "vw/111": {
+      "destruction_changed_pixels": 72157,
+      "restored_different_pixels": 0
+    },
+    "osm/468931894": {
+      "destruction_changed_pixels": 141496,
+      "restored_different_pixels": 0
+    },
+    "osm/1107268251": {
+      "destruction_changed_pixels": 105553,
+      "restored_different_pixels": 0
+    },
+    "vw/143": {
+      "destruction_changed_pixels": 33387,
+      "restored_different_pixels": 0
+    },
+    "vw/50": {
+      "destruction_changed_pixels": 63321,
+      "restored_different_pixels": 0
+    },
+    "vw/130": {
+      "destruction_changed_pixels": 104930,
+      "restored_different_pixels": 0
+    },
+    "vw/163": {
+      "destruction_changed_pixels": 98499,
+      "restored_different_pixels": 0
+    },
+    "vw/18": {
+      "destruction_changed_pixels": 103242,
+      "restored_different_pixels": 0
+    },
+    "vw/79": {
+      "destruction_changed_pixels": 101706,
+      "restored_different_pixels": 0
+    },
+    "vw/166": {
+      "destruction_changed_pixels": 106993,
+      "restored_different_pixels": 0
+    },
+    "vw/21": {
+      "destruction_changed_pixels": 74193,
+      "restored_different_pixels": 0
+    },
+    "vw/52": {
+      "destruction_changed_pixels": 89340,
+      "restored_different_pixels": 0
+    },
+    "vw/110": {
+      "destruction_changed_pixels": 60023,
+      "restored_different_pixels": 0
+    },
+    "vw/20": {
+      "destruction_changed_pixels": 86471,
+      "restored_different_pixels": 0
+    },
+    "vw/62": {
+      "destruction_changed_pixels": 56067,
+      "restored_different_pixels": 0
+    },
+    "vw/22": {
+      "destruction_changed_pixels": 68874,
+      "restored_different_pixels": 0
+    },
+    "vw/33": {
+      "destruction_changed_pixels": 69985,
+      "restored_different_pixels": 0
+    },
+    "osm/468931888": {
+      "destruction_changed_pixels": 135030,
+      "restored_different_pixels": 0
+    },
+    "vw/1": {
+      "destruction_changed_pixels": 97157,
+      "restored_different_pixels": 0
+    },
+    "vw/10": {
+      "destruction_changed_pixels": 71601,
+      "restored_different_pixels": 0
+    },
+    "vw/165": {
+      "destruction_changed_pixels": 88190,
+      "restored_different_pixels": 0
+    },
+    "osm/468931854": {
+      "destruction_changed_pixels": 100601,
+      "restored_different_pixels": 0
+    },
+    "osm/468931893": {
+      "destruction_changed_pixels": 71391,
+      "restored_different_pixels": 0
+    },
+    "osm/468931896": {
+      "destruction_changed_pixels": 69030,
+      "restored_different_pixels": 0
+    },
+    "osm/468931915": {
+      "destruction_changed_pixels": 101960,
+      "restored_different_pixels": 0
+    },
+    "osm/524161868": {
+      "destruction_changed_pixels": 68263,
+      "restored_different_pixels": 0
+    },
+    "osm/576358734": {
+      "destruction_changed_pixels": 151452,
+      "restored_different_pixels": 0
+    },
+    "osm/577759119": {
+      "destruction_changed_pixels": 98587,
+      "restored_different_pixels": 0
+    },
+    "osm/584385630": {
+      "destruction_changed_pixels": 80307,
+      "restored_different_pixels": 0
+    },
+    "osm/584386432": {
+      "destruction_changed_pixels": 79081,
+      "restored_different_pixels": 0
+    },
+    "osm/972016220": {
+      "destruction_changed_pixels": 53909,
+      "restored_different_pixels": 0
+    }
+  }
+}

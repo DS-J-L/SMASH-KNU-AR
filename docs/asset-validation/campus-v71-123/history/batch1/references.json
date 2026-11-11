@@ -1,0 +1,224 @@
+{
+  "photos": {
+    "osm/468931876": [
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_17105/mobile/0.jpg",
+        "sha256": "cd531263c0641b8531dfb91f85e9b87cf826d88929e1adc5e3fd90aa0cc54b44"
+      },
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_4_10_11458/mobile/1.jpg",
+        "sha256": "1b41a026d7112350412f0b431f06c4e077129fcbbcd63307559c26f83b2e01db"
+      }
+    ],
+    "osm/468931925": [
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_2_09_11417/mobile/0.jpg",
+        "sha256": "29d085bd1c744665f7aa2d1f50d2fc759009a15094f90c4a5a264f99b4f208f5"
+      }
+    ],
+    "osm/1408182451": [
+      {
+        "reference": "https://cdn.shinailbo.co.kr/news/photo/202404/1864558_1002035_1011.jpg",
+        "sha256": "0d1dbfcc5d1d8f499cbc4fc3cea7ca49d734627ddfc50b576c4ee145568a0b6d"
+      }
+    ],
+    "osm/524021469": [
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_4_10_11458/mobile/3.jpg",
+        "sha256": "08ec224e847da747fd69f77ebcf3b354f654e05a7221079051d305a8cae9937a"
+      },
+      {
+        "reference": "https://photo.knu.ac.kr/photoImageView/preview/34312.do",
+        "sha256": "c7ac6dc97ca8e6ff4f3586740d05cf027c0fc806bf6162e58204663dcaaaad1c"
+      }
+    ],
+    "osm/468931889": [
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_4_02_11450/mobile/0.jpg",
+        "sha256": "8e851c74d78b40b2860ea7ac6b56d6019059a6ed40dfd62e6845b03512f39102"
+      }
+    ],
+    "osm/468931877": [
+      {
+        "reference": "https://photo.knu.ac.kr/photoImageView/preview/50400.do",
+        "sha256": "6c649500be7c4d4a193250c3529800eae62460b89238d6d35cf5c934dece3b08"
+      }
+    ],
+    "vw/8": [
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_1_01_11377/mobile/0.jpg",
+        "sha256": "2c6b1c7327283e3ec5b12160e8954e632e55b743e3ed2e41ee95a34da31fab96"
+      },
+      {
+        "reference": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_1_01_11377/mobile/3.jpg",
+        "sha256": "f68d6a45efe04ce78dea8cdaec1d7e42993f955dd909e5cf4c404cec5bc98d51"
+      }
+    ]
+  },
+  "aerial_tiles": [
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449447",
+      "sha256": "5eb4e144e2f57d41837d12edfc4d68207e59ed95b38fb1cf4041d36fe1f53499"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449447",
+      "sha256": "9a4ce5a0288a7f385d44347bb552fe3b212183880997720cc6bb1fccdf22bbab"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449447",
+      "sha256": "dcc4bf0887894af4a198836329e76ce0b189b78eee627391a6e89b8cfba513d0"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449448",
+      "sha256": "9433fd01382cee5646197b353248a4b63352be7109500318ddd0668a91de0734"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449448",
+      "sha256": "3e2a5e85ea49dad54d4871e4ff92b0ff779e09eb3cf5618031d92d1eb400899d"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449448",
+      "sha256": "f4da62a4974f048c98f2127c8a694e9a397f21b5d12b3eef66e6ae8b0eeb1137"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449449",
+      "sha256": "22bea30165ac2e547e63f3ee94f936f0b2299f916bd2930eaf8edc7b646cd46c"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449449",
+      "sha256": "c5b5c6e73b89117877170e1c5b2a8c31c7b8aa765bf93d9ec0b0f52c12722009"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449449",
+      "sha256": "5147b47982ff71a8336fa45381e6961a045273dbb81a7c002d2fbb8e0ecc2573"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449437",
+      "sha256": "440a577aee93e926d99844461f984209f00d89bd0f64cbf31e36b942943640e3"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449437",
+      "sha256": "746d91abad0c16607af8d4b2c6a8bfd62024d8569e2a1c0c29fcb7088e3ed5aa"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449437",
+      "sha256": "fc5027a79f077b2ea1b04804711fc07e66e44db7c718d51f6c314d0f5731e16a"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449438",
+      "sha256": "97a49d4ac620955258fe6cfed7364c85ebbcff8368194dca10a9dc758d12f79c"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449438",
+      "sha256": "8d8d068a808b5553aaf909d5552a94522991abba40f313add2bd5f703825e7f3"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449438",
+      "sha256": "271d642e5689e6d297c60ea590365298357b70becfd969d109bcd4fae4d45d06"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449439",
+      "sha256": "9dace398a9a4126ffd75c06692076745a938d525dfc0505d2d64d73ff18f7a24"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449439",
+      "sha256": "271a4ca76bc0aaf097010ce459b9807788de2bf07742693f39c111e1bbd77bd5"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449439",
+      "sha256": "3efbac9be4178b075ed55cb3a63278c7c0199ed24e5be028743f132ee35b2dfa"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449445",
+      "sha256": "2c13207f434d9dbee5900d830d4e0a39bee33cc81b8606ad328b383468fb13b3"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449445",
+      "sha256": "8b50fe49daaa0658afb8dc0ad3f8d0f250444c4c8338fc55ee2a6720cdaf0e7f"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449445",
+      "sha256": "e0de99e068c8cd5e67795bed2b0d9303c36ff759162dba77e196f810baf7fee5"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449446",
+      "sha256": "255c10b9c1ce37b9d871fd9159d840622364f6cbc04930b3c27e3d01f5c194f6"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449446",
+      "sha256": "f520533dbc8a5858c258a2a50a21dba2d0c045bb2582c43b00fd053733ec3cdf"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449446",
+      "sha256": "bb0a7e4576738d7b4c130d3863859d7b12c3a327450215af2482c1e5258a6ec1"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449447",
+      "sha256": "547700e070b7c96b720506b2c263f0adddf5af7aeb7fbdede7b52869917dda03"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449445",
+      "sha256": "df43020b51d762d85a2741de10453e8fb5e71f9def2321e4148178255a5fa984"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449446",
+      "sha256": "66329b900151115d2a5bc3d3b867e5a655cb60f4f1a04233a08fcceb96c301fb"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449450",
+      "sha256": "884825ea78cd97f3b586a084e947458cd7e139db1db27393e6510750899cb4aa"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449450",
+      "sha256": "0911672e1fc354a3675fe7209abb507a587a1305f70b6d6e55c5de195e1670d4"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449450",
+      "sha256": "17f8c236bfa64f197a52f80f5caca879544275089fe914e94172becbe9cac387"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449441",
+      "sha256": "9d316790e403b4bf9d71063dd1fea527a701f7aaa8cc51694f4e063e6b022380"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449441",
+      "sha256": "4b7059d74a28fd234483bdf2ea9fadce8e74e6c0372cbcf6331b0bf3c3ba26b1"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449441",
+      "sha256": "21a51ec9b534cef1666ba4507558e31ac1513571a442c67f8678564892e2d5d1"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449442",
+      "sha256": "44e24b5b439c090b7eeca99ff96cd7a26c90a77f83a656125b6402bf48b6187b"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449442",
+      "sha256": "39c5fef8e42b98dbb498c4ff482dbc7f50e137a665591efd10abc1a89977f349"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449442",
+      "sha256": "4b2ef91170ea41741dad5f3a40b38f14615791d2f6b85edae3c9ce96f41d17f2"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449443",
+      "sha256": "74f3a10fa2b1fd48af4fd728de61eb2353094edd006cfc1090f7437454053832"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449443",
+      "sha256": "1b8bddc02ad94d316ffd6d70cdea6f01e342c885c6513d22ec86b43bf796d70b"
+    },
+    {
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449443",
+      "sha256": "1783c63c94ef7084c8f54568fca3f1a3c86523a62d7a674f9f31db807abac3b8"
+    }
+  ],
+  "building_registry": {
+    "location": "대구광역시 북구 산격동 1370-1",
+    "extract_date": "2026-09",
+    "record_id": "1000000000000002736624",
+    "building": "미래창직관",
+    "height_m": 27.1,
+    "above_ground_floors": 5
+  }
+}

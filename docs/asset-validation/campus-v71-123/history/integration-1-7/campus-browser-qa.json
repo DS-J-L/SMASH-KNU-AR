@@ -1,0 +1,59 @@
+{
+  "mode": "isolated_browser_response_substitution",
+  "defaultCampus": "/public/assets/campus/knu-campus-v13.glb",
+  "sha256": "fee99657d4d3d5a733086aa337974ac72ddf889646ef137275f587dc5f7ff608",
+  "served": 1,
+  "focus": [
+    {
+      "id": "global",
+      "cameraTarget": [
+        88,
+        35,
+        -177
+      ]
+    },
+    {
+      "id": "library",
+      "cameraTarget": [
+        174.99999999999997,
+        11.999999999999998,
+        -171.99999999999997
+      ]
+    },
+    {
+      "id": "auditorium",
+      "cameraTarget": [
+        35,
+        0,
+        -278
+      ]
+    },
+    {
+      "id": "museum",
+      "cameraTarget": [
+        305,
+        5,
+        177
+      ]
+    },
+    {
+      "id": "gym2",
+      "cameraTarget": [
+        -480.00000000000006,
+        -6.000000000000001,
+        55
+      ]
+    },
+    {
+      "id": "it2",
+      "cameraTarget": [
+        116.99999999999999,
+        3,
+        307
+      ]
+    }
+  ],
+  "errors": [],
+  "geometryCount": 2008,
+  "returnDestroyRestore": true
+}

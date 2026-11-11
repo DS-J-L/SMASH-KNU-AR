@@ -1,0 +1,66 @@
+{
+  "mode": "default_catalog_http",
+  "path": "/public/assets/campus/knu-campus-v71-123-dot8-r1.glb",
+  "sha256": "329aab61891c9e661b2a8f30539052587a7517f738a2eb032ceaea39e5b16dea",
+  "bytes": 73736144,
+  "focus": [
+    {
+      "id": "global",
+      "cameraTarget": [
+        88,
+        35,
+        -177
+      ]
+    },
+    {
+      "id": "library",
+      "cameraTarget": [
+        174.99999999999997,
+        11.999999999999998,
+        -171.99999999999997
+      ]
+    },
+    {
+      "id": "auditorium",
+      "cameraTarget": [
+        35,
+        0,
+        -278
+      ]
+    },
+    {
+      "id": "museum",
+      "cameraTarget": [
+        305,
+        5,
+        177
+      ]
+    },
+    {
+      "id": "gym2",
+      "cameraTarget": [
+        -480.00000000000006,
+        -6.000000000000001,
+        55
+      ]
+    },
+    {
+      "id": "it2",
+      "cameraTarget": [
+        116.99999999999999,
+        3,
+        307
+      ]
+    }
+  ],
+  "browserMapRequests": [
+    {
+      "path": "/public/assets/campus/knu-campus-v71-123-dot8-r1.glb",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "geometryCount": 2070,
+  "returnDestroyRestore": true,
+  "secondVisitReusedMap": true
+}

@@ -1,0 +1,1808 @@
+{
+  "knu-career-v71-b2-r3-fracture": [
+    {
+      "node": "SM_career_Fragment_000",
+      "max_outside_m": 5.6633477213408057e-08
+    },
+    {
+      "node": "SM_career_Fragment_001",
+      "max_outside_m": 4.368537570575981e-08
+    },
+    {
+      "node": "SM_career_Fragment_002",
+      "max_outside_m": 6.09483850888548e-08
+    },
+    {
+      "node": "SM_career_Fragment_003",
+      "max_outside_m": 5.8958463000635675e-08
+    },
+    {
+      "node": "SM_career_Fragment_004",
+      "max_outside_m": 4.6174633006046406e-08
+    },
+    {
+      "node": "SM_career_Fragment_005",
+      "max_outside_m": 6.02223353685094e-08
+    },
+    {
+      "node": "SM_career_Fragment_006",
+      "max_outside_m": 7.968315299256012e-08
+    },
+    {
+      "node": "SM_career_Fragment_007",
+      "max_outside_m": 6.320917630975309e-08
+    },
+    {
+      "node": "SM_career_Fragment_008",
+      "max_outside_m": 5.708890474243056e-08
+    },
+    {
+      "node": "SM_career_Fragment_009",
+      "max_outside_m": 3.558152222860045e-08
+    },
+    {
+      "node": "SM_career_Fragment_010",
+      "max_outside_m": 5.59185757142977e-08
+    },
+    {
+      "node": "SM_career_Fragment_011",
+      "max_outside_m": 3.480328580884873e-08
+    },
+    {
+      "node": "SM_career_Fragment_012",
+      "max_outside_m": 5.0342383581258865e-08
+    },
+    {
+      "node": "SM_career_Fragment_013",
+      "max_outside_m": 5.4464867199621736e-08
+    },
+    {
+      "node": "SM_career_Fragment_014",
+      "max_outside_m": 7.476038664522289e-08
+    },
+    {
+      "node": "SM_career_Fragment_015",
+      "max_outside_m": 7.263805237855969e-08
+    },
+    {
+      "node": "SM_career_Fragment_016",
+      "max_outside_m": 5.233496327972098e-08
+    },
+    {
+      "node": "SM_career_Fragment_017",
+      "max_outside_m": 6.095710311515568e-08
+    },
+    {
+      "node": "SM_career_Fragment_018",
+      "max_outside_m": 5.949011558370465e-08
+    },
+    {
+      "node": "SM_career_Fragment_019",
+      "max_outside_m": 6.211840283820713e-08
+    },
+    {
+      "node": "SM_career_Fragment_020",
+      "max_outside_m": 5.405497488508715e-08
+    },
+    {
+      "node": "SM_career_Fragment_021",
+      "max_outside_m": 5.850592338374483e-08
+    },
+    {
+      "node": "SM_career_Fragment_022",
+      "max_outside_m": 6.797837592831257e-08
+    },
+    {
+      "node": "SM_career_Fragment_023",
+      "max_outside_m": 5.164075697616788e-08
+    },
+    {
+      "node": "SM_career_Fragment_024",
+      "max_outside_m": 5.96217377135666e-08
+    },
+    {
+      "node": "SM_career_Fragment_025",
+      "max_outside_m": 5.636142383358411e-08
+    },
+    {
+      "node": "SM_career_Fragment_026",
+      "max_outside_m": 5.990379903231258e-08
+    },
+    {
+      "node": "SM_career_Fragment_027",
+      "max_outside_m": 6.168903413095173e-08
+    },
+    {
+      "node": "SM_career_Fragment_028",
+      "max_outside_m": 6.438413266418586e-08
+    },
+    {
+      "node": "SM_career_Fragment_029",
+      "max_outside_m": 1.3912934566928659e-07
+    },
+    {
+      "node": "SM_career_Fragment_030",
+      "max_outside_m": 6.053896031699146e-08
+    },
+    {
+      "node": "SM_career_Fragment_031",
+      "max_outside_m": 5.813359105211191e-08
+    },
+    {
+      "node": "SM_career_Fragment_032",
+      "max_outside_m": 1.0327070976146047e-08
+    },
+    {
+      "node": "SM_career_Fragment_033",
+      "max_outside_m": 4.4135007759571465e-08
+    },
+    {
+      "node": "SM_career_Fragment_034",
+      "max_outside_m": 5.307734754489424e-08
+    },
+    {
+      "node": "SM_career_Fragment_035",
+      "max_outside_m": 4.712873827306119e-08
+    },
+    {
+      "node": "SM_career_Fragment_036",
+      "max_outside_m": 3.153271030398308e-08
+    },
+    {
+      "node": "SM_career_Fragment_037",
+      "max_outside_m": 5.0258473438535844e-08
+    },
+    {
+      "node": "SM_career_Fragment_038",
+      "max_outside_m": 6.286952707046378e-08
+    },
+    {
+      "node": "SM_career_Fragment_039",
+      "max_outside_m": 5.155297688741456e-08
+    },
+    {
+      "node": "SM_career_Fragment_040",
+      "max_outside_m": 6.364708687867093e-08
+    },
+    {
+      "node": "SM_career_Fragment_041",
+      "max_outside_m": 4.338551240490318e-08
+    },
+    {
+      "node": "SM_career_Fragment_042",
+      "max_outside_m": 5.35780206589731e-08
+    },
+    {
+      "node": "SM_career_Fragment_043",
+      "max_outside_m": 7.555743104792345e-08
+    },
+    {
+      "node": "SM_career_Fragment_044",
+      "max_outside_m": 4.742059786511099e-09
+    },
+    {
+      "node": "SM_career_Fragment_045",
+      "max_outside_m": 6.204666089248967e-08
+    },
+    {
+      "node": "SM_career_Fragment_046",
+      "max_outside_m": 5.2263526034712626e-08
+    },
+    {
+      "node": "SM_career_Fragment_047",
+      "max_outside_m": 5.985046688805618e-08
+    },
+    {
+      "node": "SM_career_Fragment_048",
+      "max_outside_m": 5.3190806023617476e-08
+    },
+    {
+      "node": "SM_career_Fragment_049",
+      "max_outside_m": 4.924435892394996e-08
+    },
+    {
+      "node": "SM_career_Fragment_050",
+      "max_outside_m": 5.1915644477817935e-08
+    },
+    {
+      "node": "SM_career_Fragment_051",
+      "max_outside_m": 6.297757201845222e-08
+    },
+    {
+      "node": "SM_career_Fragment_052",
+      "max_outside_m": 6.116661085964203e-08
+    },
+    {
+      "node": "SM_career_Fragment_053",
+      "max_outside_m": 5.915244047360879e-08
+    },
+    {
+      "node": "SM_career_Fragment_054",
+      "max_outside_m": 6.113153927511661e-08
+    },
+    {
+      "node": "SM_career_Fragment_055",
+      "max_outside_m": 7.383278990968911e-08
+    },
+    {
+      "node": "SM_career_Fragment_056",
+      "max_outside_m": 5.198220356938954e-08
+    },
+    {
+      "node": "SM_career_Fragment_057",
+      "max_outside_m": 4.48627034688176e-08
+    },
+    {
+      "node": "SM_career_Fragment_058",
+      "max_outside_m": 8.489653572502087e-08
+    },
+    {
+      "node": "SM_career_Fragment_059",
+      "max_outside_m": 5.981373418090241e-08
+    },
+    {
+      "node": "SM_career_Fragment_060",
+      "max_outside_m": 5.859103932581711e-08
+    },
+    {
+      "node": "SM_career_Fragment_061",
+      "max_outside_m": 6.310302025358538e-08
+    },
+    {
+      "node": "SM_career_Fragment_062",
+      "max_outside_m": 1.268499648099386e-07
+    },
+    {
+      "node": "SM_career_Fragment_063",
+      "max_outside_m": 6.209574471283119e-08
+    }
+  ],
+  "knu-convergence-v71-b2-r3-fracture": [
+    {
+      "node": "SM_convergence_Fragment_000",
+      "max_outside_m": 8.363198572558517e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_001",
+      "max_outside_m": 2.6349128323666093e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_002",
+      "max_outside_m": 5.1458830807593614e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_003",
+      "max_outside_m": 6.65009411149331e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_004",
+      "max_outside_m": 6.509640509966275e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_005",
+      "max_outside_m": 4.1454886273717406e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_006",
+      "max_outside_m": 6.455369566671365e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_007",
+      "max_outside_m": 3.68877495215969e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_008",
+      "max_outside_m": 1.643710538234977e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_009",
+      "max_outside_m": 2.919971510279007e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_010",
+      "max_outside_m": 5.389361482088795e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_011",
+      "max_outside_m": 1.773083440348433e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_012",
+      "max_outside_m": 5.4075394856356596e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_013",
+      "max_outside_m": 5.3188048576569e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_014",
+      "max_outside_m": 5.498758323674302e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_015",
+      "max_outside_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_convergence_Fragment_016",
+      "max_outside_m": 5.657910734369054e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_017",
+      "max_outside_m": 1.3508494009495386e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_018",
+      "max_outside_m": 5.5141292587546076e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_019",
+      "max_outside_m": 2.0548909138162763e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_020",
+      "max_outside_m": 8.13152594980604e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_021",
+      "max_outside_m": 6.529837068280919e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_022",
+      "max_outside_m": 6.573111280272492e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_023",
+      "max_outside_m": 6.565184273998881e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_024",
+      "max_outside_m": 5.882789978761682e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_025",
+      "max_outside_m": 7.169933458062161e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_026",
+      "max_outside_m": 1.8662036577188346e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_027",
+      "max_outside_m": 7.718395527572808e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_028",
+      "max_outside_m": 5.327726437798219e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_029",
+      "max_outside_m": 5.463953954565337e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_030",
+      "max_outside_m": 1.5052111664026757e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_031",
+      "max_outside_m": 1.334735247465746e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_032",
+      "max_outside_m": 7.673151500298125e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_033",
+      "max_outside_m": 6.514081760111701e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_034",
+      "max_outside_m": 6.585071743447912e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_035",
+      "max_outside_m": 5.5856910874396704e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_036",
+      "max_outside_m": 6.044712272390562e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_037",
+      "max_outside_m": 5.1152562151324243e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_038",
+      "max_outside_m": 5.5452521352528095e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_039",
+      "max_outside_m": 5.6000848625004096e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_040",
+      "max_outside_m": 5.3998735746740856e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_041",
+      "max_outside_m": 4.605424910875122e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_042",
+      "max_outside_m": 1.5196158864583253e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_043",
+      "max_outside_m": 1.691988856244997e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_044",
+      "max_outside_m": 4.795743085983517e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_045",
+      "max_outside_m": 6.278334609144398e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_046",
+      "max_outside_m": 6.509371116431018e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_047",
+      "max_outside_m": 6.987740136521481e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_048",
+      "max_outside_m": 3.299673293072347e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_049",
+      "max_outside_m": 6.365245100448114e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_050",
+      "max_outside_m": 5.306001986393749e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_051",
+      "max_outside_m": 5.8200478381120746e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_052",
+      "max_outside_m": 3.612116981077662e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_053",
+      "max_outside_m": 6.301833502253551e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_054",
+      "max_outside_m": 6.474280345170058e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_055",
+      "max_outside_m": 4.311939878764992e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_056",
+      "max_outside_m": 8.49635168609364e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_057",
+      "max_outside_m": 5.736964803215727e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_058",
+      "max_outside_m": 1.0772383801649354e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_059",
+      "max_outside_m": 4.1987820535022147e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_060",
+      "max_outside_m": 2.4532948719735437e-07
+    },
+    {
+      "node": "SM_convergence_Fragment_061",
+      "max_outside_m": 6.374131453212861e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_062",
+      "max_outside_m": 5.752722298524304e-08
+    },
+    {
+      "node": "SM_convergence_Fragment_063",
+      "max_outside_m": 6.341109706764492e-08
+    }
+  ],
+  "knu-educgrad-v71-b2-r2-fracture": [
+    {
+      "node": "SM_educgrad_Fragment_000",
+      "max_outside_m": 5.3636883684538006e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_001",
+      "max_outside_m": 6.312827664778364e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_002",
+      "max_outside_m": 8.010665300539621e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_003",
+      "max_outside_m": 6.461210574904008e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_004",
+      "max_outside_m": 5.702237967919466e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_005",
+      "max_outside_m": 5.8735121058473005e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_006",
+      "max_outside_m": 8.935867462644964e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_007",
+      "max_outside_m": 6.617694506272365e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_008",
+      "max_outside_m": 4.6886128061973675e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_009",
+      "max_outside_m": 3.439054574727596e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_010",
+      "max_outside_m": 1.9965551520395586e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_011",
+      "max_outside_m": 4.963044289429952e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_012",
+      "max_outside_m": 4.5724749916931096e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_013",
+      "max_outside_m": 6.184498835271057e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_014",
+      "max_outside_m": 1.058138605486425e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_015",
+      "max_outside_m": 5.281709296311998e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_016",
+      "max_outside_m": 6.530870440280001e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_017",
+      "max_outside_m": 1.4511178121623391e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_018",
+      "max_outside_m": 5.3163993790628084e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_019",
+      "max_outside_m": 6.00897787916832e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_020",
+      "max_outside_m": 3.4900443336705056e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_021",
+      "max_outside_m": 5.5702700299531394e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_022",
+      "max_outside_m": 6.249091401289153e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_023",
+      "max_outside_m": 5.936849548082712e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_024",
+      "max_outside_m": 6.187091022846758e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_025",
+      "max_outside_m": 5.870594046997191e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_026",
+      "max_outside_m": 6.662858825778883e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_027",
+      "max_outside_m": 1.3857561324132073e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_028",
+      "max_outside_m": 5.8878140196672035e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_029",
+      "max_outside_m": 6.041536679268766e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_030",
+      "max_outside_m": 6.713453983009376e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_031",
+      "max_outside_m": 8.183309615356071e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_032",
+      "max_outside_m": 4.013543217218363e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_033",
+      "max_outside_m": 6.57523147179484e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_034",
+      "max_outside_m": 6.948977707144088e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_035",
+      "max_outside_m": 5.982102427304348e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_036",
+      "max_outside_m": 1.0131495739584828e-06
+    },
+    {
+      "node": "SM_educgrad_Fragment_037",
+      "max_outside_m": 6.227942284109389e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_038",
+      "max_outside_m": 5.21540641784668e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_039",
+      "max_outside_m": 5.5486332112275605e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_040",
+      "max_outside_m": 1.9374252833992411e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_041",
+      "max_outside_m": 5.81747496009033e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_042",
+      "max_outside_m": 5.318708699159069e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_043",
+      "max_outside_m": 6.002747679478837e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_044",
+      "max_outside_m": 6.289392531777516e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_045",
+      "max_outside_m": 5.3465002397556916e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_046",
+      "max_outside_m": 9.746331113003048e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_047",
+      "max_outside_m": 6.917820245117001e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_048",
+      "max_outside_m": 5.3115775389134257e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_049",
+      "max_outside_m": 6.927744111706602e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_050",
+      "max_outside_m": 5.8245597192585485e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_051",
+      "max_outside_m": 3.3676002932081506e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_052",
+      "max_outside_m": 1.5014243798239235e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_053",
+      "max_outside_m": 3.857588562611314e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_054",
+      "max_outside_m": 6.619991703427086e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_055",
+      "max_outside_m": 4.648027916026587e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_056",
+      "max_outside_m": 1.0342952905251224e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_057",
+      "max_outside_m": 8.50654543194107e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_058",
+      "max_outside_m": 5.513480891283784e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_059",
+      "max_outside_m": 5.8410477371539926e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_060",
+      "max_outside_m": 1.1106609219824204e-07
+    },
+    {
+      "node": "SM_educgrad_Fragment_061",
+      "max_outside_m": 4.904622417922777e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_062",
+      "max_outside_m": 6.356639871418768e-08
+    },
+    {
+      "node": "SM_educgrad_Fragment_063",
+      "max_outside_m": 7.313967516353603e-08
+    }
+  ],
+  "knu-grad-v71-b2-r3-fracture": [
+    {
+      "node": "SM_grad_Fragment_000",
+      "max_outside_m": 6.54025983093387e-08
+    },
+    {
+      "node": "SM_grad_Fragment_001",
+      "max_outside_m": 6.897561402596786e-08
+    },
+    {
+      "node": "SM_grad_Fragment_002",
+      "max_outside_m": 4.7786409551608955e-08
+    },
+    {
+      "node": "SM_grad_Fragment_003",
+      "max_outside_m": 5.69517217968718e-08
+    },
+    {
+      "node": "SM_grad_Fragment_004",
+      "max_outside_m": 6.183780235091696e-08
+    },
+    {
+      "node": "SM_grad_Fragment_005",
+      "max_outside_m": 3.450398232407448e-08
+    },
+    {
+      "node": "SM_grad_Fragment_006",
+      "max_outside_m": 5.4052005038496276e-08
+    },
+    {
+      "node": "SM_grad_Fragment_007",
+      "max_outside_m": 5.5140555912935874e-08
+    },
+    {
+      "node": "SM_grad_Fragment_008",
+      "max_outside_m": 6.033315935738415e-08
+    },
+    {
+      "node": "SM_grad_Fragment_009",
+      "max_outside_m": 1.3499682663398183e-07
+    },
+    {
+      "node": "SM_grad_Fragment_010",
+      "max_outside_m": 6.792887072282205e-08
+    },
+    {
+      "node": "SM_grad_Fragment_011",
+      "max_outside_m": 5.528129715104413e-08
+    },
+    {
+      "node": "SM_grad_Fragment_012",
+      "max_outside_m": 4.983595552898734e-08
+    },
+    {
+      "node": "SM_grad_Fragment_013",
+      "max_outside_m": 5.535256621114204e-08
+    },
+    {
+      "node": "SM_grad_Fragment_014",
+      "max_outside_m": 5.605472061520622e-08
+    },
+    {
+      "node": "SM_grad_Fragment_015",
+      "max_outside_m": 5.2042699108523216e-08
+    },
+    {
+      "node": "SM_grad_Fragment_016",
+      "max_outside_m": 1.0555370408282805e-07
+    },
+    {
+      "node": "SM_grad_Fragment_017",
+      "max_outside_m": 7.52290241490261e-08
+    },
+    {
+      "node": "SM_grad_Fragment_018",
+      "max_outside_m": 6.10992565014401e-08
+    },
+    {
+      "node": "SM_grad_Fragment_019",
+      "max_outside_m": 1.2834095483582608e-07
+    },
+    {
+      "node": "SM_grad_Fragment_020",
+      "max_outside_m": 6.720895483203204e-08
+    },
+    {
+      "node": "SM_grad_Fragment_021",
+      "max_outside_m": 1.0215330487062246e-07
+    },
+    {
+      "node": "SM_grad_Fragment_022",
+      "max_outside_m": 5.894909752002242e-08
+    },
+    {
+      "node": "SM_grad_Fragment_023",
+      "max_outside_m": 5.608045808291884e-08
+    },
+    {
+      "node": "SM_grad_Fragment_024",
+      "max_outside_m": 5.8325010099391505e-08
+    },
+    {
+      "node": "SM_grad_Fragment_025",
+      "max_outside_m": 5.4112169731168613e-08
+    },
+    {
+      "node": "SM_grad_Fragment_026",
+      "max_outside_m": 5.9075912828276955e-08
+    },
+    {
+      "node": "SM_grad_Fragment_027",
+      "max_outside_m": 6.353383238955068e-08
+    },
+    {
+      "node": "SM_grad_Fragment_028",
+      "max_outside_m": 4.456931063101521e-08
+    },
+    {
+      "node": "SM_grad_Fragment_029",
+      "max_outside_m": 4.502491662838892e-08
+    },
+    {
+      "node": "SM_grad_Fragment_030",
+      "max_outside_m": 5.442047651404991e-08
+    },
+    {
+      "node": "SM_grad_Fragment_031",
+      "max_outside_m": 5.693500813863661e-08
+    },
+    {
+      "node": "SM_grad_Fragment_032",
+      "max_outside_m": 5.062915042763905e-08
+    },
+    {
+      "node": "SM_grad_Fragment_033",
+      "max_outside_m": 5.7652294688237404e-08
+    },
+    {
+      "node": "SM_grad_Fragment_034",
+      "max_outside_m": 7.598176618439645e-08
+    },
+    {
+      "node": "SM_grad_Fragment_035",
+      "max_outside_m": 5.723817497749195e-08
+    },
+    {
+      "node": "SM_grad_Fragment_036",
+      "max_outside_m": 5.641179361137727e-08
+    },
+    {
+      "node": "SM_grad_Fragment_037",
+      "max_outside_m": 6.029547319763573e-08
+    },
+    {
+      "node": "SM_grad_Fragment_038",
+      "max_outside_m": 4.980173552021627e-08
+    },
+    {
+      "node": "SM_grad_Fragment_039",
+      "max_outside_m": 5.767611924167859e-08
+    },
+    {
+      "node": "SM_grad_Fragment_040",
+      "max_outside_m": 6.164921767526366e-08
+    },
+    {
+      "node": "SM_grad_Fragment_041",
+      "max_outside_m": 4.470348358154297e-08
+    },
+    {
+      "node": "SM_grad_Fragment_042",
+      "max_outside_m": 5.908697228718118e-08
+    },
+    {
+      "node": "SM_grad_Fragment_043",
+      "max_outside_m": 5.941483280369475e-08
+    },
+    {
+      "node": "SM_grad_Fragment_044",
+      "max_outside_m": 5.640853553701142e-08
+    },
+    {
+      "node": "SM_grad_Fragment_045",
+      "max_outside_m": 6.106233230163127e-08
+    },
+    {
+      "node": "SM_grad_Fragment_046",
+      "max_outside_m": 7.938968435428073e-08
+    },
+    {
+      "node": "SM_grad_Fragment_047",
+      "max_outside_m": 7.741415222750625e-08
+    },
+    {
+      "node": "SM_grad_Fragment_048",
+      "max_outside_m": 7.753564987278416e-08
+    },
+    {
+      "node": "SM_grad_Fragment_049",
+      "max_outside_m": 6.075087301271598e-08
+    },
+    {
+      "node": "SM_grad_Fragment_050",
+      "max_outside_m": 6.144022463017151e-08
+    },
+    {
+      "node": "SM_grad_Fragment_051",
+      "max_outside_m": 4.436619027714528e-08
+    },
+    {
+      "node": "SM_grad_Fragment_052",
+      "max_outside_m": 5.185085548420343e-08
+    },
+    {
+      "node": "SM_grad_Fragment_053",
+      "max_outside_m": 5.4745593502936174e-08
+    },
+    {
+      "node": "SM_grad_Fragment_054",
+      "max_outside_m": 6.885123718380903e-08
+    },
+    {
+      "node": "SM_grad_Fragment_055",
+      "max_outside_m": 6.657238679763644e-08
+    },
+    {
+      "node": "SM_grad_Fragment_056",
+      "max_outside_m": 4.947432852286937e-08
+    },
+    {
+      "node": "SM_grad_Fragment_057",
+      "max_outside_m": 5.331932498298109e-08
+    },
+    {
+      "node": "SM_grad_Fragment_058",
+      "max_outside_m": 5.8966357657785906e-08
+    },
+    {
+      "node": "SM_grad_Fragment_059",
+      "max_outside_m": 6.79065934733325e-08
+    },
+    {
+      "node": "SM_grad_Fragment_060",
+      "max_outside_m": 7.263075721408718e-08
+    },
+    {
+      "node": "SM_grad_Fragment_061",
+      "max_outside_m": 5.034301105155681e-08
+    },
+    {
+      "node": "SM_grad_Fragment_062",
+      "max_outside_m": 5.6354324901031205e-08
+    },
+    {
+      "node": "SM_grad_Fragment_063",
+      "max_outside_m": 1.9044488680508564e-07
+    }
+  ],
+  "knu-liberal-v71-b2-r3-fracture": [
+    {
+      "node": "SM_liberal_Fragment_000",
+      "max_outside_m": 5.364409204344778e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_001",
+      "max_outside_m": 4.778439036817739e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_002",
+      "max_outside_m": 4.747192154652691e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_003",
+      "max_outside_m": 4.4916335970035526e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_004",
+      "max_outside_m": 5.398455688032655e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_005",
+      "max_outside_m": 5.60782291991746e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_006",
+      "max_outside_m": 5.13881177888198e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_007",
+      "max_outside_m": 5.7283112392392255e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_008",
+      "max_outside_m": 6.613729691684611e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_009",
+      "max_outside_m": 7.389361642018422e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_010",
+      "max_outside_m": 5.475919072350788e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_011",
+      "max_outside_m": 1.378279204794497e-07
+    },
+    {
+      "node": "SM_liberal_Fragment_012",
+      "max_outside_m": 7.694816420156236e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_013",
+      "max_outside_m": 4.4902093959686695e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_014",
+      "max_outside_m": 4.297302388933666e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_015",
+      "max_outside_m": 6.334343152780697e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_016",
+      "max_outside_m": 6.97348988554225e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_017",
+      "max_outside_m": 5.636532100783409e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_018",
+      "max_outside_m": 5.1838806774950896e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_019",
+      "max_outside_m": 3.9548063504590836e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_020",
+      "max_outside_m": 5.0603835288765e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_021",
+      "max_outside_m": 4.6947676274333716e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_022",
+      "max_outside_m": 6.04723408570429e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_023",
+      "max_outside_m": 4.5742800269810147e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_024",
+      "max_outside_m": 4.469511663551806e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_025",
+      "max_outside_m": 7.208536124958531e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_026",
+      "max_outside_m": 3.463622477717365e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_027",
+      "max_outside_m": 6.436033175849509e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_028",
+      "max_outside_m": 5.629389512179506e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_029",
+      "max_outside_m": 4.308102161121319e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_030",
+      "max_outside_m": 4.932924649314607e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_031",
+      "max_outside_m": 9.178329989090184e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_032",
+      "max_outside_m": 6.069677027653597e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_033",
+      "max_outside_m": 6.433645925729703e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_034",
+      "max_outside_m": 5.492155125130793e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_035",
+      "max_outside_m": 6.675921908338989e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_036",
+      "max_outside_m": 5.2251552140614166e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_037",
+      "max_outside_m": 6.322707392369953e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_038",
+      "max_outside_m": 5.078762549404203e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_039",
+      "max_outside_m": 6.608612294900507e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_040",
+      "max_outside_m": 5.276062341186272e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_041",
+      "max_outside_m": 5.507976617857846e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_042",
+      "max_outside_m": 4.4583782693452534e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_043",
+      "max_outside_m": 4.4127489384759855e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_044",
+      "max_outside_m": 5.6324703012755606e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_045",
+      "max_outside_m": 4.719536678132741e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_046",
+      "max_outside_m": 7.340103412578625e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_047",
+      "max_outside_m": 5.403272058945863e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_048",
+      "max_outside_m": 6.431219033015134e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_049",
+      "max_outside_m": 6.159299569680199e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_050",
+      "max_outside_m": 4.850385905419419e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_051",
+      "max_outside_m": 4.8782643327638375e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_052",
+      "max_outside_m": 4.721115345884819e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_053",
+      "max_outside_m": 6.41236667098255e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_054",
+      "max_outside_m": 4.711202250540225e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_055",
+      "max_outside_m": 5.302104663651441e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_056",
+      "max_outside_m": 4.703306819009434e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_057",
+      "max_outside_m": 8.585834729291086e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_058",
+      "max_outside_m": 5.166390946304e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_059",
+      "max_outside_m": 5.2515306991907096e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_060",
+      "max_outside_m": 6.676630288221519e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_061",
+      "max_outside_m": 5.55899967724649e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_062",
+      "max_outside_m": 5.3941027408632714e-08
+    },
+    {
+      "node": "SM_liberal_Fragment_063",
+      "max_outside_m": 5.8664580637746155e-08
+    }
+  ],
+  "knu-lifelong-v71-b2-r3-fracture": [
+    {
+      "node": "SM_lifelong_Fragment_000",
+      "max_outside_m": 6.37518407717308e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_001",
+      "max_outside_m": 6.845153263657089e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_002",
+      "max_outside_m": 4.740726790297689e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_003",
+      "max_outside_m": 7.699909554403916e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_004",
+      "max_outside_m": 2.250263280365039e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_005",
+      "max_outside_m": 5.029887862328941e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_006",
+      "max_outside_m": 4.501703280979097e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_007",
+      "max_outside_m": 5.471903197218353e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_008",
+      "max_outside_m": 6.383854290747948e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_009",
+      "max_outside_m": 5.498376262624838e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_010",
+      "max_outside_m": 8.373366139347027e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_011",
+      "max_outside_m": 2.8312094553506473e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_012",
+      "max_outside_m": 5.3389600157549566e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_013",
+      "max_outside_m": 2.794445311260496e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_014",
+      "max_outside_m": 6.346915634725114e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_015",
+      "max_outside_m": 6.308062780457924e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_016",
+      "max_outside_m": 5.704059893862912e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_017",
+      "max_outside_m": 6.172117823777246e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_018",
+      "max_outside_m": 6.802764844493492e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_019",
+      "max_outside_m": 2.530261127287048e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_020",
+      "max_outside_m": 4.82567305004622e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_021",
+      "max_outside_m": 6.055385493031196e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_022",
+      "max_outside_m": 6.911960075822732e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_023",
+      "max_outside_m": 1.5599247589481724e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_024",
+      "max_outside_m": 6.112858982887381e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_025",
+      "max_outside_m": 5.606106745492667e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_026",
+      "max_outside_m": 5.686955059647225e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_027",
+      "max_outside_m": 6.046690242955677e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_028",
+      "max_outside_m": 6.512707403927287e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_029",
+      "max_outside_m": 5.4514240926950563e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_030",
+      "max_outside_m": 1.82913486884706e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_031",
+      "max_outside_m": 3.971872220009942e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_032",
+      "max_outside_m": 5.1437661241493515e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_033",
+      "max_outside_m": 5.2497755101410526e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_034",
+      "max_outside_m": 5.969482769763168e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_035",
+      "max_outside_m": 6.1777633578175e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_036",
+      "max_outside_m": 9.854006143006355e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_037",
+      "max_outside_m": 5.7790904187116077e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_038",
+      "max_outside_m": 5.885755002821291e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_039",
+      "max_outside_m": 7.218372670425577e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_040",
+      "max_outside_m": 1.3563445740161217e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_041",
+      "max_outside_m": 6.491636858965699e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_042",
+      "max_outside_m": 6.401564479202593e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_043",
+      "max_outside_m": 5.2257551064194274e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_044",
+      "max_outside_m": 5.2606818956579815e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_045",
+      "max_outside_m": 6.695576643123147e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_046",
+      "max_outside_m": 6.385841362643863e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_047",
+      "max_outside_m": 5.872875100121355e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_048",
+      "max_outside_m": 6.58825238808447e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_049",
+      "max_outside_m": 5.8649417905565215e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_050",
+      "max_outside_m": 4.9536918289572185e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_051",
+      "max_outside_m": 6.961829135399e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_052",
+      "max_outside_m": 2.6050568813218433e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_053",
+      "max_outside_m": 6.519222767176203e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_054",
+      "max_outside_m": 6.235035907020681e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_055",
+      "max_outside_m": 2.491484018540824e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_056",
+      "max_outside_m": 8.587935453052697e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_057",
+      "max_outside_m": 6.081871210816825e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_058",
+      "max_outside_m": 3.4626484506083965e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_059",
+      "max_outside_m": 7.007033807349128e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_060",
+      "max_outside_m": 1.9070801313830765e-07
+    },
+    {
+      "node": "SM_lifelong_Fragment_061",
+      "max_outside_m": 5.773452441126814e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_062",
+      "max_outside_m": 7.545727234714583e-08
+    },
+    {
+      "node": "SM_lifelong_Fragment_063",
+      "max_outside_m": 4.7943850042808656e-08
+    }
+  ],
+  "knu-teachers-v71-b2-r3-fracture": [
+    {
+      "node": "SM_teachers_Fragment_000",
+      "max_outside_m": 6.409170635879313e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_001",
+      "max_outside_m": 5.0028949656610866e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_002",
+      "max_outside_m": 5.626224672261593e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_003",
+      "max_outside_m": 6.728052351356872e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_004",
+      "max_outside_m": 6.434883634276467e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_005",
+      "max_outside_m": 1.0575265088630381e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_006",
+      "max_outside_m": 6.225028793827025e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_007",
+      "max_outside_m": 5.491860546880112e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_008",
+      "max_outside_m": 5.34265860441252e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_009",
+      "max_outside_m": 5.5044158703276835e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_010",
+      "max_outside_m": 5.109714937279186e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_011",
+      "max_outside_m": 8.286398331391887e-09
+    },
+    {
+      "node": "SM_teachers_Fragment_012",
+      "max_outside_m": 5.9522351075758095e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_013",
+      "max_outside_m": 4.147447120461667e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_014",
+      "max_outside_m": 5.555988534522438e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_015",
+      "max_outside_m": 1.9732561203078536e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_016",
+      "max_outside_m": 5.683530469868803e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_017",
+      "max_outside_m": 1.0340884165627173e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_018",
+      "max_outside_m": 4.55999961679332e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_019",
+      "max_outside_m": 5.167654755500184e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_020",
+      "max_outside_m": 5.4963424284126816e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_021",
+      "max_outside_m": 5.2176251763569326e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_022",
+      "max_outside_m": 5.8097865573980556e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_023",
+      "max_outside_m": 3.766847594954825e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_024",
+      "max_outside_m": 5.446458607727411e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_025",
+      "max_outside_m": 5.606378161715497e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_026",
+      "max_outside_m": 6.370425369162103e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_027",
+      "max_outside_m": 3.719689421755046e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_028",
+      "max_outside_m": 9.438664071159675e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_029",
+      "max_outside_m": 1.4642384033036748e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_030",
+      "max_outside_m": 5.890520628215601e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_031",
+      "max_outside_m": 1.0786861190381636e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_032",
+      "max_outside_m": 8.44632622037933e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_033",
+      "max_outside_m": 5.6592729953675036e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_034",
+      "max_outside_m": 6.565048246698346e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_035",
+      "max_outside_m": 5.5183198531538746e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_036",
+      "max_outside_m": 5.993516345725869e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_037",
+      "max_outside_m": 6.617316183898936e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_038",
+      "max_outside_m": 5.023121277258902e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_039",
+      "max_outside_m": 6.228439898559035e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_040",
+      "max_outside_m": 1.208259470253381e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_041",
+      "max_outside_m": 6.237038532863615e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_042",
+      "max_outside_m": 3.9012778924041314e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_043",
+      "max_outside_m": 1.0437544678554289e-07
+    },
+    {
+      "node": "SM_teachers_Fragment_044",
+      "max_outside_m": 5.363895824728182e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_045",
+      "max_outside_m": 6.263003617112961e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_046",
+      "max_outside_m": 5.6023721106690516e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_047",
+      "max_outside_m": 6.78942155413198e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_048",
+      "max_outside_m": 5.326772195557439e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_049",
+      "max_outside_m": 4.7397464605913875e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_050",
+      "max_outside_m": 5.381861457876003e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_051",
+      "max_outside_m": 6.398500082549496e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_052",
+      "max_outside_m": 5.3069757449675237e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_053",
+      "max_outside_m": 6.136259118882936e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_054",
+      "max_outside_m": 7.298276002987159e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_055",
+      "max_outside_m": 6.597170543187758e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_056",
+      "max_outside_m": 5.090820801023632e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_057",
+      "max_outside_m": 4.915851484210698e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_058",
+      "max_outside_m": 6.342284947224996e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_059",
+      "max_outside_m": 5.571774164270238e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_060",
+      "max_outside_m": 6.77542015825594e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_061",
+      "max_outside_m": 5.669001634789339e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_062",
+      "max_outside_m": 3.256224198611157e-08
+    },
+    {
+      "node": "SM_teachers_Fragment_063",
+      "max_outside_m": 5.638119948692122e-08
+    }
+  ]
+}

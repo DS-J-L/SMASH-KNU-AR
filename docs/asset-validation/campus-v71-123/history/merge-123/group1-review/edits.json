@@ -1,0 +1,190 @@
+{
+  "base_blend_sha256": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+  "base_glb_sha256": "329aab61891c9e661b2a8f30539052587a7517f738a2eb032ceaea39e5b16dea",
+  "candidate_blend_sha256": "5ddf08824b6efb19d99cf96eae31ea7d3dc95ba03254d0edceeaa773e2666a74",
+  "candidate_glb_sha256": "32f352fdd870588009f59fe63d20012eb92f891f2052984ccf428bad25eeecd0",
+  "edits": {
+    "osm/468931915": {
+      "srgb": "#c5d1ca",
+      "observation": "2026-02-19 pale, slightly cool grey in roof interior, 2023-05-23 blue",
+      "pending": "official name, exact survey, roof edge relief and east/west facades",
+      "object": "이름 미등록 건물.003",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          271.6000061035156,
+          156.0500030517578,
+          -4.463944911956787
+        ],
+        [
+          294.3599853515625,
+          187.61000061035156,
+          9.823187828063965
+        ]
+      ],
+      "faces": [
+        11,
+        14
+      ],
+      "old_materials": [
+        "v7 | 항공영상 지붕 #9cb5c0",
+        "v7 | 항공영상 지붕 #9cb5c0"
+      ],
+      "new_material": "v71 Group 1 | osm/468931915 | observed roof top",
+      "source_tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206074/449450",
+          "sha256": "d6cdbebe1656fb9f779fac943ca36e25596a93936615bcae15a56855236e1ae5"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449450",
+          "sha256": "ee557965454cf50b068a4e04ee2bb90c5bb059ed7cc4a2e887437e5fd058f3bf"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206074/449451",
+          "sha256": "39bc57051c558230ecdbe44502b7c0a33b59e92f224b53ab9712ef6d235fccce"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449451",
+          "sha256": "b6944b069c1d0c1abdffab3cc437440e022b12571dda537df18788f509feb8e5"
+        }
+      ],
+      "imagery_metadata": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6134633%2C35.8918719&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "osm/577759119": {
+      "srgb": "#544536",
+      "observation": "brown-grey elongated roof between two courts in three capture epochs",
+      "pending": "official name, roof material type, facade, height",
+      "object": "이름 미등록 건물.006",
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_m": [
+        [
+          -159.55999755859375,
+          -172.99000549316406,
+          -11.737778663635254
+        ],
+        [
+          -146.77000427246094,
+          -147.0800018310547,
+          0.6936635971069336
+        ]
+      ],
+      "faces": [
+        11,
+        14
+      ],
+      "old_materials": [
+        "v7 | 항공영상 지붕 #66706f",
+        "v7 | 항공영상 지붕 #66706f"
+      ],
+      "new_material": "v71 Group 1 | osm/577759119 | observed roof top",
+      "source_tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449443",
+          "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206080/449443",
+          "sha256": "497f973b4622135b494b94ce7d33464ff930371ddbecfd4f65e70db66d225f44"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449444",
+          "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206080/449444",
+          "sha256": "eac6e0e7405bd717a940ee7b96972d304193651a0835f7ea5e8918adc78fd9ce"
+        }
+      ],
+      "imagery_metadata": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6086501%2C35.8888391&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

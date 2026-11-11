@@ -1,0 +1,1290 @@
+{
+  "knu-env-store-v71-b9-r1-fracture": [
+    {
+      "node": "SM_env-store_Fragment_000",
+      "visual_outside_collider_m": 6.732172597168073e-08,
+      "collider_outside_visual_convex_hull_m": 5.0789763950120914e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_001",
+      "visual_outside_collider_m": 4.8578534306287224e-08,
+      "collider_outside_visual_convex_hull_m": 6.76863190357535e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_002",
+      "visual_outside_collider_m": 6.533427956978421e-08,
+      "collider_outside_visual_convex_hull_m": 6.236803029580074e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_003",
+      "visual_outside_collider_m": 9.622899246886085e-08,
+      "collider_outside_visual_convex_hull_m": 7.268058521692211e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_004",
+      "visual_outside_collider_m": 7.139987687199145e-08,
+      "collider_outside_visual_convex_hull_m": 5.144502468468204e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_005",
+      "visual_outside_collider_m": 5.4490720630129275e-08,
+      "collider_outside_visual_convex_hull_m": 5.065164970785574e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_006",
+      "visual_outside_collider_m": 5.064749006300495e-08,
+      "collider_outside_visual_convex_hull_m": 6.687384665471363e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_007",
+      "visual_outside_collider_m": 6.206602501390712e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_008",
+      "visual_outside_collider_m": 4.8584436224130556e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_009",
+      "visual_outside_collider_m": 5.95508325429428e-08,
+      "collider_outside_visual_convex_hull_m": 4.377180315429108e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_010",
+      "visual_outside_collider_m": 9.685330104591827e-08,
+      "collider_outside_visual_convex_hull_m": 6.524960161069515e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_011",
+      "visual_outside_collider_m": 5.7164700889567044e-08,
+      "collider_outside_visual_convex_hull_m": 6.259987353485208e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_012",
+      "visual_outside_collider_m": 5.9467879176544614e-08,
+      "collider_outside_visual_convex_hull_m": 7.805045179609671e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_013",
+      "visual_outside_collider_m": 4.6971632944314834e-08,
+      "collider_outside_visual_convex_hull_m": 7.546208563580237e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_014",
+      "visual_outside_collider_m": 6.003173247393079e-08,
+      "collider_outside_visual_convex_hull_m": 4.864797853443292e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_015",
+      "visual_outside_collider_m": 6.317137279943097e-08,
+      "collider_outside_visual_convex_hull_m": 6.20795553296638e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_016",
+      "visual_outside_collider_m": 9.7466367199317e-08,
+      "collider_outside_visual_convex_hull_m": 4.631420311151935e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_017",
+      "visual_outside_collider_m": 5.99664702893854e-08,
+      "collider_outside_visual_convex_hull_m": 5.765280503000625e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_018",
+      "visual_outside_collider_m": 7.040895613763531e-08,
+      "collider_outside_visual_convex_hull_m": 5.874018854656882e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_019",
+      "visual_outside_collider_m": 6.803751992356943e-08,
+      "collider_outside_visual_convex_hull_m": 5.905393091198974e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_020",
+      "visual_outside_collider_m": 5.3718789583268034e-08,
+      "collider_outside_visual_convex_hull_m": 6.70332923335959e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_021",
+      "visual_outside_collider_m": 6.976926286705876e-08,
+      "collider_outside_visual_convex_hull_m": 4.2214967188591856e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_022",
+      "visual_outside_collider_m": 6.734400931351914e-08,
+      "collider_outside_visual_convex_hull_m": 4.099821185321595e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_023",
+      "visual_outside_collider_m": 5.4818705325088146e-08,
+      "collider_outside_visual_convex_hull_m": 6.830036666793937e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_024",
+      "visual_outside_collider_m": 4.025273472874069e-08,
+      "collider_outside_visual_convex_hull_m": 5.0868386614055794e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_025",
+      "visual_outside_collider_m": 5.959006937894529e-08,
+      "collider_outside_visual_convex_hull_m": 3.7000825597877096e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_026",
+      "visual_outside_collider_m": 6.02736454080599e-08,
+      "collider_outside_visual_convex_hull_m": 7.165344612092284e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_027",
+      "visual_outside_collider_m": 5.523195724388419e-08,
+      "collider_outside_visual_convex_hull_m": 4.5267376125313064e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_028",
+      "visual_outside_collider_m": 6.384636641598718e-08,
+      "collider_outside_visual_convex_hull_m": 5.929984564501112e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_029",
+      "visual_outside_collider_m": 1.1146757247781913e-07,
+      "collider_outside_visual_convex_hull_m": 6.831651419569873e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_030",
+      "visual_outside_collider_m": 4.52734574274416e-08,
+      "collider_outside_visual_convex_hull_m": 6.041894048958163e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_031",
+      "visual_outside_collider_m": 7.229941262343331e-08,
+      "collider_outside_visual_convex_hull_m": 5.92264196019876e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_032",
+      "visual_outside_collider_m": 9.418876698030765e-08,
+      "collider_outside_visual_convex_hull_m": 5.997463464746389e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_033",
+      "visual_outside_collider_m": 5.933072237673809e-08,
+      "collider_outside_visual_convex_hull_m": 5.104301267766509e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_034",
+      "visual_outside_collider_m": 5.1392556044138615e-08,
+      "collider_outside_visual_convex_hull_m": 5.015957099674395e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_035",
+      "visual_outside_collider_m": 1.0337338818278141e-07,
+      "collider_outside_visual_convex_hull_m": 6.59927959778539e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_036",
+      "visual_outside_collider_m": 6.212801750837826e-08,
+      "collider_outside_visual_convex_hull_m": 7.611194510759312e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_037",
+      "visual_outside_collider_m": 6.940773868147065e-08,
+      "collider_outside_visual_convex_hull_m": 4.980011672484075e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_038",
+      "visual_outside_collider_m": 6.67782099061931e-08,
+      "collider_outside_visual_convex_hull_m": 6.364741880759972e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_039",
+      "visual_outside_collider_m": 5.413167422640974e-08,
+      "collider_outside_visual_convex_hull_m": 4.837778797006642e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_040",
+      "visual_outside_collider_m": 5.966869742746184e-08,
+      "collider_outside_visual_convex_hull_m": 4.7149313092686995e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_041",
+      "visual_outside_collider_m": 5.540086206456962e-08,
+      "collider_outside_visual_convex_hull_m": 6.719456749348929e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_042",
+      "visual_outside_collider_m": 6.173661010189235e-08,
+      "collider_outside_visual_convex_hull_m": 5.665311356151115e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_043",
+      "visual_outside_collider_m": 5.056577181972166e-08,
+      "collider_outside_visual_convex_hull_m": 5.0689665076486534e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_044",
+      "visual_outside_collider_m": 6.569966451430709e-08,
+      "collider_outside_visual_convex_hull_m": 4.535154107809802e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_045",
+      "visual_outside_collider_m": 4.743073950264076e-08,
+      "collider_outside_visual_convex_hull_m": 4.981812856685863e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_046",
+      "visual_outside_collider_m": 5.551115123125783e-17,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_047",
+      "visual_outside_collider_m": 1.8523852909901883e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_048",
+      "visual_outside_collider_m": 7.811860733286657e-08,
+      "collider_outside_visual_convex_hull_m": 4.565280678492378e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_049",
+      "visual_outside_collider_m": 4.6955348553812115e-08,
+      "collider_outside_visual_convex_hull_m": 5.890301771338535e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_050",
+      "visual_outside_collider_m": 5.437972979555061e-08,
+      "collider_outside_visual_convex_hull_m": 6.151273597432283e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_051",
+      "visual_outside_collider_m": 4.9383998335095214e-08,
+      "collider_outside_visual_convex_hull_m": 5.4194605469959356e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_052",
+      "visual_outside_collider_m": 2.9296319703497886e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_053",
+      "visual_outside_collider_m": 4.603717868034707e-08,
+      "collider_outside_visual_convex_hull_m": 7.344669537834303e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_054",
+      "visual_outside_collider_m": 5.609416470209183e-08,
+      "collider_outside_visual_convex_hull_m": 4.44505776908688e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_055",
+      "visual_outside_collider_m": 4.415061582996316e-08,
+      "collider_outside_visual_convex_hull_m": 5.957896703767673e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_056",
+      "visual_outside_collider_m": 5.4910856306378264e-08,
+      "collider_outside_visual_convex_hull_m": 5.7414428572544196e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_057",
+      "visual_outside_collider_m": 5.148057380388593e-08,
+      "collider_outside_visual_convex_hull_m": 6.186693260468168e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_058",
+      "visual_outside_collider_m": 2.4729265468703687e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_env-store_Fragment_059",
+      "visual_outside_collider_m": 6.066763208467663e-08,
+      "collider_outside_visual_convex_hull_m": 5.07832316476442e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_060",
+      "visual_outside_collider_m": 5.941493907979378e-08,
+      "collider_outside_visual_convex_hull_m": 6.851060335710812e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_061",
+      "visual_outside_collider_m": 6.293586457539746e-08,
+      "collider_outside_visual_convex_hull_m": 5.148464704562983e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_062",
+      "visual_outside_collider_m": 6.508247102354758e-08,
+      "collider_outside_visual_convex_hull_m": 5.6041558393893354e-08
+    },
+    {
+      "node": "SM_env-store_Fragment_063",
+      "visual_outside_collider_m": 4.934075825691053e-08,
+      "collider_outside_visual_convex_hull_m": 3.1545574763480744e-08
+    }
+  ],
+  "knu-isotope-store-v71-b9-r1-fracture": [
+    {
+      "node": "SM_isotope-store_Fragment_000",
+      "visual_outside_collider_m": 4.7391939470009525e-08,
+      "collider_outside_visual_convex_hull_m": 4.5178532553924455e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_001",
+      "visual_outside_collider_m": 3.569702679562248e-07,
+      "collider_outside_visual_convex_hull_m": 4.264674183240835e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_002",
+      "visual_outside_collider_m": 1.4774297291131333e-07,
+      "collider_outside_visual_convex_hull_m": 5.759268346949842e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_003",
+      "visual_outside_collider_m": 5.4617322692296355e-08,
+      "collider_outside_visual_convex_hull_m": 5.177745490692054e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_004",
+      "visual_outside_collider_m": 7.586262371073182e-08,
+      "collider_outside_visual_convex_hull_m": 5.404419840815411e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_005",
+      "visual_outside_collider_m": 4.903056886884638e-08,
+      "collider_outside_visual_convex_hull_m": 6.254428487617592e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_006",
+      "visual_outside_collider_m": 5.0056127853803645e-08,
+      "collider_outside_visual_convex_hull_m": 5.736119440546972e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_007",
+      "visual_outside_collider_m": 6.129495916384897e-08,
+      "collider_outside_visual_convex_hull_m": 6.021597620531338e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_008",
+      "visual_outside_collider_m": 1.0341815459558035e-07,
+      "collider_outside_visual_convex_hull_m": 4.8034669256069584e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_009",
+      "visual_outside_collider_m": 4.582259252594589e-08,
+      "collider_outside_visual_convex_hull_m": 6.766512831990479e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_010",
+      "visual_outside_collider_m": 4.790962943035382e-08,
+      "collider_outside_visual_convex_hull_m": 5.937663635768864e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_011",
+      "visual_outside_collider_m": 5.491193865586608e-08,
+      "collider_outside_visual_convex_hull_m": 4.678330313423462e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_012",
+      "visual_outside_collider_m": 6.33980548753188e-08,
+      "collider_outside_visual_convex_hull_m": 5.09258227254783e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_013",
+      "visual_outside_collider_m": 2.3361910179986456e-07,
+      "collider_outside_visual_convex_hull_m": 5.700597463520474e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_014",
+      "visual_outside_collider_m": 6.30209391339065e-08,
+      "collider_outside_visual_convex_hull_m": 4.361625902116195e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_015",
+      "visual_outside_collider_m": 4.930609871778291e-08,
+      "collider_outside_visual_convex_hull_m": 6.196991039764121e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_016",
+      "visual_outside_collider_m": 5.803666297543586e-08,
+      "collider_outside_visual_convex_hull_m": 4.296810957038488e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_017",
+      "visual_outside_collider_m": 4.719778366746308e-08,
+      "collider_outside_visual_convex_hull_m": 5.374087540949146e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_018",
+      "visual_outside_collider_m": 2.8943512048185127e-07,
+      "collider_outside_visual_convex_hull_m": 5.568291093493993e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_019",
+      "visual_outside_collider_m": 4.885666698983826e-08,
+      "collider_outside_visual_convex_hull_m": 7.207346507109857e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_020",
+      "visual_outside_collider_m": 5.1621853847105825e-08,
+      "collider_outside_visual_convex_hull_m": 4.927962760081783e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_021",
+      "visual_outside_collider_m": 4.755666280220616e-08,
+      "collider_outside_visual_convex_hull_m": 4.541768494625842e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_022",
+      "visual_outside_collider_m": 4.5812028559577556e-08,
+      "collider_outside_visual_convex_hull_m": 5.715091083713375e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_023",
+      "visual_outside_collider_m": 3.8762249715551533e-08,
+      "collider_outside_visual_convex_hull_m": 5.883270481898961e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_024",
+      "visual_outside_collider_m": 4.968162574392476e-08,
+      "collider_outside_visual_convex_hull_m": 6.658918202950836e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_025",
+      "visual_outside_collider_m": 6.76951456279884e-08,
+      "collider_outside_visual_convex_hull_m": 5.709320066715762e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_026",
+      "visual_outside_collider_m": 6.191094115148843e-08,
+      "collider_outside_visual_convex_hull_m": 5.658751364712167e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_027",
+      "visual_outside_collider_m": 1.6725659432448303e-07,
+      "collider_outside_visual_convex_hull_m": 6.790325758621041e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_028",
+      "visual_outside_collider_m": 9.434371950334253e-08,
+      "collider_outside_visual_convex_hull_m": 6.490290488381234e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_029",
+      "visual_outside_collider_m": 5.335061728506396e-08,
+      "collider_outside_visual_convex_hull_m": 6.000006974593575e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_030",
+      "visual_outside_collider_m": 1.0545830067543172e-07,
+      "collider_outside_visual_convex_hull_m": 5.4034419411097545e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_031",
+      "visual_outside_collider_m": 5.2262809996372894e-08,
+      "collider_outside_visual_convex_hull_m": 5.7991979302007834e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_032",
+      "visual_outside_collider_m": 6.273681812940524e-08,
+      "collider_outside_visual_convex_hull_m": 5.09765027412179e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_033",
+      "visual_outside_collider_m": 8.068174717212884e-08,
+      "collider_outside_visual_convex_hull_m": 5.51941151116786e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_034",
+      "visual_outside_collider_m": 5.2423605068074863e-08,
+      "collider_outside_visual_convex_hull_m": 5.923702642296469e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_035",
+      "visual_outside_collider_m": 5.025674511272005e-08,
+      "collider_outside_visual_convex_hull_m": 6.687027760687858e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_036",
+      "visual_outside_collider_m": 3.492333751770049e-07,
+      "collider_outside_visual_convex_hull_m": 5.4580810038284966e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_037",
+      "visual_outside_collider_m": 5.958567614317012e-08,
+      "collider_outside_visual_convex_hull_m": 5.64641159800372e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_038",
+      "visual_outside_collider_m": 3.7739184430285455e-08,
+      "collider_outside_visual_convex_hull_m": 6.840553186393539e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_039",
+      "visual_outside_collider_m": 5.181988327329634e-08,
+      "collider_outside_visual_convex_hull_m": 5.77017875147412e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_040",
+      "visual_outside_collider_m": 5.142870876384542e-08,
+      "collider_outside_visual_convex_hull_m": 4.419168134206508e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_041",
+      "visual_outside_collider_m": 9.163231945441552e-08,
+      "collider_outside_visual_convex_hull_m": 5.6251108659921556e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_042",
+      "visual_outside_collider_m": 6.105790316401905e-08,
+      "collider_outside_visual_convex_hull_m": 5.3624032131383004e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_043",
+      "visual_outside_collider_m": 7.483437455824138e-08,
+      "collider_outside_visual_convex_hull_m": 4.438313283561257e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_044",
+      "visual_outside_collider_m": 4.642480586070086e-08,
+      "collider_outside_visual_convex_hull_m": 4.755592453165036e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_045",
+      "visual_outside_collider_m": 5.550667118991992e-08,
+      "collider_outside_visual_convex_hull_m": 4.391832943151375e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_046",
+      "visual_outside_collider_m": 3.1163740399353657e-07,
+      "collider_outside_visual_convex_hull_m": 5.1035287704226384e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_047",
+      "visual_outside_collider_m": 3.231276557436047e-07,
+      "collider_outside_visual_convex_hull_m": 6.026714574614012e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_048",
+      "visual_outside_collider_m": 8.728332544227779e-08,
+      "collider_outside_visual_convex_hull_m": 4.826853483574922e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_049",
+      "visual_outside_collider_m": 5.473719952298062e-08,
+      "collider_outside_visual_convex_hull_m": 5.962044100082942e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_050",
+      "visual_outside_collider_m": 5.905341174394785e-08,
+      "collider_outside_visual_convex_hull_m": 5.382147590105024e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_051",
+      "visual_outside_collider_m": 5.0662385370214835e-08,
+      "collider_outside_visual_convex_hull_m": 6.813697966956411e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_052",
+      "visual_outside_collider_m": 5.4371149998955204e-08,
+      "collider_outside_visual_convex_hull_m": 4.474743700577655e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_053",
+      "visual_outside_collider_m": 6.26997847807953e-08,
+      "collider_outside_visual_convex_hull_m": 5.7251230561883304e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_054",
+      "visual_outside_collider_m": 4.744145645774189e-08,
+      "collider_outside_visual_convex_hull_m": 4.9871428431380593e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_055",
+      "visual_outside_collider_m": 6.186824552667503e-08,
+      "collider_outside_visual_convex_hull_m": 6.105698996394793e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_056",
+      "visual_outside_collider_m": 4.923653382227222e-08,
+      "collider_outside_visual_convex_hull_m": 6.623094277180552e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_057",
+      "visual_outside_collider_m": 4.8159997850794056e-08,
+      "collider_outside_visual_convex_hull_m": 6.156603299389829e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_058",
+      "visual_outside_collider_m": 2.816902918423292e-07,
+      "collider_outside_visual_convex_hull_m": 6.012403300226232e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_059",
+      "visual_outside_collider_m": 5.011823023259865e-08,
+      "collider_outside_visual_convex_hull_m": 5.207037565013728e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_060",
+      "visual_outside_collider_m": 6.273900637898677e-08,
+      "collider_outside_visual_convex_hull_m": 5.124299845560287e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_061",
+      "visual_outside_collider_m": 6.205188975150211e-08,
+      "collider_outside_visual_convex_hull_m": 5.342525633000861e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_062",
+      "visual_outside_collider_m": 3.981327953428426e-08,
+      "collider_outside_visual_convex_hull_m": 5.047568651939116e-08
+    },
+    {
+      "node": "SM_isotope-store_Fragment_063",
+      "visual_outside_collider_m": 6.03866518178453e-08,
+      "collider_outside_visual_convex_hull_m": 5.316864540305666e-08
+    }
+  ],
+  "knu-pp-structural-v71-b9-r1-fracture": [
+    {
+      "node": "SM_pp-structural_Fragment_000",
+      "visual_outside_collider_m": 4.10500854974849e-08,
+      "collider_outside_visual_convex_hull_m": 4.522223751024512e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_001",
+      "visual_outside_collider_m": 8.293376452250811e-07,
+      "collider_outside_visual_convex_hull_m": 5.96520662310418e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_002",
+      "visual_outside_collider_m": 1.1609945323731719e-06,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_pp-structural_Fragment_003",
+      "visual_outside_collider_m": 6.172282165928245e-08,
+      "collider_outside_visual_convex_hull_m": 5.304917996551417e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_004",
+      "visual_outside_collider_m": 5.0971701248681e-08,
+      "collider_outside_visual_convex_hull_m": 6.055099499580052e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_005",
+      "visual_outside_collider_m": 6.412144362699657e-08,
+      "collider_outside_visual_convex_hull_m": 6.252133766260215e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_006",
+      "visual_outside_collider_m": 4.630380170955739e-08,
+      "collider_outside_visual_convex_hull_m": 4.965115381339036e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_007",
+      "visual_outside_collider_m": 9.502441515318871e-07,
+      "collider_outside_visual_convex_hull_m": 6.418526932172597e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_008",
+      "visual_outside_collider_m": 7.543981683233447e-07,
+      "collider_outside_visual_convex_hull_m": 6.071813807295712e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_009",
+      "visual_outside_collider_m": 1.2512511649021008e-06,
+      "collider_outside_visual_convex_hull_m": 6.07249358575146e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_010",
+      "visual_outside_collider_m": 1.0120466366059233e-06,
+      "collider_outside_visual_convex_hull_m": 6.13108258051831e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_011",
+      "visual_outside_collider_m": 1.226991980046721e-06,
+      "collider_outside_visual_convex_hull_m": 6.789720730093762e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_012",
+      "visual_outside_collider_m": 6.953587877722711e-08,
+      "collider_outside_visual_convex_hull_m": 5.394699842398154e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_013",
+      "visual_outside_collider_m": 4.784782295375045e-08,
+      "collider_outside_visual_convex_hull_m": 5.812211878453155e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_014",
+      "visual_outside_collider_m": 5.4988354203366896e-08,
+      "collider_outside_visual_convex_hull_m": 7.361784576387365e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_015",
+      "visual_outside_collider_m": 4.7149910598065503e-07,
+      "collider_outside_visual_convex_hull_m": 5.572156452915422e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_016",
+      "visual_outside_collider_m": 1.042102137860379e-06,
+      "collider_outside_visual_convex_hull_m": 5.036664940671898e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_017",
+      "visual_outside_collider_m": 6.123985402117782e-08,
+      "collider_outside_visual_convex_hull_m": 5.021821153361472e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_018",
+      "visual_outside_collider_m": 4.661162802954699e-08,
+      "collider_outside_visual_convex_hull_m": 7.305597904405658e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_019",
+      "visual_outside_collider_m": 5.586959331282948e-08,
+      "collider_outside_visual_convex_hull_m": 6.1832735265277e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_020",
+      "visual_outside_collider_m": 7.787953581472884e-07,
+      "collider_outside_visual_convex_hull_m": 4.529003155839817e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_021",
+      "visual_outside_collider_m": 4.791187580011069e-08,
+      "collider_outside_visual_convex_hull_m": 4.1790343907610605e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_022",
+      "visual_outside_collider_m": 1.9892319846892548e-08,
+      "collider_outside_visual_convex_hull_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_pp-structural_Fragment_023",
+      "visual_outside_collider_m": 1.188530002471655e-06,
+      "collider_outside_visual_convex_hull_m": 6.02775225289065e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_024",
+      "visual_outside_collider_m": 7.734219714672363e-07,
+      "collider_outside_visual_convex_hull_m": 5.536672326167391e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_025",
+      "visual_outside_collider_m": 7.894118464468747e-08,
+      "collider_outside_visual_convex_hull_m": 5.932492047611149e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_026",
+      "visual_outside_collider_m": 6.854054754312777e-08,
+      "collider_outside_visual_convex_hull_m": 4.095068747989039e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_027",
+      "visual_outside_collider_m": 5.751507198281658e-08,
+      "collider_outside_visual_convex_hull_m": 5.102365618903093e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_028",
+      "visual_outside_collider_m": 5.985396211993788e-08,
+      "collider_outside_visual_convex_hull_m": 5.161238220141584e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_029",
+      "visual_outside_collider_m": 1.2736024015969072e-06,
+      "collider_outside_visual_convex_hull_m": 6.107264158283776e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_030",
+      "visual_outside_collider_m": 5.428750188274378e-08,
+      "collider_outside_visual_convex_hull_m": 5.4593946668957116e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_031",
+      "visual_outside_collider_m": 1.0534715025323216e-06,
+      "collider_outside_visual_convex_hull_m": 6.00224706048813e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_032",
+      "visual_outside_collider_m": 2.872375924334314e-07,
+      "collider_outside_visual_convex_hull_m": 6.213186115600067e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_033",
+      "visual_outside_collider_m": 1.2030154846742747e-06,
+      "collider_outside_visual_convex_hull_m": 5.896700595864335e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_034",
+      "visual_outside_collider_m": 2.913437775753369e-07,
+      "collider_outside_visual_convex_hull_m": 5.45378174010569e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_035",
+      "visual_outside_collider_m": 9.795287592151425e-08,
+      "collider_outside_visual_convex_hull_m": 5.382596929282002e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_036",
+      "visual_outside_collider_m": 5.367088573571266e-08,
+      "collider_outside_visual_convex_hull_m": 6.20475180679314e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_037",
+      "visual_outside_collider_m": 2.1153883908442417e-07,
+      "collider_outside_visual_convex_hull_m": 5.344061738965511e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_038",
+      "visual_outside_collider_m": 5.259967805759658e-08,
+      "collider_outside_visual_convex_hull_m": 7.111629096723249e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_039",
+      "visual_outside_collider_m": 4.838195882816976e-08,
+      "collider_outside_visual_convex_hull_m": 8.324676134541242e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_040",
+      "visual_outside_collider_m": 7.379143862618065e-08,
+      "collider_outside_visual_convex_hull_m": 5.9429050291992525e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_041",
+      "visual_outside_collider_m": 5.6462043263039163e-08,
+      "collider_outside_visual_convex_hull_m": 7.539787036381362e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_042",
+      "visual_outside_collider_m": 4.9664561851958666e-08,
+      "collider_outside_visual_convex_hull_m": 6.709723143760726e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_043",
+      "visual_outside_collider_m": 6.819593800777568e-08,
+      "collider_outside_visual_convex_hull_m": 5.5774074581016464e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_044",
+      "visual_outside_collider_m": 7.559522480216074e-08,
+      "collider_outside_visual_convex_hull_m": 5.259425331360923e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_045",
+      "visual_outside_collider_m": 8.231097159416834e-08,
+      "collider_outside_visual_convex_hull_m": 4.5264127779276464e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_046",
+      "visual_outside_collider_m": 6.370575178493709e-08,
+      "collider_outside_visual_convex_hull_m": 4.5729144609873984e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_047",
+      "visual_outside_collider_m": 5.038908879040349e-08,
+      "collider_outside_visual_convex_hull_m": 4.6775560633149915e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_048",
+      "visual_outside_collider_m": 5.294217284013136e-08,
+      "collider_outside_visual_convex_hull_m": 4.863807495647521e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_049",
+      "visual_outside_collider_m": 6.091678042552395e-08,
+      "collider_outside_visual_convex_hull_m": 7.657022532692181e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_050",
+      "visual_outside_collider_m": 5.735605720924575e-08,
+      "collider_outside_visual_convex_hull_m": 5.2819870866027685e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_051",
+      "visual_outside_collider_m": 6.307234029501174e-08,
+      "collider_outside_visual_convex_hull_m": 6.027307120071157e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_052",
+      "visual_outside_collider_m": 6.271257499412819e-08,
+      "collider_outside_visual_convex_hull_m": 5.411864670290534e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_053",
+      "visual_outside_collider_m": 4.6375817575050604e-08,
+      "collider_outside_visual_convex_hull_m": 6.063985227844348e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_054",
+      "visual_outside_collider_m": 4.7982216727637805e-08,
+      "collider_outside_visual_convex_hull_m": 5.31115054158704e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_055",
+      "visual_outside_collider_m": 5.0818357744120135e-08,
+      "collider_outside_visual_convex_hull_m": 6.051334211498727e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_056",
+      "visual_outside_collider_m": 6.164368672456622e-08,
+      "collider_outside_visual_convex_hull_m": 5.309807529774169e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_057",
+      "visual_outside_collider_m": 7.517926448041834e-08,
+      "collider_outside_visual_convex_hull_m": 6.480087050286798e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_058",
+      "visual_outside_collider_m": 4.470348358154297e-08,
+      "collider_outside_visual_convex_hull_m": 6.409328573431239e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_059",
+      "visual_outside_collider_m": 7.430770401772868e-08,
+      "collider_outside_visual_convex_hull_m": 6.846996009057804e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_060",
+      "visual_outside_collider_m": 8.836737772077718e-07,
+      "collider_outside_visual_convex_hull_m": 4.490957095093506e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_061",
+      "visual_outside_collider_m": 6.54893419216318e-08,
+      "collider_outside_visual_convex_hull_m": 6.377340749930127e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_062",
+      "visual_outside_collider_m": 4.4563410961373506e-08,
+      "collider_outside_visual_convex_hull_m": 4.605224360187954e-08
+    },
+    {
+      "node": "SM_pp-structural_Fragment_063",
+      "visual_outside_collider_m": 5.2434129371725646e-08,
+      "collider_outside_visual_convex_hull_m": 5.2415632362246e-08
+    }
+  ],
+  "knu-rock-store-v71-b9-r1-fracture": [
+    {
+      "node": "SM_rock-store_Fragment_000",
+      "visual_outside_collider_m": 7.91264803123859e-08,
+      "collider_outside_visual_convex_hull_m": 6.050876830143714e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_001",
+      "visual_outside_collider_m": 4.499665912094386e-08,
+      "collider_outside_visual_convex_hull_m": 4.705204750821146e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_002",
+      "visual_outside_collider_m": 4.806086092989936e-08,
+      "collider_outside_visual_convex_hull_m": 5.342071546232674e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_003",
+      "visual_outside_collider_m": 4.782130383351735e-08,
+      "collider_outside_visual_convex_hull_m": 4.564849537258553e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_004",
+      "visual_outside_collider_m": 6.511414715748565e-08,
+      "collider_outside_visual_convex_hull_m": 5.971965000295398e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_005",
+      "visual_outside_collider_m": 8.173849116999143e-08,
+      "collider_outside_visual_convex_hull_m": 5.817515558170783e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_006",
+      "visual_outside_collider_m": 4.9537017737799616e-08,
+      "collider_outside_visual_convex_hull_m": 6.989677131530314e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_007",
+      "visual_outside_collider_m": 7.102703947214906e-08,
+      "collider_outside_visual_convex_hull_m": 5.2599362310168374e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_008",
+      "visual_outside_collider_m": 1.2224640677516163e-07,
+      "collider_outside_visual_convex_hull_m": 5.249025840370347e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_009",
+      "visual_outside_collider_m": 5.453151966094971e-08,
+      "collider_outside_visual_convex_hull_m": 5.0064511925018707e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_010",
+      "visual_outside_collider_m": 2.3153133604791876e-07,
+      "collider_outside_visual_convex_hull_m": 5.81750530526115e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_011",
+      "visual_outside_collider_m": 7.151854550246917e-08,
+      "collider_outside_visual_convex_hull_m": 7.064962770364502e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_012",
+      "visual_outside_collider_m": 6.03308329405472e-08,
+      "collider_outside_visual_convex_hull_m": 4.8278200714957364e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_013",
+      "visual_outside_collider_m": 7.964686804529109e-08,
+      "collider_outside_visual_convex_hull_m": 5.3811179401286324e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_014",
+      "visual_outside_collider_m": 6.00325911620514e-08,
+      "collider_outside_visual_convex_hull_m": 5.604753214316638e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_015",
+      "visual_outside_collider_m": 7.169569550269372e-07,
+      "collider_outside_visual_convex_hull_m": 7.939619495189731e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_016",
+      "visual_outside_collider_m": 6.469927735230918e-08,
+      "collider_outside_visual_convex_hull_m": 6.093276397334257e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_017",
+      "visual_outside_collider_m": 6.359068688288616e-08,
+      "collider_outside_visual_convex_hull_m": 6.29533607188204e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_018",
+      "visual_outside_collider_m": 7.54416477066755e-08,
+      "collider_outside_visual_convex_hull_m": 5.8069213992872903e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_019",
+      "visual_outside_collider_m": 7.786394419229126e-07,
+      "collider_outside_visual_convex_hull_m": 7.66559422604729e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_020",
+      "visual_outside_collider_m": 4.529903219196996e-08,
+      "collider_outside_visual_convex_hull_m": 4.818812393558858e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_021",
+      "visual_outside_collider_m": 3.633002826353149e-08,
+      "collider_outside_visual_convex_hull_m": 5.899943222864579e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_022",
+      "visual_outside_collider_m": 6.707717603582353e-08,
+      "collider_outside_visual_convex_hull_m": 6.341578456803276e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_023",
+      "visual_outside_collider_m": 5.981938278054599e-08,
+      "collider_outside_visual_convex_hull_m": 5.989670537331904e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_024",
+      "visual_outside_collider_m": 6.286870044003301e-08,
+      "collider_outside_visual_convex_hull_m": 6.571147828648982e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_025",
+      "visual_outside_collider_m": 7.061165518962298e-08,
+      "collider_outside_visual_convex_hull_m": 5.28134941335523e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_026",
+      "visual_outside_collider_m": 6.575148936427411e-08,
+      "collider_outside_visual_convex_hull_m": 7.042057226236409e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_027",
+      "visual_outside_collider_m": 6.156060047834977e-08,
+      "collider_outside_visual_convex_hull_m": 7.672045093665147e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_028",
+      "visual_outside_collider_m": 7.487909109427093e-08,
+      "collider_outside_visual_convex_hull_m": 7.427713424879023e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_029",
+      "visual_outside_collider_m": 7.565569354328616e-08,
+      "collider_outside_visual_convex_hull_m": 5.778646211540561e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_030",
+      "visual_outside_collider_m": 6.556833437310061e-08,
+      "collider_outside_visual_convex_hull_m": 6.956555953507859e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_031",
+      "visual_outside_collider_m": 4.312749513069036e-08,
+      "collider_outside_visual_convex_hull_m": 5.364860261591886e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_032",
+      "visual_outside_collider_m": 6.584979017620896e-08,
+      "collider_outside_visual_convex_hull_m": 4.6701023714845746e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_033",
+      "visual_outside_collider_m": 5.691626908665981e-08,
+      "collider_outside_visual_convex_hull_m": 4.714058068899796e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_034",
+      "visual_outside_collider_m": 2.0278709336740697e-07,
+      "collider_outside_visual_convex_hull_m": 5.8593483509561395e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_035",
+      "visual_outside_collider_m": 2.1452990567327745e-07,
+      "collider_outside_visual_convex_hull_m": 7.009874991581455e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_036",
+      "visual_outside_collider_m": 6.319629736184496e-08,
+      "collider_outside_visual_convex_hull_m": 6.461561175008512e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_037",
+      "visual_outside_collider_m": 6.404415117677864e-08,
+      "collider_outside_visual_convex_hull_m": 6.77003474391924e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_038",
+      "visual_outside_collider_m": 3.783331947726509e-08,
+      "collider_outside_visual_convex_hull_m": 5.669316993639484e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_039",
+      "visual_outside_collider_m": 6.350760242690434e-08,
+      "collider_outside_visual_convex_hull_m": 5.360976704227305e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_040",
+      "visual_outside_collider_m": 7.948766609922053e-07,
+      "collider_outside_visual_convex_hull_m": 7.923066908110954e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_041",
+      "visual_outside_collider_m": 6.371802480087396e-08,
+      "collider_outside_visual_convex_hull_m": 6.531196705683584e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_042",
+      "visual_outside_collider_m": 5.844016588707479e-08,
+      "collider_outside_visual_convex_hull_m": 6.709832668649884e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_043",
+      "visual_outside_collider_m": 5.6673421677810865e-08,
+      "collider_outside_visual_convex_hull_m": 6.400735477751773e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_044",
+      "visual_outside_collider_m": 5.6532207193260575e-08,
+      "collider_outside_visual_convex_hull_m": 6.823630610552911e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_045",
+      "visual_outside_collider_m": 4.964457239742259e-08,
+      "collider_outside_visual_convex_hull_m": 5.019490498248125e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_046",
+      "visual_outside_collider_m": 6.395871848807744e-08,
+      "collider_outside_visual_convex_hull_m": 5.3883976280921786e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_047",
+      "visual_outside_collider_m": 5.180490292300277e-08,
+      "collider_outside_visual_convex_hull_m": 6.807193014823909e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_048",
+      "visual_outside_collider_m": 5.1087522517923034e-08,
+      "collider_outside_visual_convex_hull_m": 7.055400264022182e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_049",
+      "visual_outside_collider_m": 2.044875993534312e-07,
+      "collider_outside_visual_convex_hull_m": 5.373895306526322e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_050",
+      "visual_outside_collider_m": 5.2619420598531974e-08,
+      "collider_outside_visual_convex_hull_m": 4.5439194571068875e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_051",
+      "visual_outside_collider_m": 6.758484305535717e-08,
+      "collider_outside_visual_convex_hull_m": 5.967498784009706e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_052",
+      "visual_outside_collider_m": 6.108830996054415e-07,
+      "collider_outside_visual_convex_hull_m": 6.0926181433274e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_053",
+      "visual_outside_collider_m": 6.533577703859983e-08,
+      "collider_outside_visual_convex_hull_m": 4.3487040191081405e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_054",
+      "visual_outside_collider_m": 1.443687690505513e-07,
+      "collider_outside_visual_convex_hull_m": 5.388027465857981e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_055",
+      "visual_outside_collider_m": 5.56300164822332e-08,
+      "collider_outside_visual_convex_hull_m": 5.7802959307906576e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_056",
+      "visual_outside_collider_m": 6.5562030054922e-08,
+      "collider_outside_visual_convex_hull_m": 6.876118474608006e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_057",
+      "visual_outside_collider_m": 6.185280551629369e-08,
+      "collider_outside_visual_convex_hull_m": 7.377060268209945e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_058",
+      "visual_outside_collider_m": 1.0206709777360601e-07,
+      "collider_outside_visual_convex_hull_m": 6.79479134069183e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_059",
+      "visual_outside_collider_m": 6.462701837572915e-08,
+      "collider_outside_visual_convex_hull_m": 4.884339513400171e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_060",
+      "visual_outside_collider_m": 5.581723316883114e-08,
+      "collider_outside_visual_convex_hull_m": 6.86842311914404e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_061",
+      "visual_outside_collider_m": 5.907202207944273e-08,
+      "collider_outside_visual_convex_hull_m": 7.033730323180443e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_062",
+      "visual_outside_collider_m": 6.105236130538039e-08,
+      "collider_outside_visual_convex_hull_m": 4.7829623289752377e-08
+    },
+    {
+      "node": "SM_rock-store_Fragment_063",
+      "visual_outside_collider_m": 6.980704875259036e-08,
+      "collider_outside_visual_convex_hull_m": 4.524076469003546e-08
+    }
+  ]
+}

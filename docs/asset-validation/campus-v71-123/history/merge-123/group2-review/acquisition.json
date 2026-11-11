@@ -1,0 +1,2734 @@
+{
+  "osm/1470108675": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6099519%2C35.8868688&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/440331569": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6123437%2C35.8926408&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931844": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6112915%2C35.8935662&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6112915%2C35.8935662&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6112915%2C35.8935662&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6112915%2C35.8935662&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "error": "HTTPSConnectionPool(host='metadata.maptiles.arcgis.com', port=443): Read timed out. (read timeout=8)"
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6112915%2C35.8935662&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931871": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6084922%2C35.8876178&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931869": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6084946%2C35.8880872&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931872": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6095958%2C35.8877357&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931878": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6095819%2C35.8873396&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931892": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6115787%2C35.8867163&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931879": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6083937%2C35.8869869&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931880": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.609302%2C35.8868711&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931882": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6083191%2C35.8865014&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931890": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6106281%2C35.8868585&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931899": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6149896%2C35.8881334&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "vw/16": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.61490056726058%2C35.88805593480824&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931900": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6156042%2C35.8879069&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931907": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6151058%2C35.8903504&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931908": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6153003%2C35.8907188&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931910": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6144418%2C35.8909681&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931917": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6093979%2C35.8909101&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931919": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6081998%2C35.8910389&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931918": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6085984%2C35.8914617&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931921": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.607124%2C35.8907961&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/468931922": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6066752%2C35.8903679&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/524021463": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6126089%2C35.8863316&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/524021465": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6132822%2C35.8868414&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/524021468": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.615493%2C35.8885795&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/524021470": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6078097%2C35.888204&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  },
+  "osm/846905616": {
+    "43291": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/4/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2026_r10/MapServer/5/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20260219,
+            "SRC_DATE2": 1771459200000,
+            "SRC_RES": 0.34,
+            "SRC_DESC": "LG01",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "39767": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/4/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2024_r07/MapServer/5/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20230523,
+            "SRC_DATE2": 1684800000000,
+            "SRC_RES": 0.5,
+            "SRC_DESC": "WV02",
+            "NICE_NAME": "Vivid Advanced",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    },
+    "4905": {
+      "4": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/4/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      },
+      "5": {
+        "url": "https://metadata.maptiles.arcgis.com/arcgis/rest/services/World_Imagery_Metadata_2022_r08/MapServer/5/query?f=json&geometry=128.6108787%2C35.8902507&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=SRC_DATE%2CSRC_DATE2%2CSRC_RES%2CSRC_DESC%2CNICE_NAME%2CDrawOrder&returnGeometry=false&where=1%3D1",
+        "status": 200,
+        "features": [
+          {
+            "SRC_DATE": 20210315,
+            "SRC_DATE2": 1615766400000,
+            "SRC_RES": 0.46,
+            "SRC_DESC": "GE01",
+            "NICE_NAME": "Metro",
+            "DrawOrder": 80
+          }
+        ],
+        "error": null
+      }
+    }
+  }
+}

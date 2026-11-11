@@ -1,0 +1,37 @@
+{
+  "core_ids": 123,
+  "missing_ids": 0,
+  "duplicate_ids": 0,
+  "objects": 1784,
+  "untouched_objects": 1780,
+  "triangles": 893532,
+  "targets": {
+    "봉사관": {
+      "triangles": 60,
+      "roof_triangles": 6,
+      "prior_uv_layers": 1,
+      "new_uv_layers": 1
+    },
+    "우당교육관": {
+      "triangles": 44,
+      "roof_triangles": 4,
+      "prior_uv_layers": 0,
+      "new_uv_layers": 1
+    },
+    "어학교육원": {
+      "triangles": 28,
+      "roof_triangles": 2,
+      "prior_uv_layers": 1,
+      "new_uv_layers": 1
+    },
+    "창업보육센터": {
+      "triangles": 44,
+      "roof_triangles": 4,
+      "prior_uv_layers": 1,
+      "new_uv_layers": 1
+    }
+  },
+  "game_catalog_entries_preserved": 92,
+  "game_files_preserved": 368,
+  "updated_group1_game_files_preserved": 8
+}

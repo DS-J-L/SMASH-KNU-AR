@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-educgrad-v71-b2-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.3179961793449386,
+  "volume_relative_error": 1.3798614367563091e-08,
+  "errors": [],
+  "source_blend_sha256": "58348d92247603b63c345aa153eb30fd3c78fa2447d2e748f3adf2e45fcfbb0c"
+}

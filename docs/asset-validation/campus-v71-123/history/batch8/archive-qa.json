@@ -1,0 +1,60 @@
+{
+  "archive": "knu-campus-v71-batch8-r1-restorable.zip",
+  "sha256": "23bcbd0f56b700043d36924a108a204795973bf4032ed44f34d75f9dc459e78c",
+  "bytes": 112491437,
+  "members": 46,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 7,
+  "restored_checks": {
+    "v7 | 추가 건물 | 온실 5-1 [vw/21]": {
+      "source_id": "vw/21",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 5-2 [vw/52]": {
+      "source_id": "vw/52",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 5-3 [vw/110]": {
+      "source_id": "vw/110",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실 5-4 [vw/20]": {
+      "source_id": "vw/20",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 온실관리사 [vw/62]": {
+      "source_id": "vw/62",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 농산물가공동 [vw/22]": {
+      "source_id": "vw/22",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 옥수수저장창고 [vw/33]": {
+      "source_id": "vw/33",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

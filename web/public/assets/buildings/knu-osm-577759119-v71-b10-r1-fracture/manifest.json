@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-577759119-v71-b10-r1-fracture",
+  "display_name": "이름 미등록 건물 (577759119)",
+  "source_model_id": "osm/577759119",
+  "identity_metadata": {},
+  "source_campus": "knu-campus-v71-batch10-r1.blend",
+  "source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+  "source_object": "이름 미등록 건물.006",
+  "source_objects": [
+    {
+      "object": "이름 미등록 건물.006",
+      "mesh": "이름 미등록 건물.007",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -153.16500854492188,
+    -160.03500366210938,
+    -11.737778663635254
+  ],
+  "scale_from_campus": 0.08490928942697396,
+  "source_dimensions_campus_z_up_m": [
+    12.789993286132812,
+    25.910003662109375,
+    12.431442260742188
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    1.085989236831665,
+    1.0555449724197388,
+    2.200000047683716
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120,
+  "appearance_revision": {
+    "campus": "knu-campus-v71-123-group1-r1.glb",
+    "campus_glb_sha256": "32f352fdd870588009f59fe63d20012eb92f891f2052984ccf428bad25eeecd0",
+    "campus_blend_sha256": "5ddf08824b6efb19d99cf96eae31ea7d3dc95ba03254d0edceeaa773e2666a74",
+    "faces": [
+      11,
+      14
+    ],
+    "material": "v71 Group 1 | osm/577759119 | observed roof top",
+    "srgb": "#544536",
+    "game_roof_y_m": 1.0555449289120737,
+    "base_package_sha256": {
+      "manifest.json": "96ca73f8f7493e7375a9aa96872d0281e807284d545142a6098ee145b4a8649c",
+      "colliders.json": "f8635591d1b7aac559f53b14251c02ad6116138bdb7313d8c5a00b2ac6f730ba",
+      "intact.glb": "613f4f8ab147a57ec0c831c23b65ec3a025df1828895892954aad69d306c6517",
+      "fragments.glb": "2b00ee17f2a1ebab7f9c3094f705e6f3c5fda77a7573697f47b274ee60b1fb3b"
+    }
+  }
+}

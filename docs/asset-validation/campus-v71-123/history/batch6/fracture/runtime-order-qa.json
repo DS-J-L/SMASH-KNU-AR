@@ -1,0 +1,20 @@
+[
+  {
+    "id": "knu-vet-v71-b6-r1-fracture",
+    "node": "SM_vet_Fragment_004",
+    "before_m": 0.0000025027034271929427,
+    "after_m": 2.2000128557797538e-7,
+    "updated": true,
+    "before_points": 28,
+    "after_points": 32
+  },
+  {
+    "id": "knu-vet-v71-b6-r1-fracture",
+    "node": "SM_vet_Fragment_020",
+    "before_m": 0.000004924586155252708,
+    "after_m": 3.7315939810378396e-8,
+    "updated": true,
+    "before_points": 34,
+    "after_points": 34
+  }
+]

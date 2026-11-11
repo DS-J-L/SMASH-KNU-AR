@@ -1,0 +1,8 @@
+{
+  "building_id": "knu-dorm-c-v71-b5-r1-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 0.4660345918289642,
+  "volume_relative_error": 7.866518353655248e-09,
+  "errors": [],
+  "source_blend_sha256": "a7b758bb57dce8c243d98027ceb10a214706bf677cfc26a5075def6b77eb1806"
+}

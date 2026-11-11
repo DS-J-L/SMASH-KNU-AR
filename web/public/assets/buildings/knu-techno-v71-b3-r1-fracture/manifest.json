@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-techno-v71-b3-r1-fracture",
+  "display_name": "테크노빌딩",
+  "source_model_id": "468931912",
+  "source_campus": "knu-campus-v71-batch3-r1.blend",
+  "source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+  "source_object": "테크노빌딩",
+  "source_objects": [
+    {
+      "object": "테크노빌딩",
+      "mesh": "테크노빌딩.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 테크노빌딩 [468931912]",
+      "mesh": "v7 | 창 근사 | 테크노빌딩 [468931912]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.9889631271362305
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    299.125,
+    252.7550048828125,
+    -9.472695350646973
+  ],
+  "scale_from_campus": 0.029423557915221808,
+  "source_dimensions_campus_z_up_m": [
+    74.77001953125,
+    55.95001220703125,
+    16.483732223510742
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.485010027885437,
+    1.6462483406066895
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

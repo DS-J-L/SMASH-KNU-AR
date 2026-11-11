@@ -1,0 +1,159 @@
+{
+  "osm/468931896": {
+    "snapshot_version": "1",
+    "snapshot_tags": {
+      "building": "school"
+    },
+    "snapshot_nodes": [
+      "4633830119",
+      "4633830120",
+      "4633830121",
+      "4633830122",
+      "4633830123",
+      "4633830124",
+      "4633830119"
+    ],
+    "url": "https://api.openstreetmap.org/api/0.6/way/468931896",
+    "live_version": "1",
+    "live_tags": {
+      "building": "school"
+    },
+    "live_nodes": [
+      "4633830119",
+      "4633830120",
+      "4633830121",
+      "4633830122",
+      "4633830123",
+      "4633830124",
+      "4633830119"
+    ],
+    "matches_snapshot": true,
+    "sha256": "4e269af70f3d44a7991c7381132076a91c245cf9c94d8fe03291c05a7c7f2977"
+  },
+  "osm/468931915": {
+    "snapshot_version": "2",
+    "snapshot_tags": {
+      "building": "university"
+    },
+    "snapshot_nodes": [
+      "4633830283",
+      "4633830284",
+      "4633830285",
+      "4633830286",
+      "4633830283"
+    ],
+    "url": "https://api.openstreetmap.org/api/0.6/way/468931915",
+    "live_version": "2",
+    "live_tags": {
+      "building": "university"
+    },
+    "live_nodes": [
+      "4633830283",
+      "4633830284",
+      "4633830285",
+      "4633830286",
+      "4633830283"
+    ],
+    "matches_snapshot": true,
+    "sha256": "cf825d827d4fc709800891ca7bd4519f910973fe793365b70a26a71c2b1c8275"
+  },
+  "osm/577759119": {
+    "snapshot_version": "1",
+    "snapshot_tags": {
+      "amenity": "toilets",
+      "building": "yes"
+    },
+    "snapshot_nodes": [
+      "5537917702",
+      "5537917703",
+      "5537917704",
+      "5537917705",
+      "5537917702"
+    ],
+    "url": "https://api.openstreetmap.org/api/0.6/way/577759119",
+    "live_version": "1",
+    "live_tags": {
+      "amenity": "toilets",
+      "building": "yes"
+    },
+    "live_nodes": [
+      "5537917702",
+      "5537917703",
+      "5537917704",
+      "5537917705",
+      "5537917702"
+    ],
+    "matches_snapshot": true,
+    "sha256": "fa5aa259db3ac77349bbf514031809241999804d6e8c1034a1812d1480956534"
+  },
+  "osm/584385630": {
+    "snapshot_version": "1",
+    "snapshot_tags": {
+      "building": "yes",
+      "tourism": "information"
+    },
+    "snapshot_nodes": [
+      "5586151438",
+      "5586151439",
+      "5586151440",
+      "5586151441",
+      "5586151438"
+    ],
+    "url": "https://api.openstreetmap.org/api/0.6/way/584385630",
+    "live_version": "1",
+    "live_tags": {
+      "building": "yes",
+      "tourism": "information"
+    },
+    "live_nodes": [
+      "5586151438",
+      "5586151439",
+      "5586151440",
+      "5586151441",
+      "5586151438"
+    ],
+    "matches_snapshot": true,
+    "sha256": "31c799958e7e7361d15ae555a019d4172df63aca7efcc5b204c473487911b3e7"
+  },
+  "osm/584386432": {
+    "snapshot_version": "2",
+    "snapshot_tags": {
+      "access": "yes",
+      "amenity": "toilets",
+      "building": "yes",
+      "changing_table": "no",
+      "fee": "no",
+      "female": "yes",
+      "male": "yes",
+      "toilets:disposal": "flush"
+    },
+    "snapshot_nodes": [
+      "5586151441",
+      "5586156899",
+      "5586156900",
+      "5586151438",
+      "5586151441"
+    ],
+    "url": "https://api.openstreetmap.org/api/0.6/way/584386432",
+    "live_version": "2",
+    "live_tags": {
+      "access": "yes",
+      "amenity": "toilets",
+      "building": "yes",
+      "changing_table": "no",
+      "fee": "no",
+      "female": "yes",
+      "male": "yes",
+      "toilets:disposal": "flush"
+    },
+    "live_nodes": [
+      "5586151441",
+      "5586156899",
+      "5586156900",
+      "5586151438",
+      "5586151441"
+    ],
+    "matches_snapshot": true,
+    "sha256": "d168ea1ae76027f9dbafade842f4234de9209a14a0d3c28499e1d8f7e26e7e3e"
+  }
+}

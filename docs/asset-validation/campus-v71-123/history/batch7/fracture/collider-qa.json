@@ -1,0 +1,167 @@
+[
+  {
+    "package": "knu-gh1-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh1_Fragment_009",
+        "before_m": 1.0999304714126579e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_016",
+        "before_m": 1.6519832725381267e-06,
+        "after_m": 1.3877787807814457e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_024",
+        "before_m": 4.768184827169675e-06,
+        "after_m": 1.3877787807814457e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_027",
+        "before_m": 6.942135498025359e-06,
+        "after_m": 1.3877787807814457e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_036",
+        "before_m": 1.721057175108065e-06,
+        "after_m": 1.3877787807814457e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_045",
+        "before_m": 2.130252881225869e-06,
+        "after_m": 1.3877787807814457e-17
+      },
+      {
+        "node": "SM_gh1_Fragment_051",
+        "before_m": 1.1439412854086228e-05,
+        "after_m": 1.3877787807814457e-17
+      }
+    ],
+    "max_outside_m": 1.0418114382571009e-06,
+    "max_point_gap_m": 8.404638001828252e-08
+  },
+  {
+    "package": "knu-gh2-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 5.057754433324124e-07,
+    "max_point_gap_m": 8.0331633436858e-08
+  },
+  {
+    "package": "knu-gh31-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh31_Fragment_005",
+        "before_m": 1.6447280197229297e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh31_Fragment_027",
+        "before_m": 1.8332525751341144e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_gh31_Fragment_050",
+        "before_m": 1.8179858607969557e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 9.867737395530263e-07,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-gh32-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh32_Fragment_017",
+        "before_m": 2.3292164966770557e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh32_Fragment_036",
+        "before_m": 3.41153854227505e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.0969062020360631e-06,
+    "max_point_gap_m": 7.859060335826047e-08
+  },
+  {
+    "package": "knu-gh41-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh41_Fragment_019",
+        "before_m": 1.9643230352306418e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_gh41_Fragment_030",
+        "before_m": 1.559011648138986e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_gh41_Fragment_035",
+        "before_m": 1.87071598664601e-06,
+        "after_m": 5.551115123125783e-17
+      },
+      {
+        "node": "SM_gh41_Fragment_049",
+        "before_m": 1.997279578946909e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh41_Fragment_055",
+        "before_m": 6.225893993183629e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh41_Fragment_062",
+        "before_m": 9.429093036500413e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.2554940497788714e-06,
+    "max_point_gap_m": 9.094592642585711e-08
+  },
+  {
+    "package": "knu-gh42-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh42_Fragment_020",
+        "before_m": 2.2506676479738807e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh42_Fragment_026",
+        "before_m": 1.5086296464850157e-06,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 9.415339406182444e-07,
+    "max_point_gap_m": 8.886203499046388e-08
+  },
+  {
+    "package": "knu-gh43-v71-b7-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh43_Fragment_027",
+        "before_m": 1.7083225840597294e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh43_Fragment_062",
+        "before_m": 3.215252981580985e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 1.4100297894698022e-06,
+    "max_point_gap_m": 8.688795409866125e-08
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "source_glb_sha256": "e25cf3fdf3eee1b569471a78a8a097b4300c8f393b3e44d248aec392cb627196",
+  "candidate_glb_sha256": "53294f0fa937ce24ec89bd087f212e4875d66afd6a2fb996435d3a98a2e4563f",
+  "changed_objects": [
+    "교육대학원",
+    "대학원동",
+    "평생교육원"
+  ],
+  "preserved_objects": 1732,
+  "dot_protected_ids": 53,
+  "source_triangles": 899198,
+  "candidate_triangles": 899298,
+  "new_surface_intersection_pairs": 0
+}

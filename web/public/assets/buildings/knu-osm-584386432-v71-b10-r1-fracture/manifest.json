@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-osm-584386432-v71-b10-r1-fracture",
+  "display_name": "이름 미등록 건물 (584386432)",
+  "source_model_id": "osm/584386432",
+  "identity_metadata": {},
+  "source_campus": "knu-campus-v71-batch10-r1.blend",
+  "source_sha256": "d98712be84ce1b340bed826b07f47775d7bde88f03c68624f3ba3e2c57086601",
+  "source_object": "이름 미등록 건물.008",
+  "source_objects": [
+    {
+      "object": "이름 미등록 건물.008",
+      "mesh": "이름 미등록 건물.009",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "source_scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    395.04498291015625,
+    -542.7000122070312,
+    -0.1434643566608429
+  ],
+  "scale_from_campus": 0.2709361235135826,
+  "source_dimensions_campus_z_up_m": [
+    7.709991455078125,
+    8.1199951171875,
+    12.058053970336914
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.088915228843689,
+    3.2669625282287598,
+    2.200000047683716
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261120
+}

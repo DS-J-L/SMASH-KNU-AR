@@ -1,0 +1,74 @@
+{
+  "archive": "knu-campus-v71-batch6-r1-restorable.zip",
+  "sha256": "196ea003671e6b018671f6e0a8fef6ae6fbb0450f4b2270f77c92558f143b294",
+  "bytes": 110921325,
+  "members": 46,
+  "crc_and_sha256_passed": true,
+  "reopened_campus_blends": 2,
+  "appended_meshes": 9,
+  "restored_checks": {
+    "농업생명과학관": {
+      "source_id": "osm/524172305",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "동물사육장": {
+      "source_id": "osm/576254849",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "사과센터": {
+      "source_id": "osm/473687810",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v8 | 태양광 | 사과센터": {
+      "source_id": "osm/473687810",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 추가 건물 | 농대사과센터 [vw/113]": {
+      "source_id": "vw/113",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "수의과대학부속병원": {
+      "source_id": "osm/468931894",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 수의과대학부속병원 [468931894]": {
+      "source_id": "osm/468931894",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "간호대학": {
+      "source_id": "osm/1107268251",
+      "core_geometry_unchanged": true,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    },
+    "v7 | 창 근사 | 간호대학 [1107268251]": {
+      "source_id": "osm/1107268251",
+      "core_geometry_unchanged": false,
+      "transform_unchanged": true,
+      "rigid_body": false,
+      "append_geometry_uv_material_payloads_match": true
+    }
+  }
+}

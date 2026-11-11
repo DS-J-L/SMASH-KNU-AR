@@ -1,0 +1,1812 @@
+{
+  "knu-baekho-v71-b4-r1-fracture": [
+    {
+      "node": "SM_baekho_Fragment_000",
+      "max_outside_m": 5.329747865268075e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_001",
+      "max_outside_m": 5.514642373305456e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_002",
+      "max_outside_m": 6.028865730256516e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_003",
+      "max_outside_m": 4.234569958225243e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_004",
+      "max_outside_m": 4.4917644666242484e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_005",
+      "max_outside_m": 6.345570932736466e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_006",
+      "max_outside_m": 5.255766077905122e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_007",
+      "max_outside_m": 4.708971573785803e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_008",
+      "max_outside_m": 5.496419550055087e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_009",
+      "max_outside_m": 2.433588145722698e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_010",
+      "max_outside_m": 4.2961659739437774e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_011",
+      "max_outside_m": 4.122958505159424e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_012",
+      "max_outside_m": 6.761330884064165e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_013",
+      "max_outside_m": 6.225800419645822e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_014",
+      "max_outside_m": 5.213644426599329e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_015",
+      "max_outside_m": 6.633930510480113e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_016",
+      "max_outside_m": 6.280800543406739e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_017",
+      "max_outside_m": 5.55666619106443e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_018",
+      "max_outside_m": 5.139182326918679e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_019",
+      "max_outside_m": 4.696545349847092e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_020",
+      "max_outside_m": 8.100466269977957e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_021",
+      "max_outside_m": 5.767301468340147e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_022",
+      "max_outside_m": 1.3369386731021393e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_023",
+      "max_outside_m": 9.648020188324224e-09
+    },
+    {
+      "node": "SM_baekho_Fragment_024",
+      "max_outside_m": 4.1046816556811194e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_025",
+      "max_outside_m": 6.165937002644561e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_026",
+      "max_outside_m": 4.9413542466125726e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_027",
+      "max_outside_m": 7.22029350197495e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_028",
+      "max_outside_m": 2.101674591303837e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_029",
+      "max_outside_m": 6.886960438046152e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_030",
+      "max_outside_m": 6.627677003046006e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_031",
+      "max_outside_m": 4.6636467715410745e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_032",
+      "max_outside_m": 7.180679090224018e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_033",
+      "max_outside_m": 6.08707391852592e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_034",
+      "max_outside_m": 6.803317255388297e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_035",
+      "max_outside_m": 6.291404756886276e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_036",
+      "max_outside_m": 2.4395382998421145e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_037",
+      "max_outside_m": 1.210833774356601e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_038",
+      "max_outside_m": 2.935589266811478e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_039",
+      "max_outside_m": 7.165197006553381e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_040",
+      "max_outside_m": 5.959556820256395e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_041",
+      "max_outside_m": 6.345720995892812e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_042",
+      "max_outside_m": 6.137534191985594e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_043",
+      "max_outside_m": 6.498688582268208e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_044",
+      "max_outside_m": 6.800537065421164e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_045",
+      "max_outside_m": 9.064810630732278e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_046",
+      "max_outside_m": 2.056991885157622e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_047",
+      "max_outside_m": 6.141785341418071e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_048",
+      "max_outside_m": 5.937742708628235e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_049",
+      "max_outside_m": 5.184876851749287e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_050",
+      "max_outside_m": 1.4517360364812992e-06
+    },
+    {
+      "node": "SM_baekho_Fragment_051",
+      "max_outside_m": 5.9126275181453636e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_052",
+      "max_outside_m": 4.860456159772042e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_053",
+      "max_outside_m": 7.9776748457272e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_054",
+      "max_outside_m": 7.747335586949511e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_055",
+      "max_outside_m": 1.8962441490633086e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_056",
+      "max_outside_m": 4.617085769265117e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_057",
+      "max_outside_m": 3.412227906618437e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_058",
+      "max_outside_m": 5.7539676717732746e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_059",
+      "max_outside_m": 6.216576470263746e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_060",
+      "max_outside_m": 4.1032476985614075e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_061",
+      "max_outside_m": 2.90346470518954e-07
+    },
+    {
+      "node": "SM_baekho_Fragment_062",
+      "max_outside_m": 4.828261671030454e-08
+    },
+    {
+      "node": "SM_baekho_Fragment_063",
+      "max_outside_m": 1.9976602622095996e-07
+    }
+  ],
+  "knu-boram-v71-b4-r1-fracture": [
+    {
+      "node": "SM_boram_Fragment_000",
+      "max_outside_m": 2.5447238119480353e-07
+    },
+    {
+      "node": "SM_boram_Fragment_001",
+      "max_outside_m": 5.195811104974357e-08
+    },
+    {
+      "node": "SM_boram_Fragment_002",
+      "max_outside_m": 4.082951712836014e-08
+    },
+    {
+      "node": "SM_boram_Fragment_003",
+      "max_outside_m": 4.7553983362202956e-08
+    },
+    {
+      "node": "SM_boram_Fragment_004",
+      "max_outside_m": 5.3698440583005436e-08
+    },
+    {
+      "node": "SM_boram_Fragment_005",
+      "max_outside_m": 5.477333794856598e-08
+    },
+    {
+      "node": "SM_boram_Fragment_006",
+      "max_outside_m": 2.821149990561711e-07
+    },
+    {
+      "node": "SM_boram_Fragment_007",
+      "max_outside_m": 6.351538456295103e-08
+    },
+    {
+      "node": "SM_boram_Fragment_008",
+      "max_outside_m": 6.904235236304679e-08
+    },
+    {
+      "node": "SM_boram_Fragment_009",
+      "max_outside_m": 6.227568841166153e-08
+    },
+    {
+      "node": "SM_boram_Fragment_010",
+      "max_outside_m": 4.793350835141652e-07
+    },
+    {
+      "node": "SM_boram_Fragment_011",
+      "max_outside_m": 6.098100666096506e-08
+    },
+    {
+      "node": "SM_boram_Fragment_012",
+      "max_outside_m": 6.78725861208429e-08
+    },
+    {
+      "node": "SM_boram_Fragment_013",
+      "max_outside_m": 6.034891435469092e-07
+    },
+    {
+      "node": "SM_boram_Fragment_014",
+      "max_outside_m": 1.754265572806446e-07
+    },
+    {
+      "node": "SM_boram_Fragment_015",
+      "max_outside_m": 5.551115123125783e-17
+    },
+    {
+      "node": "SM_boram_Fragment_016",
+      "max_outside_m": 6.123113432954241e-08
+    },
+    {
+      "node": "SM_boram_Fragment_017",
+      "max_outside_m": 3.065296293736086e-07
+    },
+    {
+      "node": "SM_boram_Fragment_018",
+      "max_outside_m": 9.341346862701272e-08
+    },
+    {
+      "node": "SM_boram_Fragment_019",
+      "max_outside_m": 6.11117276505535e-08
+    },
+    {
+      "node": "SM_boram_Fragment_020",
+      "max_outside_m": 7.029106563471998e-08
+    },
+    {
+      "node": "SM_boram_Fragment_021",
+      "max_outside_m": 4.4495620049600504e-08
+    },
+    {
+      "node": "SM_boram_Fragment_022",
+      "max_outside_m": 6.251674011803487e-08
+    },
+    {
+      "node": "SM_boram_Fragment_023",
+      "max_outside_m": 7.175919149171595e-08
+    },
+    {
+      "node": "SM_boram_Fragment_024",
+      "max_outside_m": 9.14848773958532e-08
+    },
+    {
+      "node": "SM_boram_Fragment_025",
+      "max_outside_m": 6.040378094929189e-08
+    },
+    {
+      "node": "SM_boram_Fragment_026",
+      "max_outside_m": 1.037437500073235e-07
+    },
+    {
+      "node": "SM_boram_Fragment_027",
+      "max_outside_m": 4.73809450007856e-08
+    },
+    {
+      "node": "SM_boram_Fragment_028",
+      "max_outside_m": 1.3440969137690217e-07
+    },
+    {
+      "node": "SM_boram_Fragment_029",
+      "max_outside_m": 9.680677648393754e-08
+    },
+    {
+      "node": "SM_boram_Fragment_030",
+      "max_outside_m": 2.990995161267218e-07
+    },
+    {
+      "node": "SM_boram_Fragment_031",
+      "max_outside_m": 4.4678849478452243e-07
+    },
+    {
+      "node": "SM_boram_Fragment_032",
+      "max_outside_m": 9.548682186610868e-08
+    },
+    {
+      "node": "SM_boram_Fragment_033",
+      "max_outside_m": 1.7426512771701042e-07
+    },
+    {
+      "node": "SM_boram_Fragment_034",
+      "max_outside_m": 6.069132030273039e-08
+    },
+    {
+      "node": "SM_boram_Fragment_035",
+      "max_outside_m": 6.047128302266724e-07
+    },
+    {
+      "node": "SM_boram_Fragment_036",
+      "max_outside_m": 3.333353524870297e-07
+    },
+    {
+      "node": "SM_boram_Fragment_037",
+      "max_outside_m": 5.371688074906622e-08
+    },
+    {
+      "node": "SM_boram_Fragment_038",
+      "max_outside_m": 5.290994095630275e-08
+    },
+    {
+      "node": "SM_boram_Fragment_039",
+      "max_outside_m": 7.064972062931218e-07
+    },
+    {
+      "node": "SM_boram_Fragment_040",
+      "max_outside_m": 1.3138843690807533e-07
+    },
+    {
+      "node": "SM_boram_Fragment_041",
+      "max_outside_m": 1.3763395878552132e-07
+    },
+    {
+      "node": "SM_boram_Fragment_042",
+      "max_outside_m": 5.929756408118436e-08
+    },
+    {
+      "node": "SM_boram_Fragment_043",
+      "max_outside_m": 5.983527223696328e-08
+    },
+    {
+      "node": "SM_boram_Fragment_044",
+      "max_outside_m": 5.1007112977785596e-08
+    },
+    {
+      "node": "SM_boram_Fragment_045",
+      "max_outside_m": 6.93231673593031e-08
+    },
+    {
+      "node": "SM_boram_Fragment_046",
+      "max_outside_m": 6.79469654707443e-08
+    },
+    {
+      "node": "SM_boram_Fragment_047",
+      "max_outside_m": 1.3882739496873242e-07
+    },
+    {
+      "node": "SM_boram_Fragment_048",
+      "max_outside_m": 4.9546704405933895e-08
+    },
+    {
+      "node": "SM_boram_Fragment_049",
+      "max_outside_m": 3.178594907560228e-07
+    },
+    {
+      "node": "SM_boram_Fragment_050",
+      "max_outside_m": 5.615103260137033e-08
+    },
+    {
+      "node": "SM_boram_Fragment_051",
+      "max_outside_m": 4.988032922814689e-08
+    },
+    {
+      "node": "SM_boram_Fragment_052",
+      "max_outside_m": 5.478333192920903e-07
+    },
+    {
+      "node": "SM_boram_Fragment_053",
+      "max_outside_m": 5.073118630738449e-08
+    },
+    {
+      "node": "SM_boram_Fragment_054",
+      "max_outside_m": 6.556298165483199e-08
+    },
+    {
+      "node": "SM_boram_Fragment_055",
+      "max_outside_m": 1.7545388031336984e-07
+    },
+    {
+      "node": "SM_boram_Fragment_056",
+      "max_outside_m": 4.4779725433263806e-07
+    },
+    {
+      "node": "SM_boram_Fragment_057",
+      "max_outside_m": 1.1233568741886302e-07
+    },
+    {
+      "node": "SM_boram_Fragment_058",
+      "max_outside_m": 5.804843500323287e-08
+    },
+    {
+      "node": "SM_boram_Fragment_059",
+      "max_outside_m": 5.7464318858890806e-08
+    },
+    {
+      "node": "SM_boram_Fragment_060",
+      "max_outside_m": 5.291178895028281e-08
+    },
+    {
+      "node": "SM_boram_Fragment_061",
+      "max_outside_m": 5.913713291283429e-08
+    },
+    {
+      "node": "SM_boram_Fragment_062",
+      "max_outside_m": 6.176492728382499e-08
+    },
+    {
+      "node": "SM_boram_Fragment_063",
+      "max_outside_m": 5.72230106632432e-08
+    }
+  ],
+  "knu-cheom-v71-b4-r1-fracture": [
+    {
+      "node": "SM_cheom_Fragment_000",
+      "max_outside_m": 1.4291091052220928e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_001",
+      "max_outside_m": 1.5163672537066297e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_002",
+      "max_outside_m": 7.90073885759135e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_003",
+      "max_outside_m": 5.763126778579597e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_004",
+      "max_outside_m": 5.98048683492225e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_005",
+      "max_outside_m": 2.2248356062321006e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_006",
+      "max_outside_m": 8.020093821003993e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_007",
+      "max_outside_m": 8.121313748582493e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_008",
+      "max_outside_m": 5.978086033142649e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_009",
+      "max_outside_m": 1.2757468671742433e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_010",
+      "max_outside_m": 3.744526944904347e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_011",
+      "max_outside_m": 5.526742175021582e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_012",
+      "max_outside_m": 1.5987486023938402e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_013",
+      "max_outside_m": 1.7226803648157096e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_014",
+      "max_outside_m": 4.528824203153814e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_015",
+      "max_outside_m": 5.0676475710220714e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_016",
+      "max_outside_m": 1.2644224525737435e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_017",
+      "max_outside_m": 1.1154676604618885e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_018",
+      "max_outside_m": 2.364852139044582e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_019",
+      "max_outside_m": 1.4375653015208378e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_020",
+      "max_outside_m": 5.596689781062203e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_021",
+      "max_outside_m": 1.8092879617431779e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_022",
+      "max_outside_m": 4.7179945089625974e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_023",
+      "max_outside_m": 2.1516905318597068e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_024",
+      "max_outside_m": 1.1462975657572372e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_025",
+      "max_outside_m": 8.390485002618409e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_026",
+      "max_outside_m": 5.4991302927964725e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_027",
+      "max_outside_m": 8.355587684250043e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_028",
+      "max_outside_m": 7.651051459056646e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_029",
+      "max_outside_m": 5.525515398008274e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_030",
+      "max_outside_m": 2.3096990336285428e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_031",
+      "max_outside_m": 2.126896795490163e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_032",
+      "max_outside_m": 1.9681077485789178e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_033",
+      "max_outside_m": 4.6142094006773604e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_034",
+      "max_outside_m": 9.033882623910028e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_035",
+      "max_outside_m": 2.117737738227543e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_036",
+      "max_outside_m": 5.6601658388055753e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_037",
+      "max_outside_m": 6.721559449307524e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_038",
+      "max_outside_m": 5.6422934130440083e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_039",
+      "max_outside_m": 1.43384450590478e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_040",
+      "max_outside_m": 4.951306148415213e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_041",
+      "max_outside_m": 1.8907785638566654e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_042",
+      "max_outside_m": 1.233860822957844e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_043",
+      "max_outside_m": 2.3862450206080243e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_044",
+      "max_outside_m": 6.729448259745752e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_045",
+      "max_outside_m": 1.0316280457667304e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_046",
+      "max_outside_m": 2.7237100126698e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_047",
+      "max_outside_m": 7.857739828254218e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_048",
+      "max_outside_m": 3.417718919263013e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_049",
+      "max_outside_m": 5.667555111332767e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_050",
+      "max_outside_m": 8.541022369912277e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_051",
+      "max_outside_m": 6.481952806447477e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_052",
+      "max_outside_m": 8.708375209831587e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_053",
+      "max_outside_m": 1.5770145697646676e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_054",
+      "max_outside_m": 1.2556702760901928e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_055",
+      "max_outside_m": 5.4319419656723156e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_056",
+      "max_outside_m": 5.516243843650681e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_057",
+      "max_outside_m": 6.219808412755157e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_058",
+      "max_outside_m": 5.187968431241696e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_059",
+      "max_outside_m": 2.65694825377083e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_060",
+      "max_outside_m": 5.797132249241166e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_061",
+      "max_outside_m": 2.0941468514834582e-07
+    },
+    {
+      "node": "SM_cheom_Fragment_062",
+      "max_outside_m": 8.697589438944053e-08
+    },
+    {
+      "node": "SM_cheom_Fragment_063",
+      "max_outside_m": 1.254733792144247e-07
+    }
+  ],
+  "knu-faculty-v71-b4-r1-fracture": [
+    {
+      "node": "SM_faculty_Fragment_000",
+      "max_outside_m": 7.122337306042503e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_001",
+      "max_outside_m": 1.2093512946620422e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_002",
+      "max_outside_m": 6.676762784318946e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_003",
+      "max_outside_m": 6.154791856727293e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_004",
+      "max_outside_m": 6.240481942310083e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_005",
+      "max_outside_m": 4.724790872434603e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_006",
+      "max_outside_m": 1.2563749290928072e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_007",
+      "max_outside_m": 5.611779550218632e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_008",
+      "max_outside_m": 6.713395951651879e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_009",
+      "max_outside_m": 6.111901248995188e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_010",
+      "max_outside_m": 4.04959847544184e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_011",
+      "max_outside_m": 1.4683462867814967e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_012",
+      "max_outside_m": 1.3701639758889606e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_013",
+      "max_outside_m": 1.3535489246097043e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_014",
+      "max_outside_m": 6.058729898339443e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_015",
+      "max_outside_m": 1.8964058998149902e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_016",
+      "max_outside_m": 6.140302843959944e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_017",
+      "max_outside_m": 5.89731628253265e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_018",
+      "max_outside_m": 6.048564760163799e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_019",
+      "max_outside_m": 7.847720778775269e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_020",
+      "max_outside_m": 5.924654666866758e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_021",
+      "max_outside_m": 4.015977125848558e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_022",
+      "max_outside_m": 4.6271359012417523e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_023",
+      "max_outside_m": 4.5375204676956216e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_024",
+      "max_outside_m": 8.508160220799255e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_025",
+      "max_outside_m": 4.581757487255242e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_026",
+      "max_outside_m": 5.814129777625965e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_027",
+      "max_outside_m": 5.528343514638046e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_028",
+      "max_outside_m": 2.6308799652707826e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_029",
+      "max_outside_m": 4.360936434466556e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_030",
+      "max_outside_m": 6.453259845939918e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_031",
+      "max_outside_m": 1.4709951831615165e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_032",
+      "max_outside_m": 5.393286586774515e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_033",
+      "max_outside_m": 5.844381484321204e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_034",
+      "max_outside_m": 6.182416821542969e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_035",
+      "max_outside_m": 5.685991061321616e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_036",
+      "max_outside_m": 6.39440832228555e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_037",
+      "max_outside_m": 6.946466130086648e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_038",
+      "max_outside_m": 4.14847726545875e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_039",
+      "max_outside_m": 6.823667392241717e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_040",
+      "max_outside_m": 6.222755963292137e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_041",
+      "max_outside_m": 4.2702967059660146e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_042",
+      "max_outside_m": 5.9321334344719645e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_043",
+      "max_outside_m": 5.896369373314947e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_044",
+      "max_outside_m": 5.1487766772329024e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_045",
+      "max_outside_m": 2.827922788439796e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_046",
+      "max_outside_m": 6.675999839056423e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_047",
+      "max_outside_m": 1.1049592698597621e-06
+    },
+    {
+      "node": "SM_faculty_Fragment_048",
+      "max_outside_m": 5.967586930166746e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_049",
+      "max_outside_m": 7.142464236720159e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_050",
+      "max_outside_m": 4.41937516859614e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_051",
+      "max_outside_m": 8.608460617953728e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_052",
+      "max_outside_m": 7.996336830462525e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_053",
+      "max_outside_m": 5.550852466562617e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_054",
+      "max_outside_m": 9.133509543124418e-07
+    },
+    {
+      "node": "SM_faculty_Fragment_055",
+      "max_outside_m": 6.643366565195485e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_056",
+      "max_outside_m": 5.3905960278877174e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_057",
+      "max_outside_m": 5.461564694941856e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_058",
+      "max_outside_m": 5.570708505597821e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_059",
+      "max_outside_m": 4.502842063103252e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_060",
+      "max_outside_m": 5.218067269940896e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_061",
+      "max_outside_m": 5.1294940017765356e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_062",
+      "max_outside_m": 8.575825552470384e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_063",
+      "max_outside_m": 5.713548448249561e-08
+    },
+    {
+      "node": "SM_faculty_Fragment_064",
+      "max_outside_m": 5.1196687778087835e-08
+    }
+  ],
+  "knu-myeonhak-v71-b4-r1-fracture": [
+    {
+      "node": "SM_myeonhak_Fragment_000",
+      "max_outside_m": 6.005675949605216e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_001",
+      "max_outside_m": 5.0299852449864346e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_002",
+      "max_outside_m": 5.491432009119279e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_003",
+      "max_outside_m": 6.96170103647864e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_004",
+      "max_outside_m": 6.367613863966781e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_005",
+      "max_outside_m": 5.4178777519897636e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_006",
+      "max_outside_m": 3.756239952412699e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_007",
+      "max_outside_m": 6.083421352776064e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_008",
+      "max_outside_m": 6.27328592128773e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_009",
+      "max_outside_m": 4.055129240732036e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_010",
+      "max_outside_m": 7.236862936688127e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_011",
+      "max_outside_m": 6.684336767426302e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_012",
+      "max_outside_m": 6.164953414433683e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_013",
+      "max_outside_m": 6.297530780186023e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_014",
+      "max_outside_m": 6.095689052132425e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_015",
+      "max_outside_m": 5.871877961638461e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_016",
+      "max_outside_m": 5.785401843705351e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_017",
+      "max_outside_m": 5.818685319680661e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_018",
+      "max_outside_m": 5.099210562131695e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_019",
+      "max_outside_m": 6.10856126168069e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_020",
+      "max_outside_m": 7.336835605720182e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_021",
+      "max_outside_m": 5.4578066177590756e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_022",
+      "max_outside_m": 6.205208373522009e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_023",
+      "max_outside_m": 7.159523197908246e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_024",
+      "max_outside_m": 5.6617839194750275e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_025",
+      "max_outside_m": 6.279609118808871e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_026",
+      "max_outside_m": 4.824255823987489e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_027",
+      "max_outside_m": 5.883296197439769e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_028",
+      "max_outside_m": 5.160395072367763e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_029",
+      "max_outside_m": 5.6979226975562014e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_030",
+      "max_outside_m": 1.505603638984887e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_031",
+      "max_outside_m": 7.103366493621532e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_032",
+      "max_outside_m": 4.79703050337843e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_033",
+      "max_outside_m": 6.09942755747106e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_034",
+      "max_outside_m": 4.7367974709278116e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_035",
+      "max_outside_m": 5.901349116321786e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_036",
+      "max_outside_m": 6.205288302640888e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_037",
+      "max_outside_m": 6.771834576424496e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_038",
+      "max_outside_m": 4.989748028649821e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_039",
+      "max_outside_m": 3.676149598619283e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_040",
+      "max_outside_m": 9.738754566668284e-09
+    },
+    {
+      "node": "SM_myeonhak_Fragment_041",
+      "max_outside_m": 5.983278053567354e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_042",
+      "max_outside_m": 5.5526159448149315e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_043",
+      "max_outside_m": 6.157909743231826e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_044",
+      "max_outside_m": 4.350380794493347e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_045",
+      "max_outside_m": 6.45250957664878e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_046",
+      "max_outside_m": 6.040318692446256e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_047",
+      "max_outside_m": 4.8462652807446105e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_048",
+      "max_outside_m": 6.119737555598803e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_049",
+      "max_outside_m": 6.08403751684028e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_050",
+      "max_outside_m": 6.274928457394857e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_051",
+      "max_outside_m": 7.010838473653358e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_052",
+      "max_outside_m": 6.173240231499566e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_053",
+      "max_outside_m": 1.1732621373744534e-07
+    },
+    {
+      "node": "SM_myeonhak_Fragment_054",
+      "max_outside_m": 5.986493717413666e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_055",
+      "max_outside_m": 6.054905332675276e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_056",
+      "max_outside_m": 6.038276356701289e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_057",
+      "max_outside_m": 6.048711280459695e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_058",
+      "max_outside_m": 4.533692761488073e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_059",
+      "max_outside_m": 5.1440595283391843e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_060",
+      "max_outside_m": 7.172518029507913e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_061",
+      "max_outside_m": 6.41659312905496e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_062",
+      "max_outside_m": 5.205958472642713e-08
+    },
+    {
+      "node": "SM_myeonhak_Fragment_063",
+      "max_outside_m": 5.6169477333223305e-08
+    }
+  ],
+  "knu-nuri-east-v71-b4-r1-fracture": [
+    {
+      "node": "SM_nuri-east_Fragment_000",
+      "max_outside_m": 5.0029696635478516e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_001",
+      "max_outside_m": 4.3376896990965363e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_002",
+      "max_outside_m": 7.989719036927134e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_003",
+      "max_outside_m": 5.254456433845256e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_004",
+      "max_outside_m": 7.066768437091753e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_005",
+      "max_outside_m": 1.9110873955563434e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_006",
+      "max_outside_m": 5.6344222953974565e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_007",
+      "max_outside_m": 4.41134879181071e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_008",
+      "max_outside_m": 7.117566296066524e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_009",
+      "max_outside_m": 6.911286937194561e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_010",
+      "max_outside_m": 1.1896235441177794e-06
+    },
+    {
+      "node": "SM_nuri-east_Fragment_011",
+      "max_outside_m": 5.691213811331863e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_012",
+      "max_outside_m": 6.404669536386187e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_013",
+      "max_outside_m": 8.541800168848646e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_014",
+      "max_outside_m": 6.81336403962618e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_015",
+      "max_outside_m": 4.780878554710988e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_016",
+      "max_outside_m": 8.588490417182904e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_017",
+      "max_outside_m": 3.3139019028904926e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_018",
+      "max_outside_m": 7.10513825552539e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_019",
+      "max_outside_m": 6.798914492511798e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_020",
+      "max_outside_m": 5.840685016189617e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_021",
+      "max_outside_m": 6.709398370219333e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_022",
+      "max_outside_m": 7.004258018028509e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_023",
+      "max_outside_m": 4.900477186264851e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_024",
+      "max_outside_m": 5.983599482561885e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_025",
+      "max_outside_m": 6.144035574751072e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_026",
+      "max_outside_m": 3.798518292963404e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_027",
+      "max_outside_m": 6.181742329136597e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_028",
+      "max_outside_m": 6.274700448116732e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_029",
+      "max_outside_m": 5.346455186905352e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_030",
+      "max_outside_m": 3.563556925378908e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_031",
+      "max_outside_m": 5.182399842595942e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_032",
+      "max_outside_m": 4.065526534591246e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_033",
+      "max_outside_m": 4.91607818758899e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_034",
+      "max_outside_m": 4.4482399347289814e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_035",
+      "max_outside_m": 5.171010045434965e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_036",
+      "max_outside_m": 4.842906340118969e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_037",
+      "max_outside_m": 5.6030673545315324e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_038",
+      "max_outside_m": 3.057835505360096e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_039",
+      "max_outside_m": 4.770318925984007e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_040",
+      "max_outside_m": 6.433130997351988e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_041",
+      "max_outside_m": 4.659912306304026e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_042",
+      "max_outside_m": 7.776040919504901e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_043",
+      "max_outside_m": 6.95753401835919e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_044",
+      "max_outside_m": 6.116975403980263e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_045",
+      "max_outside_m": 6.171353406081437e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_046",
+      "max_outside_m": 5.874873398870051e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_047",
+      "max_outside_m": 4.009428525297842e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_048",
+      "max_outside_m": 3.5638970879992016e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_049",
+      "max_outside_m": 3.252317335444843e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_050",
+      "max_outside_m": 4.5595045250479416e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_051",
+      "max_outside_m": 7.078174424357542e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_052",
+      "max_outside_m": 7.534294280131526e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_053",
+      "max_outside_m": 6.469336943926152e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_054",
+      "max_outside_m": 3.680316690291008e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_055",
+      "max_outside_m": 6.96414124756739e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_056",
+      "max_outside_m": 3.8188994533339127e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_057",
+      "max_outside_m": 3.018169736357379e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_058",
+      "max_outside_m": 5.714349179952727e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_059",
+      "max_outside_m": 6.482361097903677e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_060",
+      "max_outside_m": 4.875804707205056e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_061",
+      "max_outside_m": 5.303244604570878e-08
+    },
+    {
+      "node": "SM_nuri-east_Fragment_062",
+      "max_outside_m": 3.4775624258021054e-07
+    },
+    {
+      "node": "SM_nuri-east_Fragment_063",
+      "max_outside_m": 6.893343207359237e-08
+    }
+  ],
+  "knu-nuri-west-v71-b4-r1-fracture": [
+    {
+      "node": "SM_nuri-west_Fragment_000",
+      "max_outside_m": 1.2133421661841837e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_001",
+      "max_outside_m": 6.199413862817416e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_002",
+      "max_outside_m": 1.658299628726212e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_003",
+      "max_outside_m": 4.7283657106378385e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_004",
+      "max_outside_m": 4.5737717280225354e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_005",
+      "max_outside_m": 2.834186661471172e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_006",
+      "max_outside_m": 6.248555289856128e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_007",
+      "max_outside_m": 7.400349155695096e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_008",
+      "max_outside_m": 7.241733612772805e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_009",
+      "max_outside_m": 4.806582126759551e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_010",
+      "max_outside_m": 1.9676903245668953e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_011",
+      "max_outside_m": 6.95233536851525e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_012",
+      "max_outside_m": 4.7625781518512156e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_013",
+      "max_outside_m": 3.3650495884218756e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_014",
+      "max_outside_m": 4.917698709361318e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_015",
+      "max_outside_m": 9.666496704474614e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_016",
+      "max_outside_m": 6.078907949236267e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_017",
+      "max_outside_m": 2.678922187415722e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_018",
+      "max_outside_m": 6.224313081615307e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_019",
+      "max_outside_m": 6.242039068959926e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_020",
+      "max_outside_m": 4.832693842327096e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_021",
+      "max_outside_m": 6.822395065553266e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_022",
+      "max_outside_m": 9.376884486655968e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_023",
+      "max_outside_m": 8.056071820750077e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_024",
+      "max_outside_m": 2.300442975555761e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_025",
+      "max_outside_m": 5.3214589346151087e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_026",
+      "max_outside_m": 4.634693112626209e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_027",
+      "max_outside_m": 3.447095808517542e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_028",
+      "max_outside_m": 6.028056287465944e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_029",
+      "max_outside_m": 4.804888764642357e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_030",
+      "max_outside_m": 6.300180332985406e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_031",
+      "max_outside_m": 3.2854287079775446e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_032",
+      "max_outside_m": 3.5729559666464183e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_033",
+      "max_outside_m": 5.4912584424027244e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_034",
+      "max_outside_m": 6.459199686226214e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_035",
+      "max_outside_m": 2.2432533913763208e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_036",
+      "max_outside_m": 6.332656837804151e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_037",
+      "max_outside_m": 5.6301612760822906e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_038",
+      "max_outside_m": 5.150332235692723e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_039",
+      "max_outside_m": 3.0005892703854897e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_040",
+      "max_outside_m": 5.7227387967317966e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_041",
+      "max_outside_m": 5.2747209766668135e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_042",
+      "max_outside_m": 6.004982117113755e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_043",
+      "max_outside_m": 1.9797911804397827e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_044",
+      "max_outside_m": 4.4905524732019586e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_045",
+      "max_outside_m": 2.595009472861065e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_046",
+      "max_outside_m": 5.3360942109392795e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_047",
+      "max_outside_m": 4.3243856322205954e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_048",
+      "max_outside_m": 7.359865858425074e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_049",
+      "max_outside_m": 6.524296419785358e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_050",
+      "max_outside_m": 5.1559744806972674e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_051",
+      "max_outside_m": 5.671667427376015e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_052",
+      "max_outside_m": 7.374032107154704e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_053",
+      "max_outside_m": 1.7444757083318052e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_054",
+      "max_outside_m": 4.8592557283511084e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_055",
+      "max_outside_m": 6.254875831168683e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_056",
+      "max_outside_m": 5.2508558667785366e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_057",
+      "max_outside_m": 5.543208558833612e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_058",
+      "max_outside_m": 9.063017831767439e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_059",
+      "max_outside_m": 1.3897312689525876e-07
+    },
+    {
+      "node": "SM_nuri-west_Fragment_060",
+      "max_outside_m": 4.776636827741321e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_061",
+      "max_outside_m": 8.852080488064296e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_062",
+      "max_outside_m": 6.141236447154697e-08
+    },
+    {
+      "node": "SM_nuri-west_Fragment_063",
+      "max_outside_m": 5.9316156375555096e-08
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "osm/469843173": {
+    "baseline_object": "교수아파트",
+    "source_osm_position": {
+      "lat": 35.8855899,
+      "lon": 128.6091103
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "pano11478-3.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_5_04_11478/mobile/3.jpg",
+        "sha256": "978d82dae66f25bc605a56a59649cd2c4902c9355c89822686b387258444398a"
+      },
+      {
+        "file": "pano11477-3.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_5_03_11477/mobile/3.jpg",
+        "sha256": "ccf10b6f7ee38d6ee31cf816c168762454b8f575e3bbb7939e74b926dd9b50e4"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449444-206086.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449444",
+        "sha256": "30ab3ab4e3ab55e216bf1a44f6e0a1aa13cc6c8957491a427aba0376741bd831"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449443-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449443",
+          "sha256": "73cb680bca8c8f88051e2a01d900500e172673d752bc5f68147bc4bc588b5170"
+        },
+        {
+          "file": "z19-tile-449444-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449444",
+          "sha256": "1c28aa7f1b2b019aa8c8fa511fd1da6b4a165eed73f0401b1b1fa989002a3ba8"
+        },
+        {
+          "file": "z19-tile-449445-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449445",
+          "sha256": "38f80520a2fd26adf6690d587afc27d40c4fe6feb6d2a0861ed5925f410af1f7"
+        },
+        {
+          "file": "z19-tile-449443-206086.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449443",
+          "sha256": "15db2863dbd3c8640e63ec8f41a7817720cf1ff539b3c10b2450f53f038bdcfc"
+        },
+        {
+          "file": "z19-tile-449445-206086.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449445",
+          "sha256": "8c6c340dc731755be4df061a0fe1ee3a26ab6bbc23b77c0b52034382f6e820ca"
+        },
+        {
+          "file": "z19-tile-449443-206087.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206087/449443",
+          "sha256": "c0a28046b2f92b30f2db66fdc9e7d29a0a57dda28eebe392f38fd10cc1868c0b"
+        },
+        {
+          "file": "z19-tile-449444-206087.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206087/449444",
+          "sha256": "d6ed255af1e3a9af7dc35fc0309327ba53b4d9fd64dc2d4267bc33f87645ab79"
+        },
+        {
+          "file": "z19-tile-449445-206087.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206087/449445",
+          "sha256": "41d4206e7eadd7205d94d485182fb8bd5db5c6a8eac452ed44158d511db54698"
+        }
+      ]
+    }
+  },
+  "osm/854306251": {
+    "baseline_object": "누리관",
+    "source_osm_position": {
+      "lat": 35.8935355,
+      "lon": 128.6132295
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "pano11243-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_11243/mobile/1.jpg",
+        "sha256": "2584c6c13f981192ce2ad5e55409a71c4f522a300e64b03d11ab0c8610f1bcdf"
+      },
+      {
+        "file": "nuri-front.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/dorm/dorm9_1.jpg",
+        "sha256": "bb200585b2d023d4743c8d9168184d8b6026ee35f58cbf24615d063e023e6d6e"
+      },
+      {
+        "file": "pano11389-0.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_1_15_11389/mobile/0.jpg",
+        "sha256": "e0c1453228b04b2c9e33234b76e9538ed5fae354bd147fcee5448d5d1be7f2b0"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449450-206071.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449450",
+        "sha256": "c1808567d90725b0f16d60d6899f9ca15985a96402a806240bce805b485b3345"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449449-206070.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206070/449449",
+          "sha256": "88e894a4178f8926f772a6004f481004bf5ad74387c52a59dc0997cd4ac4810b"
+        },
+        {
+          "file": "z19-tile-449450-206070.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206070/449450",
+          "sha256": "09f1aabbb44c24853699960b7c245476cf62a048e1858b7d24cd6cd1c23ab1ca"
+        },
+        {
+          "file": "z19-tile-449451-206070.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206070/449451",
+          "sha256": "b47db8b408ddb0262d37ff81ca4a933983f193fa930ca667863edb2c525f536c"
+        },
+        {
+          "file": "z19-tile-449449-206071.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449449",
+          "sha256": "3272795bebcad1c28ad54a091f2705dddb9186ca187d4d90fa62e6059ca7b504"
+        },
+        {
+          "file": "z19-tile-449451-206071.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449451",
+          "sha256": "62f1248a6570eea8a72837cb0ad9bf53112090940e903a468df757d08e8e4ba2"
+        },
+        {
+          "file": "z19-tile-449449-206072.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449449",
+          "sha256": "cc533f0f98564cef0ace69c7f5f6478052fdba7fa63efa1933d25881c5767fc7"
+        },
+        {
+          "file": "z19-tile-449450-206072.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449450",
+          "sha256": "b32d3e6306447ee2b2085f601a847358cb1b203f0a378fb11cd56ea8bf5c5e45"
+        },
+        {
+          "file": "z19-tile-449451-206072.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449451",
+          "sha256": "3208ce05790d81ca3c75f20b802b2bf03904abc5a88b0aa6cf0f69eecc095613"
+        }
+      ]
+    }
+  },
+  "osm/854306497": {
+    "baseline_object": "누리관.001",
+    "source_osm_position": {
+      "lat": 35.8934429,
+      "lon": 128.613724
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "pano11243-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_11243/mobile/1.jpg",
+        "sha256": "2584c6c13f981192ce2ad5e55409a71c4f522a300e64b03d11ab0c8610f1bcdf"
+      },
+      {
+        "file": "nuri-second.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/dorm/dorm9_3.jpg",
+        "sha256": "8c5070a4b882a28fbf1dc74f97fd85cb07071cf18e0cef79ab7a800bb0cd1815"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449451-206072.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449451",
+        "sha256": "3208ce05790d81ca3c75f20b802b2bf03904abc5a88b0aa6cf0f69eecc095613"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449450-206071.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449450",
+          "sha256": "c1808567d90725b0f16d60d6899f9ca15985a96402a806240bce805b485b3345"
+        },
+        {
+          "file": "z19-tile-449451-206071.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449451",
+          "sha256": "62f1248a6570eea8a72837cb0ad9bf53112090940e903a468df757d08e8e4ba2"
+        },
+        {
+          "file": "z19-tile-449452-206071.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206071/449452",
+          "sha256": "748fdbee4ca6dbbf5eb111058ed16a2952336563aa573433864b6bfee93c96c7"
+        },
+        {
+          "file": "z19-tile-449450-206072.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449450",
+          "sha256": "b32d3e6306447ee2b2085f601a847358cb1b203f0a378fb11cd56ea8bf5c5e45"
+        },
+        {
+          "file": "z19-tile-449452-206072.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206072/449452",
+          "sha256": "70bf9f53c189c205b72ea74b3c18bb6b4e549a3c5a8d052f208e47e7a455246c"
+        },
+        {
+          "file": "z19-tile-449450-206073.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449450",
+          "sha256": "15267ef7f45cea65c7401bf47ee2d25ff5a0c70a18234328a5b875c8d8a7a6f0"
+        },
+        {
+          "file": "z19-tile-449451-206073.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449451",
+          "sha256": "6b7e4a651b36803646cc479080881ac30ce4944cc204e56872a061e8b0772431"
+        },
+        {
+          "file": "z19-tile-449452-206073.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206073/449452",
+          "sha256": "9f7d0eb21dec79c442f89b5f76bccc74b36c6ffa732d02a6247ee1ceb67b0e90"
+        }
+      ]
+    }
+  },
+  "osm/524021464": {
+    "baseline_object": "면학관",
+    "source_osm_position": {
+      "lat": 35.8863338,
+      "lon": 128.6113738
+    },
+    "references": [
+      {
+        "file": "pano11476-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_5_02_11476/mobile/1.jpg",
+        "sha256": "ed1decba8c3e459a32a5ef2e36a520b97df9a1c90644008d650d0fcecae5cf54"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449447-206084.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449447",
+        "sha256": "547700e070b7c96b720506b2c263f0adddf5af7aeb7fbdede7b52869917dda03"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449446-206083.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449446",
+          "sha256": "f520533dbc8a5858c258a2a50a21dba2d0c045bb2582c43b00fd053733ec3cdf"
+        },
+        {
+          "file": "z19-tile-449447-206083.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449447",
+          "sha256": "dcc4bf0887894af4a198836329e76ce0b189b78eee627391a6e89b8cfba513d0"
+        },
+        {
+          "file": "z19-tile-449448-206083.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206083/449448",
+          "sha256": "f4da62a4974f048c98f2127c8a694e9a397f21b5d12b3eef66e6ae8b0eeb1137"
+        },
+        {
+          "file": "z19-tile-449446-206084.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449446",
+          "sha256": "bb0a7e4576738d7b4c130d3863859d7b12c3a327450215af2482c1e5258a6ec1"
+        },
+        {
+          "file": "z19-tile-449448-206084.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449448",
+          "sha256": "4fb6180a4b5b6a60e2690d2134120c7be3ac0402ae6cdf4aeed7afdae6c381b4"
+        },
+        {
+          "file": "z19-tile-449446-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449446",
+          "sha256": "7746a7dd80ef664c181abb908ae2a035f8c04b446fcd5cac52c8c825bc42600e"
+        },
+        {
+          "file": "z19-tile-449447-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449447",
+          "sha256": "7e9a581c132d924dcbe353aff00a3bd9259975b0d95a4c1c679bff73b568fcd8"
+        },
+        {
+          "file": "z19-tile-449448-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449448",
+          "sha256": "34e7693f735beb22b62e55286e0c57ec0f68b8474096148d378c8a639170edd0"
+        }
+      ]
+    }
+  },
+  "osm/468931928": {
+    "baseline_object": "백호관",
+    "source_osm_position": {
+      "lat": 35.8882868,
+      "lon": 128.6044343
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "pano11249-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/pano_11249/mobile/1.jpg",
+        "sha256": "e1157f4042ad7c1be0cda3262597cd4fd45bdac8d52cb707bec9f1ba7ad16768"
+      },
+      {
+        "file": "pano11418-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_2_10_11418/mobile/1.jpg",
+        "sha256": "5f24e47ed25518b7680baeec5adc4ef7e2d9d144a51a7e7670eb5b25040f514a"
+      },
+      {
+        "file": "baekho-front.jpg",
+        "url": "https://iac.knu.ac.kr/assets/images/user/sub/cip-infra-baekho.jpg",
+        "sha256": "f584df9212dc3909622e047629a301727ed4aa1236851418df8d63160fd18df2"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449437-206081.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449437",
+        "sha256": "828c918a1d5077a07bd233b32681db31a72ff5c5f1087edfd8965b8acdaf3351"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449436-206080.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206080/449436",
+          "sha256": "613cea94f1668b5b61cff7a39b465a3a2e460c35974f815c20d894cc309c4aeb"
+        },
+        {
+          "file": "z19-tile-449437-206080.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206080/449437",
+          "sha256": "f365c23d3a7a0786193f02976c17ce3a1b764e561ad380dffdc6bbdb0bf87913"
+        },
+        {
+          "file": "z19-tile-449438-206080.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206080/449438",
+          "sha256": "b54dc4a52e1cd267641be67eceac7435510ced6d27c8db33ca094dba97aad411"
+        },
+        {
+          "file": "z19-tile-449436-206081.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449436",
+          "sha256": "b73a363cb07ab3133654ec4a5c90730a847b899e13aae3bdb719637d680667ce"
+        },
+        {
+          "file": "z19-tile-449438-206081.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449438",
+          "sha256": "7cb08e921c86d3413fc42ff5993868555532f0e3659d0edbd0f85a15e44676f0"
+        },
+        {
+          "file": "z19-tile-449436-206082.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449436",
+          "sha256": "8eaee9db26c05f106268b0960c9f29c037cf6944072de4553f0d5acfa69d8f83"
+        },
+        {
+          "file": "z19-tile-449437-206082.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449437",
+          "sha256": "81c1305d9d522f2df04688d3e838e29651409800f07e4e133875b00ef5a52ba8"
+        },
+        {
+          "file": "z19-tile-449438-206082.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449438",
+          "sha256": "c87f258283f305cdc7cc7436308873ec515cfbb6f87e6eed3b869c4689e1528f"
+        }
+      ]
+    }
+  },
+  "osm/1300033666": {
+    "baseline_object": "보람관",
+    "source_osm_position": {
+      "lat": 35.8860951,
+      "lon": 128.6094066
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "boram-front.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/dorm/dorm10_1.jpg",
+        "sha256": "b89d93a53d76a618e5ab7eaccd9edd386de4940c9e79202a83309e9256c85dff"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449445-206085.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449445",
+        "sha256": "38f80520a2fd26adf6690d587afc27d40c4fe6feb6d2a0861ed5925f410af1f7"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449444-206084.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449444",
+          "sha256": "5dcaaafea0c27a803e8c1619613a6869c977b53bd97afb57341c15d987e4450b"
+        },
+        {
+          "file": "z19-tile-449445-206084.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449445",
+          "sha256": "e0de99e068c8cd5e67795bed2b0d9303c36ff759162dba77e196f810baf7fee5"
+        },
+        {
+          "file": "z19-tile-449446-206084.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206084/449446",
+          "sha256": "bb0a7e4576738d7b4c130d3863859d7b12c3a327450215af2482c1e5258a6ec1"
+        },
+        {
+          "file": "z19-tile-449444-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449444",
+          "sha256": "1c28aa7f1b2b019aa8c8fa511fd1da6b4a165eed73f0401b1b1fa989002a3ba8"
+        },
+        {
+          "file": "z19-tile-449446-206085.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206085/449446",
+          "sha256": "7746a7dd80ef664c181abb908ae2a035f8c04b446fcd5cac52c8c825bc42600e"
+        },
+        {
+          "file": "z19-tile-449444-206086.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449444",
+          "sha256": "30ab3ab4e3ab55e216bf1a44f6e0a1aa13cc6c8957491a427aba0376741bd831"
+        },
+        {
+          "file": "z19-tile-449445-206086.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449445",
+          "sha256": "8c6c340dc731755be4df061a0fe1ee3a26ab6bbc23b77c0b52034382f6e820ca"
+        },
+        {
+          "file": "z19-tile-449446-206086.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449446",
+          "sha256": "d5bbe00b1b585b002e63de2af51c09918cd168f0fb0be04b5ed95be5f02ea3bd"
+        }
+      ]
+    }
+  },
+  "osm/468931911": {
+    "baseline_object": "첨성관",
+    "source_osm_position": {
+      "lat": 35.8914342,
+      "lon": 128.6149134
+    },
+    "references": [
+      {
+        "file": "dorm-map.jpg",
+        "url": "https://dorm.knu.ac.kr/img/sub/p1050_01.jpg?ver=2",
+        "sha256": "5ff92de6ed8533c4c2d103ce8e5cdd48d8de07182bb69dbc739b6e36281f60d8"
+      },
+      {
+        "file": "pano11384-1.jpg",
+        "url": "https://home.knu.ac.kr/HOME/knuprmap2/indexdata/_1_10_11384/mobile/1.jpg",
+        "sha256": "76df9a5ae9ccefadff23c58fea35a7a4cbf1bd05d5161130eaf822c35678aeaf"
+      }
+    ],
+    "aerial_view": {
+      "north_up": true,
+      "capture_date": "미확인",
+      "tile_center": {
+        "file": "z19-tile-449453-206075.jpg",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449453",
+        "sha256": "4747a435d3e386c5ac464aebcea12c16594036ae53111b1dbc5fb147c51d37d1"
+      },
+      "tiles_for_adjacent_context": [
+        {
+          "file": "z19-tile-449452-206074.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449452",
+          "sha256": "e751c796d460d2783ca91df427b3ca5906855193b70efab0728f0d0e9beb6319"
+        },
+        {
+          "file": "z19-tile-449453-206074.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449453",
+          "sha256": "ac5799b000ec906f1df84a2475df1ba72c0570a413cc0b804f437d9402d44fa2"
+        },
+        {
+          "file": "z19-tile-449454-206074.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449454",
+          "sha256": "b4ea6af47c860b14310776d8e5a79187a9ae9d47ac7acfeae4c8c13e0104993d"
+        },
+        {
+          "file": "z19-tile-449452-206075.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449452",
+          "sha256": "822d95a5c7c2da32759c95562dd02a409989d30587758978e740330c0fd2999c"
+        },
+        {
+          "file": "z19-tile-449454-206075.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449454",
+          "sha256": "bb30b1e539ec8c8b2b74010e7c133a743b1bba22115a4890b720453f734da308"
+        },
+        {
+          "file": "z19-tile-449452-206076.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449452",
+          "sha256": "95962f503b52ca67931ec5e5553e1722d5e694b1d16c66bc0fc1dffd776ee9ab"
+        },
+        {
+          "file": "z19-tile-449453-206076.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449453",
+          "sha256": "fc127d1d76f2369c821620f5971136668387750d4e0d758a05f4f58f4a3de84a"
+        },
+        {
+          "file": "z19-tile-449454-206076.jpg",
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449454",
+          "sha256": "7fa06b5503173a9a830e356246b07eb0f9d27e0da474613528237e76d14dde3c"
+        }
+      ]
+    }
+  }
+}

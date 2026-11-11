@@ -1,0 +1,10 @@
+{
+  "building_id": "knu-grad-v71-b2-r3-fracture",
+  "fragment_count": 64,
+  "intact_volume_m3": 1.059654553094934,
+  "volume_relative_error": 3.14275443790365e-08,
+  "errors": [],
+  "source_blend_sha256": "b78167f7ee77c2deea62253a48bc016e984ffec03cfaa718e020e0b905cece11",
+  "collider_revision_from": "knu-grad-v71-b2-r2-fracture",
+  "corrected_collider_count": 2
+}

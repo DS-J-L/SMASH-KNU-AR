@@ -1,0 +1,6 @@
+{
+  "identical": true,
+  "candidate_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "replayed_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "execution": "serial_after_parallel_blender_exit"
+}

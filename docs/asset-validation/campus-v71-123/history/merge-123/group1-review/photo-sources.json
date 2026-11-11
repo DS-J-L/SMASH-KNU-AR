@@ -1,0 +1,1114 @@
+{
+  "vw/95": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449443",
+          "sha256": "e8b45ca05ae71fabd62b8367033272a07ed9d554a2da451ac87a2069219b0ed3"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449443",
+          "sha256": "f6eb68004e535a06ea6c65871deab1e36b45d3c9fc93ef25d031a657dc013686"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449443",
+          "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449444",
+          "sha256": "7d7d4ae60cd4f59849de5274fb408212edc16caa9aaa4c24cfea614336e5d9d6"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449444",
+          "sha256": "b0a7ef8abc350def0314f272d6a5164dcf8c8bc7dad140230ead916eaa87569d"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449444",
+          "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449445",
+          "sha256": "989e2f250986fcf7fe684246639dd8e486b92e6f75a28e8b00c240506ec4b60d"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449445",
+          "sha256": "63ca2156085b4ad6c27ca2776397d4a552ed7d8fe585b20dc6ab2d72d9136142"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449445",
+          "sha256": "b85580bfc91fc8a5dc07c5a43cb5c35f14a403e1e9309be8798e10010225ebec"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189506031688743
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449443",
+          "sha256": "e8b45ca05ae71fabd62b8367033272a07ed9d554a2da451ac87a2069219b0ed3"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449443",
+          "sha256": "f6eb68004e535a06ea6c65871deab1e36b45d3c9fc93ef25d031a657dc013686"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449443",
+          "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449444",
+          "sha256": "7d7d4ae60cd4f59849de5274fb408212edc16caa9aaa4c24cfea614336e5d9d6"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449444",
+          "sha256": "b0a7ef8abc350def0314f272d6a5164dcf8c8bc7dad140230ead916eaa87569d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449444",
+          "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449445",
+          "sha256": "989e2f250986fcf7fe684246639dd8e486b92e6f75a28e8b00c240506ec4b60d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449445",
+          "sha256": "63ca2156085b4ad6c27ca2776397d4a552ed7d8fe585b20dc6ab2d72d9136142"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449445",
+          "sha256": "b85580bfc91fc8a5dc07c5a43cb5c35f14a403e1e9309be8798e10010225ebec"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189506031688743
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449443",
+          "sha256": "e5c4809cca9aca5d1be890b6f0ab03feb2a5a975f4ee84e0febc89fd527882a7"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206078/449443",
+          "sha256": "7b49b5a52a6c847acd6471b99505c60369117bee248eb2db6c61cbbdf2dda9a3"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206079/449443",
+          "sha256": "b660463ad9fb9f6084f8e8ddad468ef22077cfbc484d3fe31de2f7919eb0f407"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449444",
+          "sha256": "42d6fffa0a66c3304a0a4529655e3e054ca4098dd9833beeff18da67885219c1"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206078/449444",
+          "sha256": "d0048d019257be117bc3e48617de82cc767f92fa2f539b0fe08a4e6281e3df59"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206079/449444",
+          "sha256": "6a1a3d5052fd994ce76731339aa6ec63925d13ef3995ef318396ed4fb44fdb5e"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449445",
+          "sha256": "12ead9d972ed7eef7946bbb1b34a8033021f2de7add31726efe84e7f6d8a2e78"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206078/449445",
+          "sha256": "3a4d357e57cc13dde026bb40b536898f73f82d56be0f0d72d7a53c2af333d97f"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206079/449445",
+          "sha256": "74c991a3e53721debc0bcda7f72dcac20c5fde0fa343f663c7e5ca9d02912d39"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189506031688743
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449443",
+          "sha256": "e46b9823c8ceaecacf224b012a2d9c54301acd45f1ab7ce21b502c4809775fde"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206078/449443",
+          "sha256": "be7b4b0f0fa30ec322ffbdf5454cbf6c07822758ad8a01cbcd3d4fec1de9f5b0"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206079/449443",
+          "sha256": "12f430b5c6609c216247925a01dbb7067e320a19805ec5410bee6eba76c04659"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449444",
+          "sha256": "94a3eecc57bae68cd7fef90a9b878803ab153fde5d0e8f129b045bdb87698a06"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206078/449444",
+          "sha256": "a66a68d2bddcc96bc89ca4c510eed4ffa7c3e49c339cdf1b8e19e4b644bd88da"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206079/449444",
+          "sha256": "88f19d80ebf3be903e33f1959d88bd74265576db2af5b898cea0ba6299d000a6"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449445",
+          "sha256": "18ec58ea67734809f032851ffb3924a49f632bc2208b07762e711fe761b1eb89"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206078/449445",
+          "sha256": "186eca347f12a0fefc6b0db46f91b6a0b19fafc85dafa6652a9293a1d6c27421"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206079/449445",
+          "sha256": "1181ac7451bd58918d00f2abbc72ae6d2b85a107c33d7496a80836081eef81b6"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189506031688743
+    }
+  },
+  "vw/127": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449448",
+          "sha256": "e3aa2f6b019742d959c90fe8973eed6f2f039b1386fb6794c9d8d44d60116a58"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449448",
+          "sha256": "67f8ad4d8ae84a894ca377c5f4dc8ecb080ce4e83c72b253ddc019be27cb70f6"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449449",
+          "sha256": "d6c429b4d0d02ca9ee25253179ce227cae1c998ae92e198ca5eb5d6c92f1d70b"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449449",
+          "sha256": "4c6c85d4eaf7c80cf36bced05b52e0c39c6b102f092298d4aa6f4f673d72e3f3"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418920281582275
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449448",
+          "sha256": "e3aa2f6b019742d959c90fe8973eed6f2f039b1386fb6794c9d8d44d60116a58"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449448",
+          "sha256": "67f8ad4d8ae84a894ca377c5f4dc8ecb080ce4e83c72b253ddc019be27cb70f6"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449449",
+          "sha256": "d6c429b4d0d02ca9ee25253179ce227cae1c998ae92e198ca5eb5d6c92f1d70b"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449449",
+          "sha256": "4c6c85d4eaf7c80cf36bced05b52e0c39c6b102f092298d4aa6f4f673d72e3f3"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418920281582275
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449448",
+          "sha256": "9cad9b5708e46ef4288b9ee10d63e7699bf5d768909dbe60a2e15fa6f8f266fe"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449448",
+          "sha256": "87f3bcc0b304beb008cd84fac35d5cae619621f070547da7bcf5cdcd1789dca9"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449449",
+          "sha256": "77f793e0aeeaa34bb955caafbfef78c84ca3b6d55c02e0973f39a4938ad8b78f"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449449",
+          "sha256": "174a08d291e9b1d405e9900a95e78d13daafcd21747fc37c876b04d96f6c22de"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418920281582275
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449448",
+          "sha256": "3c5b8fd17ce16c666464d8078d234cf193d895ac4b82f8bb27b6dbc5e59ad172"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449448",
+          "sha256": "3f5e366c589864cdda3a83bd30eaaca3e220b485987aa8ff3d3de0ab8a04f007"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449449",
+          "sha256": "d550cc7e62c27db7e8f2ef1c353c864bf8ca0544bb465b11def165c21573ad3f"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449449",
+          "sha256": "6420d39fec6563a7fc0d928fc74a6caad904cdd4b1a6956340399d0b8155868c"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418920281582275
+    }
+  },
+  "vw/111": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449442",
+          "sha256": "443d6a3d46a3e08c1a7e5a963a44f180505c88ab62071e312f1bffe3b87224ae"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449442",
+          "sha256": "6ae19565c6ea73d4a807e80e8bd0332525682da7c122bbeee3bb618771b1301b"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449443",
+          "sha256": "974484a79a4cca1fef2048d2f158549b108a8df79d7d9187cf014fe11f701864"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449443",
+          "sha256": "310f4bb1b4cbd81c1d8cfbedd0e2502a51a829b3e4fedee8f6fae9a5da12f860"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418904713806989
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449442",
+          "sha256": "443d6a3d46a3e08c1a7e5a963a44f180505c88ab62071e312f1bffe3b87224ae"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449442",
+          "sha256": "6ae19565c6ea73d4a807e80e8bd0332525682da7c122bbeee3bb618771b1301b"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449443",
+          "sha256": "974484a79a4cca1fef2048d2f158549b108a8df79d7d9187cf014fe11f701864"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449443",
+          "sha256": "310f4bb1b4cbd81c1d8cfbedd0e2502a51a829b3e4fedee8f6fae9a5da12f860"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418904713806989
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449442",
+          "sha256": "e4f03e6ab9756cec38eb8acc08c41db2bc9f15a486f95e578fff5254a2082b2e"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449442",
+          "sha256": "32cdf08c4b854efe7e4b680dc89a95fd9fcfca1d80b8ef6c21a29ee7dec4e75d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449443",
+          "sha256": "acb618bf1bb2cd3dac43e3f744f310b0dcd6432ff9462c34fdd3f2e742abf95c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449443",
+          "sha256": "bd171f7866a4823b508f9a136f2ff2eb764105b88f3088b8c7b433444ef3cdbe"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418904713806989
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449442",
+          "sha256": "cd8a8f8154d5f6c53156af6cac29bacf5e3366baf04544c4fa69f5026df2cf39"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449442",
+          "sha256": "8078da87c6f44b8b0a3133e2090bc39e12e403853538d0ec8835584ac0139444"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449443",
+          "sha256": "6b760cc415bd4e1228b54d232f40a34e8745b78d34ef25b9a612fb7283770ba5"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449443",
+          "sha256": "b492d113bc8932086e6b2b89976c9f2f0b599602e3f240d25f738afbdb279581"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418904713806989
+    }
+  },
+  "vw/62": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206068/449449",
+          "sha256": "1f0752b714d3342c2b1ece8b719bf5aae1924e7a7e367724cc5ee85def116b18"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206068/449450",
+          "sha256": "5ffd5a07747dac25b164e9165d105982c010ea1b38c190ccb9479b13c1315f9e"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24187782036057273
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206068/449449",
+          "sha256": "1f0752b714d3342c2b1ece8b719bf5aae1924e7a7e367724cc5ee85def116b18"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206068/449450",
+          "sha256": "5ffd5a07747dac25b164e9165d105982c010ea1b38c190ccb9479b13c1315f9e"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24187782036057273
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206068/449449",
+          "sha256": "12fccd384b1bc860765f945a9a171e722c45df0732de2bc0c8e7910e2cabc773"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206068/449450",
+          "sha256": "63f916e9d01324e4c29c20e5e637f17d7f69686e3f5f1df5d097caed80b3e88d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24187782036057273
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206068/449449",
+          "sha256": "a1cd6c0dd2bc27bef5cf47826ba62ad5f71c252d7fb06af79dbc1730e1cc6f42"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206068/449450",
+          "sha256": "3ebb41b20695567d203ec1a4a0be59d07349f0fe56dd62a2049c0af35c751044"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24187782036057273
+    }
+  },
+  "vw/22": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449443",
+          "sha256": "974484a79a4cca1fef2048d2f158549b108a8df79d7d9187cf014fe11f701864"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449443",
+          "sha256": "310f4bb1b4cbd81c1d8cfbedd0e2502a51a829b3e4fedee8f6fae9a5da12f860"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449444",
+          "sha256": "07113a5adfe851e10e865516dad681b5b9882efe35ed48b90686b6775f27fd50"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449444",
+          "sha256": "953c2611cd0d0e2486229c9e3c1a43be32d533ab087762e2384365cf3c6988c7"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418907650322143
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449443",
+          "sha256": "974484a79a4cca1fef2048d2f158549b108a8df79d7d9187cf014fe11f701864"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449443",
+          "sha256": "310f4bb1b4cbd81c1d8cfbedd0e2502a51a829b3e4fedee8f6fae9a5da12f860"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449444",
+          "sha256": "07113a5adfe851e10e865516dad681b5b9882efe35ed48b90686b6775f27fd50"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449444",
+          "sha256": "953c2611cd0d0e2486229c9e3c1a43be32d533ab087762e2384365cf3c6988c7"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418907650322143
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449443",
+          "sha256": "acb618bf1bb2cd3dac43e3f744f310b0dcd6432ff9462c34fdd3f2e742abf95c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449443",
+          "sha256": "bd171f7866a4823b508f9a136f2ff2eb764105b88f3088b8c7b433444ef3cdbe"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449444",
+          "sha256": "dbf17cb9e85145fd5e9e3c3e6d26c04559c7beddb737f7a8760697e594290077"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449444",
+          "sha256": "85e7b18b9dadd8c1c783c83404731ccb7f3b77a36ba55eaa0dc2b49af1805292"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418907650322143
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449443",
+          "sha256": "6b760cc415bd4e1228b54d232f40a34e8745b78d34ef25b9a612fb7283770ba5"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449443",
+          "sha256": "b492d113bc8932086e6b2b89976c9f2f0b599602e3f240d25f738afbdb279581"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449444",
+          "sha256": "970e61aa05f898bf4bc39b12005871f683d453f59dc3fad30e541e9bb87b8bb3"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449444",
+          "sha256": "d4c291b6d4afa69b037846095abfbd685a239cc552ad58854c16c1eb43d6aa96"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418907650322143
+    }
+  },
+  "vw/33": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449441",
+          "sha256": "0b8c4557620357f952c99ea3a37665a30de9e12edd728c3dbbf2c2c48efdc18b"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449441",
+          "sha256": "35eb48eb3fc74015d936c4e4b144fe6914c662e17bcd15e79f07a675ed7f2949"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449442",
+          "sha256": "443d6a3d46a3e08c1a7e5a963a44f180505c88ab62071e312f1bffe3b87224ae"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206076/449442",
+          "sha256": "6ae19565c6ea73d4a807e80e8bd0332525682da7c122bbeee3bb618771b1301b"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189046477986206
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449441",
+          "sha256": "0b8c4557620357f952c99ea3a37665a30de9e12edd728c3dbbf2c2c48efdc18b"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449441",
+          "sha256": "35eb48eb3fc74015d936c4e4b144fe6914c662e17bcd15e79f07a675ed7f2949"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449442",
+          "sha256": "443d6a3d46a3e08c1a7e5a963a44f180505c88ab62071e312f1bffe3b87224ae"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206076/449442",
+          "sha256": "6ae19565c6ea73d4a807e80e8bd0332525682da7c122bbeee3bb618771b1301b"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189046477986206
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449441",
+          "sha256": "570027c5ea4c49a91ecd09d2dd47adb5e3cc7d97249b414b9eb2de0e12809cb9"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449441",
+          "sha256": "04a5d35b191481901b3ddc5593e5f811b39ae30900ad7a7b0de3d57f88f6b20a"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449442",
+          "sha256": "e4f03e6ab9756cec38eb8acc08c41db2bc9f15a486f95e578fff5254a2082b2e"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206076/449442",
+          "sha256": "32cdf08c4b854efe7e4b680dc89a95fd9fcfca1d80b8ef6c21a29ee7dec4e75d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189046477986206
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449441",
+          "sha256": "687f6cdac02d9442496a16d8b17d0989e3f0c8ec7be230ee0e8729776719c804"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449441",
+          "sha256": "0cda1aa698c0e537b71cb6ef6ca91df382956f1ac3259bee2db5d2ceddbfcb5f"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449442",
+          "sha256": "cd8a8f8154d5f6c53156af6cac29bacf5e3366baf04544c4fa69f5026df2cf39"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206076/449442",
+          "sha256": "8078da87c6f44b8b0a3133e2090bc39e12e403853538d0ec8835584ac0139444"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24189046477986206
+    }
+  },
+  "vw/165": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449441",
+          "sha256": "4b6e6e042f2c8b1dbee6a1f6c09a7974b35a3dd5d2c4d502dc92f220b939e2a4"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449441",
+          "sha256": "cf28150762554eb3b6b0c9bde9122a421e818485486269e65cf3d0e8e556dd93"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206077/449442",
+          "sha256": "b5660a7d82fa69ef33b77745d6de062407717782d63c03e90af81f8fc6adfd9c"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206078/449442",
+          "sha256": "d4fe895c805190387333e57729ba598e44a45efbf59e1c437a4f46905339592f"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241894025358048
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449441",
+          "sha256": "4b6e6e042f2c8b1dbee6a1f6c09a7974b35a3dd5d2c4d502dc92f220b939e2a4"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449441",
+          "sha256": "cf28150762554eb3b6b0c9bde9122a421e818485486269e65cf3d0e8e556dd93"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206077/449442",
+          "sha256": "b5660a7d82fa69ef33b77745d6de062407717782d63c03e90af81f8fc6adfd9c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206078/449442",
+          "sha256": "d4fe895c805190387333e57729ba598e44a45efbf59e1c437a4f46905339592f"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241894025358048
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449441",
+          "sha256": "caaa578a1d065eca6030aebcc4f0c071661866985a8e6976cd57f8d80524f83c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206078/449441",
+          "sha256": "49cf4df7beaa0c9a8672d12686f31b941e7e6300e3f31d495a26391987c23409"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206077/449442",
+          "sha256": "ccd8e3230de5504ec60797c3accfc8a451fffb896fcd0094ba63073eebb3d6be"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206078/449442",
+          "sha256": "76915bca9c5a5012420db8f1ad96a1b75af718d452212bf05359875b96eac374"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241894025358048
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449441",
+          "sha256": "60c995d66dffd9d8829b532bedc938728a82a56ab1dbd55c365181d856df8168"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206078/449441",
+          "sha256": "9912f630f0b1274066bc6668f3b1c33985bbec578143fe904e245bf14220d5fc"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206077/449442",
+          "sha256": "98f210633a292a6da3d84ca56f04d2b3db4b14e8573a02e1d8a103aafef80da8"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206078/449442",
+          "sha256": "b07abb84acea311be0d184781e0de0d846a14c641d18af3a445cbb566dd9faff"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241894025358048
+    }
+  },
+  "osm/468931896": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449449",
+          "sha256": "22bea30165ac2e547e63f3ee94f936f0b2299f916bd2930eaf8edc7b646cd46c"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449449",
+          "sha256": "c5b5c6e73b89117877170e1c5b2a8c31c7b8aa765bf93d9ec0b0f52c12722009"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206081/449450",
+          "sha256": "884825ea78cd97f3b586a084e947458cd7e139db1db27393e6510750899cb4aa"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206082/449450",
+          "sha256": "0911672e1fc354a3675fe7209abb507a587a1305f70b6d6e55c5de195e1670d4"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2419014793566922
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206081/449449",
+          "sha256": "22bea30165ac2e547e63f3ee94f936f0b2299f916bd2930eaf8edc7b646cd46c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206082/449449",
+          "sha256": "c5b5c6e73b89117877170e1c5b2a8c31c7b8aa765bf93d9ec0b0f52c12722009"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206081/449450",
+          "sha256": "884825ea78cd97f3b586a084e947458cd7e139db1db27393e6510750899cb4aa"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206082/449450",
+          "sha256": "0911672e1fc354a3675fe7209abb507a587a1305f70b6d6e55c5de195e1670d4"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2419014793566922
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206081/449449",
+          "sha256": "670c2785b5d74243a08bc5124609c6538b3ace47b86c1df593be3474a231f5d7"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206082/449449",
+          "sha256": "9ff4cdbc421c92cb30fa14ce4daf7938cb33fc4095ded889789d92ff86e9656c"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206081/449450",
+          "sha256": "db65fea9d13044c218a4b0d837cfd1d608b65287e9858d2c5cb8a0d14a0fb8cb"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206082/449450",
+          "sha256": "4bfd218bcaea39a3196128ad38304317ac88a99bdff95b2cfbc17ab33a84957b"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2419014793566922
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206081/449449",
+          "sha256": "f93b77fa1da66dc72972a07cb291723a6734e7b1f479e7202587b4c7d07e64fb"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206082/449449",
+          "sha256": "c3e2bda3e299c696a6a9e4c80379a0962219709174a824a803acfe2626a0ef6b"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206081/449450",
+          "sha256": "ebf5f4990d1906f5f70c2b2e861d5de59429c2742640ad5f3bae13d5be757d12"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206082/449450",
+          "sha256": "324cdb55f42fc3a02afcec97990d8c67166ab97bd3c890f14d7eea9a8691ed3a"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2419014793566922
+    }
+  },
+  "osm/468931915": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449450",
+          "sha256": "d6cdbebe1656fb9f779fac943ca36e25596a93936615bcae15a56855236e1ae5"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449450",
+          "sha256": "ee557965454cf50b068a4e04ee2bb90c5bb059ed7cc4a2e887437e5fd058f3bf"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206074/449451",
+          "sha256": "39bc57051c558230ecdbe44502b7c0a33b59e92f224b53ab9712ef6d235fccce"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206075/449451",
+          "sha256": "b6944b069c1d0c1abdffab3cc437440e022b12571dda537df18788f509feb8e5"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241888802733021
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206074/449450",
+          "sha256": "d6cdbebe1656fb9f779fac943ca36e25596a93936615bcae15a56855236e1ae5"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449450",
+          "sha256": "ee557965454cf50b068a4e04ee2bb90c5bb059ed7cc4a2e887437e5fd058f3bf"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206074/449451",
+          "sha256": "39bc57051c558230ecdbe44502b7c0a33b59e92f224b53ab9712ef6d235fccce"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206075/449451",
+          "sha256": "b6944b069c1d0c1abdffab3cc437440e022b12571dda537df18788f509feb8e5"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241888802733021
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206074/449450",
+          "sha256": "ae9cd2da5afd19d0a34f0f3c6efa21a95c703360f00a06dd7074649728587572"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449450",
+          "sha256": "a7a5e5467780d51b16bcd0021ea4d30f578734f2b1185558951eac180557f06d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206074/449451",
+          "sha256": "e592ddaa2420b61403295f441edac46294f33fd8c6d6972fbf0058ca2e1fd3cf"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206075/449451",
+          "sha256": "7d0a174c8655885cab4a0c8e8e26af083e4972f5d4194b20776b6e731db7ce6a"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241888802733021
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206074/449450",
+          "sha256": "ec1f793f65feeae2a79e78208e06458534211037aad5592d53e9a77dbc607f56"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449450",
+          "sha256": "9e58d2373c7b54fc436ebab8d285cab1042e77d661931d5c96932beca7a4d922"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206074/449451",
+          "sha256": "e2322bf51a7bf72bc8e6de8755414fc8a0c45cb69da9d6d0f3e859d99717a586"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206075/449451",
+          "sha256": "6cb6b6a7c35c382fb9a53a0a83a262d2e33e30c7241c0517ec312b997c03870a"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.241888802733021
+    }
+  },
+  "osm/577759119": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449443",
+          "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206080/449443",
+          "sha256": "497f973b4622135b494b94ce7d33464ff930371ddbecfd4f65e70db66d225f44"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206079/449444",
+          "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206080/449444",
+          "sha256": "eac6e0e7405bd717a940ee7b96972d304193651a0835f7ea5e8918adc78fd9ce"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418980679895655
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449443",
+          "sha256": "77c71bc7941ceec1ef41fdc8d52176ef6f096604bb1fae48f0ffea1c99479100"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206080/449443",
+          "sha256": "497f973b4622135b494b94ce7d33464ff930371ddbecfd4f65e70db66d225f44"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206079/449444",
+          "sha256": "de297887c971be315331387077ebbfceb83391cb8cefce774e347ee12c7d6f03"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206080/449444",
+          "sha256": "eac6e0e7405bd717a940ee7b96972d304193651a0835f7ea5e8918adc78fd9ce"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418980679895655
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206079/449443",
+          "sha256": "b660463ad9fb9f6084f8e8ddad468ef22077cfbc484d3fe31de2f7919eb0f407"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206080/449443",
+          "sha256": "ef095871cf8442f0a94b8f8606664e5e72abf511aa69605c259b82f0a739c65e"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206079/449444",
+          "sha256": "6a1a3d5052fd994ce76731339aa6ec63925d13ef3995ef318396ed4fb44fdb5e"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206080/449444",
+          "sha256": "d2c0af3df1dce14898986e1d0b50fba38d66f1cf6bff7c56ee5291797cdd7e5a"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418980679895655
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206079/449443",
+          "sha256": "12f430b5c6609c216247925a01dbb7067e320a19805ec5410bee6eba76c04659"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206080/449443",
+          "sha256": "2fb1072acc6f870af803374851cc48a58757d51341a382db1cccfc3b0fce6a89"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206079/449444",
+          "sha256": "88f19d80ebf3be903e33f1959d88bd74265576db2af5b898cea0ba6299d000a6"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206080/449444",
+          "sha256": "d99cdae7e1596c27cf04326c1a0e999bf699aeec062f55a9d9599af54b1c5d32"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.2418980679895655
+    }
+  },
+  "osm/584385630": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449452",
+          "sha256": "5bcf81e253e7f7de96e6aa558a4cfd40b78abaeae53aabc952eaa09564bec688"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449453",
+          "sha256": "c35ead07e56a19411c42746b3a92d81ffc0cb56c42bd6add01a85e12d6d9a09d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190864271473064
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206086/449452",
+          "sha256": "5bcf81e253e7f7de96e6aa558a4cfd40b78abaeae53aabc952eaa09564bec688"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206086/449453",
+          "sha256": "c35ead07e56a19411c42746b3a92d81ffc0cb56c42bd6add01a85e12d6d9a09d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190864271473064
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206086/449452",
+          "sha256": "2bfd637ec1c4f22fc78a7f955fa7c02b950fcbfae990319d0dfef9b271ed448d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206086/449453",
+          "sha256": "db5624606fe200780817043374e9adf0617b8f98d4fd398f160519fbc0ae3593"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190864271473064
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206086/449452",
+          "sha256": "0a255b90dcf9f2fbf04227b7362a35e2e26b97c927e7837ae99ea09d7d6e2e36"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206086/449453",
+          "sha256": "24a1192cc24066b819d92c7845b99c53ec45066cf132765f95b6d14eb64ef6c3"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190864271473064
+    }
+  },
+  "osm/584386432": {
+    "world": {
+      "title": "World Imagery",
+      "tiles": [
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449452",
+          "sha256": "5bcf81e253e7f7de96e6aa558a4cfd40b78abaeae53aabc952eaa09564bec688"
+        },
+        {
+          "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/206086/449453",
+          "sha256": "c35ead07e56a19411c42746b3a92d81ffc0cb56c42bd6add01a85e12d6d9a09d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190850617177953
+    },
+    "43291": {
+      "title": "World Imagery (Wayback 2026-10-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206086/449452",
+          "sha256": "5bcf81e253e7f7de96e6aa558a4cfd40b78abaeae53aabc952eaa09564bec688"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/43291/19/206086/449453",
+          "sha256": "c35ead07e56a19411c42746b3a92d81ffc0cb56c42bd6add01a85e12d6d9a09d"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190850617177953
+    },
+    "39767": {
+      "title": "World Imagery (Wayback 2024-06-27)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206086/449452",
+          "sha256": "2bfd637ec1c4f22fc78a7f955fa7c02b950fcbfae990319d0dfef9b271ed448d"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/39767/19/206086/449453",
+          "sha256": "db5624606fe200780817043374e9adf0617b8f98d4fd398f160519fbc0ae3593"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190850617177953
+    },
+    "4905": {
+      "title": "World Imagery (Wayback 2022-06-29)",
+      "tiles": [
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206086/449452",
+          "sha256": "0a255b90dcf9f2fbf04227b7362a35e2e26b97c927e7837ae99ea09d7d6e2e36"
+        },
+        {
+          "url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4905/19/206086/449453",
+          "sha256": "24a1192cc24066b819d92c7845b99c53ec45066cf132765f95b6d14eb64ef6c3"
+        }
+      ],
+      "missing": 0,
+      "resolution_m": 0.24190850617177953
+    }
+  }
+}

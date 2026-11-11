@@ -1,0 +1,26 @@
+{
+  "knu-osm-468931915-v71-b10-r1-fracture": {
+    "intact.glb": {
+      "errors": 0,
+      "warnings": 0,
+      "findings": []
+    },
+    "fragments.glb": {
+      "errors": 0,
+      "warnings": 0,
+      "findings": []
+    }
+  },
+  "knu-osm-577759119-v71-b10-r1-fracture": {
+    "intact.glb": {
+      "errors": 0,
+      "warnings": 0,
+      "findings": []
+    },
+    "fragments.glb": {
+      "errors": 0,
+      "warnings": 0,
+      "findings": []
+    }
+  }
+}

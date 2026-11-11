@@ -1,0 +1,19 @@
+{
+  "unchanged_objects": 1782,
+  "objects": 1784,
+  "unique_core_ids": 123,
+  "missing_ids": 0,
+  "duplicate_ids": 0,
+  "triangles": 893532,
+  "unchanged_associated_dot8_objects": 55,
+  "meshes": {
+    "이름 미등록 건물.003": {
+      "material_only_changed_triangles": 2,
+      "unchanged_triangles": 26
+    },
+    "이름 미등록 건물.006": {
+      "material_only_changed_triangles": 2,
+      "unchanged_triangles": 26
+    }
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "restored_material_frames": 35,
+  "restored_wire_frames": 14,
+  "all_match_prior_review": true,
+  "per_model": {
+    "524172305": {
+      "restored-524172305-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "f4948e0e3e0ae954a711ab3d396fb2e1d66830a24471fee2e9e6adb3fb3e4721"
+      },
+      "restored-524172305-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "0e7a74503de4e1c6f8ed8f1b4a6d8742f0ddf5299b804a7b52152aa1ea22fa62"
+      },
+      "restored-524172305-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "9d638f0c36be9782d981da31cf46ce8487e32671f43c502e93f685315d373b5d"
+      },
+      "restored-524172305-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "85a2c01d5bbe1d14655a0d4c15acbfc06100f952b40c13c0824a77ebb78e22b2"
+      },
+      "restored-524172305-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "1aefe9032d2034361335903e71c4f9f3b4f09a4ea78eb9b2a7a56b9c71dbd96a"
+      },
+      "wire-524172305_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "d5394b4e8e7aee78f37d9952c11c8e95044abc060bfefe60b8c004bd295c0976"
+      },
+      "wire-524172305_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "dd0473b2b46c86bf578d4f1ab9777ffe1aa77f7f09ac3f17e622f91a27ab7d6d"
+      }
+    },
+    "576254849": {
+      "restored-576254849-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "04d11969bfbf06d38358a3e795d0b7c9aa1ee0c8b5ba42a44624828a43718fce"
+      },
+      "restored-576254849-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "c3838f6417d63ee4ecb4be403c107e60c6f02ea0962071f73174ec46eac4aa88"
+      },
+      "restored-576254849-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "21ca27ca4fa630c33c278b03d48b68e824944a941248b3a70e43c2e524f62fa5"
+      },
+      "restored-576254849-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "87411f21dd6f17ab8ecaba664c36361a236c17d7023f162edd360392525c45a4"
+      },
+      "restored-576254849-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "70e0f541ca1b93a1d3f3d6c1de2a5155fc578df7752519234c239c2a14b3d850"
+      },
+      "wire-576254849_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "61427a7f0c8e6c95ae12c9b7391a74424e931e2ca2f50ab709b81c05c633f2d4"
+      },
+      "wire-576254849_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "7e1a0d8610f584d3fa8deb661eea0a380c8886791e68f65c0d9bb005a070b0a3"
+      }
+    },
+    "473687810": {
+      "restored-473687810-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "b45289bf7ac1a6bb8c18c8ea9e0edc55ecde6bde83206c5e9fc767072f9d864a"
+      },
+      "restored-473687810-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "4318a8d7d24b3e53272845e58a7bb2c02f3ebbf5e486c46ed5c8d909b9689458"
+      },
+      "restored-473687810-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "9213fb86ef64017ef7177e1baeb713dbe9d4509638020af6a51f256dc73a2a38"
+      },
+      "restored-473687810-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e415aa40e2b7a3b5ca0ea52416326cedd0141f773f16fd97ddc507df113be33b"
+      },
+      "restored-473687810-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "c646b57b818e9cb3fcfbc08ddc35c5c3525fe9b429adc0c665ebfd60cf5e3a22"
+      },
+      "wire-473687810_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "368d9c56d7dea51453a1c568884682ece262db9a8260d8ea05eb673d7f4aec49"
+      },
+      "wire-473687810_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "8d59070c3a56c586145fbaa718a52cef8cd525031355368575a7881b8798bed9"
+      }
+    },
+    "vw/113": {
+      "restored-vw-113-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "ca068da4e9ddbea8814e3937967f53a23ff0fe2cb9575e6c05cceb48b9647531"
+      },
+      "restored-vw-113-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "036fa671cf626a02784fdb67e51c9f6433b65cd989a06f5fa92ac690b04ac6c0"
+      },
+      "restored-vw-113-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "926929a3a55ba1e6e003ecf59d5f4be73975aad55e045d3ac2d14474a3c782bb"
+      },
+      "restored-vw-113-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "699542bbb7ba4e625960a9bcb8a32f362f88056e08f7b495c549e6b8863b3f07"
+      },
+      "restored-vw-113-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "292ca6dee28262a23160b5c5624d6f217007648eb512d86fec9fdfb9aa9e03c5"
+      },
+      "wire-vw-113_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "5ac9f3d63015f4c1f5c20dbc18e3ea34020d748fc074f79ba16360f930424172"
+      },
+      "wire-vw-113_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "56c973b1528b62273452a9f09b0da8daa1c0b4549599b8db8cec2302238fb804"
+      }
+    },
+    "vw/111": {
+      "restored-vw-111-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "83b5b73654c59a9526678bb36c2c823072d227428eb4859397087e73bdf24ffc"
+      },
+      "restored-vw-111-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "f127ff10c531912b641380536a4381e7ce60d7b20973dbabf3471d66cd985b1d"
+      },
+      "restored-vw-111-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "bb0a719c4d75779fe83c2aca13e01b86c1e679d6be556c3c99ce67cfb3b8e929"
+      },
+      "restored-vw-111-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "962cda3251b608722891221e8b9ca0c870be1008380e1ee908a894036d17d310"
+      },
+      "restored-vw-111-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "a30ee9d9f6cc90e1a4190493de1a6316e4aa8384c10a1aa959322bb369ec5288"
+      },
+      "wire-vw-111_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "7e51f76fd31cbf8e92953cea9032a743177626ece9190a12a366b2bbd1678c17"
+      },
+      "wire-vw-111_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "5e9233ab22cf56f63f9e24f307d638e632b7b0aa67c777c1646d255101b1a84e"
+      }
+    },
+    "468931894": {
+      "restored-468931894-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "f502a156c2e2493c1e0723039682d1ce40781776e338f5f03c0b6fcccbaf900a"
+      },
+      "restored-468931894-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "fca76639e86fc259b82e453406933b846c4d91a2edcec9350cc7971a36bf493a"
+      },
+      "restored-468931894-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "5a7ef11afe3de20c17b437646cbab2988cf5d9cc85de044a9c179a7b7a615459"
+      },
+      "restored-468931894-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "aef0b405281516026f70d11732a0101cf79f4a3e0825d8d896471641722ee119"
+      },
+      "restored-468931894-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "397fba12408070ad985a104ea92766a92c9991c346a391dc9b5ea596246f4df0"
+      },
+      "wire-468931894_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "ab169daa301278b6d5f2dae56f4a49f330ccc955db5bdae1469171d9a61fd7e3"
+      },
+      "wire-468931894_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "31221771103b5bd392f88ecf31eb7293c853587c90c7ab4da3d9767686f150c1"
+      }
+    },
+    "1107268251": {
+      "restored-1107268251-NW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "6be1c8c9e0fd5b09adad9ec5d9f88c5117b341b20f8377e4a7470eb4700d3552"
+      },
+      "restored-1107268251-NE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "fada0da2cc07104b6e4fac2fe162952db7902e984b661df4059432bc4a5ced8e"
+      },
+      "restored-1107268251-SE": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "02f67cfde50871feb5cbb75b024aa91972244b710ce1db59ec3dba490e69d5e1"
+      },
+      "restored-1107268251-SW": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "7336bd02a207b850470ff207e85d5215168a4eaa7aa63af197370d6a0a2bfe83"
+      },
+      "restored-1107268251-top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "6042d735213c25bac3fdffc794e2fa027e2d83007fb75cac1d96b0a025e3fc0a"
+      },
+      "wire-1107268251_three_quarter": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "4e04a5c2d248b20464f0a3fba6d0cf2a8dd03ff95ea84bff6455b5c78d3b2727"
+      },
+      "wire-1107268251_top": {
+        "matches_prior_review": true,
+        "render_rgb_sha256": "e350d2773e8485236c40b1b0501d35c3b2e511c6fbff830cafa46caf31c031ea"
+      }
+    }
+  }
+}

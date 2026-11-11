@@ -1,0 +1,14 @@
+{
+  "archive": "knu-campus-v71-123-dot8-r1-models.zip",
+  "sha256": "e688647f964c4d061e9bbb7fe3d433604a65f9a76447c82f4acec2b0d8de79f9",
+  "crc_ok": true,
+  "files": {
+    "knu-campus-v71-123-dot8-r1.blend": "d54f197e23b1a199e47a4b1b2e4c35451c50e8c71809a1df4e3984a34c729654",
+    "knu-campus-v71-123-dot8-r1.glb": "329aab61891c9e661b2a8f30539052587a7517f738a2eb032ceaea39e5b16dea",
+    "model-merge-manifest.json": "30f6ee92068d49a3b2505b8ffdc66f63eb5a48ad8e98b5ecc353a3377534dfc9",
+    "dot-intake.json": "560db5189cc7f71d7a29a5e8fa07278d796802562266be0a26d19625804d9a89",
+    "merged-glb-qa.json": "f48ca0021844e196ac43c5533fe168fe45111b7c928a5054c3566a2d48612af7",
+    "preservation-qa.json": "964f1c10a61e38015e72754938faa7886eba18f10f49e8b6da9c197bc6f748ac"
+  },
+  "bytes": 54179064
+}

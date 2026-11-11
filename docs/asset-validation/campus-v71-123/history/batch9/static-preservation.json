@@ -1,0 +1,14 @@
+{
+  "source_glb_sha256": "0fad94409490edbb58ae3709d956f73ddb160aea146d728260a615221139f9f5",
+  "candidate_glb_sha256": "98e3729f72c46d4a1eff278c6448826bb93d269fdbdd249976b79cfecca81220",
+  "changed_objects": [
+    "PP구조실습실",
+    "v7 | 추가 건물 | 동위원소저장고 [vw/165]",
+    "v7 | 추가 건물 | 암석창고 [vw/10]",
+    "v7 | 추가 건물 | 환경과학연구소창고 [vw/1]"
+  ],
+  "preserved_objects": 1731,
+  "dot_protected_ids": 53,
+  "source_triangles": 890412,
+  "candidate_triangles": 890412
+}

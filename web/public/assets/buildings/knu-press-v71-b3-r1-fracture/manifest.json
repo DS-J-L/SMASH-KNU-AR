@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "building_id": "knu-press-v71-b3-r1-fracture",
+  "display_name": "경북대 출판부",
+  "source_model_id": "473684404",
+  "source_campus": "knu-campus-v71-batch3-r1.blend",
+  "source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+  "source_object": "경북대 출판부",
+  "source_objects": [
+    {
+      "object": "경북대 출판부",
+      "mesh": "경북대 출판부.002",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "v7 | 창 근사 | 경북대 출판부 [473684404]",
+      "mesh": "v7 | 창 근사 | 경북대 출판부 [473684404]",
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -5.387378692626953
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "source_origin_campus_z_up_m": [
+    -197.69338989257812,
+    21.68639373779297,
+    -5.894471645355225
+  ],
+  "scale_from_campus": 0.05282518094868221,
+  "source_dimensions_campus_z_up_m": [
+    41.64680480957031,
+    38.227210998535156,
+    14.50709342956543
+  ],
+  "units": "m",
+  "coordinate_frame": "three_y_up",
+  "world_coordinate_frame": "room_z_up",
+  "apply_additional_axis_rotation": false,
+  "coordinate_conversion": "(X,Y,Z) -> (X,Z,-Y)",
+  "origin": "bottom_center",
+  "dimensions_m": [
+    2.200000047683716,
+    0.7663398385047913,
+    2.0193593502044678
+  ],
+  "fragment_count": 64,
+  "fracture_seed_count": 64,
+  "assets": {
+    "intact": "intact.glb",
+    "fragments": "fragments.glb",
+    "colliders": "colliders.json"
+  },
+  "gameplay": {
+    "density_kg_m3": 200,
+    "gravity_mps2": 9.81,
+    "fixed_timestep_s": 0.016666666666666666,
+    "impact_radius_m": 0.65
+  },
+  "fracture_method": "3D Voronoi structural pieces; decorative islands mounted to nearest piece",
+  "source": "synthetic",
+  "seed_rng": 261110
+}

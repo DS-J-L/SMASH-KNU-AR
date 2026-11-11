@@ -1,0 +1,685 @@
+{
+  "input": "keyboard_demo",
+  "browser": "157.0.4341.46",
+  "packages": [
+    {
+      "id": "knu-it1-v3",
+      "fragments": 96,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-it2-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gym2-v71-r8-fracture",
+      "fragments": 65,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-northgate-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-eng7-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-future-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-semi-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-safety-v71-r8-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-grad-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-teachers-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-liberal-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-convergence-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-career-v71-b2-r3-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-press-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-arts-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-sculpture-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-pavilion-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-yeongseon-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-techno-v71-b3-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-kbsi-v71-b3-r1-fracture",
+      "fragments": 70,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-faculty-v71-b4-r1-fracture",
+      "fragments": 65,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-nuri-west-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-nuri-east-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-myeonhak-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-boram-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-cheom-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-baekho-v71-b4-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-dorm-a-v71-b5-r1-fracture",
+      "fragments": 65,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-dorm-b-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-dorm-c-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-cheong-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-rotc-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-store-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-tennis-v71-b5-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-agri-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-animal-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-apple-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-apple-annex-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-packing-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-vet-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-nursing-v71-b6-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh1-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh2-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh31-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh32-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh41-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh42-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh43-v71-b7-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh51-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh52-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh53-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-gh54-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-greenhouse-office-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-produce-processing-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-corn-storage-v71-b8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-pp-structural-v71-b9-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-env-store-v71-b9-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-rock-store-v71-b9-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-isotope-store-v71-b9-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931854-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931893-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931896-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931915-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-524161868-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-576358734-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-577759119-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-584385630-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-584386432-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-972016220-v71-b10-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-grad-v71-b2-r2-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r2-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r2-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-grad-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-educgrad-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-teachers-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-liberal-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-lifelong-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-convergence-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-career-v71-b2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-main-v2",
+      "fragments": 85,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-it1-v2",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-main-v1",
+      "fragments": 52,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-it1-v1",
+      "fragments": 32,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931867-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931887-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931898-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931905-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931909-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931920-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931924-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-473684409-v71-dot8-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-1470108675-v71-g2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931907-v71-g2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-468931910-v71-g2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    },
+    {
+      "id": "knu-osm-524021463-v71-g2-r1-fracture",
+      "fragments": 64,
+      "selection": true,
+      "destruction": true,
+      "restoration": true
+    }
+  ],
+  "pageErrors": [],
+  "map": {
+    "path": "/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
+    "geometryCount": 2072,
+    "label": "캠퍼스 v71 합본",
+    "buildingReturn": true
+  }
+}

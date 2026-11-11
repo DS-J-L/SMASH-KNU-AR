@@ -1,0 +1,102 @@
+{
+  "osm/468931854": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "1cd765fbb4d57ef8363ceadd2fca84a3bd86e68b0fa5586b83e767a8d7e02843"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "1cd765fbb4d57ef8363ceadd2fca84a3bd86e68b0fa5586b83e767a8d7e02843"
+      ]
+    }
+  },
+  "osm/468931893": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "8576f3aa843a274bdfa591991fa17813607ea8bd5b03fa67e1492a51d6578b3f"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "8576f3aa843a274bdfa591991fa17813607ea8bd5b03fa67e1492a51d6578b3f"
+      ]
+    }
+  },
+  "osm/468931896": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/468931915": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/524161868": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "82e5bca7bb2e23261cb04f5dc2626320977c0f44436a4a52cd74ade911746f79"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "82e5bca7bb2e23261cb04f5dc2626320977c0f44436a4a52cd74ade911746f79"
+      ]
+    }
+  },
+  "osm/576358734": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "05c2f55635cb7181c21e8916bab427d2fd2d15c2901fbf4c0a416b29147225e5"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "05c2f55635cb7181c21e8916bab427d2fd2d15c2901fbf4c0a416b29147225e5"
+      ]
+    }
+  },
+  "osm/577759119": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/584385630": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/584386432": {
+    "intact.glb": {
+      "source_texture_sha256": []
+    },
+    "fragments.glb": {
+      "source_texture_sha256": []
+    }
+  },
+  "osm/972016220": {
+    "intact.glb": {
+      "source_texture_sha256": [
+        "0b82a63d886e8e7eeac54499549600b0f063f6df9c0f97b3fae3b84f31fbd511"
+      ]
+    },
+    "fragments.glb": {
+      "source_texture_sha256": [
+        "0b82a63d886e8e7eeac54499549600b0f063f6df9c0f97b3fae3b84f31fbd511"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1312 @@
+{
+  "source": "knu-campus-v71-batch3-r1.blend",
+  "source_sha256": "24d95ae33fef67085fdefab558bccc0dcb793546735b3dac45061bd6212ec4af",
+  "candidate": "knu-campus-v71-batch4-r1.blend",
+  "edits": {
+    "교수아파트": {
+      "id": "469843173",
+      "source_id": "osm/469843173",
+      "mesh": "교수아파트.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -147.77000427246094,
+            -544.0700073242188,
+            -8.77034854888916
+          ],
+          [
+            -82.83999633789062,
+            -511.9800109863281,
+            20.664215087890625
+          ]
+        ],
+        "vertices": 48,
+        "polygons": 68,
+        "triangles": 92,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #6c9b91"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -147.77000427246094,
+            -544.0700073242188,
+            -8.77034854888916
+          ],
+          [
+            -82.83999633789062,
+            -511.9800109863281,
+            20.664215087890625
+          ]
+        ],
+        "vertices": 48,
+        "polygons": 68,
+        "triangles": 92,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #6c9b91",
+          "Batch4_faculty-roof_Observed",
+          "Batch4_faculty-north_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            35,
+            38,
+            41,
+            44,
+            47,
+            48,
+            53,
+            56,
+            57,
+            62
+          ],
+          "material": "Batch4_faculty-roof_Observed",
+          "texture": "Batch4_faculty-roof_Atlas",
+          "texture_sha256": "844661b43198bc6b23b6c47e36e9a6c686fe8e4a30c635a876899a0183a8e459",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            43,
+            45
+          ],
+          "material": "Batch4_faculty-north_Observed",
+          "texture": "Batch4_faculty-north_Atlas",
+          "texture_sha256": "fb582d48ab7647805f9949f062e8e54a083317fc4a2471311013c116d0850d11",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 교수아파트 [469843173]": {
+      "id": "469843173",
+      "source_id": "osm/469843173",
+      "mesh": "v7 | 창 근사 | 교수아파트 [469843173]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -7.335784912109375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -147.77427673339844,
+            -544.0889282226562,
+            -6.250784873962402
+          ],
+          [
+            -82.81493377685547,
+            -511.9361877441406,
+            19.929214477539062
+          ]
+        ],
+        "vertices": 2368,
+        "polygons": 1776,
+        "triangles": 3552,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -147.77427673339844,
+            -544.0889282226562,
+            -6.250784873962402
+          ],
+          [
+            -82.81493377685547,
+            -511.9361877441406,
+            19.929214477539062
+          ]
+        ],
+        "vertices": 2112,
+        "polygons": 1584,
+        "triangles": 3168,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 32
+    },
+    "누리관": {
+      "id": "854306251",
+      "source_id": "osm/854306251",
+      "mesh": "누리관.001",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            237.88999938964844,
+            334.04998779296875,
+            -14.607361793518066
+          ],
+          [
+            292.4700012207031,
+            375.5400085449219,
+            40.701026916503906
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #cbd6d4"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            237.88999938964844,
+            334.04998779296875,
+            -14.607361793518066
+          ],
+          [
+            292.4700012207031,
+            375.5400085449219,
+            40.701026916503906
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #cbd6d4",
+          "Batch4_nuri-west-roof_Observed",
+          "Batch4_nuri-west-south_Observed",
+          "Batch4_nuri-west-return_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            16,
+            17,
+            18,
+            25
+          ],
+          "material": "Batch4_nuri-west-roof_Observed",
+          "texture": "Batch4_nuri-west-roof_Atlas",
+          "texture_sha256": "961453145dfc9b090bee3ceae8d757b4fae0a0b5acd1d717967c61538481db65",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            30,
+            31
+          ],
+          "material": "Batch4_nuri-west-south_Observed",
+          "texture": "Batch4_nuri-west-south_Atlas",
+          "texture_sha256": "41bb377e03f4c470271cf79c996c2ee6c9e116f2fa6d52eb71c69c72fd0dec79",
+          "kind": "facade"
+        },
+        {
+          "faces": [
+            20,
+            21
+          ],
+          "material": "Batch4_nuri-west-return_Observed",
+          "texture": "Batch4_nuri-west-return_Atlas",
+          "texture_sha256": "08bc4b89001e7f18e4646ec4ae4707f7f7de87a0ee27325048fa9ca5043f2abd",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 누리관 [854306251]": {
+      "id": "854306251",
+      "source_id": "osm/854306251",
+      "mesh": "v7 | 창 근사 | 누리관 [854306251]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -8.298971176147461
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            237.9486541748047,
+            334.15008544921875,
+            -6.611193656921387
+          ],
+          [
+            292.3465576171875,
+            375.4037170410156,
+            39.55769348144531
+          ]
+        ],
+        "vertices": 2520,
+        "polygons": 1890,
+        "triangles": 3780,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            238.65106201171875,
+            345.3903503417969,
+            -6.611193656921387
+          ],
+          [
+            292.3465576171875,
+            375.4037170410156,
+            39.55769348144531
+          ]
+        ],
+        "vertices": 1224,
+        "polygons": 918,
+        "triangles": 1836,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 162
+    },
+    "누리관.001": {
+      "id": "854306497",
+      "source_id": "osm/854306497",
+      "mesh": "누리관.004",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            289.6000061035156,
+            316.82000732421875,
+            -14.866288185119629
+          ],
+          [
+            339.7099914550781,
+            384.1499938964844,
+            37.263328552246094
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #879295"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            289.6000061035156,
+            316.82000732421875,
+            -14.866288185119629
+          ],
+          [
+            339.7099914550781,
+            384.1499938964844,
+            37.263328552246094
+          ]
+        ],
+        "vertices": 24,
+        "polygons": 32,
+        "triangles": 44,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #879295",
+          "Batch4_nuri-east-roof_Observed",
+          "Batch4_nuri-east-south_Observed",
+          "Batch4_nuri-east-return_Observed",
+          "Batch4_nuri-east-court_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            16,
+            17,
+            24,
+            27
+          ],
+          "material": "Batch4_nuri-east-roof_Observed",
+          "texture": "Batch4_nuri-east-roof_Atlas",
+          "texture_sha256": "6e65b2bf7a68a957b29bd0b395226d53af5c68f9afeafb02c34f5889142a815d",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            25,
+            26
+          ],
+          "material": "Batch4_nuri-east-south_Observed",
+          "texture": "Batch4_nuri-east-south_Atlas",
+          "texture_sha256": "d1b5e702ed41c0fbaf2a4656a2288a9172a57f1156e5253537540dc73f9571ea",
+          "kind": "facade"
+        },
+        {
+          "faces": [
+            28,
+            30
+          ],
+          "material": "Batch4_nuri-east-return_Observed",
+          "texture": "Batch4_nuri-east-return_Atlas",
+          "texture_sha256": "f133b0bca4325ef9b75625f8a59749c65773ca2d7f9929fb45af1de145f42aae",
+          "kind": "facade"
+        },
+        {
+          "faces": [
+            19,
+            20
+          ],
+          "material": "Batch4_nuri-east-court_Observed",
+          "texture": "Batch4_nuri-east-court_Atlas",
+          "texture_sha256": "242aa5c81f686966e146401d2619de9125774cf248d7e3e38d7b4bb4629a69f4",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 누리관 [854306497]": {
+      "id": "854306497",
+      "source_id": "osm/854306497",
+      "mesh": "v7 | 창 근사 | 누리관 [854306497]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -11.736669540405273
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            289.788330078125,
+            316.90985107421875,
+            -10.0488920211792
+          ],
+          [
+            339.6091003417969,
+            384.0589599609375,
+            36.1199951171875
+          ]
+        ],
+        "vertices": 3240,
+        "polygons": 2430,
+        "triangles": 4860,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            290.4501037597656,
+            327.40997314453125,
+            -10.0488920211792
+          ],
+          [
+            339.6091003417969,
+            384.0589599609375,
+            36.1199951171875
+          ]
+        ],
+        "vertices": 1656,
+        "polygons": 1242,
+        "triangles": 2484,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 198
+    },
+    "면학관": {
+      "id": "524021464",
+      "source_id": "osm/524021464",
+      "mesh": "면학관.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            78.30000305175781,
+            -446.8399963378906,
+            -4.077111721038818
+          ],
+          [
+            113.37999725341797,
+            -434.0,
+            3.6486127376556396
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #4e5451"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            78.30000305175781,
+            -446.8399963378906,
+            -4.077111721038818
+          ],
+          [
+            113.37999725341797,
+            -434.0,
+            3.6486127376556396
+          ]
+        ],
+        "vertices": 16,
+        "polygons": 20,
+        "triangles": 28,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #4e5451",
+          "Batch4_myeonhak-roof_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            10,
+            11
+          ],
+          "material": "Batch4_myeonhak-roof_Observed",
+          "texture": "Batch4_myeonhak-roof_Atlas",
+          "texture_sha256": "b10d206ff389f2bef6a841133f0b98093b60e6ae2707e769fe4d2d1e33572506",
+          "kind": "roof"
+        }
+      ]
+    },
+    "보람관": {
+      "id": "1300033666",
+      "source_id": "osm/1300033666",
+      "mesh": "보람관.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -110.63999938964844,
+            -490.80999755859375,
+            -6.663262844085693
+          ],
+          [
+            -47.13999938964844,
+            -427.8999938964844,
+            26.69504165649414
+          ]
+        ],
+        "vertices": 64,
+        "polygons": 92,
+        "triangles": 124,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #bdc4bf"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -110.63999938964844,
+            -490.80999755859375,
+            -6.663262844085693
+          ],
+          [
+            -47.13999938964844,
+            -427.8999938964844,
+            26.69504165649414
+          ]
+        ],
+        "vertices": 64,
+        "polygons": 92,
+        "triangles": 124,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #bdc4bf",
+          "Batch4_boram-roof_Observed",
+          "Batch4_boram-east-wing_Observed",
+          "Batch4_boram-south-wing_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            46,
+            47,
+            54,
+            57,
+            60,
+            62,
+            63,
+            65,
+            68,
+            71,
+            74,
+            80,
+            82,
+            85
+          ],
+          "material": "Batch4_boram-roof_Observed",
+          "texture": "Batch4_boram-roof_Atlas",
+          "texture_sha256": "e4807c1655316793c3e879674fdd4edea825d0ec6624cd725938744a17a8df70",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            49,
+            50
+          ],
+          "material": "Batch4_boram-east-wing_Observed",
+          "texture": "Batch4_boram-east-wing_Atlas",
+          "texture_sha256": "6f0614b0ea7e801ddfc366ce5e01c52867202a358d5ff80580dfa9c36913a797",
+          "kind": "facade"
+        },
+        {
+          "faces": [
+            86,
+            88
+          ],
+          "material": "Batch4_boram-south-wing_Observed",
+          "texture": "Batch4_boram-south-wing_Atlas",
+          "texture_sha256": "96b3bd30dd5330119663050680b1ccb13faa8533bfd7abc59f2786e8421aa01a",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 보람관 [1300033666]": {
+      "id": "1300033666",
+      "source_id": "osm/1300033666",
+      "mesh": "v7 | 창 근사 | 보람관 [1300033666]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.804958343505859
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -110.68035125732422,
+            -490.8521423339844,
+            -3.7199583053588867
+          ],
+          [
+            -47.09885025024414,
+            -427.8577880859375,
+            25.960041046142578
+          ]
+        ],
+        "vertices": 3960,
+        "polygons": 2970,
+        "triangles": 5940,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -110.68035125732422,
+            -490.8521423339844,
+            -3.7199583053588867
+          ],
+          [
+            -47.09885025024414,
+            -427.8577880859375,
+            25.960041046142578
+          ]
+        ],
+        "vertices": 2808,
+        "polygons": 2106,
+        "triangles": 4212,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 144
+    },
+    "첨성관": {
+      "id": "468931911",
+      "source_id": "osm/468931911",
+      "mesh": "첨성관.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            345.6400146484375,
+            75.58999633789062,
+            -9.172303199768066
+          ],
+          [
+            462.7799987792969,
+            181.2100067138672,
+            7.553847789764404
+          ]
+        ],
+        "vertices": 72,
+        "polygons": 104,
+        "triangles": 140,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #888e87"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            345.6400146484375,
+            75.58999633789062,
+            -9.172303199768066
+          ],
+          [
+            462.7799987792969,
+            181.2100067138672,
+            7.553847789764404
+          ]
+        ],
+        "vertices": 72,
+        "polygons": 104,
+        "triangles": 140,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #888e87",
+          "Batch4_cheom-roof_Observed",
+          "Batch4_cheom-south_Observed",
+          "Batch4_cheom-end_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            53,
+            56,
+            59,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            80,
+            81,
+            90,
+            91,
+            98
+          ],
+          "material": "Batch4_cheom-roof_Observed",
+          "texture": "Batch4_cheom-roof_Atlas",
+          "texture_sha256": "3def0d5f59e362e26e8833984e1311e7eeeadd24ed30bc2869b743783bc37586",
+          "kind": "roof"
+        },
+        {
+          "faces": [
+            58,
+            60
+          ],
+          "material": "Batch4_cheom-south_Observed",
+          "texture": "Batch4_cheom-south_Atlas",
+          "texture_sha256": "65dad209e56808dacced93b97ed9e91ca414d728a8658db5acbf0059b583e2e7",
+          "kind": "facade"
+        },
+        {
+          "faces": [
+            54,
+            57
+          ],
+          "material": "Batch4_cheom-end_Observed",
+          "texture": "Batch4_cheom-end_Atlas",
+          "texture_sha256": "bfdef5cf9cff1849ae9f37d41a99bfbe1245bedcbf740bb88ab6ddfea2832ce5",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 첨성관 [468931911]": {
+      "id": "468931911",
+      "source_id": "osm/468931911",
+      "mesh": "v7 | 창 근사 | 첨성관 [468931911]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -4.446152210235596
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            345.9094543457031,
+            75.82511901855469,
+            -3.2061522006988525
+          ],
+          [
+            462.4654541015625,
+            180.9742431640625,
+            6.713847637176514
+          ]
+        ],
+        "vertices": 2640,
+        "polygons": 1980,
+        "triangles": 3960,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            346.27947998046875,
+            75.82511901855469,
+            -3.2061522006988525
+          ],
+          [
+            462.4654541015625,
+            180.9742431640625,
+            6.713847637176514
+          ]
+        ],
+        "vertices": 2304,
+        "polygons": 1728,
+        "triangles": 3456,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 42
+    },
+    "백호관": {
+      "id": "468931928",
+      "source_id": "osm/468931928",
+      "mesh": "백호관.002",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -568.8499755859375,
+            -263.2099914550781,
+            -14.921029090881348
+          ],
+          [
+            -501.9599914550781,
+            -188.3300018310547,
+            8.04883098602295
+          ]
+        ],
+        "vertices": 88,
+        "polygons": 128,
+        "triangles": 172,
+        "uv": [],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #8b9793"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -568.8499755859375,
+            -263.2099914550781,
+            -14.921029090881348
+          ],
+          [
+            -501.9599914550781,
+            -188.3300018310547,
+            8.04883098602295
+          ]
+        ],
+        "vertices": 88,
+        "polygons": 128,
+        "triangles": 172,
+        "uv": [
+          "Batch4Observed"
+        ],
+        "materials": [
+          "campus stone",
+          "v7 | 항공영상 지붕 #8b9793",
+          "Batch4_baekho-arc_Observed"
+        ]
+      },
+      "observed": [
+        {
+          "faces": [
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "material": "Batch4_baekho-arc_Observed",
+          "texture": "Batch4_baekho-arc_Atlas",
+          "texture_sha256": "2f931b4bd4969fbeede9ce898341ae8142701259bffc0d8754bd0338c46523c8",
+          "kind": "facade"
+        }
+      ]
+    },
+    "v7 | 창 근사 | 백호관 [468931928]": {
+      "id": "468931928",
+      "source_id": "osm/468931928",
+      "mesh": "v7 | 창 근사 | 백호관 [468931928]",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -12.95116901397705
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "before": {
+        "bounds": [
+          [
+            -568.6426391601562,
+            -262.2561340332031,
+            -11.866168975830078
+          ],
+          [
+            -502.6045837402344,
+            -188.62991333007812,
+            7.313830375671387
+          ]
+        ],
+        "vertices": 1632,
+        "polygons": 1224,
+        "triangles": 2448,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "after": {
+        "bounds": [
+          [
+            -568.6426391601562,
+            -246.5037384033203,
+            -11.866168975830078
+          ],
+          [
+            -505.47119140625,
+            -188.62991333007812,
+            7.313830375671387
+          ]
+        ],
+        "vertices": 864,
+        "polygons": 648,
+        "triangles": 1296,
+        "uv": [],
+        "materials": [
+          "v7 | 임의의 반복 창 (미검증)"
+        ]
+      },
+      "removed_observed_wall_window_islands": 96
+    }
+  },
+  "geometry_changes": "Removal of superseded generic window islands only. Building cores retain topology and transforms.",
+  "artifacts": {
+    "knu-campus-v71-batch4-r1.blend": "446e5d2ec910610715d3a881e686552676e62a1fba8b62f699f8a97c3e44ef55",
+    "knu-campus-v71-batch4-r1.glb": "e5c8dbb1e1aa575763e99b36e90889c6c1fe87d9c944b92d4d1772252aa1f0cd",
+    "batch4-model-meshes-r1.blend": "7c102b1fd34809afb8f829f549366fb76df142872b0c2e284dc4c24d69b1b95f"
+  }
+}

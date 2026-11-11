@@ -1,0 +1,298 @@
+{
+  "v7 | 추가 건물 | 기숙사A동 [vw/145]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-7.7673 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -7.7673,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 기숙사A동 [vw/145]": {
+        "verts": 140,
+        "faces": 171,
+        "tris": 276,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.15,
+        "uv_coverage_pct": 51.9
+      }
+    }
+  },
+  "v7 | 추가 건물 | 기숙사B동 [vw/73]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "v7 | 추가 건물 | 기숙사B동 [vw/73]: ~76.27% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-5.5027 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -5.5027,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 기숙사B동 [vw/73]": {
+        "verts": 100,
+        "faces": 121,
+        "tris": 196,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 4,
+        "uv_maps": 1,
+        "uv_oob_pct": 2.05,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 76.27,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  },
+  "v7 | 추가 건물 | 기숙사C동 [vw/162]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-4.5779 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -4.5779,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 기숙사C동 [vw/162]": {
+        "verts": 172,
+        "faces": 211,
+        "tris": 340,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.13,
+        "uv_coverage_pct": 78.3
+      }
+    }
+  },
+  "청룡관 (Cheonglyong-Gwan)": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-14.8772 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -14.8772,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "청룡관 (Cheonglyong-Gwan)": {
+        "verts": 36,
+        "faces": 50,
+        "tris": 68,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.94,
+        "uv_coverage_pct": 34.4
+      }
+    }
+  },
+  "학군단": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "학군단: ~100.0% UV overlap (ok only if mirrored/stacked on purpose; bakes break)",
+      "asset lowest point z=-14.2528 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -14.2528,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "학군단": {
+        "verts": 36,
+        "faces": 50,
+        "tris": 68,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 6,
+        "uv_maps": 1,
+        "uv_oob_pct": 5.36,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 100.0,
+        "uv_coverage_pct": 100.0
+      }
+    }
+  },
+  "v7 | 추가 건물 | 학군단창고 [vw/114]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-11.586 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -11.586,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 학군단창고 [vw/114]": {
+        "verts": 16,
+        "faces": 14,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.02,
+        "uv_coverage_pct": 98.2
+      }
+    }
+  },
+  "v7 | 추가 건물 | 테니스장대기실 [vw/105]": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "asset lowest point z=-10.676 (not resting on ground plane z=0)"
+    ],
+    "ground_z": -10.676,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "v7 | 추가 건물 | 테니스장대기실 [vw/105]": {
+        "verts": 16,
+        "faces": 14,
+        "tris": 28,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 1,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 3,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.02,
+        "uv_coverage_pct": 99.9
+      }
+    }
+  }
+}

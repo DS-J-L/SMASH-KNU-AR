@@ -1,0 +1,119 @@
+{
+  "scope": "full campus GLB reimport",
+  "scene_objects": 1735,
+  "objects": [
+    {
+      "object": "v7 | 추가 건물 | 교양과정동 [vw/95]",
+      "triangles": 36,
+      "materials": [
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #979382"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 추가 건물 | 취업정보센터 [vw/127]",
+      "triangles": 76,
+      "materials": [
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #c0d1d2"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 추가 건물 | 사범대학 [vw/147]",
+      "triangles": 148,
+      "materials": [
+        "Batch2_teachers_Observed",
+        "v7 | 추가 건물 미확인 외벽",
+        "v7 | 항공영상 지붕 #76816f"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 창 근사 | 교육대학원 [469617252]",
+      "triangles": 672,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 창 근사 | 대학원동 [468931865]",
+      "triangles": 1320,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 창 근사 | 융합교육정보관 [1026072764]",
+      "triangles": 3168,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "v7 | 창 근사 | 평생교육원 [468931916]",
+      "triangles": 792,
+      "materials": [
+        "v7 | 임의의 반복 창 (미검증)"
+      ],
+      "UV_layers": 0,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "교육대학원",
+      "triangles": 132,
+      "materials": [
+        "Batch2_educgrad_Observed",
+        "campus stone",
+        "v8 | 위성 지붕 교육대학원"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "대학원동",
+      "triangles": 28,
+      "materials": [
+        "Batch2_grad-roof_Observed",
+        "Batch2_grad_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #718285"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "융합교육정보관",
+      "triangles": 52,
+      "materials": [
+        "Batch2_convergence_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #879695"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    },
+    {
+      "object": "평생교육원",
+      "triangles": 44,
+      "materials": [
+        "Batch2_lifelong_Observed",
+        "campus stone",
+        "v7 | 항공영상 지붕 #6f7f82"
+      ],
+      "UV_layers": 1,
+      "max_world_vertex_gap_m": 0.0
+    }
+  ],
+  "core_shape_and_topology_preserved": 5
+}

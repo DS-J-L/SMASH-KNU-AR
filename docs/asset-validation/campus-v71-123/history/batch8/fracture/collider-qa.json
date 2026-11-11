@@ -1,0 +1,84 @@
+[
+  {
+    "package": "knu-corn-storage-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.1830052371042399e-07,
+    "max_point_gap_m": 8.345086814592699e-08
+  },
+  {
+    "package": "knu-gh51-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh51_Fragment_011",
+        "before_m": 2.1711479148422974e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_gh51_Fragment_036",
+        "before_m": 2.5081313816954776e-06,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 1.3852062608343818e-06,
+    "max_point_gap_m": 8.886203499046388e-08
+  },
+  {
+    "package": "knu-gh52-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.3669689026274412e-06,
+    "max_point_gap_m": 9.079320435936705e-08
+  },
+  {
+    "package": "knu-gh53-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_gh53_Fragment_045",
+        "before_m": 1.669687637995132e-05,
+        "after_m": 5.551115123125783e-17
+      }
+    ],
+    "max_outside_m": 1.4637880259849023e-06,
+    "max_point_gap_m": 8.513327600081593e-08
+  },
+  {
+    "package": "knu-gh54-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 1.0879470245250822e-06,
+    "max_point_gap_m": 8.688795409866125e-08
+  },
+  {
+    "package": "knu-greenhouse-office-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [
+      {
+        "node": "SM_greenhouse-office_Fragment_001",
+        "before_m": 1.270037013126335e-05,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_greenhouse-office_Fragment_051",
+        "before_m": 8.577793423558688e-06,
+        "after_m": 2.7755575615628914e-17
+      },
+      {
+        "node": "SM_greenhouse-office_Fragment_052",
+        "before_m": 1.1326299023645126e-05,
+        "after_m": 2.7755575615628914e-17
+      }
+    ],
+    "max_outside_m": 5.06741989508841e-07,
+    "max_point_gap_m": 8.195638656616211e-08
+  },
+  {
+    "package": "knu-produce-processing-v71-b8-r1-fracture",
+    "count": 64,
+    "updated": [],
+    "max_outside_m": 3.6672723949249253e-07,
+    "max_point_gap_m": 8.404638001828252e-08
+  }
+]
