@@ -1,5 +1,5 @@
 {
- "about": "Shared cases for backend/model_strike.py and web/shared/model-strike-3d.js (docs/MODEL_STRIKE_3D.md). Expectations are worked out by hand from the L-shaped test package. Default config and placement unless a case sets them.",
+ "about": "Shared cases for backend/model_strike.py and web/shared/model-strike-3d.js (docs/MODEL_STRIKE_3D.md). Expectations are worked out by hand from the L-shaped test package (two blocks, so the default three-block break takes both) and the wall package (cases with \"package\": \"wall\"). Default config and placement unless a case sets them.",
  "package": {
   "schema_version": "1.0",
   "building_id": "test-l-block",
@@ -92,7 +92,7 @@
  },
  "cases": [
   {
-   "name": "punch_into_the_tall_block_breaks_the_building_once",
+   "name": "the_l_has_two_blocks_so_one_punch_breaks_both_and_the_space_is_air",
    "frames": [
     {
      "t_ms": 0,
@@ -140,11 +140,17 @@
         -0.5,
         -0.25,
         0.8
-       ]
+       ],
+       "broken_fragment_ids": [
+        "A",
+        "B"
+       ],
+       "fallen_fragment_ids": []
       },
       "support": null,
       "standing_in_building": false,
-      "destroyed": true
+      "destroyed": true,
+      "remaining_fragments": 0
      }
     },
     {
@@ -180,7 +186,7 @@
      },
      "expect": {
       "decisions": {
-       "left_wrist": "destroyed",
+       "left_wrist": "outside",
        "right_wrist": "invalid",
        "left_ankle": "invalid",
        "right_ankle": "invalid"
@@ -639,9 +645,9 @@
    "hits": 1
   },
   {
-   "name": "without_destroy_on_hit_the_cooldown_spaces_repeated_hits",
+   "name": "with_damage_mode_none_nothing_breaks_and_the_cooldown_spaces_repeated_hits",
    "config": {
-    "destroy_on_hit": false
+    "damage_mode": "none"
    },
    "frames": [
     {
@@ -690,11 +696,13 @@
         -0.5,
         -0.25,
         0.8
-       ]
+       ],
+       "broken_fragment_ids": []
       },
       "support": null,
       "standing_in_building": false,
-      "destroyed": false
+      "destroyed": false,
+      "remaining_fragments": 2
      }
     },
     {
@@ -1082,6 +1090,945 @@
     }
    ],
    "hits": 0
+  },
+  {
+   "name": "a_punch_breaks_the_struck_block_and_the_two_nearest_and_the_overhang_falls",
+   "package": "wall",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.5,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 10
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.05,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "hit",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "right_wrist",
+       "hit_by": "inside",
+       "fragment_id": "M2",
+       "point_m": [
+        0.92,
+        -0.1,
+        0.7
+       ],
+       "broken_fragment_ids": [
+        "M2",
+        "M3",
+        "T2"
+       ],
+       "fallen_fragment_ids": [
+        "H"
+       ]
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 6
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.5,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 6
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.05,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 6
+     }
+    },
+    {
+     "t_ms": 132,
+     "positions": {
+      "left_wrist": [
+       0.25,
+       -0.5,
+       0.62
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "outside",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 6
+     }
+    },
+    {
+     "t_ms": 165,
+     "positions": {
+      "left_wrist": [
+       0.25,
+       -0.05,
+       0.62
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "hit",
+       "right_wrist": "invalid",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "left_wrist",
+       "hit_by": "inside",
+       "fragment_id": "M1",
+       "point_m": [
+        0.25,
+        -0.1,
+        0.62
+       ],
+       "broken_fragment_ids": [
+        "M1",
+        "T1",
+        "G1"
+       ],
+       "fallen_fragment_ids": []
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 3
+     }
+    }
+   ],
+   "hits": 2
+  },
+  {
+   "name": "a_block_stays_while_any_neighbour_joins_it_to_the_floor_and_falls_with_the_last_one",
+   "package": "wall",
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "left_ankle": [
+       0.2,
+       -0.6,
+       0.05
+      ],
+      "right_ankle": [
+       1.5,
+       -0.6,
+       0.3
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "outside"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 10
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "left_ankle": [
+       0.2,
+       -0.6,
+       0.05
+      ],
+      "right_ankle": [
+       1.5,
+       -0.05,
+       0.3
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "invalid",
+       "left_ankle": "outside",
+       "right_ankle": "hit"
+      },
+      "event": {
+       "joint": "right_ankle",
+       "hit_by": "inside",
+       "fragment_id": "G3",
+       "point_m": [
+        1.5,
+        -0.1,
+        0.3
+       ],
+       "broken_fragment_ids": [
+        "G3",
+        "M3",
+        "H"
+       ],
+       "fallen_fragment_ids": []
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 7
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "left_ankle": [
+       1.3,
+       0.0,
+       0.05
+      ],
+      "right_wrist": [
+       0.75,
+       -0.5,
+       0.6
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "outside",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 7
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "left_ankle": [
+       1.3,
+       0.0,
+       0.05
+      ],
+      "right_wrist": [
+       0.75,
+       -0.05,
+       0.6
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "hit",
+       "left_ankle": "outside",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "right_wrist",
+       "hit_by": "inside",
+       "fragment_id": "M2",
+       "point_m": [
+        0.75,
+        -0.1,
+        0.6
+       ],
+       "broken_fragment_ids": [
+        "M2",
+        "G2",
+        "T1"
+       ],
+       "fallen_fragment_ids": [
+        "T2"
+       ]
+      },
+      "support": "left_ankle",
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 3
+     }
+    }
+   ],
+   "hits": 2
+  },
+  {
+   "name": "break_count_one_breaks_only_the_struck_block",
+   "package": "wall",
+   "config": {
+    "break_count": 1
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.5,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 10
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.05,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "hit",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "right_wrist",
+       "hit_by": "inside",
+       "fragment_id": "M2",
+       "point_m": [
+        0.92,
+        -0.1,
+        0.7
+       ],
+       "broken_fragment_ids": [
+        "M2"
+       ],
+       "fallen_fragment_ids": []
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 9
+     }
+    }
+   ],
+   "hits": 1
+  },
+  {
+   "name": "damage_mode_whole_breaks_everything_at_the_first_hit",
+   "package": "wall",
+   "config": {
+    "damage_mode": "whole"
+   },
+   "frames": [
+    {
+     "t_ms": 0,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.5,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": false,
+      "remaining_fragments": 10
+     }
+    },
+    {
+     "t_ms": 33,
+     "positions": {
+      "right_wrist": [
+       0.92,
+       -0.05,
+       0.7
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "hit",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": {
+       "joint": "right_wrist",
+       "hit_by": "inside",
+       "fragment_id": "M2",
+       "point_m": [
+        0.92,
+        -0.1,
+        0.7
+       ],
+       "broken_fragment_ids": [
+        "M2",
+        "G1",
+        "G2",
+        "G3",
+        "M1",
+        "M3",
+        "T1",
+        "T2",
+        "H",
+        "S"
+       ],
+       "fallen_fragment_ids": []
+      },
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true,
+      "remaining_fragments": 0
+     }
+    },
+    {
+     "t_ms": 66,
+     "positions": {
+      "right_wrist": [
+       0.62,
+       -0.5,
+       0.95
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true,
+      "remaining_fragments": 0
+     }
+    },
+    {
+     "t_ms": 99,
+     "positions": {
+      "right_wrist": [
+       0.62,
+       -0.05,
+       0.95
+      ]
+     },
+     "expect": {
+      "decisions": {
+       "left_wrist": "invalid",
+       "right_wrist": "outside",
+       "left_ankle": "invalid",
+       "right_ankle": "invalid"
+      },
+      "event": null,
+      "support": null,
+      "standing_in_building": false,
+      "destroyed": true,
+      "remaining_fragments": 0
+     }
+    }
+   ],
+   "hits": 1
   }
- ]
+ ],
+ "wall_package": {
+  "schema_version": "1.0",
+  "building_id": "test-wall",
+  "coordinate_frame": "three_y_up",
+  "units": "m",
+  "fragments": [
+   {
+    "fragment_id": "G1",
+    "node": "G1",
+    "rest_position_m": [
+     0.25,
+     0.2,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.25,
+     -0.2,
+     -0.1,
+     -0.25,
+     -0.2,
+     0.1,
+     -0.25,
+     0.2,
+     -0.1,
+     -0.25,
+     0.2,
+     0.1,
+     0.25,
+     -0.2,
+     -0.1,
+     0.25,
+     -0.2,
+     0.1,
+     0.25,
+     0.2,
+     -0.1,
+     0.25,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "G2",
+    "node": "G2",
+    "rest_position_m": [
+     0.75,
+     0.2,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.25,
+     -0.2,
+     -0.1,
+     -0.25,
+     -0.2,
+     0.1,
+     -0.25,
+     0.2,
+     -0.1,
+     -0.25,
+     0.2,
+     0.1,
+     0.25,
+     -0.2,
+     -0.1,
+     0.25,
+     -0.2,
+     0.1,
+     0.25,
+     0.2,
+     -0.1,
+     0.25,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "G3",
+    "node": "G3",
+    "rest_position_m": [
+     1.3,
+     0.2,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.3,
+     -0.2,
+     -0.1,
+     -0.3,
+     -0.2,
+     0.1,
+     -0.3,
+     0.2,
+     -0.1,
+     -0.3,
+     0.2,
+     0.1,
+     0.3,
+     -0.2,
+     -0.1,
+     0.3,
+     -0.2,
+     0.1,
+     0.3,
+     0.2,
+     -0.1,
+     0.3,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "M1",
+    "node": "M1",
+    "rest_position_m": [
+     0.25,
+     0.6,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.25,
+     -0.2,
+     -0.1,
+     -0.25,
+     -0.2,
+     0.1,
+     -0.25,
+     0.2,
+     -0.1,
+     -0.25,
+     0.2,
+     0.1,
+     0.25,
+     -0.2,
+     -0.1,
+     0.25,
+     -0.2,
+     0.1,
+     0.25,
+     0.2,
+     -0.1,
+     0.25,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "M2",
+    "node": "M2",
+    "rest_position_m": [
+     0.75,
+     0.6,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.25,
+     -0.2,
+     -0.1,
+     -0.25,
+     -0.2,
+     0.1,
+     -0.25,
+     0.2,
+     -0.1,
+     -0.25,
+     0.2,
+     0.1,
+     0.25,
+     -0.2,
+     -0.1,
+     0.25,
+     -0.2,
+     0.1,
+     0.25,
+     0.2,
+     -0.1,
+     0.25,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "M3",
+    "node": "M3",
+    "rest_position_m": [
+     1.3,
+     0.6,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.3,
+     -0.2,
+     -0.1,
+     -0.3,
+     -0.2,
+     0.1,
+     -0.3,
+     0.2,
+     -0.1,
+     -0.3,
+     0.2,
+     0.1,
+     0.3,
+     -0.2,
+     -0.1,
+     0.3,
+     -0.2,
+     0.1,
+     0.3,
+     0.2,
+     -0.1,
+     0.3,
+     0.2,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "T1",
+    "node": "T1",
+    "rest_position_m": [
+     0.5,
+     0.95,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.5,
+     -0.15,
+     -0.1,
+     -0.5,
+     -0.15,
+     0.1,
+     -0.5,
+     0.15,
+     -0.1,
+     -0.5,
+     0.15,
+     0.1,
+     0.5,
+     -0.15,
+     -0.1,
+     0.5,
+     -0.15,
+     0.1,
+     0.5,
+     0.15,
+     -0.1,
+     0.5,
+     0.15,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "T2",
+    "node": "T2",
+    "rest_position_m": [
+     1.3,
+     0.95,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.3,
+     -0.15,
+     -0.1,
+     -0.3,
+     -0.15,
+     0.1,
+     -0.3,
+     0.15,
+     -0.1,
+     -0.3,
+     0.15,
+     0.1,
+     0.3,
+     -0.15,
+     -0.1,
+     0.3,
+     -0.15,
+     0.1,
+     0.3,
+     0.15,
+     -0.1,
+     0.3,
+     0.15,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "H",
+    "node": "H",
+    "rest_position_m": [
+     1.8,
+     0.65,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.2,
+     -0.15,
+     -0.1,
+     -0.2,
+     -0.15,
+     0.1,
+     -0.2,
+     0.15,
+     -0.1,
+     -0.2,
+     0.15,
+     0.1,
+     0.2,
+     -0.15,
+     -0.1,
+     0.2,
+     -0.15,
+     0.1,
+     0.2,
+     0.15,
+     -0.1,
+     0.2,
+     0.15,
+     0.1
+    ]
+   },
+   {
+    "fragment_id": "S",
+    "node": "S",
+    "rest_position_m": [
+     -0.2,
+     0.175,
+     0.0
+    ],
+    "rest_quaternion_xyzw": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "vertices_m": [
+     -0.2,
+     -0.125,
+     -0.1,
+     -0.2,
+     -0.125,
+     0.1,
+     -0.2,
+     0.125,
+     -0.1,
+     -0.2,
+     0.125,
+     0.1,
+     0.2,
+     -0.125,
+     -0.1,
+     0.2,
+     -0.125,
+     0.1,
+     0.2,
+     0.125,
+     -0.1,
+     0.2,
+     0.125,
+     0.1
+    ]
+   }
+  ]
+ }
 }

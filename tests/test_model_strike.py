@@ -1,18 +1,26 @@
-"""backend/model_strike.py against the shared cases (the browser twin runs the same file) and the real IT1 package."""
+"""backend/model_strike.py against the shared cases (the browser twin runs the same file) and real packages."""
 import json
 import math
 from pathlib import Path
 
 import pytest
 
-from backend.model_strike import (IT1_COLLIDERS, ModelStrikeConfig, ModelStrikeJudge, Placement, build_model_target,
-                                  first_entry, hull_planes, inside_model, load_model_target, package_to_marker)
+from backend.model_strike import (IT1_COLLIDERS, ModelStrikeConfig, ModelStrikeJudge, Placement, blocks_to_break,
+                                  build_model_target, face_contact, first_entry, hull_planes, inside_model,
+                                  load_model_target, package_to_marker, unsupported)
 
 DOC = json.loads((Path(__file__).parent / "fixtures" / "model_strike_cases.json").read_text())
+BUILDINGS = IT1_COLLIDERS.parent.parent
+# IT1, the main building and the three 64-block practice buildings (PR #16).
+REAL = ("knu-it1-v3", "knu-main-v2", "knu-it5-practice-v1", "knu-library-practice-v1", "knu-global-practice-v1")
+
+
+def package_of(case):
+    return DOC["wall_package"] if case.get("package") == "wall" else DOC["package"]
 
 
 def judge_for(case, ids):
-    target = build_model_target(DOC["package"], Placement(**case.get("placement", {})))
+    target = build_model_target(package_of(case), Placement(**case.get("placement", {})))
     return ModelStrikeJudge(target, ModelStrikeConfig(**case.get("config", {})), new_id=lambda: f"event-{next(ids)}")
 
 
@@ -28,11 +36,14 @@ def test_shared_case(case):
         assert out["decisions"] == want["decisions"], frame["t_ms"]
         for key in ("support", "standing_in_building", "destroyed"):
             assert out[key] == want[key], (frame["t_ms"], key)
+        if "remaining_fragments" in want:
+            assert out["remaining_fragments"] == want["remaining_fragments"], frame["t_ms"]
         if want["event"] is None:
             assert out["event"] is None, frame["t_ms"]
         else:
-            for key in ("joint", "hit_by", "fragment_id"):
-                assert out["event"][key] == want["event"][key], (frame["t_ms"], key)
+            for key in ("joint", "hit_by", "fragment_id", "broken_fragment_ids", "fallen_fragment_ids"):
+                if key in want["event"]:
+                    assert out["event"][key] == want["event"][key], (frame["t_ms"], key)
             assert out["event"]["point_m"] == pytest.approx(want["event"]["point_m"], abs=1e-3)
     assert judge.hits == case["hits"]
 
@@ -41,12 +52,13 @@ def test_event_fields():
     judge = judge_for(DOC["cases"][0], iter(range(1, 100)))
     judge.update({"left_wrist": [-0.5, -0.6, 0.8]}, 0)
     event = judge.update({"left_wrist": [-0.5, -0.1, 0.8]}, 33)["event"]
-    assert event["schema"] == "model_strike.v1-draft" and event["type"] == "hit_3d"
+    assert event["schema"] == "model_strike.v2-draft" and event["type"] == "hit_3d"
+    assert event["points"] == 1 and event["remaining_fragments"] == 0
     assert event["event_id"] == "event-1" and event["building_id"] == "test-l-block"
     assert event["previous_t_ms"] == 0 and event["t_ms"] == 33
     assert event["speed_mps"] == round(0.5 / 0.033, 3)
     assert event["placement"] == {"x_m": 0.0, "y_m": 0.0, "yaw_deg": 0.0, "scale": 1.0}
-    assert event["config_version"] == "model-3d-1"
+    assert event["config_version"] == "model-3d-2"
 
 
 def test_the_concave_notch_would_be_filled_by_one_convex_hull():
@@ -72,10 +84,56 @@ def test_bad_input_is_rejected_or_ignored():
         build_model_target({"coordinate_frame": "z_up", "fragments": []})
     with pytest.raises(ValueError):
         build_model_target(DOC["package"], Placement(scale=0))
+    with pytest.raises(ValueError):
+        ModelStrikeJudge(build_model_target(DOC["package"]), damage_mode="half")
     judge = ModelStrikeJudge(build_model_target(DOC["package"]))
     out = judge.update({"left_wrist": [0, float("nan"), 1], "right_wrist": [1, 2], "left_ankle": "x"}, 0)
     assert set(out["decisions"].values()) == {"invalid"}
     assert judge.update(None, 33)["decisions"]["left_wrist"] == "invalid"
+
+
+def test_wall_support_structure():
+    # Hand-worked: G* on the floor, S on the floor although it starts 5 cm up (nothing under it); H starts
+    # high with nothing under it, so it is not a floor piece. Shared faces link blocks; edge-only touches
+    # (G1/M2, M2/T2, H/T2) do not.
+    t = build_model_target(DOC["wall_package"])
+    ids = [f.fragment_id for f in t.fragments]
+    named = {ids[i]: sorted(ids[j] for j in t.links[i]) for i in range(len(ids))}
+    assert sorted(ids[i] for i in t.grounded) == ["G1", "G2", "G3", "S"]
+    assert named == {"G1": ["G2", "M1", "S"], "G2": ["G1", "G3", "M2"], "G3": ["G2", "M3"],
+                     "M1": ["G1", "M2", "T1"], "M2": ["G2", "M1", "M3", "T1"], "M3": ["G3", "H", "M2", "T2"],
+                     "T1": ["M1", "M2", "T2"], "T2": ["M3", "T1"], "H": ["M3"], "S": ["G1"]}
+    # Halved and turned, the same structure.
+    small = build_model_target(DOC["wall_package"], Placement(x_m=1, y_m=-2, yaw_deg=33, scale=0.5))
+    assert small.grounded == t.grounded and small.links == t.links
+
+
+def test_face_contact_needs_a_shared_face():
+    cube = lambda x, z: [[x + a, b, z + c] for a in (0, 1) for b in (0, 1) for c in (0, 1)]
+    a, b, c = cube(0, 0), cube(1, 0), cube(1, 1)
+    pa, pb, pc = hull_planes(a), hull_planes(b), hull_planes(c)
+    assert face_contact(a, pa, b, pb, 0.002) == pytest.approx([1, 0, 0])
+    assert face_contact(b, pb, c, pc, 0.002) == pytest.approx([0, 0, 1])
+    assert face_contact(a, pa, c, pc, 0.002) is None                       # only an edge
+    assert face_contact(a, pa, cube(1.01, 0), hull_planes(cube(1.01, 0)), 0.002) is None   # 1 cm apart
+
+
+@pytest.fixture(scope="module")
+def real():
+    return {name: load_model_target(BUILDINGS / name / "colliders.json") for name in REAL}
+
+
+@pytest.mark.parametrize("name", REAL)
+def test_real_buildings_stand_until_their_base_goes(real, name):
+    t = real[name]
+    manifest = json.loads((BUILDINGS / name / "manifest.json").read_text())
+    assert len(t.fragments) == manifest["fragment_count"]
+    assert unsupported(t, set()) == []                                      # intact: everything stands
+    base = set(t.grounded)
+    assert sorted(unsupported(t, base) + sorted(base)) == list(range(len(t.fragments)))   # no base: all falls
+    for i, f in enumerate(t.fragments):                                     # every hit breaks three
+        hit = blocks_to_break(t, i, f.centroid, set(), 3)
+        assert hit[0] == i and len(set(hit)) == 3
 
 
 @pytest.fixture(scope="module")
@@ -115,8 +173,11 @@ def test_it1_inside_outside_and_a_punch(it1):
     judge = ModelStrikeJudge(it1)
     judge.update({"right_wrist": [0, -0.8, 0.5]}, 0)
     out = judge.update({"right_wrist": [0, -0.2, 0.5]}, 33)
-    assert out["event"]["joint"] == "right_wrist" and out["destroyed"] is True
-    assert out["event"]["building_id"] == "knu-it1-v3"
+    event = out["event"]
+    assert event["joint"] == "right_wrist" and event["building_id"] == "knu-it1-v3"
+    assert out["destroyed"] is False and len(event["broken_fragment_ids"]) == 3
+    assert event["broken_fragment_ids"][0] == event["fragment_id"]
+    assert out["remaining_fragments"] == 96 - 3 - len(event["fallen_fragment_ids"])
 
 
 def test_it1_placement_turns_the_long_side():
