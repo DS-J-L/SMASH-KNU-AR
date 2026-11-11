@@ -135,8 +135,8 @@
       "vw/95"
     ]
   },
-  "catalog_count": 96,
-  "package_fragment_count": 6162,
+  "catalog_count": 99,
+  "package_fragment_count": 6354,
   "packages": [
     {
       "id": "knu-it1-v3",
@@ -1864,6 +1864,60 @@
       "editable": {
         "path": "assets/source/campus-v71-123/knu-osm-524021463-v71-g2-r1-fracture.blend",
         "sha256": "27b008c9e6d77c8a2eb747ebb9157aa9fd551f127845030743d9f1dd33deae1a"
+      }
+    },
+    {
+      "id": "knu-global-practice-v1",
+      "label": "글로벌플라자 · 64개 파편",
+      "source_model_id": "osm/468931850",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-global-practice-v1",
+      "files_sha256": {
+        "intact.glb": "08b47912f1eeac6ebe2ea556c8d55081305c98f59944162b56b4d0b2098d19c1",
+        "fragments.glb": "d281467c4b9465b0f793401103f7e18fc21768f2ce087cb1c98256a4501a1dfa",
+        "colliders.json": "9117017a222dc38dfdbf487f89b30ad654b532fe6ea139d8a7ca88cbca50c912",
+        "manifest.json": "1b8830c7772ce585a1a69f405d9b830b413047552a4cd277efd42bb229e04160"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-global-practice-v1.blend",
+        "sha256": "7855231484a15aad53b412c51662d55d29d899d558cfd5ba014c9b50616d651e"
+      }
+    },
+    {
+      "id": "knu-it5-practice-v1",
+      "label": "IT5호관 · 64개 파편",
+      "source_model_id": "osm/468931897",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-it5-practice-v1",
+      "files_sha256": {
+        "intact.glb": "3a2430d6aa3e6e6cd39baa824bb6b8d6c36712ec491fd6ab22501f9590084226",
+        "fragments.glb": "302f6ba1b96fc40ba182431fa40ecf410cce9c13d0ecf646413f96babc6800ca",
+        "colliders.json": "35318fe67d8796917b8c0c5696cd47517a3206a2a16bb0aa1c9cfded86a9da38",
+        "manifest.json": "16a6beee4749e24c5141762d1d09bab344b2ca1988ef8993a112a49341d7b664"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-it5-practice-v1.blend",
+        "sha256": "fbf1e140f1c61ed8f4bfb20b532c0b61f92c5e1d7d4cf06275833f05648272fd"
+      }
+    },
+    {
+      "id": "knu-library-practice-v1",
+      "label": "중앙도서관 · 64개 파편",
+      "source_model_id": "osm/468931852",
+      "manifest_source_sha256": "b41d54fb72c98dd9a2f6e1b0c3d1173d298cb0892b21fdb273d32864aa0868fb",
+      "fragment_count": 64,
+      "source_directory": "web/public/assets/buildings/knu-library-practice-v1",
+      "files_sha256": {
+        "intact.glb": "7ace62e5e3cd36e40ffdaf75b9c30f3290c6e6f54dba7075f48a45b5a228a882",
+        "fragments.glb": "5224b0d67dbdc427e0ef193eff9ea4c6c5ac499fef044ec5482f1a1c16937428",
+        "colliders.json": "d1d7ba68a09849a283ea30ede8d2ef80241a5f6c7f57ff3b8dd057e51c079a13",
+        "manifest.json": "ba941dc71ac0e28070acbe29161c9fe04c7bbd302e58ded8b96e9fbef7adba76"
+      },
+      "editable": {
+        "path": "assets/source/campus-v71-123/knu-library-practice-v1.blend",
+        "sha256": "d839e1bbf43729eb97c32394a04524b1eca38edf1324651967221ed464bb5918"
       }
     }
   ]

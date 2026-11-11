@@ -1344,6 +1344,48 @@
     "warnings": 0
   },
   {
+    "file": "web/public/assets/buildings/knu-global-practice-v1/intact.glb",
+    "bytes": 81472,
+    "triangles": 162,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-global-practice-v1/fragments.glb",
+    "bytes": 502292,
+    "triangles": 5362,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it5-practice-v1/intact.glb",
+    "bytes": 10308,
+    "triangles": 68,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-it5-practice-v1/fragments.glb",
+    "bytes": 370324,
+    "triangles": 4288,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-library-practice-v1/intact.glb",
+    "bytes": 111244,
+    "triangles": 148,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
+    "file": "web/public/assets/buildings/knu-library-practice-v1/fragments.glb",
+    "bytes": 504756,
+    "triangles": 4932,
+    "errors": 0,
+    "warnings": 0
+  },
+  {
     "file": "web/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
     "bytes": 73764096,
     "triangles": 893532,

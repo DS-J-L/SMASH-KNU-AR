@@ -74,6 +74,21 @@ function clearBuilding() {
 async function fetchJson(url) {
   const response=await fetch(url);if(!response.ok)throw new Error(`${url.split('/').pop()}: HTTP ${response.status}`);return response.json();
 }
+function populateBuildingPicker() {
+  const entries = new Map(catalog.buildings.map(entry => [entry.id, entry]));
+  const featured = (catalog.practice_buildings ?? []).filter(entry => entries.has(entry.id));
+  const featuredIds = new Set(featured.map(entry => entry.id));
+  const others = catalog.buildings.filter(entry => !featuredIds.has(entry.id));
+  const group = (label, rows) => {
+    const element = document.createElement('optgroup');
+    element.label = label;
+    element.append(...rows.map(entry => new Option(entry.label, entry.id)));
+    return element;
+  };
+  $('building-select').replaceChildren(...[
+    ['단독 파괴 연습', featured], ['다른 건물·이전 버전', others],
+  ].filter(([, rows]) => rows.length).map(([label, rows]) => group(label, rows)));
+}
 async function loadBuilding(id) {
   if(id===activeId)return;
   const entry=catalog.buildings.find(item=>item.id===id);if(!entry)throw new Error('등록되지 않은 건물입니다.');
@@ -147,7 +162,12 @@ function showHelpers(){for(const helper of helpers)helper.visible=$('colliders')
 function focusCampus(id='all'){
   if(view!=='campus'||loading)return;
   const focus=catalog.campus_focus?.find(item=>item.id===id);campusFocus=focus?id:'all';$('campus-focus').value=campusFocus;
-  if(focus){controls.target.fromArray(focus.target_y_up_m);camera.position.copy(controls.target).add(new THREE.Vector3(.9,.7,1).multiplyScalar(focus.distance_m));controls.minDistance=20;controls.maxDistance=1800;}
+  if(focus){
+    // Keep the whole district in view when the canvas is narrower than it is tall.
+    const distance=focus.distance_m/Math.min(1,camera.aspect);
+    controls.target.fromArray(focus.target_y_up_m);camera.position.copy(controls.target).add(new THREE.Vector3(.55,1.4,1).multiplyScalar(distance));
+    controls.minDistance=20;controls.maxDistance=Math.max(1800,camera.position.distanceTo(controls.target)*1.2);
+  }
   else{camera.position.set(1100,1000,1300);controls.target.set(0,-4,0);controls.minDistance=80;controls.maxDistance=3000;}
   controls.update();updateUI();
 }
@@ -190,7 +210,7 @@ async function init(){
     renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer);studioEnvironment=pmrem.fromScene(room,.04).texture;room.dispose();pmrem.dispose();
     controls=new OrbitControls(camera,canvas);controls.enableDamping=true;configureCamera();setLighting(false);new ResizeObserver(resize).observe(stage);resize();
-    [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);if(disposed)return;catalog=catalogForSelection(catalog,new URL(location.href).searchParams);$('building-select').replaceChildren(...catalog.buildings.map(entry=>new Option(entry.label,entry.id)));
+    [catalog]=await Promise.all([fetchJson('/public/assets/buildings/catalog.json'),RAPIER.init()]);if(disposed)return;catalog=catalogForSelection(catalog,new URL(location.href).searchParams);populateBuildingPicker();
     $('campus-footer').textContent=`건물 패키지 / ${catalog.campus_label??'캠퍼스'}`;
   $('campus-focus').append(...(catalog.campus_focus??[]).map(entry=>new Option(entry.label,entry.id)));
     world=new RAPIER.World({x:0,y:-9.81,z:0});world.timestep=1/60;groundBody=world.createRigidBody(RAPIER.RigidBodyDesc.fixed().setTranslation(0,-.06,0));world.createCollider(RAPIER.ColliderDesc.cuboid(20,.06,20).setFriction(.8),groundBody);

@@ -1,0 +1,135 @@
+{
+  "baseline": "95a69830055748d4ea274f2b16657c5317f7d2f1",
+  "branch": "feat/campus-eight-zones-20261111",
+  "input": "keyboard_demo",
+  "build": "npm run build:demo: passed",
+  "browser": {
+    "environment": "Windows Edge D3D11, isolated static server port 8896",
+    "command": "npx playwright test --config=data/local/campus-zones/playwright.config.mjs --reporter=line",
+    "passed": 2,
+    "total": 2,
+    "duration_seconds": 19.1,
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        601,
+        1000
+      ]
+    ],
+    "observations": [
+      "desktop.json",
+      "responsive.json"
+    ]
+  },
+  "zones": [
+    {
+      "id": "north-gate-arts",
+      "label": "① 북문·예술대·온실",
+      "target_y_up_m": [
+        105,
+        -4,
+        -399
+      ],
+      "distance_m": 530
+    },
+    {
+      "id": "main-library",
+      "label": "② 본관·글로벌플라자·중앙도서관",
+      "target_y_up_m": [
+        142,
+        37,
+        -98
+      ],
+      "distance_m": 300
+    },
+    {
+      "id": "agri-science",
+      "label": "③ 농대·자연과학대",
+      "target_y_up_m": [
+        -219,
+        4,
+        -37
+      ],
+      "distance_m": 410
+    },
+    {
+      "id": "sports",
+      "label": "④ 체육관·대운동장",
+      "target_y_up_m": [
+        -417,
+        -6,
+        159
+      ],
+      "distance_m": 410
+    },
+    {
+      "id": "museum-social",
+      "label": "⑤ 박물관·사회과학대",
+      "target_y_up_m": [
+        395,
+        6,
+        185
+      ],
+      "distance_m": 290
+    },
+    {
+      "id": "engineering-chemistry",
+      "label": "⑥ 공대·화학관",
+      "target_y_up_m": [
+        -55,
+        3,
+        307
+      ],
+      "distance_m": 480
+    },
+    {
+      "id": "it-veterinary",
+      "label": "⑦ IT대·수의대",
+      "target_y_up_m": [
+        157,
+        9,
+        308
+      ],
+      "distance_m": 430
+    },
+    {
+      "id": "dormitories",
+      "label": "⑧ 생활관",
+      "target_y_up_m": [
+        -32,
+        3,
+        437
+      ],
+      "distance_m": 320
+    }
+  ],
+  "unchanged": {
+    "otherCatalogFields": true,
+    "buildings": 96,
+    "default": "knu-it1-v3",
+    "campus": "/public/assets/campus/knu-campus-v71-123-group2-r1.glb",
+    "modelFiles": true,
+    "planChecklists": true
+  },
+  "sha256": {
+    "frontend/fracture/main.js": "e007918fca393f9d5e5e88009e5b8e94e4853bde31e5a956a122df7df01ee5d8",
+    "frontend/fracture/index.html": "5fbe14b82b76596c4999c3bdbe5ca79924f2278cd75af71f76c699d370604fbf",
+    "frontend/fracture/style.css": "2f84d0eaeb487bc877a2774599b9fbbb4848dea940eac22614bd2020c40c6a5a",
+    "web/public/assets/buildings/catalog.json": "18601f8b5ad13247c2abc214d21a8e08b226fdb5e82f2bf0c5687cd3389de68c",
+    "web/monitor/fracture/index.html": "1e7832dd0e958b28194ea9129397d130073e75926ee4617675cd989d0e996608",
+    "web/monitor/fracture/assets/index-Cl5-35mz.js": "98590223b8b2d20bf13594effff65eb765f4111301ecb8bcacd3aa64e7655d9e",
+    "web/monitor/fracture/assets/index-DGl6txmA.css": "e3fd9285465c882a2a40845f4dfb5b03bf77f31abc35cb1ae8534f22e50e81ab"
+  },
+  "limitations": [
+    "UI/static model and keyboard_demo verification only",
+    "Existing large bundle warning",
+    "No live camera, AR or long-running performance test"
+  ]
+}

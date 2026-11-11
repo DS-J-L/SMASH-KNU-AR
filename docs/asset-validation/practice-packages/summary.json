@@ -1,0 +1,206 @@
+{
+  "input": "keyboard_demo",
+  "baseline": "2334b1cf87fccc692e429feae7d974a2b5d0a13e",
+  "environment": "Windows Edge D3D11, static HTTP loopback :8898, Blender 5.2.3",
+  "build": "npm run build:demo: passed",
+  "browser": {
+    "specs": [
+      "building-practice.spec.js",
+      "campus-map-review.spec.js",
+      "fracture.spec.js"
+    ],
+    "first_run": {
+      "passed": 7,
+      "failed": 2,
+      "fix": "Give the building picker a separate associated label to avoid selected-option text in its accessible name."
+    },
+    "final_run": {
+      "passed": 9,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "duration_seconds": 74.45392700000001
+    }
+  },
+  "catalog_count": 99,
+  "packages": [
+    {
+      "id": "knu-global-practice-v1",
+      "label": "글로벌플라자",
+      "fragment_count": 64,
+      "new": true,
+      "source_model_id": "osm/468931850",
+      "dimensions_m": [
+        1.890156865119934,
+        2.5705785751342773,
+        2.799999713897705
+      ],
+      "volume_relative_error": 1.0272462654117019e-8,
+      "mesh_qa_errors": 0,
+      "expected_upper_piece_ground_warnings": 63,
+      "roundtrip": {
+        "intact.glb": {
+          "objects": 1,
+          "dimensions_m": [
+            1.8901569,
+            2.5705786,
+            2.7999997
+          ]
+        },
+        "fragments.glb": {
+          "objects": 64,
+          "dimensions_m": [
+            1.8901569,
+            2.5705786,
+            2.7999997
+          ]
+        }
+      },
+      "glb": [
+        {
+          "file": "web/public/assets/buildings/knu-global-practice-v1/intact.glb",
+          "bytes": 81472,
+          "triangles": 162,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "file": "web/public/assets/buildings/knu-global-practice-v1/fragments.glb",
+          "bytes": 502292,
+          "triangles": 5362,
+          "errors": 0,
+          "warnings": 0
+        }
+      ]
+    },
+    {
+      "id": "knu-main-v2",
+      "label": "경북대학교 본관",
+      "fragment_count": 85,
+      "new": false
+    },
+    {
+      "id": "knu-it5-practice-v1",
+      "label": "IT5호관",
+      "fragment_count": 64,
+      "new": true,
+      "source_model_id": "osm/468931897",
+      "dimensions_m": [
+        2.8000001907348633,
+        0.5844026803970337,
+        1.7612905502319336
+      ],
+      "volume_relative_error": 1.775741005743432e-8,
+      "mesh_qa_errors": 0,
+      "expected_upper_piece_ground_warnings": 63,
+      "roundtrip": {
+        "intact.glb": {
+          "objects": 1,
+          "dimensions_m": [
+            2.8000002,
+            0.5844027,
+            1.7612906
+          ]
+        },
+        "fragments.glb": {
+          "objects": 64,
+          "dimensions_m": [
+            2.8000002,
+            0.5844027,
+            1.7612906
+          ]
+        }
+      },
+      "glb": [
+        {
+          "file": "web/public/assets/buildings/knu-it5-practice-v1/intact.glb",
+          "bytes": 10308,
+          "triangles": 68,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "file": "web/public/assets/buildings/knu-it5-practice-v1/fragments.glb",
+          "bytes": 370324,
+          "triangles": 4288,
+          "errors": 0,
+          "warnings": 0
+        }
+      ]
+    },
+    {
+      "id": "knu-it1-v3",
+      "label": "IT1호관",
+      "fragment_count": 96,
+      "new": false
+    },
+    {
+      "id": "knu-library-practice-v1",
+      "label": "중앙도서관",
+      "fragment_count": 64,
+      "new": true,
+      "source_model_id": "osm/468931852",
+      "dimensions_m": [
+        2.799999952316284,
+        0.7522802352905273,
+        2.5113115310668945
+      ],
+      "volume_relative_error": 1.900574696177677e-8,
+      "mesh_qa_errors": 0,
+      "expected_upper_piece_ground_warnings": 62,
+      "roundtrip": {
+        "intact.glb": {
+          "objects": 1,
+          "dimensions_m": [
+            2.8,
+            0.7522802,
+            2.5113115
+          ]
+        },
+        "fragments.glb": {
+          "objects": 64,
+          "dimensions_m": [
+            2.8,
+            0.7522802,
+            2.5113115
+          ]
+        }
+      },
+      "glb": [
+        {
+          "file": "web/public/assets/buildings/knu-library-practice-v1/intact.glb",
+          "bytes": 111244,
+          "triangles": 148,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "file": "web/public/assets/buildings/knu-library-practice-v1/fragments.glb",
+          "bytes": 504756,
+          "triangles": 4932,
+          "errors": 0,
+          "warnings": 0
+        }
+      ]
+    }
+  ],
+  "glb_validation": {
+    "files": 199,
+    "errors": 0,
+    "warnings": 3
+  },
+  "preserved": {
+    "campus_focus": true,
+    "default": true,
+    "campus_glb": true,
+    "previous_building_entries": 96
+  },
+  "tested_files_sha256": {
+    "frontend/fracture/index.html": "5c728936b47aaecec3da45f484ec8770b64572c8bedfcf443699067a9352b5e1",
+    "frontend/fracture/main.js": "74610935b239337b4c39e4f70af3ce40a94ff57d5da8f78327993ca662f0024b",
+    "web/public/assets/buildings/catalog.json": "d833fc6d13c0efe4f024aa56b8fa8bdaabc74cf779ac069d6c493e6c443e8a09",
+    "web/monitor/fracture/index.html": "ea1dc2cab9bb85a1d7a6584f0b114d6e35aceb9604c70d06879c61f1139c9989",
+    "web/monitor/fracture/assets/index-BPk2-B1N.js": "af67696516862e212bd685e6dcdfdc62a6f6342358bf9d2cdef058bbfa9b9d6b",
+    "web/monitor/fracture/assets/index-DGl6txmA.css": "e3fd9285465c882a2a40845f4dfb5b03bf77f31abc35cb1ae8534f22e50e81ab"
+  }
+}
