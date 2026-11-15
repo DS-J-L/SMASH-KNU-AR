@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-11 14:37 KST — PR #14(IT1 모양 3D 판정) 머지 기록, 부분 파괴(1타 블럭 3개·이어진 블럭이 하나도 없으면 낙하·1타 1점) 추가(PR 준비) |
-| 현재 Phase·작업 상태 | 단일 카메라 K-SC-03·04(PR #6)·K-SC-05(PR #7)·발차기(PR #13)·IT1 모양 3D 판정(PR #14) main 반영. P4: 3D 판정에 부분 파괴 추가(김태이 파일만, 연결·연출은 정경호·이동수 요청). 11-09 실제 장비 시험 사용자 보고상 정상 |
-| 마지막 확인된 개발 완료 | `feat/partial-strike`: 같은 두 판정 파일에 부분 파괴(면 맞댐 연결 계산, 블럭 3개, 바닥과 끊기면 낙하, `damage_mode`), 공용 사례 17개(시험 벽 4개 추가), 실제 건물 5개 검사. Python `tests` 208/208, JS single·3D 115/115 (아래 11-11 14:37 기록) |
-| 현재 작업 | 부분 파괴 PR — 김태이가 직접 머지 |
+| 마지막 갱신 | 2026-11-15 16:10 KST — PR #18(부분 파괴) 머지 기록, 이슈 #19(월요일 발차기 연결 확인) 발행, 2D 게임용 부분 파괴 연결 함수 `BuildingDamage` 추가(PR 준비) |
+| 현재 Phase·작업 상태 | 단일 카메라 K-SC-03·04(PR #6)·K-SC-05(PR #7)·발차기(PR #13)·IT1 모양 3D 판정(PR #14)·부분 파괴(PR #18) main 반영. P4: 2D 게임에서도 부분 파괴를 쓰도록 연결 함수 추가(김태이 파일만, 화면 연결은 이동수 요청). 11-09 실제 장비 시험 사용자 보고상 정상 |
+| 마지막 확인된 개발 완료 | `feat/partial-strike-2d`: `model-strike-3d.js`에 `BuildingDamage`(2D 게임이 이미 구하는 표면 점 → 부서질·떨어질 블럭과 장면 노드 이름), `applyDamage`, `markerToPackage`. Python `tests` 208/208, JS single·3D 119/119 (아래 11-15 16:10 기록) |
+| 현재 작업 | 2D 게임용 부분 파괴 연결 함수 PR — 김태이가 직접 머지. 월요일(11-16) 2D 발차기 시험은 이슈 #19 연결 대기 |
 | 남은 일·미검증 | 부분 파괴: 화면 연출(지정 파편만 풀기)·1타 1점 게임 상태(이동수), 서버·mono3d 연결(정경호), 낙하 규칙·3개 수치 화면 확인. 발차기: 실폰 시험·기준값(2D 발목 0.8, 3D 0.20 m·1.5 m/s) 조정, 정경호·이동수 연결. 11-09 시험 수치·로그 기록. 실폰에서 느린 통과·거부/중복 타격 무음·무점수, 반복 복원, 속도·cooldown·음량 튜닝, 장시간·지연. PC 추론 경로: 화면 등록 한 줄·전제 시험 2개(이동수 파일), Worker |
-| 다음 한 단계 | PR 머지 후 [MODEL_STRIKE_3D.md](../docs/MODEL_STRIKE_3D.md) 7장 연결(이동수 배치·화면·부분 파괴 연출·점수, 정경호 서버·mono3d) → 실폰 3D 타격 시험 |
+| 다음 한 단계 | 월요일 2D 발차기 시험 결과로 발목 기준값 조정. PR 머지 후 [MODEL_STRIKE_3D.md](../docs/MODEL_STRIKE_3D.md) 7장 5번(이동수 2D 게임 부분 파괴 연결) → 실폰 2D 부분 파괴 시험 |
 | 막힌 점·인계 | 발차기 연결은 다른 사람 파일이라 김태이가 수정하지 않음: 정경호 `game_pose.py`·`test_multi3d.py`·mono3d, 이동수 `controller.js`·`main.js`·화면 번들([FOOT_STRIKE.md](../docs/FOOT_STRIKE.md) 4장). 11-08 관찰 1·3은 PR #10에서 정경호가 수정 |
 
 ## 2. 개인 Phase 현황
@@ -442,3 +442,26 @@
 - 인계 대상·넘긴 자료: 이동수 — `spawnFragmentBodies()`가 지정 파편만 풀도록, `controller.js` 타격당 1점·같은 건물 계속 받기, 계약 기록. 정경호 — `test_multi3d.py`·mono3d 연결 시 `remaining_fragments` 전달(MODEL_STRIKE_3D.md 7장). PR 본문 멘션 예정
 - 갱신한 계획 체크리스트·현황: 본 파일 요약, `진행현황.md` 김태이 행. P4 체크박스는 실제 3D 궤적 시험 전이라 `[ ]` 유지
 - 종료·중단 시각: 2026-11-11 14:37 KST
+
+### 2026-11-11 16:26 KST — PR #18 머지 완료
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 사용자 지시: "지금까지의 변동사항이 없으면, 머지하자". 머지 직전 GitHub 확인: main `61e2818` 그대로, PR #18 헤드 `e880e97` 그대로, 댓글·리뷰 없음
+- 결과: 머지 커밋 `9820019`(헤드 고정 머지). 머지된 main에서 Python 208/208, JS single·3D 115/115
+- 화면·서버 동작 변화 없음(판정을 아직 아무 곳에서도 부르지 않음)
+
+### 2026-11-15 16:10 KST — 월요일 시험 점검, 이슈 #19, 2D 게임용 부분 파괴 연결 함수
+
+- 담당 / 기록자: 김태이 / Claude Code
+- 작업 구분·Phase·상태: 점검·구현 / P4 / 김태이 함수 구현·합성 검증 완료, 화면 연결·실폰 미검증
+- 점검(사용자 질문 "월요일 정경호님 서버 시험에 발차기·파편 연출이 바로 반영되는가"): main `9820019` 기준 폰 좌표 2D 게임은 손 타격 → IT1 **첫 타격에 전체 붕괴**(100점)로 동작. 발차기는 안 됨 — 폰은 몸 22점(발목 포함)을 보내지만 `backend/ingest/game_pose.py`(정경호)·`frontend/single/main.js` 17행·`frontend/game/controller.js`(이동수)가 손목만 전달·수락하고, 서버가 내보내는 화면 번들은 11-10 빌드(`hit-2d-1`, 발목 없음). 필요한 수정은 모두 PR #13 "함께 바뀌는 계약"에 이미 있음. 부분 파괴(PR #18)는 3D 판정용이라 2D 게임에서 쓰이지 않음
+- 이슈 #19 발행(사용자 승인): "월요일(11-16) 테스트: 폰 좌표 2D 게임 발차기 연결 확인 요청". PR #13 요청을 링크로 가리키고 월요일 기한·서버 반영·테스트 때 볼 점만 추가, 이동수·정경호 담당 지정·멘션
+- 사용자 결정: 2D 게임에서도 부분 파괴를 쓸 수 있게 김태이 판정 파일에 연결 함수 추가. 브랜치 `feat/partial-strike-2d`
+- 확인된 사실: 2D 게임은 이미 화면 타격점을 건물 표면의 3D 점으로 바꾼다(`fracture-view.js` `impact()` 광선 → `destroy()`의 `runtime.frame.toLocal()` 패키지 좌표 `impactPoint`). `knu-it1-v3`는 원점 이동·회전이 없어 이 좌표가 `colliders.json` 좌표와 같다. `colliders.json`의 `fragment_id`는 숫자, 장면 노드 이름은 `node`(`SM_IT1V3_Fragment_000` 형식)
+- 바꾼 파일·결과물: `web/shared/model-strike-3d.js` — `BuildingDamage`(패키지 좌표 점 → 맞은 블럭(5 cm 안), 부서질·떨어질 블럭 id와 장면 노드 이름, `points` 1, `remaining_fragments`, `restore()`), `applyDamage()`(판정과 공유하도록 `ModelStrikeJudge.breakAt` 분리), `markerToPackage()`, 파편에 `node` 보관. `tests/test_model_strike.mjs` 4개 추가. `docs/MODEL_STRIKE_3D.md` 6장 "2D 게임에서 쓰기", 7장 이동수 5번 요청
+- 확인 방법·실제 결과: `pytest tests` 208/208, `node --test tests/single/*.test.mjs tests/test_foot_strike.mjs tests/test_model_strike.mjs` 119/119. 공용 사례 17개의 모든 타격에서 `BuildingDamage`와 `ModelStrikeJudge`의 부서짐·낙하·남은 수가 같음. 전체 `node --test tests/*.mjs tests/single/*.test.mjs` 실패 16개는 main `9820019`와 같은 이름(이번 변경과 무관)
+- 미검증: 실제 2D 게임 화면의 광선 점으로 시험하지 않음(화면 연결은 이동수 파일), 5 cm 붙임 값, Python판 없음(2D 게임은 브라우저만)
+- 입력 구분: 합성(손 계산 좌표)과 실제 IT1 패키지 기하
+- 인계 대상·넘긴 자료: 이동수 — `fracture-view.js`에서 `BuildingDamage.hitAt(impactPoint)` 결과 노드만 풀기, 남은 파편 보이기·광선 대상, `controller.js` 타격당 1점, 번들 재빌드(MODEL_STRIKE_3D.md 7장 5번). 월요일 시험에는 넣지 않음(발차기 연결 우선)
+- 갱신한 계획 체크리스트·현황: 본 파일 요약, `진행현황.md` 김태이 행. P4 체크박스 `[ ]` 유지
+- 종료·중단 시각: 2026-11-15 16:10 KST
