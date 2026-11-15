@@ -142,8 +142,9 @@ export function cameraTiltDownDeg(pose) {
   return Math.asin(-forward[2]) * 180 / Math.PI;
 }
 
-// Full marker calibration with a given FOV. Rejects a mirrored tap order (camera below the floor).
-export function calibrateMarker(width, height, pixels, sideM, fovDiagDeg) {
+// Raw solve for the FOV search and the final quality check. A small reprojection error alone
+// cannot certify the plane normal: a tiny/foreshortened quad admits very different poses.
+function solveMarker(width, height, pixels, sideM, fovDiagDeg) {
   const K = intrinsicsFromFov(width, height, fovDiagDeg);
   const plane = markerCorners(sideM);
   const H = homography(plane, pixels);
@@ -160,10 +161,58 @@ export function calibrateMarker(width, height, pixels, sideM, fovDiagDeg) {
     camera_height_m: pose.C[2], tilt_down_deg: cameraTiltDownDeg(pose) };
 }
 
+export function markerCalibrationMessage(reason) {
+  const messages = {
+    camera_below_floor_check_corner_order: '카메라가 바닥 아래로 계산됐습니다. 마커 모서리를 다시 찍어 주세요.',
+    marker_too_small_or_oblique: '마커가 너무 작거나 납작하게 보입니다. 폰을 마커에 가까이 두거나 더 위에서 내려다보고 다시 찍어 주세요.',
+    unstable_floor_normal: '작은 모서리 오차에도 바닥 방향이 크게 바뀝니다. 마커를 더 크게 보이게 촬영하고 네 모서리를 다시 찍어 주세요.',
+    marker_reprojection_error: '네 모서리가 일관된 바닥 자세로 맞지 않습니다. 검은 정사각형의 네 모서리를 다시 찍어 주세요.',
+    degenerate_corners: '마커의 서로 다른 네 모서리를 정확히 찍어 주세요.',
+  };
+  return messages[reason] ?? `보정 실패: ${reason}`;
+}
+
+export function calibrateMarker(width, height, pixels, sideM, fovDiagDeg) {
+  if (!(width > 0 && height > 0 && sideM > 0 && fovDiagDeg > 0 && fovDiagDeg < 180)
+    || !Array.isArray(pixels) || pixels.length !== 4
+    || pixels.some(p => !Array.isArray(p) || p.length !== 2 || !p.every(Number.isFinite))) {
+    return { ok: false, reason: 'degenerate_corners' };
+  }
+  const edges = pixels.map((p, i) => sub([...pixels[(i + 1) % 4], 0], [...p, 0]));
+  const turns = edges.map((e, i) => cross(e, edges[(i + 1) % 4])[2]);
+  if (!turns.every(t => t > 0) && !turns.every(t => t < 0)) return { ok: false, reason: 'degenerate_corners' };
+  const lengths = edges.map(norm);
+  const area = Math.abs(pixels.reduce((s, p, i) => {
+    const q = pixels[(i + 1) % 4]; return s + p[0] * q[1] - p[1] * q[0];
+  }, 0)) / 2;
+  const pixelScale = Math.min(width, height) / 720;
+  const footprint = Math.min(...lengths, area / Math.max(...lengths));
+  // Practical starting limits, not a measured real-world accuracy guarantee.
+  if (footprint < 24 * pixelScale) return { ok: false, reason: 'marker_too_small_or_oblique' };
+  const result = solveMarker(width, height, pixels, sideM, fovDiagDeg);
+  if (!result.ok) return result;
+  if (!Number.isFinite(result.reprojection_max_px) || result.reprojection_max_px > 3 * pixelScale) {
+    return { ok: false, reason: 'marker_reprojection_error' };
+  }
+  // Perturb each raw-frame coordinate by one reference pixel. If the normal swings >15°,
+  // refuse to draw a building from this ambiguous calibration instead of guessing "up".
+  const normal = p => [p.R[2], p.R[5], p.R[8]];
+  let maxAngle = 0;
+  for (let i = 0; i < 4; i++) for (let axis = 0; axis < 2; axis++) for (const sign of [-1, 1]) {
+    const moved = pixels.map(p => [...p]); moved[i][axis] += sign * pixelScale;
+    const sample = solveMarker(width, height, moved, sideM, fovDiagDeg);
+    if (!sample.ok) return { ok: false, reason: 'unstable_floor_normal' };
+    const angle = Math.acos(Math.max(-1, Math.min(1, dot(normal(result.pose), normal(sample.pose))))) * 180 / Math.PI;
+    maxAngle = Math.max(maxAngle, angle);
+  }
+  if (!Number.isFinite(maxAngle) || maxAngle > 15) return { ok: false, reason: 'unstable_floor_normal' };
+  return { ...result, normal_sensitivity_deg: maxAngle };
+}
+
 // Unknown lens: choose the FOV whose solution puts the camera at the known height.
 // Scans the FOV range (some FOVs may fail), then bisects the first bracket. Null when no FOV fits.
 export function fovForCameraHeight(width, height, pixels, sideM, targetHeightM, lo = 30, hi = 130) {
-  const h = fov => { const r = calibrateMarker(width, height, pixels, sideM, fov); return r.ok ? r.camera_height_m - targetHeightM : NaN; };
+  const h = fov => { const r = solveMarker(width, height, pixels, sideM, fov); return r.ok ? r.camera_height_m - targetHeightM : NaN; };
   let prev = null;
   for (let fov = lo; fov <= hi + 1e-9; fov += 2) {
     const value = h(fov);
@@ -186,7 +235,7 @@ export function fovForCameraHeight(width, height, pixels, sideM, targetHeightM, 
 export function cameraHeightRange(width, height, pixels, sideM, lo = 30, hi = 130) {
   const heights = [];
   for (let fov = lo; fov <= hi + 1e-9; fov += 5) {
-    const r = calibrateMarker(width, height, pixels, sideM, fov);
+    const r = solveMarker(width, height, pixels, sideM, fov);
     if (r.ok) heights.push({ fov, height: r.camera_height_m });
   }
   if (!heights.length) return null;

@@ -23,7 +23,8 @@ async function loadVision() {
 
 // Returns {landmarker, delegate}. GPU first, CPU if the phone's WebGL path fails.
 // A caller whose GPU instance later failed at run time can pass ["CPU"].
-export async function createPoseLandmarker(model, delegates = ["GPU", "CPU"]) {
+// Silhouette output is opt-in; only the mono building test requests it.
+export async function createPoseLandmarker(model, delegates = ["GPU", "CPU"], {segmentation=false} = {}) {
   const { FilesetResolver, PoseLandmarker } = await loadVision();
   const fileset = await FilesetResolver.forVisionTasks(`${VENDOR}/wasm`);
   let lastError = null;
@@ -33,6 +34,7 @@ export async function createPoseLandmarker(model, delegates = ["GPU", "CPU"]) {
         baseOptions: { modelAssetPath: MODELS[model], delegate },
         runningMode: "VIDEO",
         numPoses: 1,
+        outputSegmentationMasks: segmentation,
       });
       return { landmarker, delegate };
     } catch (error) {

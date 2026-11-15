@@ -1,12 +1,12 @@
 // Single-camera APPROXIMATE 3D from MediaPipe Pose + a calibrated floor marker. Test only.
-// Idea: the foot that touches the floor is found exactly (ray ∩ floor). The rest of the body is placed
+// Idea: a grounded foot/ankle ray intersects an estimated height plane. The rest of the body is placed
 // around it with MediaPipe worldLandmarks (hip-centred, metric-ish, camera-aligned axes), scaled by a
 // one-time body calibration. Each joint is then snapped onto its own 2D pixel ray, so the left/right/up
 // error comes from the 2D detection and only the depth along the ray comes from the body model.
 // Output is tagged source:'mono_approx' and must never be reported as multi-view 3D.
 import {
   sub, add, scale, norm, normalize, mid, transposeMul, project, pixelRay, intersectZ, intersectPlane, closestOnRay,
-} from './geometry.js?v=20261109-4';
+} from './geometry.js?v=20261111-1';
 
 export const LM = {
   nose: 0, left_shoulder: 11, right_shoulder: 12, left_elbow: 13, right_elbow: 14,
@@ -21,6 +21,7 @@ export const MIN_VISIBILITY = 0.5;
 export const FOOT_MIN_VISIBILITY = 0.3;  // feet are small and often low-confidence at the frame edge
 export const NOSE_TO_HEIGHT = 0.92;  // nose height ≈ 0.92 × body height, rough anthropometric ratio
 const SAME_FLOOR_M = 0.08;
+export const MARKER_STAND_TOLERANCE_M=.15;
 
 const inFrame = lm => lm.x >= 0 && lm.x <= 1 && lm.y >= 0 && lm.y <= 1;
 const visible = (lm, min = MIN_VISIBILITY) => lm && Number.isFinite(lm.visibility) && lm.visibility >= min && inFrame(lm);
@@ -28,9 +29,12 @@ const pixel = (K, lm) => [lm.x * K.width, lm.y * K.height];
 const vec = w => [w.x, w.y, w.z];
 const median = values => { const s = [...values].sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : NaN; };
 
-function footObservation(K, pose, landmarks, world, side) {
-  let ids = [LM[`${side}_heel`], LM[`${side}_foot_index`]].filter(i => visible(landmarks[i], FOOT_MIN_VISIBILITY) && world[i]);
+function footObservation(K, pose, landmarks, world, side, reference=null) {
+  let ids = (reference ? [LM[`${side}_ankle`]] : [LM[`${side}_heel`], LM[`${side}_foot_index`]])
+    .filter(i => visible(landmarks[i], FOOT_MIN_VISIBILITY) && world[i]);
+  if(reference&&!ids.length)return null;
   let height = FOOT_HEIGHT_M;
+  if(reference)height=reference.ankle_height_m;
   if (!ids.length) {                         // heel/toe missed: fall back to the ankle
     ids = [LM[`${side}_ankle`]].filter(i => visible(landmarks[i], FOOT_MIN_VISIBILITY) && world[i]);
     height = ANKLE_HEIGHT_M;
@@ -55,14 +59,14 @@ function headObservation(landmarks, world) {
 }
 
 // The lower foot (in body-model world height) is the one standing on the floor.
-export function floorAnchor(K, pose, landmarks, world) {
-  const feet = ['left', 'right'].map(s => footObservation(K, pose, landmarks, world, s)).filter(Boolean);
+export function floorAnchor(K, pose, landmarks, world, reference=null) {
+  const feet = ['left', 'right'].map(s => footObservation(K, pose, landmarks, world, s, reference)).filter(Boolean);
   if (!feet.length) return null;
   feet.sort((a, b) => a.mp_up - b.mp_up);
   const used = feet.length === 2 && feet[1].mp_up - feet[0].mp_up < SAME_FLOOR_M ? feet : [feet[0]];
   return {
     source: 'floor',
-    point_w: scale(used.map(f => f.floor).reduce(add), 1 / used.length),
+    point_w: sub(scale(used.map(f => f.floor).reduce(add), 1 / used.length),reference?.floor_bias_m??[0,0,0]),
     mp: scale(used.map(f => f.mp).reduce(add), 1 / used.length),
     feet: used.map(f => f.side),
   };
@@ -91,8 +95,9 @@ export function torsoAnchor(K, pose, landmarks, world, bodyScale) {
 }
 
 // One calibration sample: person standing still, at least one foot and the head visible.
-export function measureBody(K, pose, landmarks, world) {
+export function measureBody(K, pose, landmarks, world, options={}) {
   if (!landmarks || !world) return { ok: false, reason: 'no_person' };
+  if(options.markerCentered)return measureMarkerBody(K,pose,landmarks,world);
   const anchor = floorAnchor(K, pose, landmarks, world);
   if (!anchor) return { ok: false, reason: 'feet_not_visible' };
   const head = headObservation(landmarks, world);
@@ -111,12 +116,54 @@ export function measureBody(K, pose, landmarks, world) {
     stand_point_w: anchor.point_w };
 }
 
+// Calibration only: both feet straddle the known marker origin. Do not pin the person there
+// during measurement: subsequent frame anchors remain free to move across the floor.
+function measureMarkerBody(K,pose,landmarks,world){
+  const ids=[LM.left_ankle,LM.right_ankle];
+  if(!ids.every(i=>visible(landmarks[i],MIN_VISIBILITY)&&world[i]))return {ok:false,reason:'both_feet_required'};
+  const feet=ids.map(i=>intersectZ(pixelRay(K,pose,...pixel(K,landmarks[i])),ANKLE_HEIGHT_M));
+  if(feet.some(p=>!p))return {ok:false,reason:'feet_not_visible'};
+  const centre=mid(...feet);
+  if(Math.hypot(centre[0],centre[1])>MARKER_STAND_TOLERANCE_M)return {ok:false,reason:'stand_on_marker',stand_point_w:centre};
+  const modelFeet=ids.map(i=>transposeMul(pose.R,vec(world[i])));
+  if(Math.abs(modelFeet[0][2]-modelFeet[1][2])>SAME_FLOOR_M)return {ok:false,reason:'both_feet_on_floor'};
+  const normal=normalize([-pose.C[0],-pose.C[1],0]);
+  const pixels=ids.map(i=>pixel(K,landmarks[i]));
+  const anklePoint=intersectPlane(pixelRay(K,pose,...mid([...pixels[0],0],[...pixels[1],0]).slice(0,2)),[0,0,0],normal);
+  if(!anklePoint||anklePoint[2]<.02||anklePoint[2]>.20)return {ok:false,reason:'stand_on_marker'};
+  const head=headObservation(landmarks,world);
+  if(!head)return {ok:false,reason:'head_not_visible'};
+  const nose=intersectPlane(pixelRay(K,pose,...pixel(K,head.lm)),[0,0,0],normal);
+  const mpFoot=mid(...ids.map(i=>vec(world[i])));
+  const mpUp=transposeMul(pose.R,sub(head.mp,mpFoot))[2];
+  if(!nose||!(mpUp>.5)||!(nose[2]-anklePoint[2]>.5))return {ok:false,reason:'not_upright'};
+  const shoulders=[LM.left_shoulder,LM.right_shoulder],hips=[LM.left_hip,LM.right_hip];
+  if(![...shoulders,...hips].every(i=>visible(landmarks[i])&&world[i]))return {ok:false,reason:'not_upright'};
+  const torso=sub(mid(...shoulders.map(i=>vec(world[i]))),mid(...hips.map(i=>vec(world[i]))));
+  const torsoWorld=transposeMul(pose.R,torso);
+  if(torsoWorld[2]<=0||Math.hypot(torsoWorld[0],torsoWorld[1])>torsoWorld[2]*.35)return {ok:false,reason:'not_upright'};
+  const ankleHeight=anklePoint[2];
+  const correctedFeet=ids.map(i=>intersectZ(pixelRay(K,pose,...pixel(K,landmarks[i])),ankleHeight));
+  if(correctedFeet.some(p=>!p))return {ok:false,reason:'feet_not_visible'};
+  const bias=mid(...correctedFeet);bias[2]=0;
+  return {ok:true,reference:'marker_center_v1',scale:(nose[2]-ankleHeight)/mpUp,nose_height_m:nose[2],
+    mp_up:mpUp,torso_mp:norm(torso),ankle_height_m:ankleHeight,floor_bias_m:bias,stand_point_w:centre};
+}
+
 // Median over samples. `heightM` (optional, user's real height) overrides the image-based scale.
-export function finalizeBody(samples, heightM = null) {
+export function finalizeBody(samples, heightM = null, options={}) {
   const ok = samples.filter(s => s.ok);
   if (ok.length < 5) return null;
+  const marker=options.markerCentered||ok.some(s=>s.reference==='marker_center_v1');
+  if(marker&&(ok.some(s=>s.reference!=='marker_center_v1')||ok.length/samples.length<.7))return null;
+  if(marker){
+    const centre=[0,1,2].map(k=>median(ok.map(s=>s.stand_point_w[k])));
+    if(ok.some(s=>norm(sub(s.stand_point_w,centre))>.08))return null;
+    const medianScale=median(ok.map(s=>s.scale));
+    if(ok.some(s=>Math.abs(s.scale/medianScale-1)>.15))return null;
+  }
   const imageScale = median(ok.map(s => s.scale));
-  const scaleFromHeight = heightM > 0 ? median(ok.map(s => (NOSE_TO_HEIGHT * heightM - FOOT_HEIGHT_M) / s.mp_up)) : null;
+  const scaleFromHeight = heightM > 0 ? median(ok.map(s => (NOSE_TO_HEIGHT * heightM - (s.ankle_height_m??FOOT_HEIGHT_M)) / s.mp_up)) : null;
   const s = scaleFromHeight ?? imageScale;
   return {
     scale: s,
@@ -125,13 +172,19 @@ export function finalizeBody(samples, heightM = null) {
     estimated_height_m: median(ok.map(x => x.nose_height_m)) / NOSE_TO_HEIGHT,
     torso_m: median(ok.map(x => x.torso_mp)) * s,
     samples: ok.length,
+    ...(marker?{depth_reference:{version:'marker_center_v1',point_m:[0,0,0],
+      ankle_height_m:median(ok.map(s=>s.ankle_height_m)),
+      floor_bias_m:[0,1,2].map(k=>median(ok.map(s=>s.floor_bias_m[k]))),
+      stand_tolerance_m:MARKER_STAND_TOLERANCE_M}}:{}),
   };
 }
 
 export function estimate(K, pose, landmarks, world, body) {
   if (!body?.scale) return { valid: false, reason: 'body_not_calibrated', source: 'mono_approx' };
   if (!landmarks || !world) return { valid: false, reason: 'no_person', source: 'mono_approx' };
-  const anchor = floorAnchor(K, pose, landmarks, world) || torsoAnchor(K, pose, landmarks, world, body.scale);
+  const reference=body.depth_reference;
+  const anchor = floorAnchor(K, pose, landmarks, world, reference) || (!reference&&torsoAnchor(K, pose, landmarks, world, body.scale));
+  if(!anchor&&reference)return {valid:false,reason:'feet_required_for_depth',source:'mono_approx'};
   if (!anchor) return { valid: false, reason: 'no_floor_or_torso_anchor', source: 'mono_approx' };
   const joints = {};
   for (const name of OUTPUT_JOINTS) {

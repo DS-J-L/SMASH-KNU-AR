@@ -4,6 +4,7 @@ import {
   intrinsicsFromFov, markerCorners, project, calibrateMarker, fovForCameraHeight, sub, norm, normalize, cross, matVec, scale,
 } from '../web/test/mono3d/geometry.js';
 import { LM, measureBody, finalizeBody, estimate, floorAnchor, insideBox, segmentHitsBox, buildingBox, waistHeightM } from '../web/test/mono3d/mono3d.js';
+import {visualPersonEstimate,packPersonDepth} from '../web/test/mono3d/person-depth.js';
 
 const W = 720, H = 1280, FOV = 80;
 function lookAt(C, target) {
@@ -15,6 +16,19 @@ const K = intrinsicsFromFov(W, H, FOV);
 const truePose = lookAt([0.1, -1.15, 1.0], [0, 0.6, 0.6]);
 const markerPx = markerCorners(0.2).map(([X, Y]) => project(K, truePose, [X, Y, 0]));
 const close = (a, b, tol) => assert.ok(norm(sub(a, b)) < tol, `${a} vs ${b}`);
+
+test('visual torso occlusion remains available with hidden ankles without enabling collisions',()=>{
+  const pose=lookAt([0,-2.2,1.05],[0,0,.7]),standing=person({at:[0,0],pose});
+  const sample=measureBody(K,pose,standing.landmarks,standing.world,{markerCentered:true});assert.ok(sample.ok);
+  const body=finalizeBody(Array(15).fill(sample),1.6/.92,{markerCentered:true});
+  const moved=person({at:[.1,.3],pose});for(const id of [27,28,29,30,31,32])moved.landmarks[id].visibility=0;
+  const tracking=estimate(K,pose,moved.landmarks,moved.world,body);assert.equal(tracking.valid,false);
+  const visual=visualPersonEstimate(K,pose,moved.landmarks,moved.world,body,tracking);
+  assert.equal(visual.valid,true);assert.equal(visual.source,'visual_torso_only');assert.equal(visual.collision_usable,false);
+  assert.equal(tracking.valid,false);assert.equal(visual.joints.left_ankle,null);
+  assert.ok(packPersonDepth({width:64,height:64,alpha:new Uint8Array(64*64).fill(255)},moved.landmarks,visual,pose));
+  assert.equal(visualPersonEstimate(K,pose,moved.landmarks,moved.world,null,tracking),null);
+});
 
 test('marker corners recover the synthetic camera pose', () => {
   const r = calibrateMarker(W, H, markerPx, 0.2, FOV);
@@ -31,7 +45,7 @@ test('mirrored tap order is rejected, known height recovers the field of view', 
 });
 
 // Synthetic standing person: world joints → MediaPipe-like world landmarks (hip-centred, camera axes, wrong scale).
-function person({ at = [0.05, 0.7], leftFootUp = 0, wrist = null, mpScale = 0.9 } = {}) {
+function person({ at = [0.05, 0.7], leftFootUp = 0, wrist = null, mpScale = 0.9, pose=truePose } = {}) {
   const [x, y] = at, P = {};
   P[LM.nose] = [x, y, 1.6];
   P[LM.left_shoulder] = [x - 0.18, y, 1.45]; P[LM.right_shoulder] = [x + 0.18, y, 1.45];
@@ -46,9 +60,9 @@ function person({ at = [0.05, 0.7], leftFootUp = 0, wrist = null, mpScale = 0.9 
   const landmarks = [], world = [];
   for (let i = 0; i < 33; i++) {
     if (!P[i]) { landmarks.push({ x: 0.5, y: 0.5, z: 0, visibility: 0 }); world.push({ x: 0, y: 0, z: 0, visibility: 0 }); continue; }
-    const [u, v] = project(K, truePose, P[i]);
+    const [u, v] = project(K, pose, P[i]);
     landmarks.push({ x: u / W, y: v / H, z: 0, visibility: 0.95 });
-    const m = scale(matVec(truePose.R, sub(P[i], hip)), mpScale);
+    const m = scale(matVec(pose.R, sub(P[i], hip)), mpScale);
     world.push({ x: m[0], y: m[1], z: m[2], visibility: 0.95 });
   }
   return { P, landmarks, world };
@@ -148,4 +162,46 @@ test('waist-high building at the marker and swing-path hit', () => {
   assert.ok(segmentHitsBox(b, [-0.6, 0.4, 0.7], [0.6, 0.4, 0.7], 0.3));    // margin
   assert.ok(segmentHitsBox(b, [0, 0, 1.5], [0, 0, 0.2]));                  // chop from above
   assert.ok(segmentHitsBox(b, null, [0, 0, 0.5])); assert.ok(!segmentHitsBox(b, null, null));
+});
+
+const standingPose=lookAt([.1,-2.2,1.1],[0,0,.8]);
+const markerSample=p=>measureBody(K,standingPose,p.landmarks,p.world,{markerCentered:true});
+test('marker-centred body reference calibrates ankle height and preserves moving wrist depth',()=>{
+  const base=person({at:[0,0],pose:standingPose});const sample=markerSample(base);
+  assert.ok(sample.ok,JSON.stringify(sample));
+  const body=finalizeBody(Array(15).fill(sample),null,{markerCentered:true});
+  assert.ok(body);assert.equal(body.depth_reference.version,'marker_center_v1');
+  assert.ok(Math.abs(body.depth_reference.ankle_height_m-.09)<.002);
+  assert.ok(Math.abs(body.scale-1/.9)<.003);
+  for(const y of [-.4,0,.6]){
+    const moved=person({at:[.15,y],wrist:[.35,y-.2,1.1],pose:standingPose});
+    const r=estimate(K,standingPose,moved.landmarks,moved.world,body);
+    assert.ok(r.valid);assert.equal(r.anchor_source,'floor');
+    close(r.joints.right_wrist.position_m,moved.P[LM.right_wrist],.005);
+    close(r.joints.left_hip.position_m,moved.P[LM.left_hip],.005);
+  }
+});
+
+test('marker reference refuses wrong position, one foot, lifted foot and unstable calibration',()=>{
+  assert.equal(markerSample(person({at:[0,.7],pose:standingPose})).reason,'stand_on_marker');
+  const hidden=person({at:[0,0],pose:standingPose});hidden.landmarks[LM.left_ankle].visibility=.1;
+  assert.equal(markerSample(hidden).reason,'both_feet_required');
+  assert.equal(markerSample(person({at:[0,0],leftFootUp:.12,pose:standingPose})).ok,false);
+  const a=markerSample(person({at:[0,0],pose:standingPose}));assert.ok(a.ok);
+  assert.equal(finalizeBody([...Array(5).fill(a),...Array(5).fill({ok:false})],null,{markerCentered:true}),null);
+  const b={...a,stand_point_w:[a.stand_point_w[0]+.12,a.stand_point_w[1],a.stand_point_w[2]]};
+  assert.equal(finalizeBody([...Array(8).fill(a),b],null,{markerCentered:true}),null);
+  assert.equal(finalizeBody([...Array(8).fill(a),{...a,scale:a.scale*1.3}],null,{markerCentered:true}),null);
+});
+
+test('marker depth reference rejects invisible feet instead of guessing torso depth, then recovers',()=>{
+  const p=person({at:[0,0],pose:standingPose});const sample=markerSample(p);
+  const body=finalizeBody(Array(15).fill(sample),1.6/.92,{markerCentered:true});assert.ok(body);
+  const moved=person({at:[.2,.5],pose:standingPose});
+  moved.landmarks[LM.left_ankle].visibility=.1;moved.landmarks[LM.right_ankle].visibility=.1;
+  const invalid=estimate(K,standingPose,moved.landmarks,moved.world,body);
+  assert.equal(invalid.valid,false);assert.equal(invalid.reason,'feet_required_for_depth');
+  moved.landmarks[LM.right_ankle].visibility=.95;
+  const restored=estimate(K,standingPose,moved.landmarks,moved.world,body);assert.ok(restored.valid);
+  assert.deepEqual(restored.anchor_feet,['right']);close(restored.joints.right_wrist.position_m,moved.P[LM.right_wrist],.005);
 });
