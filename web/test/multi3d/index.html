@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#000000">
   <title>카메라 3대 3D 시험</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../mono3d/style.css?v=20261109-4">
+  <link rel="stylesheet" href="../mono3d/style.css?v=20261117-1">
   <link rel="stylesheet" href="./phone.css?v=20261109-6">
 </head>
 <body>
@@ -20,11 +20,12 @@
       <li data-step="corners">모서리</li>
       <li data-step="send">보내기</li>
     </ol>
+    <button id="uiToggle" class="icon" aria-label="안내 패널 숨기기" aria-pressed="false">◉</button>
     <button id="settingsBtn" class="icon" aria-label="고급 설정">⚙</button>
   </header>
 
   <p id="banner" class="banner" hidden></p>
-  <div id="hud" hidden><pre id="result">—</pre></div>
+  <div id="hud" hidden><button id="hudGrip" class="grip" aria-label="상태 패널 이동">⠿ 이동</button><pre id="result">—</pre></div>
 
   <section id="sheet" class="sheet">
     <button id="sheetHandle" class="handle" aria-label="안내 접기/펼치기"><span></span></button>
@@ -55,7 +56,7 @@
       <h2>2. 폰 고정하고 마커 보이기</h2>
       <ol class="todo">
         <li>폰을 고정하세요. 사람이 설 자리 기준으로 폰끼리 <b>60~120°</b> 벌려 두세요(예: 앞, 앞-왼쪽, 왼쪽 옆). <b>서로 마주보게(180°) 두면 앞뒤 거리를 못 잽니다.</b></li>
-        <li>마커 자리가 <b>건물</b>입니다. 사람은 마커 위가 아니라 <b>옆</b>(50cm 이상 떨어져)에 서서 휘두릅니다.</li>
+        <li>마커 자리가 PC 화면의 <b>건물</b> 위치입니다(폰 화면에는 건물을 그리지 않습니다). 사람은 마커 위가 아니라 <b>옆</b>(50cm 이상 떨어져)에 서서 휘두릅니다.</li>
         <li>바닥 마커가 화면에 크게 보이게 하세요. 마커 무늬로 방향을 읽으므로 <b>무늬가 또렷해야</b> 합니다.</li>
         <li>이 폰의 높이를 재서 넣으세요.</li>
       </ol>
@@ -66,10 +67,11 @@
       <p id="savedCalib" class="hint" hidden></p>
       <div class="row">
         <button id="useSaved" class="secondary" hidden>저장된 보정 사용</button>
-        <button id="tapCorners" class="primary">화면 멈추고 모서리 찍기</button>
+        <button id="autoMarker" class="primary">마커 자동 인식</button><button id="tapCorners" class="secondary">수동으로 모서리 찍기</button>
       </div>
     </div>
 
+    <p id="autoMarkerStatus" class="hint">흑백 ArUco ID0 마커의 검은 테두리 전체가 보이게 하세요. 마커 한 변과 폰 높이를 확인한 뒤 자동 인식을 누르세요.</p>
     <div class="panel" data-panel="corners" hidden>
       <div id="tapPrompt">
         <p class="big"><b id="cornerNo">1/4</b> 마커 검은 사각형의 <span id="cornerName">첫 번째</span> 모서리를 누르세요</p>
@@ -97,12 +99,19 @@
       </div>
     </div>
 
+    <div class="panel" data-panel="body" hidden>
+      <h2>3. 세 카메라 사람 보정</h2><p>세 폰의 마커 보정을 마친 뒤 두 발 사이 중심을 마커에 맞추고 똑바로 서세요. 한 폰에서 시작을 누르고 3초간 유지합니다.</p>
+      <button id="startBody" class="primary">몸 보정 시작 · 허리 기준 고정</button>
+      <p id="bodyStatus">세 폰의 마커 보정 대기</p>
+      <p>건물 최고 높이를 처음 보정한 허리의 70%로 맞춥니다. 이후 움직여도 크기와 마커 기준 위치는 바뀌지 않습니다.</p>
+    </div>
+    
     <div class="panel" data-panel="send" hidden>
       <h2>3. 보내는 중 <small id="slotLabel">C0</small></h2>
       <p class="live"><span id="linkStatus">서버에 연결 중…</span></p>
       <p id="cams" class="cams"></p>
-      <p class="hits">건물 타격 <b id="hits">0</b>회</p>
-      <p class="hint">PC에서 <b>/test/multi3d/view.html</b>을 열면 세 영상과 3D를 함께 봅니다. 노란 기둥(건물)과 손목 점은 서버가 세 화면을 합친 결과를 이 화면에 다시 그린 것입니다.</p>
+      <p>3대 모드는 사람 몸 보정을 생략하고 현재 고정 건물 크기로 바로 측정합니다. 카메라별 마커 보정은 필요합니다.</p><p class="hits">건물 타격 <b id="hits">0</b>회</p>
+      <p class="hint">PC에서 <b>/test/multi3d/view.html</b>을 열면 세 영상과 3D를 함께 봅니다. 건물은 이 폰 화면에 그리지 않고 PC 화면에만 표시합니다. 손목 점은 서버가 세 화면을 합친 결과입니다.</p>
       <div class="row">
         <button id="redoCorners" class="link">마커 보정 다시</button>
       </div>
@@ -131,6 +140,6 @@
       b.hidden = false;
     }, true);
   </script>
-  <script type="module" src="./phone.js?v=20261109-6"></script>
+  <script type="module" src="./phone.js?v=20261117-5"></script>
 </body>
 </html>

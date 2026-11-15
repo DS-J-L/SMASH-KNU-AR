@@ -1,16 +1,23 @@
 // Single-camera approximate 3D test page. In the measure step it streams results to the PC viewer (test relay).
 // UI: full-screen camera + a step sheet (camera → place → corners → body → measure).
 // All maths run on the RAW (un-mirrored) frame; mirroring only flips what is drawn.
-import { createPoseLandmarker } from '/camera/pose.js';
-import { calibrateMarker, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project, transposeMul } from './geometry.js?v=20261109-4';
-import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261109-4';
+import { createPoseLandmarker } from '/camera/pose.js?v=20261112-2';
+import { showLoupe, hideLoupe, makeMovable, initOverlayToggle, resetPanelPosition } from './phone-ui.js?v=20261117-1';
+import { calibrateMarker, markerCalibrationMessage, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project, transposeMul } from './geometry.js?v=20261111-1';
+import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261112-1';
 import { createLink } from './link.js?v=20261109-4';
+import {copyPersonMask,packPersonDepth,visualPersonEstimate,skeletonMask,torsoMaskCoverage,MIN_TORSO_MASK_COVERAGE,personDepthDiagnosis,PERSON_DEPTH_ENCODING} from './person-depth.js?v=20261117-1';
 
+// The phone page draws no building; the building is shown on the PC page only.
+import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261117-2';
+let markerScanner=null;
 const $ = id => document.getElementById(id);
 const view = $('view'), ctx = view.getContext('2d'), topView = $('top'), topCtx = topView.getContext('2d');
 const sheet = $('sheet');
 const video = document.createElement('video');
 video.muted = true; video.playsInline = true; video.setAttribute('playsinline', '');
+const inferenceCanvas=document.createElement('canvas'),inferenceContext=inferenceCanvas.getContext('2d');
+const depthCanvas=document.createElement('canvas'),depthContext=depthCanvas.getContext('2d');
 
 const STEPS = ['camera', 'place', 'corners', 'body', 'measure'];
 const STORE_KEY = 'mono3d-test-calibration-v2';
@@ -21,12 +28,16 @@ const SKELETON = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [1
 
 let step = 'camera', facing = 'environment';
 let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null, audio = null;
-let frozen = null, corners = [], dragPoint = null;
+let frozen = null, corners = [], dragPoint = null, canonicalMarker=false;
 let calib = null, body = null, bodySamples = null, bodyStart = 0, countdownTimer = null, lastSampleT = null;
 const BODY_REASONS = { no_person: '사람이 안 보임', feet_not_visible: '발이 화면에 안 나옴(발끝까지 보이게)',
-  head_not_visible: '머리가 화면에 안 나옴(머리까지 보이게)', not_upright: '똑바로 서 있지 않음', nose_ray_failed: '계산 실패' };
-let latest = null, result = null, hits = 0, wasInside = { left_wrist: false, right_wrist: false }, lastHitAt = -1e9;
-let prevWrist = { left_wrist: null, right_wrist: null };
+  head_not_visible: '머리가 화면에 안 나옴(머리까지 보이게)', not_upright: '똑바로 서 있지 않음', nose_ray_failed: '계산 실패',
+  both_feet_required:'두 발목이 모두 화면에 보여야 합니다',both_feet_on_floor:'두 발을 모두 바닥에 붙이세요',
+  stand_on_marker:'두 발 사이 중심을 마커 중심에 맞추세요(15cm 이내)' };
+let visualResult=null,visualMaskStatus="가림용 윤곽/깊이 대기";
+const KICK_MIN_LIFT_M = 0.2, KICK_MIN_SPEED_MPS = 1.5;
+let latest = null, result = null, hits = 0, wasInside = { left_wrist: false, right_wrist: false, left_ankle: false, right_ankle: false }, lastHitAt = -1e9;
+let prevWrist = { left_wrist: null, right_wrist: null, left_ankle: null, right_ankle: null };
 const SWING_MAX_GAP_MS = 250, SWING_MAX_JUMP_M = 1.5;   // longer gaps/jumps are tracking glitches, not swings
 let recording = null, lastRecording = null, frames = 0, lastFpsAt = performance.now(), fps = 0, sizeWarned = false;
 
@@ -35,7 +46,7 @@ const fmt = p => p ? `(${p.map(v => v.toFixed(2)).join(', ')})` : '—';
 const mirrored = () => $('mirror').checked;
 const userHeightM = () => num('heightCm') > 0 ? num('heightCm') / 100 : null;
 // The building stands on the floor at the marker (by default) and is waist high.
-const buildingHeight = () => $('bldAutoH').checked ? waistHeightM(body, userHeightM()) : num('bldH');
+const buildingHeight = () => $('bldAutoH').checked ? .7*waistHeightM(body, userHeightM()) : num('bldH');
 const box = () => buildingBox(num('bldX'), num('bldY'), num('bldW'), num('bldD'), buildingHeight());
 function syncBuildingHeight() {
   $('bldH').disabled = $('bldAutoH').checked;
@@ -48,6 +59,7 @@ function banner(text) { $('banner').textContent = text || ''; $('banner').hidden
 
 // ---------- step flow ----------
 function setStep(next) {
+  if(next!=='place')markerScanner?.stop();
   step = next;
   const index = STEPS.indexOf(step);
   document.querySelectorAll('#steps li').forEach((li, i) => { li.className = i < index ? 'done' : i === index ? 'now' : ''; });
@@ -55,6 +67,7 @@ function setStep(next) {
   $('back').disabled = index === 0;
   $('hud').hidden = step !== 'measure';
   sheet.classList.remove('collapsed', 'hidden');
+  resetPanelPosition(sheet);
   sheet.classList.toggle('at-top', step === 'corners' && !!frozen);
   view.classList.toggle('tapping', step === 'corners' && !!frozen);
   if (frozen) { view.width = frozen.width; view.height = frozen.height; }
@@ -84,6 +97,7 @@ async function openStream() {
 }
 
 async function startCamera() {
+  markerScanner?.stop();
   unlockAudio();
   if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) { banner('HTTPS 또는 localhost로 접속해야 카메라를 쓸 수 있습니다.'); return; }
   $('start').disabled = true; $('start').textContent = '카메라 여는 중…';
@@ -97,7 +111,7 @@ async function startCamera() {
     $('start').textContent = '자세 인식 모델 불러오는 중…';
     try {
       landmarker?.close();
-      landmarker = (await createPoseLandmarker($('model').value)).landmarker; landmarkerModel = $('model').value;
+      landmarker = (await createPoseLandmarker($('model').value,['GPU','CPU'],{segmentation:true})).landmarker; landmarkerModel = $('model').value;
     } catch (error) { banner(`MediaPipe를 불러오지 못했습니다: ${error.message}`); }
   }
   $('start').disabled = false; $('start').textContent = '카메라 다시 켜기';
@@ -117,12 +131,13 @@ function useSaved() {
   const s = load();
   if (!s) return;
   $('markerCm').value = s.markerCm; $('fov').value = s.fov; $('cameraHeight').value = s.cameraHeight; $('autoFov').checked = s.autoFov;
-  corners = s.corners; calibrate(s.width, s.height);
+  corners = s.corners; calibrate(s.width, s.height,s.canonical===true);
   if (calib) { setStep('body'); resetBodyPanel(); }
 }
 
-function calibrate(W, H) {
-  corners = orderMarkerCorners(corners);     // tap order and mirrored display do not matter
+function calibrate(W, H, canonical=canonicalMarker) {
+  canonicalMarker=canonical;
+  if(!canonical)corners = orderMarkerCorners(corners);     // tap order and mirrored display do not matter
   const side = num('markerCm') / 100;
   calib = null;
   let warning = '';
@@ -142,12 +157,11 @@ function calibrate(W, H) {
   }
   const r = calibrateMarker(W, H, corners, side, num('fov'));
   if (!r.ok) {
-    $('calibOut').textContent = r.reason === 'camera_below_floor_check_corner_order'
-      ? '계산 결과 카메라가 바닥 아래로 나왔습니다. 모서리를 순서대로(먼 왼쪽부터 시계 방향) 찍었는지 확인하세요.' : `보정 실패: ${r.reason}`;
+    $('calibOut').textContent = markerCalibrationMessage(r.reason);
     $('toBody').disabled = true; return;
   }
   calib = { ...r, width: W, height: H, corners: corners.map(p => [...p]), side };
-  save({ width: W, height: H, corners: calib.corners, markerCm: num('markerCm'), fov: num('fov'), cameraHeight: num('cameraHeight'), autoFov: $('autoFov').checked });
+  save({ width: W, height: H, corners: calib.corners, markerCm: num('markerCm'), fov: num('fov'), cameraHeight: num('cameraHeight'), autoFov: $('autoFov').checked,canonical:canonicalMarker });
   $('calibOut').textContent = [
     `카메라 위치 ${fmt(r.pose.C)} m (마커 중심 기준)`,
     `높이 ${r.camera_height_m.toFixed(2)} m · 아래로 ${r.tilt_down_deg.toFixed(1)}° 기울어짐`,
@@ -160,6 +174,7 @@ function calibrate(W, H) {
 }
 
 function beginTapping() {
+  canonicalMarker=false;
   if (!video.videoWidth) return;
   frozen = document.createElement('canvas');
   frozen.width = video.videoWidth; frozen.height = video.videoHeight;
@@ -188,7 +203,7 @@ function finishTapping() {
 function updateFit() {
   const r = view.getBoundingClientRect(), cover = Math.max(r.width / view.width, r.height / view.height);
   const kept = Math.min(r.width / (view.width * cover), r.height / (view.height * cover));
-  view.classList.toggle('contain', step === 'corners' && !!frozen || kept < 0.65);
+  view.classList.toggle('contain', step==='measure'||step === 'corners' && !!frozen || kept < 0.65);
 }
 // Screen point → raw frame pixel, for the current fit, possibly mirrored.
 function coverScale() {
@@ -239,7 +254,7 @@ function beginBody() {
   unlockAudio();
   let left = num('delay');
   sheet.classList.add('hidden'); body = null;
-  $('countdown').hidden = false; $('countNum').textContent = left; $('countText').textContent = '마커 근처로 가서 똑바로 서세요';
+  $('countdown').hidden = false; $('countNum').textContent = left; $('countText').textContent = '두 발 사이에 마커 중심을 두고 똑바로 서세요';
   beep(520);
   countdownTimer = setInterval(() => {
     left--;
@@ -255,7 +270,8 @@ function finishBody() {
   const counts = {};
   for (const s of bodySamples) if (!s.ok) counts[s.reason] = (counts[s.reason] ?? 0) + 1;
   const total = bodySamples.length, okCount = bodySamples.filter(s => s.ok).length;
-  body = finalizeBody(bodySamples, heightM);
+  body = finalizeBody(bodySamples, heightM,{markerCentered:true});
+  if(body)body.model_reference={id:crypto.randomUUID(),waist_height_m:waistHeightM(body,heightM),anchor_m:[0,0,0],source:'mono_standing'};
   bodySamples = null; $('countdown').hidden = true; sheet.classList.remove('hidden');
   const reasons = `\n성공 ${okCount}/${total}프레임` + Object.entries(counts).sort((a, b) => b[1] - a[1])
     .map(([r, n]) => `\n · ${BODY_REASONS[r] ?? r}: ${n}프레임`).join('');
@@ -263,11 +279,12 @@ function finishBody() {
   $('bodyOut').textContent = body ? [
     `추정 키 약 ${(body.estimated_height_m * 100).toFixed(0)} cm ← 실제 키와 비슷한지 보세요`,
     `크기 배율 ${body.scale.toFixed(3)} (${body.scale_source === 'user_height' ? '입력한 키' : '영상'} 기준, ${body.samples}프레임)`,
-  ].join('\n') + reasons : `몸 보정 실패: 쓸 수 있는 프레임이 부족합니다.${reasons}\n머리부터 발끝까지 화면에 다 나오게 서서 다시 하세요. '준비 상태'가 ✓일 때 시작하면 됩니다.`;
+    `깊이 기준: 마커 중심 (0, 0) · 발목 높이 ${(body.depth_reference.ankle_height_m*100).toFixed(1)}cm`,
+  ].join('\n') + reasons : `몸 보정 실패: 유효 프레임 부족 또는 자세/위치가 흔들렸습니다.${reasons}\n두 발 사이 중심을 마커에 맞추고 머리부터 발끝까지 보이게 다시 서세요.`;
   $('calibBody').textContent = '다시 하기'; $('toMeasure').hidden = !body;
   syncBuildingHeight();
   if (body) $('bodyOut').textContent += `
-건물 높이 ${buildingHeight().toFixed(2)} m (허리 높이)`;
+건물 높이 ${buildingHeight().toFixed(2)} m (최초 허리의 70%)`;
   beep(body ? 880 : 220, 0.3);
 }
 
@@ -276,23 +293,29 @@ function infer() {
   if (!landmarker || !video.videoWidth || video.readyState < 2) return;
   const ts = Math.max(lastTs + 1, performance.now());
   lastTs = ts;
-  const out = landmarker.detectForVideo(video, ts);
-  latest = { landmarks: out.landmarks?.[0] ?? null, world: out.worldLandmarks?.[0] ?? null, t: ts };
+  if(inferenceCanvas.width!==video.videoWidth||inferenceCanvas.height!==video.videoHeight){inferenceCanvas.width=video.videoWidth;inferenceCanvas.height=video.videoHeight;}
+  inferenceContext.drawImage(video,0,0);
+  const out = landmarker.detectForVideo(inferenceCanvas, ts);
+  try{
+    latest = { landmarks: out.landmarks?.[0] ?? null, world: out.worldLandmarks?.[0] ?? null, t: ts,mask:null,maskError:null };
+    // Missing/readback-failed masks only disable visual occlusion; tracking still works.
+    try{if(step==='measure'&&performance.now()-lastJpegSentAt>=PC_JPEG_MS-5)latest.mask=copyPersonMask(out.segmentationMasks?.[0]);}catch(error){latest.maskError=error.message??'readback_failed';}
+  }finally{out.close?.();}
   frames++;
   if (ts - lastFpsAt > 1000) { fps = frames * 1000 / (ts - lastFpsAt); frames = 0; lastFpsAt = ts; }
 }
 
 function update() {
-  result = null;
+  result = null;visualResult=null;
   if (!calib?.K) return;
   const sizeChanged = calib.width !== video.videoWidth || calib.height !== video.videoHeight;
   if (sizeChanged !== sizeWarned) { sizeWarned = sizeChanged; banner(sizeChanged ? '화면 방향이나 해상도가 바뀌었습니다. 폰 방향을 되돌리거나 마커 보정을 다시 하세요.' : ''); }
   if (sizeChanged) return;
   if (step === 'body') {
-    const sample = measureBody(calib.K, calib.pose, latest?.landmarks ?? null, latest?.world ?? null);
-    const live = sample.ok ? '✓ 준비됨: 머리와 발이 잘 보입니다' : `✗ ${BODY_REASONS[sample.reason] ?? sample.reason}`;
+    const sample = measureBody(calib.K, calib.pose, latest?.landmarks ?? null, latest?.world ?? null,{markerCentered:true});
+    const live = sample.ok ? '✓ 마커 중심 · 양발/직립 확인됨' : `✗ ${BODY_REASONS[sample.reason] ?? sample.reason}`;
     $('bodyLive').textContent = live; $('bodyLive').parentElement.classList.toggle('ready', sample.ok);
-    if (countdownTimer) $('countText').textContent = `마커 근처에 똑바로 서세요\n${live}`;
+    if (countdownTimer) $('countText').textContent = `두 발 사이 중심을 마커에 맞추세요\n${live}`;
     if (bodySamples) {
       if (!latest || latest.t !== lastSampleT) { bodySamples.push(sample); lastSampleT = latest?.t; }   // one sample per inference
       const elapsed = performance.now() - bodyStart, okCount = bodySamples.filter(s => s.ok).length;
@@ -305,8 +328,9 @@ function update() {
   if (step !== 'measure') return;
   if (!latest?.landmarks) { sendToPc({}); return; }   // keep the PC view (video, calibration) alive
   result = estimate(calib.K, calib.pose, latest.landmarks, latest.world, body);
+  visualResult=visualPersonEstimate(calib.K,calib.pose,latest.landmarks,latest.world,body,result);
   const b = box(), margin = num('boxMargin'), hitNow = {};
-  for (const name of ['left_wrist', 'right_wrist']) {
+  for (const name of ['left_wrist', 'right_wrist', 'left_ankle', 'right_ankle']) {
     const P = result.valid ? result.joints[name]?.position_m ?? null : null;
     const inside = insideBox(b, P, margin);
     // Fast swing: the wrist may jump over the building between two frames, so test the path too.
@@ -314,7 +338,10 @@ function update() {
     const swept = !!(P && prev && latest.t - prev.t <= SWING_MAX_GAP_MS
       && Math.hypot(P[0] - prev.P[0], P[1] - prev.P[1], P[2] - prev.P[2]) <= SWING_MAX_JUMP_M
       && segmentHitsBox(b, prev.P, P, margin));
-    const hit = (inside || swept) && !wasInside[name];
+    // Feet only count as a kick (docs/FOOT_STRIKE.md): lifted at least 0.2 m and at least 1.5 m/s.
+    const kick = !name.endsWith('_ankle') || (!!P && !!prev && Math.max(P[2], prev.P[2]) >= KICK_MIN_LIFT_M
+      && Math.hypot(P[0] - prev.P[0], P[1] - prev.P[1], P[2] - prev.P[2]) / Math.max(1e-3, (latest.t - prev.t) / 1000) >= KICK_MIN_SPEED_MPS);
+    const hit = (inside || swept) && !wasInside[name] && kick;
     if (hit) { hits++; $('hits').textContent = hits; beep(1200, 0.08); lastHitAt = performance.now(); }
     wasInside[name] = inside; prevWrist[name] = P ? { P, t: latest.t } : null;
     if (hit) hitNow[name] = inside ? 'inside' : 'swept';
@@ -334,7 +361,7 @@ const round = p => p.map(v => +v.toFixed(4));
 const PC_FRAME_MS = 33, PC_JPEG_MS = 200, PC_JPEG_WIDTH = 480;
 const jpegCanvas = document.createElement('canvas');
 let lastCalibSent = null, lastFrameSentAt = 0, lastJpegSentAt = 0, pendingHits = {};
-const link = createLink('phone', renderLink, m => { if (m.type === 'link_open') lastCalibSent = null; });
+const link = createLink('phone', renderLink, m => { if (m.type === 'link_open') lastCalibSent = null;});
 function renderLink(s) {
   const text = !s.enabled ? '꺼짐'
     : s.error === 'access_key_required' ? '접속 키가 필요합니다(주소에 ?key=)'
@@ -351,7 +378,8 @@ function sendToPc(hitNow) {
     image: { width: calib.width, height: calib.height }, K: calib.K,
     camera: { R: calib.pose.R, t: calib.pose.t, C: calib.pose.C }, marker_side_m: calib.side,
     building: { center: round(b.center), half: round(b.half), margin: num('boxMargin') },
-    body: body && { scale: body.scale, scale_source: body.scale_source, estimated_height_m: body.estimated_height_m } };
+    body: body && { scale: body.scale, scale_source: body.scale_source, estimated_height_m: body.estimated_height_m,
+      depth_reference:body.depth_reference,model_reference:body.model_reference } };
   const key = JSON.stringify(calibMsg);
   if (key !== lastCalibSent && link.send(calibMsg)) lastCalibSent = key;
   const now = performance.now();
@@ -368,9 +396,23 @@ function sendToPc(hitNow) {
   if (now - lastJpegSentAt >= PC_JPEG_MS && video.videoWidth) {
     const k = PC_JPEG_WIDTH / video.videoWidth;
     jpegCanvas.width = PC_JPEG_WIDTH; jpegCanvas.height = Math.round(video.videoHeight * k);
-    jpegCanvas.getContext('2d').drawImage(video, 0, 0, jpegCanvas.width, jpegCanvas.height);
-    if (link.send({ type: 'mono3d_jpeg', t_ms: Math.round(now), width: calib.width, height: calib.height,
-      data: jpegCanvas.toDataURL('image/jpeg', 0.6) })) lastJpegSentAt = now;
+    jpegCanvas.getContext('2d').drawImage(inferenceCanvas, 0, 0, jpegCanvas.width, jpegCanvas.height);
+    // Use the segmentation only when it actually covers the torso; otherwise approximate from the skeleton.
+    let personMask=latest?.mask,maskSource='분할 윤곽';
+    const coverage=torsoMaskCoverage(personMask,latest?.landmarks);
+    if(!personMask||(coverage!==null&&coverage<MIN_TORSO_MASK_COVERAGE)){
+      const ratio=Math.min(1,192/video.videoWidth,384/video.videoHeight);
+      const approx=skeletonMask(latest?.landmarks,Math.max(1,Math.round(video.videoWidth*ratio)),Math.max(1,Math.round(video.videoHeight*ratio)));
+      if(approx){personMask=approx;maskSource='골격 근사 윤곽'+(latest?.mask?' (분할 윤곽이 몸통과 불일치 '+Math.round((coverage??0)*100)+'%)':latest?.maskError?' (분할 읽기 실패)':' (분할 윤곽 없음)');}
+    }
+    const depth=packPersonDepth(personMask,latest?.landmarks,visualResult,calib.pose);let occlusion=null;
+    const feet=[27,28].map(i=>{const l=latest?.landmarks?.[i];return !!l&&l.visibility>=.3&&l.x>=0&&l.x<=1&&l.y>=0&&l.y<=1;});
+    visualMaskStatus=(depth?('가림 준비 · '+depth.pixels+'픽셀 · '+maskSource+' · '+(visualResult?.source==='visual_torso_only'?'몸통 시각용 추정':'유효 3D 깊이')):'가림 보류 · '+personDepthDiagnosis(personMask,latest?.landmarks,visualResult,calib.pose))+' · 발목 L '+(feet[0]?'✓':'미검출')+' / R '+(feet[1]?'✓':'미검출');
+    $('personMaskStatus').textContent=visualMaskStatus;
+    if(depth){depthCanvas.width=depth.width;depthCanvas.height=depth.height;depthContext.putImageData(new ImageData(depth.data,depth.width,depth.height),0,0);
+      occlusion={encoding:PERSON_DEPTH_ENCODING,width:depth.width,height:depth.height,data:depthCanvas.toDataURL('image/png')};}
+    if (link.send({ type: 'mono3d_jpeg', t_ms: Math.round(latest.t), width: calib.width, height: calib.height,
+      data: jpegCanvas.toDataURL('image/jpeg', 0.6),occlusion,occlusion_valid:!!depth,occlusion_reason:visualMaskStatus })) lastJpegSentAt = now;
   }
 }
 
@@ -385,6 +427,7 @@ function draw() {
   ctx.drawImage(src, 0, 0, W, H);
   if (frozen) drawTapping(W, H, lw);
   else {
+    hideLoupe();
     if (calib?.K && step !== 'place') drawCalibration(lw);
     drawSkeleton(W, H, lw);
     drawEstimate(lw);
@@ -408,20 +451,10 @@ function drawTapping(W, H, lw) {
   if (pts.length === 4) ctx.closePath();
   ctx.stroke();
   pts.forEach((p, i) => { dot(p, i < corners.length ? '#22c55e' : '#f59e0b', lw * 2.5); label(String(i + 1), p[0] + lw * 4, p[1] - lw * 4, lw); });
-  if (!dragPoint) return;
-  // Loupe in the visible part of the (cover-cropped) canvas, away from the finger.
-  const { r, k } = coverScale(), visW = r.width / k, visH = r.height / k, x0 = (W - visW) / 2, y0 = (H - visH) / 2;
-  const size = Math.min(visW, visH) * 0.4, zoom = 4, srcSize = size / zoom, fingerX = screenX(dragPoint[0]);
-  const x = fingerX < W / 2 ? x0 + visW - size - 12 / k : x0 + 12 / k;
-  const y = dragPoint[1] - y0 < visH / 2 ? y0 + visH - size - 200 / k : y0 + 70 / k;
-  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.imageSmoothingEnabled = false;
-  ctx.translate(x + (mirrored() ? size : 0), y); ctx.scale(mirrored() ? -1 : 1, 1);
-  ctx.drawImage(frozen, dragPoint[0] - srcSize / 2, dragPoint[1] - srcSize / 2, srcSize, srcSize, 0, 0, size, size);
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.strokeStyle = '#fff'; ctx.lineWidth = lw; ctx.strokeRect(x, y, size, size);
-  ctx.strokeStyle = '#ef4444'; ctx.beginPath();
-  ctx.moveTo(x + size / 2, y); ctx.lineTo(x + size / 2, y + size); ctx.moveTo(x, y + size / 2); ctx.lineTo(x + size, y + size / 2); ctx.stroke();
-  ctx.restore();
+  if (!dragPoint) { hideLoupe(); return; }
+  // Magnifier is a DOM element above all panels, on the side of the screen away from the finger.
+  const { r, k, ox, oy } = coverScale(), fx = mirrored() ? view.width - dragPoint[0] : dragPoint[0];
+  showLoupe(frozen, dragPoint, [r.left + ox + fx * k, r.top + oy + dragPoint[1] * k], { mirrored: mirrored() });
 }
 
 function line3(a, b, color, lw) {
@@ -435,16 +468,7 @@ function drawCalibration(lw) {
   line3([0, 0, 0], [0.2, 0, 0], '#ef4444', lw * 1.5);
   line3([0, 0, 0], [0, 0.2, 0], '#22c55e', lw * 1.5);
   line3([0, 0, 0], [0, 0, 0.2], '#3b82f6', lw * 1.5);
-  if (step !== 'measure') return;
-  const b = box(), [hx, hy, hz] = b.half, [cx, cy, cz] = b.center;
-  const v = [-1, 1].flatMap(x => [-1, 1].flatMap(y => [-1, 1].map(z => [cx + x * hx, cy + y * hy, cz + z * hz])));
-  const hit = performance.now() - lastHitAt < 250
-    || (result?.valid && ['left_wrist', 'right_wrist'].some(n => result.joints[n]?.inside_box));
-  for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) {
-    if ([0, 1, 2].filter(k => v[i][k] !== v[j][k]).length === 1) line3(v[i], v[j], hit ? '#ef4444' : '#facc15', lw * 1.2);
-  }
-  [[cx - hx, cy - hy], [cx + hx, cy - hy], [cx + hx, cy + hy], [cx - hx, cy + hy]].forEach((p, i, a) =>
-    line3([...p, 0], [...a[(i + 1) % 4], 0], 'rgba(250,204,21,.45)', lw));
+  if(step==='body')line3([0,0,0],[0,0,userHeightM()??1.7],'rgba(34,197,94,.7)',lw);
 }
 function drawSkeleton(W, H, lw) {
   const lm = latest?.landmarks;
@@ -495,7 +519,7 @@ function renderText() {
   if (step !== 'measure') return;
   if (!result) { $('result').textContent = latest?.landmarks ? '계산 대기' : '사람이 보이지 않음'; return; }
   if (!result.valid) {
-    const why = { body_not_calibrated: '몸 보정이 필요합니다', no_person: '사람이 보이지 않음', no_floor_or_torso_anchor: '발이나 몸통이 보이지 않음' };
+    const why = { body_not_calibrated: '몸 보정이 필요합니다', no_person: '사람이 보이지 않음', no_floor_or_torso_anchor: '발이나 몸통이 보이지 않음',feet_required_for_depth:'깊이 기준 발목 미검출 · 타격 중지' };
     $('result').textContent = `무효: ${why[result.reason] ?? result.reason}`; return;
   }
   const j = n => result.joints[n];
@@ -552,6 +576,7 @@ $('start').addEventListener('click', startCamera);
 $('back').addEventListener('click', goBack);
 $('settingsBtn').addEventListener('click', () => $('settings').showModal());
 $('sheetHandle').addEventListener('click', () => sheet.classList.toggle('collapsed'));
+makeMovable(sheet, $('sheetHandle')); makeMovable($('hud'), $('hudGrip')); initOverlayToggle($('uiToggle'));
 $('tapCorners').addEventListener('click', () => { unlockAudio(); beginTapping(); });
 $('useSaved').addEventListener('click', useSaved);
 $('undoCorner').addEventListener('click', () => { corners.pop(); updateCornerPrompt(); });
@@ -564,6 +589,10 @@ $('redoBody').addEventListener('click', () => { resetBodyPanel(); setStep('body'
 $('redoCorners').addEventListener('click', () => setStep('place'));
 $('resetHits').addEventListener('click', () => { hits = 0; $('hits').textContent = '0'; });
 for (const id of ['bldAutoH', 'heightCm']) $(id).addEventListener('change', syncBuildingHeight);
+$('heightCm').addEventListener('change',()=>{
+  body=null;resetBodyPanel();
+  if(step==='measure'){setStep('body');banner('키가 바뀌었습니다. 마커 위에서 몸 보정을 다시 하세요.');}
+});
 $('settingsBtn').addEventListener('click', syncBuildingHeight);
 syncBuildingHeight();
 try { $('sendPc').checked = localStorage.getItem('mono3d:sendPc') !== '0'; } catch { /* blocked storage */ }
@@ -591,3 +620,10 @@ selectFacing('environment');
 setStep('camera');
 requestAnimationFrame(loop);
 window.__mono3dReady = true;
+
+
+markerScanner=createMarkerScanner(video,(frame,points)=>{corners=points;frozen=null;calib=null;body=null;calibrate(frame.width,frame.height,true);
+  $('tapPrompt').hidden=true;$('cornerDone').hidden=false;setStep('corners');
+  $('autoMarkerStatus').textContent=calib?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;});
+$('autoMarker').onclick=()=>{if(step==='place')markerScanner.start();};
+window.addEventListener('pagehide',()=>markerScanner.stop());

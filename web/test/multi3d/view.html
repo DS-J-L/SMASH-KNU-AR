@@ -10,9 +10,10 @@
 </head>
 <body>
   <header>
-    <h1>카메라 3대 3D <small>source=multi_view_test · 시각=서버 도착 · 시험용</small></h1>
+    <h1>카메라 3대 3D <small>source=multi_view_test · 입력시각 정렬 · 시험용</small></h1>
     <p id="status" class="status">서버에 연결 중…</p>
     <button id="sound" type="button">소리 켜기</button>
+    <a href="/test/building/">IT1 모델 · 닿은 파편만 파괴 시험</a>
   </header>
   <main class="multi">
     <section class="pane cams">
@@ -40,9 +41,9 @@
           <label>Y <input id="bldY" type="number" value="0" step="0.05"></label>
         </div>
       </form>
-      <p class="hint">폰에서 <b>/test/multi3d/</b>를 열고 C0·C1·C2를 하나씩 고릅니다. 2대 이상이 같은 관절을 보면 3D가 나옵니다. 폰 간 시각은 서버 도착 시각으로 맞추므로 빠른 동작에서는 위치가 조금 어긋날 수 있습니다.</p>
+      <p class="hint">폰에서 <b>/test/multi3d/</b>를 열고 C0·C1·C2를 하나씩 고릅니다. 시계 보정 뒤 가까운 입력시각의 관절을 합칩니다. 신뢰도·재투영 오차·광선 교차각을 검사하며 불확실한 관절은 보류합니다. 사람 모양으로 관절을 만들어 채우지 않습니다.</p>
     </aside>
   </main>
-  <script type="module" src="./view.js?v=20261109-6"></script>
+  <script type="module" src="./view.js?v=20261112-accuracy1"></script>
 </body>
 </html>
