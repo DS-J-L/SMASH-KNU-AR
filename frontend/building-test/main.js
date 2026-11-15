@@ -1,0 +1,365 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { createLink } from '/test/multi3d/link.js?v=20261109-6';
+import { placementToThree } from '/shared/model-strike-3d.js';
+import './style.css';
+import './physics-style.css';
+import { FragmentPhysics, initPhysics, DEFAULT_PHYSICS } from './fragment-physics.js';
+import {fetchScene,loadModels,assembleScene} from './scene-loader.js';
+import {disposeRoots} from '../game/dispose-roots.js';
+import {TrackedPerson} from './tracked-person.js';
+import {PersonOcclusion,loadOcclusionTexture} from './person-occlusion.js';
+const STRIKE_JOINTS=['left_wrist','right_wrist','left_ankle','right_ankle'],JOINT_LABELS={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
+
+const $ = id => document.getElementById(id);
+const mono=new URLSearchParams(location.search).get('mode')==='mono';
+$('sourceMode').textContent=mono?'카메라 1대 · 근사 3D · source=mono_approx':'카메라 3대 · 삼각측량 · source=multi_view_test';
+$('occlusionControl').hidden=false;
+if(mono){document.body.classList.add('mono-mode');$('legacyLink').href='/test/mono3d/view.html';$('legacyLink').textContent='기존 1대 상자 시험';
+  $('depthControl').hidden=false;$('trackingDiagnosis').hidden=false;
+  $('occlusionControl').hidden=false;
+  $('phoneHelp').innerHTML='폰에서 <a href="/test/mono3d/">1대 근사 3D 시험</a>을 열고 마커 보정 → 몸 보정 → 측정까지 진행하세요. PC 화면으로 보내기를 켜면 됩니다. 깊이는 근사값입니다.';}
+// 1 camera: one building at a time, chosen from a list (IT1 or any single building). 3 cameras: zones of several
+// buildings; ?scene=it1 keeps the single IT1 building there.
+const keepSingleBuilding=new URLSearchParams(location.search).get('scene')==='it1';let zoneRequested=mono||keepSingleBuilding,zonesReady=false;
+$('sceneControl').hidden=!mono&&keepSingleBuilding;
+if(mono){$('sceneLabel').textContent='건물 선택';$('autoNextControl').hidden=false;}
+let loadedScene=null,loadingScene=null,loadGeneration=0,scenePending=false,ownedRoots=[];
+let failedScene=null;
+let sceneDimensions=[2.810118,1.0844383,.6256438],buildingCount=1,fixedSize=false;
+let ready = false, connected = false, fatal = null, state = null, epoch = null;
+let frameAt = 0, lastJoints = {}, physics = null, colliderData = null;
+let personJoints={},personAt=-Infinity;
+let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
+let impactQueue=new Set(),impactSentAt=0;
+let sizeDirty=false;
+function previewSize(){
+  const scale=Number($('scale').value);
+  if(state?.body_reference){$('sizePreview').textContent=`최고 높이 ${state.display_height_m.toFixed(2)}m · 최초 허리의 70% · 구역 내 비율 유지`;return;}
+  if(fixedSize){$('sizePreview').textContent='몸 보정 후 최고 높이를 허리의 70%로 고정 · 구역 내 비율 유지';return;}
+  if(!Number.isFinite(scale)||scale<.1||scale>2){$('sizePreview').textContent='배율을 0.1~2 사이로 입력하세요.';return;}
+  $('sizeRange').value=scale;
+  $('sizePreview').textContent=`적용 예정 · 높이 약 ${(sceneDimensions[1]*scale).toFixed(2)}m · 폭 ${(sceneDimensions[0]*scale).toFixed(2)}m · 깊이 ${(sceneDimensions[2]*scale).toFixed(2)}m`;
+}
+const physicsOptions={...DEFAULT_PHYSICS};
+const scenes = [], pieces = new Map(), cameras = new Map();
+const status = text => { $('status').textContent = text; };
+function scene() {
+  const s = new THREE.Scene();
+  s.add(new THREE.HemisphereLight(0xffffff, 0x64748b, 2.5));
+  const l = new THREE.DirectionalLight(0xffffff, 2); l.position.set(1,-2,4); s.add(l);
+  const outer = new THREE.Group(); outer.scale.setScalar(.6); s.add(outer);
+  // Wrists (blue/orange) and ankles (green/purple): the four joints that can strike the building.
+  const wrists = STRIKE_JOINTS.map((_, i) => {
+    const m = new THREE.Mesh(new THREE.SphereGeometry(.025,12,8),new THREE.MeshBasicMaterial({color:[0x38bdf8,0xfb923c,0x4ade80,0xc084fc][i]}));
+    m.visible=false; s.add(m); return m;
+  });
+  const item = { scene:s, outer, wrists, nodes:new Map() }; scenes.push(item); return item;
+}
+function renderer(container, alpha=false) {
+  const r = new THREE.WebGLRenderer({ antialias:true, alpha }); r.setPixelRatio(Math.min(devicePixelRatio,2));
+  r.setClearColor(0x080c14,alpha?0:1); container.append(r.domElement); return r;
+}
+const orbit = scene(); const trackedPerson=new TrackedPerson(orbit.scene);orbit.renderer = renderer($('orbit'));
+orbit.camera = new THREE.PerspectiveCamera(45,1,.01,50); orbit.camera.up.set(0,0,1); orbit.camera.position.set(2,-3,2);
+const controls = new OrbitControls(orbit.camera,orbit.renderer.domElement); controls.target.set(0,0,.35); controls.update();
+let pointerDown=null;
+orbit.renderer.domElement.addEventListener('pointerdown',e=>{if(e.button===0)pointerDown={x:e.clientX,y:e.clientY,id:e.pointerId};});
+orbit.renderer.domElement.addEventListener('pointercancel',()=>{pointerDown=null;});
+orbit.renderer.domElement.addEventListener('pointermove',e=>{if(pointerDown&&Math.hypot(e.clientX-pointerDown.x,e.clientY-pointerDown.y)>5)pointerDown=null;});
+orbit.renderer.domElement.addEventListener('pointerup',e=>{
+  const down=pointerDown;pointerDown=null;
+  if(!down||down.id!==e.pointerId||e.button!==0||Math.hypot(e.clientX-down.x,e.clientY-down.y)>5||!ready||!connected||scenePending||!state||!$('mouseMode').checked)return;
+  const box=orbit.renderer.domElement.getBoundingClientRect(),raycaster=new THREE.Raycaster();
+  raycaster.setFromCamera(new THREE.Vector2((e.clientX-box.left)/box.width*2-1,1-(e.clientY-box.top)/box.height*2),orbit.camera);
+  orbit.scene.updateMatrixWorld(true);
+  const hit=raycaster.intersectObjects([...orbit.nodes.values()],true)[0];
+  if(!hit){$('contact').textContent='빗나감 · 파편을 클릭하세요';return;}
+  const id=hit.object.userData.fragmentId,strength=Number($('pushStrength').value),direction=raycaster.ray.direction.toArray();
+  if(state.removed_ids.includes(id))link.send({type:'multi3d_model_push',fragment_id:id,point_m:hit.point.toArray(),direction,strength});
+  else link.send({type:'multi3d_model_mouse',origin:raycaster.ray.origin.toArray(),direction,strength});
+});
+const grid = new THREE.GridHelper(6,12,0x475569,0x253046); grid.rotation.x=Math.PI/2; orbit.scene.add(grid);
+// Actual marker square: identical z=0, side .20m reference as the phone calibration.
+const marker = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints([[-.1,.1,0],[.1,.1,0],[.1,-.1,0],[-.1,-.1,0]].map(p=>new THREE.Vector3(...p))),new THREE.LineBasicMaterial({color:0x22c55e}));
+orbit.scene.add(marker); orbit.scene.add(new THREE.AxesHelper(.3));
+for (const id of (mono?['C0']:['C0','C1','C2'])) {
+  const div=document.createElement('div');div.className='camera';
+  const img=document.createElement('img');img.alt=`${id} 영상`;img.hidden=true;
+  const label=document.createElement('span');label.textContent=`${id} 대기`;
+  div.append(img);$('cameras').append(div);
+  const s=scene();s.renderer=renderer(div,true);div.append(label);s.camera=new THREE.Camera();s.calibrated=false;
+  Object.assign(s,{div,img,label,lastImage:0,jpegVersion:0});cameras.set(id,s);
+  s.occlusion=new PersonOcclusion(s.scene);s.occlusionInputValid=false;
+}
+function applyCalibration(c,m) {
+  personJoints={};personAt=-Infinity;
+  c.visualDepthValid=false;c.depthAt=-Infinity;
+  c.jpegVersion++;c.occlusion?.clear();c.lastImage=0;c.img.hidden=true;
+  const W=m.image.width,H=m.image.height,{fx,fy,cx,cy}=m.K,R=m.R,t=m.t,near=.01,far=50;
+  c.div.style.aspectRatio=`${W}/${H}`;
+  c.camera.projectionMatrix.set(2*fx/W,0,1-2*cx/W,0, 0,2*fy/H,2*cy/H-1,0,
+    0,0,-(far+near)/(far-near),-2*far*near/(far-near), 0,0,-1,0);
+  c.camera.projectionMatrixInverse.copy(c.camera.projectionMatrix).invert();
+  // OpenCV camera x-right/y-down/z-forward -> Three x-right/y-up/z-backward.
+  c.camera.matrixWorldInverse.set(R[0],R[1],R[2],t[0], -R[3],-R[4],-R[5],-t[1], -R[6],-R[7],-R[8],-t[2], 0,0,0,1);
+  c.camera.matrixWorld.copy(c.camera.matrixWorldInverse).invert();c.camera.matrixAutoUpdate=false;c.camera.matrixWorldAutoUpdate=false;c.calibrated=true;
+}
+function syncState(m) {
+  if(!m)return;
+  state=m;
+  $('bodyReference').textContent=m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
+  for(const id of ['x','y','yaw'])$(id).disabled=!!m.body_reference;
+  $('scale').disabled=$('sizeRange').disabled=fixedSize||!!m.body_reference;
+  const desired=m.scene_id??'it1';
+  if(!zoneRequested&&desired==='it1'&&zonesReady){zoneRequested=true;$('sceneSelect').selectedIndex=0;$('sceneSelect').onchange();return;}
+  if(desired!==loadedScene){
+    if(failedScene===desired)return;
+    if(loadingScene!==desired)loadScene(desired).catch(showLoadError);
+    return;
+  }
+  if(scenePending&&desired===$('sceneSelect').value){scenePending=false;status('구역 준비 완료 · 손목/마우스로 타격하세요');}
+  checkAutoNext(m);
+  const reset=epoch!==m.epoch;
+  if(reset)sizeDirty=false;
+  epoch=m.epoch;
+  if(!ready)return;
+  const place=placementToThree(m.placement),removed=new Set(m.removed_ids);
+  if(reset||!physics){
+    physics?.dispose();physics=new FragmentPhysics(colliderData,m.placement,physicsOptions);impactQueue.clear();
+    physics.setInteractionDistance(Number($('interactionDistance').value));
+    physics.onImpact=(id,force)=>{if($('impactBreak').checked&&force>=8&&!state.removed_ids.includes(id))impactQueue.add(id);};
+  }
+  physics.release(m.removed_ids,m.event);
+  if(m.event?.blast)physics.blast(m.event);
+  else if(m.event&&['mouse','mouse_push'].includes(m.event.kind))physics.push(m.event);
+  $('blastMode').checked=m.blast_enabled??true;
+  if(mono){
+    if(document.activeElement!==$('depthMargin'))$('depthMargin').value=m.depth_margin??0;
+    const reasons={invalid:'미검출',too_low:'발을 더 높이 드세요',too_slow:'더 빠르게 차세요',baseline:'기준점 확보 · 다음 유효 관측 대기',gap:'추적 끊김 · 기준점 재확보',standing:'건물과 겹쳐 있음 · 손/발을 빠르게 움직이면 부숴짐',inside_slow:'건물과 겹침 · 빠르게 움직이세요',cooldown:'잠시 대기',outside:'충돌체 밖',contact:'접촉'};
+    $('trackingDiagnosis').textContent=STRIKE_JOINTS.map(n=>{
+      const d=m.diagnostics?.[n];return `${JOINT_LABELS[n]}: ${reasons[d?.reason]??'관측 대기'}${d?.depth_gap_m!=null?` · 깊이 차이 ${d.depth_gap_m.toFixed(2)}m`:''}`;
+    }).join(' / ');
+  }
+  if(document.activeElement!==$('blastRadius'))$('blastRadius').value=m.blast_radius??3;
+  if(document.activeElement!==$('pushStrength'))$('pushStrength').value=m.blast_strength??12;
+  $('collapse').checked=m.collapse??true;
+  for(const s of scenes){
+    s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
+    for(const [id,node] of s.nodes){
+      if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);}
+      node.visible=true;
+    }
+  }
+  $('count').textContent=`${removed.size} / ${m.fragment_count}개 파괴`;
+    $('score').textContent=`${m.score}점 · 파편 1개당 1점`;
+  if(!scenePending)$('sceneSelect').value=desired;
+  for(const [id,key] of [['x','x_m'],['y','y_m'],['yaw','yaw_deg'],['scale','scale']]) {
+    if(id==='scale'&&sizeDirty)continue;
+    if(document.activeElement?.closest('form')!==$('placement'))$(id).value=m.placement[key];
+  }
+  previewSize();
+  const size=m.bounds.hi.map((v,i)=>(v-m.bounds.lo[i]).toFixed(2));
+  $('dimensions').textContent=`폭 ${size[0]}m · 깊이 ${size[1]}m · 고정 높이 ${size[2]}m`;
+  if(m.event){
+    const who=['mouse','mouse_push'].includes(m.event.kind)?'마우스 합성 타격 · 화면 안쪽으로 밀기':m.event.kind==='synthetic_drop'?'합성 전체 낙하':m.event.kind==='debris'?'파편 충격':m.event.kind==='support'?'지지 상실':(JOINT_LABELS[m.event.joint]??'손');
+    $('contact').textContent=`${who} → 파편 ${m.event.fragment_id} · 추가 붕괴 ${m.event.unsupported_ids?.length??0}개`;
+  }
+}
+function onMessage(m){
+  if(m.body_calibration&&m.model_test)m.model_test.body_calibration=m.body_calibration;
+  if(mono){
+    if(m.type==='mono3d_calib'&&m.camera&&m.K&&m.image)m={...m,type:'multi3d_calib',camera_id:'C0',...m.camera};
+    else if(m.type==='mono3d_jpeg')m={...m,type:'multi3d_jpeg',camera_id:'C0'};
+    else if(m.type==='mono3d_phone_left')m={type:'multi3d_phone_left',camera_id:'C0'};
+    else if(m.type==='mono3d_model_state'){syncState(m.model_test);return;}
+    else if(m.type==='mono3d_frame'){
+      frameAt=performance.now();lastJoints={};
+      const c=cameras.get('C0');c.occlusionInputValid=m.valid===true;
+      if(!c.occlusionInputValid&&!c.visualDepthValid)c.occlusion.clear();
+      if(m.valid&&m.joints)for(const [name,p]of Object.entries(m.joints))if(Array.isArray(p)&&p.length===3&&p.every(Number.isFinite))lastJoints[name]={p};
+      personJoints=lastJoints;personAt=frameAt;
+      if(!fatal)status(m.valid?'1대 근사 손목 · 휘두름/마우스로 타격하세요':m.reason==='feet_required_for_depth'?'발목 미검출 · 깊이 판정/손목 타격 중지':'1대 폰의 유효 손목 대기 · 마우스 시험 가능');return;
+    }else if(m.type==='mono3d_status'&&!m.phone_connected){frameAt=0;lastJoints={};personJoints={};personAt=-Infinity;const c=cameras.get('C0');c.calibrated=false;c.img.hidden=true;c.occlusionInputValid=false;c.occlusion.clear();c.jpegVersion++;return;}
+  }
+  const c=cameras.get(m.camera_id);
+  if(m.type==='multi3d_calib'&&c)applyCalibration(c,m);
+  else if(m.type==='multi3d_jpeg'&&c){
+    c.visualDepthValid=m.occlusion_valid===true;c.occlusionReason=m.occlusion_reason??null;
+    const version=++c.jpegVersion,img=new Image();img.src=m.data;
+    Promise.all([img.decode().then(()=>true,()=>false),loadOcclusionTexture(m.occlusion)]).then(([decoded,texture])=>{
+      if(!decoded||version!==c.jpegVersion){texture?.dispose();return;}
+      c.img.src=m.data;c.img.hidden=false;c.lastImage=performance.now();
+      if(c.occlusion){if((c.occlusionInputValid||c.visualDepthValid)&&c.calibrated){c.occlusion.setFrame(texture,m.t_ms);c.depthAt=performance.now();}else{texture?.dispose();c.occlusion.clear();}}
+    }).catch(()=>{if(version===c.jpegVersion)c.occlusion?.clear();});
+  }else if(m.type==='multi3d_phone_left'&&c){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();}
+  else if(m.type==='multi3d_fused'){
+    $('sourceMode').textContent=`카메라 3대 · 삼각측량 · source=multi_view_test · ${m.timing==='inference_input_aligned'?'입력시각 정렬':'도착시각 호환'}`;
+    frameAt=performance.now();lastJoints=m.joints??{};syncState(m.model_test);
+    if(m.cameras_used.length>=2){personJoints=lastJoints;personAt=frameAt;}
+    for(const c of cameras.values()){
+      if(m.cameras_used.length>=2){c.occlusionInputValid=['left_shoulder','right_shoulder','left_hip','right_hip'].every(n=>m.joints?.[n]);if(c.occlusionInputValid)c.poseValidAt=frameAt;}
+      else if(frameAt-(c.poseValidAt??-Infinity)>200)c.occlusionInputValid=false;
+      if(!c.occlusionInputValid)c.occlusion.clear();
+    }
+    const count=m.cameras_used.length;
+    if(!fatal)status(!ready?'모델 준비 중…':count>=2?`${count}대 입력 · 손목 또는 마우스로 타격하세요`:'마우스 합성 타격 가능 · 폰 입력은 2대 이상 필요');
+  }else if(m.type==='multi3d_model_state')syncState(m.model_test);
+  else if(m.type==='error'){scenePending=false;status(`서버 오류: ${m.detail??m.code}`);}
+}
+const link=createLink(mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
+  connected=s.open;
+  if(!s.open){frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
+  if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
+},onMessage);
+$('restore').onclick=()=>{link.send({type:'multi3d_model_reset'});};
+$('captureBody').hidden=true;
+$('captureBody').onclick=()=>link.send({type:'multi3d_body_start'});
+$('stress').onclick=()=>link.send({type:'multi3d_model_drop_all'});
+$('collapse').onchange=()=>link.send({type:'multi3d_model_collapse',enabled:$('collapse').checked});
+for(const input of document.querySelectorAll('[data-physics]'))input.onchange=()=>{
+  physicsOptions[input.dataset.physics]=input.checked;physics?.configure(physicsOptions);
+};
+$('impactBreak').onchange=()=>impactQueue.clear();
+const sendBlastConfig=()=>link.send({type:'multi3d_model_blast_config',enabled:$('blastMode').checked,
+  radius:Number($('blastRadius').value),strength:Number($('pushStrength').value)});
+for(const id of ['blastMode','blastRadius','pushStrength'])$(id).addEventListener('change',sendBlastConfig);
+$('interactionDistance').onchange=()=>{try{physics?.setInteractionDistance(Number($('interactionDistance').value));}catch(e){status(e.message);}};
+$('depthMargin').onchange=()=>link.send({type:'multi3d_model_depth_config',margin:Number($('depthMargin').value)});
+// 1 camera: after a building is broken (enough pieces gone) move on to the next one in the list after a few seconds.
+let autoNextTimer=null,autoNextFor=null;
+function cancelAutoNext(){clearTimeout(autoNextTimer);autoNextTimer=null;autoNextFor=null;}
+function advanceBuilding(){
+  const select=$('sceneSelect'),options=[...select.options];if(options.length<2||scenePending)return;
+  const at=options.findIndex(o=>o.value===select.value);select.selectedIndex=(at+1)%options.length;select.onchange();
+}
+function checkAutoNext(m){
+  if(!mono)return;
+  if(!$('autoNext').checked){cancelAutoNext();$('autoNextStatus').textContent='';return;}
+  const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
+  const need=Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
+  if(!(total>0&&removed>=need)){cancelAutoNext();$('autoNextStatus').textContent=`부서진 파편 ${removed}/${total}개 · ${need}개 이상이면 다음 건물`;return;}
+  const key=`${m.scene_id}:${m.epoch}`;if(autoNextFor===key)return;
+  cancelAutoNext();autoNextFor=key;
+  const delay=Math.min(30,Math.max(1,Number($('autoNextDelay').value)||3));
+  $('autoNextStatus').textContent=`건물이 부서졌습니다 · ${delay}초 뒤 다음 건물로 넘어갑니다`;
+  autoNextTimer=setTimeout(()=>{autoNextTimer=null;advanceBuilding();},delay*1000);
+}
+for(const id of ['autoNext','autoNextDelay','autoNextPercent'])$(id).addEventListener('change',()=>{if(id==='autoNext'||id==='autoNextDelay')cancelAutoNext();if(state)checkAutoNext(state);});
+$('sceneSelect').onchange=()=>{cancelAutoNext();
+  failedScene=null;
+  scenePending=link.send({type:'multi3d_model_scene',scene_id:$('sceneSelect').value});
+  if(scenePending)status('구역 준비 중… 모델과 충돌체를 불러옵니다.');
+};
+function applyPlacement(){if(!$('placement').reportValidity())return;link.send({type:'multi3d_model_config',placement:{x_m:Number($('x').value),y_m:Number($('y').value),yaw_deg:Number($('yaw').value),scale:Number($('scale').value)}});}
+$('placement').onsubmit=e=>{e.preventDefault();applyPlacement();};
+$('sizeRange').oninput=()=>{sizeDirty=true;$('scale').value=$('sizeRange').value;previewSize();};
+$('scale').oninput=()=>{sizeDirty=true;previewSize();};
+$('applySize').onclick=applyPlacement;
+previewSize();
+
+function showLoadError(error){failedScene=loadingScene;ready=false;loadingScene=null;scenePending=false;fatal=String(error);$('status').dataset.error='true';status('구역 준비 실패: '+error.message+' · 다른 구역을 선택하거나 새로고침하세요.');}
+async function loadScene(id){
+  const generation=++loadGeneration;loadingScene=id;ready=false;fatal=null;
+  failedScene=null;delete $('status').dataset.error;
+  status('구역 모델 준비 중…');
+  physics?.dispose();physics=null;
+  disposeRoots([...ownedRoots,...scenes.flatMap(s=>[...s.outer.children])]);ownedRoots=[];
+  for(const s of scenes){s.outer.clear();s.nodes.clear();}pieces.clear();
+  const spec=await fetchScene(id);
+  const [models]=await Promise.all([loadModels(spec),initPhysics()]);
+  if(generation!==loadGeneration){disposeRoots(models.map(g=>g.scene));return;}
+  ownedRoots=models.map(g=>g.scene);colliderData=spec.colliders;sceneDimensions=spec.dimensions_m;buildingCount=spec.building_count;
+  fixedSize=spec.fixed_size;
+  for(const key of ['sizeRange','scale'])$(key).disabled=fixedSize;
+  $('buildingSize').querySelector('h3').textContent=fixedSize?'건물 크기 · 고정':'건물 크기';
+  $('buildingSize').querySelector('small').textContent=fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
+  for(const f of colliderData.fragments)pieces.set(f.fragment_id,f.node);
+  for(const s of scenes){const assembled=assembleScene(spec,models);s.outer.add(assembled.root);s.nodes=assembled.nodes;}
+  loadedScene=id;loadingScene=null;scenePending=false;ready=true;epoch=null;
+  $('sceneTitle').textContent=spec.label;$('sceneInfo').textContent=fixedSize?`건물 ${buildingCount}개 · 파편 ${pieces.size}개 · 높이 0.5m 이상 · 기존 절대 크기 유지 · 이 구역 평균 ${(spec.render.reduce((v,b)=>v+b.height_m,0)/buildingCount).toFixed(2)}m`:'IT1 단독 · 배율 조절 가능';
+  $('stress').textContent=`${pieces.size}개 전체 낙하 · 합성 부하 시험`;
+  syncState(state);previewSize();status(connected?'구역 준비 완료 · 손목/마우스로 타격하세요':'모델 준비 완료 · 서버 연결 대기');
+  if(fixedSize){
+    const bounds=new THREE.Box3().setFromObject(orbit.outer),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());
+    const distance=Math.max(size.x,size.y,size.z,1)*1.7;
+    controls.target.copy(center);orbit.camera.position.copy(center).add(new THREE.Vector3(.5,-1,.7).normalize().multiplyScalar(distance));
+    orbit.camera.far=Math.max(50,distance*10);orbit.camera.updateProjectionMatrix();controls.update();
+  }
+}
+async function load(){
+  if(mono||!keepSingleBuilding){const r=await fetch('/api/test/building-scenes?kind='+(mono?'single':'zone'));if(!r.ok)throw new Error('구역 목록을 불러올 수 없습니다.');
+    const groups=new Map();if(!mono)$('sceneSelect').replaceChildren();
+    for(const item of await r.json()){
+      if(item.id==='it1')continue;
+      if(!groups.has(item.parent_id)){const group=document.createElement('optgroup');group.label=item.parent_label;groups.set(item.parent_id,group);$('sceneSelect').append(group);}
+      const option=document.createElement('option');option.value=item.id;option.textContent=mono?`${item.label} · 높이 ${item.height_m}m`:`${item.label} · ${item.building_count}개`;groups.get(item.parent_id).append(option);
+    }zonesReady=true;}
+  await loadScene('it1');
+}
+function draw(now){
+  const start=performance.now(),dt=previousNow?(now-previousNow)/1000:0;previousNow=now;frameCount++;
+  const disabled=!ready||!connected||scenePending;
+  $('restore').disabled=disabled;$('stress').disabled=disabled;$('applySize').disabled=disabled||fixedSize||!!state?.body_reference;$('sceneSelect').disabled=!connected||!!loadingScene||scenePending;for(const b of $('placement').querySelectorAll('button'))b.disabled=disabled||!!state?.body_reference;
+  physics?.updateWrists(connected?lastJoints:{},frameAt,now);
+  physics?.step(dt);
+  if(physics){
+    for(const id of physics.dynamic){const {position,quaternion}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.position.copy(position);n.quaternion.copy(quaternion);}}
+    if(connected&&now-impactSentAt>150&&impactQueue.size){
+      const ids=[...impactQueue].filter(id=>!state.removed_ids.includes(id)).slice(0,8);
+      if(ids.length&&link.send({type:'multi3d_model_release',ids})){impactSentAt=now;ids.forEach(id=>impactQueue.delete(id));}
+      if(!ids.length)impactQueue.clear();
+    }
+  }
+  const live=connected&&now-frameAt<500;
+  const personLive=connected&&now-personAt<500;
+  trackedPerson.update(personJoints,personLive);$('personStatus').textContent=personLive&&trackedPerson.count?('사람 3D · '+trackedPerson.count+'관절 · '+(mono?'1대 근사':'다중 시점')):'사람 3D 관측 대기';
+  for(const s of scenes){
+    STRIKE_JOINTS.forEach((n,i)=>{s.wrists[i].visible=live&&Boolean(lastJoints[n])&&(s===orbit||(s.calibrated&&now-s.lastImage<1500));if(s.wrists[i].visible)s.wrists[i].position.fromArray(lastJoints[n].p);});
+    const box=s===orbit?$('orbit'):s.div,w=box.clientWidth,h=box.clientHeight;
+    const canvas=s.renderer.domElement;if(canvas.clientWidth!==w||canvas.clientHeight!==h||canvas.width!==Math.floor(w*s.renderer.getPixelRatio())||canvas.height!==Math.floor(h*s.renderer.getPixelRatio()))s.renderer.setSize(w,h,false);
+    if(s===orbit){s.camera.aspect=w/Math.max(1,h);s.camera.updateProjectionMatrix();}
+    else {s.label.textContent=`${[...cameras].find(([,v])=>v===s)[0]} ${s.calibrated?'보정됨':'대기'}`;}
+    s.outer.visible=s===orbit||(connected&&s.calibrated&&now-s.lastImage<1500);
+    if(s.occlusion){
+      const fresh=connected&&s.calibrated&&now-s.lastImage<1500&&now-(s.depthAt??-Infinity)<500&&(s.occlusionInputValid||s.visualDepthValid)&&live;
+      if(!fresh)s.occlusion.clear();
+      s.occlusion.update(fresh&&$('personOcclusion').checked);
+      $('occlusionStatus').textContent=!$('personOcclusion').checked?'사람 뒤 가림 OFF':s.occlusion.mesh.visible?'사람 뒤 가림 적용 · 근사 깊이':s.occlusionReason??'사람 뒤 가림 대기 · 유효한 깊이/윤곽 필요';
+    }
+    s.renderer.render(s.scene,s.camera);
+  }
+  renderMs+=(performance.now()-start-renderMs)*.1;
+  if(now-reportAt>=500){fps=(frameCount-reportFrames)*1000/(now-reportAt);reportAt=now;reportFrames=frameCount;
+    const m=physics?.snapshot();if(m)$('performance').textContent=`${fps.toFixed(0)} FPS · 물리 p95 ${m.stepP95Ms.toFixed(2)}ms · 프레임 CPU ${renderMs.toFixed(2)}ms · 동적 ${m.dynamic} / sleep ${m.sleeping}`;
+  }
+}
+load().then(()=>link.setEnabled(true)).catch(showLoadError);
+orbit.renderer.setAnimationLoop(draw);
+window.buildingFragmentTest=Object.freeze({cameraPickPoints:()=>{
+  const c=cameras.get('C0');if(!c?.calibrated)return [];
+  c.scene.updateMatrixWorld(true);
+  return [...c.nodes].map(([id,n])=>{const p=n.getWorldPosition(new THREE.Vector3()).project(c.camera);return {id,u:(p.x+1)/2,v:(1-p.y)/2};})
+    .filter(p=>p.u>0&&p.u<1&&p.v>0&&p.v<1);
+},cameraPixels:points=>{
+  const c=cameras.get('C0');c.renderer.render(c.scene,c.camera);const gl=c.renderer.getContext(),value=new Uint8Array(4);
+  return points.map(p=>{gl.readPixels(Math.min(gl.drawingBufferWidth-1,Math.floor(p.u*gl.drawingBufferWidth)),Math.min(gl.drawingBufferHeight-1,Math.floor((1-p.v)*gl.drawingBufferHeight)),1,1,gl.RGBA,gl.UNSIGNED_BYTE,value);return Array.from(value);});
+},pickPoints:()=>{
+  orbit.scene.updateMatrixWorld(true);
+  return [...orbit.nodes].filter(([id])=>!state?.removed_ids.includes(id)).map(([id,n])=>{
+    const v=n.getWorldPosition(new THREE.Vector3()).project(orbit.camera);
+    return {id,x:v.x,y:v.y,z:v.z,buildingId:colliderData.fragments.find(f=>f.fragment_id===id)?.building_id};
+  }).filter(p=>Math.abs(p.x)<.98&&Math.abs(p.y)<.98&&p.z>0&&p.z<1).sort((a,b)=>a.z-b.z);
+},snapshot:()=>({ready,connected,removed:state?.removed_ids??[],score:state?.score??0,epoch,
+  placement:state?.placement,
+  sceneId:loadedScene,buildingCount,loadingScene,fixedSize,
+  removedBuildings:colliderData?[...new Set(colliderData.fragments.filter(f=>state?.removed_ids.includes(f.fragment_id)).map(f=>f.building_id))]:[],
+  physics:physics?.snapshot()??null,fps,frameCpuMs:renderMs,collapse:state?.collapse,
+  blastEnabled:state?.blast_enabled,autoNextPending:autoNextTimer!==null,
+  occlusion:cameras.get('C0').occlusion.snapshot(),person:trackedPerson.snapshot(),
+  visible:[...orbit.nodes].filter(([,n])=>n.visible).map(([id])=>id),
+  worldBounds:ready?(()=>{const b=new THREE.Box3().setFromObject(orbit.outer);return {lo:b.min.toArray(),hi:b.max.toArray()};})():null,
+  projection:[...cameras].filter(([,c])=>c.calibrated).map(([id,c])=>({id,
+    point:new THREE.Vector3(.1,.1,.3).project(c.camera).toArray()}))})});
+window.addEventListener('pagehide',()=>{link.setEnabled(false);orbit.renderer.setAnimationLoop(null);physics?.dispose();physics=null;trackedPerson.dispose();controls.dispose();for(const s of scenes){s.occlusion?.dispose();s.renderer.dispose();}});
+window.addEventListener('pageshow',e=>{if(e.persisted)location.reload();});

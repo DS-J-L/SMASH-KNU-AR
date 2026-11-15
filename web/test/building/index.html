@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>건물 구역 파편 접촉 시험</title>  <script type="module" crossorigin src="/test/building/assets/index-CJ2nYmSG.js"></script>
+  <link rel="stylesheet" crossorigin href="/test/building/assets/index-DRehVMLV.css">
+</head>
+<body><header><h1>건물 정합 · 파편 물리 시험</h1><p id="sourceMode"></p><p id="status">모델 준비 중…</p><a href="/test/building/?mode=mono">1대 근사 3D</a> · <a href="/test/building/">3대 삼각측량</a> · <a id="legacyLink" href="/test/multi3d/view.html">기존 3D 시험</a></header>
+<main><section class="camera-panel"><h2>카메라 영상 위 정합</h2><div id="cameras"></div></section>
+<section class="main-panel"><h2>마커 기준 3D <small>클릭: 타격 · 드래그: 회전 · 휠: 확대</small></h2><label><input id="mouseMode" type="checkbox" checked> 마우스 타격 · 합성 시험 (폰 없이 사용)</label><div id="orbit"></div></section>
+<aside><h2 id="sceneTitle">IT 1호관</h2><section id="sceneControl" hidden><label><span id="sceneLabel">시험 구역</span><select id="sceneSelect"><option value="it1">IT1 단독 시험</option></select></label><p id="sceneInfo"></p><div id="autoNextControl" hidden><label class="check"><input id="autoNext" type="checkbox"> 건물을 부수면 자동으로 다음 건물</label><label>몇 초 뒤 <input id="autoNextDelay" type="number" min="1" max="30" step="1" value="3"></label><label>부서진 파편 % 이상 <input id="autoNextPercent" type="number" min="10" max="100" step="5" value="70"></label><small id="autoNextStatus"></small></div></section><section id="occlusionControl" hidden><label><input id="personOcclusion" type="checkbox" checked> 사람 뒤 건물·파편 가림</label><small id="occlusionStatus">유효한 깊이/윤곽 필요</small></section><p id="personStatus">사람 3D 관측 대기</p><p id="bodyReference">처음 몸 보정의 허리 높이 대기</p><button id="captureBody" type="button">세 폰 몸 보정 시작 · 허리 기준 고정</button><p id="count">0 / 96개 파괴</p><p id="score">0점 · 파편 1개당 1점</p><button id="restore">건물 복원</button>
+<section id="buildingSize"><h3>건물 크기</h3>
+<label>크기 슬라이더 <input id="sizeRange" type="range" min="0.1" max="2" step="0.05" value="0.6"></label>
+<label>배율 (0.1~2배) <input id="scale" form="placement" type="number" value="0.6" min="0.1" max="2" step="0.05" required></label>
+<p id="sizePreview"></p><button id="applySize" type="button">크기 적용 · 복원</button><small>폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.</small>
+</section><p id="dimensions"></p>
+<label>타격·밀기 세기 <input id="pushStrength" type="range" min="1" max="20" step="1" value="12"></label>
+<label><input id="blastMode" type="checkbox" checked> 광역 타격 · 건물 전체 날리기</label>
+<label>충격 범위 (m)<input id="blastRadius" type="number" min="0.1" max="10" step="0.1" value="3"></label>
+<label>파편끼리 충돌 거리 (m)<input id="interactionDistance" type="number" min="0.05" max="5" step="0.05" value="0.75"></label>
+<label id="depthControl" hidden>1대 앞뒤 오차 허용 (m)<input id="depthMargin" type="number" min="0" max="0.5" step="0.05" value="0"><small>기본0m · 보정된 깊이로 판정합니다. 값을 늘리면 근처 동작도 맞을 수 있습니다.</small></label><p id="trackingDiagnosis" hidden></p>
+<fieldset id="physics"><legend>물리 효과 · 개별 ON/OFF</legend>
+<label><input type="checkbox" data-physics="gravity" checked> 중력</label>
+<label><input type="checkbox" data-physics="floor" checked> 바닥 충돌</label>
+<label><input type="checkbox" data-physics="building" checked> 남은 건물과 충돌</label>
+<label><input type="checkbox" data-physics="debris" checked> 파편끼리 충돌</label>
+<label><input type="checkbox" data-physics="hand" checked> 손목과 부서진 파편 충돌</label>
+<label><input type="checkbox" data-physics="rotation" checked> 회전</label>
+<label><input type="checkbox" data-physics="sleep" checked> 정지 파편 sleep</label>
+<label><input type="checkbox" id="collapse" checked> 지지 상실 붕괴</label>
+<label><input type="checkbox" id="impactBreak" checked> 파편 충격으로 추가 분리</label>
+<button id="stress" type="button">96개 전체 낙하 · 합성 부하 시험</button><p id="performance">물리 준비 중…</p></fieldset>
+<form id="placement"><label>X (m)<input id="x" type="number" value="0" min="-5" max="5" step=".05" required></label><label>Y (m)<input id="y" type="number" value="0" min="-5" max="5" step=".05" required></label><label>회전 (°)<input id="yaw" type="number" value="0" step="5" required></label><button type="submit">배치 적용 · 복원</button></form>
+<p id="contact">접촉 대기</p><p id="phoneHelp">폰에서 <a href="/test/multi3d/">3D 폰 페이지</a>를 열어 C0·C1·C2를 고르고 같은 20cm 바닥 마커로 보정하세요. 2대 이상이 손목을 봐야 합니다.</p><p>마커 옆에서 손으로 건물에 접촉하세요. 닿은 조각과 지지를 잃은 조각이 떨어집니다. 소구역은 절대 크기, IT1 단독은 선택한 배율을 유지합니다.</p><p>시험용 · 시각 품질은 상태 표시 참조 · 실폰 정합/정확도 미검증. 분리 여부는 서버 공유, 파편 물리는 각 PC에서 계산합니다. 지지 판정은 연결 그래프 근사입니다.</p></aside></main></body></html>

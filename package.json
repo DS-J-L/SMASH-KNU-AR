@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:building-test": "vite build --config vite.building-test.config.js",
     "build:demo": "vite build",
     "test:demo": "playwright test",
     "validate:assets": "node tools/validate-assets.mjs",
