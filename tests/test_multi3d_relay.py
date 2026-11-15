@@ -72,7 +72,8 @@ def test_geometry_helpers():
     assert waist_height(None) == 0.95 and abs(waist_height(1.7) - 1.02) < 1e-9 and waist_height(5) == 1.3
 
 
-def test_three_phones_triangulate_and_hit(client):
+@pytest.mark.parametrize('legacy_body_requirement',[False,True])
+def test_three_phones_triangulate_and_hit(client,legacy_body_requirement):
     q = f"key={KEY}"
     with client.websocket_connect(f"/ws/test/multi3d?role=viewer&{q}") as viewer, \
          client.websocket_connect(f"/ws/test/multi3d?role=phone&camera=C0&{q}") as c0, \
@@ -80,7 +81,7 @@ def test_three_phones_triangulate_and_hit(client):
          client.websocket_connect(f"/ws/test/multi3d?role=phone&camera=C2&{q}") as c2:
         phones = {"C0": c0, "C1": c1, "C2": c2}
         for cam, ws in phones.items():
-            ws.send_text(json.dumps(calib(cam)))
+            ws.send_text(json.dumps(calib(cam)|{'requires_body_calibration':legacy_body_requirement}))
         until(viewer, lambda m: m["type"] == "multi3d_status" and all(v["calibrated"] for v in m["cameras"].values()))
 
         def send_all(wrist):
@@ -97,6 +98,7 @@ def test_three_phones_triangulate_and_hit(client):
         assert np.linalg.norm(p - [0.6, 0.5, 0.9]) < 1e-3
         assert sorted(fused["joints"]["right_wrist"]["cams"]) == ["C0", "C1", "C2"]
         assert fused["source"] == "multi_view_test" and fused["timing"] == "server_arrival"
+        assert fused['body_calibration_required'] is False
         height = fused["building"]["estimated_height_m"]
         assert abs(height - (1.56 - 0.0) / 0.92) < 0.02
         assert abs(fused["building"]["half"][2] * 2 - 0.6 * height) < 0.02
