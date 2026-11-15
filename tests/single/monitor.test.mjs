@@ -48,7 +48,7 @@ test('T-SC-04/06 discard old runs, exact TTL boundary, wrong pose keys and clean
 
 function setup(options={}){
   let clock=1000,ids=0;const hits=[],logs=[];
-  const game=new GameController({source:'synthetic',now:()=>clock,uuid:()=>`id-${++ids}`,onHit:e=>{hits.push(e);return true;},onLog:e=>logs.push(e),validateHit:()=>true,...options});
+  const game=new GameController({source:'synthetic',now:()=>clock,uuid:()=>`id-${++ids}`,onHit:e=>{hits.push(e);return {points:3,broken_fragment_ids:[0,1,2],fallen_fragment_ids:[],remaining_fragments:0,destroyed:true};},onLog:e=>logs.push(e),validateHit:()=>true,...options});
   game.bind(ctx);game.setGates(Object.fromEntries(SINGLE_GATES.map(k=>[k,true])));
   const pose=(id,wrists)=>({...ctx,schema:'single_camera.v1-draft',session_id:game.sessionId,task_type:'pilot',tracking_mode:'single_view_2d',source:'synthetic',frame_id:id,observed_at_pc_ms:clock,
     wrists:wrists??{left_wrist:{valid:true,image_norm:[.4,.5],visibility:1}}});
@@ -71,7 +71,7 @@ test('T-SC-10 timeout never starts and old ACK cannot start the replacement requ
 });
 test('T-SC-11 exactly one score/effect for simultaneous hands, duplicates, old sessions and expiry',async()=>{
   const x=setup();await x.start();assert.equal(x.game.acceptHit(x.event()).accepted,true);assert.equal(x.game.acceptHit(x.event()).reject_reason,'duplicate_event');
-  assert.equal(x.game.acceptHit(x.event({event_id:'second'})).reject_reason,'already_destroyed');assert.equal(x.game.score,100);assert.equal(x.hits.length,1);
+  assert.equal(x.game.acceptHit(x.event({event_id:'second'})).reject_reason,'duplicate_frame');assert.equal(x.game.score,3);assert.equal(x.hits.length,1);
   const y=setup();await y.start();assert.equal(y.game.acceptHit(y.event({session_id:'previous'})).accepted,false);
   y.setTime(y.game.endsAt);assert.equal(y.game.acceptHit(y.event()).accepted,false);assert.equal(y.game.phase,'ended');assert.equal(y.game.score,0);
 });
@@ -122,7 +122,7 @@ test('T-SC-04 consumer refusal and changed dimensions never replace a matched di
 });
 test('T-SC-15 logger outage does not repeat or cancel the accepted effect or score',async()=>{
   const x=setup({onLog:()=>{throw new Error('logger_down');}});await x.start();
-  assert.equal(x.game.acceptHit(x.event()).accepted,true);assert.equal(x.game.score,100);assert.equal(x.game.logFailed,true);
+  assert.equal(x.game.acceptHit(x.event()).accepted,true);assert.equal(x.game.score,3);assert.equal(x.game.logFailed,true);
   assert.equal(x.game.acceptHit(x.event()).accepted,false);assert.equal(x.hits.length,1);
 });
 
@@ -158,4 +158,21 @@ test('PR5 review: resetting before deferred start dispatch does not send an orph
   const x=setup();x.feed(1);let sent=0;
   const pending=x.game.start(r=>{sent++;return {...r,type:'start_ack'};});x.game.reset();
   assert.equal(await pending,false);assert.equal(sent,0);
+});
+
+test('partial damage allows a second ankle hit and scores only new fragments',async()=>{
+  let batch=0;
+  const x=setup({onHit:()=>{const id=batch++*3;return {points:3,broken_fragment_ids:[id,id+1],fallen_fragment_ids:[id+2],remaining_fragments:96-id-3,destroyed:false};}});
+  await x.start();assert.equal(x.game.acceptHit(x.event()).score_delta,3);
+  assert.equal(x.game.destroyed.size,0);
+  for(const id of [4,5]){x.advance(50);const p=x.pose(id,{});p.ankles={left_ankle:{valid:true,image_norm:[.5,.5],visibility:.95}};assert.ok(x.game.setPose(p));}
+  const kick=x.event({event_id:'kick',joint:'left_ankle',previous_frame_id:4,frame_id:5});
+  assert.equal(x.game.acceptHit(kick).score_delta,3);assert.equal(x.game.score,6);
+  assert.equal(x.game.acceptHit(kick).score_delta,0);
+  x.game.reset();assert.equal(x.game.score,0);assert.equal(x.game.scoredFragments.size,0);
+});
+
+test('a missing surface point rejects the effect without ending play',async()=>{
+  const x=setup({onHit:()=>false});await x.start();assert.equal(x.game.acceptHit(x.event()).accepted,false);
+  assert.equal(x.game.phase,'playing');assert.equal(x.game.score,0);
 });

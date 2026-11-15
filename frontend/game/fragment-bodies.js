@@ -4,10 +4,11 @@ import {createGroupColliders,quat} from './package-runtime.js';
 
 // Existing keyboard-demo effect, shared without interpreting screen velocity as measured m/s.
 // This is the only production formula; construction can now attach a compound per group.
-export function spawnFragmentBodies({ world, shards, data, runtime, impactPoint, impactNormal, radius, collider, motion='synthetic', engine=RAPIER }) {
+export function spawnFragmentBodies({ world, shards, data, runtime, impactPoint, impactNormal, radius, collider, nodes=null, motion='synthetic', engine=RAPIER }) {
   if(!['synthetic','stationary'].includes(motion))throw new Error('unknown_release_motion');
   const groups=runtime?.groups??data.fragments,staged=[];
   try{groups.forEach((item,index)=>{
+    if(nodes&&!nodes.has(item.node))return;
     const node=shards.getObjectByName(item.node),[x,y,z]=item.rest_position_m;
     if(!node)throw new Error('missing_fragment_node');
     const previous={position:node.position.toArray(),quaternion:node.quaternion.toArray()};

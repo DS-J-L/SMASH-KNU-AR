@@ -1,8 +1,16 @@
 """Room-local video checks and PC-adjudicated, phone-wrist 2D game sessions."""
 import time
+import json
+from functools import lru_cache
 from .ingest.schemas import MessageError
 from .sync.clock import server_now_ms
 from .room_config import ROOM_CAMERAS
+
+
+@lru_cache(maxsize=1)
+def phone_fragments():
+    from .model_strike import IT1_COLLIDERS
+    return {f['fragment_id'] for f in json.loads(IT1_COLLIDERS.read_text(encoding='utf-8'))['fragments']}
 
 
 class GameSessions:
@@ -61,7 +69,8 @@ class GameSessions:
                    'started': self.now(), 'started_at_server_ms': server_now_ms(),
                    'state': 'playing', 'camera_ids': sorted(checked), 'reason': None,
                    'mode': mode, 'score': 0 if mode == 'phone_2d' else None,
-                   'stream_id': pair['stream_id'] if mode == 'phone_2d' else None, 'events': set(), 'buildings': set()}
+                   'stream_id': pair['stream_id'] if mode == 'phone_2d' else None, 'events': set(), 'buildings': set(),
+                   'removed': set(), 'scored_frames': set()}
         self.current[member.room_id] = self.history[key] = session
         return self.status(member.room_id)
 
@@ -97,15 +106,27 @@ class GameSessions:
         if (not pair or pair['stream_id'] != s['stream_id'] or entry.get('stream_id') != s['stream_id']
             or entry.get('room_id') != member.room_id or entry.get('source') != 'live'
             or entry.get('tracking_mode') != 'single_view_2d' or entry.get('accepted') is not True
-            or entry.get('score_delta') != 100 or entry.get('building_id') != 'knu-it1-v3'
-            or entry.get('joint') not in ('left_wrist', 'right_wrist')
+            or entry.get('building_id') != 'knu-it1-v3'
+            or entry.get('joint') not in ('left_wrist', 'right_wrist', 'left_ankle', 'right_ankle')
             or type(entry.get('frame_id')) is not int or type(entry.get('previous_frame_id')) is not int
             or entry['frame_id'] <= entry['previous_frame_id']
             or entry['frame_id'] not in frames or entry['previous_frame_id'] not in frames):
             raise MessageError('invalid_hit')
-        if entry['building_id'] in s['buildings']:
-            raise MessageError('already_destroyed')
-        s['events'].add(eid); s['buildings'].add(entry['building_id']); s['score'] += 100
+        broken, fallen = entry.get('broken_fragment_ids'), entry.get('fallen_fragment_ids')
+        valid = phone_fragments()
+        if (not isinstance(broken, list) or not isinstance(fallen, list)
+            or len(broken) + len(fallen) > len(valid)
+            or any(type(fid) is not int for fid in broken + fallen)):
+            raise MessageError('invalid_hit')
+        removed = set(broken + fallen)
+        if (not removed or not removed <= valid or len(removed) != len(broken) + len(fallen)
+            or type(entry.get('score_delta')) is not int or entry['score_delta'] != len(removed)
+            or removed & s['removed'] or entry['frame_id'] in s['scored_frames']
+            or type(entry.get('remaining_fragments')) is not int
+            or entry['remaining_fragments'] != len(valid) - len(s['removed'] | removed)):
+            raise MessageError('invalid_hit')
+        s['events'].add(eid); s['removed'].update(removed); s['scored_frames'].add(entry['frame_id'])
+        s['score'] = len(s['removed'])
         return self.status(member.room_id)
 
     def _end(self, room_id, reason):

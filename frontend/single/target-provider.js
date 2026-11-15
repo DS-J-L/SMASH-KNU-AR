@@ -15,16 +15,16 @@ function inside(p, a, b, c) {
   return !(d.some(x=>x < -1e-9) && d.some(x=>x > 1e-9));
 }
 
-// Union of projected intact triangles preserves gaps. Fragments are never registered here.
+// Projected target triangles preserve gaps; the caller can exclude released fragments.
 export class TargetProvider {
   constructor(buildingId) { this.buildingId=buildingId; this.triangles=[]; this.active=true; this.version=0; }
-  update(root, camera, transform, version) {
+  update(root, camera, transform, version, include = () => true) {
     this.triangles=[]; this.version=version;
     root.updateWorldMatrix(true,true); camera.updateMatrixWorld();
     const vp=new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse);
     const planes=[v=>v.w+v.x,v=>v.w-v.x,v=>v.w+v.y,v=>v.w-v.y,v=>v.w+v.z,v=>v.w-v.z];
     root.traverse(mesh=>{
-      if (!mesh.isMesh || !mesh.visible) return;
+      if (!mesh.isMesh || !mesh.visible || !include(mesh)) return;
       const pos=mesh.geometry.getAttribute('position'), index=mesh.geometry.index;
       const matrix=new THREE.Matrix4().multiplyMatrices(vp,mesh.matrixWorld);
       for (let i=0; i<(index?.count??pos.count); i+=3) {

@@ -348,7 +348,7 @@ export class BuildingDamage {
     this.hits += 1;
     const ids = (list) => list.map((i) => t.fragments[i].fragment_id), nodes = (list) => list.map((i) => t.fragments[i].node);
     return {
-      building_id: t.building_id, fragment_id: t.fragments[struck].fragment_id, points: 1,
+      building_id: t.building_id, fragment_id: t.fragments[struck].fragment_id, points: new Set([...broken, ...fallen]).size,
       broken_fragment_ids: ids(broken), fallen_fragment_ids: ids(fallen),
       broken_nodes: nodes(broken), fallen_nodes: nodes(fallen),
       remaining_fragments: this.remaining, destroyed: this.destroyed, damage_mode: this.config.damage_mode,
@@ -439,7 +439,7 @@ export class ModelStrikeJudge {
       event = {
         schema: 'model_strike.v2-draft', type: 'hit_3d', event_id: this.uuid(), building_id: target.building_id,
         joint: hit.name, hit_by: hit.hit_by, fragment_id: hit.entry.fragment_id,
-        point_m: hit.entry.point.map((v) => round(v, 4)), speed_mps: hit.speed, points: 1,
+        point_m: hit.entry.point.map((v) => round(v, 4)), speed_mps: hit.speed, points: new Set([...brokenIds, ...fallen]).size,
         broken_fragment_ids: brokenIds, fallen_fragment_ids: fallen,
         remaining_fragments: target.fragments.length - this.broken.size,
         t_ms: tMs, previous_t_ms: hit.previous_t_ms, placement: { ...target.placement }, config_version: c.config_version,

@@ -12,27 +12,44 @@ test('single live entry stays gated without a control link or pose adapter and t
   await expect(health).toBeOK();
   expect(await health.json()).toMatchObject({status:'ok',service:'SMASH-KNU-AR',stage:'development'});
 });
-test('synthetic screen event fractures 96 shards once, three clean restores with distinct sessions',async({page})=>{
+test('synthetic screen event partially fractures the building, three clean restores with distinct sessions',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));await synthetic(page);
   await mkdir('docs/asset-validation/single-camera',{recursive:true});await page.screenshot({path:'docs/asset-validation/single-camera/ready.png'});
   const ids=[];
   for(let i=0;i<3;i++){
     await page.locator('#start').click();await expect(page.locator('#sample-hit')).toBeEnabled();ids.push((await snapshot(page)).sessionId);
-    await page.locator('#sample-hit').click();await expect(page.locator('#score')).toHaveText('100');
-    expect(await snapshot(page)).toMatchObject({source:'synthetic',phase:'playing',fragmentCount:96,bodyCount:97,score:100,targetActive:false,finiteBodies:true});
-    await expect(page.locator('#sample-hit')).toBeDisabled();
+    await page.locator('#sample-hit').click();await expect.poll(async()=>Number(await page.locator('#score').textContent())).toBeGreaterThanOrEqual(3);
+    expect(await snapshot(page)).toMatchObject({source:'synthetic',phase:'playing',fragmentCount:3,bodyCount:5,score:3,targetActive:true,finiteBodies:true});
+    await expect(page.locator('#sample-hit')).toBeEnabled();
     if(i===0)await page.screenshot({path:'docs/asset-validation/single-camera/fractured.png'});
     await page.locator('#reset').click();expect(await snapshot(page)).toMatchObject({fragmentCount:0,bodyCount:2,score:0,targetActive:true});
     await expect(page.locator('#start')).toBeEnabled();
   }
   expect(new Set(ids).size).toBe(3);expect(errors).toEqual([]);
 });
+test('partial damage repeatedly releases only new fragments until 96 points, then resets colliders',async({page})=>{
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));await synthetic(page);await page.locator('#start').click();
+  let before=0,lastFrame=-1;
+  for(let i=0;i<96;i++){
+    const state=await snapshot(page);if(!state.targetActive)break;
+    await expect.poll(async()=>(await snapshot(page)).frameId).toBeGreaterThan(lastFrame);
+    await expect(page.locator('#sample-hit')).toBeEnabled();await page.locator('#sample-hit').click();
+    await expect.poll(async()=>(await snapshot(page)).score).toBeGreaterThan(before);
+    const next=await snapshot(page);expect(next.fragmentCount).toBe(next.score);
+    expect(next.colliderCount).toBe(97);expect(new Set(next.brokenFragmentIds).size).toBe(next.score);before=next.score;lastFrame=next.frameId;
+  }
+  expect(await snapshot(page)).toMatchObject({score:96,fragmentCount:96,targetActive:false,remainingFragments:0,finiteBodies:true});
+  await page.locator('#reset').click();expect(await snapshot(page)).toMatchObject({score:0,fragmentCount:0,bodyCount:2,colliderCount:97,targetActive:true});
+  expect(errors).toEqual([]);
+});
+
 test('rotated mirrored portrait display, resize invalidation and live mode switch reset synthetic session',async({page})=>{
   await synthetic(page);const before=await snapshot(page);
   await page.locator('#mirror').check();await page.locator('#rotation').selectOption('90');await page.setViewportSize({width:480,height:900});
   await expect(page.locator('#start')).toBeEnabled();expect((await snapshot(page)).transformVersion).toBeGreaterThan(before.transformVersion);
+  await expect.poll(async()=>{const run=(await snapshot(page)).runId;await page.waitForTimeout(160);return (await snapshot(page)).runId===run;}).toBe(true);
   await page.locator('#start').click();await expect(page.locator('#sample-hit')).toBeEnabled();await expect(page.locator('#mirror')).toBeDisabled();
-  await page.locator('#sample-hit').click();await expect(page.locator('#score')).toHaveText('100');
+  await page.locator('#sample-hit').click();await expect.poll(async()=>Number(await page.locator('#score').textContent())).toBeGreaterThanOrEqual(3);
   await page.locator('#mode').selectOption('live');await expect(page.locator('#start')).toBeDisabled();
   expect(await snapshot(page)).toMatchObject({source:'live',phase:'idle',score:0,fragmentCount:0,sessionId:null});
 });
