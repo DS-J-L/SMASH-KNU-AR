@@ -1,0 +1,148 @@
+{
+  "source": "main 9820019 campus_focus building_ids; local catalog package metadata",
+  "zones": [
+    {
+      "id": "north-gate-arts",
+      "label": "① 북문·예술대·온실",
+      "packages": [
+        "knu-sculpture-v71-b3-r1-fracture",
+        "knu-lifelong-v71-b2-r3-fracture",
+        "knu-arts-v71-b3-r1-fracture",
+        "knu-osm-524161868-v71-b10-r1-fracture",
+        "knu-agri-v71-b6-r1-fracture",
+        "knu-nuri-west-v71-b4-r1-fracture",
+        "knu-nuri-east-v71-b4-r1-fracture",
+        "knu-gh53-v71-b8-r1-fracture",
+        "knu-gh31-v71-b7-r1-fracture",
+        "knu-gh1-v71-b7-r1-fracture",
+        "knu-gh32-v71-b7-r1-fracture",
+        "knu-gh43-v71-b7-r1-fracture",
+        "knu-gh41-v71-b7-r1-fracture",
+        "knu-gh54-v71-b8-r1-fracture",
+        "knu-gh51-v71-b8-r1-fracture",
+        "knu-gh2-v71-b7-r1-fracture",
+        "knu-gh52-v71-b8-r1-fracture",
+        "knu-greenhouse-office-v71-b8-r1-fracture",
+        "knu-gh42-v71-b7-r1-fracture",
+        "knu-northgate-v71-r8-fracture"
+      ],
+      "registered_buildings": 24
+    },
+    {
+      "id": "main-library",
+      "label": "② 본관·글로벌플라자·중앙도서관",
+      "packages": [
+        "knu-convergence-v71-b2-r3-fracture",
+        "knu-nursing-v71-b6-r1-fracture",
+        "knu-global-practice-v1",
+        "knu-library-practice-v1",
+        "knu-osm-468931854-v71-b10-r1-fracture",
+        "knu-main-v2",
+        "knu-grad-v71-b2-r3-fracture",
+        "knu-osm-468931909-v71-dot8-r1-fracture",
+        "knu-osm-468931910-v71-g2-r1-fracture",
+        "knu-cheom-v71-b4-r1-fracture",
+        "knu-techno-v71-b3-r1-fracture",
+        "knu-osm-468931915-v71-b10-r1-fracture",
+        "knu-yeongseon-v71-b3-r1-fracture",
+        "knu-pavilion-v71-b3-r1-fracture",
+        "knu-career-v71-b2-r3-fracture",
+        "knu-teachers-v71-b2-r3-fracture"
+      ],
+      "registered_buildings": 20
+    },
+    {
+      "id": "agri-science",
+      "label": "③ 농대·자연과학대",
+      "packages": [
+        "knu-osm-468931920-v71-dot8-r1-fracture",
+        "knu-press-v71-b3-r1-fracture",
+        "knu-osm-473684409-v71-dot8-r1-fracture",
+        "knu-apple-v71-b6-r1-fracture",
+        "knu-rock-store-v71-b9-r1-fracture",
+        "knu-packing-v71-b6-r1-fracture",
+        "knu-apple-annex-v71-b6-r1-fracture",
+        "knu-isotope-store-v71-b9-r1-fracture",
+        "knu-produce-processing-v71-b8-r1-fracture",
+        "knu-corn-storage-v71-b8-r1-fracture",
+        "knu-liberal-v71-b2-r3-fracture"
+      ],
+      "registered_buildings": 17
+    },
+    {
+      "id": "sports",
+      "label": "④ 체육관·대운동장",
+      "packages": [
+        "knu-osm-468931887-v71-dot8-r1-fracture",
+        "knu-osm-468931924-v71-dot8-r1-fracture",
+        "knu-gym2-v71-r8-fracture",
+        "knu-baekho-v71-b4-r1-fracture",
+        "knu-rotc-v71-b5-r1-fracture",
+        "knu-cheong-v71-b5-r1-fracture",
+        "knu-animal-v71-b6-r1-fracture",
+        "knu-osm-576358734-v71-b10-r1-fracture",
+        "knu-osm-972016220-v71-b10-r1-fracture",
+        "knu-store-v71-b5-r1-fracture"
+      ],
+      "registered_buildings": 11
+    },
+    {
+      "id": "museum-social",
+      "label": "⑤ 박물관·사회과학대",
+      "packages": [
+        "knu-osm-468931898-v71-dot8-r1-fracture",
+        "knu-osm-468931905-v71-dot8-r1-fracture",
+        "knu-osm-468931907-v71-g2-r1-fracture",
+        "knu-educgrad-v71-b2-r2-fracture"
+      ],
+      "registered_buildings": 12
+    },
+    {
+      "id": "engineering-chemistry",
+      "label": "⑥ 공대·화학관",
+      "packages": [
+        "knu-future-v71-r8-fracture",
+        "knu-osm-468931867-v71-dot8-r1-fracture",
+        "knu-eng7-v71-r8-fracture",
+        "knu-kbsi-v71-b3-r1-fracture",
+        "knu-pp-structural-v71-b9-r1-fracture",
+        "knu-safety-v71-r8-fracture",
+        "knu-osm-577759119-v71-b10-r1-fracture",
+        "knu-env-store-v71-b9-r1-fracture",
+        "knu-tennis-v71-b5-r1-fracture"
+      ],
+      "registered_buildings": 17
+    },
+    {
+      "id": "it-veterinary",
+      "label": "⑦ IT대·수의대",
+      "packages": [
+        "knu-it2-v71-r8-fracture",
+        "knu-osm-468931893-v71-b10-r1-fracture",
+        "knu-vet-v71-b6-r1-fracture",
+        "knu-it1-v3",
+        "knu-osm-468931896-v71-b10-r1-fracture",
+        "knu-it5-practice-v1",
+        "knu-osm-524021463-v71-g2-r1-fracture",
+        "knu-semi-v71-r8-fracture",
+        "knu-osm-584385630-v71-b10-r1-fracture",
+        "knu-osm-584386432-v71-b10-r1-fracture"
+      ],
+      "registered_buildings": 13
+    },
+    {
+      "id": "dormitories",
+      "label": "⑧ 생활관",
+      "packages": [
+        "knu-boram-v71-b4-r1-fracture",
+        "knu-osm-1470108675-v71-g2-r1-fracture",
+        "knu-faculty-v71-b4-r1-fracture",
+        "knu-myeonhak-v71-b4-r1-fracture",
+        "knu-dorm-a-v71-b5-r1-fracture",
+        "knu-dorm-c-v71-b5-r1-fracture",
+        "knu-dorm-b-v71-b5-r1-fracture"
+      ],
+      "registered_buildings": 9
+    }
+  ]
+}
