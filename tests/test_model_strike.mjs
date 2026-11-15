@@ -2,8 +2,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { ModelStrikeJudge, blocksToBreak, buildModelTarget, faceContact, firstEntry, hullPlanes, insideModel,
-  loadModelTarget, placementToThree, packageToMarker, unsupported } from '../web/shared/model-strike-3d.js';
+import { BuildingDamage, ModelStrikeJudge, blocksToBreak, buildModelTarget, faceContact, firstEntry, hullPlanes, insideModel,
+  loadModelTarget, markerToPackage, placementToThree, packageToMarker, unsupported } from '../web/shared/model-strike-3d.js';
 
 const doc = JSON.parse(readFileSync(new URL('./fixtures/model_strike_cases.json', import.meta.url), 'utf8'));
 const it1Path = new URL('../web/public/assets/buildings/knu-it1-v3/colliders.json', import.meta.url);
@@ -130,4 +130,73 @@ test('loadModelTarget fetches colliders and rejects HTTP errors', async () => {
   assert.equal(ok.building_id, 'knu-it1-v3');
   await assert.rejects(loadModelTarget('x', {}, async () => ({ ok: false, status: 401 })), /colliders_http_401/);
   assert.throws(() => buildModelTarget(doc.package, { scale: 0 }), /invalid_placement/);
+});
+
+// BuildingDamage: screens that already know the hit point on the drawn model (the 2D game's ray).
+test('markerToPackage undoes packageToMarker', () => {
+  const placement = { x_m: 0.4, y_m: -1.2, yaw_deg: 37, scale: 0.8 };
+  for (const p of [[0, 0, 0], [0.3, 0.5, -0.2], [-1.4, 1.08, 0.31]]) {
+    assert.ok(close(markerToPackage(packageToMarker(p, placement), placement), p, 1e-12));
+    assert.ok(close(markerToPackage(packageToMarker(p)), p, 1e-12));
+  }
+});
+
+test('BuildingDamage breaks what the judge breaks for every hit of the shared cases', () => {
+  let checked = 0;
+  for (const c of doc.cases) {
+    const judge = judgeFor(c);
+    const damage = new BuildingDamage(judge.target, { damage_mode: judge.config.damage_mode, break_count: judge.config.break_count });
+    for (const frame of c.frames) {
+      if (frame.action === 'restore') { judge.restore(); damage.restore(); }
+      const out = judge.update(frame.positions, frame.t_ms);
+      if (!out.event) continue;
+      const got = damage.hitAt(markerToPackage(out.event.point_m, judge.target.placement));
+      assert.ok(got, `${c.name} ${frame.t_ms}`);
+      assert.equal(got.fragment_id, out.event.fragment_id, `${c.name} ${frame.t_ms}`);
+      assert.deepEqual(got.broken_fragment_ids, out.event.broken_fragment_ids, `${c.name} ${frame.t_ms}`);
+      assert.deepEqual(got.fallen_fragment_ids, out.event.fallen_fragment_ids, `${c.name} ${frame.t_ms}`);
+      assert.equal(got.remaining_fragments, out.remaining_fragments, `${c.name} ${frame.t_ms}`);
+      assert.equal(got.destroyed, out.destroyed);
+      assert.equal(got.points, 1);
+      checked++;
+    }
+  }
+  assert.ok(checked >= 8, `${checked}`);
+});
+
+test('BuildingDamage on the wall: nodes to release, broken spots are air, far points miss', () => {
+  const damage = new BuildingDamage(buildModelTarget(doc.wall_package));
+  const front = markerToPackage([0.92, -0.1, 0.7]);  // the first punch of the wall cases, on M2's front face
+  assert.equal(damage.hitAt(markerToPackage([0.92, -0.6, 0.7])), null);  // 50 cm in front of the wall
+  assert.equal(damage.remaining, 10);
+  const got = damage.hitAt(front);
+  assert.deepEqual(got.broken_nodes, ['M2', 'M3', 'T2']);
+  assert.deepEqual(got.fallen_nodes, ['H']);
+  assert.equal(got.remaining_fragments, 6);
+  assert.equal(damage.hitAt(front), null);  // the same spot is a hole now: no block, no point
+  assert.equal(damage.hits, 1);
+  damage.restore();
+  assert.equal(damage.remaining, 10);
+  assert.deepEqual(damage.hitAt(front).broken_nodes, ['M2', 'M3', 'T2']);
+  assert.throws(() => new BuildingDamage(damage.target, { damage_mode: 'some' }), /invalid_damage_mode/);
+  assert.throws(() => new BuildingDamage(damage.target, { break_count: 0 }), /invalid_break_count/);
+});
+
+test('BuildingDamage on IT1: a facade point breaks 3 scene nodes and repeated hits bring it down', () => {
+  const target = buildModelTarget(it1Json);
+  const hit = firstEntry(target, [0, -0.8, 0.5], [0, -0.1, 0.5]);
+  const damage = new BuildingDamage(target);
+  const got = damage.hitAt(markerToPackage(hit.point));
+  assert.equal(got.fragment_id, hit.fragment_id);
+  assert.equal(got.broken_nodes.length, 3);
+  assert.ok(got.broken_nodes.every((n) => /^SM_IT1V3_Fragment_\d{3}$/.test(n)));
+  assert.equal(got.remaining_fragments, 96 - 3 - got.fallen_fragment_ids.length);
+  // Keep hitting whatever block is left first in the package, at its centre, until nothing is left.
+  let hits = 1;
+  while (!damage.destroyed && hits < 200) {
+    const i = target.fragments.findIndex((_, k) => !damage.broken.has(k));
+    assert.ok(damage.hitAt(markerToPackage(target.fragments[i].centroid)));
+    hits++;
+  }
+  assert.ok(damage.destroyed && hits > 10 && hits < 40, `${hits}`);
 });

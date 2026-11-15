@@ -63,6 +63,15 @@ export function packageToMarker(p, placement = DEFAULT_PLACEMENT) {
   return [c * r[0] - s * r[1] + x_m, s * r[0] + c * r[1] + y_m, r[2]];
 }
 
+// Marker (z-up) point -> package (y-up) point: the inverse of packageToMarker.
+export function markerToPackage(p, placement = DEFAULT_PLACEMENT) {
+  const { x_m, y_m, yaw_deg, scale } = { ...DEFAULT_PLACEMENT, ...placement };
+  const a = (yaw_deg * Math.PI) / 180, c = Math.cos(a), s = Math.sin(a);
+  const x = p[0] - x_m, y = p[1] - y_m;
+  const r = [(c * x + s * y) / scale, (-s * x + c * y) / scale, p[2] / scale];
+  return [r[0], r[2], -r[1]];
+}
+
 // For a three.js scene in marker coordinates (z up): outer group gets position/rotationZ/scale,
 // the loaded y-up model inside it gets rotationX.
 export function placementToThree(placement = DEFAULT_PLACEMENT) {
@@ -167,7 +176,7 @@ export function buildModelTarget(colliders, placement = DEFAULT_PLACEMENT) {
     const planes = hullPlanes(pts);
     if (planes.length >= 4) {
       const centroid = [0, 1, 2].map((k) => pts.reduce((sum, q) => sum + q[k], 0) / pts.length);
-      fragments.push({ fragment_id: f.fragment_id ?? f.node, planes, ...bounds(pts), centroid });
+      fragments.push({ fragment_id: f.fragment_id ?? f.node, node: f.node ?? null, planes, ...bounds(pts), centroid });
       points.push(pts);
     }
   }
@@ -266,6 +275,87 @@ export function unsupported(target, broken) {
   return out;
 }
 
+// One hit on fragment index struck at marker point p. Adds what breaks to the broken Set and returns
+// { broken, fallen } as fragment indices. Shared by ModelStrikeJudge and BuildingDamage.
+export function applyDamage(target, broken, struck, p, damageMode = 'partial', breakCount = 3) {
+  if (damageMode === 'none') return { broken: [], fallen: [] };
+  if (damageMode === 'whole') {
+    const hit = [struck];
+    for (let i = 0; i < target.fragments.length; i++) if (i !== struck && !broken.has(i)) hit.push(i);
+    hit.forEach((i) => broken.add(i));
+    return { broken: hit, fallen: [] };
+  }
+  const hit = blocksToBreak(target, struck, p, broken, breakCount);
+  hit.forEach((i) => broken.add(i));
+  const fallen = unsupported(target, broken);
+  fallen.forEach((i) => broken.add(i));
+  return { broken: hit, fallen };
+}
+
+// For screens that already know where the drawn building was hit, such as the 2D game, which casts a ray
+// from the screen hit point onto the model (frontend/single/fracture-view.js impact()). Same damage rules
+// as ModelStrikeJudge, without trajectories: hitAt(point) breaks blocks there and remembers the damage.
+// Points are in the package frame (three.js y-up, the frame of colliders.json and of the fracture physics
+// for these packages), so a ray hit converted with runtime.frame.toLocal() goes in as it is.
+export const DAMAGE_CONFIG = Object.freeze({
+  damage_mode: 'partial',
+  break_count: 3,
+  // A drawn surface and its convex collider differ by a few mm; a point farther than this from every
+  // unbroken block is not on the building (package metres, scaled with the placement).
+  snap_m: 0.05,
+});
+
+export class BuildingDamage {
+  // target: buildModelTarget(colliders) of the package on screen (placement is undone for you).
+  constructor(target, config = {}) {
+    this.target = target;
+    this.config = { ...DAMAGE_CONFIG, ...config };
+    if (!DAMAGE_MODES.includes(this.config.damage_mode)) throw new Error('invalid_damage_mode');
+    if (!(Number.isInteger(this.config.break_count) && this.config.break_count >= 1)) throw new Error('invalid_break_count');
+    this.restore();
+  }
+
+  get remaining() { return this.target.fragments.length - this.broken.size; }
+  get destroyed() { return this.broken.size === this.target.fragments.length; }
+
+  // Building intact again for another round.
+  restore() { this.broken = new Set(); this.hits = 0; }
+
+  // Index of the unbroken block a package point lies on (or within snap_m of), or null. Several blocks
+  // meet at a shared face: same tie-break as blocksToBreak (closer centre, then package order).
+  struckAt(packagePoint) {
+    const p = point(packagePoint);
+    if (!p) return null;
+    const m = packageToMarker(p, this.target.placement), snap = this.config.snap_m * this.target.placement.scale;
+    let best = null;
+    this.target.fragments.forEach((f, i) => {
+      if (this.broken.has(i)) return;
+      const k = [round6(planeDistance(f, m)), round6(dist(f.centroid, m)), i];
+      if (k[0] > round6(snap)) return;
+      if (!best || k[0] < best[0] || (k[0] === best[0] && k[1] < best[1])) best = k;
+    });
+    return best ? best[2] : null;
+  }
+
+  // One accepted hit at a package point. null when the point is not on an unbroken block (nothing breaks,
+  // no point). Otherwise what broke: ids are colliders.json fragment_id, nodes are the scene node names
+  // (colliders.json node) to release; broken[0] is the struck block.
+  hitAt(packagePoint) {
+    const struck = this.struckAt(packagePoint);
+    if (struck === null) return null;
+    const t = this.target, m = packageToMarker(point(packagePoint), t.placement);
+    const { broken, fallen } = applyDamage(t, this.broken, struck, m, this.config.damage_mode, this.config.break_count);
+    this.hits += 1;
+    const ids = (list) => list.map((i) => t.fragments[i].fragment_id), nodes = (list) => list.map((i) => t.fragments[i].node);
+    return {
+      building_id: t.building_id, fragment_id: t.fragments[struck].fragment_id, points: 1,
+      broken_fragment_ids: ids(broken), fallen_fragment_ids: ids(fallen),
+      broken_nodes: nodes(broken), fallen_nodes: nodes(fallen),
+      remaining_fragments: this.remaining, destroyed: this.destroyed, damage_mode: this.config.damage_mode,
+    };
+  }
+}
+
 // One per tracked person and building. Call update() once per frame, in time order.
 export class ModelStrikeJudge {
   constructor(target, { config = {}, uuid = () => globalThis.crypto.randomUUID() } = {}) {
@@ -294,18 +384,8 @@ export class ModelStrikeJudge {
   // Apply one hit; returns { broken, fallen } fragment ids for the event.
   breakAt(struck, p) {
     const target = this.target, c = this.config, ids = (list) => list.map((i) => target.fragments[i].fragment_id);
-    if (c.damage_mode === 'none') return { broken: [], fallen: [] };
-    if (c.damage_mode === 'whole') {
-      const hit = [struck];
-      for (let i = 0; i < target.fragments.length; i++) if (i !== struck && !this.broken.has(i)) hit.push(i);
-      hit.forEach((i) => this.broken.add(i));
-      return { broken: ids(hit), fallen: [] };
-    }
-    const hit = blocksToBreak(target, struck, p, this.broken, c.break_count);
-    hit.forEach((i) => this.broken.add(i));
-    const fallen = unsupported(target, this.broken);
-    fallen.forEach((i) => this.broken.add(i));
-    return { broken: ids(hit), fallen: ids(fallen) };
+    const { broken, fallen } = applyDamage(target, this.broken, struck, p, c.damage_mode, c.break_count);
+    return { broken: ids(broken), fallen: ids(fallen) };
   }
 
   // positions: name -> [x, y, z] in the marker frame or null (wrists, ankles, optionally hips).
