@@ -24,3 +24,4 @@ docs/asset-validation/campus-v71/scope.json -text whitespace=blank-at-eol,blank-
 
 # Keep published package metadata identical to the verified local source bytes.
 web/public/assets/buildings/*-v71-*-fracture/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.pdf binary

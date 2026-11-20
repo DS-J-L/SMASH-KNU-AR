@@ -11,6 +11,13 @@ export const ID0_BITS = [
   [0, 0, 1, 1],
   [0, 0, 1, 0],
 ];
+// Wide stage (docs/WIDE_STAGE_TEST.md): C0/C1/C2 each calibrate on their own marker ID0/ID1/ID2.
+// Rows are the first two DICT_4X4_50 bytes of each id (OpenCV bytesList, rotation 0).
+export const MARKER_BITS = [
+  ID0_BITS,
+  [[0, 0, 0, 0], [1, 1, 1, 1], [1, 0, 0, 1], [1, 0, 1, 0]],
+  [[0, 0, 1, 1], [0, 0, 1, 1], [0, 0, 1, 0], [1, 1, 0, 1]],
+];
 
 // Homography from marker grid units (0..6 on both axes) to image pixels; corners clockwise from TL.
 function gridHomography(corners) {
@@ -75,15 +82,17 @@ export function binarize(cells) {
 const rotate = bits => bits[0].map((_, c) => bits.map(row => row[c]).reverse());   // 90° clockwise
 
 // corners: any clockwise-on-screen order (e.g. from orderMarkerCorners). Returns the same corners
-// re-ordered to the canonical TL, TR, BR, BL, or null when the pattern does not match id 0.
-export function orientMarkerCorners(gray, corners, maxErrors = 1) {
+// re-ordered to the canonical TL, TR, BR, BL, or null when the pattern does not match the marker id.
+export function orientMarkerCorners(gray, corners, maxErrors = 1, markerId = 0) {
+  const expected = MARKER_BITS[markerId];
+  if (!expected) return null;
   let best = null;
   for (let shift = 0; shift < 4; shift++) {
     const ordered = [0, 1, 2, 3].map(k => corners[(k + shift) % 4]);
     const cells = sampleCells(gray, ordered);
     const bits = cells && binarize(cells);
     if (!bits) continue;
-    const errors = bits.flat().reduce((s, v, i) => s + (v !== ID0_BITS[Math.floor(i / 4)][i % 4] ? 1 : 0), 0);
+    const errors = bits.flat().reduce((s, v, i) => s + (v !== expected[Math.floor(i / 4)][i % 4] ? 1 : 0), 0);
     if (!best || errors < best.errors) best = { corners: ordered, errors, shift };
   }
   return best && best.errors <= maxErrors ? best : null;
