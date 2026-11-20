@@ -5,12 +5,12 @@
 import { createPoseLandmarker } from '/camera/pose.js';
 import { showLoupe, hideLoupe, makeMovable, initOverlayToggle, resetPanelPosition } from '../mono3d/phone-ui.js?v=20261117-1';
 import { calibrateMarker, markerCalibrationMessage, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project } from '../mono3d/geometry.js?v=20261111-1';
-import { orientMarkerCorners, graySampler } from './aruco.js?v=20261109-6';
+import { orientMarkerCorners, graySampler } from './aruco.js?v=20261116-w1';
 import { createLink, geometryText } from './link.js?v=20261109-6';
 
 import {copyPersonMask,packFusedPersonDepth,PERSON_DEPTH_ENCODING} from '../mono3d/person-depth.js?v=20261116-2';
 // The phone page draws no building; the building is shown on the PC page only.
-import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261117-2';
+import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261118-s1';
 let markerScanner=null;
 const $ = id => document.getElementById(id);
 const view = $('view'), ctx = view.getContext('2d'), sheet = $('sheet');
@@ -461,7 +461,9 @@ window.__multi3dReady = true;
 
 
 markerScanner=createMarkerScanner(video,(frame,points)=>{corners=points;frozen=null;calib=null;frozenGray=graySampler(frame);const ok=calibrateFromTaps(frame.width,frame.height);frozenGray=null;
+  // Not good enough: forget these corners and keep scanning (the scanner retries until it works or the user leaves).
+  if(!ok){corners=[];calib=null;return ($('calibOut').textContent||'').split(/\r?\n/)[0].slice(0,80)||'품질 부족';}
   $('tapPrompt').hidden=true;$('cornerDone').hidden=false;setStep('corners');
-  $('autoMarkerStatus').textContent=ok?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;});
+  $('autoMarkerStatus').textContent=ok?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;},0,{button:$('autoMarker')});
 $('autoMarker').onclick=()=>{if(step==='place')markerScanner.start();};
 window.addEventListener('pagehide',()=>markerScanner.stop());
