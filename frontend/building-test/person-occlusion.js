@@ -3,8 +3,8 @@ const ENCODING='camera_z_mm_rg16_alpha_v1';
 
 export async function loadOcclusionTexture(packet){
   if(!packet||packet.encoding!==ENCODING||!Number.isInteger(packet.width)||!Number.isInteger(packet.height)
-    ||packet.width<1||packet.width>192||packet.height<1||packet.height>384
-    ||typeof packet.data!=='string'||packet.data.length>256000||!packet.data.startsWith('data:image/png;base64,'))return null;
+    ||packet.width<1||packet.width>384||packet.height<1||packet.height>384
+    ||typeof packet.data!=='string'||packet.data.length>400000||!packet.data.startsWith('data:image/png;base64,'))return null;
   try{
     const img=new Image();img.src=packet.data;await img.decode();
     if(img.naturalWidth!==packet.width||img.naturalHeight!==packet.height)return null;
@@ -30,8 +30,11 @@ export class PersonOcclusion{
     this.mesh=new THREE.Mesh(new THREE.PlaneGeometry(2,2),this.material);
     this.mesh.renderOrder=-1000;this.mesh.frustumCulled=false;this.mesh.visible=false;scene.add(this.mesh);
   }
+  // Swapping in the next outline keeps the current visibility; the draw loop decides it before each render.
   setFrame(texture,frameId){
+    const visible=this.mesh.visible;
     this.clear();this.texture=texture;this.frameId=texture?frameId:null;this.material.uniforms.personDepth.value=texture;
+    this.mesh.visible=visible&&!!texture;
   }
   clear(){this.mesh.visible=false;this.texture?.dispose();this.texture=null;this.frameId=null;this.material.uniforms.personDepth.value=null;}
   update(active){this.mesh.visible=Boolean(active&&this.texture);}
