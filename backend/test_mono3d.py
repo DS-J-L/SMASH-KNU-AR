@@ -81,10 +81,15 @@ def mono3d_router() -> APIRouter:
     relay = Mono3dRelay()
 
     @router.get('/api/test/building-scenes')
-    async def scenes(kind:str='zone'):
-        # zone: several-building stages (3 cameras); single: one building at a time (1 camera).
-        from .building_scenes import scene_list, single_scene_list
-        if kind not in ('zone','single'):raise HTTPException(status_code=400,detail='kind must be zone or single')
+    async def scenes(kind:str='zone',layout:str='duo',spacing:float=2.0):
+        # zone: several-building stages (3 cameras); single: one building at a time (1 camera);
+        # stage: wide/duo stage sets for that marker spacing (2026-11-20: one big building per set, see building_scenes).
+        from .building_scenes import DUO_PREFIX, WIDE_PREFIX, WIDE_SPACING_RANGE_M, scene_list, single_scene_list, stage_scene_list
+        if kind not in ('zone','single','stage'):raise HTTPException(status_code=400,detail='kind must be zone, single or stage')
+        if kind=='stage':
+            if layout not in ('wide','duo') or not WIDE_SPACING_RANGE_M[0]<=spacing<=WIDE_SPACING_RANGE_M[1]:
+                raise HTTPException(status_code=400,detail='layout must be wide or duo, spacing within range')
+            return stage_scene_list(DUO_PREFIX if layout=='duo' else WIDE_PREFIX,spacing)
         return single_scene_list() if kind=='single' else scene_list()
 
     @router.get('/api/test/building-scenes/{scene_id}')

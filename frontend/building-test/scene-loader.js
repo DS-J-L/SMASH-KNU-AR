@@ -25,7 +25,8 @@ export function assembleScene(spec,models){
   const nodes=new Map();
   spec.render.forEach((entry,index)=>{
     const source=models[index].scene;source.updateMatrixWorld(true);
-    const transform=new THREE.Matrix4().makeScale(entry.scale,entry.scale,entry.scale);transform.setPosition(...entry.offset);
+    const [sx,sy,sz]=Array.isArray(entry.scale)?entry.scale:[entry.scale,entry.scale,entry.scale];   // stages may squeeze the footprint per axis
+    const transform=new THREE.Matrix4().makeScale(sx,sy,sz);transform.setPosition(...entry.offset);
     for(const f of entry.fragments){
       const original=source.getObjectByName(f.source_node);if(!original)throw new Error('모델 파편 없음: '+f.source_node);
       const node=original.clone(true);node.name=f.node;
