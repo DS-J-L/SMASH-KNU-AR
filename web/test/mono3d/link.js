@@ -3,15 +3,16 @@
 // so a slow network never builds up lag (pose frames are replaced by the next ones anyway).
 const MAX_BUFFERED = 256 * 1024;
 
-export function createLink(role, onStatus = () => {}, onMessage = () => {}) {
+// The wide stage reuses this phone page with path '/ws/test/wide3d' and params {camera}.
+export function createLink(role, onStatus = () => {}, onMessage = () => {}, { path = '/ws/test/mono3d', params = {} } = {}) {
   let ws = null, enabled = false, retry = 500, timer = null;
   const state = { open: false, viewers: 0, phone: false, error: null };
   const emit = () => onStatus({ ...state, enabled });
 
   function url() {
-    const u = new URL('/ws/test/mono3d', location.href);
+    const u = new URL(path, location.href);
     u.protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-    u.search = `?role=${role}`;
+    u.search = '?' + new URLSearchParams({ role, ...params });
     const key = new URLSearchParams(location.search).get('key');   // cookie normally covers this
     if (key) u.searchParams.set('key', key);
     return u.href;
@@ -51,6 +52,14 @@ export function createLink(role, onStatus = () => {}, onMessage = () => {}) {
     send(message) {
       if (!ws || ws.readyState !== WebSocket.OPEN || ws.bufferedAmount > MAX_BUFFERED) return false;
       ws.send(JSON.stringify(message));
+      return true;
+    },
+    // Bytes still waiting in the socket (video senders skip a frame instead of queueing behind it).
+    get buffered() { return ws && ws.readyState === WebSocket.OPEN ? ws.bufferedAmount : 0; },
+    // Already-serialised message (the caller measured its size).
+    sendText(text, maxBuffered = MAX_BUFFERED) {
+      if (!ws || ws.readyState !== WebSocket.OPEN || ws.bufferedAmount > maxBuffered) return false;
+      ws.send(text);
       return true;
     },
   };

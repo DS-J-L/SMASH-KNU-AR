@@ -102,8 +102,8 @@ export function measureBody(K, pose, landmarks, world, options={}) {
   if (!anchor) return { ok: false, reason: 'feet_not_visible' };
   const head = headObservation(landmarks, world);
   if (!head) return { ok: false, reason: 'head_not_visible' };
-  const toward = sub(anchor.point_w, pose.C);
-  const n = normalize([toward[0], toward[1], 0]);           // vertical plane facing the camera
+  const n = facingNormal(pose, anchor.point_w);             // vertical plane facing the camera
+  if (!n) return { ok: false, reason: 'nose_ray_failed' };
   const noseW = intersectPlane(pixelRay(K, pose, ...pixel(K, head.lm)), anchor.point_w, n);
   if (!noseW) return { ok: false, reason: 'nose_ray_failed' };
   const realUp = noseW[2] - anchor.point_w[2];
@@ -116,8 +116,20 @@ export function measureBody(K, pose, landmarks, world, options={}) {
     stand_point_w: anchor.point_w };
 }
 
+// Horizontal normal of the vertical plane through `point` that faces the camera. A phone looking down from
+// (almost) straight above the point has no horizontal offset to it: use its viewing direction, then its image up.
+export function facingNormal(pose,point){
+  const flat=v=>{const n=Math.hypot(v[0],v[1]);return n>1e-3?[v[0]/n,v[1]/n,0]:null;};
+  const toCamera=[pose.C[0]-point[0],pose.C[1]-point[1],0];
+  if(Math.hypot(toCamera[0],toCamera[1])>.05)return flat(toCamera);
+  return flat(scale(transposeMul(pose.R,[0,0,1]),-1))??flat(transposeMul(pose.R,[0,-1,0]));
+}
+const HEAD_FROM_SHOULDER=1.22;  // nose height ≈ 1.22 × shoulder height above the ankles (0.92/0.82 − ankle), rough
+
 // Calibration only: both feet straddle the known marker origin. Do not pin the person there
 // during measurement: subsequent frame anchors remain free to move across the floor.
+// A phone tilted down over its marker may not see the head: the shoulders then set the body scale
+// (`scale_from: 'shoulder'`), and the head height is estimated from them.
 function measureMarkerBody(K,pose,landmarks,world){
   const ids=[LM.left_ankle,LM.right_ankle];
   if(!ids.every(i=>visible(landmarks[i],MIN_VISIBILITY)&&world[i]))return {ok:false,reason:'both_feet_required'};
@@ -127,26 +139,41 @@ function measureMarkerBody(K,pose,landmarks,world){
   if(Math.hypot(centre[0],centre[1])>MARKER_STAND_TOLERANCE_M)return {ok:false,reason:'stand_on_marker',stand_point_w:centre};
   const modelFeet=ids.map(i=>transposeMul(pose.R,vec(world[i])));
   if(Math.abs(modelFeet[0][2]-modelFeet[1][2])>SAME_FLOOR_M)return {ok:false,reason:'both_feet_on_floor'};
-  const normal=normalize([-pose.C[0],-pose.C[1],0]);
+  const normal=facingNormal(pose,[0,0,0]);
+  if(!normal)return {ok:false,reason:'nose_ray_failed'};
   const pixels=ids.map(i=>pixel(K,landmarks[i]));
   const anklePoint=intersectPlane(pixelRay(K,pose,...mid([...pixels[0],0],[...pixels[1],0]).slice(0,2)),[0,0,0],normal);
   if(!anklePoint||anklePoint[2]<.02||anklePoint[2]>.20)return {ok:false,reason:'stand_on_marker'};
-  const head=headObservation(landmarks,world);
-  if(!head)return {ok:false,reason:'head_not_visible'};
-  const nose=intersectPlane(pixelRay(K,pose,...pixel(K,head.lm)),[0,0,0],normal);
-  const mpFoot=mid(...ids.map(i=>vec(world[i])));
-  const mpUp=transposeMul(pose.R,sub(head.mp,mpFoot))[2];
-  if(!nose||!(mpUp>.5)||!(nose[2]-anklePoint[2]>.5))return {ok:false,reason:'not_upright'};
   const shoulders=[LM.left_shoulder,LM.right_shoulder],hips=[LM.left_hip,LM.right_hip];
   if(![...shoulders,...hips].every(i=>visible(landmarks[i])&&world[i]))return {ok:false,reason:'not_upright'};
   const torso=sub(mid(...shoulders.map(i=>vec(world[i]))),mid(...hips.map(i=>vec(world[i]))));
   const torsoWorld=transposeMul(pose.R,torso);
   if(torsoWorld[2]<=0||Math.hypot(torsoWorld[0],torsoWorld[1])>torsoWorld[2]*.35)return {ok:false,reason:'not_upright'};
   const ankleHeight=anklePoint[2];
+  const mpFoot=mid(...ids.map(i=>vec(world[i])));
+  const head=headObservation(landmarks,world);
+  let scaleM,noseHeight,mpUp,from='head';
+  if(head){
+    const nose=intersectPlane(pixelRay(K,pose,...pixel(K,head.lm)),[0,0,0],normal);
+    mpUp=transposeMul(pose.R,sub(head.mp,mpFoot))[2];
+    if(!nose||!(mpUp>.5)||!(nose[2]-anklePoint[2]>.5))return {ok:false,reason:'not_upright'};
+    scaleM=(nose[2]-ankleHeight)/mpUp;noseHeight=nose[2];
+  }else{
+    // Head out of frame (phone looking down): the shoulder centre on the same vertical plane sets the scale.
+    const sp=shoulders.map(i=>pixel(K,landmarks[i])),shoulder=intersectPlane(pixelRay(K,pose,(sp[0][0]+sp[1][0])/2,(sp[0][1]+sp[1][1])/2),[0,0,0],normal);
+    const mpShoulder=transposeMul(pose.R,sub(mid(...shoulders.map(i=>vec(world[i]))),mpFoot))[2];
+    if(!shoulder||!(mpShoulder>.4)||!(shoulder[2]-ankleHeight>.4))return {ok:false,reason:'not_upright'};
+    scaleM=(shoulder[2]-ankleHeight)/mpShoulder;from='shoulder';
+    // mp_up (head above the feet, model units) still feeds the user-height scale; the head's model point exists off-screen.
+    const nosePoint=world[LM.nose];
+    mpUp=nosePoint?transposeMul(pose.R,sub(vec(nosePoint),mpFoot))[2]:mpShoulder*HEAD_FROM_SHOULDER;
+    if(!(mpUp>.5))mpUp=mpShoulder*HEAD_FROM_SHOULDER;
+    noseHeight=ankleHeight+scaleM*mpUp;
+  }
   const correctedFeet=ids.map(i=>intersectZ(pixelRay(K,pose,...pixel(K,landmarks[i])),ankleHeight));
   if(correctedFeet.some(p=>!p))return {ok:false,reason:'feet_not_visible'};
   const bias=mid(...correctedFeet);bias[2]=0;
-  return {ok:true,reference:'marker_center_v1',scale:(nose[2]-ankleHeight)/mpUp,nose_height_m:nose[2],
+  return {ok:true,reference:'marker_center_v1',scale:scaleM,scale_from:from,nose_height_m:noseHeight,
     mp_up:mpUp,torso_mp:norm(torso),ankle_height_m:ankleHeight,floor_bias_m:bias,stand_point_w:centre};
 }
 
@@ -168,6 +195,8 @@ export function finalizeBody(samples, heightM = null, options={}) {
   return {
     scale: s,
     scale_source: scaleFromHeight ? 'user_height' : 'image',
+    // 'shoulder' when most samples had the head out of frame (a phone looking down over its marker).
+    scale_from: ok.filter(x => x.scale_from === 'shoulder').length * 2 > ok.length ? 'shoulder' : 'head',
     image_scale: imageScale,
     estimated_height_m: median(ok.map(x => x.nose_height_m)) / NOSE_TO_HEIGHT,
     torso_m: median(ok.map(x => x.torso_mp)) * s,

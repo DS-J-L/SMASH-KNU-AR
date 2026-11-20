@@ -205,3 +205,34 @@ test('marker depth reference rejects invisible feet instead of guessing torso de
   const restored=estimate(K,standingPose,moved.landmarks,moved.world,body);assert.ok(restored.valid);
   assert.deepEqual(restored.anchor_feet,['right']);close(restored.joints.right_wrist.position_m,moved.P[LM.right_wrist],.005);
 });
+
+// 2026-11-20: a judging phone set high and tilted down over its marker (head out of frame) still calibrates.
+test('tilted-down phone: head out of frame, shoulders set the body scale and depth stays right', () => {
+  const pose = lookAt([0, -0.75, 1.9], [0, 0.25, 0.3]);
+  const markerPx = markerCorners(0.27).map(([X, Y]) => project(K, pose, [X, Y, 0]));
+  const cal = calibrateMarker(W, H, markerPx, 0.27, FOV);
+  assert.ok(cal.ok, cal.reason); assert.ok(cal.tilt_down_deg > 45, String(cal.tilt_down_deg));
+  const standing = person({ at: [0, 0], pose, mpScale: 0.9 });
+  const nose = standing.landmarks[LM.nose];
+  assert.ok(nose.x < 0 || nose.x > 1 || nose.y < 0 || nose.y > 1, 'precondition: nose out of frame');
+  const sample = measureBody(cal.K, cal.pose, standing.landmarks, standing.world, { markerCentered: true });
+  assert.ok(sample.ok, sample.reason); assert.equal(sample.scale_from, 'shoulder');
+  assert.ok(Math.abs(sample.scale - 1 / 0.9) < 0.04, String(sample.scale));
+  const body = finalizeBody(Array(10).fill(sample), null, { markerCentered: true });
+  assert.ok(body); assert.equal(body.scale_from, 'shoulder');
+  assert.ok(Math.abs(body.estimated_height_m - 1.6 / 0.92) < 0.06, String(body.estimated_height_m));
+  const moved = person({ at: [0.2, 0.4], pose, mpScale: 0.9 });
+  const r = estimate(cal.K, cal.pose, moved.landmarks, moved.world, body);
+  assert.ok(r.valid, r.reason);
+  close(r.joints.right_wrist.position_m, moved.P[LM.right_wrist], 0.06);
+  close(r.joints.left_ankle.position_m, moved.P[LM.left_ankle], 0.04);
+});
+
+test('phone straight above the marker: no NaN plane, the calibration either works or says why', () => {
+  const C = [0, 0, 2.6], R = [1, 0, 0, 0, -1, 0, 0, 0, -1];
+  const pose = { R, t: scale(matVec(R, C), -1), C };
+  const standing = person({ at: [0, 0], pose });
+  const sample = measureBody(K, pose, standing.landmarks, standing.world, { markerCentered: true });
+  if (sample.ok) assert.ok(Number.isFinite(sample.scale) && Number.isFinite(sample.nose_height_m));
+  else assert.equal(typeof sample.reason, 'string');
+});
