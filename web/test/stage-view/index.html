@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>2대 무대 화면 폰</title>
+  <link rel="icon" href="data:,">
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;height:100%;background:#000;color:#e5e7eb;font:14px/1.4 system-ui,sans-serif}
+    #view{position:fixed;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+    #panel{position:fixed;top:8px;right:8px;width:min(330px,calc(100% - 16px));max-height:calc(100% - 16px);overflow:auto;
+      background:rgba(15,23,42,.88);border:1px solid #334155;border-radius:8px;padding:10px}
+    #panel.folded .body{display:none}
+    h1{font-size:15px;margin:0 0 6px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+    p{margin:6px 0}.hint{color:#94a3b8;font-size:12px}.warn{color:#fbbf24}.ok{color:#4ade80}.bad{color:#f87171}
+    label{display:flex;justify-content:space-between;gap:8px;margin:4px 0}input[type=number]{width:80px}
+    button{font:inherit;padding:8px 10px;margin:4px 4px 0 0;border-radius:6px;border:1px solid #475569;background:#1e293b;color:#e5e7eb}
+    button.primary{background:#2563eb;border-color:#2563eb}button:disabled{opacity:.45}
+    #fold{padding:2px 8px;margin:0}
+    .perf{color:#e2e8f0;font-size:12px;font-variant-numeric:tabular-nums;margin:2px 0 4px}
+  </style>
+</head>
+<body>
+  <canvas id="view" width="1280" height="720" aria-label="화면 폰 카메라"></canvas>
+  <section id="panel">
+    <h1><span>2대 무대 · 화면 폰(V)</span><button id="fold" aria-label="패널 접기">–</button></h1>
+    <p id="perfStatus" class="perf">전송 대기(보정·서버 연결 후 시작)</p>
+    <div class="body">
+      <p class="hint">판정은 하지 않습니다. 반대편에서 <b>가로로</b> 두 마커(ID0·ID1)가 한 화면에 모두 보이게 고정하세요. 이 영상이 PC 메인 화면이 됩니다.</p>
+      <label>폰 렌즈 높이(m) <input id="cameraHeight" type="number" value="1.6" step="0.01" min="0.3" max="3" inputmode="decimal"></label>
+      <label>마커 한 변(cm) <input id="markerCm" type="number" value="27" step="0.1" min="5" max="60" inputmode="decimal"></label>
+      <label><span><input id="autoFov" type="checkbox" checked> 높이로 화각 계산</span><span>화각 <input id="fov" type="number" value="75" step="0.1" min="30" max="130" inputmode="decimal">°</span></label>
+      <button id="start" class="primary">카메라 시작</button><button id="scan" disabled>두 마커 인식</button>
+      <p id="scanStatus">카메라를 시작하세요.</p>
+      <p id="calibStatus" class="hint"></p>
+      <p id="layoutStatus" class="hint"></p>
+      <label><span><input id="personMask" type="checkbox" checked> 실제 사람 윤곽으로 건물 가림</span>
+        <select id="model" aria-label="사람 인식 모델"><option value="lite" selected>lite</option><option value="full">full</option></select></label>
+      <p id="personStatus" class="hint">사람 윤곽 대기</p>
+      <label>PC로 영상 보내는 방식 <select id="transport"><option value="rtc" selected>WebRTC 직접(같은 와이파이)</option><option value="jpeg">JPEG 서버 중계</option></select></label>
+      <p class="hint">WebRTC는 폰 → PC로 바로 보내고(서버는 연결 신호만 중계), 사람 윤곽은 PC가 받은 영상에서 계산합니다. 연결이 안 되면 자동으로 JPEG로 보냅니다. 아래 장/초·가로·윤곽 설정은 JPEG 방식에만 씁니다.</p>
+      <label>PC로 보내는 영상(장/초) <select id="videoFps"><option>8</option><option>12</option><option selected>15</option><option>20</option><option>30</option></select></label>
+      <label>PC로 보내는 영상 가로(px) <select id="jpegWidth"><option>480</option><option>640</option><option selected>720</option><option>960</option></select></label>
+      <label>사람 윤곽(장/초) <select id="maskFps"><option>4</option><option selected>8</option><option>12</option><option>15</option></select></label>
+      <p class="hint">윤곽을 영상보다 드물게 보내면 폰이 덜 무겁지만, 빠르게 움직일 때 가림이 조금 늦게 따라옵니다. 실제 장/초가 고른 값보다 낮거나 `전송 밀림`이 보이면 와이파이가 못 버티는 것이니 영상 가로·장/초를 낮추세요(밀린 장면은 쌓지 않고 건너뜀).</p>
+      <p id="linkStatus" class="hint">서버 연결 대기</p>
+      <p class="hint">PC에서 <a href="/test/building/?mode=duo" style="color:#93c5fd">2대 무대 화면</a>을 여세요. 사람이 들어오기 전에, 빈 무대에서 인식하세요. 사람이 들어오면 노란 점(관절)이 보이고, PC에서 실제 사람이 건물 앞에 나타납니다.</p>
+    </div>
+  </section>
+  <script type="module" src="./app.js?v=20261120-r1"></script>
+</body>
+</html>
