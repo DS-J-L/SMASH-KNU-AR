@@ -8,13 +8,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-16 03:30 KST |
-| 현재 작업 | 3대 몸보정 생략·1대 가림/타격 유효성 분리·발목/윤곽 진단 구현·합성 검증 완료. 실폰 재확인 대기 |
+| 마지막 갱신 | 2026-11-20 KST |
+| 현재 작업 | 2대 무대에 WebRTC 영상 직접 전송(화면 폰 → PC, 윤곽은 PC 계산, JPEG 대체)·화면 폰 실측 간격 자동 적용(2m 고정 해제)·판정 폰 내려다보기 몸 보정(머리 잘리면 어깨 기준) 구현·합성 검증 완료(11-20). 실폰 확인 대기 |
 | 구현 완료 범위 | 기존 수신·시계/3D 기초, 두 방·영상·QR·video_check, 전신22+머리1점, phone_2d 타격/점수/중지·재연결 — 로컬 자동검증 범위 |
 | 방 구성 | room-1 C0/C1/C2 모두 시작 필수, room-2 C0만. PC는 방별 전용 페이지 |
 | 최근 기능 검증 | Python230·관련Node42·건물/3대 브라우저13 통과. 잡음 오차 감소·왜곡/광선 기하·입력 지연/시계·중앙13관절·기존1대/가림/물리 회귀 |
 | 남은 일 | 실폰/실제 모델·소리 청취·성능/장시간·QR실스캔, 실측 보정/3D 정합·3D 타격·영구 로그 |
-| 다음 작업 | 폰 1m 고정으로 /test/mono3d/ 실측(마커 보정→몸 보정→알려진 위치 손목 대조) → 방2 새로고침 후 퇴장/시작 안내 실폰 재확인 → 방1 세 대/실측 보정. 기존 버전 방2 실폰 결과는 PR #9 참조 |
+| 다음 작업 | 같은 와이파이에서 PC를 내부 IP로 열고 화면 폰 `/test/stage-view/`(WebRTC 기본) 연결 → PC `V 영상:` 줄·화면 폰 성능 줄 기록 → 판정 폰을 높이 두고 내려다보며 마커·몸 보정 → A3 마커 임의 간격 배치 후 화면 폰 인식으로 간격 자동 적용 확인 |
 | 판정 제한 | video_check는 영상 확인, phone_2d는 C0 화면2D 타격이며 실제 깊이/3D 완료가 아님. 합성 통과와 실폰/공통Phase는 구분 |
 
 ## 2. 개인 Phase 현황
@@ -953,3 +953,228 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 - 테스트/검증: test_fragment_test에 겹친 손의 빠른/느린/떨림, 서 있는 상태의 느린/빠른 손, 쿨다운 시험 추가. Python 255/255, Node 188/188, 브라우저 24/24(D3D11). 합성 입력 범위.
 - 한계/미검증: 기준값(1.5m/s·8cm·300ms)은 가정이며 실폰 1대의 단안 깊이 떨림에서 마커 위에 서 있기만 해도 오검출되거나 반대로 안 부서지는지는 미검증이다. 팔을 크게 흔들어 건물과 겹친 채 걷는 경우 우연히 깨질 수 있다. 3대 삼각측량 지연/노이즈와의 상호작용 미검증. 공통 Phase/실기기 체크는 변경하지 않음.
 - 다음/재개: 서버 재시작→PC 새로고침→건물과 겹쳐 선 채 손/발을 빠르게 움직여 깨지는지, 가만히 서 있을 때 안 깨지는지 확인. 필요하면 속도/이동량/쿨다운 조정. Git 변경 명령 없음.
+
+### 2026-11-16 12:36 KST — 3대 넓은 무대(가로 마커 ID0/1/2·폰별 근사 3D) 시작
+
+- 담당 / 기록자: 정경호 P3/P4·PM / Claude
+- 작업 구분: 개인 개발(시험 경로 추가)
+- Phase: P3/P4 시험 도구 — 공통 Phase 통과와 별개
+- 상태: 진행 중
+- 읽은 계획·기록: PM_plan.md(2026-11-16 후속·P3/P4), 정경호_plan.md, 본 기록 마지막 '겹침 빠른 동작' 종료 기록, docs/MULTI3D_TEST.md·MONO3D_TEST.md·BUILDING_FRAGMENT_TEST.md, backend/test_multi3d.py·test_mono3d.py·fragment_test.py·building_scenes.py, frontend/building-test/main.js, web/test/mono3d/app.js·multi3d/aruco.js·auto-marker.js
+- 사용자 결정(2026-11-16): 1대 깊이 판정이 잘 되므로 3대를 사람 주위 60~120° 배치 대신 일정 간격으로 가로로 나란히 두고 무대를 넓힌다. 폰마다 1대 방식 깊이, 마커 ID0/ID1/ID2 3장(같은 방향·같은 간격 일렬), PC는 세 영상을 가로로 이어 표시, 건물은 넓은 구역 하나를 무대 폭에 펼침.
+- 연결할 계획 항목: PM_plan P3 '실제 다중 시점 3D 손목'은 변경하지 않음(기존 삼각측량 경로 유지). 새 경로는 별도 시험 모드.
+- 이번 목표·완료 기준: /test/mono3d/?stage=wide&camera=Cn 폰 3대 → /ws/test/wide3d 서버가 마커 간격 오프셋으로 한 좌표계에 합치고 사람이 있는 구간 폰을 판정 폰으로 선택 → /test/building/?mode=wide PC 화면에 세 영상·넓은 구역·파편 판정. 마커 ID별 자동 인식, ID1/ID2 인쇄물. 합성 자동 시험 통과.
+- 검증 계획: Python(서버 허브·장면), Node(ID별 마커 인식), 브라우저(PC 넓은 무대 합성 폰 3대), 기존 회귀. 실폰은 미검증으로 남김.
+
+진행·종료 결과 (2026-11-16 13:40 KST — 3대 가로 넓은 무대):
+
+- 바꾼 파일·결과물: backend/test_wide3d.py(신규 `/ws/test/wide3d` 허브: 마커 번호 검사·무대 좌표 이동 t'=t−R·o·C'=C+o·관절 x 이동·가까운 마커 폰 판정과 0.15m 전환 여유·전환 시 궤적 초기화·첫 몸 보정 허리 고정/그 폰 재보정만 교체·간격/구역 명령·광역 기본 반경0.6m), backend/building_scenes.py(`wide:<구역>:<간격mm>:<높이mm>` 장면: 소구역을 x축 일렬, 3개면 세 마커 위·겹치면 간격 확장·무대 폭(간격×3) 초과 시 전체 축소), backend/server.py(라우터 등록), web/test/multi3d/aruco.js·auto-marker.js(ID0/1/2 비트·번호별 자동 인식), web/test/mono3d/app.js·index.html·link.js(`?stage=wide&camera=Cn`: 번호 선택·자기 마커만 인식·수동 찍기도 무늬로 방향·별도 저장 키·wide 링크), frontend/building-test/main.js·index.html·style.css(`?mode=wide`: 세 영상 가로 한 줄·마커 3개·간격 입력/무대 상태·판정 폰 관절만 표시·자동 다음 구역), web/test/building 재빌드, assets/markers/floor-direction-id1·id2(svg/png/json/A4 pdf), tools/make_floor_markers.py, .gitattributes(`*.pdf binary`), 시험 tests/test_wide3d.py·tests/browser/building-wide.spec.js·tests/test_auto_marker.mjs 추가, playwright.building-test.config.js 등록, docs/WIDE_STAGE_TEST.md 신규·BUILDING_FRAGMENT_TEST/MULTI3D_TEST/README 연결, PM_plan·정경호_plan 계획 메모.
+- 어디까지 완료: 시작 기록의 완료 기준(합성) 충족. 기존 3대 삼각측량·1대 경로 코드는 바꾸지 않았다(공용 마커 인식/링크는 기본값 ID0·mono 경로 유지).
+- 검증 방법·조건·실제 결과: `PYTHONUTF8=1 python -m pytest tests` 262/262 통과(UTF-8 모드 없이 실행하면 test_model_strike 6개가 cp949 읽기 오류로 실패, 변경 전과 동일 환경 문제). `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 189/189 통과(플래그 없으면 기존 카메라/방 시험 16개가 vm.SyntheticModule로 실패, 변경 전 동일). 브라우저 building-test 설정 전체 26개 중 22 통과·4 실패: building-occlusion mono·building-zones 'default' 2개는 변경 전 기준(stash)에서도 동일 실패, building-fragments 크기/몸기준 2개는 전체 실행에서만 실패하고 단독 재실행 통과(간헐). 신규 building-wide 2개 통과, 스크린샷 test-results/building-fragments/wide-stage.png로 세 영상 한 줄·가운데 건물만 파괴 확인. ID1/ID2 PNG는 OpenCV가 각 번호로 인식, PDF는 렌더 확인.
+- 입력·장비 범위: synthetic(합성 폰 WebSocket·합성 마커 영상). 실폰/실제 MediaPipe/실제 인쇄 마커 미사용.
+- 남은 일·미검증: 실폰 3대, 실제 마커 간격·방향 오차와 구간 전환 튐, 폰별 근사 깊이 차이, 경계에서 한 번의 휘두름 누락 가능성, 세 폰 부하, 폰마다 몸 보정 3회 운영. A4 PDF는 검은 사각형이 용지 폭 거의 전체라 프린터 여백에서 잘릴 수 있어 인쇄 후 200mm 실측 필요(ID0과 동일 조건). 위 기존 브라우저 실패 2개는 이번 범위 밖으로 원인 미조사.
+- 막힌 점·도움·해제 조건: 없음. 실폰 시험에 폰 3대와 인쇄 마커 3장 필요.
+- 다음 한 단계·재개 위치: 서버 재시작 → 마커 3장 인쇄·간격 실측 → PC `/test/building/?mode=wide`에 간격 입력 → 폰 C0/C1/C2 보정 → 구간을 옮겨 다니며 타격. 경계 튐이 크면 SWITCH_MARGIN_M(0.15m)·STALE_MS 조정.
+- 인계 대상·넘긴 자료: 이동수·김태이 참고용 docs/WIDE_STAGE_TEST.md(발송 기록 없음).
+- 갱신한 계획 체크리스트·현황: 체크박스 변경 없음(실폰 미검증·공통 Phase 기준 아님). PM_plan·정경호_plan 상단 메모, 진행현황 정경호 행, PM_progress 계획 변경 기록.
+- 종료·중단 시각: 2026-11-16 13:40 KST. Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam).
+
+진행·종료 결과 (2026-11-16 15:10 KST — 넓은 무대 가려진 관절 대체):
+
+- 계기: 사용자 질문 "한 카메라에서 손이 안 보이고 다른 카메라에서 보이면 둘 다 계산되나" → 기존은 판정 폰 하나만 써서 판정 폰에 가려진 손은 판정하지 않았다. 사용자 요청으로 보완.
+- 바꾼 파일: backend/test_wide3d.py(판정 폰에 없는 손목·발목을 150ms 이내·사람 기준점 0.4m 이내인 옆 폰에서 대체, 관절별 출처 기록·출처 변경 시 그 관절 궤적만 끊기, 판정 폰 변경 시 출처 초기화, `wide3d_frame.borrowed`·`stage.borrowed`), frontend/building-test/main.js(상태 줄 `오른손←C2` 표시·스냅샷 borrowed), web/test/building 재빌드, tests/test_wide3d.py 3개 추가, tests/browser/building-wide.spec.js 대체 표시 확인 추가, docs/WIDE_STAGE_TEST.md.
+- 검증(합성): `PYTHONUTF8=1 .venv/Scripts/python.exe -m pytest tests -q` 265/265 통과. 출처 전환 시험은 궤적 끊기를 일시 제거하면 실패(오타격)함을 확인한 뒤 원복. 브라우저 building-wide 2/2 통과. Node·나머지 브라우저 시험은 이번 변경 범위 밖이라 재실행하지 않음.
+- 입력 범위: synthetic. 실폰 미검증.
+- 남은 일: 실폰에서 MediaPipe가 가린 손에도 가시도를 높게 주는 경우(대체 안 되고 추측값 사용), 옆 폰 깊이 차이로 인한 대체 위치 오차, 출처 전환 순간 휘두름 누락. 이전 기록의 실폰 확인 순서 그대로.
+- 계획 체크박스 변경 없음. Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam).
+
+### 2026-11-17 KST — 판정 폰 2대 + 반대편 화면 전용 폰(두 마커 동시 인식) 시작
+
+- 담당 / 기록자: 정경호 P3/P4 / Claude
+- 작업 구분: 개인 개발(시험 경로 추가)
+- Phase: P3/P4 시험 도구 — 공통 Phase 통과와 별개
+- 상태: 진행 중
+- 읽은 계획·기록: 본 기록 2026-11-16 넓은 무대 시작·종료·관절 대체 기록, docs/WIDE_STAGE_TEST.md, backend/test_wide3d.py·building_scenes.py, frontend/building-test/main.js·tracked-person.js·person-occlusion.js, web/test/mono3d/app.js·geometry.js, web/test/multi3d/auto-marker.js·aruco.js, tools/make_floor_markers.py
+- 사용자 결정(2026-11-17): 판정 폰 2대를 높이 0.66m, 2m 간격으로 일직선에 두고 A3 마커 2장(ID0·ID1)으로 지금처럼 폰별 근사 3D를 계산한다. 반대편 1.6m 높이에 화면 전용 폰을 가로로 두어 두 마커를 동시에 인식하고, 그 영상에 정합한 화면을 메인 화면으로 쓴다.
+- 이번 목표·완료 기준: `/ws/test/duo3d`(판정 폰 C0·C1, 마커 ±간격/2, 화면 폰 V는 판정 안 함), 화면 폰 페이지(두 마커 원본 해상도 인식·꼭짓점 8개 자세·높이로 화각), PC `/test/building/?mode=duo`(V 영상 크게·건물 합성·관절 기반 사람 가림, 판정 폰 미리보기), A3 마커 ID0/ID1(270mm), 합성 자동 시험 통과.
+- 검증 계획: Python(허브·장면), Node(두 마커 자세 계산), 브라우저(합성 폰), 실폰 미검증으로 남김.
+
+진행·종료 결과 (2026-11-17 KST — 판정 폰 2대 + 화면 폰 2대 무대):
+
+- 바꾼 파일·결과물:
+  - backend/test_wide3d.py: 허브를 배치(`wide`·`duo`)로 일반화하고 `/ws/test/duo3d` 추가. duo는 판정 폰 C0·C1(마커 x=∓간격/2)과 화면 폰 V(`wide3d_view_calib` 수락·간격 불일치 거부·판정 메시지 거부·영상 중계), 간격 변경 시 V 자세 숨김과 폰에 새 마커 위치 전달. backend/server.py 등록.
+  - backend/building_scenes.py: `duo:<구역>:<간격>:<높이>` 장면, 일렬 배치를 2구간(무대 폭 간격×2)으로 일반화.
+  - web/test/mono3d/geometry.js: 최소제곱 호모그래피·여러 점 평면 자세·높이로 화각·마커 여러 장 평면점. web/test/multi3d/auto-marker.js: StableMarker 허용 간격 인자.
+  - 신규 web/test/stage-view/(index.html·app.js·view-calib.js): 화면 폰 페이지(가로, 원본 해상도로 ID0·ID1 동시 인식, 8점 자세, 저장·간격 변경 자동 재계산, 960px JPEG 약 8fps, 무대 축 확인 선).
+  - web/test/mono3d/app.js·index.html: `?stage=duo&camera=C0|C1`(C2 숨김, 0.66m·27cm 기본값, duo 경로·링크).
+  - frontend/building-test/main.js·index.html·style.css·tracked-person.js: `?mode=duo`(V 메인 화면 전체 폭·C0/C1 작게, 마커 ±간격/2·A3 크기, V 상태, 판정 관절로 만든 깊이 전용 사람 막대 가림), web/test/building 재빌드.
+  - tools/make_floor_markers.py와 assets/markers/duo-marker-id0-a3.pdf·duo-marker-id1-a3.pdf(270mm). 처음에 기존 floor-direction-id0-a3.pdf(200mm 화살표 도안)를 덮어썼다가 되돌리고 새 이름으로 분리했다. 재생성으로 id1/id2 A4 PDF 줄바꿈만 LF로 바뀜(내용 동일).
+  - 시험 tests/test_duo3d.py(4)·tests/test_duo_view.mjs(3)·tests/browser/building-duo.spec.js(2), playwright 설정 등록. 문서 docs/DUO_STAGE_TEST.md 신규, README·WIDE_STAGE_TEST 연결, PM_plan·정경호_plan 메모.
+- 검증(합성): `PYTHONUTF8=1 .venv/Scripts/python.exe -m pytest tests -q` 269/269 통과. `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 192/192 통과. 브라우저 building-test 설정 전체 28개 중 27 통과·1 실패(building-occlusion multi; 단독 재실행 시 multi 통과·mono 실패로 순서에 따라 바뀌는 기존 불안정, 이전 기록의 변경 전 실패와 같은 파일). 신규 duo 2개와 wide 2개 통과. A3 PDF는 직접 래스터화해 OpenCV가 ID0·ID1, 한 변 269.9mm로 인식. 화면 폰 자세 합성 시험: 반대편 1.6m 가로 영상에서 두 마커 모서리 2px 이내, 높이로 구한 화각 오차 1.5° 이내, 카메라 위치는 시선 방향 약 0.1m 어긋나지만 무대 점 화면 오차는 1920px 기준 최대 약 9px.
+- 입력 범위: synthetic(합성 폰 WebSocket·합성 렌더 영상). 실폰·실제 인쇄 마커 미사용.
+- 남은 일·미검증: 실폰 4대 구성, 3m 거리 A3 실제 인식률·조명, 실제 정합 정확도, 화면 폰 영상 지연·끊김(필요시 WebRTC), 판정과 영상 사이 시간 차, 관절 막대 가림 어긋남, 사람이 바라보는 방향에 따른 판정 차이. 건물 크기 규칙(최고 높이 기준)은 사용자 미결정으로 기존 허리×0.7 유지.
+- 막힌 점: 없음. 실폰 시험에 폰 3대·A3 마커 2장·삼각대 높이 0.66m/1.6m 필요.
+- 계획 체크박스 변경 없음(실폰 미검증). Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam).
+
+진행·종료 결과 (2026-11-17 KST — 메인 페이지 2대 무대 입장 버튼):
+
+- 요청: 메인 페이지 제일 밑에 폰·PC 경로로 들어가는 버튼 두 개를 따로 만든다.
+- 바꾼 파일: web/monitor/index.html(맨 아래 '2대 무대 입장' 구역: 폰으로 입장 `/test/duo/`, PC로 입장 `/test/building/?mode=duo`), 신규 web/test/duo/index.html(폰 역할 선택: 판정 폰 C0·C1, 화면 폰 V, 주소의 key를 이어 붙임), tests/browser/building-duo.spec.js 1개 추가, docs/DUO_STAGE_TEST.md.
+- 검증(합성 브라우저): building-duo 3/3 통과, rooms 설정 3/3 통과, tests/test_auth.py·test_server.py 7/7 통과. 실폰 미검증.
+- Git 커밋/push 안 함.
+
+작업 시작 (2026-11-18 KST — 2대 무대 화면 폰 실제 사람 윤곽 가림):
+
+- 요청: V 영상에서 사람 모습이 실제로 보이게, 건물과 가림까지.
+- 읽은 계획·Phase: 정경호_plan P3/P4(근사 3D·화면 통합), docs/DUO_STAGE_TEST.md. 개인 P4 진행 중, 공통 Phase 변경 없음.
+- 완료 기준: 화면 폰이 자기 영상에서 사람 윤곽과 근사 깊이를 만들어 JPEG와 함께 보내고, PC V 화면에서 사람 뒤 건물만 가려짐. 윤곽이 없으면 기존 관절 막대로 대체. 합성 자동 시험 통과.
+
+진행·종료 결과 (2026-11-18 KST — 화면 폰 실제 사람 윤곽 가림):
+
+- 바꾼 파일·결과물:
+  - 신규 web/test/stage-view/view-person.js: 윤곽 깊이 계산. 1순위는 판정 폰의 무대 좌표 관절(250ms 이내)을 V의 2D 관절 위치에 놓아 깊이만 사용, V가 등 쪽을 보므로 투영 어긋남으로 좌우 이름을 맞춤. 2순위는 V 자신의 발목을 바닥(8cm)과 만나게 해 V를 향한 세로 평면 하나로 근사.
+  - web/test/stage-view/app.js·index.html: MediaPipe 자세+분할(lite 기본, GPU→CPU)을 PC로 보내는 960px JPEG와 같은 프레임에서 실행, 384×216 윤곽(분할이 몸통과 어긋나면 골격 근사) + 깊이 PNG를 `mono3d_jpeg.occlusion`으로 전송, 켜기/끄기·모델 선택·상태 줄·노란 관절 점 표시.
+  - backend/test_wide3d.py: 판정 폰(owner)의 유효 프레임 관절을 화면 폰에 `duo_person`(무대 좌표, 최신 값만)으로 전달.
+  - frontend/building-test/main.js·person-occlusion.js: V는 자체 윤곽 깊이가 신선하면(500ms) 판정 프레임과 무관하게 가림 적용하고 관절 막대를 숨김, 윤곽이 없을 때만 관절 막대. 가림 텍스처 상한 192→384 폭. web/test/mono3d/person-depth.js copyPersonMask 최대 크기 인자(기본값 동일). web/test/building 재빌드.
+  - 시험: 신규 tests/test_duo_view_person.mjs(3), tests/test_duo3d.py(+1), tests/browser/building-duo.spec.js(+1, 화면 폰 페이지 확인 추가). 문서 docs/DUO_STAGE_TEST.md 계산 방식·연결 규격·검증 갱신.
+- 검증(합성): Python 270/270, Node 195/195 통과. 브라우저 building-test 설정 30개 중 29 통과·1 실패(building-zones `default: 3 cameras start on a zone…`). 이 실패는 내 main.js 변경을 되돌리고 재빌드해도 똑같이 실패해 기존 문제로 확인(시작 직후 sceneId가 null이라 `not.toBe('it1')`가 바로 통과하고 IT1 준비 완료 시점에 건물 수 1을 읽는 시험 순서 문제로 보임, 미수정). 이전에 불안정하던 building-occlusion 2개는 이번 실행에서 통과. 신규 duo 4개 모두 통과.
+- 입력 범위: synthetic(합성 관절·합성 윤곽 PNG·합성 WebSocket). 실제 화면 폰 MediaPipe 분할·실폰 미사용.
+- 남은 일·미검증: 실제 3m 거리·등 쪽 시점에서 분할 품질, 폰 부하(자세+분할 초당 약 8회), 실제 깊이 어긋남(판정 폰 근사 오차·시간 차·바닥 평면 근사), 384×216 윤곽 경계가 PC 큰 화면에서 보이는 정도. building-zones default 시험 순서 문제 수정은 별도.
+- 다음 행동: 실폰에서 화면 폰 `/test/stage-view/`의 상태 줄이 `실제 사람 가림 · 판정 폰 관절 깊이`로 바뀌는지, PC `?mode=duo`에서 사람이 건물 앞/뒤로 지나갈 때 가림이 맞는지 확인.
+- 계획 체크박스 변경 없음(실폰 미검증). Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam).
+
+진행·종료 결과 (2026-11-18 KST — 화면 폰 영상/윤곽 전송 주기 분리):
+
+- 요청: 영상은 자주, 윤곽은 덜 자주 보내기.
+- 바꾼 파일: web/test/stage-view/app.js·index.html(영상 기본 15장/초·윤곽 8장/초 선택, 사람 인식은 윤곽 장에서만, 영상만 장은 `occlusion_keep`, 실제 장/초·처리 ms·Mbps 표시, 설정 저장), web/test/mono3d/link.js(`sendText` 추가, 기존 `send` 동작 동일), backend/test_wide3d.py(V의 마지막 유효 윤곽을 기억해 영상만 장에 다시 붙임, 사람 없는 윤곽 장이면 끊음, V 끊김 시 지움), frontend/building-test/main.js(같은 윤곽이면 텍스처 재사용·윤곽 나이 유지), person-occlusion.js(텍스처 교체 때 보임 상태 유지 — 교체 직후 다음 화면 갱신 전까지 꺼짐으로 보이던 상태 정리), web/test/building 재빌드, docs/DUO_STAGE_TEST.md.
+- 검증(합성): Python 271/271, Node 195/195, 브라우저 30개 중 29 통과·1 실패(기존 building-zones default, 앞 기록과 동일). 중간 실행에서 building-wide 1회 실패 후 재실행 2회 통과(순서·서버 상태에 따른 불안정 가능성, 원인 미확인).
+- 미검증: 실제 폰이 15장/초 영상 + 8장/초 윤곽을 버티는지(패널의 실제 장/초로 확인), 실제 와이파이 전송량.
+- 다음 행동: 폰 1대로 `/test/stage-view/`를 열고 마커 인식 후 패널의 실제 장/초·처리 ms를 기록, 버티지 못하면 영상 12·윤곽 4~8로 낮춤.
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-18 KST — 마커 자동 인식 성공할 때까지 반복):
+
+- 요청: 마커 인식 버튼을 누르면 한 번만이 아니라 잡힐 때까지 반복.
+- 이전 동작: 마커가 보일 때까지는 이미 반복했지만, 모서리를 찾은 뒤 보정 품질이 부족하면 멈추고 다시 눌러야 했음(판정 폰·3대 폰·화면 폰 모두).
+- 바꾼 파일: web/test/multi3d/auto-marker.js(createMarkerScanner: onFound가 실패 이유 문자열을 돌려주면 계속 찾음, 상태 줄에 `보정 실패 n회, 계속 찾는 중 (이유)`, `retries`·`running` 공개), web/test/mono3d/app.js·web/test/multi3d/phone.js(보정 실패 시 모서리 버리고 이유 반환), web/test/stage-view/app.js(두 마커를 찾아도 자세 계산 실패면 계속 찾음), 스크립트 캐시 버전 갱신(mono3d·multi3d·stage-view), tests/browser/auto-marker.spec.js(+1: 보정 2번 실패 후 3번째 성공에서 멈춤). 단계 이동·페이지 이탈 시 스캐너 정지는 기존과 같음.
+- 검증(합성): Python 271/271, Node 195/195. 브라우저 31개 중 29 통과·2 실패 — building-zones default(기존 실패), building-fragments `actual IT1 on the marker`(단독·auto-marker와 함께 재실행 모두 통과, 전체 실행 부하에 따른 불안정으로 판단). 중간 실행에서 building-duo 첫 시험 1회 실패 후 재실행 2회 통과(합성 휘두름 시점 불안정 가능성).
+- 미검증: 실폰에서 반복 인식 동작·배터리/발열. 화면 폰 재시도는 자동 시험 없음(코드 확인만).
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-18 KST — 무대 건물 가로 폭 0.7~0.8m·무대 세트 배치):
+
+- 요청: 건물을 0.7~0.8m 정도로 잡고, 구역별이 아니라 무대에 맞게 다 들어오게 배치. 중간에 사용자가 "높이 말고 가로 폭"으로 정정 → 가로 폭 기준으로 구현.
+- 결정: 넓은 무대·2대 무대에만 적용한다(1대·3대 삼각측량 모드는 그대로). 각 건물 폭은 캠퍼스 실제 폭에 비례해 0.7~0.8m로 하고, 높이·깊이는 원래 비율을 따른다. 61개 건물을 캠퍼스 순서대로, 무대 폭 안에 축소 없이 들어가는 만큼 묶는다(마지막 세트가 1개면 앞과 나눔). 몸 보정은 크기에 쓰지 않는다.
+- 바꾼 파일: backend/building_scenes.py(stage_widths·stage_size·stage_sets·stage_set·stage_scene_list, scene_spec 건물별 배율, 장면 id `wide|duo:<세트>:<간격>:<호환용 높이>`), backend/test_mono3d.py(`kind=stage&layout&spacing` 목록 API), backend/test_wide3d.py(기본 세트, 세트 검증, 간격 변경 시 같은 첫 건물 세트로 이어 가기, 높이가 몸 보정과 무관, 사용하지 않는 허리 상수 제거), frontend/building-test/main.js(무대 세트 목록·간격 변경 시 다시 받기, 폭/높이 범위 표시, 몸 보정 문구, 스냅샷에 건물 위치), web/test/building 재빌드. 시험: tests/test_wide3d.py·test_duo3d.py·building-wide/duo.spec.js를 세트 기준과 실제 건물 위치 타격으로 갱신(기존 x=0·±1 타격은 이제 건물 사이 빈 공간). 문서: docs/WIDE_STAGE_TEST.md·DUO_STAGE_TEST.md.
+- 결과 수치: 간격 2m(2대)와 1.5m(넓은)에서 모두 16세트(4개×14, 3, 2), 건물 x≈−1.5·−0.5·0.5·1.5. 폭을 맞추면 높이 중간값 약 0.24m, 최저 약 0.06m(gym2), 최고 약 1.13m. 낮고 긴 건물은 손 타격이 어렵다.
+- 검증(합성): Python 271/271, Node 195/195, 브라우저 31/31 통과(이번 실행에서는 building-zones default도 통과). 2대 무대 시뮬레이션 화면(test-results/duo-simulation/shots-v2)에서 4개 일렬 배치를 확인했다.
+- 미검증·결정 필요: 실폰에서 낮은 건물 타격성. 높이 하한(예: 0.3m)이나 폭 대신 높이로 맞추는 혼합 규칙을 쓸지는 사용자 결정. 깊이가 큰 건물(최대 약 1.65m)이 판정 폰·화면 폰 쪽으로 튀어나오는 정도도 확인해야 한다.
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-18 KST — 무대 건물 높이 하한 0.5m·아주 낮은 건물 제외, 사용자 A안):
+
+- 요청: 아주 낮은 건물은 빼고 높이 하한 0.5m. 방식은 두 안(A: 비율 유지로 키우고 1.5m 넘게 넓어지면 제외 / B: 폭 유지·세로만 늘림)을 계산해 제시했고, 사용자가 A안을 선택했다.
+- 바꾼 파일: backend/building_scenes.py(STAGE_MIN_HEIGHT_M=0.5·STAGE_MAX_WIDTH_M=1.5, stage_factor에 하한, stage_buildings로 제외), tests/test_wide3d.py·test_duo3d.py(30개·하한·제외·세트 정렬), tests/browser/building-wide.spec.js(세트 수를 API와 비교, 손 타격 확인 중 파편 충격 파괴 끔), tests/browser/building-duo.spec.js(건물 위치를 일반 조건으로 확인, 휘두름 최대 3회), web/test/building 재빌드, docs/WIDE_STAGE_TEST.md·DUO_STAGE_TEST.md.
+- 결과 수치: 61개 중 30개 사용, 모든 건물 0.5m 이상(폭 0.7~1.5m, 높이 0.5~1.13m). 2m 간격 12세트, 1.5m 간격 11세트, 세트당 2~3개.
+- 검증(합성): Python 271/271, Node 195/195. 브라우저 31개 중 30 통과·1 실패(building-fragments `mono depth offset`). 이 시험은 단독 3회 중 2회 통과했고, 실패 때마다 걸린 단계가 달라 80ms 합성 프레임 타이밍 불안정으로 판단했다. 1대 판정 경로는 이번에 바꾸지 않았다(서버 변경은 목록 API뿐). building-duo·wide는 수정 후 3회 연속 6/6 통과.
+- 미검증: 실폰에서 0.5m 이상 건물의 타격감·화면 정합, 깊이가 큰 건물(하한 적용 후 최대 약 1.9m)이 판정 폰·화면 폰 쪽으로 튀어나오는 정도.
+- Git 커밋/push 안 함.
+
+
+진행·종료 결과 (2026-11-18 KST — 2대 무대 코드 검토 후 바로 고칠 2건 수정):
+
+- 요청: 2대 무대(판정 폰 2대 + 화면 폰 1대) 코드 평가 → "바로 고칠 것" 2건 수정, 마커 회전 처리 방안 제시.
+- 계획 위치: 정경호_plan.md 2026-11-17 후속(2대 무대) 항목. 완료 기준(합성 검증) 범위 안의 수정이며 체크박스 변경 없음.
+- 수정 1(판정 관절 어긋남 한도): web/test/stage-view/view-person.js — 좌우를 맞춘 뒤 판정 관절의 V 투영 평균 어긋남이 V 몸통 길이 픽셀의 50%(최소 12px)를 넘으면 판정 관절 깊이를 쓰지 않고 바닥 발목 깊이로 내려감(`judge_rejected` 이유 반환). 예전에는 어긋남이 아무리 커도 사용했다. `torsoLengthPx`, `JUDGE_FIT_TORSO_RATIO`, `JUDGE_FIT_MIN_PX` 추가.
+- 수정 2(간격 거부 재계산): web/test/stage-view/app.js — `spacing_mismatch`를 받으면 서버 간격으로 마커 위치(±간격/2)를 새로 만들어 계산(예전에는 간격 값만 바꾸고 옛 마커 위치로 계산해, 메시지 순서가 바뀌면 틀린 자세가 새 간격 이름으로 통과할 수 있었음). `mono3d_status`는 마커 위치가 달라져도 재계산. 상태 줄에 `어긋남 n/한도px`·거부 이유 표시. 캐시 버전 view-person v2, app r2.
+- 문서: docs/DUO_STAGE_TEST.md(어긋남 한도, 거부 후 재계산).
+- 검증(합성): `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 196/196(신규 1: 5cm 어긋남은 판정 깊이 사용, 60cm는 바닥 깊이로 내려가고 이유 표시, 발목도 없으면 깊이 없음). `PYTHONUTF8=1 .venv/Scripts/python.exe -m pytest tests -q` 271/271. `npx playwright test -c playwright.building-test.config.js tests/browser/building-duo.spec.js` 4/4. 전체 브라우저 시험은 이번 수정 후 미실행.
+- 미검증: 수정 2의 메시지 순서 경합은 자동 시험 없음(코드 확인만, 화면 폰 페이지에 꼭짓점을 넣는 시험 수단이 없음). 50% 한도가 실폰 판정 폰 근사 오차에 맞는지(너무 엄격하면 판정 깊이를 거의 못 씀) — 화면 폰 상태 줄의 `어긋남 n/한도px`를 실폰에서 기록해 조정.
+- 결정 대기(마커 회전): 판정 폰은 자기 마커 기준 좌표를 간격만큼만 옮기므로 마커가 돌아가거나 어긋나면 판정 좌표가 조용히 틀어진다. 제안: ① 바닥 기준선·간격 막대로 배치(즉시), ② 화면 폰이 마커1의 상대 위치·회전(dx,dy,yaw)을 자유 변수로 두고 8점을 함께 풀어 실측 배치를 표시·경고(2° 또는 3cm 초과), ③ 서버가 판정 폰별 2D 강체 변환(회전+이동)으로 옮기도록 확장. 사용자 결정 후 진행.
+- 다음 행동: 실폰에서 `어긋남 n/한도px` 기록, 마커 회전 방안 결정.
+- Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam, 2대 무대 작업 전체가 아직 미커밋).
+
+진행·종료 결과 (2026-11-18 KST — 2대 무대 화면 폰 마커 배치 실측·PC 실측 간격 적용):
+
+- 요청: 앞 기록의 마커 회전 제안 중 2단계(화면 폰으로 실측·경고, 실측 간격 적용) 진행.
+- 계획 위치: 정경호_plan.md 2026-11-17 후속(2대 무대). 체크박스 변경 없음(실폰 미검증).
+- 바꾼 파일: web/test/stage-view/view-calib.js(`measureMarkerLayout`: 화면 폰 자세 6 + ID1 위치·회전 3을 8점으로 함께 풀고, 높이로 화각 계산; 두 마커 중심선 기준 회전·실측 간격·경고(3cm/2°)·`wide3d_view_layout` 메시지; 강체 보정 결과마다 `layout` 포함, 실패해도 포함), web/test/stage-view/app.js·index.html(실측 줄 표시, 서버 연결 때마다 실측값 전송, 캐시 버전 l1/r3), backend/test_wide3d.py(`parse_view_layout`, V만 `wide3d_view_layout` 허용, `wide3d_status.view.layout`, V 끊기면 지움), frontend/building-test/main.js·index.html(PC 실측 줄·1.5m 앞 옆 어긋남·경고 문구, `화면 폰 실측 간격 적용` 버튼, 간격 칸 1mm 단위), web/test/building 재빌드, docs/DUO_STAGE_TEST.md.
+- 확인한 사실(합성): 기존 8점 강체 검사는 ID1이 5cm 멀고 3cm 앞·3° 돌아간 배치도 통과시킨다(1280×720, 1920×1080 모두). 실측 정확도는 모서리 잡음 ±0.5px에서 간격 ±1cm·회전 ±0.5~0.8°, ±1px에서 간격 ±2cm·회전 ±1.3° 이내. 한 번 계산 약 30ms.
+- 결정: 회전은 표시·경고만 하고 판정 좌표를 자동으로 돌리지 않는다(실폰 실측 오차 확인 전). 실측 간격은 PC 버튼으로만 적용한다(자동 적용 안 함).
+- 검증(합성): `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 198/198(신규 2). `PYTHONUTF8=1 .venv/Scripts/python.exe -m pytest tests -q` 272/272(신규 1). `npx playwright test -c playwright.building-test.config.js` 32개 중 31 통과·1 실패(building-zones default, 기존에 기록된 순서 의존 실패; 단독 재실행 4/4 통과). 신규 building-duo 실측 시험 포함 duo 5/5·wide 2/2 통과.
+- 미검증: 실폰 실측 정확도(실제 모서리 잡음·렌즈 왜곡·3m 거리), 화면 폰 패널의 실측 줄(카메라 없이 꼭짓점을 넣을 시험 수단 없음, 코드 확인만), 1px 잡음에서 2° 근처 경고 깜빡임.
+- 다음 행동: 실제 A3 2장을 일부러 3° 돌려 놓고 화면 폰 실측값이 맞는지 기록 → 오차가 1° 안쪽이면 3단계(서버가 판정 폰별 회전+이동 적용) 결정, 크면 여러 프레임 평균 후 재시험.
+- Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam, 2대 무대 작업 전체 미커밋).
+
+진행·종료 결과 (2026-11-18 04:25 KST — 마커 꼭짓점 소수점 정밀화·자동 인식 중 버튼 숨김):
+
+- 요청: 가운데 찍기 대신 제안한 정밀화 3가지(원본 해상도 재인식, 변 직선 맞춤, 잘라낸 영역 밝기 기준)를 판정 폰·화면 폰에 적용하고, 자동으로 찾는 동안 버튼을 숨김.
+- 계획 위치: 정경호_plan.md 2026-11-17 후속(2대 무대). 체크박스 변경 없음(실폰 미검증).
+- 바꾼 파일: web/test/multi3d/auto-marker.js(`refineMarker`·`detectMarkerGray`·`toGray`, 스캐너가 720px 축소본 위치를 원본 해상도 잘라낸 영역에서 정밀화, `{button}` 옵션으로 검색 중 숨김), web/test/stage-view/app.js(원본 해상도 정밀화, 두 마커 인식 중 `#scan` 숨김), web/test/mono3d/app.js·web/test/multi3d/phone.js(`#autoMarker` 숨김 연결), 각 index.html·import 버전(`-s1`), tests/test_auto_marker.mjs(+3), tests/test_duo_view.mjs(+1, render 초과표본 옵션), tests/browser/auto-marker.spec.js(버튼·꼭짓점 정확도 검사 추가), tests/browser/building-duo.spec.js(+1), docs/DUO_STAGE_TEST.md.
+- 확인한 사실(합성): 픽셀 중심 기준(인덱스 i = 좌표 i+0.5)을 맞추지 않으면 0.7px 일정 오차가 남았고 수정했다. 반대편 화면 폰 1280×720에서 꼭짓점 1.7px → 0.1px, 간격 +27mm → −0.8mm. 흐림 1회 2.5px → 0.26px, 간격 +78mm → +5mm, 회전 −1.7° → −0.1°. 흐림 2회는 기존 1차 인식이 실패(별도 과제).
+- 검증(합성): `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 202/202. `PYTHONUTF8=1 .venv/Scripts/python.exe -m pytest tests -q` 272/272. `npx playwright test -c playwright.building-test.config.js` 33개 중 32 통과·1 실패(building-fragments `mono depth offset`, 단독 3회 중 1회 실패·실패 단계가 매번 달라 80ms 합성 프레임 타이밍 문제로 판단, 마커 코드와 무관한 PC 건물 페이지 시험).
+- 미검증: 실제 폰 영상에서 정밀화 효과(렌즈 왜곡·압축·초점), 실폰 화면 폰 실측 간격·회전 개선 폭, 흐린 영상에서 1차 인식 실패.
+- 다음 행동: 실폰에서 같은 배치로 정밀화 전후 실측 간격·회전 비교 기록(이전 버전과 비교하려면 실측 줄 값 기록), 이후 회전 자동 보정 결정.
+- Git 커밋/push 안 함(로컬 브랜치 feat/wide-stage-3cam, 2대 무대 작업 전체 미커밋).
+
+진행·종료 결과 (2026-11-20 KST — 화면 폰 영상 지연: 밀린 장면 건너뛰기·영상 해상도 선택):
+
+- 요청: PC 화면에서 가림 실루엣은 빠르게 움직이는데 영상이 너무 느림.
+- 원인 판단(코드 확인, 실폰 측정 아님): 서버(`connections.send_video`)는 카메라별 최신 장면만 남기므로 쌓이지 않는다. 화면 폰은 소켓 버퍼 256KB까지 장면을 계속 넣었고(960px JPEG 한 장 약 60~120KB → 2~4장이 폰 안에 대기), 와이파이가 느리면 영상이 그만큼 늦게 도착했다. 판정 폰 관절(작은 메시지)로 그리는 관절 막대 가림·사람 3D는 이 대기를 겪지 않아 영상보다 앞서 보인다. V 윤곽 가림은 같은 JPEG에 실려 영상과 같이 움직인다.
+- 바꾼 파일: web/test/mono3d/link.js(`buffered` 공개, `sendText(text,maxBuffered)` 한도 인자 — 기본 동작 동일), web/test/stage-view/app.js(이전 장면이 폰을 떠나기 전(버퍼 16KB 초과)이면 인코딩·사람 인식 없이 건너뜀, 영상 가로 선택 적용, 성능 줄에 한 장 KB·`전송 밀림 n회/초` 표시, 설정 저장), web/test/stage-view/index.html(영상 가로 480/640/720/960, 기본 720 — 이전 고정 960), 캐시 버전 갱신(link b1, app b1).
+- 검증(합성): `node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs` 202/202. `npx playwright test -c playwright.building-test.config.js tests/browser/building-duo.spec.js` 6/6. 실제 영상 전송 경로는 자동 시험에 카메라가 없어 미검증(코드 확인만). Python·전체 브라우저 시험은 이번에 미실행.
+- 미검증: 실폰에서 지연 감소 폭, 720px 화질이 충분한지. 지연이 남으면 다음 후보: JPEG 인코딩·사람 인식을 rAF 밖으로(toBlob/바이너리 전송) 옮기기, PC 관절 막대를 영상 지연만큼 늦춰 맞추기.
+- 다음 행동: 실폰 화면 폰 패널의 `실제 영상 장/초 · 한 장 KB · 전송 밀림` 기록, 밀림이 보이면 640/480이나 12장/초로 낮춰 비교.
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-20 KST — 화면 폰 성능 줄 항상 표시, 같은 와이파이 영상 전송 검토):
+
+- 요청: 패널 성능 줄을 보이게, 영상 전송을 같은 와이파이 안에서 하면 더 빠를 것.
+- 바꾼 파일: web/test/stage-view/index.html(`#perfStatus`를 접히는 본문 밖 제목 아래로 이동, 패널을 접어도 보임).
+- 확인한 사실: 서버는 PC에서 `0.0.0.0:8443`(start_server.local.ps1)으로 돌고 문서도 `https://<PC 주소>:8443` 기준이다. 폰이 PC 내부 IP로 접속하면 이미 같은 와이파이 경로이고, 외부 주소로 접속하면 인터넷을 돌아올 수 있다(사용자 확인 필요).
+- 검토안(미구현): WebRTC로 화면 폰 → PC 영상을 직접 전송(서버 WS는 연결 신호만), 사람 윤곽은 PC가 받은 영상에서 직접 계산해 영상·윤곽 일치를 유지.
+- 검증(합성): building-duo 6/6.
+- Git 커밋/push 안 함.
+
+
+진행·종료 결과 (2026-11-20 KST — 2대 무대 WebRTC 영상·마커 간격 자동·판정 폰 내려다보기):
+
+- 요청: WebRTC 방법을 2대 무대에 추가, 마커 간격을 2m로 고정하지 않기, 판정 폰이 정면이 아니라 기울여 위에서 내려다봐도 동작.
+- 계획 위치: 정경호_plan.md 2026-11-17 후속(2대 무대). 실폰 미검증이라 체크박스 변경 없음.
+- 원인 확인(합성): 판정 폰 마커 보정은 원래 일반 자세를 풀어 높이 0.66~1.8m·아래로 15~89°에서 모두 성공(코드 변경 불필요). 막히는 곳은 몸 보정 `measureMarkerBody`였다 — 머리·두 발목이 모두 화면에 보여야 했고(내려다보면 머리가 잘림), 폰이 마커 바로 위면 기준 평면 법선이 0벡터(NaN).
+- 바꾼 파일:
+  - WebRTC: web/test/stage-view/rtc.js(신규, PC offer·V answer, 신호 순서 보장, H.264 우선, 최대 1280px·3Mbps·30장/초, 8초 안에 안 되면 재시도), web/test/stage-view/pc-outline.js(신규, PC가 받은 영상 장에서 MediaPipe lite+분할 → view-person.js 깊이), web/test/stage-view/app.js·index.html(전송 방식 선택 기본 WebRTC, 모든 PC가 WebRTC면 JPEG·폰 사람 인식 중지, 성능 줄에 WebRTC 장/초·해상도·Mbps·화질 낮춤 이유), frontend/building-test/main.js·index.html(V 영상 WebRTC 수신·장마다 화면 그리기+윤곽 계산, WebRTC 동안 V JPEG 무시, `V 영상:` 줄, 스냅샷 rtc), backend/test_wide3d.py(`rtc_hello`·`rtc_signal` 중계·`rtc_signal_failed`·PC 떠나면 bye).
+  - 간격: backend/test_wide3d.py(`apply_spacing` 공통화, `duo_auto_spacing`, 실측 간격이 5mm 이상 다르고 0.5~3m면 자동 적용, 상태에 `auto_spacing`), PC `화면 폰 실측 간격 자동 적용` 체크(기본 켬)·안내 문구.
+  - 내려다보기: web/test/mono3d/mono3d.js(`facingNormal` — 바로 위면 시선/화면 위쪽 방향 사용, 머리가 화면 밖이면 어깨 높이로 배율·`scale_from:'shoulder'`), app.js·index.html(결과 문구·안내 "발끝부터 어깨까지, 내려다봐도 됨"), 캐시 버전 갱신.
+  - 시험: tests/test_duo3d.py(+2), tests/test_mono3d.mjs(+2), tests/browser/building-duo-rtc.spec.js(신규, 가짜 카메라), building-duo.spec.js 실측 간격 시험을 자동 끔→수동 적용→자동 켬 순서로 갱신, playwright 설정에 등록. 문서 docs/DUO_STAGE_TEST.md. web/test/building 재빌드.
+- 검증(합성/가짜 카메라): Python 274/274, Node 204/204. 브라우저 전체 34개 중 30 통과·4 실패(Python 시험과 동시 실행). 실패 중 building-duo 실측 간격 시험은 자동 적용 때문에 깨진 것이라 시험을 고친 뒤 통과. 나머지 building-duo 윤곽 유지·building-fragments 2개·building-zones default는 재실행에서 통과(duo 윤곽 단독 3/3, duo+rtc 순서대로 7/7, fragments+zones 13/13). 기존에도 기록된 타이밍 불안정 시험들이다.
+- 미검증: 실제 폰 → PC WebRTC(실제 와이파이·mDNS·공유기 단말 격리), 실제 지연 감소 폭, PC 계산 윤곽의 실제 사람 품질·처리 ms(자동 시험 영상에 사람·마커 없음), 내려다보는 판정 폰의 실제 MediaPipe 깊이, 실측 간격 자동 적용의 실폰 정확도.
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-20 KST — 무대 세트 하나에 큰 건물 하나, 사용자 결정):
+
+- 요청: 타격감을 위해 무대 하나에 건물 하나, 크게. 깊이 1.5m까지 허용, 비율은 어느 정도 바꿔도 되니 가로·세로(바닥 면)를 조금씩 줄여 무대에 다 들어가게.
+- 결정한 규칙: 높이 1.0~1.2m(캠퍼스 높이 순), 바닥 면 가로 2.0m × 깊이 1.5m 안. 넘는 축만 최대 절반까지 눌러 비율 변경, 그래도 넘으면 전체 축소. 결과 높이 0.6m 미만 5개 제외 → 61개 중 56개·56세트. 넓은 무대·2대 무대 공통(같은 세트 규칙을 쓰므로). 무대 폭이 건물보다 좁으면 전체 축소(fit_scale).
+- 바꾼 파일: backend/building_scenes.py(`stage_axes` 축별 배율, `stage_factor`가 [x,y,z] 반환, 한 세트 한 건물, 파편 꼭짓점·위치·부피·화면 배율 축별 적용, 무대 정보 `height_band_m`·`max_footprint_m`), frontend/building-test/scene-loader.js(배열 배율), main.js(세트 목록 `가로 …m · 높이 …m`), web/test/building 재빌드. 모델 182개 파일·6213 노드에 회전·배율이 없음을 확인(축별 배율로 비틀림 없음).
+- 시험: tests/test_wide3d.py 무대 세트 시험 교체(축별 한도·누름 한도·56개·충돌체 크기가 무대 크기와 일치·바닥에 붙음·좁은 무대 축소), tests/test_duo3d.py(세트당 1개·가운데), building-duo/wide.spec.js 기대값, building-zones.spec.js 경합 2곳 수정(`sceneId`가 null일 때도 "it1 아님"으로 통과하던 대기 → 실제 구역 id·ready까지 대기, 새 서버 첫 페이지 대기 10초 → 60초). 문서 docs/DUO_STAGE_TEST.md·WIDE_STAGE_TEST.md.
+- 검증(합성): Node 204/204, Python 274/274, 브라우저 전체 34개 중 33 통과·1 실패(building-zones default — 위 경합, 수정 후 building-zones 2회 반복 8/8). 2대 무대·넓은 무대 브라우저 8/8.
+- 미검증: 실폰에서 큰 건물의 타격감·화면 정합, 깊이 1.5m 건물이 판정 폰·화면 폰 쪽으로 0.75m씩 나오는 공간 여유, 눌린 건물 모양이 어색한지.
+- Git 커밋/push 안 함.
+
+진행·종료 결과 (2026-11-20 KST — 무대 기본 옵션 변경, 사용자 요청):
+
+- 요청: 기본값을 자동 다음 건물 켬, 건물 전체 날리기 끔, 남은 건물과 충돌 끔, 지지 상실 붕괴 끔.
+- 범위: 넓은 무대·2대 무대 PC 화면(1대·3대 삼각측량은 그대로).
+- 바꾼 파일: backend/test_wide3d.py(무대 모델을 처음 만들 때 blast_enabled·collapse False, 다음 건물로 넘어가도 이전 값 유지), frontend/building-test/main.js(무대에서 autoNext 체크·물리 building 끔), web/test/building 재빌드, docs/DUO_STAGE_TEST.md·WIDE_STAGE_TEST.md. 시험: building-duo.spec.js에 기본값 확인 추가(판정 시험 자체는 자동 다음 건물 끄고 진행), building-wide.spec.js도 판정 확인 전에 자동 다음 건물 끔.
+- 검증(합성): Node 204/204, Python 274/274, 브라우저 전체 34/34.
+- 미검증: 실폰에서 새 기본값의 타격감.
+- Git 커밋/push 안 함.
+
+
+진행·종료 결과 (2026-11-21 KST — 미커밋 변경 로컬 커밋):
+
+- 정정: 위 "2026-11-18 04:25 KST — 마커 꼭짓점 소수점 정밀화" 기록의 시각은 잘못 적혔다. 해당 파일(auto-marker.js 등) 수정 시각은 2026-11-18 13:14~13:15 KST다.
+- 요청: 미커밋 변경을 기능별로 로컬 커밋(파일은 나누지 않고 그 파일을 마지막으로 바꾼 기능의 커밋에 넣음), Claude 작업자 표시 없음, push 안 함.
+- 올리기 전 수정: backend/test_mono3d.py 옛 규칙 주석, PM_plan.md·정경호_plan.md 11-20 계획 메모, PM_progress.md 기록.
+- 커밋: 로컬 브랜치 feat/wide-stage-3cam에 기능별 11개(시간순). 중간 커밋은 단독 실행되지 않을 수 있고(예: server.py가 마지막 커밋의 test_wide3d.py를 불러옴), 시험은 최종 상태 기준(Node 204·Python 274·브라우저 34, 합성).
+- 다음 행동: 사용자 확인 후 push·Draft PR(대상: PR #21 브랜치 또는 main 결정 필요).
