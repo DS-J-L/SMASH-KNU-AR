@@ -7,22 +7,27 @@ const Y=new THREE.Vector3(0,1,0);
 const position=j=>{const p=j?.p;return Array.isArray(p)&&p.length===3&&p.every(v=>Number.isFinite(v)&&Math.abs(v)<=100)?new THREE.Vector3(...p):null;};
 
 // A marker-space person illustration from measured joints, never extrapolated missing joints.
+// occluder: invisible, depth only and drawn first, a little thicker than the drawing - over another camera's video
+// it hides the buildings behind the person (an approximate outline, not a measured silhouette).
 export class TrackedPerson {
-  constructor(scene){
-    this.root=new THREE.Group();this.root.name='TRACKED_PERSON';scene.add(this.root);
-    this.material=new THREE.MeshStandardMaterial({color:0x60a5fa,roughness:.85});
-    this.skin=new THREE.MeshStandardMaterial({color:0xfed7aa,roughness:.9});
+  constructor(scene,{occluder=false}={}){
+    this.root=new THREE.Group();this.root.name=occluder?'PERSON_OCCLUDER':'TRACKED_PERSON';scene.add(this.root);
+    this.thick=occluder?1.8:1;
+    const material=options=>occluder?new THREE.MeshBasicMaterial({colorWrite:false}):new THREE.MeshStandardMaterial(options);
+    this.material=material({color:0x60a5fa,roughness:.85});
+    this.skin=material({color:0xfed7aa,roughness:.9});
     this.geometry=new THREE.CylinderGeometry(1,1,1,10);
     this.limbs=PERSON_BONES.map((_,i)=>{const mesh=new THREE.Mesh(this.geometry,this.material);mesh.visible=false;this.root.add(mesh);return mesh;});
-    this.head=new THREE.Mesh(new THREE.SphereGeometry(.09,16,12),this.skin);this.root.add(this.head);
+    this.head=new THREE.Mesh(new THREE.SphereGeometry(.09*(occluder?1.3:1),16,12),this.skin);this.root.add(this.head);
     this.neck=new THREE.Mesh(this.geometry,this.skin);this.root.add(this.neck);
     this.torso=new THREE.Mesh(new THREE.CylinderGeometry(1,.85,1,12),this.material);this.root.add(this.torso);
+    if(occluder)this.root.traverse(o=>{o.renderOrder=-1;});
     this.root.visible=false;this.count=0;
   }
   segment(mesh,a,b,radius){
     mesh.visible=!!a&&!!b&&a.distanceTo(b)>.005;if(!mesh.visible)return;
     const delta=b.clone().sub(a);mesh.position.copy(a).add(b).multiplyScalar(.5);
-    mesh.quaternion.setFromUnitVectors(Y,delta.clone().normalize());mesh.scale.set(radius,delta.length(),radius);
+    mesh.quaternion.setFromUnitVectors(Y,delta.clone().normalize());mesh.scale.set(radius*this.thick,delta.length(),radius*this.thick);
   }
   update(joints,active){
     const points=Object.fromEntries(Object.entries(joints??{}).map(([n,j])=>[n,position(j)]));

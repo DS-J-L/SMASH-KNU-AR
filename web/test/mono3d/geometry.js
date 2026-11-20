@@ -212,7 +212,11 @@ export function calibrateMarker(width, height, pixels, sideM, fovDiagDeg) {
 // Unknown lens: choose the FOV whose solution puts the camera at the known height.
 // Scans the FOV range (some FOVs may fail), then bisects the first bracket. Null when no FOV fits.
 export function fovForCameraHeight(width, height, pixels, sideM, targetHeightM, lo = 30, hi = 130) {
-  const h = fov => { const r = solveMarker(width, height, pixels, sideM, fov); return r.ok ? r.camera_height_m - targetHeightM : NaN; };
+  return fovForHeight(fov => solveMarker(width, height, pixels, sideM, fov), targetHeightM, lo, hi);
+}
+
+function fovForHeight(solve, targetHeightM, lo, hi) {
+  const h = fov => { const r = solve(fov); return r.ok ? r.camera_height_m - targetHeightM : NaN; };
   let prev = null;
   for (let fov = lo; fov <= hi + 1e-9; fov += 2) {
     const value = h(fov);
@@ -255,4 +259,54 @@ export function orderMarkerCorners(pixels) {
     if (mid(i) < mid(far)) far = i;
   }
   return [0, 1, 2, 3].map(k => [...ring[(far + k) % 4]]);
+}
+
+// Least-squares homography from n >= 4 plane points (Hartley-normalised, h33 = 1).
+export function homographyLS(planePts, pixels) {
+  const frame = pts => {
+    const n = pts.length, cx = pts.reduce((s, p) => s + p[0], 0) / n, cy = pts.reduce((s, p) => s + p[1], 0) / n;
+    const d = pts.reduce((s, p) => s + Math.hypot(p[0] - cx, p[1] - cy), 0) / n;
+    const k = d > 1e-12 ? Math.SQRT2 / d : 1;
+    return { k, cx, cy, map: p => [(p[0] - cx) * k, (p[1] - cy) * k] };
+  };
+  const P = frame(planePts), Q = frame(pixels);
+  const N = Array.from({ length: 8 }, () => new Array(8).fill(0)), g = new Array(8).fill(0);
+  planePts.forEach((pt, i) => {
+    const [X, Y] = P.map(pt), [u, v] = Q.map(pixels[i]);
+    for (const [row, rhs] of [[[X, Y, 1, 0, 0, 0, -u * X, -u * Y], u], [[0, 0, 0, X, Y, 1, -v * X, -v * Y], v]]) {
+      for (let r = 0; r < 8; r++) { g[r] += row[r] * rhs; for (let c = 0; c < 8; c++) N[r][c] += row[r] * row[c]; }
+    }
+  });
+  const h = solveLinear(N, g);
+  if (!h) return null;
+  // H = Tq^-1 · Hn · Tp
+  const Hn = [...h, 1], Tp = [P.k, 0, -P.k * P.cx, 0, P.k, -P.k * P.cy, 0, 0, 1];
+  const TqInv = [1 / Q.k, 0, Q.cx, 0, 1 / Q.k, Q.cy, 0, 0, 1];
+  const mul = (A, B) => [0, 1, 2].flatMap(r => [0, 1, 2].map(c => A[3 * r] * B[c] + A[3 * r + 1] * B[3 + c] + A[3 * r + 2] * B[6 + c]));
+  const H = mul(TqInv, mul(Hn, Tp));
+  return Math.abs(H[8]) > 1e-12 ? H.map(v => v / H[8]) : null;
+}
+
+// Pose from any set of coplanar floor points z = 0 (e.g. the 8 corners of two markers seen together).
+export function solvePlanePoints(width, height, plane, pixels, fovDiagDeg) {
+  if (!(plane.length >= 4 && plane.length === pixels.length)) return { ok: false, reason: 'degenerate_corners' };
+  const K = intrinsicsFromFov(width, height, fovDiagDeg);
+  const H = homographyLS(plane, pixels);
+  if (!H) return { ok: false, reason: 'degenerate_corners' };
+  const initial = planePose(K, H);
+  if (!(initial.C[2] > 0)) return { ok: false, reason: 'camera_below_floor_check_corner_order' };
+  const points = plane.map(([X, Y]) => [X, Y, 0]);
+  const pose = refinePose(K, points, pixels, initial);
+  if (!(pose.C[2] > 0)) return { ok: false, reason: 'camera_below_floor_check_corner_order' };
+  const errors = points.map((P, i) => { const q = project(K, pose, P); return q ? Math.hypot(q[0] - pixels[i][0], q[1] - pixels[i][1]) : Infinity; });
+  return { ok: true, K, pose, reprojection_max_px: Math.max(...errors), camera_height_m: pose.C[2], tilt_down_deg: cameraTiltDownDeg(pose) };
+}
+
+export function fovForPlanePointsHeight(width, height, plane, pixels, targetHeightM, lo = 30, hi = 130) {
+  return fovForHeight(fov => solvePlanePoints(width, height, plane, pixels, fov), targetHeightM, lo, hi);
+}
+
+// Stage-frame corners of several markers of one side, in the same order as each marker's oriented corners.
+export function stageMarkerPlane(markerXs, sideM) {
+  return markerXs.flatMap(x => markerCorners(sideM).map(([X, Y]) => [X + x, Y]));
 }

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2대 무대 · 폰 역할 선택</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <style>.roles{display:grid;gap:12px;margin-top:16px}.roles a{display:block;padding:16px;font-size:1.1rem;text-align:center}.roles small{display:block;margin-top:4px;color:#aeb9c7;font-size:.85rem}</style>
+</head>
+<body>
+<main class="monitor-main">
+  <p class="eyebrow">SMASH-KNU-AR · 폰</p>
+  <h1>2대 무대 · 이 폰의 역할</h1>
+  <p class="muted">폰마다 하나씩 고르세요. 같은 역할을 두 폰이 고르면 나중에 연결한 폰이 앞 폰을 끊습니다.</p>
+  <!-- docs/DUO_STAGE_TEST.md. The access key in this page's address is carried to the chosen page. -->
+  <nav class="roles" aria-label="폰 역할">
+    <a class="room-entry" data-role href="/test/mono3d/?stage=duo&amp;camera=C0">판정 폰 C0<small>왼쪽 · ID0 마커 앞 · 높이 0.66m</small></a>
+    <a class="room-entry" data-role href="/test/mono3d/?stage=duo&amp;camera=C1">판정 폰 C1<small>오른쪽 · ID1 마커 앞 · 높이 0.66m</small></a>
+    <a class="room-entry" data-role href="/test/stage-view/">화면 폰 V<small>반대편 · 높이 1.6m · 가로로 두 마커가 모두 보이게</small></a>
+  </nav>
+  <p class="muted"><a href="/monitor/">메인으로</a></p>
+</main>
+<script>
+  const key = new URLSearchParams(location.search).get('key');
+  if (key) for (const a of document.querySelectorAll('[data-role]')) { const u = new URL(a.href); u.searchParams.set('key', key); a.href = u.pathname + u.search; }
+</script>
+</body>
+</html>
