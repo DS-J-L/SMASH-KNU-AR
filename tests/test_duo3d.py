@@ -21,6 +21,13 @@ def view_calib(spacing=2.0):
             "marker_ids": [0, 1], "spacing_m": spacing, "marker_side_m": 0.27, "reprojection_max_px": 0.8}
 
 
+@pytest.mark.parametrize('spacing',[float('nan'),float('inf'),float('-inf')])
+def test_view_calibration_refuses_nonfinite_marker_spacing(spacing):
+    from backend.test_wide3d import parse_view_calibration
+    with pytest.raises(ValueError,match='spacing_mismatch'):
+        parse_view_calibration(view_calib(spacing),2.0)
+
+
 @pytest.fixture
 def client():
     with TestClient(create_app(load_settings(access_key=KEY))) as c:

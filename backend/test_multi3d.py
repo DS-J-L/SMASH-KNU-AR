@@ -29,6 +29,7 @@ from itertools import combinations, product
 
 import numpy as np
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from starlette.websockets import WebSocketState
 
 from .calibration.storage import Calibration
 from .connections import Peer
@@ -493,6 +494,9 @@ def multi3d_router() -> APIRouter:
                     peer.send({"type": "error", "code": "bad_message", "detail": str(exc)[:200]})
         except WebSocketDisconnect:
             pass
+        except RuntimeError:
+            if websocket.application_state is not WebSocketState.DISCONNECTED:
+                raise
         finally:
             if clock_task:clock_task.cancel()
             if role == "viewer":

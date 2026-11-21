@@ -7,6 +7,8 @@ import { showLoupe, hideLoupe, makeMovable, initOverlayToggle, resetPanelPositio
 import { calibrateMarker, markerCalibrationMessage, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project } from '../mono3d/geometry.js?v=20261111-1';
 import { orientMarkerCorners, graySampler } from './aruco.js?v=20261116-w1';
 import { createLink, geometryText } from './link.js?v=20261109-6';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 import {copyPersonMask,packFusedPersonDepth,PERSON_DEPTH_ENCODING} from '../mono3d/person-depth.js?v=20261116-2';
 // The phone page draws no building; the building is shown on the PC page only.
@@ -27,14 +29,17 @@ const FRAME_MS = 33, JPEG_MS = 250, JPEG_WIDTH = 360, FUSED_STALE_MS = 600;
 const WRIST_COLORS = { left_wrist: '#38bdf8', right_wrist: '#f97316' };
 
 let step = 'camera', facing = 'environment', slot = 'C0';
-let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null, audio = null;
+let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null;
+const hitSound = createArHitSound();
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 let frozen = null, frozenGray = null, corners = [], dragPoint = null, calib = null;
 let latest = null, frames = 0, lastFpsAt = performance.now(), fps = 0, sizeWarned = false;
 const clockId=crypto.randomUUID();
 const inferenceCanvas=document.createElement('canvas'),inferenceContext=inferenceCanvas.getContext('2d');
 let lastInputSent=-1,lastVideoTime=-1;
 let link = null, linkState = {}, lastCalibSent = null, lastFrameAt = 0, lastJpegAt = 0;
-let fused = null, fusedAt = 0, lastHits = 0, hitFlashAt = -1e9;
+let fused = null, fusedAt = 0, hitFlashAt = -1e9;
 const jpegCanvas = document.createElement('canvas');
 const depthCanvas=document.createElement('canvas'),depthContext=depthCanvas.getContext('2d');
 
@@ -250,14 +255,18 @@ function onMessage(m) {
   if(m.type==='multi3d_clock_ping'){
     link.send({type:'multi3d_clock_pong',nonce:m.nonce,clock_id:clockId,device_time_ms:performance.now()});return;
   }
-  if (m.type === 'link_open') lastCalibSent = null;
+  if (m.type === 'link_open') { lastCalibSent = null; hitSound.reset(); hitEffect.clear(); hitFlashAt = -1e9; }
   if (m.type === 'multi3d_fused') {
     fused = m; fusedAt = performance.now();
     const bodyState=m.body_calibration;
     if(bodyState){const reasons={three_views_and_full_body_required:'세 폰에서 머리·어깨·골반·발목이 모두 보여야 합니다',stand_upright_on_marker:'두 발 중심을 마커에 맞추고 직립·양발 접지를 유지하세요',hold_still:'3초간 가만히 서세요'};$('bodyStatus').textContent=bodyState.state==='locked'?('허리 '+bodyState.reference.waist_height_m.toFixed(2)+'m · 건물 최고 '+(m.model_test?.display_height_m??bodyState.reference.waist_height_m*.7).toFixed(2)+'m · 고정'):bodyState.state==='capturing'?(reasons[bodyState.reason]??'보정 준비')+' · '+bodyState.samples+'프레임':'세 폰의 마커 보정 후 몸 보정을 시작하세요';
 }
-    if (m.hits > lastHits || Object.keys(m.hit ?? {}).length) { hitFlashAt = fusedAt; beep(1200, 0.08); }
-    lastHits = m.hits; $('hits').textContent = m.hits;
+    if (hitSound.observeFrame(m)) {
+      hitFlashAt = fusedAt;
+      const name = Object.keys(m.hit ?? {}).find(name => m.joints?.[name]?.p);
+      hitEffect.trigger(m.joints?.[name]?.p, m.building);
+    } else if (m.hits === 0) { hitEffect.clear(); hitFlashAt = -1e9; }
+    $('hits').textContent = m.hits;
     if (m.cameras) { linkState = { ...linkState, cameras: m.cameras }; renderLink(); }
   }
 }
@@ -336,6 +345,7 @@ function draw() {
     if (calib?.K && step !== 'place') drawCalibration(lw);
     drawSkeleton(W, H, lw);
     drawFused(lw);
+    if (step === 'send' && calib?.K) hitEffect.draw(ctx, point => project(calib.K, calib.pose, point));
   }
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   renderText();
@@ -410,14 +420,9 @@ function renderText() {
 }
 
 // ---------- sound / misc ----------
-function unlockAudio() { try { audio ??= new AudioContext(); audio.resume?.(); } catch { audio = null; } }
+function unlockAudio() { void hitSound.unlock(); }
 function beep(freq = 660, seconds = 0.12) {
-  if (!audio) return;
-  try {
-    const o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime;
-    o.frequency.value = freq; g.gain.setValueAtTime(0.15, t); g.gain.exponentialRampToValueAtTime(0.001, t + seconds);
-    o.connect(g).connect(audio.destination); o.start(t); o.stop(t + seconds);
-  } catch { /* sound is optional */ }
+  hitSound.beep(freq, seconds);
 }
 async function keepAwake() {
   try { wakeLock = await navigator.wakeLock?.request('screen'); wakeLock?.addEventListener('release', () => { wakeLock = null; }); } catch { /* optional */ }

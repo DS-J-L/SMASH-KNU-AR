@@ -39,6 +39,7 @@ import time
 import uuid
 
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from starlette.websockets import WebSocketState
 
 from .building_scenes import (DUO_PREFIX, STAGE_SECTIONS, WIDE_PREFIX, WIDE_SPACING_RANGE_M, stage_set, stage_sets,
                               scene_spec, wide_scene_id)
@@ -67,7 +68,7 @@ log = logging.getLogger("smash.wide3d")
 
 
 def now_ms() -> float:
-    return time.monotonic() * 1000.0
+    return time.perf_counter() * 1000.0
 
 
 def marker_x(camera: str, spacing: float, cameras: tuple = CAMERAS) -> float:
@@ -114,7 +115,7 @@ def parse_view_calibration(m: dict, spacing: float) -> dict:
     if m.get("marker_ids") != [0, 1]:
         raise ValueError("view calibration needs markers [0, 1]")
     used = m.get("spacing_m")
-    if type(used) not in (int, float) or abs(used - spacing) > 5e-4:
+    if type(used) not in (int, float) or not math.isfinite(used) or abs(used - spacing) > 5e-4:
         raise ValueError("spacing_mismatch")
     size = finite_list([image.get("width"), image.get("height")], 2)
     K = finite_list([k.get(n) for n in ("fx", "fy", "cx", "cy")], 4)
@@ -606,6 +607,9 @@ def stage_router(layout: str) -> APIRouter:
                     peer.send({"type": "error", "code": "bad_message", "detail": str(exc)[:200]})
         except WebSocketDisconnect:
             pass
+        except RuntimeError:
+            if websocket.application_state is not WebSocketState.DISCONNECTED:
+                raise
         finally:
             if role == "viewer":
                 hub.viewers.discard(peer)

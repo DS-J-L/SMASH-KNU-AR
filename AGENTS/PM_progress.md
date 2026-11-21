@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-16 03:30 KST |
-| 현재 작업·상태 | 3대 몸보정 생략·1대 가림/타격 유효성 분리·발목/윤곽 진단 구현·합성 검증 완료. 실폰 재확인 대기 |
-| 마지막 확인된 완료 | 이번 범위 Python36·Node20·브라우저3, 건물시험/폰표시 빌드·문법 검사 통과 |
+| 마지막 갱신 | 2026-11-21 15:11 KST |
+| 현재 작업·상태 | PR #21 main 반영, #23 코드 검토·충돌 해결·통합 자동검증 통과 / 실기기 확인 대기 |
+| 마지막 확인된 완료 | Node217·Python277·건물35·AR4·크기 표시2, 기존 2D폰8과 소비 소스/번들 동일 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
 | 남은 일·미검증 | 실폰/실제 모델·소리 청취·성능/장시간·실측/3D·C0/AR·팀별 인수/공통Phase 확인 |
-| 다음 한 단계 | 실제 폰 1대 및 3대로 3D 시험, 실측·동기화 검증 |
+| 다음 한 단계 | #23 검증 head의 승인된 정상 머지·로컬 main 동기화 후 실제 무대 시험 |
 | 막힌 점·필요 확인 | 실제 장비·마커·보정값·촬영 시각 확인 필요 |
 
 ## 2. 누적 관리 작업 기록
@@ -949,3 +949,113 @@
 - 작업 구분: 공통 관리(계획 변경 기록)
 - 변경 이유: 11-20 사용자 결정(마커 간격 고정 해제·판정 폰 내려다보기·WebRTC 영상·큰 건물 하나·무대 기본 옵션).
 - 반영: PM_plan.md·정경호_plan.md 상단 메모. 공통 Phase 기준·체크 변경 없음. 근거는 docs/DUO_STAGE_TEST.md와 정경호_progress.md 11-20 기록(합성 검증, 실폰 미검증).
+
+
+### 2026-11-21 03:22 KST — 사용자 요청 건물 파괴음 연결 보완
+
+- 담당 / 기록자: PM 공통 연결 관리 / Codex. 계획 연결: PM_plan.md P4의 한 타격에 파괴·소리·점수 한 번, 김태이 K-SC-05와 이동수 화면 연결. 개발 Phase 통과와 별개다.
+- 결과: 건물 실험실 버튼/Space와 단일/폰 좌표 게임의 최종 수락 타격에 기존 충격·붕괴음을 연결하고 세 배포 번들을 빌드했다. 첫 오디오 재개의 경합·터치 클릭과 추적 어댑터의 중복 재생을 보완했다.
+- 근거·검증: 김태이_progress.md의 2026-11-21 03:22 종료 기록, data/local/destruction-sound-qa/summary.json. Node 관련 161/161, 최종 영향 오디오/추적 21/21, 오디오 브라우저 5/5·기존 건물 연습 2/2, 빌드 세 개 통과. 초기 첫 클릭 재개 경합과 cv2 미설치에 따른 서버 검사 시작 실패도 개인 기록에 보존했다.
+- 입력·남은 일: keyboard_demo·synthetic, 실제 Web Audio 출력 신호 검증. 실제 스피커 청취·실폰·실시간 서버 회귀·3D/AR·장시간은 미검증이다. 공통 Phase·개인 계획 체크는 유지한다.
+- 다음 행동: 사용자 PC 스피커로 새로고침 후 파괴 버튼/Space·실폰 타격음을 확인한다. 코드·기록은 fix/building-destruction-sound-20261121의 로컬 변경이며 신규 커밋·push·PR 없음.
+
+
+### 2026-11-21 05:52 KST — AR 타격음 적용 범위 정정 및 연결 완료
+
+- 사용자가 실제 AR 타격을 뜻한다고 정정하고 1대·3대 모드에 '둘다' 적용을 확인했다. 본 세션의 앞선 2D/키보드 코드·테스트·번들 변경은 정리했으며 기존 실패/검증 기록은 보존한다.
+- P4 소리/AR 소비 경계를 공통 지원으로 수정했다. 두 모드의 폰/PC JS와 HTML, 공용 합성기·AR 오디오 소비 모듈, 두 AR 안내·시험·진행 기록이 이번 결과물이다. 기존 2D 합성기 API는 호환 재수출로 유지한다.
+- Node 59/59·AR 브라우저 4/4 통과. 합성 카메라/관절·3D 메시지로 실제 AR 페이지의 성공 분기와 실제 오디오 출력 신호를 검사했다. 1대 폰은 실제 보정/추정 코드도 거쳤다. 초기 합성 인물의 머리 가림으로 3/4였던 시험 입력을 수정한 뒤 최종 네 경로를 검증했다. 상세 근거는 김태이_progress.md 최신 종료 기록 및 data/local/ar-hit-sound-qa/summary.json이다.
+- 실제 기기 live·3대 실측/정합·실제 서버·스피커 청취·장시간은 미검증이며 공통 Phase와 계획 체크는 유지한다. 실제 실행 시 두 AR 페이지를 새로고침하고 PC 화면을 한 번 클릭한 후 타격음을 확인한다.
+- 이번 결과는 fix/building-destruction-sound-20261121의 로컬 변경이다. 신규 커밋·push·PR 없이 인계하며 정경호 진행 기록·팀 현황에 소비 경계와 다음 확인을 연결했다.
+
+
+### 2026-11-21 13:06 KST — AR 타격음·애니메이션 GitHub 공유 준비
+
+- 사용자 요청으로 기존 소리 수정에 AR 타격 애니메이션을 추가했다. 이동수 화면·김태이 소리·정경호 AR 소비 경계의 공통 지원이며 실제 개발 Phase 완료와 구분한다.
+- 변경·검증: 두 모드 폰/PC의 새 유효 타격에 소리와 공용 충격파/회전 잔해/먼지/반동을 연결, 수명 1.4초·3회/72개 제한. 브라우저 4/4·Node 65/65·호환 빌드 2개와 캡처 확인 완료. 상세는 이동수_progress.md 및 docs/asset-validation/ar-feedback/summary.json이다.
+- 실제 입력/청취/서버/정합·장시간·성능은 미검증이며 계획 체크 유지. 사용자 승인 범위대로 커밋·push·PR 생성까지 진행하고 머지는 별도 요청 범위로 남긴다. 현재 브랜치 열린 PR 없음, main eb65bc0과 기준 일치.
+
+
+### 2026-11-21 13:09 KST — AR 소리·애니메이션 PR #22 게시 완료
+
+- 사용자 요청 범위의 구현/검증/공유 완료. 코드 커밋  작업 브랜치에 push하고 [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)를 main 대상으로 생성했다. open·draft=false·merged=false이며 main 직접 push/머지는 없다.
+- 검증: Node 65/65·AR 네 경로 브라우저 4/4·호환 빌드 2개·새 상대 링크 8개·공백 검사. synthetic 입력·실제 AudioContext/Canvas 확인과 live/replay/keyboard_demo 미실행, 현장 청취·정합·장시간/정량 성능 미검증을 PR에 명시했다.
+- 상태는 PR 검토 요청이며 개인/공통 Phase 완료 체크는 유지한다. 상세 결과/인계는 이동수_progress.md 최신 기록과 docs/asset-validation/ar-feedback/summary.json을 따른다. 후속 커밋은 게시 결과 문서만 추가한다.
+
+
+### 2026-11-21 13:21 KST — PR #22 검토·머지·로컬 업데이트 시작
+
+- 담당 / 기록자: PM 공통 코드 검토 / Codex. Phase: P4 AR 결과물 검토, 공통 Phase 실기기 통과와 별개. 상태: 진행 중.
+- 사용자 승인: PR #22를 검토하고 문제가 없으면 머지한 뒤 로컬을 최신 main으로 갱신한다. 같은 승인 범위의 수정·검증·머지·동기화까지 진행한다.
+- 읽은 계획·기록: PM_plan P4, AGENTS 운영/현황/기록 양식, PM·이동수·김태이·정경호 최신 요약 및 PR 게시 기록, pr-workflow. 기준은 PR head daceb92a2345b34283f293fd12d5bfa59e970e10, base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85이며 시작 작업 트리는 clean이었다.
+- 목표·검증: 최신 diff·의견·원격 검사·충돌 상태와 코드 수락/중복/무효/음소거·수명·좌표/정리 경계를 검토한다. 관련 Node·AR 브라우저·필요한 호환 빌드를 재검증하고, 검증한 최종 head를 지정해 머지한 후 로컬 main/원격 main/트리 일치를 확인한다.
+- 실제 장비 live·청취·실측/장시간은 이번 자동 확인과 구분하며 근거 없이 Phase를 완료하지 않는다.
+
+
+### 2026-11-21 13:24 KST — PR #22 코드 검토·재검증 통과
+
+- 검토자 / 기록자: Codex, PM 공통 코드 검토. [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)의 사용자 승인된 검토·문제 없을 때 머지·로컬 main 업데이트 요청을 수행한다. 검토·재검증 범위에서 머지를 막을 실행 코드 문제는 발견하지 못했다.
+- 기준: base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85, head daceb92a2345b34283f293fd12d5bfa59e970e10. 새 유효 타격 수락 경계·초기/중복/무효·리셋/재접속·음소거 독립 시각 효과·오디오 재개/종료·3D 투영·수명/입자 제한·레거시 import 호환성을 검토했다.
+- 재검증: node --test tests/ar-hit-effect.test.mjs tests/ar-hit-sound.test.mjs tests/test_mono3d.mjs tests/test_model_strike.mjs tests/single/*.test.mjs → 128/128. npm run test:ar → 4/4(16.4초), Chromium/D3D11. 별도 ignored 출력의 single/phone-game 호환 Vite 빌드 2개 성공, 기존 큰 청크 경고 유지. 새 캡처에서 PC/폰의 효과 위치·표시를 확인했고 공백·정적 참조를 검사했다.
+- 원격 상태: 검토 시작 시 최신 head/base 일치, mergeable=true·clean, 리뷰·인라인/대화 코멘트 0. check-run 0·commit status 0으로 등록된 원격 검사가 없다. status API의 pending/total_count=0은 진행 중 검사로 간주하지 않았다. 보호 우회 없이 정상 머지 API를 사용한다.
+- 기록 정정: 13:09 게시 기록 일부 문장에서 PowerShell 변수 뒤 한국어 조사 때문에 SHA 문자열이 누락됐다. 올바른 검증 코드 커밋은 619a641bb01b164df2f20e56ae1e7e7853e10001, 게시 기록 커밋은 daceb92a2345b34283f293fd12d5bfa59e970e10다. 이전 기록은 보존하고 본 정정과 검증 요약에 근거를 추가했다. 실행 코드 수정은 없다.
+- 입력·미검증: synthetic Canvas 카메라/관절·3D 결과와 mocked WebSocket, 실제 AudioContext/Canvas. 실제 live 입력·실제 서버/3대 실행·현장 정합·스피커 청취·장시간/정량 성능은 미검증이다. replay/keyboard_demo는 이번 AR 브라우저 확인을 실행하지 않았다. 개인/공통 Phase의 실제 완료 체크는 유지한다.
+- 근거: data/local/pr22-review/node.log·browser.log·build-single.log·build-phone.log 및 docs/asset-validation/ar-feedback/summary.json의 merge_review 항목. 기존 65개 결과와 이번 확장 128개 결과를 구분한다.
+- 다음 작업: 본 검토 결과 문서만 commit/push한 뒤 실행 코드가 daceb92a2345b34283f293fd12d5bfa59e970e10와 같은지 확인하고 최신 PR head/base/검사 상태를 다시 읽는다. 최종 head SHA를 지정해 머지하고 실제 merged/main·로컬 main·트리·clean 일치를 확인한다. 실제 머지 해시·종료 결과는 외곽 작업 폴더의 AGENTS/PM_progress.md에 추가한다.
+
+
+### 2026-11-21 14:40 KST — PR #21·#23 검토·충돌 해결 시작
+
+- 담당 / 기록자: PM 공통 통합 검토 / Codex. P3·P4 관련 코드 통합, 공통 Phase 실기기 통과와 별개. 상태: 진행 중.
+- 사용자 승인: 두 PR 검토·충돌 해결·main 머지·로컬 최신화. 읽은 계획은 PM_plan P3·P4/7절과 정경호 P3·P4, 이동수·김태이 소비 책임 및 최신 진행, 운영 양식과 pr-workflow다.
+- 기준: clean main 3bd333e, PR #21 4e05fb9, PR #23 f5927e7. #23은 #21을 선행 이력으로 포함하므로 #21부터 순서대로 통합한다.
+- 완료 기준·검증 계획: 기존 AR 소리/효과와 새 발목/가림/부분파괴를 모두 보존하고 Node·Python·브라우저·배포 빌드를 확인한다. 최신 head/base·리뷰/검사 확인 후 검증 head 지정 정상 머지, 로컬 main 동기화·clean 확인까지 수행한다.
+- 충돌 처리 방향: 누적 기록은 양쪽 모두 보존한다. 폰에 건물상자를 표시하지 않는 새 화면 정책을 유지하면서 타격 소리·위치 효과·시계 메시지·중복/무효 차단을 결합한다. 실제 폰·실측/청취/장시간은 미검증이며 Phase 체크를 유지한다.
+
+### 2026-11-21 14:51 KST — PR #21 충돌 결합·검토 및 중간 검증
+
+- 담당 / 기록자: PM 통합 검토 / Codex. 상태: 통합 확인 중, 공통 Phase 통과는 별개다.
+- 충돌: 진행 파일 5개의 누적 이력을 양쪽 모두 보존했다. mono3d/multi3d의 자동 마커·가림·발목·시계 응답을 유지하면서 main의 공용 소리·중복/무효 차단·타격 위치 효과를 합쳤다. 폰에서 건물 상자를 그리지 않는 새 정책은 유지했고 캐시 버전을 갱신했다.
+- 코드 검토: 2D 부분 파괴/남은 파편 재타격, 파편 고유 ID·프레임·세션 중복 점수 검증, 손/발 입력 경계, 3D 품질/시간 정렬·가림과 판정 분리, 복원/구역 전환·자원 정리를 확인했다. 현재까지 차단할 실행 코드 문제는 발견하지 못했다.
+- 통과: Node VM 옵션을 적용한 전체 201/201, AR 브라우저 4/4, single·phone-game·building-test 배포 빌드 3개. 기존 청크 크기 경고는 유지한다.
+- 검증 보완/실패 이력: Node 최초 16개 실패는 --experimental-vm-modules 누락이었다. Python 기본 환경 cv2와 로컬 MediaPipe 파일 누락을 확인해 프로젝트 .venv에 고정 의존성과 해시 검증 자산을 설치했다(ignored). 초기 Python 전체는 자산 누락 1건을 확인하고 장시간 계산 중 중단했으며 준비 후 전체 재실행 중이다.
+- AR 테스트는 새 캐시 쿼리·마커 품질/마커 위 몸 보정 조건·상태 문구에 맞춰 합성 입력만 수정했다. 실제 보정/추정·판정 경로와 무효/중복 검사는 유지했다. 건물 기본 구역 검사의 로딩 경합을 poll로 보완했다.
+- 건물 첫 실행의 타격 시각/체크박스 경합 2건과 기본 구역 로딩 1건은 집중 재검증 3/3 통과했다. 전체 재실행과 서버 전체 결과는 아직 확정 전이다. 동시 부하 중 추가 시각성 실패가 있어 검증 완료로 추정하지 않는다.
+- 빌드 임시 출력이 Vite root 아래 생성돼 실제 ignored data/local/pr21-review/generated-*로 이동해 보존했다. 게시할 번들은 정규 빌드 경로에서 다시 생성했다.
+- 다음 작업: 서버 전체와 재빌드된 건물/기존 2D 화면의 회귀를 마치고 결과/소비 인계를 갱신한 뒤 #21 최신 head·base·검사 확인 → push·정상 머지. 이후 #23에 이 검증 버전을 결합한다. 로그는 data/local/pr21-review/다.
+
+
+### 2026-11-21 15:01 KST — PR #21 검토·충돌 해결·통합 재검증 완료
+
+- 담당 / 기록자: PM 통합 코드 검토 / Codex. P3·P4 코드 공유 검증, 공통 Phase 통과와 별개. 상태: 검토 완료·검증 head 지정 머지 대기.
+- 읽은 계획·완료 기준: PM_plan P3·P4/7절, 정경호 P3·P4, 이동수·김태이 소비 인계, 운영 양식·pr-workflow. 사용자 승인 범위는 #21·#23 검토·충돌 해결·main 머지·로컬 갱신이다.
+- 결과물: main 3bd333e와 #21 4e05fb9를 의미에 맞게 결합했다. AR 소리/효과·무효/중복 차단과 새 자동 마커·가림·발목·입력 시각 응답을 모두 유지했다. 누적 기록 양쪽 보존, 2D 부분 파괴·점수 문서의 오래된 미구현 설명을 정정하고 single/phone-game/building-test 배포 번들을 재빌드했다.
+- 검토·수정 근거: Windows Python 3.12의 monotonic은 GetTickCount64/15.625ms여서 연속 두 입력이 같은 시각이 됐다. perf_counter(QueryPerformanceCounter/0.0001ms)로 교체한 뒤 실제 중계의 빠른 연속 입력 검사를 통과했다. 소켓 교체 정상 종료의 RuntimeError는 DISCONNECTED 상태에만 허용한다. 화면 옵션은 서버 수락 전 도착한 옛 상태가 클릭을 되돌리지 않도록 2초 이내 초안을 유지하며 새 지연 패킷 회귀로 확인했다.
+- 최종 검증: Node 전체 201/201, Python 고유 255항목(시계 수정 후 254/254와 앞서 통과한 변경 없는 전체 구역 검사 1개, 종료 보완 후 관련 15/15), 건물 브라우저 25/25·기존 2D/폰 화면 8/8·AR 4/4, 배포 빌드 3개 통과. Python 마지막 명령은 .venv/Scripts/python.exe -m pytest tests -q -k 'not all_zones_match_single_height_and_preserve_internal_proportions'이다. 전체 구역 통과는 python-final.log, 나머지는 python-regression-fixed.log를 참조한다.
+- 초기 실패·정정: 중간 검증의 무옵션 VM 16개·누락된 로컬 MediaPipe 자산·옛 AR 합성 조건·구역 로딩 경합과 체크박스/타격 효과 시각성 실패를 보존했다. 시계 변경 후 중계 8개, 옵션 보완 후 집중 4개 및 위 최종 전체 화면 검증을 통과했다. 이전 '현재까지 실행 코드 차단 사항 없음' 판단은 본 수신 시계/옵션 경합 수정 결과로 보완한다.
+- 입력·환경: Windows 11/Python3.12·Node/Edge D3D11, synthetic Canvas 카메라·관절/3D 메시지·mouse_demo·keyboard_demo, 실제 서버/소켓·WebGL/Rapier·WebAudio/Canvas. live 실폰·실측 정합·청취·정량/장시간·실제 3대 통합은 미검증이다. 기존 큰 청크·Starlette httpx 사용 중단 예정 경고는 남는다.
+- 남은 일·다음 행동: 최신 원격 head/base/검사·리뷰를 확인해 정상 merge API에 검증 head SHA를 지정한다. #21 반영 후 #23에 최신 main을 병합해 같은 소비 경계를 재검증한다. 실장비는 docs/BUILDING_FRAGMENT_TEST.md·MONO3D_TEST.md·MULTI3D_TEST.md에서 재개한다.
+- 근거·인계: docs/asset-validation/pr21-review.json, data/local/pr21-review/ 로그·캡처, 각 개인 소비 인계와 팀 현황. 개인/공통 Phase 체크박스는 유지한다. 실제 머지 SHA와 최종 로컬 동기화는 외곽 PM 기록에 추가한다.
+
+
+### 2026-11-21 15:03 KST — PR #23 검토·충돌 결합 시작
+
+- 담당 / 기록자: PM 공통 통합 검토 / Codex. P3·P4 시험 경로, 공통 Phase 실기기 통과와 별개. 상태: 진행 중.
+- 선행 결과: PR #21 head 47b83ca를 검증·정상 머지한 main 03d7dba를 #23 원래 head f5927e7에 결합한다. #21 원격 closed/merged=true, 검증 tree 335d560 일치를 확인했다.
+- 읽은 계획·완료 기준: PM/정경호 계획 최신 넓은 무대·2대 무대 추가, DUO_STAGE_TEST/WIDE_STAGE_TEST와 개인 최신 기록. 사용자 승인 범위는 두 PR 검토·충돌 해결·머지·로컬 갱신이다.
+- 검토: 단안 근사 출처·마커별 좌표 이동·가까운 폰/가려진 관절 대체·소스 전환 궤적 초기화, V 화면 전용 역할, 실측 간격/재보정·가림 최신성, WebRTC 신호 순서/해제·JPEG 대체를 확인한다.
+- 충돌 처리: AR 소리/효과와 #23 최신 자동 마커/몸 추정·가림 모듈을 함께 보존하고 #21 옵션 초안·정상 소켓 종료·고해상도 단일 폰 시계를 유지한다. #23의 더 강한 기본 구역 대기 조건도 보존한다. 번들은 최종 source에서 재빌드한다.
+- 검증 계획: Node 전체·Python 전체(변경 영향에 맞는 재검증), 넓은/2대/실제 브라우저 WebRTC·기존 건물 및 AR, 기존 2D 번들 호환. 실제 폰/마커 실측·정합/정량·청취·장시간은 미검증으로 유지한다.
+
+
+### 2026-11-21 15:11 KST — PR #23 코드 검토·충돌 해결·통합 검증 완료
+
+- 담당 / 기록자: PM 공통 코드 검토 / Codex. P3·P4 시험 경로 검토 완료, 공통 Phase 통과와 별개. 사용자 승인 범위는 두 PR 검토·충돌 해결·머지·로컬 최신화다.
+- 선행 실제 결과: PR #21 head47b83ca를 정상 merge API로 main03d7dba에 반영했고 closed/merged=true와 검증 tree335d560 일치를 확인했다. #23 f5927e7에 최신 main을 결합했다. 관련 PM·정경호 계획 최신 넓은/2대 무대와 DUO_STAGE_TEST/WIDE_STAGE_TEST, 개인 인계·운영 양식·pr-workflow를 읽었다.
+- 검토·해결: 마커 ID별 좌표 변환/간격, 판정 폰 선택·가려진 관절 대체·출처가 바뀔 때 궤적 초기화, 화면 전용 V, 간격 자동 적용/재보정, 가림 신선도·무효 입력, WebRTC 신호·복구/JPEG 대체, 장면/복원·자원 경계를 확인했다. #21의 AR 소리/효과·고해상도 단일 수신 시계·옵션 초안/정상 종료 보완을 유지했고 더 강한 구역 로딩 대기를 보존했다. 번들 충돌은 최종 source를 다시 빌드해 해결했다.
+- 추가 수정 근거: parse_view_calibration에 NaN 간격을 주면 수락됨을 재현했다. 유한성 검사와 NaN/±Infinity 회귀3개를 추가했다. 넓은 무대 시계도 perf_counter로 통일하고 교체 종료를 DISCONNECTED에만 허용했다. duo 캡처의 실제 2.0m 폭과 옛 '0.7~0.8m/허리70%' 안내가 달라 무대 세트 정책에 맞게 표시만 정정했으며 판정/스케일 규칙은 바꾸지 않았다.
+- 최종 검증: Node217/217. Python277/277을 두 명령으로 전부 확인(276개 + 변경된 기하의 전체 구역 검사1개). 건물/넓은/2대/브라우저 WebRTC·JPEG 전환 35/35, AR4/4. 이후 표시 문구만 보완·재빌드하고 넓은/2대 통합2/2를 재검증했다. 기존 2D 소비 소스·배포 번들은 main03d7dba와 diff없음이며 #21의8/8 결과가 유효하다. 건물 배포 빌드·Git 공백/상대 링크 확인 통과.
+- 시각 확인: duo-stage.png에서 메인 영상·판정 폰 타일·건물/설정 표시를 확인했다. synthetic 화면이며 실제 현장 영상·정합 보장이 아니다. 새 캡처/로그는 data/local/pr23-review/와 test-results/building-fragments/다.
+- 입력·한계: synthetic Canvas 카메라·MediaPipe 형식 관절/3D 메시지·mouse/keyboard 데모, 실제 로컬 HTTP/WebSocket·두 브라우저 페이지 WebRTC/JPEG·WebGL/Rapier·AudioContext/Canvas다. 실폰·실제 와이파이 지연·실측 마커/AR 정합·청취·장시간/정량은 미검증이다. source=mono_approx는 삼각측량 완료가 아니다. 기존 청크 크기/Starlette 경고는 남는다.
+- 근거·다음: docs/asset-validation/pr23-review.json 및 PR #21 실제 머지를 반영한 pr21-review.json, 개인 소비 인계·팀 현황. 최신 head/base·원격 검사/리뷰를 확인하고 검증 head 지정 정상 머지 후 로컬 main을 ff-only 동기화한다. 실제 머지 SHA·최종 clean 결과는 외곽 PM 기록에 남긴다.
+- 남은 일/인계: DUO_STAGE_TEST.md·WIDE_STAGE_TEST.md·BUILDING_FRAGMENT_TEST.md에 따라 실제 장비·인쇄 마커·정합/소리·성능을 확인한다. 개인/공통 Phase·계획 체크는 실제 근거 부족으로 유지한다.

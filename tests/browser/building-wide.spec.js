@@ -9,6 +9,8 @@ test('wide stage: three videos side by side, markers in a row, the nearest phone
   await page.setViewportSize({width:1600,height:1000});
   await page.goto('/test/building/?mode=wide&key=fragment-test');
   await expect(page.locator('#sourceMode')).toContainText('넓은 무대');
+  await expect(page.locator('#bodyReference')).toContainText('무대 세트 크기 · 몸 보정과 무관');
+  await expect(page.locator('#sizePreview')).not.toContainText('허리');
   await expect(page.locator('#stageControl')).toBeVisible();await expect(page.locator('#placement')).toBeHidden();
   // Stage defaults (2026-11-20); auto-next is turned off here so the judged break stays on screen.
   await expect(page.locator('#autoNext')).toBeChecked();await page.locator('#autoNext').uncheck();

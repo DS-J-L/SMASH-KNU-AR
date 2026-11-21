@@ -17,6 +17,8 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await page.setViewportSize({width:1600,height:1000});
   await page.goto('/test/building/?mode=duo&key=fragment-test');
   await expect(page.locator('#sourceMode')).toContainText('2대 무대');
+  await expect(page.locator('#bodyReference')).toContainText('무대 세트 크기 · 몸 보정과 무관');
+  await expect(page.locator('#sizePreview')).not.toContainText('허리');
   await expect(page.locator('#stageSpacing')).toHaveValue('2');
   // Stage defaults (2026-11-20, user): auto-next on; whole-building blast, collision with the standing building and
   // support collapse off (blast/collapse come from the server's fresh stage state).

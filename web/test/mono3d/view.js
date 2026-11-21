@@ -3,11 +3,13 @@
 // Nothing is recomputed here; values are the phone's `mono_approx` estimates.
 import { add, sub, scale, cross, normalize, project } from './geometry.js?v=20261109-4';
 import { createLink } from './link.js?v=20261109-4';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 const $ = id => document.getElementById(id);
 const videoCanvas = $('video'), vctx = videoCanvas.getContext('2d');
 const scene = $('scene'), sctx = scene.getContext('2d');
-const STALE_MS = 1500, TRAIL_MS = 600, GRAVITY = 9.8;
+const STALE_MS = 1500, TRAIL_MS = 600;
 const LM_EDGES = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [12, 24], [23, 24],
   [23, 25], [25, 27], [24, 26], [26, 28], [27, 29], [29, 31], [28, 30], [30, 32]];
 const JOINT_EDGES = [['left_shoulder', 'right_shoulder'], ['left_shoulder', 'left_elbow'], ['left_elbow', 'left_wrist'],
@@ -16,25 +18,29 @@ const JOINT_EDGES = [['left_shoulder', 'right_shoulder'], ['left_shoulder', 'lef
 const WRIST_COLORS = { left_wrist: '#38bdf8', right_wrist: '#f97316' };
 
 let calib = null, frame = null, frameAt = 0, jpeg = null, jpegAt = 0, phoneConnected = false, linkOpen = false;
-let hits = 0, hitFlashAt = -1e9, debris = [], trails = { left_wrist: [], right_wrist: [] };
-let audio = null;
+let hits = 0, hitFlashAt = -1e9, trails = { left_wrist: [], right_wrist: [] };
+const hitSound = createArHitSound({ button: $('sound') });
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 
 // ---------- link ----------
 const link = createLink('viewer', s => { linkOpen = s.open; phoneConnected = s.phone; renderStatus(); }, onMessage);
 link.setEnabled(true);
 
 function onMessage(m) {
+  if (m.type === 'link_open') { hitSound.reset(); hitEffect.clear(); hitFlashAt = -1e9; }
   if (m.type === 'mono3d_calib') { const first = !calib; calib = m; if (first) resetView(); }
   else if (m.type === 'mono3d_frame') onFrame(m);
   else if (m.type === 'mono3d_jpeg') {
     const img = new Image();
     img.onload = () => { jpeg = img; jpegAt = performance.now(); };
     img.src = m.data;
-  } else if (m.type === 'mono3d_phone_left') { frame = null; jpeg = null; }
+  } else if (m.type === 'mono3d_phone_left') { frame = null; jpeg = null; hitSound.reset(); hitEffect.clear(); }
 }
 
 function onFrame(m) {
-  const now = performance.now(), firstSync = !frame;
+  const accepted = hitSound.observeFrame(m);
+  const now = performance.now();
   frame = m; frameAt = now;
   for (const [name, list] of Object.entries(trails)) {
     const P = m.joints?.[name];
@@ -42,30 +48,16 @@ function onFrame(m) {
     while (list.length && now - list[0].t > TRAIL_MS) list.shift();
   }
   const hitNames = Object.keys(m.hit ?? {});
-  if (m.hits !== hits) {
-    if (!firstSync && (m.hits > hits || hitNames.length)) {
-      onHit(hitNames.map(n => m.joints?.[n]).find(Boolean));
-    }
-    hits = m.hits; $('hits').textContent = hits;
-  }
+  if (accepted) onHit(hitNames.map(n => m.joints?.[n]).find(Boolean));
+  if (m.hits === 0) { hitEffect.clear(); hitFlashAt = -1e9; }
+  hits = m.hits; $('hits').textContent = hits;
 }
 
 function onHit(at) {
   hitFlashAt = performance.now();
   const b = $('hits'); b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
   const pop = $('hitPop'); pop.hidden = true; void pop.offsetWidth; pop.hidden = false;
-  if (calib) {
-    const { center, half } = calib.building;
-    const origin = at ?? center;
-    for (let i = 0; i < 40; i++) {
-      const p = [center[0] + (Math.random() * 2 - 1) * half[0], center[1] + (Math.random() * 2 - 1) * half[1],
-        Math.max(0.02, origin[2] + (Math.random() * 2 - 1) * 0.15)];
-      const away = normalize([p[0] - origin[0] + 1e-3, p[1] - origin[1] + 1e-3, 0.2]);
-      debris.push({ p, v: add(scale(away, 1 + Math.random() * 2), [0, 0, Math.random() * 2]), born: hitFlashAt,
-        size: 0.02 + Math.random() * 0.04 });
-    }
-  }
-  beep();
+  hitEffect.trigger(at, calib?.building);
 }
 
 function renderStatus() {
@@ -97,7 +89,8 @@ function drawVideo() {
   const s = calib.marker_side_m / 2, m = [[-s, s, 0], [s, s, 0], [s, -s, 0], [-s, -s, 0]];
   m.forEach((p, i) => seg(p, m[(i + 1) % 4], 'rgba(34,197,94,.6)', lw));
   const flashing = performance.now() - hitFlashAt < 300;
-  for (const [a, b] of boxEdges(calib.building)) seg(a, b, flashing ? '#ef4444' : '#facc15', lw * 1.3);
+  const offset = hitEffect.recoil(), building = { ...calib.building, center: calib.building.center.map((value, i) => value + offset[i]) };
+  for (const [a, b] of boxEdges(building)) seg(a, b, flashing ? '#ef4444' : '#facc15', lw * 1.3);
   const lm = frame && performance.now() - frameAt < STALE_MS ? frame.landmarks : null;
   if (lm) {
     vctx.strokeStyle = 'rgba(255,255,255,.85)'; vctx.lineWidth = lw;
@@ -114,6 +107,7 @@ function drawVideo() {
       if (p) { vctx.fillStyle = color; vctx.beginPath(); vctx.arc(p[0], p[1], lw * 3.5, 0, Math.PI * 2); vctx.fill(); }
     }
   }
+  hitEffect.draw(vctx, point => project(K, pose, point));
   vctx.setTransform(1, 0, 0, 1, 0, 0);
   $('videoInfo').textContent = jpeg ? `${W}×${H} · 영상 ${Math.round(performance.now() - jpegAt)}ms 전` : '';
 }
@@ -189,7 +183,7 @@ function drawScene(now) {
 
   // Building: filled faces, far ones first; shakes and turns red when hit.
   const since = now - hitFlashAt, flashing = since < 400;
-  const shake = flashing ? [(Math.random() - 0.5) * 0.04, (Math.random() - 0.5) * 0.04, 0] : [0, 0, 0];
+  const shake = hitEffect.recoil(now);
   const b = { center: add(calib.building.center, shake), half: calib.building.half };
   const faces = boxFaces(b).map(f => ({ f, depth: f.reduce((acc, p) => acc + depthOf(cam.pose, p), 0) / 4 }))
     .sort((a, c) => c.depth - a.depth);
@@ -203,17 +197,7 @@ function drawScene(now) {
   const top = P([b.center[0], b.center[1], b.center[2] + b.half[2]]);
   labelAt(top, `건물 ${(b.half[2] * 2).toFixed(2)}m`, lw);
 
-  // Debris after a hit.
-  debris = debris.filter(d => now - d.born < 1800);
-  const dt = 1 / 60;
-  for (const d of debris) {
-    d.v[2] -= GRAVITY * dt; d.p = add(d.p, scale(d.v, dt));
-    if (d.p[2] < 0) { d.p[2] = 0; d.v = [d.v[0] * 0.5, d.v[1] * 0.5, -d.v[2] * 0.3]; }
-    const p = P(d.p); if (!p) continue;
-    const r = Math.max(2, d.size * cam.K.fx / Math.max(0.3, depthOf(cam.pose, d.p)));
-    sctx.fillStyle = `rgba(250,${150 + Math.round(Math.random() * 60)},21,${1 - (now - d.born) / 1800})`;
-    sctx.fillRect(p[0] - r / 2, p[1] - r / 2, r, r);
-  }
+  hitEffect.draw(sctx, P, now);
 
   const fresh = frame && now - frameAt < STALE_MS;
   if (fresh && frame.valid && frame.joints) {
@@ -273,17 +257,6 @@ scene.addEventListener('pointerup', () => { drag = null; });
 scene.addEventListener('pointercancel', () => { drag = null; });
 scene.addEventListener('wheel', e => { e.preventDefault(); view.dist = Math.max(1, Math.min(12, view.dist * Math.exp(e.deltaY * 0.001))); }, { passive: false });
 scene.addEventListener('dblclick', resetView);
-$('sound').addEventListener('click', () => {
-  if (audio) { audio.close(); audio = null; $('sound').textContent = '소리 켜기'; return; }
-  try { audio = new AudioContext(); $('sound').textContent = '소리 끄기'; } catch { audio = null; }
-});
-function beep() {
-  if (!audio) return;
-  const o = audio.createOscillator(), g = audio.createGain();
-  o.type = 'square'; o.frequency.value = 180; g.gain.setValueAtTime(0.25, audio.currentTime);
-  g.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 0.35);
-  o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.35);
-}
 
 function loop(now) {
   try { drawVideo(); drawScene(now); renderInfo(); renderStatus(); }

@@ -7,6 +7,8 @@ import { calibrateMarker, markerCalibrationMessage, cameraHeightRange, fovForCam
 import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261120-t1';
 import { createLink } from './link.js?v=20261116-w1';
 import {copyPersonMask,packPersonDepth,visualPersonEstimate,skeletonMask,torsoMaskCoverage,MIN_TORSO_MASK_COVERAGE,personDepthDiagnosis,PERSON_DEPTH_ENCODING} from './person-depth.js?v=20261120-t1';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 // The phone page draws no building; the building is shown on the PC page only.
 import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261118-s1';
@@ -35,7 +37,10 @@ const SKELETON = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [1
   [23, 25], [25, 27], [27, 29], [29, 31], [27, 31], [24, 26], [26, 28], [28, 30], [30, 32], [28, 32]];
 
 let step = 'camera', facing = 'environment';
-let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null, audio = null;
+let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null;
+const hitSound = createArHitSound();
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 let frozen = null, corners = [], dragPoint = null, canonicalMarker=false;
 let calib = null, body = null, bodySamples = null, bodyStart = 0, countdownTimer = null, lastSampleT = null;
 const BODY_REASONS = { no_person: '사람이 안 보임', feet_not_visible: '발이 화면에 안 나옴(발끝까지 보이게)',
@@ -361,7 +366,7 @@ function update() {
     const kick = !name.endsWith('_ankle') || (!!P && !!prev && Math.max(P[2], prev.P[2]) >= KICK_MIN_LIFT_M
       && Math.hypot(P[0] - prev.P[0], P[1] - prev.P[1], P[2] - prev.P[2]) / Math.max(1e-3, (latest.t - prev.t) / 1000) >= KICK_MIN_SPEED_MPS);
     const hit = (inside || swept) && !wasInside[name] && kick;
-    if (hit) { hits++; $('hits').textContent = hits; beep(1200, 0.08); lastHitAt = performance.now(); }
+    if (hit) { hits++; $('hits').textContent = hits; hitSound.hit(); hitEffect.trigger(P, b); lastHitAt = performance.now(); }
     wasInside[name] = inside; prevWrist[name] = P ? { P, t: latest.t } : null;
     if (hit) hitNow[name] = inside ? 'inside' : 'swept';
     if (P) { result.joints[name].inside_box = inside; result.joints[name].hit = hit; result.joints[name].hit_by = hit ? (inside ? 'inside' : 'swept') : null; }
@@ -453,6 +458,7 @@ function draw() {
     if (calib?.K && step !== 'place') drawCalibration(lw);
     drawSkeleton(W, H, lw);
     drawEstimate(lw);
+    if (step === 'measure' && calib?.K) hitEffect.draw(ctx, point => project(calib.K, calib.pose, point));
   }
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   if (step === 'measure' && !$('hud').classList.contains('nomap')) drawTop();
@@ -573,14 +579,9 @@ function download() {
   a.download = `mono3d-${data.started_at.replace(/[:.]/g, '-')}.json`;
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
-function unlockAudio() { try { audio ??= new AudioContext(); audio.resume?.(); } catch { audio = null; } }
+function unlockAudio() { void hitSound.unlock(); }
 function beep(freq = 660, seconds = 0.12) {
-  if (!audio) return;
-  try {
-    const o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime;
-    o.frequency.value = freq; g.gain.setValueAtTime(0.15, t); g.gain.exponentialRampToValueAtTime(0.001, t + seconds);
-    o.connect(g).connect(audio.destination); o.start(t); o.stop(t + seconds);
-  } catch { /* sound is optional */ }
+  hitSound.beep(freq, seconds);
 }
 
 function loop() {
@@ -609,7 +610,7 @@ $('calibBody').addEventListener('click', beginBody);
 $('toMeasure').addEventListener('click', () => setStep('measure'));
 $('redoBody').addEventListener('click', () => { resetBodyPanel(); setStep('body'); });
 $('redoCorners').addEventListener('click', () => setStep('place'));
-$('resetHits').addEventListener('click', () => { hits = 0; $('hits').textContent = '0'; });
+$('resetHits').addEventListener('click', () => { hits = 0; hitEffect.clear(); lastHitAt = -1e9; $('hits').textContent = '0'; });
 for (const id of ['bldAutoH', 'heightCm']) $(id).addEventListener('change', syncBuildingHeight);
 $('heightCm').addEventListener('change',()=>{
   body=null;resetBodyPanel();

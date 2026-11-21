@@ -51,8 +51,20 @@ let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
 let stageOwner=null,stageSpacing=null,stageBorrowed={};
 let impactQueue=new Set(),impactSentAt=0;
 let sizeDirty=false;
+const toggleDrafts=new Map();
+function sendToggle(id,message){
+  toggleDrafts.set(id,{value:$(id).checked,at:performance.now()});
+  if(!link.send(message))toggleDrafts.delete(id);
+}
+function syncToggle(id,value){
+  const draft=toggleDrafts.get(id);
+  if(draft&&draft.value!==value&&performance.now()-draft.at<2000)value=draft.value;
+  else toggleDrafts.delete(id);
+  $(id).checked=value;
+}
 function previewSize(){
   const scale=Number($('scale').value);
+  if(wide){$('sizePreview').textContent='무대 세트 크기 · 몸 보정과 무관 · 마커 간격에 맞춰 배치';return;}
   if(state?.body_reference){$('sizePreview').textContent=`최고 높이 ${state.display_height_m.toFixed(2)}m · 최초 허리의 70% · 구역 내 비율 유지`;return;}
   if(fixedSize){$('sizePreview').textContent='몸 보정 후 최고 높이를 허리의 70%로 고정 · 구역 내 비율 유지';return;}
   if(!Number.isFinite(scale)||scale<.1||scale>2){$('sizePreview').textContent='배율을 0.1~2 사이로 입력하세요.';return;}
@@ -144,7 +156,7 @@ function syncState(m) {
   state=m;
   if(wide&&m.stage){stageOwner=m.stage.owner;if(stageSpacing!==m.stage.spacing_m){stageSpacing=m.stage.spacing_m;placeMarkers(stageSpacing);if(document.activeElement!==$('stageSpacing'))$('stageSpacing').value=stageSpacing;}
     if(stageListSpacing!==m.stage.spacing_m)loadStageList(m.stage.spacing_m).catch(showLoadError);}
-  $('bodyReference').textContent=wide?`건물 폭 0.7~0.8m(실제 건물 비율 유지) · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
+  $('bodyReference').textContent=wide?`무대 세트 크기 · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
   for(const id of ['x','y','yaw'])$(id).disabled=!!m.body_reference;
   $('scale').disabled=$('sizeRange').disabled=fixedSize||!!m.body_reference;
   const desired=m.scene_id??'it1';
@@ -171,7 +183,7 @@ function syncState(m) {
   physics.release(m.removed_ids,m.event);
   if(m.event?.blast)physics.blast(m.event);
   else if(m.event&&['mouse','mouse_push'].includes(m.event.kind))physics.push(m.event);
-  $('blastMode').checked=m.blast_enabled??true;
+  syncToggle('blastMode',m.blast_enabled??true);
   if(approx){
     if(document.activeElement!==$('depthMargin'))$('depthMargin').value=m.depth_margin??0;
     const reasons={invalid:'미검출',too_low:'발을 더 높이 드세요',too_slow:'더 빠르게 차세요',baseline:'기준점 확보 · 다음 유효 관측 대기',gap:'추적 끊김 · 기준점 재확보',standing:'건물과 겹쳐 있음 · 손/발을 빠르게 움직이면 부숴짐',inside_slow:'건물과 겹침 · 빠르게 움직이세요',cooldown:'잠시 대기',outside:'충돌체 밖',contact:'접촉'};
@@ -181,7 +193,7 @@ function syncState(m) {
   }
   if(document.activeElement!==$('blastRadius'))$('blastRadius').value=m.blast_radius??3;
   if(document.activeElement!==$('pushStrength'))$('pushStrength').value=m.blast_strength??12;
-  $('collapse').checked=m.collapse??true;
+  syncToggle('collapse',m.collapse??true);
   for(const s of scenes){
     s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
@@ -344,12 +356,12 @@ $('restore').onclick=()=>{link.send({type:'multi3d_model_reset'});};
 $('captureBody').hidden=true;
 $('captureBody').onclick=()=>link.send({type:'multi3d_body_start'});
 $('stress').onclick=()=>link.send({type:'multi3d_model_drop_all'});
-$('collapse').onchange=()=>link.send({type:'multi3d_model_collapse',enabled:$('collapse').checked});
+$('collapse').onchange=()=>sendToggle('collapse',{type:'multi3d_model_collapse',enabled:$('collapse').checked});
 for(const input of document.querySelectorAll('[data-physics]'))input.onchange=()=>{
   physicsOptions[input.dataset.physics]=input.checked;physics?.configure(physicsOptions);
 };
 $('impactBreak').onchange=()=>impactQueue.clear();
-const sendBlastConfig=()=>link.send({type:'multi3d_model_blast_config',enabled:$('blastMode').checked,
+const sendBlastConfig=()=>sendToggle('blastMode',{type:'multi3d_model_blast_config',enabled:$('blastMode').checked,
   radius:Number($('blastRadius').value),strength:Number($('pushStrength').value)});
 for(const id of ['blastMode','blastRadius','pushStrength'])$(id).addEventListener('change',sendBlastConfig);
 $('interactionDistance').onchange=()=>{try{physics?.setInteractionDistance(Number($('interactionDistance').value));}catch(e){status(e.message);}};
@@ -402,7 +414,7 @@ async function loadScene(id){
   fixedSize=spec.fixed_size;
   for(const key of ['sizeRange','scale'])$(key).disabled=fixedSize;
   $('buildingSize').querySelector('h3').textContent=fixedSize?'건물 크기 · 고정':'건물 크기';
-  $('buildingSize').querySelector('small').textContent=fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
+  $('buildingSize').querySelector('small').textContent=wide?'무대 세트에 정한 크기를 사용합니다. 마커 간격이 좁으면 건물 전체가 축소됩니다.':fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
   for(const f of colliderData.fragments)pieces.set(f.fragment_id,f.node);
   for(const s of scenes){const assembled=assembleScene(spec,models);s.outer.add(assembled.root);s.nodes=assembled.nodes;}
   loadedScene=id;loadingScene=null;scenePending=false;ready=true;epoch=null;
@@ -417,7 +429,7 @@ async function loadScene(id){
     orbit.camera.far=Math.max(50,distance*10);orbit.camera.updateProjectionMatrix();controls.update();
   }
 }
-// Wide/duo stages list stage sets (each building 0.7~0.8 m wide, as many as fit the stage), which depend on spacing.
+// Wide/duo stage sets contain one big building, fitted to the marker spacing.
 let stageListSpacing=null;
 async function loadStageList(spacing){
   if(!wide||stageListSpacing===spacing)return;stageListSpacing=spacing;

@@ -19,6 +19,7 @@ import time
 import asyncio
 
 from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect
+from starlette.websockets import WebSocketState
 
 from .connections import Peer
 
@@ -56,7 +57,9 @@ class Mono3dRelay:
                 p=raw.get(name)
                 if isinstance(p,list) and len(p)==3 and all(isinstance(v,(int,float)) and math.isfinite(v) and abs(v)<=100 for v in p):
                     joints[name]={'p':p}
-        self.model_state(self.model.update(joints,time.monotonic()*1000))
+        # Python 3.12 on Windows uses a 15.6 ms tick for monotonic(); separate
+        # frames can otherwise share a timestamp and be rejected as a zero-time path.
+        self.model_state(self.model.update(joints,time.perf_counter()*1000))
 
     def status(self) -> dict:
         return {"type": "mono3d_status", "phone_connected": self.phone is not None, "viewers": len(self.viewers)}
@@ -181,6 +184,9 @@ def mono3d_router() -> APIRouter:
                 if kind=='mono3d_frame':relay.update_model(message)
         except WebSocketDisconnect:
             pass
+        except RuntimeError:
+            if websocket.application_state is not WebSocketState.DISCONNECTED:
+                raise
         finally:
             if role == "viewer":
                 relay.viewers.discard(peer)

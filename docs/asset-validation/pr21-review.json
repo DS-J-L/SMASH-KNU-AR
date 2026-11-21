@@ -1,0 +1,53 @@
+{
+  "pr": 21,
+  "reviewed_at": "2026-11-21 15:01 KST",
+  "base": "3bd333e5324eb368e1966e47b300aaadb2abf936",
+  "original_head": "4e05fb940e815810378e9781bbbe5feac8091f21",
+  "status": "코드 검토·통합 검증 통과, main 머지 완료",
+  "fixes": [
+    "AR 소리/효과와 새 마커·가림·발목·시계 경계 결합",
+    "Windows Python 3.12 수신 시계: GetTickCount64 15.625ms 대신 고해상도 perf_counter 사용",
+    "지연 상태 패킷이 사용자의 옵션 클릭을 되돌리는 경합 차단 및 브라우저 회귀 추가",
+    "서버가 닫은 교체 소켓의 정상 종료 처리",
+    "AR 합성 보정 입력/쿼리 및 기본 구역 로딩 검사 보완"
+  ],
+  "checks": {
+    "node": {
+      "command": "node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs",
+      "passed": 201
+    },
+    "python": {
+      "unique_passed": 255,
+      "latest_command": ".venv/Scripts/python.exe -m pytest tests -q -k 'not all_zones_match_single_height_and_preserve_internal_proportions'",
+      "latest_passed": 254,
+      "previous_unchanged_all_zones_passed": 1,
+      "note": "정확한 -k 표현은 PM 기록 참조. 전체 구역 검사 통과 후 그 함수/기하를 바꾸지 않았고, 시계 수정 후 나머지 254개와 종료 수정 후 관련 15개를 재검증했다."
+    },
+    "browser": {
+      "building": 25,
+      "phone_and_single": 8,
+      "ar_feedback": 4
+    },
+    "builds": [
+      "single",
+      "phone-game",
+      "building-test"
+    ]
+  },
+  "input_scope": [
+    "synthetic 카메라·MediaPipe 관절·메시지",
+    "mouse_demo·keyboard_demo 및 합성 2D 소비자",
+    "실제 HTTP/WebSocket·Web Audio/Canvas/WebGL·GLB/Rapier 실행"
+  ],
+  "unverified": [
+    "실제 휴대폰·마커 실측/정합·청취·실제 네트워크 지연",
+    "실제 3대/정량·장시간·공통 Phase 통과"
+  ],
+  "local_logs": "data/local/pr21-review/",
+  "merge": {
+    "merged": true,
+    "head": "47b83ca9c71a7f569eee9995fdc12f3c1b478a3b",
+    "commit": "03d7dba4c3937cc44149b10d29067fc07daff312",
+    "merged_at_kst": "2026-11-21 15:02:06 KST"
+  }
+}

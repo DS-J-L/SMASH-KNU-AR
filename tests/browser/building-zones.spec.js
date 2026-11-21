@@ -81,7 +81,7 @@ test('default: 3 cameras start on a zone of several buildings, 1 camera starts o
   await expect(page.locator('#sceneControl')).toBeVisible();await expect(page.locator('#autoNextControl')).toBeHidden();
   // The page loads IT1 first and then switches to a zone: wait for a real zone id (null also is "not it1").
   await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return !!s.sceneId&&s.sceneId!=='it1'&&s.ready;}),{timeout:90000}).toBe(true);
-  expect(await page.evaluate(()=>window.buildingFragmentTest.snapshot().buildingCount)).toBeGreaterThanOrEqual(2);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().buildingCount),{timeout:90000}).toBeGreaterThanOrEqual(2);
   await page.goto('/test/building/?mode=mono&key=fragment-test');
   await expect(page.locator('#sceneControl')).toBeVisible();await expect(page.locator('#autoNextControl')).toBeVisible();
   await expect(page.locator('#sceneSelect option')).toHaveCount(62);
