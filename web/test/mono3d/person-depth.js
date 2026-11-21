@@ -1,6 +1,6 @@
 // Person silhouette + approximate camera-space depth. No additional inference model.
 import {matVec,add,project} from './geometry.js?v=20261111-1';
-import {estimate} from './mono3d.js?v=20261112-1';
+import {estimate} from './mono3d.js?v=20261120-t1';
 const IDS={nose:0,left_shoulder:11,right_shoulder:12,left_elbow:13,right_elbow:14,
   left_wrist:15,right_wrist:16,left_hip:23,right_hip:24,left_knee:25,right_knee:26,left_ankle:27,right_ankle:28};
 const BONES=[[0,11],[0,12],[11,12],[11,13],[13,15],[12,14],[14,16],
@@ -18,11 +18,11 @@ export function visualPersonEstimate(K,pose,landmarks,world,body,tracking){
 }
 
 // Copy while the MediaPipe result is alive; its GPU/CPU masks are released by result.close().
-export function copyPersonMask(mask){
+export function copyPersonMask(mask,maxWidth=192,maxHeight=384){
   if(!mask)return null;
   const source=mask.getAsFloat32Array(),sw=mask.width,sh=mask.height;
   if(!(sw>0&&sh>0)||source.length!==sw*sh)return null;
-  const ratio=Math.min(1,192/sw,384/sh),width=Math.max(1,Math.round(sw*ratio)),height=Math.max(1,Math.round(sh*ratio));
+  const ratio=Math.min(1,maxWidth/sw,maxHeight/sh),width=Math.max(1,Math.round(sw*ratio)),height=Math.max(1,Math.round(sh*ratio));
   const alpha=new Uint8Array(width*height);
   for(let y=0;y<height;y++)for(let x=0;x<width;x++){
     const value=source[Math.min(sh-1,Math.floor((y+.5)*sh/height))*sw+Math.min(sw-1,Math.floor((x+.5)*sw/width))];

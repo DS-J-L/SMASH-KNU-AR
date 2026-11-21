@@ -4,7 +4,7 @@ const calib=JSON.parse(execFileSync('.venv/Scripts/python.exe',['-c',"import sys
 test('3 cameras: zones with two or three buildings, independent contacts, fixed size and zone switching',async({page})=>{
   test.setTimeout(180000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/test/building/?key=fragment-test');
-  await expect(page.locator('#dimensions')).toContainText('고정 높이');
+  await expect(page.locator('#dimensions')).toContainText('고정 높이',{timeout:60000});   // first page on a fresh server: the zone is built cold
   await expect(page.locator('#sceneSelect option')).toHaveCount(23);
   await page.locator('#sceneSelect').selectOption('museum-social-01');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
@@ -79,8 +79,8 @@ test('default: 3 cameras start on a zone of several buildings, 1 camera starts o
   test.setTimeout(120000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/test/building/?key=fragment-test');
   await expect(page.locator('#sceneControl')).toBeVisible();await expect(page.locator('#autoNextControl')).toBeHidden();
-  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().sceneId),{timeout:90000}).not.toBe('it1');
-  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  // The page loads IT1 first and then switches to a zone: wait for a real zone id (null also is "not it1").
+  await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return !!s.sceneId&&s.sceneId!=='it1'&&s.ready;}),{timeout:90000}).toBe(true);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().buildingCount),{timeout:90000}).toBeGreaterThanOrEqual(2);
   await page.goto('/test/building/?mode=mono&key=fragment-test');
   await expect(page.locator('#sceneControl')).toBeVisible();await expect(page.locator('#autoNextControl')).toBeVisible();

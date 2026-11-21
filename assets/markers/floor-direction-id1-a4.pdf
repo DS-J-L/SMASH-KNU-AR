@@ -1,0 +1,47 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.890] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 474 >>
+stream
+0 g
+14.173 175.748 566.929 566.929 re f
+1 g
+108.661 459.213 94.488 94.488 re f
+203.150 459.213 94.488 94.488 re f
+297.638 459.213 94.488 94.488 re f
+392.126 459.213 94.488 94.488 re f
+108.661 364.724 94.488 94.488 re f
+392.126 364.724 94.488 94.488 re f
+108.661 270.236 94.488 94.488 re f
+297.638 270.236 94.488 94.488 re f
+0 g
+BT /F1 9 Tf
+56.693 104.882 Td
+(ArUco DICT_4X4_50 ID1 - wide stage C1 centre - black square 200 mm - print 100% - top edge = away from phone) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000249 00000 n 
+0000000774 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+844
+%%EOF

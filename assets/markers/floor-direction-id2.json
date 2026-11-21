@@ -1,0 +1,47 @@
+{
+  "type": "aruco_floor_reference",
+  "dictionary": "DICT_4X4_50",
+  "id": 2,
+  "marker_side_m": 0.2,
+  "artwork_side_mm": 210,
+  "origin": "marker_center",
+  "world": {
+    "frame": "room_z_up",
+    "units": "m"
+  },
+  "canonical_corners_m": [
+    [
+      -0.1,
+      0.1,
+      0
+    ],
+    [
+      0.1,
+      0.1,
+      0
+    ],
+    [
+      0.1,
+      -0.1,
+      0
+    ],
+    [
+      -0.1,
+      -0.1,
+      0
+    ]
+  ],
+  "front": "+Y",
+  "right": "+X",
+  "up": "+Z",
+  "source": "reference_geometry",
+  "print": "A4 PDF floor-direction-id2-a4.pdf, actual size 100%; black outer square 200 mm; no fit to page",
+  "integration": "wide stage /test/mono3d/?stage=wide&camera=C2 auto detection",
+  "white_margin_mm": 5,
+  "labels": "none; orientation remains encoded in ArUco pattern",
+  "wide_stage": {
+    "camera": "C2",
+    "marker_x": "(2 - 1) * spacing_m",
+    "row": "ID0, ID1, ID2 left to right as seen from the phones, same orientation"
+  }
+}

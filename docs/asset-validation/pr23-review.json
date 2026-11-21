@@ -1,0 +1,63 @@
+{
+  "pr": 23,
+  "reviewed_at": "2026-11-21 15:11 KST",
+  "base": "03d7dba4c3937cc44149b10d29067fc07daff312",
+  "original_head": "f5927e7e8a12402832e48d69ab7fefa864ee7b0e",
+  "review_status": "코드 검토·충돌 해결·통합 자동검증 통과",
+  "fixes": [
+    "PR21 검증 main·수신 시계·옵션 초안·정상 소켓 종료 및 AR 소리/효과 보존",
+    "넓은/2대 무대의 수신 시계도 perf_counter로 통일",
+    "NaN 마커 간격 수락을 재현하고 유한성 검증·3개 회귀 추가",
+    "실제 큰 건물 정책과 맞지 않는 0.7~0.8m/허리70% 표시 정정·두 무대 브라우저 확인",
+    "최종 source에서 건물 배포 번들 재생성, 누적 기록 양쪽 보존"
+  ],
+  "checks": {
+    "node": {
+      "passed": 217,
+      "command": "node --experimental-vm-modules --test tests/*.mjs tests/single/*.test.mjs"
+    },
+    "python": {
+      "passed": 277,
+      "groups": [
+        {
+          "passed": 276,
+          "deselected": 1,
+          "command": ".venv/Scripts/python.exe -m pytest tests -q -k 'not all_zones_match_single_height_and_preserve_internal_proportions'"
+        },
+        {
+          "passed": 1,
+          "command": ".venv/Scripts/python.exe -m pytest tests/test_body_reference.py::test_all_zones_match_single_height_and_preserve_internal_proportions -q"
+        }
+      ]
+    },
+    "browser": {
+      "building": 35,
+      "ar_feedback": 4,
+      "size_label_followup": 2,
+      "legacy_2d_phone": {
+        "passed": 8,
+        "from_pr21": true,
+        "source_and_deployed_bundle_unchanged": true
+      }
+    },
+    "build": [
+      "building-test"
+    ]
+  },
+  "reviewed_boundaries": [
+    "마커 ID·stage 좌표 이동·판정 폰 선택/히스테리시스·관절 대체/출처 전환 궤적 초기화",
+    "V는 화면 전용·간격 측정/재보정·윤곽/깊이 최신성·무효 입력",
+    "WebRTC 신호 순서/복구·JPEG 대체·최신 프레임·복원/장면 변경/해제",
+    "mono_approx와 기존 multi_view_test 구분"
+  ],
+  "input_scope": [
+    "synthetic 카메라·관절·메시지",
+    "mouse/keyboard 데모",
+    "실제 로컬 서버/WebSocket·브라우저 간 WebRTC와 JPEG 전환·WebGL/Rapier·WebAudio"
+  ],
+  "unverified": [
+    "실폰·실제 와이파이/영상 지연",
+    "인쇄 마커 실측·AR 정합·실제 청취·정량/장시간·공통 Phase"
+  ],
+  "local_evidence": "data/local/pr23-review/; test-results/building-fragments/duo-stage.png·wide-stage.png"
+}

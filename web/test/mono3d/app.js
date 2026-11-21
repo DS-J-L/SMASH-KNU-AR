@@ -4,16 +4,24 @@
 import { createPoseLandmarker } from '/camera/pose.js?v=20261112-2';
 import { showLoupe, hideLoupe, makeMovable, initOverlayToggle, resetPanelPosition } from './phone-ui.js?v=20261117-1';
 import { calibrateMarker, markerCalibrationMessage, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project, transposeMul } from './geometry.js?v=20261111-1';
-import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261112-1';
-import { createLink } from './link.js?v=20261109-4';
-import {copyPersonMask,packPersonDepth,visualPersonEstimate,skeletonMask,torsoMaskCoverage,MIN_TORSO_MASK_COVERAGE,personDepthDiagnosis,PERSON_DEPTH_ENCODING} from './person-depth.js?v=20261117-1';
+import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261120-t1';
+import { createLink } from './link.js?v=20261116-w1';
+import {copyPersonMask,packPersonDepth,visualPersonEstimate,skeletonMask,torsoMaskCoverage,MIN_TORSO_MASK_COVERAGE,personDepthDiagnosis,PERSON_DEPTH_ENCODING} from './person-depth.js?v=20261120-t1';
 import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
 import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 // The phone page draws no building; the building is shown on the PC page only.
-import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261117-2';
+import {createMarkerScanner} from '/test/multi3d/auto-marker.js?v=20261118-s1';
+import {orientMarkerCorners,graySampler} from '/test/multi3d/aruco.js?v=20261116-w1';
 let markerScanner=null;
 const $ = id => document.getElementById(id);
+// Wide stage (docs/WIDE_STAGE_TEST.md): ?stage=wide&camera=C0|C1|C2. Each phone calibrates on its own marker
+// ID0/ID1/ID2 and keeps this single-camera depth; the server shifts it by the marker spacing into one stage.
+// Duo stage (docs/DUO_STAGE_TEST.md): ?stage=duo&camera=C0|C1, the same with two judging phones on ID0/ID1.
+const query = new URLSearchParams(location.search), STAGE = ['wide', 'duo'].includes(query.get('stage')) ? query.get('stage') : null;
+const WIDE = STAGE !== null, DUO = STAGE === 'duo', WIDE_CAMERAS = DUO ? ['C0', 'C1'] : ['C0', 'C1', 'C2'];
+const wideCamera = WIDE_CAMERAS.includes(query.get('camera')) ? query.get('camera') : DUO ? 'C0' : 'C1';
+const markerId = () => WIDE ? WIDE_CAMERAS.indexOf(wideCamera) : 0;
 const view = $('view'), ctx = view.getContext('2d'), topView = $('top'), topCtx = topView.getContext('2d');
 const sheet = $('sheet');
 const video = document.createElement('video');
@@ -57,7 +65,7 @@ function syncBuildingHeight() {
   $('bldH').disabled = $('bldAutoH').checked;
   if ($('bldAutoH').checked) $('bldH').value = buildingHeight().toFixed(2);
 }
-const storeKey = () => `${STORE_KEY}:${facing}`;
+const storeKey = () => `${STORE_KEY}:${WIDE ? `${STAGE}-${wideCamera}:` : ''}${facing}`;
 function load() { try { return JSON.parse(localStorage.getItem(storeKey())); } catch { return null; } }
 function save(value) { try { value ? localStorage.setItem(storeKey(), JSON.stringify(value)) : localStorage.removeItem(storeKey()); } catch { /* blocked storage */ } }
 function banner(text) { $('banner').textContent = text || ''; $('banner').hidden = !text; }
@@ -126,10 +134,12 @@ async function startCamera() {
 
 // ---------- marker calibration ----------
 function showSaved() {
-  const s = load(), fits = s && s.width === video.videoWidth && s.height === video.videoHeight;
+  // The wide stage needs the marker pattern's axes, so only pattern-oriented saves are reusable there.
+  const s = load(), fits = s && s.width === video.videoWidth && s.height === video.videoHeight && (!WIDE || s.canonical === true);
   $('useSaved').hidden = !fits;
   $('savedCalib').hidden = !s;
   $('savedCalib').textContent = !s ? '' : fits ? `이 카메라로 저장된 보정이 있습니다(높이 ${s.cameraHeight} m). 폰을 그때와 같은 자리에 두었다면 그대로 쓸 수 있습니다.`
+    : WIDE && s.canonical !== true ? '저장된 보정은 마커 무늬 방향이 없어 넓은 무대에서 쓸 수 없습니다. 다시 보정하세요.'
     : `저장된 보정(${s.width}×${s.height})은 지금 영상(${video.videoWidth}×${video.videoHeight})과 달라 쓸 수 없습니다.`;
 }
 function useSaved() {
@@ -196,8 +206,16 @@ function updateCornerPrompt() {
 }
 function finishTapping() {
   const W = frozen.width, H = frozen.height;
+  // Wide stage: the marker pattern, not the "far edge = front" rule, gives the three phones the same axes.
+  const oriented = WIDE ? orientMarkerCorners(graySampler(frozen), orderMarkerCorners(corners), 1, markerId()) : null;
   frozen = null;
-  calibrate(W, H);
+  if (WIDE && !oriented) {
+    calib = null; $('toBody').disabled = true;
+    $('calibOut').textContent = `ID${markerId()} 마커 무늬를 읽지 못했습니다. 이 폰(${wideCamera})의 마커가 ID${markerId()}인지, 모서리를 정확히 찍었는지 확인하세요.`;
+  } else {
+    if (oriented) corners = oriented.corners;
+    calibrate(W, H, !!oriented);
+  }
   $('tapPrompt').hidden = true; $('cornerDone').hidden = false;
   setStep('corners');                      // re-layout: sheet back to the bottom, live video
   beep(calib ? 880 : 220);
@@ -283,9 +301,10 @@ function finishBody() {
   $('bodyOut').hidden = false;
   $('bodyOut').textContent = body ? [
     `추정 키 약 ${(body.estimated_height_m * 100).toFixed(0)} cm ← 실제 키와 비슷한지 보세요`,
-    `크기 배율 ${body.scale.toFixed(3)} (${body.scale_source === 'user_height' ? '입력한 키' : '영상'} 기준, ${body.samples}프레임)`,
+    `크기 배율 ${body.scale.toFixed(3)} (${body.scale_source === 'user_height' ? '입력한 키' : body.scale_from === 'shoulder' ? '영상 어깨 높이' : '영상'} 기준, ${body.samples}프레임)`,
+    body.scale_from === 'shoulder' && body.scale_source !== 'user_height' ? '머리가 화면 밖이라 어깨 높이로 맞췄습니다. 실제 키를 넣으면 더 정확합니다.' : '',
     `깊이 기준: 마커 중심 (0, 0) · 발목 높이 ${(body.depth_reference.ankle_height_m*100).toFixed(1)}cm`,
-  ].join('\n') + reasons : `몸 보정 실패: 유효 프레임 부족 또는 자세/위치가 흔들렸습니다.${reasons}\n두 발 사이 중심을 마커에 맞추고 머리부터 발끝까지 보이게 다시 서세요.`;
+  ].filter(Boolean).join('\n') + reasons : `몸 보정 실패: 유효 프레임 부족 또는 자세/위치가 흔들렸습니다.${reasons}\n두 발 사이 중심을 마커에 맞추고 발끝부터 어깨까지(가능하면 머리까지) 보이게 다시 서세요.`;
   $('calibBody').textContent = '다시 하기'; $('toMeasure').hidden = !body;
   syncBuildingHeight();
   if (body) $('bodyOut').textContent += `
@@ -366,11 +385,13 @@ const round = p => p.map(v => +v.toFixed(4));
 const PC_FRAME_MS = 33, PC_JPEG_MS = 200, PC_JPEG_WIDTH = 480;
 const jpegCanvas = document.createElement('canvas');
 let lastCalibSent = null, lastFrameSentAt = 0, lastJpegSentAt = 0, pendingHits = {};
-const link = createLink('phone', renderLink, m => { if (m.type === 'link_open') lastCalibSent = null;});
+const link = createLink('phone', renderLink, m => { if (m.type === 'link_open') lastCalibSent = null;},
+  WIDE ? { path: `/ws/test/${STAGE}3d`, params: { camera: wideCamera } } : undefined);
 function renderLink(s) {
   const text = !s.enabled ? '꺼짐'
     : s.error === 'access_key_required' ? '접속 키가 필요합니다(주소에 ?key=)'
     : s.error === 'superseded' ? '다른 폰이 연결해서 끊겼습니다'
+    : s.error === 'marker_id_mismatch' ? `서버가 마커를 거부했습니다 · ${wideCamera}는 ID${markerId()} 마커로 보정하세요`
     : !s.open ? '서버에 연결 중…'
     : s.viewers ? `✓ PC 화면 ${s.viewers}개가 보는 중` : '서버 연결됨 · PC 화면을 여세요';
   $('pcStatus').textContent = text;
@@ -382,6 +403,7 @@ function sendToPc(hitNow) {
   const calibMsg = { type: 'mono3d_calib', schema: 'mono3d_live.v1', facing, mirror: mirrored(),
     image: { width: calib.width, height: calib.height }, K: calib.K,
     camera: { R: calib.pose.R, t: calib.pose.t, C: calib.pose.C }, marker_side_m: calib.side,
+    marker_id: markerId(), marker_oriented: canonicalMarker, ...(WIDE ? { stage: STAGE, camera_id: wideCamera } : {}),
     building: { center: round(b.center), half: round(b.half), margin: num('boxMargin') },
     body: body && { scale: body.scale, scale_source: body.scale_source, estimated_height_m: body.estimated_height_m,
       depth_reference:body.depth_reference,model_reference:body.model_reference } };
@@ -624,7 +646,29 @@ window.__mono3dReady = true;
 
 
 markerScanner=createMarkerScanner(video,(frame,points)=>{corners=points;frozen=null;calib=null;body=null;calibrate(frame.width,frame.height,true);
+  // Not good enough: forget these corners and keep scanning (the scanner retries until it works or the user leaves).
+  if(!calib){corners=[];return ($('calibOut').textContent||'').split(/\r?\n/)[0].slice(0,80)||'품질 부족';}
   $('tapPrompt').hidden=true;$('cornerDone').hidden=false;setStep('corners');
-  $('autoMarkerStatus').textContent=calib?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;});
+  $('autoMarkerStatus').textContent=calib?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;},markerId(),{button:$('autoMarker')});
 $('autoMarker').onclick=()=>{if(step==='place')markerScanner.start();};
 window.addEventListener('pagehide',()=>markerScanner.stop());
+if (WIDE) {
+  // Changing the camera number reloads the page so its link, saved calibration and marker id all switch together.
+  document.title = `${DUO ? '2대 무대' : '넓은 무대'} ${wideCamera} · 카메라 1대 근사 3D`;
+  if (DUO) {
+    // Planned duo setup: judging phones 0.66 m high, A3 markers (270 mm black square). Saved settings still win.
+    $('cameraHeight').value = '0.66'; $('markerCm').value = '27';
+    document.querySelector('[data-wide-camera="C2"]').hidden = true;
+    document.querySelector('[data-wide-camera="C1"]').textContent = 'C1 · ID1 오른쪽';
+  }
+  $('wideCamera').hidden = false;
+  $('wideCameraInfo').textContent = `이 폰은 ${wideCamera}입니다. 바닥의 ID${markerId()} 마커로 보정하고, 몸 보정도 그 마커 위에서 합니다.`;
+  for (const b of document.querySelectorAll('[data-wide-camera]')) {
+    const on = b.dataset.wideCamera === wideCamera; b.classList.toggle('on', on); b.setAttribute('aria-checked', String(on));
+    b.addEventListener('click', () => { if (on) return; const u = new URL(location.href); u.searchParams.set('camera', b.dataset.wideCamera); location.replace(u); });
+  }
+  $('autoMarkerStatus').textContent = `흑백 ArUco ID${markerId()} 마커의 검은 테두리 전체가 보이게 하세요. 옆 구간의 다른 번호 마커는 무시합니다.`;
+  $('pcLinkHint').innerHTML = DUO
+    ? 'PC에서 <a href="/test/building/?mode=duo">2대 무대 화면</a>을 여세요. 반대편 <a href="/test/stage-view/">화면 폰</a> 영상이 메인 화면이 되고, 사람이 있는 구간의 폰이 판정합니다.'
+    : 'PC에서 <a href="/test/building/?mode=wide">넓은 무대 화면</a>을 여세요. 세 폰 영상이 가로로 이어지고, 사람이 있는 구간의 폰이 판정합니다.';
+}

@@ -3,7 +3,7 @@
   "reviewed_at": "2026-11-21 15:01 KST",
   "base": "3bd333e5324eb368e1966e47b300aaadb2abf936",
   "original_head": "4e05fb940e815810378e9781bbbe5feac8091f21",
-  "status": "검토·보완·통합 자동검증 통과, 최종 head 지정 정상 머지 대기",
+  "status": "코드 검토·통합 검증 통과, main 머지 완료",
   "fixes": [
     "AR 소리/효과와 새 마커·가림·발목·시계 경계 결합",
     "Windows Python 3.12 수신 시계: GetTickCount64 15.625ms 대신 고해상도 perf_counter 사용",
@@ -43,5 +43,11 @@
     "실제 휴대폰·마커 실측/정합·청취·실제 네트워크 지연",
     "실제 3대/정량·장시간·공통 Phase 통과"
   ],
-  "local_logs": "data/local/pr21-review/"
+  "local_logs": "data/local/pr21-review/",
+  "merge": {
+    "merged": true,
+    "head": "47b83ca9c71a7f569eee9995fdc12f3c1b478a3b",
+    "commit": "03d7dba4c3937cc44149b10d29067fc07daff312",
+    "merged_at_kst": "2026-11-21 15:02:06 KST"
+  }
 }

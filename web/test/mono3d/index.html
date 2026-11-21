@@ -44,6 +44,14 @@
         <button class="segBtn on" data-facing="environment" role="radio" aria-checked="true">후면 카메라</button>
         <button class="segBtn" data-facing="user" role="radio" aria-checked="false">전면 카메라</button>
       </div>
+      <div id="wideCamera" hidden>
+        <div class="seg" role="radiogroup" aria-label="넓은 무대 카메라 번호">
+          <button class="segBtn" data-wide-camera="C0" role="radio" aria-checked="false">C0 · ID0 왼쪽</button>
+          <button class="segBtn" data-wide-camera="C1" role="radio" aria-checked="false">C1 · ID1 가운데</button>
+          <button class="segBtn" data-wide-camera="C2" role="radio" aria-checked="false">C2 · ID2 오른쪽</button>
+        </div>
+        <p id="wideCameraInfo" class="hint"></p>
+      </div>
       <p class="hint">혼자 시험할 때는 <b>전면 카메라</b>가 편합니다. 화면을 보면서 움직일 수 있습니다. 화면만 거울처럼 뒤집고, 계산은 원본 영상으로 합니다.</p>
       <details>
         <summary>해상도·모델</summary>
@@ -103,7 +111,7 @@
     <div class="panel" data-panel="body" hidden>
       <h2>3. 몸 보정</h2>
       <ol class="todo">
-        <li><b>두 발 사이 중심을 마커 중심</b>에 맞춰 서세요. 머리부터 발끝까지 화면에 보이도록 폰 위치를 먼저 조절하세요.</li>
+        <li><b>두 발 사이 중심을 마커 중심</b>에 맞춰 서세요. 발끝부터 어깨까지는 꼭 보이게(가능하면 머리까지) 폰 위치를 먼저 조절하세요. 폰을 높이 두고 위에서 내려다봐도 됩니다. 머리가 잘리면 어깨 높이로 몸 크기를 맞추니 실제 키를 넣으면 더 정확합니다.</li>
         <li><b>시작</b>을 누르고, 카운트다운 동안 그 자리로 가세요. 화면의 준비 상태가 ✓인지 보세요.</li>
         <li>삐 소리가 나면 두 발을 바닥에 붙이고 몸을 세워 3초 동안 가만히 서 있으세요. 보정 뒤에는 이동해도 되지만 발목이 보여야 깊이를 판정합니다.</li>
       </ol>
@@ -122,7 +130,7 @@
     <div class="panel" data-panel="measure" hidden>
       <h2>4. 측정 <small>source=mono_approx</small></h2>
       <p class="live"><label class="check inline"><input id="sendPc" type="checkbox" checked> PC 화면으로 보내기</label> <span id="pcStatus">꺼짐</span></p><p id="personMaskStatus">가림용 윤곽/깊이 대기</p>
-      <p class="hint">PC에서 <a href="/test/building/?mode=mono">IT1 모델·광역 타격·파편 물리</a>를 여세요. 기존 상자 화면은 <a href="/test/mono3d/view.html">여기</a>입니다.</p>
+      <p id="pcLinkHint" class="hint">PC에서 <a href="/test/building/?mode=mono">IT1 모델·광역 타격·파편 물리</a>를 여세요. 기존 상자 화면은 <a href="/test/mono3d/view.html">여기</a>입니다.</p>
       <p class="hits">건물 타격(PC 화면의 건물) <b id="hits">0</b>회 <button id="resetHits" class="link">0으로</button></p>
       <p class="hint">손목에서 바닥까지 이어진 선이 추정한 깊이입니다. 카메라 쪽 앞뒤 방향 오차가 가장 큽니다. 건물은 이 폰 화면에 그리지 않고 PC 화면에만 표시합니다. 크기는 ⚙ 설정에서 바꿉니다.</p>
       <div class="row">
@@ -174,6 +182,6 @@
       b.hidden = false;
     }, true);
   </script>
-  <script type="module" src="./app.js?v=20261121-pr21-merge-1"></script>
+  <script type="module" src="./app.js?v=20261121-pr23-merge-1"></script>
 </body>
 </html>

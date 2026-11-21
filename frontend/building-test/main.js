@@ -9,28 +9,46 @@ import {fetchScene,loadModels,assembleScene} from './scene-loader.js';
 import {disposeRoots} from '../game/dispose-roots.js';
 import {TrackedPerson} from './tracked-person.js';
 import {PersonOcclusion,loadOcclusionTexture} from './person-occlusion.js';
+import {createRtcReceiver} from '/test/stage-view/rtc.js?v=20261120-r1';
+import {createPcOutline} from '/test/stage-view/pc-outline.js?v=20261120-r1';
 const STRIKE_JOINTS=['left_wrist','right_wrist','left_ankle','right_ankle'],JOINT_LABELS={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
 
 const $ = id => document.getElementById(id);
-const mono=new URLSearchParams(location.search).get('mode')==='mono';
-$('sourceMode').textContent=mono?'카메라 1대 · 근사 3D · source=mono_approx':'카메라 3대 · 삼각측량 · source=multi_view_test';
+const mode=new URLSearchParams(location.search).get('mode');
+// wide: three single-camera phones side by side on markers ID0/ID1/ID2 (docs/WIDE_STAGE_TEST.md).
+// duo: two judging phones on ID0/ID1 plus a view-only phone V on the far side; V's video is the main screen
+// (docs/DUO_STAGE_TEST.md). `wide` covers both stages; `duo` only what differs.
+const mono=mode==='mono',duo=mode==='duo',wide=mode==='wide'||duo,approx=mono||wide;
+$('sourceMode').textContent=mono?'카메라 1대 · 근사 3D · source=mono_approx':duo?'판정 폰 2대 + 화면 폰 · 2대 무대 · 폰별 근사 3D · source=mono_approx':wide?'카메라 3대 가로 · 넓은 무대 · 폰별 근사 3D · source=mono_approx':'카메라 3대 · 삼각측량 · source=multi_view_test';
 $('occlusionControl').hidden=false;
 if(mono){document.body.classList.add('mono-mode');$('legacyLink').href='/test/mono3d/view.html';$('legacyLink').textContent='기존 1대 상자 시험';
   $('depthControl').hidden=false;$('trackingDiagnosis').hidden=false;
   $('occlusionControl').hidden=false;
   $('phoneHelp').innerHTML='폰에서 <a href="/test/mono3d/">1대 근사 3D 시험</a>을 열고 마커 보정 → 몸 보정 → 측정까지 진행하세요. PC 화면으로 보내기를 켜면 됩니다. 깊이는 근사값입니다.';}
+if(wide){document.body.classList.add('wide-mode');$('legacyLink').hidden=true;
+  $('depthControl').hidden=false;$('trackingDiagnosis').hidden=false;$('stageControl').hidden=false;$('autoNextControl').hidden=false;
+  $('placement').hidden=true;$('buildingSize').hidden=true;
+  // Stage defaults (2026-11-20, user): next building after a break; pieces do not collide with the standing building.
+  // (Whole-building blast and support collapse are off on the server for stages; the checkboxes follow its state.)
+  $('autoNext').checked=true;
+  if(duo){document.body.classList.add('duo-mode');$('stageSpacing').value=2;$('stageTitle').textContent='2대 무대 · A3 마커 2장 + 반대편 화면 폰';
+    $('stageHint').textContent='ID0(C0)·ID1(C1) 마커를 같은 방향(무늬 위쪽=판정 폰에서 먼 쪽)으로 왼쪽부터 일직선에 놓으세요. 간격은 정해져 있지 않습니다(0.5~3m): 자동 적용이 켜져 있으면 화면 폰이 두 마커로 잰 간격을 그대로 씁니다. 끄면 줄자로 잰 간격을 넣으세요. 판정 폰은 각자 자기 마커 앞(높이 두고 내려다봐도 됨), 화면 폰은 반대편에서 두 마커가 모두 보이게 가로로 둡니다.';
+    $('autoSpacingRow').hidden=false;$('viewTransport').hidden=false;
+    $('captureBody').textContent='판정 폰 몸 보정 시작 · 허리 기준 고정';}
+  $('phoneHelp').innerHTML=duo?'판정 폰 2대에서 <a href="/test/mono3d/?stage=duo&camera=C0">C0</a>·<a href="/test/mono3d/?stage=duo&camera=C1">C1</a> 2대 무대 페이지를 열고 각자 자기 번호 A3 마커(ID0 왼쪽·ID1 오른쪽)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 반대편 폰은 <a href="/test/stage-view/">화면 폰</a> 페이지를 가로로 열어 두 마커를 한 번에 인식합니다. 그 영상이 위쪽 메인 화면입니다.':'폰 3대에서 <a href="/test/mono3d/?stage=wide&camera=C0">C0</a>·<a href="/test/mono3d/?stage=wide&camera=C1">C1</a>·<a href="/test/mono3d/?stage=wide&camera=C2">C2</a> 넓은 무대 페이지를 열고, 각자 자기 번호 마커(ID0·ID1·ID2)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 사람이 있는 구간의 폰이 판정합니다. 깊이는 폰별 근사값입니다.';}
 // 1 camera: one building at a time, chosen from a list (IT1 or any single building). 3 cameras: zones of several
 // buildings; ?scene=it1 keeps the single IT1 building there.
-const keepSingleBuilding=new URLSearchParams(location.search).get('scene')==='it1';let zoneRequested=mono||keepSingleBuilding,zonesReady=false;
+const keepSingleBuilding=!wide&&new URLSearchParams(location.search).get('scene')==='it1';let zoneRequested=mono||wide||keepSingleBuilding,zonesReady=false;
 $('sceneControl').hidden=!mono&&keepSingleBuilding;
 if(mono){$('sceneLabel').textContent='건물 선택';$('autoNextControl').hidden=false;}
 let loadedScene=null,loadingScene=null,loadGeneration=0,scenePending=false,ownedRoots=[];
-let failedScene=null;
+let failedScene=null,sceneBuildings=[];
 let sceneDimensions=[2.810118,1.0844383,.6256438],buildingCount=1,fixedSize=false;
 let ready = false, connected = false, fatal = null, state = null, epoch = null;
 let frameAt = 0, lastJoints = {}, physics = null, colliderData = null;
 let personJoints={},personAt=-Infinity;
 let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
+let stageOwner=null,stageSpacing=null,stageBorrowed={};
 let impactQueue=new Set(),impactSentAt=0;
 let sizeDirty=false;
 const toggleDrafts=new Map();
@@ -46,6 +64,7 @@ function syncToggle(id,value){
 }
 function previewSize(){
   const scale=Number($('scale').value);
+  if(wide){$('sizePreview').textContent='무대 세트 크기 · 몸 보정과 무관 · 마커 간격에 맞춰 배치';return;}
   if(state?.body_reference){$('sizePreview').textContent=`최고 높이 ${state.display_height_m.toFixed(2)}m · 최초 허리의 70% · 구역 내 비율 유지`;return;}
   if(fixedSize){$('sizePreview').textContent='몸 보정 후 최고 높이를 허리의 70%로 고정 · 구역 내 비율 유지';return;}
   if(!Number.isFinite(scale)||scale<.1||scale>2){$('sizePreview').textContent='배율을 0.1~2 사이로 입력하세요.';return;}
@@ -53,6 +72,7 @@ function previewSize(){
   $('sizePreview').textContent=`적용 예정 · 높이 약 ${(sceneDimensions[1]*scale).toFixed(2)}m · 폭 ${(sceneDimensions[0]*scale).toFixed(2)}m · 깊이 ${(sceneDimensions[2]*scale).toFixed(2)}m`;
 }
 const physicsOptions={...DEFAULT_PHYSICS};
+if(wide){physicsOptions.building=false;document.querySelector('[data-physics="building"]').checked=false;}   // stage default (2026-11-20)
 const scenes = [], pieces = new Map(), cameras = new Map();
 const status = text => { $('status').textContent = text; };
 function scene() {
@@ -92,9 +112,14 @@ orbit.renderer.domElement.addEventListener('pointerup',e=>{
 });
 const grid = new THREE.GridHelper(6,12,0x475569,0x253046); grid.rotation.x=Math.PI/2; orbit.scene.add(grid);
 // Actual marker square: identical z=0, side .20m reference as the phone calibration.
-const marker = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints([[-.1,.1,0],[.1,.1,0],[.1,-.1,0],[-.1,-.1,0]].map(p=>new THREE.Vector3(...p))),new THREE.LineBasicMaterial({color:0x22c55e}));
-orbit.scene.add(marker); orbit.scene.add(new THREE.AxesHelper(.3));
-for (const id of (mono?['C0']:['C0','C1','C2'])) {
+const markerGeometry=new THREE.BufferGeometry().setFromPoints([[-.1,.1,0],[.1,.1,0],[.1,-.1,0],[-.1,-.1,0]].map(p=>new THREE.Vector3(...p)));
+const markers=new THREE.Group();orbit.scene.add(markers);orbit.scene.add(new THREE.AxesHelper(.3));
+// Wide stage: marker n (ID n, camera Cn) lies at x = (n - 1) * spacing.
+function placeMarkers(spacing){
+  markers.clear();for(const x of duo?[-spacing/2,spacing/2]:wide?[-spacing,0,spacing]:[0]){const m=new THREE.LineLoop(markerGeometry,new THREE.LineBasicMaterial({color:0x22c55e}));m.position.x=x;if(duo)m.scale.setScalar(1.35);markers.add(m);}   // duo: A3 sheets, 0.27 m square
+}
+placeMarkers(duo?2:1.5);
+for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
   const div=document.createElement('div');div.className='camera';
   const img=document.createElement('img');img.alt=`${id} 영상`;img.hidden=true;
   const label=document.createElement('span');label.textContent=`${id} 대기`;
@@ -102,12 +127,22 @@ for (const id of (mono?['C0']:['C0','C1','C2'])) {
   const s=scene();s.renderer=renderer(div,true);div.append(label);s.camera=new THREE.Camera();s.calibrated=false;
   Object.assign(s,{div,img,label,lastImage:0,jpegVersion:0});cameras.set(id,s);
   s.occlusion=new PersonOcclusion(s.scene);s.occlusionInputValid=false;
+  // Duo main screen: V sends the real person's outline with a depth (its own segmentation); the judging phones'
+  // joint bars hide what is behind the person only while that outline is missing.
+  if(id==='V'){div.classList.add('main-view');s.isView=true;s.personProxy=new TrackedPerson(s.scene,{occluder:true});
+    // WebRTC (2026-11-20): V's camera arrives directly; each new frame is drawn here and given to MediaPipe on the PC.
+    s.rtcVideo=Object.assign(document.createElement('video'),{muted:true,playsInline:true,autoplay:true});
+    s.rtcVideo.style.cssText='position:absolute;width:1px;height:1px;opacity:0;pointer-events:none';
+    s.frame=document.createElement('canvas');s.frame.className='rtc-frame';s.frame.hidden=true;s.frameCtx=s.frame.getContext('2d');
+    div.insertBefore(s.frame,s.renderer.domElement);div.append(s.rtcVideo);
+    Object.assign(s,{rtcFrameAt:-Infinity,rtcFrames:0,rtcFps:0,outlineMs:null,viewCalib:null});}
 }
 function applyCalibration(c,m) {
   personJoints={};personAt=-Infinity;
   c.visualDepthValid=false;c.depthAt=-Infinity;
   c.jpegVersion++;c.occlusion?.clear();c.lastImage=0;c.img.hidden=true;
   const W=m.image.width,H=m.image.height,{fx,fy,cx,cy}=m.K,R=m.R,t=m.t,near=.01,far=50;
+  if(c.isView)c.viewCalib={K:{fx,fy,cx,cy,width:W,height:H},pose:{R,t,C:m.C}};
   c.div.style.aspectRatio=`${W}/${H}`;
   c.camera.projectionMatrix.set(2*fx/W,0,1-2*cx/W,0, 0,2*fy/H,2*cy/H-1,0,
     0,0,-(far+near)/(far-near),-2*far*near/(far-near), 0,0,-1,0);
@@ -119,7 +154,9 @@ function applyCalibration(c,m) {
 function syncState(m) {
   if(!m)return;
   state=m;
-  $('bodyReference').textContent=m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
+  if(wide&&m.stage){stageOwner=m.stage.owner;if(stageSpacing!==m.stage.spacing_m){stageSpacing=m.stage.spacing_m;placeMarkers(stageSpacing);if(document.activeElement!==$('stageSpacing'))$('stageSpacing').value=stageSpacing;}
+    if(stageListSpacing!==m.stage.spacing_m)loadStageList(m.stage.spacing_m).catch(showLoadError);}
+  $('bodyReference').textContent=wide?`무대 세트 크기 · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
   for(const id of ['x','y','yaw'])$(id).disabled=!!m.body_reference;
   $('scale').disabled=$('sizeRange').disabled=fixedSize||!!m.body_reference;
   const desired=m.scene_id??'it1';
@@ -129,7 +166,9 @@ function syncState(m) {
     if(loadingScene!==desired)loadScene(desired).catch(showLoadError);
     return;
   }
-  if(scenePending&&desired===$('sceneSelect').value){scenePending=false;status('구역 준비 완료 · 손목/마우스로 타격하세요');}
+  // Wide stage scene ids carry spacing and height; the list shows the zone it was built from.
+  const selected=wide?m.stage?.zone_id:desired;
+  if(scenePending&&selected===$('sceneSelect').value){scenePending=false;status('구역 준비 완료 · 손목/마우스로 타격하세요');}
   checkAutoNext(m);
   const reset=epoch!==m.epoch;
   if(reset)sizeDirty=false;
@@ -145,7 +184,7 @@ function syncState(m) {
   if(m.event?.blast)physics.blast(m.event);
   else if(m.event&&['mouse','mouse_push'].includes(m.event.kind))physics.push(m.event);
   syncToggle('blastMode',m.blast_enabled??true);
-  if(mono){
+  if(approx){
     if(document.activeElement!==$('depthMargin'))$('depthMargin').value=m.depth_margin??0;
     const reasons={invalid:'미검출',too_low:'발을 더 높이 드세요',too_slow:'더 빠르게 차세요',baseline:'기준점 확보 · 다음 유효 관측 대기',gap:'추적 끊김 · 기준점 재확보',standing:'건물과 겹쳐 있음 · 손/발을 빠르게 움직이면 부숴짐',inside_slow:'건물과 겹침 · 빠르게 움직이세요',cooldown:'잠시 대기',outside:'충돌체 밖',contact:'접촉'};
     $('trackingDiagnosis').textContent=STRIKE_JOINTS.map(n=>{
@@ -164,7 +203,7 @@ function syncState(m) {
   }
   $('count').textContent=`${removed.size} / ${m.fragment_count}개 파괴`;
     $('score').textContent=`${m.score}점 · 파편 1개당 1점`;
-  if(!scenePending)$('sceneSelect').value=desired;
+  if(!scenePending)$('sceneSelect').value=selected;
   for(const [id,key] of [['x','x_m'],['y','y_m'],['yaw','yaw_deg'],['scale','scale']]) {
     if(id==='scale'&&sizeDirty)continue;
     if(document.activeElement?.closest('form')!==$('placement'))$(id).value=m.placement[key];
@@ -193,15 +232,44 @@ function onMessage(m){
       if(!fatal)status(m.valid?'1대 근사 손목 · 휘두름/마우스로 타격하세요':m.reason==='feet_required_for_depth'?'발목 미검출 · 깊이 판정/손목 타격 중지':'1대 폰의 유효 손목 대기 · 마우스 시험 가능');return;
     }else if(m.type==='mono3d_status'&&!m.phone_connected){frameAt=0;lastJoints={};personJoints={};personAt=-Infinity;const c=cameras.get('C0');c.calibrated=false;c.img.hidden=true;c.occlusionInputValid=false;c.occlusion.clear();c.jpegVersion++;return;}
   }
+  if(duo){
+    if(m.type==='rtc_signal'&&m.from==='V'){rtcReceiver.onSignal(m.data);return;}
+    if(m.type==='rtc_signal_failed'){rtcReceiver.failed(m.reason??'not_connected');return;}
+    if(m.type==='rtc_hello')return;
+    if(m.type==='wide3d_status'){rtcReceiver.setWanted(!!m.view?.connected);
+      if(typeof m.view?.auto_spacing==='boolean'&&document.activeElement!==$('autoSpacing'))$('autoSpacing').checked=m.view.auto_spacing;}
+  }
+  if(wide){
+    if(m.type==='wide3d_status'){showStage(m);return;}
+    if(m.type==='wide3d_frame'){
+      const c=cameras.get(m.camera_id);if(!c)return;
+      c.occlusionInputValid=m.valid===true;if(!c.occlusionInputValid&&!c.visualDepthValid)c.occlusion.clear();
+      stageOwner=m.owner;if(!m.owner)stageBorrowed={};
+      // Only the judging phone moves the 3D person/joints, as on the server.
+      if(m.camera_id===m.owner){
+        frameAt=performance.now();lastJoints={};
+        for(const [name,p] of Object.entries(m.joints??{}))if(Array.isArray(p)&&p.length===3&&p.every(Number.isFinite))lastJoints[name]={p};
+        personJoints=lastJoints;personAt=frameAt;stageBorrowed=m.borrowed??{};
+      }
+      const names={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
+      const borrowed=Object.entries(stageBorrowed).map(([n,c])=>`${names[n]??n}←${c}`).join(', ');
+      if(!fatal)status(m.owner?`${m.owner} 구간 폰이 판정 중${borrowed?` · 가려진 관절은 옆 폰 값 사용(${borrowed})`:''} · 휘두름/마우스로 타격하세요`:'유효한 폰 입력 대기 · 마우스 시험 가능 · 폰마다 마커/몸 보정 필요');
+      return;
+    }
+  }
   const c=cameras.get(m.camera_id);
   if(m.type==='multi3d_calib'&&c)applyCalibration(c,m);
+  else if(m.type==='multi3d_jpeg'&&c&&c.isView&&performance.now()-c.rtcFrameAt<1000){/* WebRTC video is live: the JPEG relay is the fallback only */}
   else if(m.type==='multi3d_jpeg'&&c){
     c.visualDepthValid=m.occlusion_valid===true;c.occlusionReason=m.occlusion_reason??null;
+    // V sends video more often than its outline: a video-only frame carries the last outline again (occlusion_keep),
+    // which is kept as is when already shown, so its age (depthAt) still counts from the outline frame.
+    const maskId=m.occlusion_t_ms??m.t_ms,reuse=m.occlusion_keep===true&&!!c.occlusion?.texture&&c.occlusion.frameId===maskId;
     const version=++c.jpegVersion,img=new Image();img.src=m.data;
-    Promise.all([img.decode().then(()=>true,()=>false),loadOcclusionTexture(m.occlusion)]).then(([decoded,texture])=>{
+    Promise.all([img.decode().then(()=>true,()=>false),reuse?null:loadOcclusionTexture(m.occlusion)]).then(([decoded,texture])=>{
       if(!decoded||version!==c.jpegVersion){texture?.dispose();return;}
       c.img.src=m.data;c.img.hidden=false;c.lastImage=performance.now();
-      if(c.occlusion){if((c.occlusionInputValid||c.visualDepthValid)&&c.calibrated){c.occlusion.setFrame(texture,m.t_ms);c.depthAt=performance.now();}else{texture?.dispose();c.occlusion.clear();}}
+      if(c.occlusion){if((c.occlusionInputValid||c.visualDepthValid)&&c.calibrated){if(!reuse){c.occlusion.setFrame(texture,maskId);c.depthAt=performance.now();}}else{texture?.dispose();c.occlusion.clear();}}
     }).catch(()=>{if(version===c.jpegVersion)c.occlusion?.clear();});
   }else if(m.type==='multi3d_phone_left'&&c){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();}
   else if(m.type==='multi3d_fused'){
@@ -218,7 +286,68 @@ function onMessage(m){
   }else if(m.type==='multi3d_model_state')syncState(m.model_test);
   else if(m.type==='error'){scenePending=false;status(`서버 오류: ${m.detail??m.code}`);}
 }
-const link=createLink(mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
+function showStage(m){
+  const parts=(duo?['C0','C1']:['C0','C1','C2']).map(id=>{const c=m.cameras?.[id];if(!c)return `${id} —`;
+    return `${id}${m.owner===id?' ★판정':''} · ID${c.marker_id} x=${c.marker_x_m.toFixed(2)}m · ${!c.connected?'연결 대기':!c.calibrated?'마커 보정 대기':!c.body?'몸 보정 대기':c.valid?'사람 ✓':'사람 대기'}`;});
+  const v=m.view;
+  if(v)parts.unshift(`V 화면 · ${!v.connected?'연결 대기':!v.calibrated?'두 마커 인식 대기':`보정됨 · 높이 ${v.camera_height_m?.toFixed(2)}m · 오차 ${v.reprojection_max_px?.toFixed(1)??'—'}px`}`);
+  // V's measured marker placement. The judging phones only shift by the spacing, so a turned marker turns its
+  // phone's coordinates: about tan(turn) x distance sideways (shown at 1.5 m in front of the marker).
+  const L=v?.connected?v.layout:null;measuredSpacing=L?.spacing_m??null;
+  if(L){const turn=Math.max(...L.yaw_deg.map(Math.abs)),side=Math.round(150*Math.tan(turn*Math.PI/180));
+    const advice=[L.warn.includes('yaw')?'마커를 두 마커 중심선에 맞게 돌려 놓고 화면 폰에서 다시 인식':null,L.warn.includes('spacing')?'실측 간격 적용 권장':null].filter(Boolean);
+    parts.splice(1,0,`V 실측 · 간격 ${L.spacing_m.toFixed(3)}m(입력 ${m.spacing_m.toFixed(3)}m) · 회전 ${L.yaw_deg.map((y,i)=>`ID${i} ${y>=0?'+':''}${y.toFixed(1)}°`).join(' ')} · 1.5m 앞 옆 어긋남 약 ${side}cm${advice.length?` ⚠ ${advice.join(' / ')}`:''}`);}
+  $('applyMeasuredSpacing').hidden=!(duo&&L&&Math.abs(L.spacing_m-m.spacing_m)>=.005);
+  if(L)$('applyMeasuredSpacing').textContent=`화면 폰 실측 간격 ${L.spacing_m.toFixed(3)}m 적용`;
+  $('stageStatus').textContent=parts.join('\n');
+}
+let measuredSpacing=null;
+$('applyMeasuredSpacing').onclick=()=>{if(!Number.isFinite(measuredSpacing))return;
+  $('stageSpacing').value=String(Math.round(measuredSpacing*1000)/1000);$('applySpacing').onclick();};
+$('autoSpacing').onchange=()=>link.send({type:'duo_auto_spacing',enabled:$('autoSpacing').checked});
+// ----- duo: V's video over WebRTC, outline computed on this PC -----
+const pcOutline=createPcOutline();
+function depthTexture(d){
+  const cv=document.createElement('canvas');cv.width=d.width;cv.height=d.height;
+  cv.getContext('2d').putImageData(new ImageData(d.data,d.width,d.height),0,0);
+  const t=new THREE.CanvasTexture(cv);t.colorSpace=THREE.NoColorSpace;t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;t.needsUpdate=true;
+  return t;
+}
+function onRtcFrame(){
+  const c=cameras.get('V'),v=c?.rtcVideo;if(!v?.srcObject)return;
+  v.requestVideoFrameCallback(onRtcFrame);
+  const w=v.videoWidth,h=v.videoHeight;if(!w||!h)return;
+  if(c.frame.width!==w||c.frame.height!==h){c.frame.width=w;c.frame.height=h;}
+  // One frame: drawn on screen and given to MediaPipe, so the outline matches the picture exactly.
+  c.frameCtx.drawImage(v,0,0,w,h);
+  const at=performance.now();c.rtcFrameAt=at;c.lastImage=at;c.rtcFrames++;c.img.hidden=true;c.frame.hidden=false;
+  if(!$('personOcclusion').checked||!c.calibrated||!c.viewCalib){c.visualDepthValid=false;return;}
+  pcOutline.load();
+  const judge=personAt>-Infinity?{joints:Object.fromEntries(Object.entries(personJoints).map(([n,j])=>[n,j.p])),ageMs:at-personAt}:null;
+  const r=pcOutline.run(c.frame,at,c.viewCalib,judge);c.outlineMs=r.ms??null;c.occlusionReason=r.reason;
+  if(r.depth){c.occlusion.setFrame(depthTexture(r.depth),c.rtcFrames);c.depthAt=performance.now();c.visualDepthValid=true;}
+  else c.visualDepthValid=false;
+}
+const rtcReceiver=createRtcReceiver({
+  send:data=>link.send({type:'rtc_signal',to:'V',data}),
+  onStream:stream=>{const c=cameras.get('V');c.rtcVideo.srcObject=stream;c.rtcVideo.play().catch(()=>{});c.rtcVideo.requestVideoFrameCallback(onRtcFrame);},
+  onChange:()=>{},
+});
+let rtcFpsAt=0,rtcFpsFrames=0,rtcStats=null;
+const RTC_TEXT={idle:'화면 폰 연결 대기',connecting:'연결 중',phone_not_ready:'화면 폰 카메라 시작 대기',disabled:'화면 폰이 JPEG 방식 선택',failed:'연결 실패 · 다시 시도 중'};
+function showViewTransport(now){
+  const c=cameras.get('V');if(!c)return;
+  if(now-rtcFpsAt>=1000){c.rtcFps=(c.rtcFrames-rtcFpsFrames)*1000/Math.max(1,now-rtcFpsAt);rtcFpsAt=now;rtcFpsFrames=c.rtcFrames;
+    rtcReceiver.stats().then(s=>{rtcStats=s;});}
+  const live=now-c.rtcFrameAt<1000;
+  if(!live&&!c.frame.hidden){c.frame.hidden=true;}
+  const s=rtcStats,jitter=s?.jitterBufferDelay&&s?.jitterBufferEmittedCount?` · 수신 대기 ${(1000*s.jitterBufferDelay/s.jitterBufferEmittedCount).toFixed(0)}ms`:'';
+  $('viewTransport').textContent=live?`V 영상: WebRTC 직접 · ${c.frame.width}×${c.frame.height} · ${c.rtcFps.toFixed(0)}장/초${jitter}${c.outlineMs!==null?` · 윤곽 PC 계산 ${c.outlineMs.toFixed(0)}ms`:''}`
+    :`V 영상: JPEG 서버 중계 · WebRTC ${RTC_TEXT[rtcReceiver.status]??rtcReceiver.status}`;
+}
+$('applySpacing').onclick=()=>{if(!$('stageSpacing').reportValidity())return;
+  scenePending=link.send({type:'wide3d_stage_config',spacing_m:Number($('stageSpacing').value)});if(scenePending)status('마커 간격 적용 중… 구역을 다시 배치합니다.');};
+const link=createLink(duo?'/ws/test/duo3d':wide?'/ws/test/wide3d':mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
   connected=s.open;
   if(!s.open){frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
   if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
@@ -245,7 +374,7 @@ function advanceBuilding(){
   const at=options.findIndex(o=>o.value===select.value);select.selectedIndex=(at+1)%options.length;select.onchange();
 }
 function checkAutoNext(m){
-  if(!mono)return;
+  if(!approx)return;
   if(!$('autoNext').checked){cancelAutoNext();$('autoNextStatus').textContent='';return;}
   const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
   const need=Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
@@ -278,17 +407,19 @@ async function loadScene(id){
   disposeRoots([...ownedRoots,...scenes.flatMap(s=>[...s.outer.children])]);ownedRoots=[];
   for(const s of scenes){s.outer.clear();s.nodes.clear();}pieces.clear();
   const spec=await fetchScene(id);
+  sceneBuildings=spec.render.map(b=>({id:b.id,x:b.offset[0],height:b.height_m}));
   const [models]=await Promise.all([loadModels(spec),initPhysics()]);
   if(generation!==loadGeneration){disposeRoots(models.map(g=>g.scene));return;}
   ownedRoots=models.map(g=>g.scene);colliderData=spec.colliders;sceneDimensions=spec.dimensions_m;buildingCount=spec.building_count;
   fixedSize=spec.fixed_size;
   for(const key of ['sizeRange','scale'])$(key).disabled=fixedSize;
   $('buildingSize').querySelector('h3').textContent=fixedSize?'건물 크기 · 고정':'건물 크기';
-  $('buildingSize').querySelector('small').textContent=fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
+  $('buildingSize').querySelector('small').textContent=wide?'무대 세트에 정한 크기를 사용합니다. 마커 간격이 좁으면 건물 전체가 축소됩니다.':fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
   for(const f of colliderData.fragments)pieces.set(f.fragment_id,f.node);
   for(const s of scenes){const assembled=assembleScene(spec,models);s.outer.add(assembled.root);s.nodes=assembled.nodes;}
   loadedScene=id;loadingScene=null;scenePending=false;ready=true;epoch=null;
-  $('sceneTitle').textContent=spec.label;$('sceneInfo').textContent=fixedSize?`건물 ${buildingCount}개 · 파편 ${pieces.size}개 · 높이 0.5m 이상 · 기존 절대 크기 유지 · 이 구역 평균 ${(spec.render.reduce((v,b)=>v+b.height_m,0)/buildingCount).toFixed(2)}m`:'IT1 단독 · 배율 조절 가능';
+  if(spec.wide){placeMarkers(spec.wide.spacing_m);stageSpacing=spec.wide.spacing_m;}
+  $('sceneTitle').textContent=spec.label;$('sceneInfo').textContent=spec.wide?`${duo?'2대 무대':'넓은 무대'} · 마커 간격 ${spec.wide.spacing_m}m · 건물 ${buildingCount}개 · 파편 ${pieces.size}개 · 일렬 배치${spec.wide.fit_scale<1?` · 무대 폭(간격×${spec.wide.sections??3})에 맞춰 ${Math.round(spec.wide.fit_scale*100)}%로 축소`:''}`:fixedSize?`건물 ${buildingCount}개 · 파편 ${pieces.size}개 · 높이 0.5m 이상 · 기존 절대 크기 유지 · 이 구역 평균 ${(spec.render.reduce((v,b)=>v+b.height_m,0)/buildingCount).toFixed(2)}m`:'IT1 단독 · 배율 조절 가능';
   $('stress').textContent=`${pieces.size}개 전체 낙하 · 합성 부하 시험`;
   syncState(state);previewSize();status(connected?'구역 준비 완료 · 손목/마우스로 타격하세요':'모델 준비 완료 · 서버 연결 대기');
   if(fixedSize){
@@ -298,7 +429,21 @@ async function loadScene(id){
     orbit.camera.far=Math.max(50,distance*10);orbit.camera.updateProjectionMatrix();controls.update();
   }
 }
+// Wide/duo stage sets contain one big building, fitted to the marker spacing.
+let stageListSpacing=null;
+async function loadStageList(spacing){
+  if(!wide||stageListSpacing===spacing)return;stageListSpacing=spacing;
+  const r=await fetch(`/api/test/building-scenes?kind=stage&layout=${duo?'duo':'wide'}&spacing=${spacing}`);if(!r.ok)throw new Error('무대 세트 목록을 불러올 수 없습니다.');
+  const items=await r.json();if(stageListSpacing!==spacing)return;
+  const select=$('sceneSelect'),keep=select.value;select.replaceChildren();
+  for(const item of items){const option=document.createElement('option');option.value=item.id;
+    const range=v=>Math.min(...v)===Math.max(...v)?`${v[0].toFixed(2)}m`:`${Math.min(...v).toFixed(2)}~${Math.max(...v).toFixed(2)}m`;
+    option.textContent=`${item.label} · 가로 ${range(item.widths_m)} · 높이 ${range(item.heights_m)}`;select.append(option);}
+  if(items.some(i=>i.id===keep))select.value=keep;
+  zonesReady=true;
+}
 async function load(){
+  if(wide){$('sceneLabel').textContent='무대 세트';await loadStageList(duo?2:1.5);status(`${duo?'2대 무대':'넓은 무대'} 세트를 서버에서 받는 중…`);return;}
   if(mono||!keepSingleBuilding){const r=await fetch('/api/test/building-scenes?kind='+(mono?'single':'zone'));if(!r.ok)throw new Error('구역 목록을 불러올 수 없습니다.');
     const groups=new Map();if(!mono)$('sceneSelect').replaceChildren();
     for(const item of await r.json()){
@@ -306,12 +451,13 @@ async function load(){
       if(!groups.has(item.parent_id)){const group=document.createElement('optgroup');group.label=item.parent_label;groups.set(item.parent_id,group);$('sceneSelect').append(group);}
       const option=document.createElement('option');option.value=item.id;option.textContent=mono?`${item.label} · 높이 ${item.height_m}m`:`${item.label} · ${item.building_count}개`;groups.get(item.parent_id).append(option);
     }zonesReady=true;}
-  await loadScene('it1');
+  // The wide stage server already holds a zone; its first model state picks the scene to load.
+  if(!wide)await loadScene('it1');else status(`${duo?'2대 무대':'넓은 무대'} 구역을 서버에서 받는 중…`);
 }
 function draw(now){
   const start=performance.now(),dt=previousNow?(now-previousNow)/1000:0;previousNow=now;frameCount++;
   const disabled=!ready||!connected||scenePending;
-  $('restore').disabled=disabled;$('stress').disabled=disabled;$('applySize').disabled=disabled||fixedSize||!!state?.body_reference;$('sceneSelect').disabled=!connected||!!loadingScene||scenePending;for(const b of $('placement').querySelectorAll('button'))b.disabled=disabled||!!state?.body_reference;
+  $('restore').disabled=disabled;$('stress').disabled=disabled;$('applySpacing').disabled=disabled;$('applyMeasuredSpacing').disabled=disabled;$('applySize').disabled=disabled||fixedSize||!!state?.body_reference;$('sceneSelect').disabled=!connected||!!loadingScene||scenePending;for(const b of $('placement').querySelectorAll('button'))b.disabled=disabled||!!state?.body_reference;
   physics?.updateWrists(connected?lastJoints:{},frameAt,now);
   physics?.step(dt);
   if(physics){
@@ -324,20 +470,24 @@ function draw(now){
   }
   const live=connected&&now-frameAt<500;
   const personLive=connected&&now-personAt<500;
-  trackedPerson.update(personJoints,personLive);$('personStatus').textContent=personLive&&trackedPerson.count?('사람 3D · '+trackedPerson.count+'관절 · '+(mono?'1대 근사':'다중 시점')):'사람 3D 관측 대기';
+  trackedPerson.update(personJoints,personLive);$('personStatus').textContent=personLive&&trackedPerson.count?('사람 3D · '+trackedPerson.count+'관절 · '+(mono?'1대 근사':wide?`${stageOwner??'판정 폰 없음'} 폰 근사`:'다중 시점')):'사람 3D 관측 대기';
   for(const s of scenes){
     STRIKE_JOINTS.forEach((n,i)=>{s.wrists[i].visible=live&&Boolean(lastJoints[n])&&(s===orbit||(s.calibrated&&now-s.lastImage<1500));if(s.wrists[i].visible)s.wrists[i].position.fromArray(lastJoints[n].p);});
     const box=s===orbit?$('orbit'):s.div,w=box.clientWidth,h=box.clientHeight;
     const canvas=s.renderer.domElement;if(canvas.clientWidth!==w||canvas.clientHeight!==h||canvas.width!==Math.floor(w*s.renderer.getPixelRatio())||canvas.height!==Math.floor(h*s.renderer.getPixelRatio()))s.renderer.setSize(w,h,false);
     if(s===orbit){s.camera.aspect=w/Math.max(1,h);s.camera.updateProjectionMatrix();}
-    else {s.label.textContent=`${[...cameras].find(([,v])=>v===s)[0]} ${s.calibrated?'보정됨':'대기'}`;}
+    else {const id=[...cameras].find(([,v])=>v===s)[0];s.label.textContent=id==='V'?`V 메인 화면 · ${s.calibrated?'두 마커 보정됨':'화면 폰 보정 대기'}`:`${id} ${s.calibrated?'보정됨':'대기'}`;}
+    if(s.isView)showViewTransport(now);
     s.outer.visible=s===orbit||(connected&&s.calibrated&&now-s.lastImage<1500);
     if(s.occlusion){
-      const fresh=connected&&s.calibrated&&now-s.lastImage<1500&&now-(s.depthAt??-Infinity)<500&&(s.occlusionInputValid||s.visualDepthValid)&&live;
+      // V's outline carries its own depth (judging joints or its own feet), so it does not wait for a judging frame.
+      const inputOk=s.isView?s.visualDepthValid:(s.occlusionInputValid||s.visualDepthValid)&&live;
+      const fresh=connected&&s.calibrated&&now-s.lastImage<1500&&now-(s.depthAt??-Infinity)<500&&inputOk;
       if(!fresh)s.occlusion.clear();
       s.occlusion.update(fresh&&$('personOcclusion').checked);
-      $('occlusionStatus').textContent=!$('personOcclusion').checked?'사람 뒤 가림 OFF':s.occlusion.mesh.visible?'사람 뒤 가림 적용 · 근사 깊이':s.occlusionReason??'사람 뒤 가림 대기 · 유효한 깊이/윤곽 필요';
+      if(!duo||s.isView)$('occlusionStatus').textContent=!$('personOcclusion').checked?'사람 뒤 가림 OFF':s.occlusion.mesh.visible?(s.isView?'V 실제 사람 윤곽 가림 · 근사 깊이':'사람 뒤 가림 적용 · 근사 깊이'):(s.isView&&personLive&&s.calibrated?'V 윤곽 없음 · 판정 관절 막대로 대신 가림':s.occlusionReason??'사람 뒤 가림 대기 · 유효한 깊이/윤곽 필요');
     }
+    s.personProxy?.update(personJoints,personLive&&s.calibrated&&$('personOcclusion').checked&&!s.occlusion?.mesh.visible);
     s.renderer.render(s.scene,s.camera);
   }
   renderMs+=(performance.now()-start-renderMs)*.1;
@@ -363,14 +513,19 @@ window.buildingFragmentTest=Object.freeze({cameraPickPoints:()=>{
   }).filter(p=>Math.abs(p.x)<.98&&Math.abs(p.y)<.98&&p.z>0&&p.z<1).sort((a,b)=>a.z-b.z);
 },snapshot:()=>({ready,connected,removed:state?.removed_ids??[],score:state?.score??0,epoch,
   placement:state?.placement,
-  sceneId:loadedScene,buildingCount,loadingScene,fixedSize,
+  sceneId:loadedScene,buildingCount,loadingScene,fixedSize,buildings:sceneBuildings,
   removedBuildings:colliderData?[...new Set(colliderData.fragments.filter(f=>state?.removed_ids.includes(f.fragment_id)).map(f=>f.building_id))]:[],
   physics:physics?.snapshot()??null,fps,frameCpuMs:renderMs,collapse:state?.collapse,
   blastEnabled:state?.blast_enabled,autoNextPending:autoNextTimer!==null,
+  stage:state?.stage??null,owner:stageOwner,borrowed:stageBorrowed,markerX:markers.children.map(m=>m.position.x),
+  cameraPanels:[...cameras].map(([id,c])=>{const r=c.div.getBoundingClientRect();return {id,x:r.x,y:r.y,width:r.width,height:r.height,visible:!c.img.hidden};}),
   occlusion:cameras.get('C0').occlusion.snapshot(),person:trackedPerson.snapshot(),
+  view:cameras.get('V')?{calibrated:cameras.get('V').calibrated,imageVisible:!cameras.get('V').img.hidden,proxy:cameras.get('V').personProxy.snapshot(),occlusion:cameras.get('V').occlusion.snapshot(),depthAgeMs:performance.now()-(cameras.get('V').depthAt??-Infinity),occlusionReason:cameras.get('V').occlusionReason,
+    rtc:{status:rtcReceiver.status,frames:cameras.get('V').rtcFrames,live:performance.now()-cameras.get('V').rtcFrameAt<1000,width:cameras.get('V').frame.width,height:cameras.get('V').frame.height,frameVisible:!cameras.get('V').frame.hidden,outlineReady:pcOutline.ready},
+    autoSpacing:$('autoSpacing').checked}:null,
   visible:[...orbit.nodes].filter(([,n])=>n.visible).map(([id])=>id),
   worldBounds:ready?(()=>{const b=new THREE.Box3().setFromObject(orbit.outer);return {lo:b.min.toArray(),hi:b.max.toArray()};})():null,
   projection:[...cameras].filter(([,c])=>c.calibrated).map(([id,c])=>({id,
     point:new THREE.Vector3(.1,.1,.3).project(c.camera).toArray()}))})});
-window.addEventListener('pagehide',()=>{link.setEnabled(false);orbit.renderer.setAnimationLoop(null);physics?.dispose();physics=null;trackedPerson.dispose();controls.dispose();for(const s of scenes){s.occlusion?.dispose();s.renderer.dispose();}});
+window.addEventListener('pagehide',()=>{rtcReceiver.setWanted(false);link.setEnabled(false);orbit.renderer.setAnimationLoop(null);physics?.dispose();physics=null;trackedPerson.dispose();controls.dispose();for(const s of scenes){s.occlusion?.dispose();s.personProxy?.dispose();s.renderer.dispose();}});
 window.addEventListener('pageshow',e=>{if(e.persisted)location.reload();});
