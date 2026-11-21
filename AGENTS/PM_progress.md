@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-21 13:09 KST |
-| 현재 작업·상태 | AR 타격음·애니메이션 PR #22 공유 완료·검토 요청 |
-| 마지막 확인된 완료 | 두 AR 모드 폰·PC 4/4·Node 65/65·호환 빌드 2개·실제 오디오/Canvas 및 캡처 확인 |
+| 마지막 갱신 | 2026-11-21 13:24 KST |
+| 현재 작업·상태 | PR #22 코드 검토·회귀 검증 통과 / 실기기 통합 확인 대기 |
+| 마지막 확인된 완료 | 코드 머지 차단 사항 없음, Node 128/128·AR 브라우저 4/4·호환 빌드 2개 및 캡처 재확인 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
 | 남은 일·미검증 | 실폰/실제 모델·소리 청취·성능/장시간·실측/3D·C0/AR·팀별 인수/공통Phase 확인 |
-| 다음 한 단계 | PR #22 검토 및 실제 AR 장비의 소리·정합·성능 확인 |
+| 다음 한 단계 | 검증한 최종 head로 승인된 PR #22 머지·main 동기화 후 실제 AR 장비의 청취/정합/성능 확인 |
 | 막힌 점·필요 확인 | 실제 장비·마커·보정값·촬영 시각 확인 필요 |
 
 ## 2. 누적 관리 작업 기록
@@ -747,3 +747,24 @@
 - 사용자 요청 범위의 구현/검증/공유 완료. 코드 커밋  작업 브랜치에 push하고 [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)를 main 대상으로 생성했다. open·draft=false·merged=false이며 main 직접 push/머지는 없다.
 - 검증: Node 65/65·AR 네 경로 브라우저 4/4·호환 빌드 2개·새 상대 링크 8개·공백 검사. synthetic 입력·실제 AudioContext/Canvas 확인과 live/replay/keyboard_demo 미실행, 현장 청취·정합·장시간/정량 성능 미검증을 PR에 명시했다.
 - 상태는 PR 검토 요청이며 개인/공통 Phase 완료 체크는 유지한다. 상세 결과/인계는 이동수_progress.md 최신 기록과 docs/asset-validation/ar-feedback/summary.json을 따른다. 후속 커밋은 게시 결과 문서만 추가한다.
+
+
+### 2026-11-21 13:21 KST — PR #22 검토·머지·로컬 업데이트 시작
+
+- 담당 / 기록자: PM 공통 코드 검토 / Codex. Phase: P4 AR 결과물 검토, 공통 Phase 실기기 통과와 별개. 상태: 진행 중.
+- 사용자 승인: PR #22를 검토하고 문제가 없으면 머지한 뒤 로컬을 최신 main으로 갱신한다. 같은 승인 범위의 수정·검증·머지·동기화까지 진행한다.
+- 읽은 계획·기록: PM_plan P4, AGENTS 운영/현황/기록 양식, PM·이동수·김태이·정경호 최신 요약 및 PR 게시 기록, pr-workflow. 기준은 PR head daceb92a2345b34283f293fd12d5bfa59e970e10, base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85이며 시작 작업 트리는 clean이었다.
+- 목표·검증: 최신 diff·의견·원격 검사·충돌 상태와 코드 수락/중복/무효/음소거·수명·좌표/정리 경계를 검토한다. 관련 Node·AR 브라우저·필요한 호환 빌드를 재검증하고, 검증한 최종 head를 지정해 머지한 후 로컬 main/원격 main/트리 일치를 확인한다.
+- 실제 장비 live·청취·실측/장시간은 이번 자동 확인과 구분하며 근거 없이 Phase를 완료하지 않는다.
+
+
+### 2026-11-21 13:24 KST — PR #22 코드 검토·재검증 통과
+
+- 검토자 / 기록자: Codex, PM 공통 코드 검토. [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)의 사용자 승인된 검토·문제 없을 때 머지·로컬 main 업데이트 요청을 수행한다. 검토·재검증 범위에서 머지를 막을 실행 코드 문제는 발견하지 못했다.
+- 기준: base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85, head daceb92a2345b34283f293fd12d5bfa59e970e10. 새 유효 타격 수락 경계·초기/중복/무효·리셋/재접속·음소거 독립 시각 효과·오디오 재개/종료·3D 투영·수명/입자 제한·레거시 import 호환성을 검토했다.
+- 재검증: node --test tests/ar-hit-effect.test.mjs tests/ar-hit-sound.test.mjs tests/test_mono3d.mjs tests/test_model_strike.mjs tests/single/*.test.mjs → 128/128. npm run test:ar → 4/4(16.4초), Chromium/D3D11. 별도 ignored 출력의 single/phone-game 호환 Vite 빌드 2개 성공, 기존 큰 청크 경고 유지. 새 캡처에서 PC/폰의 효과 위치·표시를 확인했고 공백·정적 참조를 검사했다.
+- 원격 상태: 검토 시작 시 최신 head/base 일치, mergeable=true·clean, 리뷰·인라인/대화 코멘트 0. check-run 0·commit status 0으로 등록된 원격 검사가 없다. status API의 pending/total_count=0은 진행 중 검사로 간주하지 않았다. 보호 우회 없이 정상 머지 API를 사용한다.
+- 기록 정정: 13:09 게시 기록 일부 문장에서 PowerShell 변수 뒤 한국어 조사 때문에 SHA 문자열이 누락됐다. 올바른 검증 코드 커밋은 619a641bb01b164df2f20e56ae1e7e7853e10001, 게시 기록 커밋은 daceb92a2345b34283f293fd12d5bfa59e970e10다. 이전 기록은 보존하고 본 정정과 검증 요약에 근거를 추가했다. 실행 코드 수정은 없다.
+- 입력·미검증: synthetic Canvas 카메라/관절·3D 결과와 mocked WebSocket, 실제 AudioContext/Canvas. 실제 live 입력·실제 서버/3대 실행·현장 정합·스피커 청취·장시간/정량 성능은 미검증이다. replay/keyboard_demo는 이번 AR 브라우저 확인을 실행하지 않았다. 개인/공통 Phase의 실제 완료 체크는 유지한다.
+- 근거: data/local/pr22-review/node.log·browser.log·build-single.log·build-phone.log 및 docs/asset-validation/ar-feedback/summary.json의 merge_review 항목. 기존 65개 결과와 이번 확장 128개 결과를 구분한다.
+- 다음 작업: 본 검토 결과 문서만 commit/push한 뒤 실행 코드가 daceb92a2345b34283f293fd12d5bfa59e970e10와 같은지 확인하고 최신 PR head/base/검사 상태를 다시 읽는다. 최종 head SHA를 지정해 머지하고 실제 merged/main·로컬 main·트리·clean 일치를 확인한다. 실제 머지 해시·종료 결과는 외곽 작업 폴더의 AGENTS/PM_progress.md에 추가한다.

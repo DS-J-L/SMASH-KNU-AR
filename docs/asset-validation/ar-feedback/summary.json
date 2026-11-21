@@ -58,5 +58,22 @@
     "verified_code_commit": "619a641bb01b164df2f20e56ae1e7e7853e10001",
     "state": "open_for_review",
     "main_merged": false
+  },
+  "merge_review": {
+    "reviewed_at_kst": "2026-11-21 13:24",
+    "runtime_head": "daceb92a2345b34283f293fd12d5bfa59e970e10",
+    "blocking_code_findings": 0,
+    "node_passed": 128,
+    "node_failed": 0,
+    "node_command": "node --test tests/ar-hit-effect.test.mjs tests/ar-hit-sound.test.mjs tests/test_mono3d.mjs tests/test_model_strike.mjs tests/single/*.test.mjs",
+    "browser_passed": 4,
+    "browser_failed": 0,
+    "browser_duration_seconds": 16.4,
+    "compatibility_builds_passed": 2,
+    "registered_remote_checks": 0,
+    "review_comments_at_start": 0,
+    "source_changes": "none; review records and validation summary only",
+    "input_source": "synthetic",
+    "live_unverified": true
   }
 }
