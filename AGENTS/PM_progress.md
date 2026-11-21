@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-10 00:57 KST |
-| 현재 작업·상태 | 로비·단일 PC 브라우저 회귀 2건 수정 및 전체 자동 검증 완료. PR 검토 대기 |
-| 마지막 확인된 완료 | 브라우저 46개·Python 162개·Node 193개 통과. 빌드 3개와 기존 에셋·문서 검사 완료 |
+| 마지막 갱신 | 2026-11-21 13:24 KST |
+| 현재 작업·상태 | PR #22 코드 검토·회귀 검증 통과 / 실기기 통합 확인 대기 |
+| 마지막 확인된 완료 | 코드 머지 차단 사항 없음, Node 128/128·AR 브라우저 4/4·호환 빌드 2개 및 캡처 재확인 |
 | 개발 공통 Phase | P0~P6 모두 실제 통합 확인 전 |
 | 남은 일·미검증 | 실폰/실제 모델·소리 청취·성능/장시간·실측/3D·C0/AR·팀별 인수/공통Phase 확인 |
-| 다음 한 단계 | 실제 폰 1대 및 3대로 3D 시험, 실측·동기화 검증 |
+| 다음 한 단계 | 검증한 최종 head로 승인된 PR #22 머지·main 동기화 후 실제 AR 장비의 청취/정합/성능 확인 |
 | 막힌 점·필요 확인 | 실제 장비·마커·보정값·촬영 시각 확인 필요 |
 
 ## 2. 누적 관리 작업 기록
@@ -715,3 +715,56 @@
 - 검증: 수정 전 대상 2개 실패, 수정 후 2/2. Windows Chromium(Playwright 1.64.1, D3D11)의 playwright.single.config.js 전체 46/46, Python pytest 162/162, Node 단일 71·파편 83·루트 39/39. npm run build:all, validate:assets, validate:enhancements, tools/check_scaffold.py(JSON6·Markdown55), git diff --check 통과. 세 배포 폴더는 다시 빌드한 뒤 Git diff가 비어 있음을 확인했다.
 - 입력·한계: 루프백 서버, 합성 영상/손목 및 모의 연결, 키보드 데모. 이번 범위의 실제 폰·녹화 재생·AR·장시간은 미검증이다. 공통 Phase·계획 체크를 유지한다.
 - 다음 / 인계: fix/browser-regression-expectations에서 PR 검토. 관련 팀 현황은 공통 운영 행에 기록한다.
+
+
+### 2026-11-21 03:22 KST — 사용자 요청 건물 파괴음 연결 보완
+
+- 담당 / 기록자: PM 공통 연결 관리 / Codex. 계획 연결: PM_plan.md P4의 한 타격에 파괴·소리·점수 한 번, 김태이 K-SC-05와 이동수 화면 연결. 개발 Phase 통과와 별개다.
+- 결과: 건물 실험실 버튼/Space와 단일/폰 좌표 게임의 최종 수락 타격에 기존 충격·붕괴음을 연결하고 세 배포 번들을 빌드했다. 첫 오디오 재개의 경합·터치 클릭과 추적 어댑터의 중복 재생을 보완했다.
+- 근거·검증: 김태이_progress.md의 2026-11-21 03:22 종료 기록, data/local/destruction-sound-qa/summary.json. Node 관련 161/161, 최종 영향 오디오/추적 21/21, 오디오 브라우저 5/5·기존 건물 연습 2/2, 빌드 세 개 통과. 초기 첫 클릭 재개 경합과 cv2 미설치에 따른 서버 검사 시작 실패도 개인 기록에 보존했다.
+- 입력·남은 일: keyboard_demo·synthetic, 실제 Web Audio 출력 신호 검증. 실제 스피커 청취·실폰·실시간 서버 회귀·3D/AR·장시간은 미검증이다. 공통 Phase·개인 계획 체크는 유지한다.
+- 다음 행동: 사용자 PC 스피커로 새로고침 후 파괴 버튼/Space·실폰 타격음을 확인한다. 코드·기록은 fix/building-destruction-sound-20261121의 로컬 변경이며 신규 커밋·push·PR 없음.
+
+
+### 2026-11-21 05:52 KST — AR 타격음 적용 범위 정정 및 연결 완료
+
+- 사용자가 실제 AR 타격을 뜻한다고 정정하고 1대·3대 모드에 '둘다' 적용을 확인했다. 본 세션의 앞선 2D/키보드 코드·테스트·번들 변경은 정리했으며 기존 실패/검증 기록은 보존한다.
+- P4 소리/AR 소비 경계를 공통 지원으로 수정했다. 두 모드의 폰/PC JS와 HTML, 공용 합성기·AR 오디오 소비 모듈, 두 AR 안내·시험·진행 기록이 이번 결과물이다. 기존 2D 합성기 API는 호환 재수출로 유지한다.
+- Node 59/59·AR 브라우저 4/4 통과. 합성 카메라/관절·3D 메시지로 실제 AR 페이지의 성공 분기와 실제 오디오 출력 신호를 검사했다. 1대 폰은 실제 보정/추정 코드도 거쳤다. 초기 합성 인물의 머리 가림으로 3/4였던 시험 입력을 수정한 뒤 최종 네 경로를 검증했다. 상세 근거는 김태이_progress.md 최신 종료 기록 및 data/local/ar-hit-sound-qa/summary.json이다.
+- 실제 기기 live·3대 실측/정합·실제 서버·스피커 청취·장시간은 미검증이며 공통 Phase와 계획 체크는 유지한다. 실제 실행 시 두 AR 페이지를 새로고침하고 PC 화면을 한 번 클릭한 후 타격음을 확인한다.
+- 이번 결과는 fix/building-destruction-sound-20261121의 로컬 변경이다. 신규 커밋·push·PR 없이 인계하며 정경호 진행 기록·팀 현황에 소비 경계와 다음 확인을 연결했다.
+
+
+### 2026-11-21 13:06 KST — AR 타격음·애니메이션 GitHub 공유 준비
+
+- 사용자 요청으로 기존 소리 수정에 AR 타격 애니메이션을 추가했다. 이동수 화면·김태이 소리·정경호 AR 소비 경계의 공통 지원이며 실제 개발 Phase 완료와 구분한다.
+- 변경·검증: 두 모드 폰/PC의 새 유효 타격에 소리와 공용 충격파/회전 잔해/먼지/반동을 연결, 수명 1.4초·3회/72개 제한. 브라우저 4/4·Node 65/65·호환 빌드 2개와 캡처 확인 완료. 상세는 이동수_progress.md 및 docs/asset-validation/ar-feedback/summary.json이다.
+- 실제 입력/청취/서버/정합·장시간·성능은 미검증이며 계획 체크 유지. 사용자 승인 범위대로 커밋·push·PR 생성까지 진행하고 머지는 별도 요청 범위로 남긴다. 현재 브랜치 열린 PR 없음, main eb65bc0과 기준 일치.
+
+
+### 2026-11-21 13:09 KST — AR 소리·애니메이션 PR #22 게시 완료
+
+- 사용자 요청 범위의 구현/검증/공유 완료. 코드 커밋  작업 브랜치에 push하고 [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)를 main 대상으로 생성했다. open·draft=false·merged=false이며 main 직접 push/머지는 없다.
+- 검증: Node 65/65·AR 네 경로 브라우저 4/4·호환 빌드 2개·새 상대 링크 8개·공백 검사. synthetic 입력·실제 AudioContext/Canvas 확인과 live/replay/keyboard_demo 미실행, 현장 청취·정합·장시간/정량 성능 미검증을 PR에 명시했다.
+- 상태는 PR 검토 요청이며 개인/공통 Phase 완료 체크는 유지한다. 상세 결과/인계는 이동수_progress.md 최신 기록과 docs/asset-validation/ar-feedback/summary.json을 따른다. 후속 커밋은 게시 결과 문서만 추가한다.
+
+
+### 2026-11-21 13:21 KST — PR #22 검토·머지·로컬 업데이트 시작
+
+- 담당 / 기록자: PM 공통 코드 검토 / Codex. Phase: P4 AR 결과물 검토, 공통 Phase 실기기 통과와 별개. 상태: 진행 중.
+- 사용자 승인: PR #22를 검토하고 문제가 없으면 머지한 뒤 로컬을 최신 main으로 갱신한다. 같은 승인 범위의 수정·검증·머지·동기화까지 진행한다.
+- 읽은 계획·기록: PM_plan P4, AGENTS 운영/현황/기록 양식, PM·이동수·김태이·정경호 최신 요약 및 PR 게시 기록, pr-workflow. 기준은 PR head daceb92a2345b34283f293fd12d5bfa59e970e10, base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85이며 시작 작업 트리는 clean이었다.
+- 목표·검증: 최신 diff·의견·원격 검사·충돌 상태와 코드 수락/중복/무효/음소거·수명·좌표/정리 경계를 검토한다. 관련 Node·AR 브라우저·필요한 호환 빌드를 재검증하고, 검증한 최종 head를 지정해 머지한 후 로컬 main/원격 main/트리 일치를 확인한다.
+- 실제 장비 live·청취·실측/장시간은 이번 자동 확인과 구분하며 근거 없이 Phase를 완료하지 않는다.
+
+
+### 2026-11-21 13:24 KST — PR #22 코드 검토·재검증 통과
+
+- 검토자 / 기록자: Codex, PM 공통 코드 검토. [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22)의 사용자 승인된 검토·문제 없을 때 머지·로컬 main 업데이트 요청을 수행한다. 검토·재검증 범위에서 머지를 막을 실행 코드 문제는 발견하지 못했다.
+- 기준: base main eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85, head daceb92a2345b34283f293fd12d5bfa59e970e10. 새 유효 타격 수락 경계·초기/중복/무효·리셋/재접속·음소거 독립 시각 효과·오디오 재개/종료·3D 투영·수명/입자 제한·레거시 import 호환성을 검토했다.
+- 재검증: node --test tests/ar-hit-effect.test.mjs tests/ar-hit-sound.test.mjs tests/test_mono3d.mjs tests/test_model_strike.mjs tests/single/*.test.mjs → 128/128. npm run test:ar → 4/4(16.4초), Chromium/D3D11. 별도 ignored 출력의 single/phone-game 호환 Vite 빌드 2개 성공, 기존 큰 청크 경고 유지. 새 캡처에서 PC/폰의 효과 위치·표시를 확인했고 공백·정적 참조를 검사했다.
+- 원격 상태: 검토 시작 시 최신 head/base 일치, mergeable=true·clean, 리뷰·인라인/대화 코멘트 0. check-run 0·commit status 0으로 등록된 원격 검사가 없다. status API의 pending/total_count=0은 진행 중 검사로 간주하지 않았다. 보호 우회 없이 정상 머지 API를 사용한다.
+- 기록 정정: 13:09 게시 기록 일부 문장에서 PowerShell 변수 뒤 한국어 조사 때문에 SHA 문자열이 누락됐다. 올바른 검증 코드 커밋은 619a641bb01b164df2f20e56ae1e7e7853e10001, 게시 기록 커밋은 daceb92a2345b34283f293fd12d5bfa59e970e10다. 이전 기록은 보존하고 본 정정과 검증 요약에 근거를 추가했다. 실행 코드 수정은 없다.
+- 입력·미검증: synthetic Canvas 카메라/관절·3D 결과와 mocked WebSocket, 실제 AudioContext/Canvas. 실제 live 입력·실제 서버/3대 실행·현장 정합·스피커 청취·장시간/정량 성능은 미검증이다. replay/keyboard_demo는 이번 AR 브라우저 확인을 실행하지 않았다. 개인/공통 Phase의 실제 완료 체크는 유지한다.
+- 근거: data/local/pr22-review/node.log·browser.log·build-single.log·build-phone.log 및 docs/asset-validation/ar-feedback/summary.json의 merge_review 항목. 기존 65개 결과와 이번 확장 128개 결과를 구분한다.
+- 다음 작업: 본 검토 결과 문서만 commit/push한 뒤 실행 코드가 daceb92a2345b34283f293fd12d5bfa59e970e10와 같은지 확인하고 최신 PR head/base/검사 상태를 다시 읽는다. 최종 head SHA를 지정해 머지하고 실제 merged/main·로컬 main·트리·clean 일치를 확인한다. 실제 머지 해시·종료 결과는 외곽 작업 폴더의 AGENTS/PM_progress.md에 추가한다.
