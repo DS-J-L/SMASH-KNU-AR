@@ -118,17 +118,21 @@ class FragmentTest:
                 "points": len(requested | unsupported),
                 "direction": direction or [0, 0, 0], "point_m": point or [(a+b)/2 for a,b in zip(f.lo,f.hi)]}
 
-    def strike(self, fid, kind, direction, point, strength, blast):
+    def strike(self, fid, kind, direction, point, strength, blast, *, all_fragments=False):
         ids=[fid]
-        if blast:
+        if all_fragments:
+            ids=[f.fragment_id for f in self.target.fragments]
+            blast=False
+        elif blast:
             ids=[f.fragment_id for f in self.target.fragments
                  if sum(max(f.lo[k]-point[k],0,point[k]-f.hi[k])**2 for k in range(3)) <= self.blast_radius**2]
         event=self.release(ids,kind,direction,point)
         if event:
             event.update(fragment_id=fid,strength=strength,blast=blast,blast_radius=self.blast_radius)
+            if all_fragments:event['effect_style']='screen_impact_v1'
         return event
 
-    def update(self, joints, at):
+    def update(self, joints, at, *, super_smash=False):
         geometry=depth_target_for(self.target.placement,self.depth_margin,self.scene_id)
         active = replace(geometry, fragments=[f for f in geometry.fragments if f.fragment_id not in self.removed])
         positions = {n: j["p"] if j else None for n, j in joints.items()}
@@ -198,7 +202,8 @@ class FragmentTest:
             delta=[positions[name][k]-prev[0][k] for k in range(3)]
             speed=math.sqrt(sum(v*v for v in delta))/((at-prev[1])/1000)
             event = self.strike(contact["fragment_id"], "ankle" if name in ANKLES else "wrist", delta, contact["point"],
-                                min(20,self.blast_strength*max(.6,min(1.5,speed/2))),self.blast_enabled and speed>=.8)
+                                min(20,self.blast_strength*max(.6,min(1.5,speed/2))),self.blast_enabled and speed>=.8,
+                                all_fragments=super_smash)
             event["joint"] = name
             if contact.get("overlap"):event['overlap']=True
             event['approx_depth_margin_m']=self.depth_margin

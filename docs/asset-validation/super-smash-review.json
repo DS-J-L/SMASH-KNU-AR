@@ -1,0 +1,288 @@
+{
+  "time_kst": "2026-11-21 16:53 KST",
+  "branch": "feat/super-smash-three-camera",
+  "base_commit": "d2674c06273d2cec48964fba8555b7d682df6d92",
+  "publication": "로컬 미커밋, 새 commit/push/PR/merge 없음",
+  "scope": "C0/C1/C2 triangulated multi_view_test only",
+  "implemented": [
+    "C0 play view",
+    "no-score preview",
+    "three-camera and per-joint arming",
+    "control/lease/ack",
+    "whole-scene unique removal and score",
+    "single accepted-contact event",
+    "snapshot/dedup/generation handling",
+    "bounded physics and cancellation",
+    "high-resolution server clock"
+  ],
+  "tests": {
+    "python": {
+      "passed": 299,
+      "commands": [
+        "pytest tests -q -k 'not all_zones' (298)",
+        "pytest tests -q -k all_zones (1, geometry unaffected by subsequent clock change)"
+      ],
+      "super_policy": 22,
+      "basis": "previous 299 tests retained: all backend and Python-test hashes unchanged in this visual/audio iteration"
+    },
+    "node": {
+      "passed": 316,
+      "command": "node --experimental-vm-modules --test --test-concurrency=1 (all rg --files tests -g '*.mjs')"
+    },
+    "building_browser": {
+      "passed": 19,
+      "scope": "latest relevant unique scenarios: 17 passed + corrected fixture 2 passed",
+      "renderer": "Edge/D3D11",
+      "command": "building-fragments.spec.js building-occlusion.spec.js building-zones.spec.js super-smash.spec.js, plus targeted corrected-fixture followup"
+    },
+    "clock_followup_browser": {
+      "passed": 4,
+      "command": "same config super-smash.spec.js multi3d-accuracy.spec.js"
+    },
+    "build": "npm run build:building-test passed",
+    "contact_explosion_final_browser": {
+      "passed": 3,
+      "command": "same config super-smash.spec.js, after accepted-fragment priority refinement"
+    }
+  },
+  "inputs": [
+    "synthetic",
+    "fixture",
+    "mouse_demo",
+    "keyboard_demo",
+    "virtual clock"
+  ],
+  "synthetic_metric": {
+    "event_id": "ea7614143144472d96b41eab88c1b521",
+    "epoch": "613582599ca04c169682b9a8e1f07dc8",
+    "received": 3810.699999988079,
+    "firstDraw": 3822.2,
+    "scene_id": "it1",
+    "input_mode": "synthetic",
+    "point_m": [
+      0,
+      -0.17515634331282456,
+      0.1952
+    ],
+    "originPx": [
+      720,
+      688.5188019429943
+    ],
+    "releasedCount": 96,
+    "quality": {
+      "cams": [
+        "C0",
+        "C1",
+        "C2"
+      ],
+      "err_px": 0,
+      "ray_angle_deg": 73.7,
+      "timing": "inference_input_aligned",
+      "spread_ms": 13.614750027656555,
+      "clock_uncertainty_ms": {
+        "C0": 1.0213999897241592,
+        "C1": 9.920550003647804,
+        "C2": 8.08900000154972
+      }
+    },
+    "serverFuseMs": 17.487399995326996,
+    "receiveToDrawMs": 11.500000011920747,
+    "input": "synthetic",
+    "renderer": "d3d11",
+    "physicalLatency": "unmeasured"
+  },
+  "unverified": [
+    "live 3 phones",
+    "physical calibration/AR alignment",
+    "listening",
+    "physical end-to-end latency/p95",
+    "20 minute run and repeated restores",
+    "replay device execution"
+  ],
+  "initial_failures": [
+    "Node 16 without experimental VM flag; corrected invocation passed",
+    "SwiftShader 2 legacy timing failures; native rerun passed",
+    "preview fake-clock past time; fixed",
+    "shared hub had 193-fragment scene instead of IT1 fixture; explicit scene selection fixed",
+    "one legacy mono blast consumer during concurrent heavy geometry run; isolated full rerun passed"
+  ],
+  "warnings": [
+    "Vite large chunk",
+    "Starlette httpx deprecation",
+    "Windows10054 transport callback during RTC shutdown in passing full browser run"
+  ],
+  "runtime_sha256": {
+    "backend/connections.py": "cf2ebbd35532fed503d4bfb5301876db109abdf86fd749b1697db34d73d4e1f8",
+    "backend/fragment_test.py": "ce03911360f5130e650064b04f4c67662bacd36b7a9a47b121effeb4ef9736db",
+    "backend/test_multi3d.py": "b13d6f444b4119f70461a0d25583cefd887f74c31a9af8448478ec3ecaab2bf6",
+    "frontend/building-test/fragment-physics.js": "f0f53f0d7e28180c200496587ba8626f6e7beb3bad4a1eb0c8b5aa3b749615c4",
+    "frontend/building-test/index.html": "1d11500ff02543b16e458f4858d2a24469091bbd6e0e1e33d23c76ca2ff6d3e3",
+    "frontend/building-test/main.js": "c2645e62eae2843185ad185290426be02404b2ca7e81077fd19e254f7741ef1d",
+    "frontend/building-test/style.css": "8be23fceb21d1aeedb0b73874529b0063b19760478b3db1de94115b04b0b69d1",
+    "tests/browser/building-fragments.spec.js": "e8bf5c68cd03998999c0bc6baf39a893d7839cc3645d75079e69cb50850e34fc",
+    "tests/test_fragment_physics.mjs": "d7ee37c4bfc887d0cae1e7fe323831f4aee7860cb4070cd3a13fecfa67b97ac6",
+    "web/test/building/index.html": "e15c98fbfefedb7bf46b12c057cb28f92241ee75a1a7c379418a2767cd797554",
+    "backend/super_smash.py": "31bc206a46555f5d26bacf7d08a167efa897a5029d69ce254b0fadc4fcb99629",
+    "frontend/building-test/impact-audio.js": "9075e843c1c39a9821d10383f338d1f3d50235a0d782ddaba7b57b36587622cd",
+    "frontend/building-test/screen-impact.js": "7fc699b184b0c12bb71bc78eb43232cb7abb921dfb5b82605b347de33f71df38",
+    "frontend/building-test/super-smash-feedback.js": "792e7251bb01907cd2fb88e363395ba609d52c48c09989896881d8fb24246755",
+    "tests/browser/super-smash.spec.js": "8f6f7ed9165c757bbffd3db2981dd986d89091f1e7115c98eac25376c46cc0a7",
+    "tests/test_impact_audio.mjs": "296437917c0cbcde9627f8d4fbf6247ac1de65f4af1ed96c3c1dd8b055580fb6",
+    "tests/test_screen_impact.mjs": "08f7282fcc3b6076ccb348c9e90a60397c8a1ebfb8b8267f48d3b41f14a77eac",
+    "tests/test_super_smash.mjs": "bdd7c48d88b84d96a5d8a2f68a559ba9b6b20ea3b155f235a5052610f86e0a79",
+    "tests/test_super_smash.py": "9c5ab8d7635c9344aeaf2a4d9dde611c4079482a902a72cad851455d8e5ebd18",
+    "web/test/building/assets/index-BodQ6iia.js": "82583e898094f5f72469c81e2d70ad9a1a8911ea5aa3f69f4da3e5e00833f08b",
+    "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c"
+  },
+  "documentation_validation": {
+    "relative_links": 50,
+    "missing_links": [],
+    "json_examples": 3,
+    "markdown_fences_tables": "passed",
+    "implementation_checks_complete": 11,
+    "implementation_checks_pending": 5,
+    "common_phase_checks": "unchanged",
+    "runtime_evidence_hashes": 21,
+    "branch": "feat/super-smash-three-camera"
+  },
+  "initial_implementation": {
+    "time_kst": "2026-11-21 16:18 KST",
+    "tests": {
+      "python": {
+        "passed": 299,
+        "commands": [
+          "pytest tests -q -k 'not all_zones' (298)",
+          "pytest tests -q -k all_zones (1, geometry unaffected by subsequent clock change)"
+        ],
+        "super_policy": 22
+      },
+      "node": {
+        "passed": 308,
+        "command": "node --experimental-vm-modules --test (all rg --files tests -g '*.mjs')"
+      },
+      "building_browser": {
+        "passed": 38,
+        "renderer": "Edge/D3D11",
+        "command": "npx playwright test -c playwright.building-test.config.js"
+      },
+      "clock_followup_browser": {
+        "passed": 4,
+        "command": "same config super-smash.spec.js multi3d-accuracy.spec.js"
+      },
+      "build": "npm run build:building-test passed"
+    },
+    "synthetic_metric": {
+      "event_id": "79bcfc649ab9442c86157d789471b08c",
+      "epoch": "05e197c837ce441cae787dda93ed2d51",
+      "received": 6583.4000000059605,
+      "firstDraw": 6596.9,
+      "scene_id": "it1",
+      "input_mode": "synthetic",
+      "releasedCount": 96,
+      "quality": {
+        "cams": [
+          "C0",
+          "C1",
+          "C2"
+        ],
+        "err_px": 0,
+        "ray_angle_deg": 73.7,
+        "timing": "inference_input_aligned",
+        "spread_ms": 0.2571500241756439,
+        "clock_uncertainty_ms": {
+          "C0": 1.00730000436306,
+          "C1": 0.4141499847173691,
+          "C2": 0.7398499995470047
+        }
+      },
+      "serverFuseMs": 16.639599978923798,
+      "receiveToDrawMs": 13.499999994039172,
+      "input": "synthetic",
+      "renderer": "d3d11",
+      "physicalLatency": "unmeasured"
+    },
+    "runtime_sha256": {
+      "backend/connections.py": "cf2ebbd35532fed503d4bfb5301876db109abdf86fd749b1697db34d73d4e1f8",
+      "backend/fragment_test.py": "ce03911360f5130e650064b04f4c67662bacd36b7a9a47b121effeb4ef9736db",
+      "backend/test_multi3d.py": "b13d6f444b4119f70461a0d25583cefd887f74c31a9af8448478ec3ecaab2bf6",
+      "frontend/building-test/fragment-physics.js": "533cfae7da77f36c6adc3100c6b89ddc93efbe09a464867227109b59ae820574",
+      "frontend/building-test/index.html": "1da20e06cf66ba175e40986e15e9444bae80ed8bfdbb4a6a90c85f55e68c9314",
+      "frontend/building-test/main.js": "441bdcb1c7c06112de7a6d9608aed223c8d307949d3bb9d930969b070563235d",
+      "frontend/building-test/style.css": "8be23fceb21d1aeedb0b73874529b0063b19760478b3db1de94115b04b0b69d1",
+      "tests/test_fragment_physics.mjs": "4240a7ba965671392a24d3370133c9975bd14d5df568aa912a328b8b807e53d2",
+      "web/test/building/index.html": "9bddfd4d5e27662e170f17de226b842b02b021689f052124c51a4080743f503d",
+      "backend/super_smash.py": "31bc206a46555f5d26bacf7d08a167efa897a5029d69ce254b0fadc4fcb99629",
+      "frontend/building-test/screen-impact.js": "b16bd41d5bdc0b9660c3e6dfd032d8a868edff5882da06bcfc170aa8437d92e0",
+      "frontend/building-test/super-smash-feedback.js": "e73b607f7c07655d089181b3b290d0a99b7e698202458b0341719fc513103a0d",
+      "tests/browser/super-smash.spec.js": "da06eae53033038fd8363a43411eb50defdfc67e4cdadc4b3231eb6e1b7f1de0",
+      "tests/test_super_smash.mjs": "bdd7c48d88b84d96a5d8a2f68a559ba9b6b20ea3b155f235a5052610f86e0a79",
+      "tests/test_super_smash.py": "9c5ab8d7635c9344aeaf2a4d9dde611c4079482a902a72cad851455d8e5ebd18",
+      "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c",
+      "web/test/building/assets/index-mz3IPoGl.js": "44e97a4a4ca88e8c3cb8d1dbd359e3ecd207b30c20fa5949c11249a0d990a8c4"
+    }
+  },
+  "contact_explosion": {
+    "time_kst": "2026-11-21 16:53 KST",
+    "public_mode_label": "연쇄 폭파",
+    "internal_mode": "super_smash",
+    "internal_effect_style": "screen_impact_v1 (unchanged protocol)",
+    "visual": "projected contact glow/flames -> shockwave, sparks, chips, rising smoke; no effect-name text",
+    "effect_duration_ms": 2100,
+    "wave_release_schedule_ms": [
+      0,
+      650
+    ],
+    "release_policy": "server-accepted fragment first, then point distance, bounded by per-frame work budget",
+    "logical_score_policy": "unchanged atomic unique scene removal; delayed presentation only",
+    "budgets": {
+      "dynamic_bodies": 128,
+      "per_frame_releases": 16,
+      "preparation_ms": 3,
+      "sparks": 32,
+      "chips": 16,
+      "smoke_clouds": 16,
+      "audio_sources": 14
+    },
+    "sound": "initial boom/blast + 3 rolling collapse bursts + 5 thuds + 4 clatters; all future cues cancel on mute/stop/reset",
+    "new_checks": [
+      "early contact pixel opaque while distant corner transparent",
+      "no title text",
+      "C0 origin matches independent K/R/t projection",
+      "accepted fragment priority and delayed distant fragments",
+      "mid-wave cancellation",
+      "bounded staggered sound cues and mute/locked/error cases"
+    ],
+    "failure_corrections": [
+      "initial broader regression 17/19: legacy server-arrival and browser-timer synthetic fixtures unstable",
+      "one-shot aligned baseline draft timed out; continuous baseline stream waits for fused three-view reference before after sample",
+      "corrected aligned 40ms synthetic pair and consecutive mono synthetic pair passed; judge thresholds unchanged",
+      "parallel Node run had native child exit 0xC0000005 in unchanged camera_lifecycle VM test; serial full 316 passed"
+    ],
+    "screenshots_local": [
+      "data/local/super-smash-design/contact-explosion-start.png",
+      "data/local/super-smash-design/contact-explosion-fireball.png",
+      "data/local/super-smash-design/contact-explosion-collapse.png",
+      "data/local/super-smash-design/contact-explosion-hit.png"
+    ],
+    "unverified": [
+      "live physical three-camera alignment",
+      "listening/volume",
+      "physical end-to-end latency/p95",
+      "20 minute trial"
+    ]
+  },
+  "automatic_reverifications": [
+    {
+      "time_kst": "2026-11-21 17:23 KST",
+      "scope": "automatic_only",
+      "report": "super-smash-reverify-20261121.json",
+      "python_passed": 298,
+      "node_passed": 316,
+      "browser_passed": 38,
+      "contact_repeat_passed": 3,
+      "unchanged_prior_files": 20,
+      "updated_test_harness": "tests/browser/super-smash.spec.js"
+    }
+  ],
+  "publication_review": "super-smash-pr-review-20261121.json"
+}

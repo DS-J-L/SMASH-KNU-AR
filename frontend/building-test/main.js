@@ -11,6 +11,7 @@ import {TrackedPerson} from './tracked-person.js';
 import {PersonOcclusion,loadOcclusionTexture} from './person-occlusion.js';
 import {createRtcReceiver} from '/test/stage-view/rtc.js?v=20261120-r1';
 import {createPcOutline} from '/test/stage-view/pc-outline.js?v=20261120-r1';
+import {createSuperFeedback} from './super-smash-feedback.js';
 const STRIKE_JOINTS=['left_wrist','right_wrist','left_ankle','right_ankle'],JOINT_LABELS={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
 
 const $ = id => document.getElementById(id);
@@ -19,6 +20,7 @@ const mode=new URLSearchParams(location.search).get('mode');
 // duo: two judging phones on ID0/ID1 plus a view-only phone V on the far side; V's video is the main screen
 // (docs/DUO_STAGE_TEST.md). `wide` covers both stages; `duo` only what differs.
 const mono=mode==='mono',duo=mode==='duo',wide=mode==='wide'||duo,approx=mono||wide;
+$('superPanel').hidden=approx;
 $('sourceMode').textContent=mono?'카메라 1대 · 근사 3D · source=mono_approx':duo?'판정 폰 2대 + 화면 폰 · 2대 무대 · 폰별 근사 3D · source=mono_approx':wide?'카메라 3대 가로 · 넓은 무대 · 폰별 근사 3D · source=mono_approx':'카메라 3대 · 삼각측량 · source=multi_view_test';
 $('occlusionControl').hidden=false;
 if(mono){document.body.classList.add('mono-mode');$('legacyLink').href='/test/mono3d/view.html';$('legacyLink').textContent='기존 1대 상자 시험';
@@ -45,6 +47,7 @@ let loadedScene=null,loadingScene=null,loadGeneration=0,scenePending=false,owned
 let failedScene=null,sceneBuildings=[];
 let sceneDimensions=[2.810118,1.0844383,.6256438],buildingCount=1,fixedSize=false;
 let ready = false, connected = false, fatal = null, state = null, epoch = null;
+let viewerId=null,controlPending=null,controlSeq=0,pauseWanted=false,localStopped=false,lastPresentationAt=-Infinity,lastPresentationKey='';
 let frameAt = 0, lastJoints = {}, physics = null, colliderData = null;
 let personJoints={},personAt=-Infinity;
 let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
@@ -120,7 +123,7 @@ function placeMarkers(spacing){
 }
 placeMarkers(duo?2:1.5);
 for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
-  const div=document.createElement('div');div.className='camera';
+  const div=document.createElement('div');div.className='camera';div.dataset.camera=id;
   const img=document.createElement('img');img.alt=`${id} 영상`;img.hidden=true;
   const label=document.createElement('span');label.textContent=`${id} 대기`;
   div.append(img);$('cameras').append(div);
@@ -137,6 +140,66 @@ for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
     div.insertBefore(s.frame,s.renderer.domElement);div.append(s.rtcVideo);
     Object.assign(s,{rtcFrameAt:-Infinity,rtcFrames:0,rtcFps:0,outlineMs:null,viewCalib:null});}
 }
+const feedback=approx?null:createSuperFeedback({canvas:$('screenImpact'),
+  reduced:()=>$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
+  project:point=>{
+    const c=cameras.get('C0');if(!c?.calibrated||!point)return null;
+    const p=new THREE.Vector3(...point).project(c.camera),box=c.div.getBoundingClientRect();
+    return p.z>=-1&&p.z<=1&&Math.abs(p.x)<=1&&Math.abs(p.y)<=1?[box.left+(p.x+1)*box.width/2,box.top+(1-p.y)*box.height/2]:null;
+  }});
+$('effectPreview').onclick=()=>{feedback?.preview();$('superResult').textContent='미리보기 · 무득점';};
+$('playView').onclick=()=>{document.body.classList.toggle('play-view');$('playView').textContent=document.body.classList.contains('play-view')?'운영 화면':'C0 플레이 화면';};
+$('superMute').onclick=()=>{const muted=$('superMute').getAttribute('aria-pressed')!=='true';$('superMute').setAttribute('aria-pressed',String(muted));feedback?.mute(muted);};
+const unlockSuper=()=>feedback?.unlock();document.addEventListener('pointerdown',unlockSuper,{capture:true});
+function presentable(){const c=cameras.get('C0');return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
+function control(action,extra={}){
+  if(!state?.server_instance_id||!connected||controlPending)return false;
+  const request_id=`${viewerId}:${++controlSeq}`;
+  if(!link.send({type:'multi3d_model_control',request_id,server_instance_id:state.server_instance_id,
+    expected_epoch:state.epoch,expected_control_revision:state.control_revision,action,...extra}))return false;
+  controlPending={request_id,at:performance.now(),ack:null};return true;
+}
+function completeControl(){
+  if(controlPending?.ack&&state?.model_revision>=controlPending.ack.model_revision){
+    const ack=controlPending.ack;controlPending=null;
+    if(!ack.accepted)$('superStatus').textContent=`요청 거부: ${ack.code}`;
+    if(pauseWanted&&state.controller_viewer_id===viewerId){pauseWanted=false;control('pause');}
+  }
+}
+function updateSuperUi(now){
+  if(!feedback||!state?.server_instance_id)return;
+  const owner=state.controller_viewer_id===viewerId,superMode=state.smash_mode==='super_smash';
+  $('smashMode').value=state.smash_mode;$('smashMode').disabled=!owner||!!controlPending;
+  $('claimControl').disabled=!!controlPending||!!state.controller_viewer_id;
+  $('superRestore').disabled=!owner||!!controlPending||!ready;
+  $('superIt1').disabled=!owner||!!controlPending||!!loadingScene;
+  $('superStop').disabled=!owner;
+  $('superStop').textContent=state.phase==='paused'||localStopped?'재개':'중지';
+  const reasons={normal:'일반 파괴',ready:'한 번 쳐 보세요',cleared:'전체 파괴 · 다시 세우기를 누르세요',paused:'중지됨',pc_not_ready:'C0 영상·운영 PC 준비 대기',three_cameras_required:'세 카메라 연결·보정·최신 입력 필요',clock_not_ready:'세 카메라 시계 교환 대기',input_not_aligned:'관절 시각 정렬 대기',move_outside_to_prepare:'손/발을 건물 밖으로 빼고 준비하세요',body_not_ready:'몸 보정 완료 대기',input_source_unknown:'입력 출처 확인 필요'};
+  $('superStatus').textContent=controlPending?(now-controlPending.at>2000?'응답 확인 중…':'요청 처리 중…'):
+    localStopped&&state.phase!=='paused'?'이 PC 중지 · 서버 상태 확인 필요':`${owner?'운영 PC':'관찰 PC'} · ${$('sceneTitle').textContent} · ${reasons[state.readiness?.reason]??state.phase} · ${state.readiness?.input_mode??'unknown'}`;
+  if(superMode)$('superResult').textContent=state.phase==='cleared'?`${physics?.superQueue.length?'연쇄 붕괴 중':'전체 파괴'} · +${state.score}점`:state.phase==='paused'?`중지 · ${state.score}점`:'';
+  for(const id of ['mouseMode','blastMode','blastRadius','pushStrength','collapse','stress','impactBreak','applySize'])if(superMode)$(id).disabled=true;
+  if(superMode){for(const b of $('placement').querySelectorAll('input,button'))b.disabled=true;$('restore').disabled=!owner||!!controlPending;$('sceneSelect').disabled||=!owner||!!controlPending;}
+  if(controlPending&&now-controlPending.at>2000&&!controlPending.queried){controlPending.queried=true;link.send({type:'multi3d_model_snapshot'});}
+  const okay=presentable(),key=`${state.epoch}:${okay}`;
+  if(owner&&(key!==lastPresentationKey||now-lastPresentationAt>1000)){
+    const age=Math.max(0,now-(cameras.get('C0')?.lastImage??0));
+    if(link.send({type:'multi3d_presentation',server_instance_id:state.server_instance_id,epoch:state.epoch,
+      presentation_ready:okay,c0_frame_age_ms:age,visible:!document.hidden,assets_ready:ready&&!loadingScene})){
+      lastPresentationAt=now;lastPresentationKey=key;
+    }
+  }
+}
+$('claimControl').onclick=()=>control('claim_controller');
+$('superIt1').onclick=()=>{feedback?.cancel('scene_request');physics?.stopSuper();control('set_scene',{scene_id:'it1'});};
+$('smashMode').onchange=()=>control('set_mode',{mode:$('smashMode').value});
+$('superRestore').onclick=()=>{feedback?.cancel('reset_request');physics?.stopSuper();control('reset');};
+$('superStop').onclick=()=>{
+  if(state?.phase==='paused'||localStopped){localStopped=false;control('resume');}
+  else{localStopped=true;feedback?.cancel('pause_request');physics?.stopSuper();pauseWanted=!control('pause');}
+};
+document.addEventListener('visibilitychange',()=>{if(document.hidden){feedback?.cancel('hidden');physics?.stopSuper();}lastPresentationKey='';updateSuperUi(performance.now());});
 function applyCalibration(c,m) {
   personJoints={};personAt=-Infinity;
   c.visualDepthValid=false;c.depthAt=-Infinity;
@@ -144,6 +207,7 @@ function applyCalibration(c,m) {
   const W=m.image.width,H=m.image.height,{fx,fy,cx,cy}=m.K,R=m.R,t=m.t,near=.01,far=50;
   if(c.isView)c.viewCalib={K:{fx,fy,cx,cy,width:W,height:H},pose:{R,t,C:m.C}};
   c.div.style.aspectRatio=`${W}/${H}`;
+  c.div.style.setProperty('--camera-aspect',String(W/H));
   c.camera.projectionMatrix.set(2*fx/W,0,1-2*cx/W,0, 0,2*fy/H,2*cy/H-1,0,
     0,0,-(far+near)/(far-near),-2*far*near/(far-near), 0,0,-1,0);
   c.camera.projectionMatrixInverse.copy(c.camera.projectionMatrix).invert();
@@ -153,7 +217,11 @@ function applyCalibration(c,m) {
 }
 function syncState(m) {
   if(!m)return;
+  let superEvent=null;const isIncoming=m!==state;
+  if(m!==state&&feedback){const result=feedback.accept(m,{presentable:presentable()&&loadedScene===m.scene_id});if(!result.accepted)return;superEvent=result.event;}
   state=m;
+  completeControl();
+  if(feedback&&m.smash_mode==='normal')for(const id of ['mouseMode','blastMode','blastRadius','pushStrength','collapse','impactBreak'])$(id).disabled=false;
   if(wide&&m.stage){stageOwner=m.stage.owner;if(stageSpacing!==m.stage.spacing_m){stageSpacing=m.stage.spacing_m;placeMarkers(stageSpacing);if(document.activeElement!==$('stageSpacing'))$('stageSpacing').value=stageSpacing;}
     if(stageListSpacing!==m.stage.spacing_m)loadStageList(m.stage.spacing_m).catch(showLoadError);}
   $('bodyReference').textContent=wide?`무대 세트 크기 · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
@@ -178,9 +246,13 @@ function syncState(m) {
   if(reset||!physics){
     physics?.dispose();physics=new FragmentPhysics(colliderData,m.placement,physicsOptions);impactQueue.clear();
     physics.setInteractionDistance(Number($('interactionDistance').value));
-    physics.onImpact=(id,force)=>{if($('impactBreak').checked&&force>=8&&!state.removed_ids.includes(id))impactQueue.add(id);};
+    physics.onImpact=(id,force)=>{if(state.smash_mode!=='super_smash'&&$('impactBreak').checked&&force>=8&&!state.removed_ids.includes(id))impactQueue.add(id);};
   }
-  physics.release(m.removed_ids,m.event);
+  if(m.smash_mode==='super_smash'){
+    if(m.delivery==='snapshot'&&isIncoming)physics.stopSuper();
+    physics.queueSuper(m.removed_ids,superEvent);impactQueue.clear();
+    if(m.phase==='paused')physics.stopSuper();
+  }else physics.release(m.removed_ids,m.event);
   if(m.event?.blast)physics.blast(m.event);
   else if(m.event&&['mouse','mouse_push'].includes(m.event.kind))physics.push(m.event);
   syncToggle('blastMode',m.blast_enabled??true);
@@ -198,7 +270,7 @@ function syncState(m) {
     s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
       if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);}
-      node.visible=true;
+      node.visible=!physics.superHidden.has(id);
     }
   }
   $('count').textContent=`${removed.size} / ${m.fragment_count}개 파괴`;
@@ -217,6 +289,10 @@ function syncState(m) {
   }
 }
 function onMessage(m){
+  if(m.type==='multi3d_viewer'){viewerId=m.viewer_id;return;}
+  if(m.type==='multi3d_model_control_ack'){
+    if(controlPending?.request_id===m.request_id){controlPending.ack=m;completeControl();}return;
+  }
   if(m.body_calibration&&m.model_test)m.model_test.body_calibration=m.body_calibration;
   if(mono){
     if(m.type==='mono3d_calib'&&m.camera&&m.K&&m.image)m={...m,type:'multi3d_calib',camera_id:'C0',...m.camera};
@@ -349,10 +425,10 @@ $('applySpacing').onclick=()=>{if(!$('stageSpacing').reportValidity())return;
   scenePending=link.send({type:'wide3d_stage_config',spacing_m:Number($('stageSpacing').value)});if(scenePending)status('마커 간격 적용 중… 구역을 다시 배치합니다.');};
 const link=createLink(duo?'/ws/test/duo3d':wide?'/ws/test/wide3d':mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
   connected=s.open;
-  if(!s.open){frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
+  if(!s.open){feedback?.cancel('disconnect');physics?.stopSuper();controlPending=null;viewerId=null;lastPresentationKey='';frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
   if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
 },onMessage);
-$('restore').onclick=()=>{link.send({type:'multi3d_model_reset'});};
+$('restore').onclick=()=>{if(state?.smash_mode==='super_smash')$('superRestore').click();else link.send({type:'multi3d_model_reset'});};
 $('captureBody').hidden=true;
 $('captureBody').onclick=()=>link.send({type:'multi3d_body_start'});
 $('stress').onclick=()=>link.send({type:'multi3d_model_drop_all'});
@@ -388,7 +464,7 @@ function checkAutoNext(m){
 for(const id of ['autoNext','autoNextDelay','autoNextPercent'])$(id).addEventListener('change',()=>{if(id==='autoNext'||id==='autoNextDelay')cancelAutoNext();if(state)checkAutoNext(state);});
 $('sceneSelect').onchange=()=>{cancelAutoNext();
   failedScene=null;
-  scenePending=link.send({type:'multi3d_model_scene',scene_id:$('sceneSelect').value});
+  scenePending=state?.smash_mode==='super_smash'?control('set_scene',{scene_id:$('sceneSelect').value}):link.send({type:'multi3d_model_scene',scene_id:$('sceneSelect').value});
   if(scenePending)status('구역 준비 중… 모델과 충돌체를 불러옵니다.');
 };
 function applyPlacement(){if(!$('placement').reportValidity())return;link.send({type:'multi3d_model_config',placement:{x_m:Number($('x').value),y_m:Number($('y').value),yaw_deg:Number($('yaw').value),scale:Number($('scale').value)}});}
@@ -455,25 +531,31 @@ async function load(){
   if(!wide)await loadScene('it1');else status(`${duo?'2대 무대':'넓은 무대'} 구역을 서버에서 받는 중…`);
 }
 function draw(now){
+  feedback?.draw(now);
+  physics?.processSuper(now);
   const start=performance.now(),dt=previousNow?(now-previousNow)/1000:0;previousNow=now;frameCount++;
   const disabled=!ready||!connected||scenePending;
   $('restore').disabled=disabled;$('stress').disabled=disabled;$('applySpacing').disabled=disabled;$('applyMeasuredSpacing').disabled=disabled;$('applySize').disabled=disabled||fixedSize||!!state?.body_reference;$('sceneSelect').disabled=!connected||!!loadingScene||scenePending;for(const b of $('placement').querySelectorAll('button'))b.disabled=disabled||!!state?.body_reference;
-  physics?.updateWrists(connected?lastJoints:{},frameAt,now);
+  physics?.updateWrists(connected&&state?.smash_mode!=='super_smash'?lastJoints:{},frameAt,now);
   physics?.step(dt);
   if(physics){
-    for(const id of physics.dynamic){const {position,quaternion}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.position.copy(position);n.quaternion.copy(quaternion);}}
-    if(connected&&now-impactSentAt>150&&impactQueue.size){
+    for(const id of physics.dynamic){const {position,quaternion}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.visible=true;n.position.copy(position);n.quaternion.copy(quaternion);}}
+    if(connected&&state?.smash_mode!=='super_smash'&&now-impactSentAt>150&&impactQueue.size){
       const ids=[...impactQueue].filter(id=>!state.removed_ids.includes(id)).slice(0,8);
       if(ids.length&&link.send({type:'multi3d_model_release',ids})){impactSentAt=now;ids.forEach(id=>impactQueue.delete(id));}
       if(!ids.length)impactQueue.clear();
     }
   }
   const live=connected&&now-frameAt<500;
+  updateSuperUi(now);
+  if(state?.smash_mode==='super_smash'&&!presentable()&&feedback?.info().screen.active&&!feedback.info().screen.preview){feedback.cancel('presentation_lost');physics?.stopSuper();}
+  if(physics&&state?.smash_mode==='super_smash')for(const s of scenes)for(const [id,n] of s.nodes)if(physics.superHidden.has(id))n.visible=false;
   const personLive=connected&&now-personAt<500;
   trackedPerson.update(personJoints,personLive);$('personStatus').textContent=personLive&&trackedPerson.count?('사람 3D · '+trackedPerson.count+'관절 · '+(mono?'1대 근사':wide?`${stageOwner??'판정 폰 없음'} 폰 근사`:'다중 시점')):'사람 3D 관측 대기';
   for(const s of scenes){
     STRIKE_JOINTS.forEach((n,i)=>{s.wrists[i].visible=live&&Boolean(lastJoints[n])&&(s===orbit||(s.calibrated&&now-s.lastImage<1500));if(s.wrists[i].visible)s.wrists[i].position.fromArray(lastJoints[n].p);});
     const box=s===orbit?$('orbit'):s.div,w=box.clientWidth,h=box.clientHeight;
+    if(w<=0||h<=0)continue;
     const canvas=s.renderer.domElement;if(canvas.clientWidth!==w||canvas.clientHeight!==h||canvas.width!==Math.floor(w*s.renderer.getPixelRatio())||canvas.height!==Math.floor(h*s.renderer.getPixelRatio()))s.renderer.setSize(w,h,false);
     if(s===orbit){s.camera.aspect=w/Math.max(1,h);s.camera.updateProjectionMatrix();}
     else {const id=[...cameras].find(([,v])=>v===s)[0];s.label.textContent=id==='V'?`V 메인 화면 · ${s.calibrated?'두 마커 보정됨':'화면 폰 보정 대기'}`:`${id} ${s.calibrated?'보정됨':'대기'}`;}
@@ -497,7 +579,7 @@ function draw(now){
 }
 load().then(()=>link.setEnabled(true)).catch(showLoadError);
 orbit.renderer.setAnimationLoop(draw);
-window.buildingFragmentTest=Object.freeze({cameraPickPoints:()=>{
+window.buildingFragmentTest=Object.freeze({previewImpact:originPx=>feedback?.preview({originPx}),cameraPickPoints:()=>{
   const c=cameras.get('C0');if(!c?.calibrated)return [];
   c.scene.updateMatrixWorld(true);
   return [...c.nodes].map(([id,n])=>{const p=n.getWorldPosition(new THREE.Vector3()).project(c.camera);return {id,u:(p.x+1)/2,v:(1-p.y)/2};})
@@ -512,7 +594,7 @@ window.buildingFragmentTest=Object.freeze({cameraPickPoints:()=>{
     return {id,x:v.x,y:v.y,z:v.z,buildingId:colliderData.fragments.find(f=>f.fragment_id===id)?.building_id};
   }).filter(p=>Math.abs(p.x)<.98&&Math.abs(p.y)<.98&&p.z>0&&p.z<1).sort((a,b)=>a.z-b.z);
 },snapshot:()=>({ready,connected,removed:state?.removed_ids??[],score:state?.score??0,epoch,
-  placement:state?.placement,
+  placement:state?.placement,super:feedback?.info()??null,modelState:state,viewerId,controlPending,
   sceneId:loadedScene,buildingCount,loadingScene,fixedSize,buildings:sceneBuildings,
   removedBuildings:colliderData?[...new Set(colliderData.fragments.filter(f=>state?.removed_ids.includes(f.fragment_id)).map(f=>f.building_id))]:[],
   physics:physics?.snapshot()??null,fps,frameCpuMs:renderMs,collapse:state?.collapse,
@@ -527,5 +609,5 @@ window.buildingFragmentTest=Object.freeze({cameraPickPoints:()=>{
   worldBounds:ready?(()=>{const b=new THREE.Box3().setFromObject(orbit.outer);return {lo:b.min.toArray(),hi:b.max.toArray()};})():null,
   projection:[...cameras].filter(([,c])=>c.calibrated).map(([id,c])=>({id,
     point:new THREE.Vector3(.1,.1,.3).project(c.camera).toArray()}))})});
-window.addEventListener('pagehide',()=>{rtcReceiver.setWanted(false);link.setEnabled(false);orbit.renderer.setAnimationLoop(null);physics?.dispose();physics=null;trackedPerson.dispose();controls.dispose();for(const s of scenes){s.occlusion?.dispose();s.personProxy?.dispose();s.renderer.dispose();}});
+window.addEventListener('pagehide',()=>{feedback?.dispose();document.removeEventListener('pointerdown',unlockSuper,{capture:true});rtcReceiver.setWanted(false);link.setEnabled(false);orbit.renderer.setAnimationLoop(null);physics?.dispose();physics=null;trackedPerson.dispose();controls.dispose();for(const s of scenes){s.occlusion?.dispose();s.personProxy?.dispose();s.renderer.dispose();}});
 window.addEventListener('pageshow',e=>{if(e.persisted)location.reload();});

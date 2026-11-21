@@ -302,3 +302,18 @@ schema 1.0의 m·three_y_up·항등 복원 회전·같은 피벗/충돌체 규�
 ### PR #5 검토 보완 (2026-11-03)
 
 PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wrist를 valid=false로 표시하고 추론 준비를 켜지 않는다. FrameInput 시각/키는 읽기 전용이며 타격은 허용된 손목 이름·증가하는 정수 프레임 쌍을 요구한다. hit_result 로그는 room_id/stream_id/run_id/transform_version/frame_id/previous_frame_id/building_id/joint와 수락/거부를 함께 기록하고, 서버에도 로컬과 같은 PC 시각/설정·모델 버전을 전달한다. 서버 스키마0.1과 3D 기준은 변경하지 않았다. 최신 근거는 [PR #5 검토 보고서](asset-validation/single-camera/pr5-review.json)를 따른다.
+
+
+## 2026-11-21 카메라3대 슈퍼 스매시 시험 계약
+
+`/ws/test/multi3d`의 model viewer 전용이다. `/ws/pose`·room 게임·mono/wide/duo에 슈퍼 명령은 추가하지 않는다. [상세 설계8절](SUPER_SMASH_DESIGN.md)·[실행/인수](SUPER_SMASH_TEST.md)를 따른다.
+
+- 접속 시 multi3d_viewer{viewer_id}와 완전한 모델 snapshot을 보낸다. 폰 input_mode query는 live(기본)/synthetic/replay, 잘못된 값은 unknown이다. 실제 장비 시험의 증명은 아니다.
+- multi3d_model_control은 request_id·server_instance_id·expected_epoch·expected_control_revision·action을 요구한다. action은 claim_controller/handoff_controller/set_mode/reset/pause/resume/set_scene이며 해당 모드/장면/인계 대상만 추가 필드를 허용한다. 운영 PC만 제어하고 claim은 운영자가 없거나 만료됐을 때 허용한다.
+- 응답은 control_ack와 완전한 model_state다. 연결별 최근128개 request_id 중복은 재실행하지 않는다. 거부 code는 stale_instance/stale_epoch/stale_control_revision/not_controller/invalid_command이며 형식 오류/옛 우회 명령은 bad_message다. multi3d_model_snapshot으로 현재 상태를 다시 요청한다.
+- multi3d_presentation은 instance/epoch·presentation_ready·c0_frame_age_ms·visible·assets_ready다. 운영 PC 1초 갱신/3초 만료, C0 나이500ms 이하. 새 epoch는 옛 PC 준비를 재사용하지 않는다.
+- model_test에 server_instance_id/model_revision/control_revision/calibration_version/controller_viewer_id/smash_mode/phase/readiness/delivery를 추가한다. revision은 허브 수명 중 증가하며 모델 재생성 때 리셋하지 않는다. 초기/재동기화는 delivery=snapshot, 새 타격은 event, 후속 관측은 update다. 초기 snapshot event는 null이다.
+- 이벤트는 kind/joint/contact·고유 released_ids/points를 보존하고 effect_style=screen_impact_v1, instance/epoch/revision/scene·tracking_source=multi_view_test·input_mode·input_reference_ms·joint_cameras·quality/server_fuse_ms를 포함한다. 최상위 hits와 별개다. 수락 접촉에만 전체 제거하며 mouse/drop_all/2차 release를 승격하지 않는다.
+- score=고유 제거 ID 수, event.points=새 ID 수, epoch당 슈퍼1회. 슈퍼 상태/타격은 순서 있는 전송이며 송신 큐 포화는1013 재접속/상태 복구를 요구한다. PC는 snapshot 무연출·옛 revision/instance/중복 event 거부를 적용한다.
+
+자동 synthetic와 실제3대 정합/전체 지연·공통 Phase 완료를 구분한다.

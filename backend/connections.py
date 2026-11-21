@@ -21,6 +21,7 @@ class Peer:
         self._queue: asyncio.Queue[str | tuple[str] | None] = asyncio.Queue(maxsize=queue_size)
         self._video: dict[str, str] = {}
         self._task: asyncio.Task | None = None
+        self._overloaded = False
 
     def start(self) -> "Peer":
         self._task = asyncio.create_task(self._run(), name=f"send:{self.name}")
@@ -55,6 +56,20 @@ class Peer:
             self._video[camera_id] = encoded
         except asyncio.QueueFull:
             self.dropped += 1
+
+    def send_critical(self, message: dict) -> None:
+        """Ordered game state: a backed-up connection must resync, never silently miss a hit."""
+        if self._overloaded:
+            return
+        try:
+            self._queue.put_nowait(json.dumps(message, separators=(',', ':'), ensure_ascii=False))
+        except asyncio.QueueFull:
+            self._overloaded = True
+            async def reconnect():
+                await self.stop()
+                with contextlib.suppress(Exception):
+                    await self.ws.close(code=1013, reason='state_resync_required')
+            asyncio.create_task(reconnect())
 
     async def stop(self) -> None:
         if self._task and not self._task.done():

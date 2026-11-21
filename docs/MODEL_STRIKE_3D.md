@@ -161,6 +161,8 @@ if (!hit) return false;              // 남은 블럭 위가 아님(이미 부�
 
 ## 8. 미검증
 
+2026-11-21 후속: `FragmentTest.update(..., super_smash=True)`의 수락 관절 접촉에만 전체 ID 제거 정책을 주입하는 3대 전용 모드를 구현했다. 기본값/일반 판정과 기존 실기기 미검증은 유지한다. `strike(..., all_fragments=True)`는 내부 정책이며 mouse는 기본 false를 사용한다. [계약](DATA_CONTRACT.md)·[3대 슈퍼 실행/인수](SUPER_SMASH_TEST.md)를 따른다.
+
 - 실제 폰 3D 좌표로 시험하지 않음(합성 좌표 사례와 실제 IT1 기하 검사만).
 - 3D 좌표 오차(정경호 시험의 재투영 오차 등)에 맞는 `margin_m`은 실측 후 정한다.
 - IT1 분석형 QA 패키지(`knu-it1-analytic-*`, 다른 형식)는 지원하지 않는다. 기본 `knu-it1-v3`와 같은 `colliders.json` 형식만 읽는다.

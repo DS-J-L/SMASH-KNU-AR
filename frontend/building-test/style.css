@@ -7,3 +7,9 @@ body.wide-mode .camera{aspect-ratio:16/9;max-height:none;width:auto;margin:0;bor
 body.duo-mode #cameras{grid-template-columns:repeat(4,minmax(0,1fr))}body.duo-mode .camera.main-view{grid-column:1/-1;max-width:min(100%,160vh);justify-self:center;width:100%}
 #stageStatus{white-space:pre-wrap;font:12px/1.5 ui-monospace,monospace;color:#cbd5e1;margin:8px 0}
 @media(max-width:950px){body.wide-mode main{grid-template-columns:1fr}body.wide-mode .camera-panel{order:0}body.wide-mode .camera{width:auto}}
+#superPanel{position:relative;z-index:1000;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 16px;background:#10141ce8;border-bottom:1px solid #475569}
+#superPanel[hidden],#screenImpact[hidden]{display:none}#superPanel label{display:flex;align-items:center;gap:6px;margin:0}#superPanel input{width:auto;margin:0}#superPanel select{color:inherit;background:#1e293b;padding:8px;border-radius:6px}#superStatus{flex-basis:100%;color:#fcd34d}#superResult{font-size:20px;font-weight:bold}
+#screenImpact{position:fixed;inset:0;width:100vw;height:100vh;z-index:900;pointer-events:none}
+body.play-view{background:#05070b}body.play-view header,body.play-view aside,body.play-view .main-panel,body.play-view .camera-panel h2{display:none}body.play-view .camera:not([data-camera="C0"]){display:none}
+body.play-view .camera[data-camera="C0"]{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100vw,calc(100vh * var(--camera-aspect, .5625)));height:min(100vh,calc(100vw / var(--camera-aspect, .5625)));max-height:none;margin:0;border-radius:0}
+body.play-view #superPanel{position:fixed;top:0;left:0;right:0;font-size:13px}body.play-view #superPanel button{padding:6px}
