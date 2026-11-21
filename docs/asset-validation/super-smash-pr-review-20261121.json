@@ -1,0 +1,122 @@
+{
+  "reviewed_kst": "2026-11-21 17:30 KST",
+  "reviewer": "Codex local review; separate human approval not claimed",
+  "branch": "feat/super-smash-three-camera",
+  "base_commit": "d2674c06273d2cec48964fba8555b7d682df6d92",
+  "publication": {
+    "state": "PR open; final documentation commit and SHA-pinned merge pending",
+    "url": "https://github.com/DS-J-L/SMASH-KNU-AR/pull/24",
+    "implementation_commit": "655f15fd5a407b451f253ee63826dcbc8760f003",
+    "base_commit": "d2674c06273d2cec48964fba8555b7d682df6d92",
+    "github_snapshot_kst": "2026-11-21 17:32 KST",
+    "mergeable": true,
+    "statuses": [],
+    "workflow_runs": [],
+    "reviews": [],
+    "meaning": "no GitHub checks/reviews reported; local review and tests are documented; no separate human approval claimed",
+    "authorization": "user explicitly requested PR, review, merge into main and local update"
+  },
+  "scope": "PM-SS-01/02, PM-FX-01 and L/K/J-SS/FX automatic implementation; multi_view_test only",
+  "reviewed_paths": [
+    "backend/super_smash.py",
+    "backend/test_multi3d.py",
+    "backend/fragment_test.py",
+    "backend/connections.py",
+    "frontend/building-test/main.js",
+    "frontend/building-test/fragment-physics.js",
+    "frontend/building-test/super-smash-feedback.js",
+    "frontend/building-test/screen-impact.js",
+    "frontend/building-test/impact-audio.js",
+    "frontend/building-test/index.html",
+    "frontend/building-test/style.css",
+    "playwright.building-test.config.js",
+    "tests/browser/super-smash.spec.js",
+    "tests/browser/building-fragments.spec.js",
+    "tests/test_super_smash.py",
+    "tests/test_super_smash.mjs",
+    "tests/test_fragment_physics.mjs",
+    "tests/test_screen_impact.mjs",
+    "tests/test_impact_audio.mjs"
+  ],
+  "checks": [
+    "controller lease/ownership and strict versioned commands",
+    "prepared three-device/two-view joint gates and normal-mode compatibility",
+    "single authoritative removal/score, silent snapshots and event ordering/backpressure",
+    "C0 projection, primary accepted fragment and bounded/cancellable visual physics",
+    "audio cancellation, preview isolation and unavailable/muted audio",
+    "test fixture timing/provenance and clean-checkout artifact paths",
+    "source/bundle hashes, contract, runbook and plan/progress scope"
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "P2",
+      "path": "tests/browser/super-smash.spec.js",
+      "problem": "writeFileSync targeted ignored data/local directories that do not exist in a fresh checkout",
+      "resolution": "use testInfo.outputPath for failure/success trace and synthetic metrics; update runbook",
+      "status": "fixed",
+      "validation": "core three-camera browser case repeated 3/3, generated all three per-test trace/metric pairs"
+    }
+  ],
+  "unresolved_blocking_findings": [],
+  "prior_evidence": "super-smash-reverify-20261121.json",
+  "prior_tests": {
+    "python": "298 passed, 1 deselected (unchanged all_zones geometry; prior isolated pass separate)",
+    "node": "316 passed, VM modules + serial",
+    "browser": "38 passed on fresh Edge/D3D11 server before artifact-path-only fix",
+    "build": "passed; deployed bundle unchanged"
+  },
+  "post_review_validation": {
+    "browser": "3 passed (43.0s)",
+    "command": "AR_TEST_RENDERER=d3d11 npx playwright test -c playwright.building-test.config.js super-smash.spec.js --grep 'three aligned' --repeat-each=3",
+    "log": "ignored data/local/super-smash-reverify/pr-review-repeat.log",
+    "test_only_changed": [
+      "tests/browser/super-smash.spec.js"
+    ],
+    "unchanged_prior_runtime_files": 20,
+    "artifact_pairs_written": 3,
+    "whitespace": {
+      "source_and_docs": "staged diff --check passed with generated assets excluded",
+      "generated_bundle": "whitespace warnings in unchanged upstream shader strings; every flagged line also exists in prior tracked bundle",
+      "flagged_lines": 21
+    },
+    "final_documentation": {
+      "relative_links": 51,
+      "missing": [],
+      "json": "passed",
+      "fences": "passed",
+      "phase_checks": "unchanged",
+      "runtime_hashes": 21
+    }
+  },
+  "runtime_sha256": {
+    "backend/connections.py": "cf2ebbd35532fed503d4bfb5301876db109abdf86fd749b1697db34d73d4e1f8",
+    "backend/fragment_test.py": "ce03911360f5130e650064b04f4c67662bacd36b7a9a47b121effeb4ef9736db",
+    "backend/test_multi3d.py": "b13d6f444b4119f70461a0d25583cefd887f74c31a9af8448478ec3ecaab2bf6",
+    "frontend/building-test/fragment-physics.js": "f0f53f0d7e28180c200496587ba8626f6e7beb3bad4a1eb0c8b5aa3b749615c4",
+    "frontend/building-test/index.html": "1d11500ff02543b16e458f4858d2a24469091bbd6e0e1e33d23c76ca2ff6d3e3",
+    "frontend/building-test/main.js": "c2645e62eae2843185ad185290426be02404b2ca7e81077fd19e254f7741ef1d",
+    "frontend/building-test/style.css": "8be23fceb21d1aeedb0b73874529b0063b19760478b3db1de94115b04b0b69d1",
+    "tests/browser/building-fragments.spec.js": "e8bf5c68cd03998999c0bc6baf39a893d7839cc3645d75079e69cb50850e34fc",
+    "tests/test_fragment_physics.mjs": "d7ee37c4bfc887d0cae1e7fe323831f4aee7860cb4070cd3a13fecfa67b97ac6",
+    "web/test/building/index.html": "e15c98fbfefedb7bf46b12c057cb28f92241ee75a1a7c379418a2767cd797554",
+    "backend/super_smash.py": "31bc206a46555f5d26bacf7d08a167efa897a5029d69ce254b0fadc4fcb99629",
+    "frontend/building-test/impact-audio.js": "9075e843c1c39a9821d10383f338d1f3d50235a0d782ddaba7b57b36587622cd",
+    "frontend/building-test/screen-impact.js": "7fc699b184b0c12bb71bc78eb43232cb7abb921dfb5b82605b347de33f71df38",
+    "frontend/building-test/super-smash-feedback.js": "792e7251bb01907cd2fb88e363395ba609d52c48c09989896881d8fb24246755",
+    "tests/browser/super-smash.spec.js": "8f6f7ed9165c757bbffd3db2981dd986d89091f1e7115c98eac25376c46cc0a7",
+    "tests/test_impact_audio.mjs": "296437917c0cbcde9627f8d4fbf6247ac1de65f4af1ed96c3c1dd8b055580fb6",
+    "tests/test_screen_impact.mjs": "08f7282fcc3b6076ccb348c9e90a60397c8a1ebfb8b8267f48d3b41f14a77eac",
+    "tests/test_super_smash.mjs": "bdd7c48d88b84d96a5d8a2f68a559ba9b6b20ea3b155f235a5052610f86e0a79",
+    "tests/test_super_smash.py": "9c5ab8d7635c9344aeaf2a4d9dde611c4079482a902a72cad851455d8e5ebd18",
+    "web/test/building/assets/index-BodQ6iia.js": "82583e898094f5f72469c81e2d70ad9a1a8911ea5aa3f69f4da3e5e00833f08b",
+    "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c"
+  },
+  "not_verified": [
+    "physical phones/live capture/replay device",
+    "physical C0 alignment and listening/volume",
+    "physical end-to-end latency/p95",
+    "20-minute stability and physical repeated restore acceptance"
+  ],
+  "phase": "PM-SS-03/04 and individual SS-03 remain incomplete; common P0-P6 unchanged"
+}

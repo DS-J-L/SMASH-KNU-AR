@@ -36,6 +36,7 @@ from .connections import Peer
 from .tracking.triangulation import triangulate_dlt
 from .tracking.test_fusion import estimate as robust_estimate
 from .sync.test_inputs import InputFrames,MAX_SPREAD_MS
+from .super_smash import SuperSmash
 
 CAMERAS = ("C0", "C1", "C2")
 MAX_MESSAGE_BYTES = 512 * 1024
@@ -72,7 +73,9 @@ log = logging.getLogger("smash.multi3d")
 
 
 def now_ms() -> float:
-    return time.monotonic() * 1000.0
+    # Windows/Python 3.12 monotonic() ticks at 15.6ms, too coarse for 10ms clock quality.
+    # Every test-hub ping, arrival and fuse time uses this same high-resolution clock.
+    return time.perf_counter() * 1000.0
 
 
 class MessageError(ValueError):
@@ -220,6 +223,21 @@ class Multi3d:
         from .body_reference import BodyCapture
         self.body_capture=BodyCapture();self.body_required=False
         self.fragment_test = None  # enabled only by the separate IT1 fragment-test viewer
+        self.smash = SuperSmash()
+        self.viewer_ids = {}
+        self.watch_task = None
+
+    def model_snapshot(self, delivery='update'):
+        return self.smash.decorate(self.fragment_test.snapshot(), delivery)
+
+    def ensure_watch(self):
+        if self.watch_task is not None:return
+        async def watch():
+            while self.viewers or self.phones:
+                await asyncio.sleep(.2)
+                if self.smash.mode == 'super_smash':self.maybe_fuse()
+            self.watch_task=None
+        self.watch_task=asyncio.create_task(watch())
 
     # ----- state -----
     def estimated_height(self) -> float | None:
@@ -259,6 +277,7 @@ class Multi3d:
 
     # ----- fusion -----
     def fuse(self) -> dict:
+        compute_started=time.perf_counter()*1000
         t = now_ms()
         live = {c: f for c, f in self.frames.items() if c in self.calibs and t - f["at"] <= STALE_MS}
         views,timing,target,excluded=self.inputs.select(live)
@@ -327,7 +346,18 @@ class Multi3d:
             self.was_inside[w] = inside
             self.prev[w] = (p, observed_at) if p else None
 
-        model_test = self.fragment_test.update(joints if can_hit else {}, observed_at) if self.fragment_test else None
+        model_test=None
+        if self.fragment_test:
+            eligible=self.smash.gate(self,joints,observed_at,t,timing,views,can_hit)
+            state=(self.fragment_test.snapshot() if eligible is None else
+                   self.fragment_test.update(eligible,observed_at,super_smash=self.smash.mode=='super_smash'))
+            if state.get('event') and state['event'].get('effect_style')=='screen_impact_v1':
+                event=state['event'];joint=joints.get(event.get('joint')) or {}
+                event['quality']={k:joint.get(k) for k in ('cams','err_px','ray_angle_deg')}
+                event['quality'].update(timing=timing,spread_ms=spread,
+                    clock_uncertainty_ms={c:self.inputs.clocks[c].uncertainty_ms for c in views if c in self.inputs.clocks})
+                event['server_fuse_ms']=time.perf_counter()*1000-compute_started
+            model_test=self.smash.decorate(state)
         return {"type": "multi3d_fused", "source": "multi_view_test", "timing": timing,
                 'excluded_cameras':excluded,'input_reference_ms':target,
                 "cameras_used": sorted(views), "spread_ms": round(spread) if spread is not None else None,
@@ -352,7 +382,11 @@ class Multi3d:
         fused = self.fuse()
         self.last_fused = fused
         # A hit must not be dropped by latest-only delivery: send those reliably.
-        self.broadcast(fused, None if fused["hit"] or (fused["model_test"] and fused["model_test"]["event"]) else "fused", phones=True)
+        if self.smash.mode=='super_smash':
+            # Latest-only queue tokens can overtake a hit when replaced by a later revision.
+            for peer in [*self.viewers,*self.phones.values()]:peer.send_critical(fused)
+        else:
+            self.broadcast(fused, None if fused["hit"] or (fused["model_test"] and fused["model_test"]["event"]) else "fused", phones=True)
 
 
     def _trailing_fuse(self) -> None:
@@ -376,6 +410,8 @@ def multi3d_router() -> APIRouter:
             return
 
         if role == "viewer":
+            hub.viewer_ids[peer]=uuid.uuid4().hex
+            peer.send({'type':'multi3d_viewer','viewer_id':hub.viewer_ids[peer]})
             if websocket.query_params.get("model") == "it1" and hub.fragment_test is None:
                 from backend.fragment_test import FragmentTest
                 hub.fragment_test = FragmentTest()
@@ -386,15 +422,20 @@ def multi3d_router() -> APIRouter:
                 if c in hub.jpegs:
                     peer.send(hub.jpegs[c])
             if hub.last_fused:
-                peer.send(hub.last_fused)
+                initial={**hub.last_fused}
+                if hub.fragment_test:initial['model_test']=hub.model_snapshot('snapshot')
+                peer.send(initial)
             if hub.fragment_test:
-                peer.send({"type": "multi3d_model_state", "model_test": hub.fragment_test.snapshot()})
+                peer.send({"type": "multi3d_model_state", "model_test": hub.model_snapshot('snapshot')})
         else:
             if hub.fragment_test:
                 hub.fragment_test.clear_tracking()
             old = hub.phones.get(camera)
             hub.phones[camera] = peer
             hub.inputs.reset(camera)
+            hub.smash.invalidate(hub.fragment_test)
+            mode=websocket.query_params.get('input_mode','live')
+            hub.smash.input_modes[camera]=mode if mode in ('live','synthetic','replay') else 'unknown'
             if hub.body_required:hub.body_capture.invalidate()
             for store in (hub.calibs, hub.calib_msgs, hub.frames, hub.jpegs):
                 store.pop(camera, None)
@@ -410,6 +451,7 @@ def multi3d_router() -> APIRouter:
                     await asyncio.sleep(.1 if count<5 else 2)
             clock_task=asyncio.create_task(ping_clock())
         hub.broadcast_status()
+        hub.ensure_watch()
 
         try:
             while True:
@@ -425,12 +467,24 @@ def multi3d_router() -> APIRouter:
                         raise MessageError("object expected")
                     kind = m.get("type")
                     if kind=='multi3d_body_start':
+                        if hub.smash.mode=='super_smash':raise MessageError('body capture unavailable during super smash')
                         from .fragment_test import FragmentTest
                         if hub.fragment_test is None:hub.fragment_test=FragmentTest()
                         hub.body_required=True;hub.body_capture.start();hub.fragment_test.clear_tracking()
                         hub.maybe_fuse(force=True)
                     elif role == "viewer":
-                        if isinstance(kind, str) and kind.startswith("multi3d_model_"):
+                        if kind=='multi3d_model_snapshot':
+                            if hub.fragment_test:peer.send_critical({'type':'multi3d_model_state','model_test':hub.model_snapshot('snapshot')})
+                        elif kind=='multi3d_model_control':
+                            if hub.fragment_test is None:raise MessageError('model viewer required')
+                            ack,state=hub.smash.control(m,hub.viewer_ids[peer],hub,now_ms())
+                            peer.send_critical(ack)
+                            if state:
+                                for target in hub.viewers:target.send_critical({'type':'multi3d_model_state','model_test':state})
+                        elif kind=='multi3d_presentation':
+                            if hub.fragment_test:hub.smash.presentation(m,hub.viewer_ids[peer],hub.fragment_test,now_ms())
+                        elif isinstance(kind, str) and kind.startswith("multi3d_model_"):
+                            if hub.smash.mode=='super_smash':raise MessageError('use super smash control envelope')
                             from backend.fragment_test import FragmentTest, model_command
                             if hub.fragment_test is None:
                                 hub.fragment_test = FragmentTest()
@@ -464,6 +518,7 @@ def multi3d_router() -> APIRouter:
                             raise MessageError(f"unsupported: {kind}")
                     elif kind == "multi3d_calib":
                         hub.calibs[camera] = parse_calibration(camera, m)
+                        hub.smash.invalidate(hub.fragment_test)
                         # Marker calibration remains necessary; person capture is optional in 3-view tests.
                         hub.body_required=False
                         if hub.body_capture.active or hub.body_capture.reference:hub.body_capture.invalidate()
@@ -482,7 +537,10 @@ def multi3d_router() -> APIRouter:
                                       latest_key=f"frame:{camera}")
                         hub.maybe_fuse()
                     elif kind=='multi3d_clock_pong':
+                        old_clock=hub.inputs.clocks.get(camera)
+                        old_id=old_clock.clock_id if old_clock else None
                         hub.inputs.pong(camera,m,now_ms())
+                        if old_id is not None and old_id!=m.get('clock_id'):hub.smash.invalidate(hub.fragment_test)
                     elif kind == "multi3d_jpeg":
                         if not isinstance(m.get("data"), str) or not m["data"].startswith("data:image/jpeg;base64,"):
                             raise MessageError("jpeg data URL expected")
@@ -501,7 +559,10 @@ def multi3d_router() -> APIRouter:
             if clock_task:clock_task.cancel()
             if role == "viewer":
                 hub.viewers.discard(peer)
+                hub.smash.disconnect(hub.viewer_ids.pop(peer,None))
             elif hub.phones.get(camera) is peer:
+                hub.smash.invalidate(hub.fragment_test)
+                hub.smash.input_modes.pop(camera,None)
                 if hub.fragment_test:
                     hub.fragment_test.clear_tracking()
                 if hub.body_required:hub.body_capture.invalidate()
@@ -512,6 +573,9 @@ def multi3d_router() -> APIRouter:
                 hub.broadcast({"type": "multi3d_phone_left", "camera_id": camera})
                 log.info("multi3d %s disconnected", camera)
             hub.broadcast_status()
+            if not hub.viewers and not hub.phones:
+                if hub.watch_task:hub.watch_task.cancel();hub.watch_task=None
+                if hub.pending_fuse:hub.pending_fuse.cancel();hub.pending_fuse=None
             await peer.stop()
 
     return router

@@ -1,0 +1,169 @@
+{
+  "started_kst": "2026-11-21 17:08 KST",
+  "finished_kst": "2026-11-21 17:23 KST",
+  "user_scope": "지금은 자동 검증만",
+  "branch": "feat/super-smash-three-camera",
+  "publication": "로컬 미커밋, 새 commit/push/PR/merge 없음",
+  "initial_observation": {
+    "backend_process_running": false,
+    "listening_ports_checked": [
+      8443,
+      8898,
+      8765
+    ],
+    "listeners_found": [],
+    "meaning": "실폰 수신 확인 아님. 사용자가 자동 검증만 선택"
+  },
+  "runtime_sha256": {
+    "backend/connections.py": "cf2ebbd35532fed503d4bfb5301876db109abdf86fd749b1697db34d73d4e1f8",
+    "backend/fragment_test.py": "ce03911360f5130e650064b04f4c67662bacd36b7a9a47b121effeb4ef9736db",
+    "backend/test_multi3d.py": "b13d6f444b4119f70461a0d25583cefd887f74c31a9af8448478ec3ecaab2bf6",
+    "frontend/building-test/fragment-physics.js": "f0f53f0d7e28180c200496587ba8626f6e7beb3bad4a1eb0c8b5aa3b749615c4",
+    "frontend/building-test/index.html": "1d11500ff02543b16e458f4858d2a24469091bbd6e0e1e33d23c76ca2ff6d3e3",
+    "frontend/building-test/main.js": "c2645e62eae2843185ad185290426be02404b2ca7e81077fd19e254f7741ef1d",
+    "frontend/building-test/style.css": "8be23fceb21d1aeedb0b73874529b0063b19760478b3db1de94115b04b0b69d1",
+    "tests/browser/building-fragments.spec.js": "e8bf5c68cd03998999c0bc6baf39a893d7839cc3645d75079e69cb50850e34fc",
+    "tests/test_fragment_physics.mjs": "d7ee37c4bfc887d0cae1e7fe323831f4aee7860cb4070cd3a13fecfa67b97ac6",
+    "web/test/building/index.html": "e15c98fbfefedb7bf46b12c057cb28f92241ee75a1a7c379418a2767cd797554",
+    "backend/super_smash.py": "31bc206a46555f5d26bacf7d08a167efa897a5029d69ce254b0fadc4fcb99629",
+    "frontend/building-test/impact-audio.js": "9075e843c1c39a9821d10383f338d1f3d50235a0d782ddaba7b57b36587622cd",
+    "frontend/building-test/screen-impact.js": "7fc699b184b0c12bb71bc78eb43232cb7abb921dfb5b82605b347de33f71df38",
+    "frontend/building-test/super-smash-feedback.js": "792e7251bb01907cd2fb88e363395ba609d52c48c09989896881d8fb24246755",
+    "tests/browser/super-smash.spec.js": "f4daf293737e712f28a1851ee4ffc41d2543f1e8157f3aa4ff69400478b0e24f",
+    "tests/test_impact_audio.mjs": "296437917c0cbcde9627f8d4fbf6247ac1de65f4af1ed96c3c1dd8b055580fb6",
+    "tests/test_screen_impact.mjs": "08f7282fcc3b6076ccb348c9e90a60397c8a1ebfb8b8267f48d3b41f14a77eac",
+    "tests/test_super_smash.mjs": "bdd7c48d88b84d96a5d8a2f68a559ba9b6b20ea3b155f235a5052610f86e0a79",
+    "tests/test_super_smash.py": "9c5ab8d7635c9344aeaf2a4d9dde611c4079482a902a72cad851455d8e5ebd18",
+    "web/test/building/assets/index-BodQ6iia.js": "82583e898094f5f72469c81e2d70ad9a1a8911ea5aa3f69f4da3e5e00833f08b",
+    "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c"
+  },
+  "source_and_rebuilt_bundle_match": true,
+  "unchanged_prior_files": 20,
+  "test_harness_change": {
+    "file": "tests/browser/super-smash.spec.js",
+    "before_sha256": "a3981f54a5c8593e06953feb678d81fe6bae96f2a924f94ef43644e6f7904330",
+    "after_sha256": "f4daf293737e712f28a1851ee4ffc41d2543f1e8157f3aa4ff69400478b0e24f",
+    "reason": "wait for viewer_id/initial model_state and right_wrist readiness; retain bounded fused diagnostics"
+  },
+  "tests": {
+    "python": {
+      "passed": 298,
+      "command": ".venv/Scripts/python.exe -m pytest tests -q -k 'not all_zones'",
+      "excluded": "unchanged whole-zone geometry test_all_zones_match_single_height_and_preserve_internal_proportions; prior result kept separate"
+    },
+    "node": {
+      "passed": 316,
+      "command": "node --experimental-vm-modules --test --test-concurrency=1 (rg --files tests -g '*.mjs')"
+    },
+    "browser": {
+      "passed": 38,
+      "command": "AR_TEST_RENDERER=d3d11 npx playwright test -c playwright.building-test.config.js",
+      "environment": "new isolated localhost8898 server, authenticated test sessions, Edge/D3D11"
+    },
+    "contact_repeat": {
+      "passed": 3,
+      "command": "same config super-smash.spec.js --grep three aligned --repeat-each=3"
+    },
+    "build": "npm run build:building-test passed"
+  },
+  "confirmed": [
+    "C0/C1/C2 WebSocket input and clock exchange -> triangulated accepted contact",
+    "point_m maps to C0 effect origin by independent K/R/t calculation",
+    "early blast remains local with transparent distant corner; no effect-name text; preview no score",
+    "one accepted contact removes all 96 unique IT1 pieces and scores 96, one event/effect",
+    "snapshot/reconnect silent, reset first-inside observation silent",
+    "C2 loss stops subsequent strikes; pause/resume and normal-mode return",
+    "accepted fragment starts first, distance-based release and mid-wave cancellation, 128-body cap",
+    "14 audio sources scheduled in staggered cues; mute/locked/error cancel/skip without replay",
+    "normal/mono/wide/duo, person occlusion, marker/zone and WebRTC/JPEG regressions"
+  ],
+  "synthetic_browser_sample": {
+    "event_id": "b67a643cbd714792a6e2fcd4a6c5afb9",
+    "epoch": "3a875b14db6a406da935580f92cc8c70",
+    "received": 6141,
+    "firstDraw": 6154.7,
+    "scene_id": "it1",
+    "input_mode": "synthetic",
+    "point_m": [
+      0,
+      -0.17515634331282456,
+      0.1952
+    ],
+    "originPx": [
+      720,
+      688.5188019429943
+    ],
+    "releasedCount": 96,
+    "quality": {
+      "cams": [
+        "C0",
+        "C1",
+        "C2"
+      ],
+      "err_px": 0,
+      "ray_angle_deg": 73.7,
+      "timing": "inference_input_aligned",
+      "spread_ms": 1.3756499886512756,
+      "clock_uncertainty_ms": {
+        "C0": 1.2423000037670135,
+        "C1": 1.4811500012874603,
+        "C2": 1.4835499972105026
+      }
+    },
+    "serverFuseMs": 14.705000013113022,
+    "receiveToDrawMs": 13.699999999999818,
+    "input": "synthetic",
+    "renderer": "d3d11",
+    "physicalLatency": "unmeasured"
+  },
+  "not_verified": [
+    "live phones",
+    "physical calibration/AR alignment",
+    "listening/volume",
+    "physical end-to-end latency/p95",
+    "20-minute real-device trial"
+  ],
+  "input_types": [
+    "synthetic camera/landmarks",
+    "fixtures",
+    "virtual clock",
+    "mouse/keyboard demo"
+  ],
+  "warnings": [
+    "Vite large chunk warning",
+    "Starlette/httpx deprecation",
+    "Windows10054 transport callback during browser/RTC shutdown; test status recorded separately"
+  ],
+  "initial_failures": [
+    {
+      "log": "data/local/super-smash-reverify/browser.log",
+      "result": "37 passed, 1 failed; 3D contact stayed at 0; original frame trace unavailable, root not asserted"
+    },
+    {
+      "log": "data/local/super-smash-reverify/contact-followup.log",
+      "result": "test read null model_state before initial server snapshot arrived"
+    },
+    {
+      "correction": "wait for initial server state and actual striking right wrist, not only general armed phase; product and judge unchanged"
+    }
+  ],
+  "logs_local": [
+    "data/local/super-smash-reverify/python.log",
+    "data/local/super-smash-reverify/node.log",
+    "data/local/super-smash-reverify/browser-final.log",
+    "data/local/super-smash-reverify/contact-repeat.log",
+    "data/local/super-smash-reverify/contact-success-trace.json"
+  ],
+  "documentation_validation": {
+    "relative_links": 47,
+    "missing_links": [],
+    "json_examples": 3,
+    "markdown_fences_tables": "passed",
+    "implementation_checks_complete": 11,
+    "implementation_checks_pending": 5,
+    "common_phase_checks": "unchanged",
+    "runtime_evidence_hashes": 21,
+    "branch": "feat/super-smash-three-camera"
+  },
+  "isolated_test_server_after_run": "stopped; no listener observed on 8443/8898/8765 after suite"
+}

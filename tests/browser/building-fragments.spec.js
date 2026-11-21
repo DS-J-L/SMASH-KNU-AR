@@ -41,10 +41,17 @@ test('actual IT1 on the marker: one touched fragment, camera projection, restore
   expect(initial.worldBounds.lo[2]).toBeCloseTo(0,3);
   expect(initial.worldBounds.hi[2]).toBeCloseTo(1.0844383*.6,3);
   await page.evaluate(async data=>{
-    window.syntheticPhones={};
+    window.syntheticPhones={};window.syntheticClockReplies={};
     for(const c of Object.keys(data.calibs)){
-      const url=new URL('/ws/test/multi3d',location.href);url.protocol='ws:';url.search=new URLSearchParams({role:'phone',camera:c,key:'fragment-test'});
-      const ws=new WebSocket(url);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});window.syntheticPhones[c]=ws;ws.send(JSON.stringify(data.calibs[c]));
+      const url=new URL('/ws/test/multi3d',location.href);url.protocol='ws:';url.search=new URLSearchParams({role:'phone',camera:c,key:'fragment-test',input_mode:'synthetic'});
+      const ws=new WebSocket(url);window.syntheticClockReplies[c]=0;
+      ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.type==='multi3d_clock_ping'){
+        ws.send(JSON.stringify({type:'multi3d_clock_pong',nonce:m.nonce,clock_id:c,device_time_ms:performance.now()}));window.syntheticClockReplies[c]++;
+      }else if(m.type==='multi3d_fused'){
+        window.syntheticLastFused=m;
+        if(m.timing==='inference_input_aligned'&&m.cameras_used.length===3&&m.joints?.right_wrist)window.sendAfterCapturedBaseline?.();
+      }else if(m.type==='error')window.syntheticLastError=m;};
+      await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});window.syntheticPhones[c]=ws;ws.send(JSON.stringify(data.calibs[c]));
       // Synthetic camera image with a projected ground marker, not a live phone photo.
       const canvas=document.createElement('canvas');canvas.width=data.width;canvas.height=data.height;
       const ctx=canvas.getContext('2d');ctx.fillStyle='#17202d';ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -52,7 +59,6 @@ test('actual IT1 on the marker: one touched fragment, camera projection, restore
       ctx.strokeStyle='#22c55e';ctx.lineWidth=4;ctx.beginPath();[[-.1,.1,0],[.1,.1,0],[.1,-.1,0],[-.1,-.1,0]].forEach((p,i)=>i?ctx.lineTo(...P(p)):ctx.moveTo(...P(p)));ctx.closePath();ctx.stroke();
       ws.send(JSON.stringify({type:'multi3d_jpeg',data:canvas.toDataURL('image/jpeg')}));
     }
-    for(const c of Object.keys(data.calibs))window.syntheticPhones[c].send(JSON.stringify({type:'multi3d_frame',landmarks:data.before[c]}));
   },data);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().projection.length)).toBe(3);
   await expect(page.locator('.camera img').first()).toBeVisible();
@@ -61,12 +67,22 @@ test('actual IT1 on the marker: one touched fragment, camera projection, restore
   for(const p of projected){const {R,t}=data.calibs[p.id],v=[.1,.1,.3],q=[0,1,2].map(r=>R[r*3]*v[0]+R[r*3+1]*v[1]+R[r*3+2]*v[2]+t[r]);
     expect(p.point[0]).toBeCloseTo(2*(data.K.fx*q[0]/q[2]+data.K.cx)/data.width-1,6);
     expect(p.point[1]).toBeCloseTo(1-2*(data.K.fy*q[1]/q[2]+data.K.cy)/data.height,6);}
-  // Refresh the baseline after projection assertions (browser instrumentation can exceed TTL).
-  await page.evaluate(async data=>{
-    for(const c of Object.keys(data.calibs))window.syntheticPhones[c].send(JSON.stringify({type:'multi3d_frame',landmarks:data.before[c]}));
-    await new Promise(r=>setTimeout(r,40));
-    for(const c of Object.keys(data.calibs))window.syntheticPhones[c].send(JSON.stringify({type:'multi3d_frame',landmarks:data.after[c]}));
-  },data);
+  // Model a captured 40ms motion, independent of GPU warmup or interleaved socket arrival.
+  await expect.poll(()=>page.evaluate(()=>Object.values(window.syntheticClockReplies).every(n=>n>=3))).toBe(true);
+  await page.evaluate(data=>new Promise((resolve,reject)=>{
+    let stamp,timer;
+    const send=()=>{stamp=performance.now()-80;
+      for(const c of Object.keys(data.calibs))window.syntheticPhones[c].send(JSON.stringify({type:'multi3d_frame',clock_id:c,input_at_ms:stamp,landmarks:data.before[c]}));
+    };
+    const timeout=setTimeout(()=>{clearInterval(timer);window.sendAfterCapturedBaseline=null;
+      const m=window.syntheticLastFused;reject(new Error(JSON.stringify({error:window.syntheticLastError,timing:m?.timing,cameras:m?.cameras,reasons:m?.reasons})));},10000);
+    window.sendAfterCapturedBaseline=()=>{
+      window.sendAfterCapturedBaseline=null;clearInterval(timer);clearTimeout(timeout);
+      for(const c of Object.keys(data.calibs))window.syntheticPhones[c].send(JSON.stringify({type:'multi3d_frame',clock_id:c,input_at_ms:stamp+40,landmarks:data.after[c]}));
+      resolve();
+    };
+    timer=setInterval(send,100);send();
+  }),data);
   await expect(page.locator('#count')).toHaveText('1 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('1점 · 파편 1개당 1점');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.dynamic)).toBe(1);
@@ -211,7 +227,8 @@ test('one approximate camera: model overlay, wrist blast and mouse restore use t
     // Send direct approximate 3D points using the shipped mono protocol.
     const {origin,end}=data;
     ws.send(JSON.stringify({type:'mono3d_frame',valid:true,joints:{right_wrist:origin}}));
-    await new Promise(r=>setTimeout(r,40));
+    // Consecutive synthetic samples use the high-resolution server clock. A browser timer
+    // may stretch during first GPU uploads and would accidentally test a slow gesture.
     ws.send(JSON.stringify({type:'mono3d_frame',valid:true,joints:{right_wrist:end}}));
   },{...data,...JSON.parse(execFileSync('.venv/Scripts/python.exe',['-c',
     "import sys,json;sys.path.insert(0,'tests');from backend.fragment_test import FragmentTest;from test_fragment_test import approach;a,b,_=approach(FragmentTest());print(json.dumps({'origin':a,'end':b}))"],{encoding:'utf8'}))});

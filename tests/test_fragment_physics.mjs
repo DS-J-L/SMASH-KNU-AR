@@ -9,6 +9,39 @@ const cubes={fragments:[.1,.6].map((y,id)=>({fragment_id:id,node:`cube${id}`,res
 const run=(p,n=300)=>{for(let i=0;i<n;i++)p.step(1/60);};
 const height=(p,id=1)=>p.records.get(id).body.translation().z;
 
+test('super smash removes 130 logical pieces, animates at most 128 in bounded batches and cancels cleanly',()=>{
+  const data={fragments:Array.from({length:130},(_,id)=>({fragment_id:id,node:`cube${id}`,rest_position_m:[(id%13)*.3,.6,Math.floor(id/13)*.3],vertices_m:vertices}))};
+  const p=new FragmentPhysics(data,place),ids=data.fragments.map(f=>f.fragment_id);
+  const event={event_id:'super-130',point_m:[0,0,.2],direction:[1,0,0]};
+  p.queueSuper(ids,event);assert.equal(p.dynamic.size,0);assert.equal(p.superRemoved.size,130);assert.equal(p.superHidden.size,0);
+  p.processSuper(p.superAt);assert.ok(p.dynamic.size<=16);assert.ok(p.superQueue.length>0);
+  for(let i=0;i<30;i++)p.processSuper(p.superAt+700);
+  assert.equal(p.dynamic.size,128);assert.equal(p.superHidden.size,2);assert.ok(p.snapshot().finite);
+  p.queueSuper(ids,event);assert.equal(p.superQueue.length,0);
+  p.stopSuper();assert.equal(p.dynamic.size,0);assert.equal(p.superHidden.size,130);assert.equal(p.superQueue.length,0);
+  p.dispose();
+});
+
+test('explosion releases the contact piece first and holds distant visual pieces until the wave arrives',()=>{
+  const p=new FragmentPhysics(cubes,place),at=p.records.get(0).body.translation();
+  p.queueSuper([0,1],{event_id:'wave',point_m:[at.x,at.y,at.z],direction:[1,0,0]});
+  const start=p.superAt;p.processSuper(start);
+  assert.deepEqual([...p.dynamic],[0]);assert.equal(p.superRemoved.size,2);assert.equal(p.superHidden.size,0);
+  p.processSuper(start+600);assert.deepEqual([...p.dynamic],[0]);
+  p.processSuper(start+660);assert.deepEqual([...p.dynamic],[0,1]);assert.equal(p.superQueue.length,0);
+  p.stopSuper();assert.equal(p.superQueue.length,0);assert.equal(p.dynamic.size,0);p.dispose();
+  const cancelled=new FragmentPhysics(cubes,place);
+  cancelled.queueSuper([0,1],{event_id:'cancel-wave',point_m:[0,0,.1],direction:[1,0,0]});
+  const cancelledAt=cancelled.superAt;cancelled.processSuper(cancelledAt);cancelled.stopSuper();cancelled.processSuper(cancelledAt+700);
+  assert.equal(cancelled.dynamic.size,0);assert.equal(cancelled.superHidden.size,2);assert.equal(cancelled.superQueue.length,0);cancelled.dispose();
+});
+
+test('the server-accepted fragment starts first even when another fragment centre is closer',()=>{
+  const p=new FragmentPhysics(cubes,place);
+  p.queueSuper([0,1],{event_id:'accepted-first',fragment_id:1,point_m:[0,0,.2],direction:[1,0,0]});
+  p.processSuper(p.superAt);assert.deepEqual([...p.dynamic],[1]);assert.equal(p.superQueue[0].id,0);p.dispose();
+});
+
 test('gravity, floor, rotation and sleep; restore makes no dynamic pieces',()=>{
   const p=new FragmentPhysics(cubes,place);p.release([1],{kind:'wrist',fragment_id:1,direction:[1,0,0]});
   const q=p.records.get(1).body.rotation();

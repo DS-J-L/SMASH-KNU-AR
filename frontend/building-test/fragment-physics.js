@@ -14,6 +14,7 @@ export class FragmentPhysics {
     this.queue=new RAPIER.EventQueue(true);this.records=new Map();this.byCollider=new Map();
     this.times=[];this.steps=0;this.droppedTime=0;this.accumulator=0;this.dynamic=new Set();
     this.onImpact=()=>{};
+    this.superQueue=[];this.superHidden=new Set();this.superRemoved=new Set();this.superEventId=null;this.superAt=null;
     this.appliedPushes=new Set();
     this.appliedBlasts=new Set();this.interactionDistance=.75;this.filteredPairs=0;this.hookPositions=new Map();
     this.hooks={filterContactPair:(a,b)=>{
@@ -100,6 +101,46 @@ export class FragmentPhysics {
     }
     if(changed)this.configure({});
   }
+  queueSuper(ids,event=null){
+    // Atomic logical removal, bounded visual physics. Snapshots restore silently as hidden debris.
+    for(const id of ids)if(!this.superRemoved.has(id)){
+      this.superRemoved.add(id);this.superHidden.add(id);this.records.get(id)?.collider.setEnabled(false);
+    }
+    if(!event||this.superEventId===event.event_id)return;
+    this.superEventId=event.event_id;this.superAt=performance.now();
+    const distances=new Map([...ids].filter(id=>this.records.has(id)).map(id=>{
+      const p=this.records.get(id).body.translation();
+      return [id,id===event.fragment_id?0:Math.hypot(p.x-event.point_m[0],p.y-event.point_m[1],p.z-event.point_m[2])];
+    }));
+    const distance=id=>distances.get(id);
+    const ordered=[...distances.keys()].sort((a,b)=>distance(a)-distance(b)||(a===event.fragment_id?-1:b===event.fragment_id?1:a-b));
+    const near=ordered.length?distance(ordered[0]):0,far=ordered.length?distance(ordered.at(-1)):0;
+    // The authoritative IDs are already removed; show intact visual pieces until the blast reaches them.
+    for(const id of ordered)this.superHidden.delete(id);
+    this.superQueue=ordered.map((id,i)=>({id,event,dynamic:i<128,due:this.superAt+650*(distance(id)-near)/Math.max(.01,far-near)}));
+  }
+  processSuper(now){
+    if(this.superAt!==null&&now-this.superAt>4000){this.stopSuper();return;}
+    const start=performance.now();let count=0;
+    while(this.superQueue.length&&this.superQueue[0].due<=now&&count<16&&performance.now()-start<3){
+      const {id,event,dynamic}=this.superQueue.shift(),r=this.records.get(id);count++;
+      if(!dynamic){this.superHidden.add(id);continue;}
+      this.release([id]);r.collider.setEnabled(true);this.superHidden.delete(id);
+      const p=r.body.translation(),radial=new Vector3(p.x-event.point_m[0],p.y-event.point_m[1],p.z-event.point_m[2]).normalize();
+      const direction=new Vector3(...event.direction).normalize().multiplyScalar(4.5).add(radial.multiplyScalar(4));direction.z=Math.max(2.3,direction.z);
+      if(direction.length()>24)direction.setLength(24);
+      r.body.setLinvel({x:direction.x,y:direction.y,z:direction.z},true);
+      // Stable decorative spin; independent of the authoritative point/score.
+      const seed=[...event.event_id].reduce((v,c)=>(v*31+c.charCodeAt(0))>>>0,id);
+      r.body.setAngvel({x:(seed%11)-5,y:((seed>>>4)%11)-5,z:((seed>>>8)%11)-5},true);
+    }
+  }
+  stopSuper(){
+    this.superQueue=[];this.superAt=null;
+    for(const id of this.superRemoved){const r=this.records.get(id);if(!r)continue;
+      r.body.setBodyType(RAPIER.RigidBodyType.Fixed,false);r.collider.setEnabled(false);this.dynamic.delete(id);this.superHidden.add(id);
+    }
+  }
   push(event){
     const r=this.records.get(event.fragment_id);
     if(!r||!this.dynamic.has(event.fragment_id)||this.appliedPushes.has(event.event_id))return;
@@ -176,7 +217,7 @@ export class FragmentPhysics {
       for(let i=0;i<r.vertices.length;i+=3){const v=new Vector3(r.vertices[i],r.vertices[i+1],r.vertices[i+2]).applyQuaternion(qv);minZ=Math.min(minZ,p.z+v.z);}
       finite&&=[p.x,p.y,p.z,q.x,q.y,q.z,q.w].every(Number.isFinite);}
     const sorted=[...this.times].sort((a,b)=>a-b);
-    return {dynamic:this.dynamic.size,sleeping,awake:this.dynamic.size-sleeping,mousePushes:this.appliedPushes.size,
+    return {dynamic:this.dynamic.size,superPending:this.superQueue.length,superHidden:this.superHidden.size,sleeping,awake:this.dynamic.size-sleeping,mousePushes:this.appliedPushes.size,
       handBodies:this.wrists.size,activeHands:[...this.wrists.values()].filter(h=>h.active).length,bodies:this.world.bodies.len(),colliders:this.world.colliders.len(),
       blasts:this.appliedBlasts.size,interactionDistance:this.interactionDistance,filteredPairs:this.filteredPairs,
       steps:this.steps,stepMeanMs:this.times.reduce((a,b)=>a+b,0)/(this.times.length||1),stepP95Ms:sorted[Math.floor(sorted.length*.95)]??0,
