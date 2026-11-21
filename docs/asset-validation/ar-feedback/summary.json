@@ -52,5 +52,11 @@
     "real WebSocket server",
     "physical speaker listening and loudness",
     "long duration and quantitative performance"
-  ]
+  ],
+  "publication": {
+    "pull_request": "https://github.com/DS-J-L/SMASH-KNU-AR/pull/22",
+    "verified_code_commit": "619a641bb01b164df2f20e56ae1e7e7853e10001",
+    "state": "open_for_review",
+    "main_merged": false
+  }
 }

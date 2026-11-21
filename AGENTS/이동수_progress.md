@@ -6,12 +6,12 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-21 13:06 KST |
-| 현재 Phase·작업 상태 | P4 AR 타격 애니메이션·소리 연결 자동 검증 완료 / GitHub PR 게시 진행 중 / 실기기 확인 대기 |
+| 마지막 갱신 | 2026-11-21 13:09 KST |
+| 현재 Phase·작업 상태 | P4 AR 타격음·애니메이션 PR #22 게시·검토 요청 / 실기기 통합 확인 대기 |
 | 마지막 확인된 개발 완료 | 1대/3대 폰·PC 충격파·잔해·먼지·반동, 브라우저 4/4·관련 Node 65/65, 화면 캡처 확인 |
-| 현재 작업 | fix/building-destruction-sound-20261121에서 AR 타격음·애니메이션 변경을 커밋·push·PR로 공유 |
+| 현재 작업 | AR 소리·시각 효과 코드 619a641을 작업 브랜치로 push하고 PR #22 생성 완료 |
 | 남은 일·미검증 | 폰 송신·실제 PC 추론/충돌/소리·신호/제어 서버 인계, live/20분/성능·기존 미확인 건물/AR |
-| 다음 한 단계 | 검증한 변경을 PR로 공유하고 실제 폰·PC의 타격음·화면 정합·성능을 확인한다 |
+| 다음 한 단계 | PR #22 코드 검토 및 실제 폰/PC 타격음·화면 정합·성능 확인 |
 | 막힌 점·인계 | 상대 SC 생산 모듈 미통합; SINGLE_CAMERA_MONITOR.md·summary.json 제공, 정밀 DEM/미확인 치수 유지 |
 
 ## 2. 개인 Phase 현황
@@ -22,7 +22,7 @@
 | P1 | 일부 구현·단일 PC 독립 검증 | 별도 단일 영상/상태 UI·RTC 브라우저 피어 | 실제 폰/기존 3대 상태 연결 |
 | P2 | 진행 중 | v71 123개 모델·8개 구역·5개 단독 파괴 연습, GLB 199개·키보드 검증 | C0 영상·실제 협업 인계·AR 통합 |
 | P3 | 확인 전 | 기록 없음 | 보정 투영·바닥 정합·3D 손목 표시 |
-| P4 | AR 연출 로컬 검증·PR 게시 준비 | 소리와 같은 수락 경계, 충격파/파편/먼지/반동·AR 브라우저 4/4 | 실제 타격·소리·정합·서버 세션/장비 통합 |
+| P4 | AR 연출 검증·PR #22 검토 요청 | 소리/충격파/파편/먼지/반동, 브라우저 4/4·Node 65/65 | 실기기·청취·정합·서버 세션 통합·PR 검토 |
 | P5 | 일부 자동 회귀 | 새/기존 브라우저27개·PC/카메라 모듈 회귀 | 실제 장기/성능·시연 재현 |
 | P6 | 확인 전 | 기록 없음 | 확정 방식의 평가 화면·설문·결과 취합 |
 
@@ -811,3 +811,14 @@
 - 입력·장비 범위: synthetic Canvas 카메라/관절·3D 메시지·mocked WebSocket, 실제 브라우저 오디오/Canvas. live·실제 서버/3대 삼각측량 실행·현장 정합·스피커 청취·장시간/정량 성능은 미검증이다. 계획/공통 Phase의 실제 완료 체크는 유지한다.
 - 바꾼 파일·근거: AR 네 JS/HTML, 공용 오디오/효과·호환 재수출, tests/ar-hit-effect.test.mjs·ar-hit-sound.test.mjs·browser/ar-hit-sound.spec.js, playwright.ar.config.js·package.json, 두 AR 문서·docs/asset-validation/ar-feedback/summary.json·담당/PM 기록·팀 현황. 로컬 실행 로그·캡처는 data/local/ar-feedback-share와 test-results/ar-feedback에 있다.
 - 다음 행동: 필요한 파일만 stage하여 staged diff 확인 → 커밋·push → 동일 브랜치 PR 생성. 실제 원격 커밋과 PR 결과는 아래 게시 완료 기록에 추가한다.
+
+
+### 2026-11-21 13:09 KST — AR 타격음·애니메이션 GitHub 공유 완료
+
+- 담당 / 기록자: 이동수·김태이 소리/연출 공통 지원 / Codex. 상태: 코드·자동 검증 완료, PR 검토 요청. 개인/공통 Phase 실기기 통과와 구분한다.
+- 실제 게시: 코드 커밋 619a641bb01b164df2f20e56ae1e7e7853e10001, origin/fix/building-destruction-sound-20261121 push 성공, [PR #22](https://github.com/DS-J-L/SMASH-KNU-AR/pull/22) main 대상 open·draft=false·merged=false 생성 확인. main 직접 push/머지는 수행하지 않았다.
+- 검증·결과: 코드 커밋에 포함한 Node 65/65·AR 브라우저 4/4·별도 출력 호환 빌드 2개·새 상대 링크 8개·공백 검사 결과 및 입력/한계 구분을 PR에 기록했다. 재현은 npm run test:ar와 docs/asset-validation/ar-feedback/summary.json을 따른다.
+- 실제/합성/재생/키보드: 이번 자동 확인은 synthetic 카메라·관절·3D 결과와 실제 브라우저 오디오/Canvas다. live·replay·keyboard_demo는 이번 타격 효과 시험을 실행하지 않았다. 실제 장비·청취·정합·장시간/정량 성능은 남아 있다.
+- 다음 행동·인계: PR #22에서 검토하고 실제 장비 확인을 진행한다. 게시 결과를 담은 이번 후속 커밋은 진행 문서·검증 요약만 갱신하며 실행 코드는 위 검증 커밋 그대로다.
+- 갱신한 현황: 이동수/김태이/정경호/PM 기록 및 팀의 공유 상태를 PR 검토 요청으로 맞췄다. 계획 체크·공통 Phase는 유지했다.
+- 종료 시각: 2026-11-21 13:09 KST.
