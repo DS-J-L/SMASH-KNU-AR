@@ -24,7 +24,9 @@ for (const c of doc.cases) {
     const judge = judgeFor(c);
     for (const frame of c.frames) {
       if (frame.action === 'restore') judge.restore();
+      const before = judge.broken.size;
       const out = judge.update(frame.positions, frame.t_ms);
+      if (out.event) assert.equal(out.event.points, judge.broken.size - before);
       const want = frame.expect;
       assert.deepEqual(out.decisions, want.decisions, `${frame.t_ms}`);
       for (const key of ['support', 'standing_in_building', 'destroyed']) assert.equal(out[key], want[key], `${frame.t_ms} ${key}`);
@@ -45,7 +47,7 @@ test('event fields match the Python twin', () => {
   judge.update({ left_wrist: [-0.5, -0.6, 0.8] }, 0);
   const { event } = judge.update({ left_wrist: [-0.5, -0.1, 0.8] }, 33);
   assert.equal(event.schema, 'model_strike.v2-draft');
-  assert.equal(event.points, 1);
+  assert.equal(event.points, judge.target.fragments.length);
   assert.equal(event.remaining_fragments, 0);
   assert.equal(event.config_version, 'model-3d-2');
   assert.equal(event.event_id, 'event-1');
@@ -148,7 +150,9 @@ test('BuildingDamage breaks what the judge breaks for every hit of the shared ca
     const damage = new BuildingDamage(judge.target, { damage_mode: judge.config.damage_mode, break_count: judge.config.break_count });
     for (const frame of c.frames) {
       if (frame.action === 'restore') { judge.restore(); damage.restore(); }
+      const before = judge.broken.size;
       const out = judge.update(frame.positions, frame.t_ms);
+      if (out.event) assert.equal(out.event.points, judge.broken.size - before);
       if (!out.event) continue;
       const got = damage.hitAt(markerToPackage(out.event.point_m, judge.target.placement));
       assert.ok(got, `${c.name} ${frame.t_ms}`);
@@ -157,7 +161,8 @@ test('BuildingDamage breaks what the judge breaks for every hit of the shared ca
       assert.deepEqual(got.fallen_fragment_ids, out.event.fallen_fragment_ids, `${c.name} ${frame.t_ms}`);
       assert.equal(got.remaining_fragments, out.remaining_fragments, `${c.name} ${frame.t_ms}`);
       assert.equal(got.destroyed, out.destroyed);
-      assert.equal(got.points, 1);
+      assert.equal(got.points, new Set([...got.broken_fragment_ids, ...got.fallen_fragment_ids]).size);
+      assert.equal(got.points, out.event.points);
       checked++;
     }
   }
@@ -173,6 +178,7 @@ test('BuildingDamage on the wall: nodes to release, broken spots are air, far po
   assert.deepEqual(got.broken_nodes, ['M2', 'M3', 'T2']);
   assert.deepEqual(got.fallen_nodes, ['H']);
   assert.equal(got.remaining_fragments, 6);
+  assert.equal(got.points, 4);
   assert.equal(damage.hitAt(front), null);  // the same spot is a hole now: no block, no point
   assert.equal(damage.hits, 1);
   damage.restore();

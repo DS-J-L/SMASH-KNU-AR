@@ -13,7 +13,7 @@ test(`${roomId}: phone wrists drive the team game and server score; stop and rec
     for(const id of (roomId==='room-1'?['C0','C1','C2']:['C0'])){
       const context=await browser.newContext();cameras.push(context);
       await context.addInitScript(()=>{
-        window.wrist=[.02,.02];
+        window.wrist=[.02,.02];window.ankle=[.02,.02];
         navigator.mediaDevices.getUserMedia=async()=>{
           const canvas=document.createElement('canvas');canvas.width=640;canvas.height=480;
           const ctx=canvas.getContext('2d');let n=0;
@@ -24,7 +24,7 @@ test(`${roomId}: phone wrists drive the team game and server score; stop and rec
       const phone=await context.newPage();
       await phone.route('**/camera/pose.js',route=>route.fulfill({contentType:'application/javascript',body:`
         export async function createPoseLandmarker(){return{delegate:'CPU',landmarker:{
-          detectForVideo(){if(window.failPose)throw new Error('synthetic inference stopped');const p=[];p[15]={x:window.wrist[0],y:window.wrist[1],visibility:.95};return{landmarks:[p]};},close(){}}};}
+          detectForVideo(){if(window.failPose)throw new Error('synthetic inference stopped');const p=[];p[15]={x:window.wrist[0],y:window.wrist[1],visibility:.95};p[27]={x:window.ankle[0],y:window.ankle[1],visibility:.95};return{landmarks:[p]};},close(){}}};}
         export function extractWrists(result,width,height){const p=result.landmarks[0][15];return{left_wrist:{u_px:p.x*width,v_px:p.y*height,visibility:.95},right_wrist:null};}
       `}));
       await phone.goto(`${baseURL}/camera/room/?room=${roomId}&camera=${id}`);
@@ -50,11 +50,21 @@ test(`${roomId}: phone wrists drive the team game and server score; stop and rec
       return [0,1].map(i=>(t[0][i]+t[1][i]+t[2][i])/3);
     });
     await cameras[0].pages()[0].evaluate(p=>{window.wrist=p;},point);
-    await expect(page.locator('#score')).toHaveText('100');
-    await expect(page.locator('#fragments')).toHaveText('96 / 96');
+    await expect.poll(async()=>Number(await page.locator('#score').textContent())).toBeGreaterThanOrEqual(3);
+    const first=await page.evaluate(()=>singleCameraMonitor.snapshot());
+    expect(first.fragmentCount).toBe(first.score);expect(first.score).toBeLessThan(96);expect(first.targetActive).toBe(true);
     await expect.poll(async()=>{
       const data=await (await page.request.get('/api/single/rooms')).json();return data.rooms[roomIndex].game?.score;
-    }).toBe(100);
+    }).toBe(first.score);
+    await cameras[0].pages()[0].evaluate(()=>{window.wrist=[.02,.02];});
+    await page.waitForTimeout(400);
+    const kickPoint=await page.evaluate(()=>{
+      const t=singleCameraMonitor.getTarget().triangles[0];return [0,1].map(i=>(t[0][i]+t[1][i]+t[2][i])/3);
+    });
+    await cameras[0].pages()[0].evaluate(p=>{window.ankle=p;},kickPoint);
+    await expect.poll(async()=>Number(await page.locator('#score').textContent())).toBeGreaterThan(first.score);
+    const second=await page.evaluate(()=>singleCameraMonitor.snapshot());expect(second.fragmentCount).toBe(second.score);
+    await expect.poll(async()=>{const d=await (await page.request.get('/api/single/rooms')).json();return d.rooms[roomIndex].game?.score;}).toBe(second.score);
     await page.locator('#stop').click();
     await expect.poll(()=>page.evaluate(()=>singleCameraMonitor.snapshot().phase)).toBe('ended');
     await page.locator('#reset').click();await page.locator('#connect').click();

@@ -2,6 +2,10 @@
 
 작성: 김태이 (2026-11-10, 부분 파괴 2026-11-11, 2D 게임용 `BuildingDamage` 2026-11-15). 계획: [김태이_plan.md](../김태이_plan.md) P4 "실제 3D 궤적 충돌·타격 이벤트". PR #10의 3D 시험(`/test/mono3d/`, `/test/multi3d/`)은 바닥 마커 자리의 **상자**로 타격을 센다. 이 문서는 그 상자 대신 이동수님 **IT1 모델(`knu-it1-v3`)의 실제 모양**으로 손목·발목 타격을 판정하는 모듈과, 화면·서버에 연결하는 요청을 적는다. 한 번 맞으면 건물 전체가 아니라 **맞은 곳 주변 블럭 3개만 부서지고, 바닥까지 이어진 블럭이 하나도 없게 된 부분만 떨어진다**(5장). 김태이 파일만 바꾼다.
 
+2026-11-16 점수 계약 정정: `points`는 직접 파괴와 추가 낙하의 신규 파편 수다. 이미 제거된 파편은 다시 득점하지 않으며 `damage_mode: none`은 0점이다. 기존 타격당 1점 설명은 이 결정으로 대체한다. 실제 2D 게임 연결은 여전히 별도다.
+
+2026-11-16 후속: 기본 IT1 2D 폰 게임의 부분 파괴·남은 블록 재타격·파편당 점수와 발목 전달/수락을 로컬 연결하고 두 화면을 재빌드했다. 아래 최초 PR의 2D 연결 요청은 구현됐으며 실폰 기준값 조정·3D 연결은 별도다. 현재 계약은 PHONE_POSE_GAME.md를 따른다.
+
 ## 1. 들어간 것
 
 | 파일 | 내용 |
@@ -50,11 +54,11 @@
 - 지금 `/test/` 페이지와 다른 점: (1) 첫 점이 건물 안이면 타격이 아니라 기준점(계획 P4 "복구 첫 유효 프레임은 기준점만"), (2) "건물 자리에 서 있음"을 두 발 평균이 아니라 딛는 발로 판단([FOOT_STRIKE.md](FOOT_STRIKE.md) 3장 이유), (3) 상자가 아니라 모델 모양.
 - 숫자는 모두 시작값이며 실제 폰으로 조정하지 않았다.
 
-이벤트(`hit_3d`): `{schema: "model_strike.v2-draft", event_id, building_id, joint, hit_by: "inside"|"swept", fragment_id, point_m, speed_mps, points: 1, broken_fragment_ids, fallen_fragment_ids, remaining_fragments, t_ms, previous_t_ms, placement, config_version: "model-3d-2"}`. 매 프레임 결과에도 `remaining_fragments`(남은 파편 수)와 `hits`(누적 타격 수 = 점수)가 있다.
+이벤트(`hit_3d`): `{schema: "model_strike.v2-draft", event_id, building_id, joint, hit_by: "inside"|"swept", fragment_id, point_m, speed_mps, points, broken_fragment_ids, fallen_fragment_ids, remaining_fragments, t_ms, previous_t_ms, placement, config_version: "model-3d-2"}`. `points`는 이번에 새로 제거된 고유 파편 수다. 매 프레임 결과의 `hits`는 누적 타격 수이며 점수가 아니다. 현재 건물 점수는 전체 파편 수에서 `remaining_fragments`를 뺀 값이다.
 
 ## 5. 부분 파괴 — 맞은 곳만 부서지고, 이어진 블럭이 없어지면 떨어진다
 
-팀 결정(김태이, 2026-11-11): **한 번에 블럭 3개**, **받치던 블럭이 부서져 떨어지는 경우가 있되, 블럭 하나라도 이어져 있으면 부서지지 않음**, **타격 하나당 1점**.
+팀 결정(김태이, 2026-11-11): **한 번에 블럭 3개**, **받치던 블럭이 부서져 떨어지는 경우가 있되, 블럭 하나라도 이어져 있으면 부서지지 않음**, **새로 제거된 파편 하나당 1점**.
 
 1. **부서지는 블럭(`broken_fragment_ids`):** 맞은 파편 + 맞은 점에서 가장 가까운 남은 파편 2개(`break_count: 3`). 첫 번째가 맞은 파편이다.
    - 거리: 맞은 점이 파편 껍질의 가장 바깥 면에서 얼마나 떨어졌는지(안이면 0). 면 쪽에서는 정확하고, 모서리 쪽에서는 조금 짧게 잰다.
@@ -64,7 +68,7 @@
    - 그래서 아래 블럭이 부서져도 옆 블럭에 붙어 있으면 남는다. 마지막으로 이어 주던 블럭이 부서질 때 떨어진다. 바닥과 끊긴 덩어리는 서로 붙어 있어도 공중에 뜰 수 없으므로 덩어리째 떨어진다.
    - **바닥에 놓인 블럭:** 바닥(z = 0)에 닿은 것, 또는 밑에 아무것도 없고 바닥에서 15 cm 이내에서 시작하는 것. 연습 건물 3개는 밑면이 평평하지 않아 가장 아래 조각이 0~11 cm 위에서 시작한다. "밑에 있음"은 맞댄 면이 수평에서 60° 이내로 눕혀 있을 때다.
    - 누가 누구와 이어져 있는지는 처음 건물을 만들 때 한 번 계산한다.
-3. **점수:** 타격 하나당 1점(`points: 1`). `hits`가 곧 점수다. 몇 개가 부서지든 1점이다.
+3. **점수:** 새로 부서진 파편과 지지 상실로 떨어진 파편 각각 1점. 두 ID 목록의 합집합 크기가 이벤트 `points`다. 이미 제거된 파편은 중복 계산하지 않는다. `hits`는 타격 횟수만 나타낸다.
 4. **설정:** `damage_mode` — `partial`(기본, 위 규칙), `whole`(첫 타격에 전부, 예전 동작), `none`(부서지지 않고 계속 셈, 시험용). `break_count` — 한 번에 부서지는 수(기본 3).
 
 실제 건물 확인(테스트): 5개 건물 모두 처음엔 한 조각도 떨어지지 않고, 바닥 조각을 모두 없애면 나머지가 모두 떨어진다. 멀쩡한 건물의 어느 조각을 처음 쳐도 추가로 떨어지는 조각은 거의 없다(본관 두 곳에서 1개). 남은 조각을 차례로 쳐서 다 부수는 한 가지 순서에서는 IT1 25번·본관 24번·연습 건물 17~21번이 걸렸고, 바닥과 끊긴 덩어리가 한 번에 떨어지는 순간이 건물마다 1~3번 있었다(IT1에서 한 번에 최대 17조각).
@@ -117,7 +121,7 @@ this.damage = new BuildingDamage(buildModelTarget(this.data));
 // 타격이 받아들여질 때 (impactPoint: destroy()가 이미 만드는 패키지 좌표 점)
 const hit = this.damage.hitAt(impactPoint.toArray());
 if (!hit) return false;              // 남은 블럭 위가 아님(이미 부서진 자리 등): 블럭도 점수도 없음
-// hit.broken_nodes + hit.fallen_nodes 만 풀고 나머지는 고정. hit.points = 1, hit.remaining_fragments, hit.destroyed
+// hit.broken_nodes + hit.fallen_nodes 만 풀고 나머지는 고정. hit.points = 새로 제거된 파편 수, hit.remaining_fragments, hit.destroyed
 // 복원: this.damage.restore()
 ```
 
@@ -126,7 +130,7 @@ if (!hit) return false;              // 남은 블럭 위가 아님(이미 부�
 | `fragment_id` | 맞은 블럭(`colliders.json`의 `fragment_id`) |
 | `broken_fragment_ids` / `broken_nodes` | 이번에 부서진 블럭 3개(첫 번째가 맞은 블럭). `_nodes`는 장면 노드 이름(`colliders.json`의 `node`, `spawnFragmentBodies`가 찾는 이름) |
 | `fallen_fragment_ids` / `fallen_nodes` | 바닥과 끊겨 함께 떨어지는 블럭 |
-| `points` | 항상 1(타격당 1점) |
+| `points` | 이번에 새로 부서진 파편과 지지 상실로 떨어진 파편의 합집합 크기(파편당 1점) |
 | `remaining_fragments`, `destroyed` | 남은 블럭 수, 다 부서졌는지 |
 
 - 좌표는 **패키지 좌표**(three.js y-up, `colliders.json`과 파편 물리가 쓰는 좌표)다. 지금 2D 게임의 `knu-it1-v3`는 원점 이동·회전이 없어 `impactPoint`를 그대로 넣으면 된다. IT1 분석형 QA 패키지는 다른 형식이라 지원하지 않는다(폰 게임에서도 막혀 있음).
@@ -136,13 +140,15 @@ if (!hit) return false;              // 남은 블럭 위가 아님(이미 부�
 
 ## 7. 연결 요청 (김태이가 수정하지 않음)
 
+2026-11-21 통합 검토 정정: 아래는 최초 인계 요청이다. PR #21은 2D 화면의 지정 파편 분리·남은 파편 재타격·파편당 점수·발목과 서버 중복 검증을 연결했다. 3D 건물 시험은 별도 `FragmentTest` 경로이며, 실폰·실측 완료를 뜻하지 않는다.
+
 **이동수** — 모델·화면·공통 변환 담당
 1. **배치 값 정하기:** IT1을 마커 어디에, 어느 방향으로, 몇 배로 놓을지. 기본값은 마커 중심·회전 0·실제 크기. 정해지면 판정과 화면이 같은 값을 쓰도록 한 곳(설정)에 둔다.
 2. **3D 화면에 IT1 그리기:** PC 3D 화면(`/test/*/view.html`)에 `placementToThree()`로 IT1 정상 모델을 놓고, `hit_3d` 이벤트의 `fragment_id`·`point_m`으로 파편 연출. 화면 파일은 정경호님 것이므로 두 분이 정해 주세요.
 3. **부분 파괴 연출:** 지금 `frontend/game/fragment-bodies.js`의 `spawnFragmentBodies()`는 파편을 **전부** 한꺼번에 풀어 준다. 이벤트의 `broken_fragment_ids`·`fallen_fragment_ids`에 있는 파편만 풀고, 나머지는 제자리에 고정해 주세요. 남은 파편까지 물리로 풀면 화면에서 판정보다 더 많이 무너질 수 있습니다. `restore()`와 화면 복원을 함께 불러 주세요.
-4. **점수:** `controller.js`는 지금 건물 하나당 한 번 100점이고 같은 건물을 다시 치면 `already_destroyed`로 거부한다. 3D 판정을 연결할 때 **타격 하나당 1점**(`points`)으로, 남은 파편이 있으면 같은 건물을 계속 받도록 바꿔 주세요.
+4. **점수:** `controller.js`는 지금 건물 하나당 한 번 100점이고 같은 건물을 다시 치면 `already_destroyed`로 거부한다. 3D 판정을 연결할 때 **새로 제거된 파편 하나당 1점**(`points`)으로, 남은 파편이 있으면 같은 건물을 계속 받도록 바꿔 주세요.
 
-5. **2D 게임 부분 파괴(2026-11-15 추가):** 6장 "2D 게임에서 쓰기"처럼 `frontend/single/fracture-view.js`에서 `BuildingDamage`를 만들고, `destroy()`에서 `spawnFragmentBodies()`로 전부 푸는 대신 `hitAt(impactPoint)` 결과의 `broken_nodes`·`fallen_nodes`만 풀어 주세요. 첫 타격 뒤에도 정상 모델을 숨기지 말고 남은 파편을 보이게 두고, `impact()`의 광선도 남은 파편에 쏘아야 다음 타격을 받을 수 있습니다. `controller.js`는 4번처럼 타격당 1점, `remaining_fragments`가 0이 될 때까지 같은 건물을 받도록. 번들 재빌드(`build:single`·`build:phone-game`) 필요.
+5. **2D 게임 부분 파괴(2026-11-15 추가):** 6장 "2D 게임에서 쓰기"처럼 `frontend/single/fracture-view.js`에서 `BuildingDamage`를 만들고, `destroy()`에서 `spawnFragmentBodies()`로 전부 푸는 대신 `hitAt(impactPoint)` 결과의 `broken_nodes`·`fallen_nodes`만 풀어 주세요. 첫 타격 뒤에도 정상 모델을 숨기지 말고 남은 파편을 보이게 두고, `impact()`의 광선도 남은 파편에 쏘아야 다음 타격을 받을 수 있습니다. `controller.js`는 4번처럼 파편당 1점, `remaining_fragments`가 0이 될 때까지 같은 건물을 받도록. 번들 재빌드(`build:single`·`build:phone-game`) 필요.
 
 **정경호** — 3D 좌표·서버·시험 페이지 담당
 1. **카메라 3대:** `test_multi3d.py`에서 `box()` 판정 대신(또는 선택으로) `ModelStrikeJudge.update()`를 부르고 결과(`event`, `destroyed`, `remaining_fragments`, `decisions`)를 화면에 보내기. 시작/복원 버튼에 `reset()`/`restore()` 연결.
@@ -160,5 +166,5 @@ if (!hit) return false;              // 남은 블럭 위가 아님(이미 부�
 - IT1 분석형 QA 패키지(`knu-it1-analytic-*`, 다른 형식)는 지원하지 않는다. 기본 `knu-it1-v3`와 같은 `colliders.json` 형식만 읽는다.
 - 떨어짐 계산은 단순화한 규칙이다(힘·무게·마찰 없음). 한 블럭에만 옆으로 붙어 길게 남은 부분처럼 실제로는 버티기 어려운 모양도 남는다. 3개·2 mm·15 cm는 시작값이다. 화면에서 보며 조정한다.
 - 블럭이 몇 개 안 남으면 "가장 가까운 2개"가 맞은 곳에서 멀 수 있다. 거리 제한은 아직 없다.
-- 화면 연출(남은 파편 고정, 지정 파편만 풀기)과 1타 1점 게임 상태는 아직 없다(7장 요청).
+- 2D 화면의 남은 파편 고정·지정 파편 분리와 파편당 1점은 PR #21에서 연결했다. 실제 폰 입력의 정확도·성능·장시간 확인은 남아 있다.
 - `BuildingDamage`는 브라우저판만 있다(2D 게임이 브라우저에서만 돌기 때문). 판정 규칙은 `applyDamage()` 하나를 `ModelStrikeJudge`와 함께 쓰므로 3D 판정과 어긋나지 않는다. 실제 2D 게임 화면에서 광선이 닿는 점으로 시험하지 않았다.

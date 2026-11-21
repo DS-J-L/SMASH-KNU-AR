@@ -31,7 +31,10 @@ def test_shared_case(case):
     for frame in case["frames"]:
         if frame.get("action") == "restore":
             judge.restore()
+        before = len(judge.broken)
         out = judge.update(frame["positions"], frame["t_ms"])
+        if out["event"]:
+            assert out["event"]["points"] == len(judge.broken) - before
         want = frame["expect"]
         assert out["decisions"] == want["decisions"], frame["t_ms"]
         for key in ("support", "standing_in_building", "destroyed"):
@@ -53,7 +56,7 @@ def test_event_fields():
     judge.update({"left_wrist": [-0.5, -0.6, 0.8]}, 0)
     event = judge.update({"left_wrist": [-0.5, -0.1, 0.8]}, 33)["event"]
     assert event["schema"] == "model_strike.v2-draft" and event["type"] == "hit_3d"
-    assert event["points"] == 1 and event["remaining_fragments"] == 0
+    assert event["points"] == len(judge.target.fragments) and event["remaining_fragments"] == 0
     assert event["event_id"] == "event-1" and event["building_id"] == "test-l-block"
     assert event["previous_t_ms"] == 0 and event["t_ms"] == 33
     assert event["speed_mps"] == round(0.5 / 0.033, 3)

@@ -104,7 +104,7 @@ function renderStatus() {
   else if (fused.geometry_warnings?.length) text = `⚠ ${geometryText(fused.geometry_warnings).join(' · ')}`;
   else if (fused.standing_in_building) text = '⚠ 건물 자리에 서 있습니다 — 옆으로 비켜 서야 타격을 셉니다';
   else if (!fused.valid) text = `카메라 ${fused.cameras_used.join('+') || '없음'} · 손목이 2대 이상에서 안 보임`;
-  else { text = `3D 측정 중 · ${fused.cameras_used.join('+')} · 도착 차 ${fused.spread_ms ?? '?'}ms`; ok = true; }
+  else { text = `3D 측정 중 · ${fused.cameras_used.join('+')} · ${fused.timing==='inference_input_aligned'?'입력':'도착'} 차 ${fused.spread_ms ?? '?'}ms`; ok = true; }
   el.textContent = text; el.classList.toggle('ok', ok);
 }
 
@@ -254,11 +254,13 @@ function drawScene(now) {
 function renderInfo() {
   const f = fused && performance.now() - fusedAt < STALE_MS ? fused : null;
   const fmt = p => p ? p.map(v => v.toFixed(2)).join(', ') : '—';
-  const why = { insufficient_views: '2대 이상에서 안 보임', reprojection_error: '화면끼리 안 맞음', behind_camera: '계산 실패' };
-  const wrist = n => { const j = f?.joints?.[n]; return j ? `${fmt(j.p)}\n${j.cams.join('+')} · 오차 ${j.err_px}px` : (why[f?.reasons?.[n]] ?? '—'); };
+  const why = { insufficient_views: '2대 이상에서 안 보임', reprojection_error: '화면끼리 안 맞음', behind_camera: '계산 실패',poor_geometry:'광선 교차각 부족 · 카메라 배치 확인',ambiguous_views:'카메라 관측 충돌 · 복원 보류' };
+  const wrist = n => { const j = f?.joints?.[n]; return j ? `${fmt(j.p)}\n${j.cams.join('+')} · 오차 ${j.err_px}px · 교차각 ${j.ray_angle_deg??'—'}°` : (why[f?.reasons?.[n]] ?? '—'); };
   const b = fused?.building;
   const rows = [
-    ['합친 카메라', f ? `${f.cameras_used.join('+') || '없음'} · 도착 차 ${f.spread_ms ?? '—'}ms` : '—'],
+    ['합친 카메라', f ? `${f.cameras_used.join('+') || '없음'} · ${f.timing==='inference_input_aligned'?'입력시각 정렬':'도착시각 호환'} · 차이 ${f.spread_ms ?? '—'}ms` : '—'],
+    ['유효 관절',f?`${Object.values(f.joints).filter(Boolean).length} / ${Object.keys(f.joints).length} · 보완 관절 없음`:'—'],
+    ['제외 카메라',f?Object.entries(f.excluded_cameras??{}).map(([c,r])=>`${c}: ${{clock_uncertain:'시계 보정 중/응답 지연',time_skew:'입력 시각 차이 큼',timestamp_mode:'폰 버전/시각 방식 다름'}[r]??r}`).join('\n')||'없음':'—'],
     ['왼손목', wrist('left_wrist')], ['오른손목', wrist('right_wrist')],
     ['좌우 바꿈', f?.swapped_left_right?.length ? `${f.swapped_left_right.join(', ')} (뒷모습 등으로 왼/오른쪽이 반대)` : '없음'],
     ['추정 키', b?.estimated_height_m ? `${(b.estimated_height_m * 100).toFixed(0)} cm` : '측정 중(서 있으면 자동)'],
@@ -292,3 +294,4 @@ function loop(now) {
 }
 requestAnimationFrame(loop);
 window.__multi3dViewReady = true;
+window.multi3dTest=Object.freeze({snapshot:()=>fused});

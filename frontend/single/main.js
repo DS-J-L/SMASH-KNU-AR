@@ -14,7 +14,7 @@ import {createHitSound} from './hit-sound.js';
 const $=id=>document.getElementById(id), canvas=$('background'), ctx=canvas.getContext('2d'), logs=new LogBuffer();
 const landmarks=$('landmarks'),poseCtx=landmarks.getContext('2d');
 const phoneInput=document.body.dataset.input==='phone-pose';
-let source='live',processor=phoneInput?async(_resource,meta)=>({...meta,wrists:meta.phone_pose.wrists,inference:{delegate:'phone'}}):null,view,sceneReady=false,game,coordinator,transform,binding=null;
+let source='live',processor=phoneInput?async(_resource,meta)=>({...meta,wrists:meta.phone_pose.wrists,ankles:meta.phone_pose.ankles,inference:{delegate:'phone'}}):null,view,sceneReady=false,game,coordinator,transform,binding=null;
 let runId=0,transformVersion=0,frameId=0,previewTimer=null,latest=null,videoState='disconnected',controlAlive=false,message=null;
 let imageWidth=640,imageHeight=480,lastFrameAt=-Infinity,lastTick=performance.now(),lastUi=0,renderCount=0,renderFps=0,metricAt=lastTick;
 let connectionState='disconnected',disposed=false,animationId;
@@ -51,8 +51,8 @@ function draw(){
   poseCtx.clearRect(0,0,landmarks.width,landmarks.height);
   if(!latest)return;
   transform.draw(ctx,latest.resource);
-  for(const [joint,wrist] of Object.entries(latest.pose.wrists??{}))if(wrist?.valid&&wrist.visibility>=.5&&Array.isArray(wrist.image_norm)&&wrist.image_norm.length===2&&wrist.image_norm.every(v=>Number.isFinite(v)&&v>=0&&v<=1)){
-    const [x,y]=transform.toScreen(wrist.image_norm);poseCtx.beginPath();poseCtx.arc(x,y,7,0,Math.PI*2);poseCtx.fillStyle=joint==='left_wrist'?'#f5bb73':'#94ddf3';poseCtx.fill();
+  for(const [joint,wrist] of Object.entries({...latest.pose.wrists,...latest.pose.ankles}))if(wrist?.valid&&wrist.visibility>=.5&&Array.isArray(wrist.image_norm)&&wrist.image_norm.length===2&&wrist.image_norm.every(v=>Number.isFinite(v)&&v>=0&&v<=1)){
+    const [x,y]=transform.toScreen(wrist.image_norm);poseCtx.beginPath();poseCtx.arc(x,y,7,0,Math.PI*2);poseCtx.fillStyle=joint.endsWith('ankle')?'#86efac':joint==='left_wrist'?'#f5bb73':'#94ddf3';poseCtx.fill();
   }
 }
 function makeCoordinator(){return new FrameCoordinator({process:async(resource,meta)=>{
@@ -148,7 +148,7 @@ function updateUi(now){
   $('scope').textContent=source==='synthetic'?'합성 손목/이벤트로 PC 화면과 게임을 검사합니다. 실제 손동작 충돌을 검증한 결과가 아닙니다.':phoneInput?`${link.roomId==='room-2'?'방 2':'방 1'} C0 폰 좌표 · 동일 프레임의 서버 중계 영상으로 2D 타격합니다. PC 재추론과 실제 깊이 계산은 하지 않습니다.`:'화면상 2D 판정입니다. 실제 깊이를 측정하지 않습니다. 폰 송신·신호 서버·추적 모듈 연결이 필요합니다.';
   if(view?.buildingId===ANALYTIC_ID)$('scope').textContent='미승인 실험용 QA 후보입니다. 실제 게임·모바일 사용 검증 전입니다. '+$('scope').textContent;
   const awaitingSessionFrame=now<sessionFramePendingUntil&&SINGLE_GATES.every(key=>game.gates[key]===true);
-  $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?awaitingSessionFrame?'게임 시작 후 첫 손목 입력을 기다립니다.':'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?'건물이 부서졌습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
+  $('status').textContent=message||(s.phase==='ended'?'플레이가 끝났습니다. 복원 후 새로 시작하세요.':s.phase==='starting'?'시작 승인을 기다립니다.':s.phase==='playing'?!s.ready?awaitingSessionFrame?'게임 시작 후 첫 손목 입력을 기다립니다.':'입력이 끊겼습니다. 타격은 중단되고 시간은 계속 흐릅니다.':s.score?view?.target.active?'남은 블록을 계속 타격하세요. 파편 1개당 1점입니다.':'건물을 모두 부쉈습니다. 복원하면 새 게임을 시작합니다.':'손목 타격 이벤트를 기다립니다.':s.ready?'준비됐습니다. 시작하세요.':source==='live'&&!processor?'휴대폰 연결과 손목 추적 모듈을 준비하세요.':'영상·손목·건물을 준비하고 있습니다.');
   $('performance').textContent=`화면 ${renderFps.toFixed(0)} fps · 정합 프레임 ${coordinator.stats.processed} · 폐기 ${coordinator.stats.dropped} · 로그 손실 ${logs.dropped}`;
 }
 function frame(now){
@@ -180,7 +180,7 @@ window.singleCameraMonitor=Object.freeze({
 async function init(){try{const params=new URL(location.href).searchParams;if(phoneInput&&requestedSinglePackage(params)===ANALYTIC_ID)throw new Error('analytic_qa_not_supported_for_phone_input');view=new FractureView($('scene'),{params});await view.load();if(disposed)return;sceneReady=true;resize();gates();}catch(error){message='건물 준비 실패: '+error.message;console.error(error);view?.dispose();view=null;}requestAnimationFrame(frame);}
 if(phoneInput){
   const back=$('room-back');back.href=`/monitor/${link.roomId}/`;back.textContent=`${link.roomId==='room-2'?'방 2':'방 1'} 카메라 테스트`;
-  $('room-intro').textContent=link.roomId==='room-2'?'방 2는 C0 한 대만 서버 중계로 연결하세요. 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.':'방 1의 C0·C1·C2를 연결하고 C0는 서버 중계를 선택하세요. C0 폰에서 계산한 손목으로 영상 위 IT 1호관을 타격합니다.';
+  $('room-intro').textContent=link.roomId==='room-2'?'방 2는 C0 한 대만 서버 중계로 연결하세요. 폰에서 계산한 손목·발목으로 영상 위 IT 1호관을 타격합니다.':'방 1의 C0·C1·C2를 연결하고 C0는 서버 중계를 선택하세요. C0 폰에서 계산한 손목·발목으로 영상 위 IT 1호관을 타격합니다.';
   $('connect').disabled=false;
   const sound=createHitSound();sound.prepare();
   const hit=attachHitDetector(window.singleCameraMonitor,{onResult:(event,result)=>{if(result.accepted)sound.play(event);}});

@@ -29,7 +29,7 @@
 1. 고정 방의 PC 페이지에서 폰의 고정 QR 링크를 제공하고 카메라1대를 연결한다. 서버는 PC/폰 역할과 stream_id 바인딩을 확인한다.
 2. 영상·모델·유효 손목·변환·장면·제어 연결이 준비되면 시작 버튼이 활성화된다.
 3. PC가 새 session_id와 모드/입력 출처/설정 버전을 시작 요청으로 보낸다. 서버 ACK 전에는 타이머·타격·점수를 시작하지 않는다. 같은 ID·같은 내용 재전송은 같은 ACK, 같은 ID·다른 내용은 충돌로 거부한다.
-4. ACK 수신 후 PC 단조 시계로 60초를 잰다. 원래 PC 소비자는 타격/게임의 주체다. 현재 phone_2d에서는 서버도 세션 타이머·종료·점수를 보관하고 PC가 서버 남은 시간/점수에 맞춘다. 서버는 수락 이벤트의 바인딩·중복·100점 단위를 검사하지만 기하 타격을 재계산하지 않는다.
+4. ACK 수신 후 PC 단조 시계로 60초를 잰다. 원래 PC 소비자는 타격/게임의 주체다. 현재 phone_2d에서는 서버도 세션 타이머·종료·점수를 보관하고 PC가 서버 남은 시간/점수에 맞춘다. 서버는 수락 이벤트의 바인딩·중복·신규 파편 ID와 파편당 점수를 검사하지만 기하 타격을 재계산하지 않는다.
 5. 게임 상태는 idle → ready → starting → playing → ended다. reset은 점수·물리·이벤트·궤적을 비우고 idle로 간다. 카메라는 계속 켜둘 수 있으며 다음 시작에 새 session_id를 쓴다. 모드 변경은 진행 중 게임을 종료한 뒤 수행한다.
 
 연결 상태(disconnected/connecting/live/stalled/failed), 추적 상태(loading/valid/invalid/stale), 장면 상태는 게임 상태와 분리한다. playing 중 손목 미검출/추적 무효·제어 단절은 타격을 차단하는 기준안이다. 카메라 연결 종료·필수 영상 중단은 사용자 최신 지시로 자동 중지하며 현재 video_check의 수동/자동 중지 규칙은 [ROOMS.md](ROOMS.md)를 따른다. 손목 미검출만으로 카메라 연결 종료를 판정하지 않는다. 장비 장애 회차도 지우지 않고 종료·무효 사유를 기록한다. 탭이 숨겨지거나 렌더 루프가 멈춘 동안 입력은 거부한다.
@@ -132,3 +132,9 @@ HitDetector는 손목별 직전 유효 점과 현재 점 사이 선분을 검사
 [PC 실행·인계 문서](SINGLE_CAMERA_MONITOR.md)의 VideoReceiver/ControlLink·프레임/게임 API 구현 이력이다. 별도 ControlLink가 요구하는 POST 방 생성·control API는 현재도 제안이며 404를 성공으로 취급하지 않는다. 현재 room.v1 어댑터와 구분한다. 손목 키는 wrists.left_wrist/right_wrist다. Worker 입력은 빌린 스냅샷이며 원본 소유권 이전을 금지하고 필요 시 복제한다.
 
 PC 클라이언트의 1초 ping/3초 heartbeat·7.5초 제어 요청/8초 게임 시작 타임아웃은 현재 시험 설정이다. 실제 서버와 연결할 때 설정/프로토콜을 함께 검토한다. TTL200ms·가시성0.5·60초는 현재 PC 모듈 기준이며 실제 성능 달성 수치가 아니다. 로그의 서버 보존/ACK 재전송과 실제 물리/소리는 후속 인계에서 확인한다.
+
+## 2026-11-16 PoseFrame·HitEvent·부분 파괴 연결 정정
+
+PoseFrame은 wrists와 같은 모양의 선택 필드 ankles.left_ankle/right_ankle를 받는다(valid/image_norm/visibility/reason). 누락은 무효 발목이며 손목 경로는 계속 사용할 수 있다. HitEvent joint는 두 손목과 두 발목을 허용하고 관절별 연속 유효 프레임 짝을 검사한다. 미검출·만료·세션/변환 변경 시 궤적을 끊는다.
+
+GameController의 onHit는 부분 파괴 결과(points/broken_fragment_ids/fallen_fragment_ids/remaining_fragments/destroyed)를 반환한다. points는 신규 파편 수이며 타격당 고정100점 규칙을 대체한다. destroyed=true일 때만 같은 건물의 추가 타격을 차단한다. 같은 프레임·이벤트·파편 중복은 무득점이다. keyboard_demo는 별도 경로다. room.v1 서버 계약은 PHONE_POSE_GAME.md를 따른다.

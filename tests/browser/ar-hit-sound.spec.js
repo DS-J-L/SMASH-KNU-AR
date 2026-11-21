@@ -5,8 +5,8 @@ const W = 640, H = 480;
 const K = intrinsicsFromFov(W, H, 80), C = [0.1, -2.3, 1];
 const forward = normalize(sub([0, .6, .6], C)), right = normalize(cross(forward, [0, 0, 1]));
 const R = [...right, ...cross(forward, right), ...forward], pose = { R, t: scale(matVec(R, C), -1), C };
-const corners = markerCorners(.2).map(([x, y]) => project(K, pose, [x, y, 0]));
-const saved = { width: W, height: H, corners, markerCm: 20, fov: 80, cameraHeight: 1, autoFov: false };
+const corners = markerCorners(.6).map(([x, y]) => project(K, pose, [x, y, 0]));
+const saved = { width: W, height: H, corners, markerCm: 60, fov: 80, cameraHeight: 1, autoFov: false };
 test.beforeEach(async ({ page }) => { await page.emulateMedia({ reducedMotion: 'no-preference' }); });
 const effect = page => page.evaluate(() => window.__arHitEffect.snapshot());
 
@@ -20,9 +20,11 @@ function person(wrist = [.33, .7, .95]) {
   };
   const landmarks = [], world = [];
   for (let i = 0; i < 33; i++) {
-    const p = points[i];
-    if (!p) { landmarks.push({ x: .5, y: .5, visibility: 0 }); world.push({ x: 0, y: 0, z: 0, visibility: 0 }); continue; }
-    const [u, v] = project(K, pose, p), q = scale(matVec(R, sub(p, [.05, .7, .95])), .9);
+    const source = points[i];
+    if (!source) { landmarks.push({ x: .5, y: .5, visibility: 0 }); world.push({ x: 0, y: 0, z: 0, visibility: 0 }); continue; }
+    // Body capture now requires both feet at the marker, before moving away to strike.
+    const p = [source[0], source[1] - .7, source[2]];
+    const [u, v] = project(K, pose, p), q = scale(matVec(R, sub(p, [.05, 0, .95])), .9);
     landmarks.push({ x: u / W, y: v / H, visibility: .95 });
     world.push({ x: q[0], y: q[1], z: q[2], visibility: .95 });
   }
@@ -65,7 +67,7 @@ async function phoneCamera(page, mode) {
       return canvas.captureStream(20);
     };
   }, { initial: person(), saved, mode });
-  await page.route('**/camera/pose.js', route => route.fulfill({ contentType: 'text/javascript', body: `
+  await page.route('**/camera/pose.js*', route => route.fulfill({ contentType: 'text/javascript', body: `
     export async function createPoseLandmarker(){return {landmarker:{detectForVideo(){return window.__arPose;},close(){}}};}
   ` }));
   await page.goto(`/test/${mode}/`);
@@ -140,13 +142,13 @@ test('mono3d AR phone: calibrated 3D wrist entry produces sound and projected im
   await meterAudio(page);
   await page.routeWebSocket('**/ws/test/mono3d**', () => {});
   await phoneCamera(page, 'mono3d');
-  await expect(page.locator('#bodyLive')).toContainText('준비됨');
+  await expect(page.locator('#bodyLive')).toContainText('마커 중심 · 양발/직립 확인됨');
   await page.locator('#delay').selectOption('3');
   await page.locator('#calibBody').click();
   await expect(page.locator('#toMeasure')).toBeVisible({ timeout: 15000 });
   await page.locator('#toMeasure').click();
   expect(await count(page)).toBe(0);
-  await page.evaluate(input => { window.__arPose = input; }, person([0, 0, .5]));
+  await page.evaluate(input => { window.__arPose = input; }, person([0, .7, .5]));
   await expect(page.locator('#hits')).toHaveText('1');
   await expect.poll(() => count(page)).toBe(1);
   await expect.poll(() => rms(page), { intervals: [20, 50, 100] }).toBeGreaterThan(.001);

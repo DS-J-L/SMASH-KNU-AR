@@ -6,10 +6,10 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-21 13:24 KST |
+| 마지막 갱신 | 2026-11-21 15:01 KST |
 | 현재 Phase·작업 상태 | P4 AR 소리·연출 코드 검토·회귀 통과 / 실기기 통합 확인 대기 |
 | 마지막 확인된 개발 완료 | PR #22 코드 검토, Node 128/128·AR 브라우저 4/4·호환 빌드 2개·화면 캡처 재확인 |
-| 현재 작업 | PR #22 구현·코드 검토·자동 재검증 완료 |
+| 현재 작업 | PR #21 부분 파괴·건물 화면과 main AR 소리/효과 결합·합성 검증 완료 |
 | 남은 일·미검증 | 폰 송신·실제 PC 추론/충돌/소리·신호/제어 서버 인계, live/20분/성능·기존 미확인 건물/AR |
 | 다음 한 단계 | 검증 버전의 main 반영·동기화 확인 후 실제 폰/PC 타격음·정합·성능 확인 |
 | 막힌 점·인계 | 상대 SC 생산 모듈 미통합; SINGLE_CAMERA_MONITOR.md·summary.json 제공, 정밀 DEM/미확인 치수 유지 |
@@ -790,6 +790,19 @@
 - 정적 모델과 keyboard_demo 검증이다. 실제 폰·AR·장시간 성능은 후속 확인 항목이다. P2의 실기기 통합 판정과 계획 체크는 기존 기준을 따른다.
 - 미리보기에서 캠퍼스 지형을 열고 ①~⑧ 또는 전체 캠퍼스를 선택해 재현한다. 안내는 `docs/CAMPUS_V71_123.md`에 있다.
 
+### 2026-11-16 01:14 KST — 2D 부분 파괴·발차기 연결 종료
+
+- 담당/기록자: PM 통합·이동수 화면·정경호 서버 / Codex. P4 로컬 구현·합성 검증 완료, 공통 Phase와 실폰 완료는 별도.
+- 읽은 계획/기준: PM·개인 계획 P4 및 SC 타격/게임 연결, AGENTS 절차·현황·개인 기록, FOOT_STRIKE·MODEL_STRIKE_3D·pr-workflow. 사용자 요청 1/2번: 2D 부분 파괴·파편당 점수와 발차기 연결.
+- 코드: frontend/single/fracture-view.js가 BuildingDamage를 호출해 신규 파편 노드만 물리로 풀고 해당 고정 충돌체만 제거. 남은 파편 고정·광선/투영 대상 유지, 풀린 파편은 타격 대상 제외, 복원 시 충돌체/상태 재생성. fragment-bodies.js의 선택 노드 필터와 target-provider.js 필터 재사용. analytic 단독 QA 경로는 기존 전체 해제를 유지하고 폰 게임에서 계속 차단.
+- 입력/점수: backend/ingest/game_pose.py의 body 발목→ankles→main.js 표시/전달→GameController 관절별 프레임 짝과 이벤트 수락. controller는 onHit의 신규 파편 결과로 점수를 계산하고 남은 건물 재타격·동일 프레임/이벤트/파편 중복 방지. backend/game_sessions.py가 실제 IT1 ID·세션/등록 프레임·신규 제거 집합·남은 수/점수 일치를 검증해 서버 점수 확정. 2D 화면의 기하는 PC가 판정하며 서버가 깊이/영상 기하를 재계산하지 않음.
+- 배포/문서: build:single·build:phone-game 완료 및 web/monitor/single·phone-game 배포본 갱신. PM·이동수·정경호 계획, PHONE_POSE_GAME·SINGLE_CAMERA_INTERFACES·FOOT_STRIKE·MODEL_STRIKE_3D 계약과 진행/팀 요약 정합. 이전 100점/미연결 기록은 이전 버전 이력으로 보존.
+- 검증: Python phone_game/game_sessions/room_pose 47/47(WS 동일 JPEG 발목 정규화·누락/저신뢰 무효·손 이후 발타격/신규 점수·잘못된 ID/중복/점수 거부). Node single/model_strike 108/108 + fracture 83/83. 두 빌드 통과. Edge D3D11 브라우저 최종 5/5(24.8초): room1/2 손→발·서버 점수·중단/재연결·입력 중단, 단독 3회 복원, 반복 부분 파괴→96점/96개·고정+동적 충돌체97개 유지·복원, 모바일 회전/거울/입력전환.
+- 실패/정정: 첫 브라우저 자체 webServer 정리가 끝나지 않아 테스트4개 통과 후 중단. 별도 루프백 서버/PHONE_PARTIAL_EXTERNAL=1로 최종 명령 정상 종료. 추가 반복 시험에서 같은 영상 프레임 재사용이 거부돼 프레임 증가를 기다리도록 수정, portrait 시험은 viewport/ResizeObserver 변환 안정화 대기 후 통과. 기존 Starlette·pytest 캐시 접근·대형 번들 경고 유지.
+- 범위/남은 일: synthetic canvas/결정적 추론·실제 GLB·실제 FastAPI/WS·Edge, 실제 폰/MediaPipe·발차기 기준값 튜닝·청취/지연/장시간·3D 발차기 연결은 미검증/별도. 손목0.5·발목0.8 화면 대각선/초 시작값 유지. 3D 건물 시험 파괴 규칙은 변경하지 않음.
+- 다음/인계: 서버 재시작·PC/폰 새로고침→방2 C0 서버중계→폰 좌표2D게임. 발목까지 보이게 촬영 후 손/발 타격·남은블록/점수·복원 확인. 팀원 별 실제 완료를 추정하지 않으며 공통 Phase/계획 체크는 유지.
+- Git: 기존 작업 보존. 사용자 지시로 Git 변경 명령·worktree·stage·commit·push·충돌 해결 표시 없음.
+
 
 ### 2026-11-21 12:59 KST — AR 타격 애니메이션 추가·소리 수정 GitHub 공유 시작
 
@@ -829,3 +842,11 @@
 - PM 검토를 Codex가 수행했다. head daceb92a2345b34283f293fd12d5bfa59e970e10의 소리/연출 수락 경계·중복/무효/초기·음소거·수명/좌표·정리·호환성을 확인했고 머지 차단 사항은 발견하지 못했다. Node 128/128·AR 브라우저 4/4·호환 빌드 2개와 캡처가 통과했다.
 - 이번 후속 변경은 진행 문서·검증 요약뿐이며 실행 코드는 검증한 head와 동일하다. 13:09 게시 기록 일부 SHA 누락의 올바른 값은 코드 619a641bb01b164df2f20e56ae1e7e7853e10001, 기록 daceb92a2345b34283f293fd12d5bfa59e970e10다. 정정·검토 근거는 PM_progress.md의 같은 시각 기록을 따른다.
 - 사용자 승인 범위의 검증 head 머지·로컬 main 동기화로 이어 간다. 실제 장비 청취·정합·성능/장시간 및 개인/공통 Phase 완료는 미검증으로 유지한다.
+
+
+### 2026-11-21 15:01 KST — PR #21 통합 검토·소비 인계
+
+- 담당 / 기록자: 이동수 담당 경계의 PM 통합 검토 / Codex. P3·P4 관련 코드 검토 완료·main 머지 대기, 실기기/개인·공통 Phase 통과와 별개다.
+- 결과: 2D 부분 파괴·남은 파편 재타격·파편 고유 점수·발목 소비, 3D 마커/가림·시계와 main AR 소리·타격 위치 효과를 결합했다. Windows 고해상도 수신 시계·옵션 경합·정상 소켓 종료를 보완했다.
+- 검증: Node201, Python255 고유항목, 건물25·2D폰8·AR4 브라우저, 배포 빌드3개 통과. 입력은 synthetic·mouse/keyboard 데모이며 실폰·실측·청취·정량/장시간은 미검증이다. 상세 명령/초기 실패/재검증은 PM_progress.md와 ../docs/asset-validation/pr21-review.json을 따른다.
+- 다음·인계: 승인된 #21 main 반영 뒤 #23의 넓은 무대/2대 경로를 결합·확인한다. 실기기 시험은 BUILDING_FRAGMENT_TEST·MONO3D_TEST·MULTI3D_TEST 문서에서 재개한다. 기존 개인/공통 Phase 체크는 유지했다.
