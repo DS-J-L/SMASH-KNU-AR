@@ -33,6 +33,17 @@ let personJoints={},personAt=-Infinity;
 let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
 let impactQueue=new Set(),impactSentAt=0;
 let sizeDirty=false;
+const toggleDrafts=new Map();
+function sendToggle(id,message){
+  toggleDrafts.set(id,{value:$(id).checked,at:performance.now()});
+  if(!link.send(message))toggleDrafts.delete(id);
+}
+function syncToggle(id,value){
+  const draft=toggleDrafts.get(id);
+  if(draft&&draft.value!==value&&performance.now()-draft.at<2000)value=draft.value;
+  else toggleDrafts.delete(id);
+  $(id).checked=value;
+}
 function previewSize(){
   const scale=Number($('scale').value);
   if(state?.body_reference){$('sizePreview').textContent=`최고 높이 ${state.display_height_m.toFixed(2)}m · 최초 허리의 70% · 구역 내 비율 유지`;return;}
@@ -133,7 +144,7 @@ function syncState(m) {
   physics.release(m.removed_ids,m.event);
   if(m.event?.blast)physics.blast(m.event);
   else if(m.event&&['mouse','mouse_push'].includes(m.event.kind))physics.push(m.event);
-  $('blastMode').checked=m.blast_enabled??true;
+  syncToggle('blastMode',m.blast_enabled??true);
   if(mono){
     if(document.activeElement!==$('depthMargin'))$('depthMargin').value=m.depth_margin??0;
     const reasons={invalid:'미검출',too_low:'발을 더 높이 드세요',too_slow:'더 빠르게 차세요',baseline:'기준점 확보 · 다음 유효 관측 대기',gap:'추적 끊김 · 기준점 재확보',standing:'건물과 겹쳐 있음 · 손/발을 빠르게 움직이면 부숴짐',inside_slow:'건물과 겹침 · 빠르게 움직이세요',cooldown:'잠시 대기',outside:'충돌체 밖',contact:'접촉'};
@@ -143,7 +154,7 @@ function syncState(m) {
   }
   if(document.activeElement!==$('blastRadius'))$('blastRadius').value=m.blast_radius??3;
   if(document.activeElement!==$('pushStrength'))$('pushStrength').value=m.blast_strength??12;
-  $('collapse').checked=m.collapse??true;
+  syncToggle('collapse',m.collapse??true);
   for(const s of scenes){
     s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
@@ -216,12 +227,12 @@ $('restore').onclick=()=>{link.send({type:'multi3d_model_reset'});};
 $('captureBody').hidden=true;
 $('captureBody').onclick=()=>link.send({type:'multi3d_body_start'});
 $('stress').onclick=()=>link.send({type:'multi3d_model_drop_all'});
-$('collapse').onchange=()=>link.send({type:'multi3d_model_collapse',enabled:$('collapse').checked});
+$('collapse').onchange=()=>sendToggle('collapse',{type:'multi3d_model_collapse',enabled:$('collapse').checked});
 for(const input of document.querySelectorAll('[data-physics]'))input.onchange=()=>{
   physicsOptions[input.dataset.physics]=input.checked;physics?.configure(physicsOptions);
 };
 $('impactBreak').onchange=()=>impactQueue.clear();
-const sendBlastConfig=()=>link.send({type:'multi3d_model_blast_config',enabled:$('blastMode').checked,
+const sendBlastConfig=()=>sendToggle('blastMode',{type:'multi3d_model_blast_config',enabled:$('blastMode').checked,
   radius:Number($('blastRadius').value),strength:Number($('pushStrength').value)});
 for(const id of ['blastMode','blastRadius','pushStrength'])$(id).addEventListener('change',sendBlastConfig);
 $('interactionDistance').onchange=()=>{try{physics?.setInteractionDistance(Number($('interactionDistance').value));}catch(e){status(e.message);}};

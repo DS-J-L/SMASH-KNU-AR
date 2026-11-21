@@ -11,7 +11,8 @@
     "build:single": "vite build --config vite.single.config.js",
     "build:phone-game": "vite build --config vite.phone-game.config.js",
     "build:all": "npm run build:demo && npm run build:single && npm run build:phone-game",
-    "test:single": "node --test tests/single/*.test.mjs"
+    "test:single": "node --test tests/single/*.test.mjs",
+    "test:ar": "playwright test -c playwright.ar.config.js"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "0.21.0",

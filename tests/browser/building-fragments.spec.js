@@ -2,6 +2,29 @@ import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
 const data=JSON.parse(execFileSync('.venv/Scripts/python.exe',['-c',
   "import sys,json;sys.path.insert(0,'tests');from test_fragment_test import browser_case;print(json.dumps(browser_case()))"],{encoding:'utf8'}));
+test('a delayed server option snapshot cannot undo the checkbox before its acknowledgement',async({page})=>{
+  let lastState,delayed=0;
+  await page.routeWebSocket('**/ws/test/mono3d**',route=>{
+    const server=route.connectToServer();
+    server.onMessage(raw=>{const m=JSON.parse(String(raw));if(m.type==='mono3d_model_state')lastState=m;route.send(raw);});
+    route.onMessage(raw=>{
+      const m=JSON.parse(String(raw));
+      if(m.type==='multi3d_model_blast_config'&&m.enabled===false&&lastState){
+        route.send(JSON.stringify(lastState));delayed++;
+        setTimeout(()=>server.send(raw),250);
+      }else server.send(raw);
+    });
+  });
+  await page.goto('/test/building/?mode=mono&key=fragment-test');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest?.snapshot().ready)).toBe(true);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().connected)).toBe(true);
+  await page.locator('#blastMode').check();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(true);
+  await page.locator('#blastMode').uncheck();
+  await expect(page.locator('#blastMode')).not.toBeChecked();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(false);
+  expect(delayed).toBe(1);
+});
 test('actual IT1 on the marker: one touched fragment, camera projection, restore and reconnect',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/test/building/?scene=it1&key=fragment-test');
