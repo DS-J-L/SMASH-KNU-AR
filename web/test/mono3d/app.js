@@ -5,6 +5,8 @@ import { createPoseLandmarker } from '/camera/pose.js';
 import { calibrateMarker, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project, transposeMul } from './geometry.js?v=20261109-4';
 import { measureBody, finalizeBody, estimate, insideBox, segmentHitsBox, buildingBox, waistHeightM } from './mono3d.js?v=20261109-4';
 import { createLink } from './link.js?v=20261109-4';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 const $ = id => document.getElementById(id);
 const view = $('view'), ctx = view.getContext('2d'), topView = $('top'), topCtx = topView.getContext('2d');
@@ -20,7 +22,10 @@ const SKELETON = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [1
   [23, 25], [25, 27], [27, 29], [29, 31], [27, 31], [24, 26], [26, 28], [28, 30], [30, 32], [28, 32]];
 
 let step = 'camera', facing = 'environment';
-let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null, audio = null;
+let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null;
+const hitSound = createArHitSound();
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 let frozen = null, corners = [], dragPoint = null;
 let calib = null, body = null, bodySamples = null, bodyStart = 0, countdownTimer = null, lastSampleT = null;
 const BODY_REASONS = { no_person: '사람이 안 보임', feet_not_visible: '발이 화면에 안 나옴(발끝까지 보이게)',
@@ -315,7 +320,7 @@ function update() {
       && Math.hypot(P[0] - prev.P[0], P[1] - prev.P[1], P[2] - prev.P[2]) <= SWING_MAX_JUMP_M
       && segmentHitsBox(b, prev.P, P, margin));
     const hit = (inside || swept) && !wasInside[name];
-    if (hit) { hits++; $('hits').textContent = hits; beep(1200, 0.08); lastHitAt = performance.now(); }
+    if (hit) { hits++; $('hits').textContent = hits; hitSound.hit(); hitEffect.trigger(P, b); lastHitAt = performance.now(); }
     wasInside[name] = inside; prevWrist[name] = P ? { P, t: latest.t } : null;
     if (hit) hitNow[name] = inside ? 'inside' : 'swept';
     if (P) { result.joints[name].inside_box = inside; result.joints[name].hit = hit; result.joints[name].hit_by = hit ? (inside ? 'inside' : 'swept') : null; }
@@ -388,6 +393,7 @@ function draw() {
     if (calib?.K && step !== 'place') drawCalibration(lw);
     drawSkeleton(W, H, lw);
     drawEstimate(lw);
+    if (step === 'measure' && calib?.K) hitEffect.draw(ctx, point => project(calib.K, calib.pose, point));
   }
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   if (step === 'measure' && !$('hud').classList.contains('nomap')) drawTop();
@@ -436,7 +442,7 @@ function drawCalibration(lw) {
   line3([0, 0, 0], [0, 0.2, 0], '#22c55e', lw * 1.5);
   line3([0, 0, 0], [0, 0, 0.2], '#3b82f6', lw * 1.5);
   if (step !== 'measure') return;
-  const b = box(), [hx, hy, hz] = b.half, [cx, cy, cz] = b.center;
+  const b = box(), [hx, hy, hz] = b.half, offset = hitEffect.recoil(), [cx, cy, cz] = b.center.map((value, i) => value + offset[i]);
   const v = [-1, 1].flatMap(x => [-1, 1].flatMap(y => [-1, 1].map(z => [cx + x * hx, cy + y * hy, cz + z * hz])));
   const hit = performance.now() - lastHitAt < 250
     || (result?.valid && ['left_wrist', 'right_wrist'].some(n => result.joints[n]?.inside_box));
@@ -527,14 +533,9 @@ function download() {
   a.download = `mono3d-${data.started_at.replace(/[:.]/g, '-')}.json`;
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
-function unlockAudio() { try { audio ??= new AudioContext(); audio.resume?.(); } catch { audio = null; } }
+function unlockAudio() { void hitSound.unlock(); }
 function beep(freq = 660, seconds = 0.12) {
-  if (!audio) return;
-  try {
-    const o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime;
-    o.frequency.value = freq; g.gain.setValueAtTime(0.15, t); g.gain.exponentialRampToValueAtTime(0.001, t + seconds);
-    o.connect(g).connect(audio.destination); o.start(t); o.stop(t + seconds);
-  } catch { /* sound is optional */ }
+  hitSound.beep(freq, seconds);
 }
 
 function loop() {
@@ -562,7 +563,7 @@ $('calibBody').addEventListener('click', beginBody);
 $('toMeasure').addEventListener('click', () => setStep('measure'));
 $('redoBody').addEventListener('click', () => { resetBodyPanel(); setStep('body'); });
 $('redoCorners').addEventListener('click', () => setStep('place'));
-$('resetHits').addEventListener('click', () => { hits = 0; $('hits').textContent = '0'; });
+$('resetHits').addEventListener('click', () => { hits = 0; hitEffect.clear(); lastHitAt = -1e9; $('hits').textContent = '0'; });
 for (const id of ['bldAutoH', 'heightCm']) $(id).addEventListener('change', syncBuildingHeight);
 $('settingsBtn').addEventListener('click', syncBuildingHeight);
 syncBuildingHeight();

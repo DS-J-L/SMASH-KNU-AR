@@ -1,0 +1,56 @@
+{
+  "recorded_at_kst": "2026-11-21 13:06",
+  "base_commit": "eb65bc0015f2bd3c53671bfa7ebdda39dc7edb85",
+  "branch": "fix/building-destruction-sound-20261121",
+  "scope": [
+    "mono3d phone and PC viewer",
+    "multi3d phone and PC viewer"
+  ],
+  "node": {
+    "passed": 65,
+    "failed": 0,
+    "command": "node --test tests/ar-hit-effect.test.mjs tests/ar-hit-sound.test.mjs tests/test_mono3d.mjs tests/test_model_strike.mjs tests/single/hit-sound.test.mjs"
+  },
+  "browser": {
+    "environment": "Windows / Chromium / Playwright 1.64.1 / D3D11",
+    "failed": 0,
+    "inputs": "synthetic Canvas camera, MediaPipe-format landmarks, and 3D result messages over mocked WebSocket",
+    "passed": 4,
+    "checked": [
+      "native AudioContext output RMS > 0.001",
+      "world-projected impact animation rendered on four AR pages",
+      "initial/duplicate/invalid/reconnected snapshots have no new feedback",
+      "visual feedback remains active while audio is muted",
+      "one audio context, cleanup on pagehide",
+      "expired effects have zero active particles"
+    ],
+    "duration_seconds": 17.9,
+    "command": "npm run test:ar"
+  },
+  "effects": {
+    "maximum_bursts": 3,
+    "uses_elapsed_time": true,
+    "changes_tracking_or_score": false,
+    "reduced_motion_respected": true,
+    "lifetime_ms": 1400,
+    "maximum_particles": 72
+  },
+  "compatibility_builds": {
+    "single": "passed, output under ignored data/local/ar-feedback-share/build",
+    "existing_large_chunk_warning": true,
+    "phone_game": "passed, output under ignored data/local/ar-feedback-share/build"
+  },
+  "input_sources": {
+    "synthetic": "passed",
+    "live": "not run",
+    "keyboard_demo": "not run",
+    "replay": "not run"
+  },
+  "unverified": [
+    "real phone camera and 3-camera triangulation run",
+    "field AR registration and accuracy",
+    "real WebSocket server",
+    "physical speaker listening and loudness",
+    "long duration and quantitative performance"
+  ]
+}

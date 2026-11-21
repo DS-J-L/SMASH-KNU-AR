@@ -2,12 +2,14 @@
 // Nothing is recomputed here except drawing; the server does the fusion and the hit test.
 import { add, sub, scale, cross, normalize, project } from '../mono3d/geometry.js?v=20261109-4';
 import { createLink, geometryText } from './link.js?v=20261109-6';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 const $ = id => document.getElementById(id);
 const scene = $('scene'), sctx = scene.getContext('2d');
 const CAMERAS = ['C0', 'C1', 'C2'];
 const CAM_COLORS = { C0: '#a78bfa', C1: '#34d399', C2: '#f472b6' };
-const STALE_MS = 1000, TRAIL_MS = 600, GRAVITY = 9.8;
+const STALE_MS = 1000, TRAIL_MS = 600;
 const LM_EDGES = [[11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [12, 24], [23, 24],
   [23, 25], [25, 27], [24, 26], [26, 28], [27, 29], [29, 31], [28, 30], [30, 32]];
 const JOINT_EDGES = [['left_shoulder', 'right_shoulder'], ['left_shoulder', 'left_elbow'], ['left_elbow', 'left_wrist'],
@@ -17,7 +19,10 @@ const WRIST_COLORS = { left_wrist: '#38bdf8', right_wrist: '#f97316' };
 
 const cams = Object.fromEntries(CAMERAS.map(c => [c, { calib: null, K: null, pose: null, frame: null, frameAt: 0, jpeg: null }]));
 let fused = null, fusedAt = 0, status = null, linkOpen = false;
-let hits = null, hitFlashAt = -1e9, debris = [], trails = { left_wrist: [], right_wrist: [] }, audio = null;
+let hits = null, hitFlashAt = -1e9, trails = { left_wrist: [], right_wrist: [] };
+const hitSound = createArHitSound({ button: $('sound') });
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 
 // ---------- camera tiles ----------
 for (const c of CAMERAS) {
@@ -33,6 +38,7 @@ const link = createLink('/ws/test/multi3d', { role: 'viewer' }, s => { linkOpen 
 link.setEnabled(true);
 
 function onMessage(m) {
+  if (m.type === 'link_open') { hitSound.reset(); hitEffect.clear(); hitFlashAt = -1e9; }
   const cam = cams[m.camera_id];
   if (m.type === 'multi3d_status') status = m;
   else if (m.type === 'multi3d_calib' && cam) {
@@ -50,6 +56,7 @@ function onMessage(m) {
 }
 
 function onFused(m) {
+  const accepted = hitSound.observeFrame(m);
   const now = performance.now();
   fused = m; fusedAt = now;
   for (const [name, list] of Object.entries(trails)) {
@@ -58,7 +65,8 @@ function onFused(m) {
     while (list.length && now - list[0].t > TRAIL_MS) list.shift();
   }
   const hitNames = Object.keys(m.hit ?? {});
-  if (hits !== null && hitNames.length) onHit(hitNames.map(n => m.joints?.[n]?.p).find(Boolean), m.building);
+  if (accepted) onHit(hitNames.map(n => m.joints?.[n]?.p).find(Boolean), m.building);
+  if (m.hits === 0) { hitEffect.clear(); hitFlashAt = -1e9; }
   hits = m.hits; $('hits').textContent = hits;
   if ($('bldAuto').checked && m.building) $('bldH').value = (m.building.half[2] * 2).toFixed(2);
 }
@@ -67,14 +75,7 @@ function onHit(at, building) {
   hitFlashAt = performance.now();
   const b = $('hits'); b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
   const pop = $('hitPop'); pop.hidden = true; void pop.offsetWidth; pop.hidden = false;
-  const { center, half } = building, origin = at ?? center;
-  for (let i = 0; i < 40; i++) {
-    const p = [center[0] + (Math.random() * 2 - 1) * half[0], center[1] + (Math.random() * 2 - 1) * half[1],
-      Math.max(0.02, Math.min(center[2] + half[2], origin[2]) + (Math.random() * 2 - 1) * 0.15)];
-    const away = normalize([p[0] - origin[0] + 1e-3, p[1] - origin[1] + 1e-3, 0.2]);
-    debris.push({ p, v: add(scale(away, 1 + Math.random() * 2), [0, 0, Math.random() * 2]), born: hitFlashAt, size: 0.02 + Math.random() * 0.04 });
-  }
-  beep();
+  hitEffect.trigger(at, building);
 }
 
 // ---------- building config (sent to the server, which owns the hit test) ----------
@@ -127,7 +128,10 @@ function drawCam(c) {
   const s = (cam.calib.marker_side_m ?? 0.2) / 2, m = [[-s, s, 0], [s, s, 0], [s, -s, 0], [-s, -s, 0]];
   m.forEach((p, i) => seg(p, m[(i + 1) % 4], 'rgba(34,197,94,.7)'));
   seg([0, 0, 0], [0.25, 0, 0], '#ef4444', lw * 1.5); seg([0, 0, 0], [0, 0.25, 0], '#22c55e', lw * 1.5);
-  if (fused?.building) for (const [a, b] of boxEdges(fused.building)) seg(a, b, performance.now() - hitFlashAt < 300 ? '#ef4444' : '#facc15', lw);
+  if (fused?.building) {
+    const offset = hitEffect.recoil(), building = { ...fused.building, center: fused.building.center.map((value, i) => value + offset[i]) };
+    for (const [a, b] of boxEdges(building)) seg(a, b, performance.now() - hitFlashAt < 300 ? '#ef4444' : '#facc15', lw);
+  }
   const lm = cam.frame && performance.now() - cam.frameAt < STALE_MS ? cam.frame.landmarks : null;
   if (lm) {
     g.strokeStyle = 'rgba(255,255,255,.7)'; g.lineWidth = lw;
@@ -141,6 +145,7 @@ function drawCam(c) {
     const p = project(cam.K, cam.pose, j.p);
     if (p) { g.strokeStyle = color; g.lineWidth = lw * 1.5; g.beginPath(); g.arc(p[0], p[1], lw * 6, 0, Math.PI * 2); g.stroke(); }
   }
+  hitEffect.draw(g, point => project(cam.K, cam.pose, point));
   g.setTransform(1, 0, 0, 1, 0, 0);
 }
 
@@ -217,7 +222,7 @@ function drawScene(now) {
   const b0 = fused?.building;
   if (b0) {
     const flashing = now - hitFlashAt < 400;
-    const shake = flashing ? [(Math.random() - 0.5) * 0.04, (Math.random() - 0.5) * 0.04, 0] : [0, 0, 0];
+    const shake = hitEffect.recoil(now);
     const b = { center: add(b0.center, shake), half: b0.half };
     const faces = boxFaces(b).map(f => ({ f, depth: f.reduce((acc, p) => acc + depthOf(cam.pose, p), 0) / 4 })).sort((a, c) => c.depth - a.depth);
     for (const { f } of faces) {
@@ -230,15 +235,7 @@ function drawScene(now) {
     labelAt(P([b.center[0], b.center[1], b.center[2] + b.half[2]]), `건물 ${(b.half[2] * 2).toFixed(2)}m`);
   }
 
-  debris = debris.filter(d => now - d.born < 1800);
-  for (const d of debris) {
-    d.v[2] -= GRAVITY / 60; d.p = add(d.p, scale(d.v, 1 / 60));
-    if (d.p[2] < 0) { d.p[2] = 0; d.v = [d.v[0] * 0.5, d.v[1] * 0.5, -d.v[2] * 0.3]; }
-    const p = P(d.p); if (!p) continue;
-    const r = Math.max(2, d.size * cam.K.fx / Math.max(0.3, depthOf(cam.pose, d.p)));
-    sctx.fillStyle = `rgba(250,180,21,${1 - (now - d.born) / 1800})`;
-    sctx.fillRect(p[0] - r / 2, p[1] - r / 2, r, r);
-  }
+  hitEffect.draw(sctx, P, now);
 
   if (fresh && fused.joints) {
     const J = Object.fromEntries(Object.entries(fused.joints).map(([k, v]) => [k, v?.p]));
@@ -287,17 +284,6 @@ scene.addEventListener('pointerup', () => { drag = null; });
 scene.addEventListener('pointercancel', () => { drag = null; });
 scene.addEventListener('wheel', e => { e.preventDefault(); view.dist = Math.max(1, Math.min(12, view.dist * Math.exp(e.deltaY * 0.001))); }, { passive: false });
 scene.addEventListener('dblclick', resetView);
-$('sound').addEventListener('click', () => {
-  if (audio) { audio.close(); audio = null; $('sound').textContent = '소리 켜기'; return; }
-  try { audio = new AudioContext(); $('sound').textContent = '소리 끄기'; } catch { audio = null; }
-});
-function beep() {
-  if (!audio) return;
-  const o = audio.createOscillator(), g = audio.createGain();
-  o.type = 'square'; o.frequency.value = 180; g.gain.setValueAtTime(0.25, audio.currentTime);
-  g.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + 0.35);
-  o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.35);
-}
 
 function loop(now) {
   try { CAMERAS.forEach(drawCam); drawScene(now); renderInfo(); renderStatus(); }

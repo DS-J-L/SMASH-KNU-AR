@@ -11,7 +11,7 @@
   <header>
     <h1>카메라 1대 근사 3D <small>source=mono_approx · 시험용</small></h1>
     <p id="status" class="status">서버에 연결 중…</p>
-    <button id="sound" type="button">소리 켜기</button>
+    <button id="sound" type="button" aria-pressed="true" title="화면을 한 번 클릭하면 AR 타격음이 활성화됩니다.">소리 끄기</button>
   </header>
   <main>
     <section class="pane">
@@ -27,9 +27,9 @@
     <aside class="pane side">
       <div class="score"><span>건물 타격</span><b id="hits">0</b></div>
       <dl id="info"></dl>
-      <p class="hint">폰에서 <b>/test/mono3d/</b>를 열고 4단계 <b>측정</b>까지 진행하면 여기에 나타납니다. 앞뒤(카메라 방향) 거리가 가장 부정확합니다.</p>
+      <p class="hint">폰에서 <b>/test/mono3d/</b>를 열고 4단계 <b>측정</b>까지 진행하면 여기에 나타납니다. 타격음을 들으려면 화면을 한 번 클릭하세요. 앞뒤(카메라 방향) 거리가 가장 부정확합니다.</p>
     </aside>
   </main>
-  <script type="module" src="./view.js?v=20261109-4"></script>
+  <script type="module" src="./view.js?v=20261121-ar-feedback-2"></script>
 </body>
 </html>

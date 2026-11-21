@@ -6,6 +6,8 @@ import { createPoseLandmarker } from '/camera/pose.js';
 import { calibrateMarker, cameraHeightRange, fovForCameraHeight, markerCorners, orderMarkerCorners, project } from '../mono3d/geometry.js?v=20261109-4';
 import { orientMarkerCorners, graySampler } from './aruco.js?v=20261109-6';
 import { createLink, geometryText } from './link.js?v=20261109-6';
+import { createArHitSound } from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
+import { createArHitEffect } from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 
 const $ = id => document.getElementById(id);
 const view = $('view'), ctx = view.getContext('2d'), sheet = $('sheet');
@@ -22,11 +24,14 @@ const FRAME_MS = 33, JPEG_MS = 250, JPEG_WIDTH = 360, FUSED_STALE_MS = 600;
 const WRIST_COLORS = { left_wrist: '#38bdf8', right_wrist: '#f97316' };
 
 let step = 'camera', facing = 'environment', slot = 'C0';
-let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null, audio = null;
+let stream = null, landmarker = null, landmarkerModel = null, lastTs = -1, wakeLock = null;
+const hitSound = createArHitSound();
+const hitEffect = createArHitEffect();
+window.__arHitEffect = Object.freeze({ snapshot: () => hitEffect.snapshot() });
 let frozen = null, frozenGray = null, corners = [], dragPoint = null, calib = null;
 let latest = null, frames = 0, lastFpsAt = performance.now(), fps = 0, sizeWarned = false;
 let link = null, linkState = {}, lastCalibSent = null, lastFrameAt = 0, lastJpegAt = 0;
-let fused = null, fusedAt = 0, lastHits = 0, hitFlashAt = -1e9;
+let fused = null, fusedAt = 0, hitFlashAt = -1e9;
 const jpegCanvas = document.createElement('canvas');
 
 const num = id => Number($(id).value);
@@ -236,11 +241,15 @@ function connect() {
   link.setEnabled(true);
 }
 function onMessage(m) {
-  if (m.type === 'link_open') lastCalibSent = null;
+  if (m.type === 'link_open') { lastCalibSent = null; hitSound.reset(); hitEffect.clear(); hitFlashAt = -1e9; }
   if (m.type === 'multi3d_fused') {
     fused = m; fusedAt = performance.now();
-    if (m.hits > lastHits || Object.keys(m.hit ?? {}).length) { hitFlashAt = fusedAt; beep(1200, 0.08); }
-    lastHits = m.hits; $('hits').textContent = m.hits;
+    if (hitSound.observeFrame(m)) {
+      hitFlashAt = fusedAt;
+      const name = Object.keys(m.hit ?? {}).find(name => m.joints?.[name]?.p);
+      hitEffect.trigger(m.joints?.[name]?.p, m.building);
+    } else if (m.hits === 0) { hitEffect.clear(); hitFlashAt = -1e9; }
+    $('hits').textContent = m.hits;
     if (m.cameras) { linkState = { ...linkState, cameras: m.cameras }; renderLink(); }
   }
 }
@@ -311,6 +320,7 @@ function draw() {
     if (calib?.K && step !== 'place') drawCalibration(lw);
     drawSkeleton(W, H, lw);
     drawFused(lw);
+    if (step === 'send' && calib?.K) hitEffect.draw(ctx, point => project(calib.K, calib.pose, point));
   }
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   renderText();
@@ -356,7 +366,7 @@ function drawCalibration(lw) {
   line3([0, 0, 0], [0, 0, 0.25], '#3b82f6', lw * 2);
   const b = fused?.building;
   if (step !== 'send' || !b) return;
-  const [hx, hy, hz] = b.half, [cx, cy, cz] = b.center, hit = performance.now() - hitFlashAt < 300;
+  const [hx, hy, hz] = b.half, offset = hitEffect.recoil(), [cx, cy, cz] = b.center.map((value, i) => value + offset[i]), hit = performance.now() - hitFlashAt < 300;
   const v = [-1, 1].flatMap(x => [-1, 1].flatMap(y => [-1, 1].map(z => [cx + x * hx, cy + y * hy, cz + z * hz])));
   for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) {
     if ([0, 1, 2].filter(k => v[i][k] !== v[j][k]).length === 1) line3(v[i], v[j], hit ? '#ef4444' : '#facc15', lw * 1.2);
@@ -401,14 +411,9 @@ function renderText() {
 }
 
 // ---------- sound / misc ----------
-function unlockAudio() { try { audio ??= new AudioContext(); audio.resume?.(); } catch { audio = null; } }
+function unlockAudio() { void hitSound.unlock(); }
 function beep(freq = 660, seconds = 0.12) {
-  if (!audio) return;
-  try {
-    const o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime;
-    o.frequency.value = freq; g.gain.setValueAtTime(0.15, t); g.gain.exponentialRampToValueAtTime(0.001, t + seconds);
-    o.connect(g).connect(audio.destination); o.start(t); o.stop(t + seconds);
-  } catch { /* sound is optional */ }
+  hitSound.beep(freq, seconds);
 }
 async function keepAwake() {
   try { wakeLock = await navigator.wakeLock?.request('screen'); wakeLock?.addEventListener('release', () => { wakeLock = null; }); } catch { /* optional */ }
