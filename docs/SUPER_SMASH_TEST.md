@@ -56,3 +56,6 @@ live/synthetic/replay/데모를 구분한다. 자동 통과를 P3/P4/P5 완료�
 연출 후속 검사: Node에 test_screen_impact/test_impact_audio와 거리 전파 사례를 추가했다. 브라우저 super-smash.spec은 접촉점32ms/화염232ms/먼지932ms 캡처 및 실제 서버 접촉점의 C0 투영 일치를 검사한다. 내부 super_smash/screen_impact_v1 식별자는 호환을 위해 유지한다.
 
 최신 연출 회귀는 Node 전체316개를 --test-concurrency=1로 실행했다. 관련 브라우저19고유 시나리오는17개 통과 후 기존 합성 관측2개를 시각/스트림 계약에 맞춰 수정·재통과했고, 최종 연출3개를 다시 확인했다. 서버 코드/판정·고유 점수/메시지는 이번 연출 변경에서 수정하지 않았다.
+
+
+공유/검토: [PR #24](https://github.com/DS-J-L/SMASH-KNU-AR/pull/24)·[검토 결과](asset-validation/super-smash-pr-review-20261121.json). PR 검토 중 개인 진단 폴더 의존을 제거했고 핵심3대 경로가3회 추가 통과했다. 전체 Python298/Node316/브라우저38 결과는 원본 재검증 기록, 최신 테스트 경로/해시는 검토 결과를 따른다.

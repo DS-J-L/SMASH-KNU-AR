@@ -4,7 +4,17 @@
   "branch": "feat/super-smash-three-camera",
   "base_commit": "d2674c06273d2cec48964fba8555b7d682df6d92",
   "publication": {
-    "state": "local review complete, commit/push/PR pending"
+    "state": "PR open; final documentation commit and SHA-pinned merge pending",
+    "url": "https://github.com/DS-J-L/SMASH-KNU-AR/pull/24",
+    "implementation_commit": "655f15fd5a407b451f253ee63826dcbc8760f003",
+    "base_commit": "d2674c06273d2cec48964fba8555b7d682df6d92",
+    "github_snapshot_kst": "2026-11-21 17:32 KST",
+    "mergeable": true,
+    "statuses": [],
+    "workflow_runs": [],
+    "reviews": [],
+    "meaning": "no GitHub checks/reviews reported; local review and tests are documented; no separate human approval claimed",
+    "authorization": "user explicitly requested PR, review, merge into main and local update"
   },
   "scope": "PM-SS-01/02, PM-FX-01 and L/K/J-SS/FX automatic implementation; multi_view_test only",
   "reviewed_paths": [
@@ -69,6 +79,14 @@
       "source_and_docs": "staged diff --check passed with generated assets excluded",
       "generated_bundle": "whitespace warnings in unchanged upstream shader strings; every flagged line also exists in prior tracked bundle",
       "flagged_lines": 21
+    },
+    "final_documentation": {
+      "relative_links": 51,
+      "missing": [],
+      "json": "passed",
+      "fences": "passed",
+      "phase_checks": "unchanged",
+      "runtime_hashes": 21
     }
   },
   "runtime_sha256": {
