@@ -44,7 +44,10 @@ if(wide){document.body.classList.add('wide-mode');$('legacyLink').hidden=true;
 // buildings; ?scene=it1 keeps the single IT1 building there.
 const keepSingleBuilding=!wide&&new URLSearchParams(location.search).get('scene')==='it1';let zoneRequested=mono||wide||keepSingleBuilding,zonesReady=false;
 $('sceneControl').hidden=!mono&&keepSingleBuilding;
-if(mono){$('sceneLabel').textContent='건물 선택';$('autoNextControl').hidden=false;}
+if(mono){$('sceneLabel').textContent='건물 선택';$('autoNextControl').hidden=false;
+  // 1-camera defaults (2026-11-22, user): next building on, pieces do not collide with the standing building,
+  // no extra breaks from piece impacts. Whole-building blast and support collapse are off on the server.
+  $('autoNext').checked=true;$('impactBreak').checked=false;}
 let loadedScene=null,loadingScene=null,loadGeneration=0,scenePending=false,ownedRoots=[];
 let failedScene=null,sceneBuildings=[];
 let sceneDimensions=[2.810118,1.0844383,.6256438],buildingCount=1,fixedSize=false;
@@ -102,8 +105,12 @@ function drawHitEffect(s,camera,container,now){
     v.fromArray(p).project(camera);return [(v.x+1)/2*w,(1-v.y)/2*h];
   },now);
 }
+// 1-camera fixed buildings (2026-11-22): 0.6~0.7 m tall, within 1.0 m x 0.75 m; body capture does not resize them.
+const MONO_FIXED_TEXT='1대 고정 크기 · 높이 0.6~0.7m · 가로 1m·깊이 0.75m 이내 · 몸 보정과 무관';
+const monoFixed=()=>mono&&typeof loadedScene==='string'&&loadedScene.startsWith('single:');
 function previewSize(){
   const scale=Number($('scale').value);
+  if(monoFixed()){$('sizePreview').textContent=MONO_FIXED_TEXT;return;}
   if(wide){$('sizePreview').textContent='무대 세트 크기 · 몸 보정과 무관 · 마커 간격에 맞춰 배치';return;}
   if(state?.body_reference){$('sizePreview').textContent=`최고 높이 ${state.display_height_m.toFixed(2)}m · 최초 허리의 70% · 구역 내 비율 유지`;return;}
   if(fixedSize){$('sizePreview').textContent='몸 보정 후 최고 높이를 허리의 70%로 고정 · 구역 내 비율 유지';return;}
@@ -112,7 +119,7 @@ function previewSize(){
   $('sizePreview').textContent=`적용 예정 · 높이 약 ${(sceneDimensions[1]*scale).toFixed(2)}m · 폭 ${(sceneDimensions[0]*scale).toFixed(2)}m · 깊이 ${(sceneDimensions[2]*scale).toFixed(2)}m`;
 }
 const physicsOptions={...DEFAULT_PHYSICS};
-if(wide){physicsOptions.building=false;document.querySelector('[data-physics="building"]').checked=false;}   // stage default (2026-11-20)
+if(wide||mono){physicsOptions.building=false;document.querySelector('[data-physics="building"]').checked=false;}   // stage default (2026-11-20), 1-camera (2026-11-22)
 const scenes = [], pieces = new Map(), cameras = new Map();
 const status = text => { $('status').textContent = text; };
 function scene() {
@@ -262,11 +269,11 @@ function syncState(m) {
   if(feedback&&m.smash_mode==='normal')for(const id of ['mouseMode','blastMode','blastRadius','pushStrength','collapse','impactBreak'])$(id).disabled=false;
   if(wide&&m.stage){stageOwner=m.stage.owner;if(stageSpacing!==m.stage.spacing_m){stageSpacing=m.stage.spacing_m;placeMarkers(stageSpacing);if(document.activeElement!==$('stageSpacing'))$('stageSpacing').value=stageSpacing;}
     if(stageListSpacing!==m.stage.spacing_m)loadStageList(m.stage.spacing_m).catch(showLoadError);}
-  $('bodyReference').textContent=wide?`무대 세트 크기 · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
+  $('bodyReference').textContent=monoFixed()?(m.body_reference?'몸 보정 완료 · 깊이 추정에만 사용 · 건물 크기 고정':'건물 크기 고정 · 몸 보정은 깊이 추정에 사용'):wide?`무대 세트 크기 · 몸 보정과 무관 · 이 세트 최고 높이 ${(m.stage?.height_m??0).toFixed(2)}m`:m.body_calibration?.state==='capturing'?`몸 보정 중 · 마커 위 직립 유지 (${m.body_calibration.samples}프레임)`:m.body_reference?`건물 최고 ${m.display_height_m.toFixed(2)}m · 처음 허리 ${m.body_reference.waist_height_m.toFixed(2)}m의 70% · 위치 고정`:mono?'사람 보정 대기 · 먼저 폰에서 보정하세요':'3대: 몸 보정 생략 · 현재 고정 크기 사용';
   for(const id of ['x','y','yaw'])$(id).disabled=!!m.body_reference;
   $('scale').disabled=$('sizeRange').disabled=fixedSize||!!m.body_reference;
   const desired=m.scene_id??'it1';
-  if(!zoneRequested&&desired==='it1'&&zonesReady){zoneRequested=true;$('sceneSelect').selectedIndex=0;$('sceneSelect').onchange();return;}
+  if(!mono&&!zoneRequested&&desired==='it1'&&zonesReady){zoneRequested=true;$('sceneSelect').selectedIndex=0;$('sceneSelect').onchange();return;}
   if(desired!==loadedScene){
     if(failedScene===desired)return;
     if(loadingScene!==desired)loadScene(desired).catch(showLoadError);
@@ -531,7 +538,7 @@ async function loadScene(id){
   fixedSize=spec.fixed_size;
   for(const key of ['sizeRange','scale'])$(key).disabled=fixedSize;
   $('buildingSize').querySelector('h3').textContent=fixedSize?'건물 크기 · 고정':'건물 크기';
-  $('buildingSize').querySelector('small').textContent=wide?'무대 세트에 정한 크기를 사용합니다. 마커 간격이 좁으면 건물 전체가 축소됩니다.':fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
+  $('buildingSize').querySelector('small').textContent=mono&&id.startsWith('single:')?MONO_FIXED_TEXT:wide?'무대 세트에 정한 크기를 사용합니다. 마커 간격이 좁으면 건물 전체가 축소됩니다.':fixedSize?'몸 보정 후 각 구역의 최고 높이를 같은 기준으로 맞춥니다. 구역 안 건물의 비율은 유지합니다.':'폭·깊이·높이를 같은 비율로 바꿉니다. 적용하면 파편을 복원합니다.';
   for(const f of colliderData.fragments)pieces.set(f.fragment_id,f.node);
   for(const s of scenes){const assembled=assembleScene(spec,models);s.outer.add(assembled.root);s.nodes=assembled.nodes;}
   loadedScene=id;loadingScene=null;scenePending=false;ready=true;epoch=null;
@@ -562,14 +569,18 @@ async function loadStageList(spacing){
 async function load(){
   if(wide){$('sceneLabel').textContent='무대 세트';await loadStageList(duo?2:1.5);status(`${duo?'2대 무대':'넓은 무대'} 세트를 서버에서 받는 중…`);return;}
   if(mono||!keepSingleBuilding){const r=await fetch('/api/test/building-scenes?kind='+(mono?'single':'zone'));if(!r.ok)throw new Error('구역 목록을 불러올 수 없습니다.');
-    const groups=new Map();if(!mono)$('sceneSelect').replaceChildren();
+    const groups=new Map();$('sceneSelect').replaceChildren();let it1Item=null;
     for(const item of await r.json()){
-      if(item.id==='it1')continue;
+      if(item.id==='it1'){it1Item=item;continue;}
       if(!groups.has(item.parent_id)){const group=document.createElement('optgroup');group.label=item.parent_label;groups.set(item.parent_id,group);$('sceneSelect').append(group);}
-      const option=document.createElement('option');option.value=item.id;option.textContent=mono?`${item.label} · 높이 ${item.height_m}m`:`${item.label} · ${item.building_count}개`;groups.get(item.parent_id).append(option);
-    }zonesReady=true;}
+      const option=document.createElement('option');option.value=item.id;option.textContent=mono?`${item.label} · 가로 ${item.width_m}m · 높이 ${item.height_m}m`:`${item.label} · ${item.building_count}개`;groups.get(item.parent_id).append(option);
+    }
+    // 1 camera: the old resizable IT1 stays last as a test entry (the 3-camera zone list never listed it).
+    if(mono)$('sceneSelect').append(Object.assign(document.createElement('option'),{value:'it1',textContent:it1Item?.label??'IT1 단독 시험'}));
+    zonesReady=true;}
   // The wide stage server already holds a zone; its first model state picks the scene to load.
-  if(!wide)await loadScene('it1');else status(`${duo?'2대 무대':'넓은 무대'} 구역을 서버에서 받는 중…`);
+  // 1 camera: the server holds the building (default: the fixed-size IT1); its first state picks it.
+  if(!wide&&!mono)await loadScene('it1');else if(mono)status('1대 건물을 서버에서 받는 중…');else status(`${duo?'2대 무대':'넓은 무대'} 구역을 서버에서 받는 중…`);
 }
 function draw(now){
   feedback?.draw(now);

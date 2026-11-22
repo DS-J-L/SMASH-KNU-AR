@@ -317,6 +317,11 @@ def apply_body_reference(model, reference):
     waist=reference.get('waist_height_m')
     if type(waist) not in (int,float) or not math.isfinite(waist) or not .6<=waist<=1.3:raise ValueError('invalid waist height')
     if model.body_reference and model.body_reference['id']==reference['id']:return model
+    from .building_scenes import SINGLE_PREFIX
+    if model.scene_id.startswith(SINGLE_PREFIX):
+        # 1-camera buildings have a fixed size (2026-11-22): the capture only feeds the depth estimate.
+        model.body_reference=dict(reference);model.reset()
+        return model
     base=target_for(Placement(scale=1),model.scene_id)
     scale=waist*BUILDING_HEIGHT_RATIO/base.hi[2]
     # Zone factory defaults to scale=1; apply the frozen person factor afterwards.

@@ -95,9 +95,34 @@ def single_buildings():
              'height_m':round(fixed_height(id),3)} for id in seen]
 
 
+# 1-camera mode (2026-11-22, user decision): the same buildings as the duo stage, at about a quarter of its footprint:
+# 0.6~0.7 m tall, footprint within 1.0 m wide x 0.75 m deep (same squeeze rule). The size is fixed (body capture
+# no longer resizes it); buildings lower than 0.36 m are left out. The old resizable IT1 stays last as a test entry.
+MONO_HEIGHT_BAND_M=(.6,.7)
+MONO_MAX_WIDTH_M=1.0
+MONO_MAX_DEPTH_M=.75
+MONO_MIN_HEIGHT_M=.36       # same rule as the stages (60% of the band's low end): very low, long ones are left out
+
+
+@lru_cache(maxsize=1)
+def mono_buildings():
+    """1-camera list: the duo stage buildings that stay tall enough, IT1 first (the default)."""
+    ids=[i for i in stage_buildings() if mono_size(i)[1]>=MONO_MIN_HEIGHT_M-1e-9]
+    it1='knu-it1-v3'
+    return ([it1] if it1 in ids else [])+[i for i in ids if i!=it1]
+
+
+MONO_DEFAULT_SCENE=SINGLE_PREFIX+'knu-it1-v3'
+
+
 def single_scene_list():
-    """1-camera mode: IT1 first, then every eligible building on its own."""
-    return [{'id':'it1','label':'IT1 단독 시험','building_count':1,'kind':'single'}]+single_buildings()
+    """1-camera mode: every mono building on its own (fixed size), then the old resizable IT1 test entry."""
+    base={b['id']:b for b in single_buildings()}
+    out=[]
+    for id in mono_buildings():
+        w,h,d=mono_size(id)
+        out.append({**base[SINGLE_PREFIX+id],'height_m':round(h,3),'width_m':round(w,3),'depth_m':round(d,3)})
+    return out+[{'id':'it1','label':'IT1 크기 조절 시험 (고정 크기 아님)','building_count':1,'kind':'single'}]
 
 
 def is_single_scene(scene_id):
@@ -150,18 +175,33 @@ def campus_size(package_id):
     return [v*absolute_campus_scale()/m['scale_from_campus'] for v in m['dimensions_m']]
 
 
-@lru_cache(maxsize=1)
-def stage_axes():
-    """Per-axis scale [x width, y height, z depth] from each eligible building's campus size to its stage size."""
+def _axes(band,max_w,max_d):
+    """Per-axis scale [x width, y height, z depth] from each eligible building's campus size: taller on campus ->
+    nearer the top of the height band; only a too-long footprint axis is squeezed (at most by half), then all of it."""
     ids=[b['id'][len(SINGLE_PREFIX):] for b in single_buildings()]
     real={id:campus_size(id) for id in ids};hs=[v[1] for v in real.values()];lo,hi=min(hs),max(hs)
-    a,b=STAGE_HEIGHT_BAND_M;out={}
+    a,b=band;out={}
     for id,(w,h,d) in real.items():
         k=(a+(b-a)*((h-lo)/(hi-lo) if hi>lo else 1))/h
-        need=max(w*k/STAGE_MAX_WIDTH_M,d*k/STAGE_MAX_DEPTH_M,1)
+        need=max(w*k/max_w,d*k/max_d,1)
         if need>1/STAGE_MIN_SQUEEZE:k*=1/(STAGE_MIN_SQUEEZE*need)   # squeezing alone is not enough: shrink it all
-        out[id]=(min(k,STAGE_MAX_WIDTH_M/w),k,min(k,STAGE_MAX_DEPTH_M/d))
+        out[id]=(min(k,max_w/w),k,min(k,max_d/d))
     return out
+
+
+@lru_cache(maxsize=1)
+def stage_axes():
+    return _axes(STAGE_HEIGHT_BAND_M,STAGE_MAX_WIDTH_M,STAGE_MAX_DEPTH_M)
+
+
+@lru_cache(maxsize=1)
+def mono_axes():
+    return _axes(MONO_HEIGHT_BAND_M,MONO_MAX_WIDTH_M,MONO_MAX_DEPTH_M)
+
+
+def mono_size(package_id):
+    """[width, height, depth] in metres in the 1-camera mode."""
+    return [v*k for v,k in zip(campus_size(package_id),mono_axes()[package_id])]
 
 
 def stage_factor(package_id):
@@ -234,7 +274,7 @@ def scene_spec(scene_id='it1'):
               'max_footprint_m':[STAGE_MAX_WIDTH_M,STAGE_MAX_DEPTH_M],'sections':sections}
     if scene_id.startswith(SINGLE_PREFIX):
         package=scene_id[len(SINGLE_PREFIX):]
-        if package not in {b['id'][len(SINGLE_PREFIX):] for b in single_buildings()}:raise ValueError('unknown scene')
+        if package not in mono_buildings():raise ValueError('unknown scene')
         zone={'id':scene_id,'label':metadata[package][0]['label'],'packages':[package]}
     if scene_id!='it1' and not zone:raise ValueError('unknown scene')
     ids=['knu-it1-v3'] if scene_id=='it1' else zone['packages']
@@ -245,7 +285,11 @@ def scene_spec(scene_id='it1'):
         campus_scale=absolute_campus_scale()
         # Compact test stage: preserve authored proportions, not campus distances.
         factors=[campus_scale/m['scale_from_campus'] for _,m in packages]
-        if wide:
+        if scene_id.startswith(SINGLE_PREFIX):
+            # 1-camera fixed size (per axis, like the stages), standing on the marker.
+            sizes=[mono_size(id) for id in ids];offsets=[[0,0,0]];group_dimensions=sizes[0]
+            factors=[[f*k for k in mono_axes()[id]] for f,id in zip(factors,ids)]
+        elif wide:
             # Per-axis stage size (footprint may be squeezed); a stage narrower than the building shrinks it as a whole.
             sizes=[stage_size(id) for id in ids]
             offsets,group_dimensions,wide['pitch_m'],wide['fit_scale']=wide_layout(sizes,wide['spacing_m'],wide['sections'])

@@ -30,6 +30,20 @@ CLOSE_BAD_REQUEST = 4400
 log = logging.getLogger("smash.mono3d")
 
 
+
+def new_mono_model():
+    from .building_scenes import MONO_DEFAULT_SCENE
+    from .fragment_test import FragmentTest
+    from .model_strike import Placement
+    return mono_model(FragmentTest(Placement(scale=1.0),MONO_DEFAULT_SCENE))
+
+
+def mono_model(model):
+    """1-camera defaults (2026-11-22, user): a hit breaks what it touches; no whole-building blast, no support collapse.
+    Scene changes keep whatever the PC sets afterwards (model_command copies these)."""
+    model.approximate=True;model.blast_enabled=False;model.collapse=False
+    return model
+
 class Mono3dRelay:
     def __init__(self) -> None:
         self.phone: Peer | None = None
@@ -117,7 +131,7 @@ def mono3d_router() -> APIRouter:
             if websocket.query_params.get('model')=='it1':
                 from .fragment_test import FragmentTest
                 if relay.model is None:
-                    relay.model=FragmentTest();relay.model.approximate=True;relay.model.depth_margin=0
+                    relay.model=new_mono_model();relay.model.depth_margin=0
                 relay.model_viewers.add(peer)
             for kind in ("mono3d_calib", "mono3d_frame", "mono3d_jpeg"):
                 if kind in relay.last:
@@ -127,7 +141,7 @@ def mono3d_router() -> APIRouter:
             old, relay.phone = relay.phone, peer
             if relay.model is None:
                 from .fragment_test import FragmentTest
-                relay.model=await asyncio.to_thread(FragmentTest);relay.model.approximate=True
+                relay.model=await asyncio.to_thread(new_mono_model)
             relay.last.clear()
             if relay.model:relay.model.clear_tracking()
             if old is not None:
