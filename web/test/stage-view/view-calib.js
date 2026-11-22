@@ -1,7 +1,7 @@
 // View-only phone of the duo stage (docs/DUO_STAGE_TEST.md): its pose from both floor markers at once.
 // Pure functions (no DOM) so Node tests run the same code as the phone.
 import {solvePlanePoints,fovForPlanePointsHeight,stageMarkerPlane,project,intrinsicsFromFov,homographyLS,planePose,
-  markerCorners,solveLinear,transposeMul,scale} from '../mono3d/geometry.js?v=20261117-d1';
+  markerCorners,solveLinear,transposeMul,scale,pixelRay,intersectZ,matVec,add} from '../mono3d/geometry.js?v=20261117-d1';
 
 export const VIEW_MARKER_IDS=[0,1];
 // A measured layout this far from the entered one moves the judging phones' coordinates visibly (2° at 1.5 m ≈ 5 cm).
@@ -20,7 +20,44 @@ export function solveViewPose({width,height,corners,markers,sideM,cameraHeightM,
   // Same practical limit as the single-marker calibration, per 720 px of the short side.
   const limit=3*Math.min(width,height)/720;
   if(!(r.reprojection_max_px<=limit))return {ok:false,reason:'marker_reprojection_error',reprojection_max_px:r.reprojection_max_px,limit,layout};
-  return {...r,fov_diag_deg:fov,plane,pixels,layout};
+  // 2026-11-22: when the free layout solved, V uses that pose instead (it also fits a marker placed a little off),
+  // in the frame of the line through both marker centres (origin at their midpoint). The rigid fit above stays the
+  // check that the entered spacing matches the floor. The building is drawn in this frame and the judging phones'
+  // coordinates are corrected into it with each marker's floor pose (marker_poses).
+  const free=layout.ok?centreLineCalibration(layout):null;
+  const out=free?{...r,K:free.K,pose:free.pose,fov_diag_deg:layout.fov_diag_deg,reprojection_max_px:layout.reprojection_max_px,
+    camera_height_m:free.pose.C[2],rigid_reprojection_max_px:r.reprojection_max_px,frame:'marker_centre_line'}
+    :{...r,fov_diag_deg:fov,frame:'rigid'};
+  return {...out,plane,pixels,layout,marker_poses:markerPoses(out.K,out.pose,corners,sideM)};
+}
+
+// The free-layout pose (ID0-aligned frame, ID0 centre at markers[0]) re-expressed in the centre-line frame:
+// X_line = Rz(-line)(X_fit - M), so R_line = R_fit Rz(line), t_line = t_fit + R_fit M.
+function centreLineCalibration(layout){
+  const {pose,K,centres,line}=layout.fit;
+  const M=[(centres[0][0]+centres[1][0])/2,(centres[0][1]+centres[1][1])/2,0],c=Math.cos(line),s=Math.sin(line);
+  const Rz=[c,-s,0,s,c,0,0,0,1],R=[0,1,2].flatMap(i=>[0,1,2].map(j=>[0,1,2].reduce((v,k)=>v+pose.R[3*i+k]*Rz[3*k+j],0)));
+  const t=add(pose.t,matVec(pose.R,M)),d=[pose.C[0]-M[0],pose.C[1]-M[1],pose.C[2]];
+  const C=[c*d[0]+s*d[1],-s*d[0]+c*d[1],d[2]];
+  return C[2]>0?{K,pose:{R,t,C}}:null;
+}
+
+// Each marker's real floor pose in the frame V draws the building in (2026-11-22): its corners cast onto the floor
+// with V's pose, then a 2D rigid fit to the marker's square. The server turns and moves each judging phone's
+// coordinates by it, so a marker placed a little off the line no longer moves that phone's hands. When both markers are
+// turned the same way, V's frame already turns with them and the correction is about zero.
+export function markerPoses(K,pose,corners,sideM){
+  const out={};
+  for(const id of VIEW_MARKER_IDS){
+    const floor=corners[id].map(([u,v])=>intersectZ(pixelRay(K,pose,u,v),0));
+    if(floor.some(p=>!p))return null;
+    const local=markerCorners(sideM),mean=a=>[0,1].map(k=>a.reduce((s,p)=>s+p[k],0)/a.length);
+    const cf=mean(floor),cl=mean(local);let dot=0,cross=0;
+    for(let i=0;i<4;i++){const a=[local[i][0]-cl[0],local[i][1]-cl[1]],b=[floor[i][0]-cf[0],floor[i][1]-cf[1]];
+      dot+=a[0]*b[0]+a[1]*b[1];cross+=a[0]*b[1]-a[1]*b[0];}
+    out[id]={center_m:cf.map(v=>Math.round(v*1e4)/1e4),yaw_deg:Math.round(Math.atan2(cross,dot)*180/Math.PI*100)/100};
+  }
+  return out;
 }
 
 // ----- measured marker layout -----
@@ -104,7 +141,8 @@ export function measureMarkerLayout({width,height,corners,markers,sideM,cameraHe
   if(Math.abs(spacing-entered)>LAYOUT_WARN.spacing_m)warn.push('spacing');
   if(yawDeg.some(v=>Math.abs(v)>LAYOUT_WARN.yaw_deg))warn.push('yaw');
   return {ok:true,spacing_m:spacing,entered_spacing_m:entered,yaw_deg:yawDeg,relative_yaw_deg:deg(wrap(yaw)),
-    fov_diag_deg:fov,reprojection_max_px:f.reprojection_max_px,warn};
+    fov_diag_deg:fov,reprojection_max_px:f.reprojection_max_px,warn,
+    fit:{pose:f.pose,K:f.K,line,centres:[[markers[0],0],[markers[1]+dx,dy]]}};
 }
 
 export function layoutText(layout){
@@ -124,7 +162,8 @@ export function viewCalibrationMessage(calib,{spacing,sideM}){
   const {K,pose}=calib;
   return {type:'wide3d_view_calib',schema:'duo_view.v1',image:{width:K.width,height:K.height},
     K:{fx:K.fx,fy:K.fy,cx:K.cx,cy:K.cy},camera:{R:pose.R,t:pose.t,C:pose.C},marker_ids:VIEW_MARKER_IDS,
-    spacing_m:spacing,marker_side_m:sideM,reprojection_max_px:calib.reprojection_max_px,fov_diag_deg:calib.fov_diag_deg};
+    spacing_m:spacing,marker_side_m:sideM,reprojection_max_px:calib.reprojection_max_px,fov_diag_deg:calib.fov_diag_deg,
+    ...(calib.marker_poses?{marker_poses:calib.marker_poses}:{})};
 }
 
 export function reasonText(reason){

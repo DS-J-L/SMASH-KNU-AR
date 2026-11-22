@@ -4,7 +4,7 @@
 // video and sends it with an approximate depth (view-person.js), so the PC shows the person in front of buildings.
 import {createLink} from '../mono3d/link.js?v=20261120-b1';
 import {detectMarker,refineMarker,StableMarker} from '../multi3d/auto-marker.js?v=20261118-s1';
-import {solveViewPose,viewCalibrationMessage,viewLayoutMessage,layoutText,reasonText,project,VIEW_MARKER_IDS} from './view-calib.js?v=20261118-l1';
+import {solveViewPose,viewCalibrationMessage,viewLayoutMessage,layoutText,reasonText,project,VIEW_MARKER_IDS} from './view-calib.js?v=20261122-mp1';
 import {createPoseLandmarker} from '/camera/pose.js?v=20261112-2';
 import {copyPersonMask,skeletonMask,torsoMaskCoverage,MIN_TORSO_MASK_COVERAGE,PERSON_DEPTH_ENCODING} from '../mono3d/person-depth.js?v=20261120-t1';
 import {createRtcSender} from './rtc.js?v=20261120-r1';

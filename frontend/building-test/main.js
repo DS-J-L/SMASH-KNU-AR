@@ -37,7 +37,7 @@ if(wide){document.body.classList.add('wide-mode');$('legacyLink').hidden=true;
   $('autoNext').checked=true;
   if(duo){document.body.classList.add('duo-mode');$('stageSpacing').value=2;$('stageTitle').textContent='2대 무대 · A3 마커 2장 + 반대편 화면 폰';
     $('stageHint').textContent='ID0(C0)·ID1(C1) 마커를 같은 방향(무늬 위쪽=판정 폰에서 먼 쪽)으로 왼쪽부터 일직선에 놓으세요. 간격은 정해져 있지 않습니다(0.5~3m): 자동 적용이 켜져 있으면 화면 폰이 두 마커로 잰 간격을 그대로 씁니다. 끄면 줄자로 잰 간격을 넣으세요. 판정 폰은 각자 자기 마커 앞(높이 두고 내려다봐도 됨), 화면 폰은 반대편에서 두 마커가 모두 보이게 가로로 둡니다.';
-    $('autoSpacingRow').hidden=false;$('viewTransport').hidden=false;
+    $('autoSpacingRow').hidden=false;$('autoRotationRow').hidden=false;$('viewTransport').hidden=false;
     $('captureBody').textContent='판정 폰 몸 보정 시작 · 허리 기준 고정';}
   $('phoneHelp').innerHTML=duo?'판정 폰 2대에서 <a href="/test/mono3d/?stage=duo&camera=C0">C0</a>·<a href="/test/mono3d/?stage=duo&camera=C1">C1</a> 2대 무대 페이지를 열고 각자 자기 번호 A3 마커(ID0 왼쪽·ID1 오른쪽)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 반대편 폰은 <a href="/test/stage-view/">화면 폰</a> 페이지를 가로로 열어 두 마커를 한 번에 인식합니다. 그 영상이 위쪽 메인 화면입니다.':'폰 3대에서 <a href="/test/mono3d/?stage=wide&camera=C0">C0</a>·<a href="/test/mono3d/?stage=wide&camera=C1">C1</a>·<a href="/test/mono3d/?stage=wide&camera=C2">C2</a> 넓은 무대 페이지를 열고, 각자 자기 번호 마커(ID0·ID1·ID2)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 사람이 있는 구간의 폰이 판정합니다. 깊이는 폰별 근사값입니다.';}
 // 1 camera: one building at a time, chosen from a list (IT1 or any single building). 3 cameras: zones of several
@@ -360,7 +360,8 @@ function onMessage(m){
     if(m.type==='rtc_signal_failed'){rtcReceiver.failed(m.reason??'not_connected');return;}
     if(m.type==='rtc_hello')return;
     if(m.type==='wide3d_status'){rtcReceiver.setWanted(!!m.view?.connected);
-      if(typeof m.view?.auto_spacing==='boolean'&&document.activeElement!==$('autoSpacing'))$('autoSpacing').checked=m.view.auto_spacing;}
+      if(typeof m.view?.auto_spacing==='boolean'&&document.activeElement!==$('autoSpacing'))$('autoSpacing').checked=m.view.auto_spacing;
+      if(typeof m.view?.auto_rotation==='boolean'&&document.activeElement!==$('autoRotation'))$('autoRotation').checked=m.view.auto_rotation;}
   }
   if(wide){
     if(m.type==='wide3d_status'){showStage(m);return;}
@@ -414,20 +415,27 @@ function showStage(m){
     return `${id}${m.owner===id?' ★판정':''} · ID${c.marker_id} x=${c.marker_x_m.toFixed(2)}m · ${!c.connected?'연결 대기':!c.calibrated?'마커 보정 대기':!c.body?'몸 보정 대기':c.valid?'사람 ✓':'사람 대기'}`;});
   const v=m.view;
   if(v)parts.unshift(`V 화면 · ${!v.connected?'연결 대기':!v.calibrated?'두 마커 인식 대기':`보정됨 · 높이 ${v.camera_height_m?.toFixed(2)}m · 오차 ${v.reprojection_max_px?.toFixed(1)??'—'}px`}`);
-  // V's measured marker placement. The judging phones only shift by the spacing, so a turned marker turns its
-  // phone's coordinates: about tan(turn) x distance sideways (shown at 1.5 m in front of the marker).
+  // V's measured marker placement. Without the correction a turned marker turns its phone's coordinates: about
+  // tan(turn) x distance sideways (shown at 1.5 m in front of the marker). With it (2026-11-22, default on) the server
+  // turns/moves each judging phone's coordinates by its marker's floor pose measured in V's frame.
   const L=v?.connected?v.layout:null;measuredSpacing=L?.spacing_m??null;
   if(L){const turn=Math.max(...L.yaw_deg.map(Math.abs)),side=Math.round(150*Math.tan(turn*Math.PI/180));
     const advice=[L.warn.includes('yaw')?'마커를 두 마커 중심선에 맞게 돌려 놓고 화면 폰에서 다시 인식':null,L.warn.includes('spacing')?'실측 간격 적용 권장':null].filter(Boolean);
     parts.splice(1,0,`V 실측 · 간격 ${L.spacing_m.toFixed(3)}m(입력 ${m.spacing_m.toFixed(3)}m) · 회전 ${L.yaw_deg.map((y,i)=>`ID${i} ${y>=0?'+':''}${y.toFixed(1)}°`).join(' ')} · 1.5m 앞 옆 어긋남 약 ${side}cm${advice.length?` ⚠ ${advice.join(' / ')}`:''}`);}
   $('applyMeasuredSpacing').hidden=!(duo&&L&&Math.abs(L.spacing_m-m.spacing_m)>=.005);
   if(L)$('applyMeasuredSpacing').textContent=`화면 폰 실측 간격 ${L.spacing_m.toFixed(3)}m 적용`;
+  if(duo&&v?.connected){
+    const fixes=['C0','C1'].map(id=>{const k=m.cameras?.[id]?.correction;if(!k)return null;
+      return k.applied?`${id} 회전 ${k.yaw_deg>=0?'+':''}${k.yaw_deg.toFixed(1)}° · 위치 (${k.x_m.toFixed(3)}, ${k.y_m.toFixed(3)})m`
+        :`${id} ${k.measured?'측정값 범위 밖 · 간격만 적용':'보정 없음 · 간격만 적용'}`;}).filter(Boolean);
+    parts.splice(v.layout?2:1,0,`판정 좌표 보정 ${v.auto_rotation?'켜짐':'꺼짐'} · ${fixes.join(' / ')}`);}
   $('stageStatus').textContent=parts.join('\n');
 }
 let measuredSpacing=null;
 $('applyMeasuredSpacing').onclick=()=>{if(!Number.isFinite(measuredSpacing))return;
   $('stageSpacing').value=String(Math.round(measuredSpacing*1000)/1000);$('applySpacing').onclick();};
 $('autoSpacing').onchange=()=>link.send({type:'duo_auto_spacing',enabled:$('autoSpacing').checked});
+$('autoRotation').onchange=()=>link.send({type:'duo_auto_rotation',enabled:$('autoRotation').checked});
 // ----- duo: V's video over WebRTC, outline computed on this PC -----
 const pcOutline=createPcOutline();
 function depthTexture(d){

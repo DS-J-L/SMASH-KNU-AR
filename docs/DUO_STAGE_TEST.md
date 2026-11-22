@@ -35,6 +35,12 @@
   - 화면 폰 패널과 PC 상태 줄에 `실측 간격 …m(입력 …m) · 회전 ID0 …° ID1 …°`와 `1.5m 앞 옆 어긋남 약 n cm`을 보여 준다. 간격 차이가 3cm를 넘거나 회전이 2°를 넘으면 ⚠로 표시한다. 회전 부호는 위에서 볼 때 반시계가 +다.
   - PC의 **화면 폰 실측 간격 적용** 버튼은 실측 간격을 마커 간격 칸에 넣고 적용한다(입력과 5mm 이상 다를 때만 보임). 그러면 화면 폰이 새 간격으로 자세를 다시 계산한다. 마커 간격 칸은 1mm 단위로 바꿨다.
   - 회전은 **알려 주기만 하고 자동으로 고치지 않는다.** ⚠가 나오면 마커를 두 마커 중심선(바닥 테이프 기준선)에 맞게 돌려 놓고 화면 폰에서 다시 인식한다. 판정 좌표를 회전까지 고치는 자동 보정(서버가 판정 폰별로 회전+이동 적용)은 실측 회전 오차를 실폰에서 확인한 뒤 결정한다.
+  - **2026-11-22 변경(사용자 요청): 판정 좌표 자동 보정.** 위 문장은 이전 결정이며 다음으로 바뀌었다.
+    - 화면 폰은 자유 배치 풀이(ID1 위치·회전도 미지수)가 성공하면 그 자세를 **두 마커 중심을 잇는 선 기준 좌표**(원점=두 중심의 가운데, x축=중심선)로 바꿔 쓴다. 건물도 이 좌표로 그린다. 강체 8점 풀이는 입력 간격이 바닥과 맞는지 확인하는 검사로만 남는다.
+    - 같은 자세로 각 마커의 네 꼭짓점을 바닥에 투영하고 마커 정사각형에 2D 강체로 맞춰 **마커별 바닥 위치·회전**(`marker_poses`)을 구해 `wide3d_view_calib`에 함께 보낸다.
+    - 서버는 2대 무대에서 판정 폰 좌표를 무대 좌표로 옮길 때 간격만큼 옮기는 대신 그 마커의 위치·회전을 적용한다(관절, 사람 기준점, PC로 보내는 판정 폰 카메라 자세 모두). 회전 20° 또는 위치 0.3m를 넘는 측정은 잘못 읽은 것으로 보고 쓰지 않는다. 보정 값이 바뀌면 판정 궤적을 끊고 판정 폰 자세를 다시 보낸다.
+    - PC의 **화면 폰이 잰 마커 회전·위치로 판정 좌표 보정**(기본 켜짐)으로 끌 수 있다. 상태 줄에 `판정 좌표 보정 켜짐 · C0 회전 … · 위치 …`가 나온다. 끄면 간격만 옮기지만 화면 폰은 여전히 중심선 기준으로 그리므로, 마커가 틀어져 있으면 예전보다 더 어긋날 수 있다.
+    - 합성 결과(1280×720, 반대편 3.3m·1.6m, 모서리 잡음 ±0.3px): ID1 5cm·3cm 이동+3°, 두 마커 같은 방향 3°, ID0 −2°·ID1 +2° 세 경우 모두 판정 폰 바닥 점(마커 앞 0.8~1.5m)이 화면 폰 영상의 실제 위치에서 약 0.8px 안에 들어왔다(보정 없이 간격만 옮기면 11~17px). 실폰 정확도는 미검증.
   - 합성 정확도(1280×720·1920×1080, 반대편 3.3m·1.6m, 모서리 잡음 ±0.5~1px): 간격 약 ±1~2cm, 회전 약 ±0.5~1.3°. 잡음이 1px 수준이면 2° 근처에서 경고가 켜졌다 꺼질 수 있다.
 - **무대 기본 옵션(2026-11-20, 사용자 결정):** 넓은 무대·2대 무대 PC 화면은 `건물을 부수면 자동으로 다음 건물` 켬, `광역 타격 · 건물 전체 날리기` 끔, 물리 `남은 건물과 충돌` 끔, `지지 상실 붕괴` 끔으로 시작한다. 전체 날리기·붕괴는 서버 무대가 처음 만들어질 때 꺼지고(PC 체크는 서버 상태를 따름, 다음 건물로 넘어가도 유지), 나머지 둘은 PC 페이지 기본값이다. 1대·3대 삼각측량 화면 기본값은 그대로다.
 - **건물(2026-11-20 변경, 사용자 결정): 무대 세트 하나에 건물 하나**, 타격감을 위해 크게. 높이를 캠퍼스 높이 순서대로 **1.0~1.2m**로 맞추고, 바닥 면은 **가로 2.0m × 깊이 1.5m** 안에 들어가야 한다. 너무 긴 축만 따로 눌러 비율을 바꾸되 최대 절반까지만 누르고, 그래도 넘으면 건물 전체를 줄인다. 결과 높이가 0.6m보다 낮은 아주 납작하고 긴 건물 5개는 뺀다 → 61개 중 **56개, 56세트**(높이 중간값 약 1.0m, 대부분 가로 2.0m·깊이 1.5m). 건물은 무대 가운데(x=0)에 놓인다. 무대 폭(간격×구간 수)이 건물보다 좁으면 건물 전체를 줄인다(`fit_scale`). 파편 꼭짓점·충돌체·화면 배율이 축별 `[가로, 높이, 깊이]` 배율을 같이 쓴다(모델 노드에 회전이 없어 비틀림 없음). 아래 11-18 규칙(폭 0.7~0.8m, 세트당 2~3개)은 대체됐다.
@@ -55,10 +61,11 @@
 ## 연결 규격 (`/ws/test/duo3d`)
 
 - WebRTC 신호(2026-11-20): 서버 → PC 연결 직후 `rtc_hello{id}`. PC → 서버 `rtc_signal{to:'V',data}` → 화면 폰에 `rtc_signal{from:<PC id>,data}`. 화면 폰 → 서버 `rtc_signal{to:<PC id>,data}` → 그 PC에 `rtc_signal{from:'V',data}`. 상대가 없으면 보낸 쪽에 `rtc_signal_failed{to,reason:'not_connected'}`. `data.type`: offer/answer/ice/not_ready(카메라 전)/disabled(JPEG 선택)/bye(PC 떠남, 서버가 보냄). 판정 폰은 보낼 수 없다(`unsupported_message`).
+- 판정 좌표 보정(2026-11-22): PC → 서버 `duo_auto_rotation{enabled}`(기본 true). `wide3d_status.view.auto_rotation`, `wide3d_status.cameras.<C0|C1>.correction{applied,x_m,y_m,yaw_deg,measured}`, 판정 폰 `multi3d_calib`의 `marker_offset_m:[x,y,0]`·`marker_yaw_deg`.
 - 간격 자동 적용(2026-11-20): PC → 서버 `duo_auto_spacing{enabled}`(기본 true). 켜져 있으면 `wide3d_view_layout.spacing_m`이 현재 간격과 5mm 이상 다르고 0.5~3m이면 서버가 그 간격을 적용한다(PC의 간격 적용과 같은 처리). `wide3d_status.view.auto_spacing`에 상태가 들어간다.
 
 - `role=phone&camera=C0|C1`: 넓은 무대와 같은 `mono3d_calib`(`marker_id`=번호)·`mono3d_frame`·`mono3d_jpeg`. `C2`는 거부(`bad_role_or_camera`).
-- `role=phone&camera=V`: `wide3d_view_calib{image,K,camera{R,t,C}(무대 좌표),marker_ids:[0,1],spacing_m,marker_side_m,reprojection_max_px,fov_diag_deg}`, `wide3d_view_layout{spacing_m,entered_spacing_m,yaw_deg:[ID0,ID1],relative_yaw_deg,reprojection_max_px,warn}`(실측 배치, PC 표시용, 2026-11-18), `mono3d_jpeg`만 받는다. 그 밖의 메시지는 `unsupported_message`. 판정 폰이 `wide3d_view_layout`을 보내면 `bad_message`. 서버 → PC `wide3d_status.view.layout`에 마지막 실측값이 들어가고, V가 끊기면 지운다(간격을 바꿔도 실측값은 유지).
+- `role=phone&camera=V`: `wide3d_view_calib{image,K,camera{R,t,C}(무대 좌표),marker_ids:[0,1],spacing_m,marker_side_m,reprojection_max_px,fov_diag_deg,marker_poses?{"0"|"1":{center_m:[x,y],yaw_deg}}}`(marker_poses는 2026-11-22 추가, 없으면 간격만 옮김), `wide3d_view_layout{spacing_m,entered_spacing_m,yaw_deg:[ID0,ID1],relative_yaw_deg,reprojection_max_px,warn}`(실측 배치, PC 표시용, 2026-11-18), `mono3d_jpeg`만 받는다. 그 밖의 메시지는 `unsupported_message`. 판정 폰이 `wide3d_view_layout`을 보내면 `bad_message`. 서버 → PC `wide3d_status.view.layout`에 마지막 실측값이 들어가고, V가 끊기면 지운다(간격을 바꿔도 실측값은 유지).
 - 서버 → 폰: `mono3d_status{camera,owner,layout:'duo',spacing_m,markers{0:x,1:x},view_calibrated}`. 화면 폰에만 판정 폰이 유효 프레임을 보낼 때 `duo_person{camera_id,joints(무대 좌표),source:'mono_approx'}`(최신 값만, 밀리면 버림).
 - 화면 폰 → 서버 `mono3d_jpeg`에 `occlusion{encoding:'camera_z_mm_rg16_alpha_v1',width,height,data(PNG)}`·`occlusion_valid`·`occlusion_reason`을 붙이면 PC로 그대로 전달한다. PC 가림 텍스처는 최대 384×384.
 - 서버 → PC: 넓은 무대 메시지 + `multi3d_calib{camera_id:'V',role:'view',...}`, `wide3d_status.view{connected,calibrated,reprojection_max_px,camera_height_m}`, `multi3d_model_state.model_test.stage.layout='duo'`.

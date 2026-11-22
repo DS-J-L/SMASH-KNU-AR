@@ -123,3 +123,34 @@ test('sub-pixel corners: the far-side view measures spacing and turns from real 
   const r=solveViewPose({width:W,height:H,corners:fine,markers:MARKERS,sideM:SIDE,cameraHeightM:1.6,fovDiagDeg:FOV,autoFov:true});
   assert.ok(r.ok,r.reason);assert.ok(Math.abs(r.fov_diag_deg-FOV)<1,`fov ${r.fov_diag_deg}`);
 });
+
+// 2026-11-22: each marker's floor pose measured in V's frame turns/moves its judging phone's coordinates (server).
+// A judging phone's floor point, corrected that way, must land in V's image where that point really is.
+test('measured marker poses put a judging phone point where V sees it, even with a turned or moved marker',()=>{
+  const turnZ=(a,[x,y])=>[Math.cos(a)*x-Math.sin(a)*y,Math.sin(a)*x+Math.cos(a)*y];
+  const deg=Math.PI/180,points=[[.3,-1.2],[-.4,-.8],[0,-1.5]];   // in front of the marker, towards its judging phone
+  const layouts=[{name:'ID1 moved 5 cm, 3 cm forward, turned 3°',m:{0:[-1,0,0],1:[1.05,.03,3]}},
+    {name:'both turned 3° the same way',m:{0:[-1,0,3],1:[1,0,3]}},
+    {name:'ID0 turned -2°, ID1 +2°',m:{0:[-1,0,-2],1:[1,0,2]}}];
+  for(const {name,m} of layouts){
+    const corners=Object.fromEntries([0,1].map(id=>{const [x,y,a]=m[id];
+      return [id,markerCorners(SIDE).map(c=>{const p=turnZ(a*deg,c);const q=project(K,pose,[p[0]+x,p[1]+y,0]);
+        return [q[0]+.3*Math.sin(id*13+c[0]*97),q[1]+.3*Math.cos(id*7+c[1]*89)];})];}));
+    const r=solveViewPose({width:W,height:H,corners,markers:MARKERS,sideM:SIDE,cameraHeightM:1.6,autoFov:true});
+    assert.ok(r.ok&&r.marker_poses,`${name}: ${r.reason}`);
+    assert.deepEqual(viewCalibrationMessage({...r,spacing:2,sideM:SIDE},{spacing:2,sideM:SIDE}).marker_poses,r.marker_poses);
+    let worst=0,plain=0;
+    for(const id of [0,1])for(const q of points){
+      const [x,y,a]=m[id],real=turnZ(a*deg,q),truthPx=project(K,pose,[real[0]+x,real[1]+y,0]);
+      const mp=r.marker_poses[id],c=turnZ(mp.yaw_deg*deg,q);
+      const fixed=project(r.K,r.pose,[c[0]+mp.center_m[0],c[1]+mp.center_m[1],0]);
+      const shifted=project(r.K,r.pose,[q[0]+MARKERS[id],q[1],0]);
+      worst=Math.max(worst,Math.hypot(fixed[0]-truthPx[0],fixed[1]-truthPx[1]));
+      plain=Math.max(plain,Math.hypot(shifted[0]-truthPx[0],shifted[1]-truthPx[1]));
+    }
+    if(process.env.DUO_POSE_LOG)console.log('POSE',name,worst.toFixed(2),plain.toFixed(2));
+    // Measured (synthetic, ±0.3 px corner noise): about 0.8 px corrected vs 11~17 px with the spacing shift only.
+    assert.ok(worst<2,`${name}: corrected miss ${worst.toFixed(1)} px`);
+    assert.ok(worst<plain/5,`${name}: ${worst.toFixed(1)} vs plain ${plain.toFixed(1)} px`);
+  }
+});
