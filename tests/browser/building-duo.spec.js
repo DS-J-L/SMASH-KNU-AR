@@ -146,14 +146,17 @@ test('duo main screen: the view phone\'s real person outline replaces the joint 
   expect(errors).toEqual([]);
 });
 
-test('duo phone pages: judging phones C0/C1 with A3 and 0.66 m defaults, the view phone page loads',async({page})=>{
+test('duo phone pages: judging phones C0/C1 with A3, no assumed phone height, the view phone page loads',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/test/mono3d/?stage=duo&camera=C1&key=fragment-test');
   await expect(page.locator('[data-wide-camera="C1"]')).toHaveAttribute('aria-checked','true');
   await expect(page.locator('[data-wide-camera="C1"]')).toContainText('오른쪽');
   await expect(page.locator('[data-wide-camera="C2"]')).toBeHidden();
-  await expect(page.locator('#cameraHeight')).toHaveValue('0.66');await expect(page.locator('#markerCm')).toHaveValue('27');
+  // No assumed height (the old 0.66 m default is gone): the marker scan does not start until it is entered.
+  await expect(page.locator('#cameraHeight')).toHaveValue('');await expect(page.locator('#markerCm')).toHaveValue('27');
   await expect(page.locator('#autoMarkerStatus')).toContainText('ID1');
+  await page.evaluate(()=>document.getElementById('autoMarker').click());
+  await expect(page.locator('#autoMarkerStatus')).toContainText('폰 높이');
   await expect(page.locator('#pcLinkHint a').first()).toHaveAttribute('href','/test/building/?mode=duo');
   await page.goto('/test/stage-view/?key=fragment-test');
   await expect(page.locator('#cameraHeight')).toHaveValue('1.6');await expect(page.locator('#markerCm')).toHaveValue('27');
