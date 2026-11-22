@@ -61,12 +61,10 @@ async function freshVideos(page) {
 
 test('room buttons require PC entry and fresh video before starting',async({page})=>{
   const server=await setup(page);
-  const rooms=page.getByRole('region',{name:'방 선택'});
-  for(const roomId of ['room-1','room-2']){
-    await expect(rooms.getByRole('link',{name:`${roomId} PC 입장`,exact:true})).toHaveAttribute('href',`/monitor/${roomId}/`);
-  }
+  // The main page no longer links the rooms (2026-11-22); they are opened by URL.
+  await expect(page.getByRole('link',{name:/PC 입장/})).toHaveCount(0);
   await expect(page.locator('#game-start')).toHaveCount(0);
-  await page.getByRole('link',{name:'room-2 PC 입장'}).click();
+  await page.goto('https://room-ui.test/monitor/room-2/');
   await expect(page).toHaveURL('https://room-ui.test/monitor/room-2/');
   await expect(page.locator('#room-status')).toContainText('room-2');
   await expect(page.locator('[data-start="room-2"]')).toBeDisabled();
@@ -79,7 +77,7 @@ test('room buttons require PC entry and fresh video before starting',async({page
 
 test('server ACK starts sixty seconds, result appears and new round uses a new session',async({page})=>{
   const server=await setup(page);
-  await page.getByRole('link',{name:'room-2 PC 입장'}).click();
+  await page.goto('https://room-ui.test/monitor/room-2/');
   await expect(page.locator('.camera-tile')).toHaveCount(1);
   await freshVideos(page);
   await page.locator('[data-start="room-2"]').click();
@@ -102,14 +100,15 @@ test('server ACK starts sixty seconds, result appears and new round uses a new s
   expect(server.starts[0].session_id).not.toBe(server.starts[1].session_id);
 });
 
-test('printable QR sheet has four fixed public camera URLs and excludes credentials',async({page})=>{
+test('printable QR sheet in the room page has its fixed public camera URLs and excludes credentials',async({page})=>{
   await setup(page);
+  await page.goto('https://room-ui.test/monitor/room-1/');   // the main page no longer has the QR sheet
   await page.locator('#qr-sheet summary').click();
   await page.locator('#qr-base').fill('https://smash.example:8443');
   await page.getByRole('button',{name:'QR 주소 적용'}).click();
-  await expect(page.locator('.qr-card')).toHaveCount(4);
+  await expect(page.locator('.qr-card')).toHaveCount(3);
   const links=await page.locator('.qr-card a').evaluateAll(nodes=>nodes.map(n=>n.href));
-  expect(links).toContain('https://smash.example:8443/camera/room/?room=room-2&camera=C0');
+  expect(links).toContain('https://smash.example:8443/camera/room/?room=room-1&camera=C0');
   expect(links.every(link=>!link.includes('key=')&&!link.includes('token='))).toBe(true);
   await page.locator('#qr-base').fill('https://smash.example:8443/?key=secret');
   await page.getByRole('button',{name:'QR 주소 적용'}).click();
@@ -131,7 +130,7 @@ test('camera room selection restricts single-camera room to C0',async({page})=>{
 
 test('room-1 start stays disabled until three fresh videos and disables after camera loss',async({page})=>{
   const server=await setup(page);
-  await page.getByRole('link',{name:'room-1 PC 입장'}).click();
+  await page.goto('https://room-ui.test/monitor/room-1/');
   await expect(page.locator('#game-start')).toBeDisabled();
   server.setCameras(['C0','C1']); await page.clock.runFor(200);
   await expect(page.locator('#game-start')).toBeDisabled();
@@ -148,7 +147,7 @@ test('room-1 start stays disabled until three fresh videos and disables after ca
 
 for (const roomId of ['room-1','room-2']) test(`${roomId} ACK opens one viewport camera with timer/score and restores after ending`,async({page},info)=>{
   const server=await setup(page,{holdStart:true});
-  await page.getByRole('link',{name:`${roomId} PC 입장`}).click();
+  await page.goto(`https://room-ui.test/monitor/${roomId}/`);
   if(roomId==='room-1')server.setCameras(['C0','C1','C2']);
   await expect(page.locator('.camera-tile')).toHaveCount(roomId==='room-1'?3:1);
   await freshVideos(page);
@@ -207,7 +206,7 @@ for (const roomId of ['room-1','room-2']) test(`${roomId} ACK opens one viewport
 
 test('manual stop waits for server result, prevents double request and permits a fresh session',async({page})=>{
   const server=await setup(page,{holdStop:true});
-  await page.getByRole('link',{name:'room-2 PC 입장'}).click();
+  await page.goto('https://room-ui.test/monitor/room-2/');
   await freshVideos(page);await page.locator('#game-start').click();
   await expect(page.locator('#play-stop')).toBeVisible();
   await page.locator('#play-stop').click();
@@ -235,7 +234,7 @@ test('manual stop waits for server result, prevents double request and permits a
 
 test('frozen required video automatically stops while normal hidden cameras keep playing',async({page})=>{
   const server=await setup(page);
-  await page.getByRole('link',{name:'room-1 PC 입장'}).click();server.setCameras(['C0','C1','C2']);
+  await page.goto('https://room-ui.test/monitor/room-1/');server.setCameras(['C0','C1','C2']);
   await expect(page.locator('.camera-tile')).toHaveCount(3);await freshVideos(page);
   await page.locator('#game-start').click();
   await expect(page.locator('.camera-tile:visible')).toHaveCount(1);

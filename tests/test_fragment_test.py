@@ -273,3 +273,43 @@ def test_overlap_hits_are_rate_limited_per_joint():
     assert out['event'] is None and out['removed_ids'] == [] and out['diagnostics']['right_wrist']['reason'] == 'cooldown'
     j.update({'right_wrist': {'p': inside}}, 400)
     assert j.update({'right_wrist': {'p': moved}}, 433)['event'] is not None
+
+
+def through_path(judge, fraction):
+    """A straight path through the whole depth of IT1 at one height, starting and ending outside."""
+    t = judge.target
+    x, z = (t.lo[0] + t.hi[0]) / 2, t.hi[2] * fraction
+    return [x, t.lo[1] - .15, z], [x, t.hi[1] + .15, z]
+
+
+def test_default_judge_breaks_only_the_first_piece_of_a_path():
+    j = FragmentTest(); j.blast_enabled = False; j.collapse = False
+    a, b = through_path(j, .4)
+    j.update({'right_wrist': {'p': a}}, 0)
+    out = j.update({'right_wrist': {'p': b}}, 33)
+    assert len(out['removed_ids']) == 1 and 'swing_id' not in out['event']
+
+
+def test_sweep_breaks_every_crossed_piece_and_marks_one_effect_per_swing():
+    from backend.fragment_test import crossed_ids
+    j = FragmentTest(); j.blast_enabled = False; j.collapse = False; j.sweep = True
+    a, b = through_path(j, .4)
+    expected = crossed_ids(j.target, a, b)
+    assert len(expected) > 1
+    j.update({'right_wrist': {'p': a}}, 0)
+    first = j.update({'right_wrist': {'p': b}}, 33)
+    assert sorted(first['removed_ids']) == sorted(expected)
+    assert first['score'] == first['event']['points'] == len(expected)
+    assert first['event']['swing_start'] is True
+    # Same swing coming back at another height: more pieces, same swing, no second effect.
+    c = [b[0], a[1], j.target.hi[2] * .6]
+    again = j.update({'right_wrist': {'p': c}}, 66)
+    assert again['event'] is not None and len(again['removed_ids']) > len(expected)
+    assert again['event']['swing_start'] is False and again['event']['swing_id'] == first['event']['swing_id']
+    # After a pause it is a new swing.
+    j.update({'right_wrist': {'p': b}}, 600)
+    d = [b[0], b[1], j.target.hi[2] * .2]
+    j.update({'right_wrist': {'p': d}}, 633)
+    late = j.update({'right_wrist': {'p': [b[0], a[1], d[2]]}}, 666)
+    assert late['event'] is not None and late['event']['swing_start'] is True
+    assert late['event']['swing_id'] != first['event']['swing_id']

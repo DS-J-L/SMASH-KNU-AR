@@ -54,6 +54,10 @@ LAYOUTS = {
     "duo": {"cameras": ("C0", "C1"), "prefix": DUO_PREFIX, "view": True, "spacing_m": 2.0},
 }
 MAX_MESSAGE_BYTES = 512 * 1024
+# duo (2026-11-22): V's measured floor pose of each marker turns/moves that judging phone's coordinates. A pose this far
+# from the nominal one is a misread, not a placement: it is ignored and the plain spacing shift is used.
+MARKER_POSE_MAX_YAW_DEG = 20.0
+MARKER_POSE_MAX_SHIFT_M = 0.3
 AUTO_SPACING_MIN_M = 0.005       # duo: V's measured spacing replaces the stage spacing when it differs this much
 STALE_MS = 400                   # a phone's last valid frame older than this cannot judge
 SWITCH_MARGIN_M = 0.15           # another phone takes over only when the person is this much closer to its marker
@@ -125,13 +129,32 @@ def parse_view_calibration(m: dict, spacing: float) -> dict:
     error = m.get("reprojection_max_px")
     return {"image": {"width": size[0], "height": size[1]}, "K": dict(zip(("fx", "fy", "cx", "cy"), K)),
             "R": R, "t": t, "C": C, "marker_side_m": m.get("marker_side_m"), "spacing_m": float(used),
-            "reprojection_max_px": error if type(error) in (int, float) and math.isfinite(error) else None}
+            "reprojection_max_px": error if type(error) in (int, float) and math.isfinite(error) else None,
+            "marker_poses": parse_marker_poses(m.get("marker_poses"))}
+
+
+def parse_marker_poses(value) -> dict | None:
+    """Optional {"0": {center_m:[x, y], yaw_deg}, "1": {...}} in V's (the building's) stage frame, else None."""
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise ValueError("bad marker_poses")
+    out = {}
+    for marker in (0, 1):
+        p = value.get(str(marker), value.get(marker))
+        centre = finite_list(p.get("center_m"), 2) if isinstance(p, dict) else None
+        yaw = p.get("yaw_deg") if isinstance(p, dict) else None
+        if centre is None or type(yaw) not in (int, float) or not math.isfinite(yaw) or abs(yaw) > 180:
+            raise ValueError("bad marker_poses")
+        out[marker] = (centre[0], centre[1], float(yaw))
+    return out
 
 
 def parse_view_layout(m: dict) -> dict:
     """The markers' real placement measured by the view phone: spacing and each marker's turn from the centre line.
 
-    Informational: the PC shows it and may apply the spacing; the judging coordinates are not rotated by it."""
+    Informational: the PC shows it and may apply the spacing. The judging coordinates use the marker poses in
+    wide3d_view_calib instead (measured in the frame V draws the building in)."""
     spacing, entered = m.get("spacing_m"), m.get("entered_spacing_m")
     yaw, error = finite_list(m.get("yaw_deg"), 2), m.get("reprojection_max_px")
     if type(spacing) not in (int, float) or not math.isfinite(spacing) or not .2 <= spacing <= 10:
@@ -166,6 +189,7 @@ class WideStage:
         self.view_layout: dict | None = None   # duo: V's measured marker spacing/turns (shown on the PC only)
         self.last_outline: dict | None = None  # duo: V's last person outline, re-attached to video-only frames
         self.auto_spacing = self.has_view       # duo: V's measured spacing is applied by itself
+        self.auto_rotation = self.has_view      # duo: V's measured marker poses turn/move the judging coordinates
         self.rtc_ids: dict[str, Peer] = {}      # duo: viewer id -> viewer, for WebRTC signalling with V
         self.phones: dict[str, Peer] = {}
         self.viewers: set[Peer] = set()
@@ -205,6 +229,7 @@ class WideStage:
         old = self.model
         new = await asyncio.to_thread(FragmentTest, Placement(scale=1.0), self.scene_id())
         new.approximate = True
+        new.sweep = self.has_view   # duo only: a swing breaks its whole path, one effect per swing
         if old:
             new.collapse, new.blast_enabled = old.collapse, old.blast_enabled
             new.blast_radius, new.blast_strength, new.depth_margin = old.blast_radius, old.blast_strength, old.depth_margin
@@ -238,15 +263,57 @@ class WideStage:
                 viewer.send_video("model_state", packet)
 
     # ----- coordinates -----
+    def measured_pose(self, camera: str) -> tuple | None:
+        """V's measured floor pose (x, y, yaw_deg) of this phone's marker, when it is used for the judging coordinates."""
+        poses = (self.view_calib or {}).get("marker_poses") if self.has_view and self.auto_rotation else None
+        p = poses.get(int(camera[1:])) if poses else None
+        if p is None:
+            return None
+        x, y, yaw = p
+        if abs(yaw) > MARKER_POSE_MAX_YAW_DEG or math.hypot(x - self.marker_x(camera), y) > MARKER_POSE_MAX_SHIFT_M:
+            return None
+        return p
+
+    def marker_pose(self, camera: str) -> tuple:
+        """Marker-n frame in the stage frame: origin (x, y) and turn (rad). Without V's measurement: (n's x, 0, 0)."""
+        p = self.measured_pose(camera)
+        return (p[0], p[1], math.radians(p[2])) if p else (self.marker_x(camera), 0.0, 0.0)
+
+    def to_stage(self, camera: str, q: list) -> list:
+        ox, oy, a = self.marker_pose(camera)
+        c, s = math.cos(a), math.sin(a)
+        return [ox + c * q[0] - s * q[1], oy + s * q[0] + c * q[1], q[2]]
+
+    def correction_key(self) -> tuple:
+        return tuple(self.marker_pose(c) for c in self.cameras)
+
+    def refresh_correction(self, before: tuple) -> None:
+        """The judging frames moved: old paths would jump, so cut them and re-send the cameras to the PC."""
+        if self.correction_key() == before:
+            return
+        self.frames.clear()
+        self.owner = None
+        self.joint_sources = {}
+        if self.model:
+            self.model.clear_tracking()
+        for camera in self.calibs:
+            self.broadcast_calib(camera)
+
     def stage_calib(self, camera: str) -> dict:
-        """Marker-n frame -> stage frame: X_stage = X_marker + o, so t' = t - R o and C' = C + o."""
-        c, o = self.calibs[camera], self.marker_x(camera)
-        R, t = c["R"], c["t"]
-        shifted_t = [t[i] - R[3 * i] * o for i in range(3)]
+        """Marker-n frame -> stage frame: X_stage = Rz X_marker + o, so R' = R Rz^T, t' = t - R' o and C' = Rz C + o."""
+        c = self.calibs[camera]
+        ox, oy, a = self.marker_pose(camera)
+        cz, sz = math.cos(a), math.sin(a)
+        R, t, C = c["R"], c["t"], c["C"]
+        rzt = [cz, sz, 0.0, -sz, cz, 0.0, 0.0, 0.0, 1.0]
+        Rs = [sum(R[3 * i + k] * rzt[3 * k + j] for k in range(3)) for i in range(3) for j in range(3)]
+        o = [ox, oy, 0.0]
+        ts = [t[i] - sum(Rs[3 * i + k] * o[k] for k in range(3)) for i in range(3)]
+        Cs = [ox + cz * C[0] - sz * C[1], oy + sz * C[0] + cz * C[1], C[2]]
         return {"type": "multi3d_calib", "camera_id": camera, "source": "mono_approx", "stage": "wide",
-                "image": c["image"], "K": c["K"], "R": R, "t": shifted_t, "C": [c["C"][0] + o, c["C"][1], c["C"][2]],
-                "marker_id": int(camera[1:]), "marker_offset_m": [o, 0, 0], "marker_side_m": c["marker_side_m"],
-                "body_calibrated": body_reference(c) is not None}
+                "image": c["image"], "K": c["K"], "R": Rs, "t": ts, "C": Cs,
+                "marker_id": int(camera[1:]), "marker_offset_m": o, "marker_yaw_deg": round(math.degrees(a), 3),
+                "marker_side_m": c["marker_side_m"], "body_calibrated": body_reference(c) is not None}
 
     def broadcast_calib(self, camera: str) -> None:
         packet = self.stage_calib(camera)
@@ -254,13 +321,13 @@ class WideStage:
             viewer.send(packet)
 
     def shift_joints(self, camera: str, joints) -> dict:
-        o = self.marker_x(camera)
         out = {}
         if isinstance(joints, dict):
             for name, p in joints.items():
                 q = finite_list(p, 3)
                 if q is not None and isinstance(name, str):
-                    out[name] = [round(q[0] + o, 4), q[1], q[2]]
+                    x, y, z = self.to_stage(camera, q)
+                    out[name] = [round(x, 4), round(y, 4), z]
         return out
 
     # ----- status -----
@@ -274,12 +341,18 @@ class WideStage:
                        "valid": bool(f and f["valid"] and t - f["at"] <= STALE_MS),
                        "age_ms": round(t - f["at"]) if f else None,
                        "marker_id": int(c[1:]), "marker_x_m": self.marker_x(c)}
+            if self.has_view:
+                ox, oy, a = self.marker_pose(c)
+                measured = (self.view_calib or {}).get("marker_poses") or {}
+                cams[c]["correction"] = {"applied": self.measured_pose(c) is not None, "x_m": round(ox, 4),
+                                         "y_m": round(oy, 4), "yaw_deg": round(math.degrees(a), 2),
+                                         "measured": list(measured[int(c[1:])]) if int(c[1:]) in measured else None}
         view = None
         if self.has_view:
             view = {"connected": VIEW_CAMERA in self.phones, "calibrated": self.view_calib is not None,
                     "reprojection_max_px": (self.view_calib or {}).get("reprojection_max_px"),
                     "camera_height_m": round(self.view_calib["C"][2], 3) if self.view_calib else None,
-                    "layout": self.view_layout, "auto_spacing": self.auto_spacing}
+                    "layout": self.view_layout, "auto_spacing": self.auto_spacing, "auto_rotation": self.auto_rotation}
         return {"type": "wide3d_status", "layout": self.layout, "cameras": cams, "view": view,
                 "owner": self.owner, "spacing_m": self.spacing,
                 "zone_id": self.zone_id, "viewers": len(self.viewers)}
@@ -351,7 +424,7 @@ class WideStage:
         joints = self.shift_joints(camera, m.get("joints")) if valid else {}
         anchor = finite_list(m.get("anchor_m"), 3) if valid else None
         self.frames[camera] = {"at": now_ms(), "valid": valid and bool(joints), "joints": joints,
-                               "anchor_x": anchor[0] + self.marker_x(camera) if anchor else None}
+                               "anchor_x": self.to_stage(camera, anchor)[0] if anchor else None}
         owner = self.choose_owner()
         if owner != self.owner:
             # Another phone's estimate of the same swing differs; never join two phones into one path.
@@ -376,9 +449,11 @@ class WideStage:
         for store in (self.calibs, self.jpegs, self.frames):
             store.pop(camera, None)
         if camera == VIEW_CAMERA:
+            before = self.correction_key()
             self.view_calib = None
             self.view_layout = None
             self.last_outline = None
+            self.refresh_correction(before)
         if self.owner == camera:
             self.owner = None
             if self.model:
@@ -446,6 +521,12 @@ def stage_router(layout: str) -> APIRouter:
                 target = auto_spacing_target()
                 if target is not None:
                     await apply_spacing(target)
+            elif kind == "duo_auto_rotation" and hub.has_view:
+                if type(m.get("enabled")) is not bool:
+                    raise ValueError("enabled must be true or false")
+                before = hub.correction_key()
+                hub.auto_rotation = m["enabled"]
+                hub.refresh_correction(before)
             elif kind == "multi3d_model_scene":
                 zone = m.get("scene_id")
                 if not isinstance(zone, str) or stage_set(hub.sections(), hub.spacing, zone) is None:
@@ -490,12 +571,14 @@ def stage_router(layout: str) -> APIRouter:
 
     async def view_calibration(peer: Peer, m: dict) -> None:
         async with hub.lock:
+            before = hub.correction_key()
             try:
                 hub.view_calib = parse_view_calibration(m, hub.spacing)
             except ValueError as exc:
                 code = "spacing_mismatch" if str(exc) == "spacing_mismatch" else "bad_message"
                 peer.send({"type": "error", "code": code, "detail": str(exc)[:200], "spacing_m": hub.spacing})
                 return
+            hub.refresh_correction(before)
             packet = hub.view_packet()
         for viewer in hub.viewers:
             viewer.send(packet)

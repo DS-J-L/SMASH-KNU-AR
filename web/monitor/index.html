@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMASH-KNU-AR · 방 선택</title>
+  <title>SMASH-KNU-AR · 시험 화면</title>
   <link rel="stylesheet" href="/shared/styles.css">
   <script type="module" src="/monitor/lobby.js"></script>
 </head>
@@ -11,90 +11,24 @@
 <main class="monitor-main">
   <p class="eyebrow">SMASH-KNU-AR · PC</p>
   <h1>경북대 부수기</h1>
-  <p>카메라를 연결할 방을 선택하세요. 한 대로 게임을 시험하려면 방 2를 이용하세요.</p>
+  <p>시험용 3D 화면 두 가지만 엽니다.</p>
   <p id="server-status" role="status" aria-live="polite">서버 연결 확인 중…</p>
-
-  <section aria-labelledby="rooms-title">
-    <h2 id="rooms-title">방 선택</h2>
-    <div class="room-cards">
-      <article>
-        <h3>room-1 · 다중 카메라</h3>
-        <p>C0 · C1 · C2 세 대가 모두 준비돼야 시작할 수 있습니다.</p>
-        <p data-room-summary="room-1">상태 확인 중…</p>
-        <div class="actions">
-          <a class="room-entry" href="/monitor/room-1/">room-1 PC 입장</a>
-          <a class="room-entry" href="/monitor/phone-game/?room=room-1">방 1 폰 좌표 2D 게임</a>
-        </div>
-      </article>
-      <article>
-        <h3>room-2 · 단일 카메라</h3>
-        <p>C0 한 대로 카메라 테스트와 2D 게임을 진행합니다.</p>
-        <p data-room-summary="room-2">상태 확인 중…</p>
-        <div class="actions">
-          <a class="room-entry" href="/monitor/room-2/">room-2 PC 입장</a>
-          <a class="room-entry" href="/monitor/phone-game/?room=room-2">방 2 폰 좌표 2D 게임</a>
-        </div>
-      </article>
-    </div>
-    <p class="muted">PC 입장은 영상 확인 화면입니다. 건물 타격은 2D 게임에서 ‘휴대폰 연결 준비’ → ‘시작’을 누르세요. 폰의 C0 전송 방식은 ‘서버 중계 · JPEG’를 선택하세요. PC 화면은 방마다 하나씩 사용합니다.</p>
-  </section>
-
-  <details id="qr-sheet">
-    <summary>카메라 입장 고정 QR · 출력</summary>
-    <h2>방별 카메라 입장 QR</h2>
-    <p>스캔하면 지정된 방·카메라 번호가 선택됩니다. 폰에서 카메라 권한을 허용하고 입장하세요.</p>
-    <div class="field-row qr-tools">
-      <label for="qr-base">휴대폰 접속 서버 주소</label>
-      <input id="qr-base" type="url" placeholder="https://서버주소:8443">
-      <button id="qr-update" type="button">QR 주소 적용</button>
-      <button id="qr-print" type="button">QR 인쇄</button>
-    </div>
-    <p id="qr-message" role="status"></p>
-    <div id="qr-grid" class="qr-grid"></div>
-  </details>
-
-  <section aria-labelledby="tools-title">
-    <h2 id="tools-title">기존 실행·시험 화면</h2>
-    <nav aria-label="실행 및 시험">
-      <a class="room-entry" href="/monitor/single/">1대 카메라 PC 화면·합성 시험</a>
-      <a class="room-entry" href="/monitor/fracture/">건물 파괴·복원 키보드 데모</a>
-    </nav>
-    <nav aria-label="카메라 및 서버">
-      <a href="/camera/room/">카메라로 입장</a>
-      <a href="/docs">서버 API 문서</a>
-    </nav>
-  </section>
-
-  <section aria-labelledby="test3d-title">
-    <h2 id="test3d-title">3D 시험 페이지 (시험용)</h2>
-    <p class="muted">바닥 마커(ArUco 4x4 ID0, 20cm)로 폰 위치를 구해 손목 3D와 마커 자리 건물 타격을 시험합니다. 위의 방·게임과 연결되지 않으며, 결과는 시험용 값입니다.</p>
-    <div class="room-cards">
-      <article>
-        <h3>카메라 1대 · 근사 3D</h3>
-        <p>폰 한 대와 몸 크기로 깊이를 추정합니다. 폰에서 <code>/test/mono3d/</code>를 여세요.</p>
-        <div class="actions">
-          <a class="room-entry" href="/test/building/?mode=mono">PC 모델·물리 화면</a>
-          <a class="room-entry" href="/test/mono3d/">폰 페이지</a>
-        </div>
-      </article>
-      <article>
-        <h3>카메라 3대 · 삼각측량 3D</h3>
-        <p>폰마다 C0·C1·C2를 고릅니다. 폰끼리 60~120° 벌려 두세요. 폰에서 <code>/test/multi3d/</code>를 여세요.</p>
-        <div class="actions">
-          <a class="room-entry" href="/test/multi3d/view.html">PC 화면</a>
-          <a class="room-entry" href="/test/building/">IT1 파편 접촉 시험</a>
-          <a class="room-entry" href="/test/multi3d/">폰 페이지</a>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <section aria-labelledby="duo-entry-title">
     <h2 id="duo-entry-title">2대 무대 입장 (시험용)</h2>
-    <p class="muted">판정 폰 2대(A3 마커 ID0·ID1, 높이 0.66m, 2m 간격)와 반대편 화면 폰 1대(높이 1.6m, 가로)로 메인 화면을 만듭니다. 설명은 저장소의 docs/DUO_STAGE_TEST.md에 있습니다.</p>
+    <p class="muted">판정 폰 2대(A3 마커 ID0·ID1, 폰 높이는 줄자로 재서 입력)와 반대편 화면 폰 1대(높이 1.6m, 가로)로 메인 화면을 만듭니다. 설명은 저장소의 docs/DUO_STAGE_TEST.md에 있습니다.</p>
     <nav class="entry-buttons" aria-label="2대 무대 입장">
       <a class="room-entry" href="/test/duo/">폰으로 입장</a>
       <a class="room-entry" href="/test/building/?mode=duo">PC로 입장</a>
+    </nav>
+  </section>
+
+  <section aria-labelledby="mono-entry-title">
+    <h2 id="mono-entry-title">카메라 1대 · 근사 3D (시험용)</h2>
+    <p class="muted">폰 한 대와 바닥 마커(ArUco 4x4 ID0)로 폰 위치를 구하고, 몸 크기로 깊이를 추정해 건물 타격을 시험합니다. 결과는 시험용 값입니다.</p>
+    <nav class="entry-buttons" aria-label="카메라 1대 근사 3D 입장">
+      <a class="room-entry" href="/test/mono3d/">폰 페이지</a>
+      <a class="room-entry" href="/test/building/?mode=mono">PC 모델·물리 화면</a>
     </nav>
   </section>
 

@@ -2,6 +2,12 @@ import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
 const data=JSON.parse(execFileSync('.venv/Scripts/python.exe',['-c',
   "import sys,json;sys.path.insert(0,'tests');from test_fragment_test import browser_case;print(json.dumps(browser_case()))"],{encoding:'utf8'}));
+// 1 camera starts on a fixed-size building (2026-11-22); these tests use the resizable IT1 test entry and its paths.
+async function monoIt1(page){
+  await page.locator('#sceneSelect').selectOption('it1');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest?.snapshot().sceneId),{timeout:60000}).toBe('it1');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+}
 test('a delayed server option snapshot cannot undo the checkbox before its acknowledgement',async({page})=>{
   let lastState,delayed=0;
   await page.routeWebSocket('**/ws/test/mono3d**',route=>{
@@ -15,9 +21,11 @@ test('a delayed server option snapshot cannot undo the checkbox before its ackno
       }else server.send(raw);
     });
   });
-  await page.goto('/test/building/?mode=mono&key=fragment-test');
+  await page.goto('/test/building/?mode=mono&key=fragment-test');await monoIt1(page);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest?.snapshot().ready)).toBe(true);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().connected)).toBe(true);
+  // 1-camera default is off (2026-11-22); wait for the server state to reach the checkbox before turning it on.
+  await expect(page.locator('#blastMode')).not.toBeChecked();
   await page.locator('#blastMode').check();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(true);
   await page.locator('#blastMode').uncheck();
@@ -106,7 +114,7 @@ test('already released fragments accept another directional mouse push',async({p
   for(const name of ['gravity','building','debris'])await page.locator(`[data-physics="${name}"]`).uncheck();
   await page.locator('#impactBreak').uncheck();await page.locator('#stress').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.dynamic)).toBe(96);
-  await page.locator('#orbit canvas').click();
+  await page.locator('#orbit canvas[data-engine]').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.mousePushes)).toBe(1);
   await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
@@ -165,7 +173,7 @@ test('mouse without phones: OFF and orbit drag do not hit, click releases a real
   await page.locator('#blastMode').uncheck();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(false);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().collapse)).toBe(false);
-  const canvas=page.locator('#orbit canvas');
+  const canvas=page.locator('#orbit canvas[data-engine]');
   await page.locator('#mouseMode').uncheck();await canvas.click();
   await expect(page.locator('#count')).toHaveText('0 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('0점 · 파편 1개당 1점');
@@ -195,7 +203,7 @@ test('mouse without phones: OFF and orbit drag do not hit, click releases a real
 test('wide mouse strike launches the whole IT1 and distance limit remains adjustable',async({page})=>{
   await page.goto('/test/building/?scene=it1&key=fragment-test');await expect(page.locator('#dimensions')).toContainText('고정 높이');
   await page.locator('#blastMode').check();await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(true);
-  await page.locator('#orbit canvas').click();
+  await page.locator('#orbit canvas[data-engine]').click();
   await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.blasts)).toBe(1);
@@ -210,7 +218,7 @@ test('wide mouse strike launches the whole IT1 and distance limit remains adjust
 
 test('one approximate camera: model overlay, wrist blast and mouse restore use the mono relay',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('/test/building/?mode=mono&key=fragment-test');
+  await page.goto('/test/building/?mode=mono&key=fragment-test');await monoIt1(page);
   await expect(page.locator('#sourceMode')).toContainText('mono_approx');
   await expect(page.locator('#dimensions')).toContainText('고정 높이');
   await expect(page.locator('.camera')).toHaveCount(1);
@@ -239,7 +247,7 @@ test('one approximate camera: model overlay, wrist blast and mouse restore use t
   await page.screenshot({path:'test-results/building-fragments/mono-building.png',fullPage:true});
   await page.locator('#restore').click();await expect(page.locator('#count')).toHaveText('0 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('0점 · 파편 1개당 1점');
-  await page.locator('#orbit canvas').click();await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
+  await page.locator('#orbit canvas[data-engine]').click();await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
   await page.evaluate(()=>window.monoPhone.close());
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.activeHands)).toBe(0);
@@ -249,7 +257,7 @@ test('one approximate camera: model overlay, wrist blast and mouse restore use t
 });
 
 test('mono depth offset: strict miss becomes a deliberate swing hit with an explicit allowance',async({page})=>{
-  await page.goto('/test/building/?mode=mono&key=fragment-test');await expect(page.locator('#dimensions')).toContainText('고정 높이');
+  await page.goto('/test/building/?mode=mono&key=fragment-test');await monoIt1(page);await expect(page.locator('#dimensions')).toContainText('고정 높이');
   await page.locator('#restore').click();await expect(page.locator('#count')).toHaveText('0 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('0점 · 파편 1개당 1점');
   await page.locator('#blastMode').check();await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(true);
@@ -272,6 +280,7 @@ test('mono depth offset: strict miss becomes a deliberate swing hit with an expl
 test('size slider and numeric scale update render and collision placement in both modes',async({page})=>{
   for(const mode of ['', '?mode=mono']){
     await page.goto(`/test/building/${mode}${mode?'&':'?scene=it1&'}key=fragment-test`);
+    if(mode)await monoIt1(page);
     await expect(page.locator('#dimensions')).toContainText('고정 높이');
     await page.locator('#restore').click();
     const old=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).placement.scale;
@@ -294,7 +303,7 @@ test('size slider and numeric scale update render and collision placement in bot
 });
 
 test('marker body reference drives strict depth contacts and rejects frames without visible feet',async({page})=>{
-  await page.goto('/test/building/?mode=mono&key=fragment-test');
+  await page.goto('/test/building/?mode=mono&key=fragment-test');await monoIt1(page);
   await expect(page.locator('#dimensions')).toContainText('고정 높이');
   await page.locator('#depthMargin').fill('0');await page.locator('#depthMargin').dispatchEvent('change');
   await page.locator('#blastMode').uncheck();await page.locator('#collapse').uncheck();await page.locator('#impactBreak').uncheck();

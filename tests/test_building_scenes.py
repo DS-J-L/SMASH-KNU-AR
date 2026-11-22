@@ -86,14 +86,18 @@ def test_scene_catalog_routes_are_protected_and_unknown_ids_are_refused():
         assert c.get('/api/test/building-scenes/not-a-zone').status_code==404
 
 
-def test_single_building_list_has_it1_and_every_eligible_building_once():
+def test_single_building_list_is_the_fixed_size_stage_buildings_then_the_it1_test_entry():
+    # 2026-11-22: the duo stage buildings at 0.6~0.7 m tall within 1.0 m x 0.75 m (lower than 0.36 m left out),
+    # IT1 first; the old resizable IT1 is the last, test-only entry.
+    from backend.building_scenes import stage_buildings
     singles=single_scene_list()
     ids=[s['id'] for s in singles]
-    assert ids[0]=='it1' and len(ids)==len(set(ids))==62
-    zone_packages={p for z in small_zones() for p in z['packages']}
-    assert {i[len('single:'):] for i in ids[1:]}==zone_packages
-    for item in singles[1:6]:
+    assert ids[0]=='single:knu-it1-v3' and ids[-1]=='it1' and len(ids)==len(set(ids))==50
+    assert {i[len('single:'):] for i in ids[:-1]}<=set(stage_buildings())
+    for item in singles[:-1]:
         spec=scene_spec(item['id'])
+        w,h,d=spec['dimensions_m']
         assert spec['building_count']==1 and spec['fixed_size'] and spec['colliders']['fragments']
         assert spec['colliders']['fragments'][0]['fragment_id']==0
-        assert abs(spec['dimensions_m'][1]-item['height_m'])<.01
+        assert w<=1.0+1e-6 and d<=.75+1e-6 and .36-1e-6<=h<=.7+1e-6
+        assert abs(h-item['height_m'])<.01 and abs(w-item['width_m'])<.01

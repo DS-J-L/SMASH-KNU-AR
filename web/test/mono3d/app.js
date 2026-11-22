@@ -150,8 +150,21 @@ function useSaved() {
   if (calib) { setStep('body'); resetBodyPanel(); }
 }
 
+// Duo judging phones: no assumed height (the old 0.66 m default is gone). The user enters the measured
+// floor-to-lens height; the marker then gives the position and angles, the height fixes the lens FOV.
+const HEIGHT_MIN_M = 0.1, HEIGHT_MAX_M = 3;
+function heightReady() {
+  const v = num('cameraHeight');
+  return !DUO || ($('cameraHeight').value.trim() !== '' && Number.isFinite(v) && v >= HEIGHT_MIN_M && v <= HEIGHT_MAX_M);
+}
+const HEIGHT_NEEDED = `폰 높이(바닥~렌즈, m)를 줄자로 재서 먼저 입력하세요 (${HEIGHT_MIN_M}~${HEIGHT_MAX_M} m). 각도와 위치는 마커로 계산합니다.`;
+function requireHeight() {
+  if (heightReady()) return true;
+  $('autoMarkerStatus').textContent = HEIGHT_NEEDED; $('cameraHeight').focus(); return false;
+}
 function calibrate(W, H, canonical=canonicalMarker) {
   canonicalMarker=canonical;
+  if (!heightReady()) { calib = null; $('calibOut').textContent = HEIGHT_NEEDED; $('toBody').disabled = true; return; }
   if(!canonical)corners = orderMarkerCorners(corners);     // tap order and mirrored display do not matter
   const side = num('markerCm') / 100;
   calib = null;
@@ -600,7 +613,7 @@ $('back').addEventListener('click', goBack);
 $('settingsBtn').addEventListener('click', () => $('settings').showModal());
 $('sheetHandle').addEventListener('click', () => sheet.classList.toggle('collapsed'));
 makeMovable(sheet, $('sheetHandle')); makeMovable($('hud'), $('hudGrip')); initOverlayToggle($('uiToggle'));
-$('tapCorners').addEventListener('click', () => { unlockAudio(); beginTapping(); });
+$('tapCorners').addEventListener('click', () => { unlockAudio(); if (requireHeight()) beginTapping(); });
 $('useSaved').addEventListener('click', useSaved);
 $('undoCorner').addEventListener('click', () => { corners.pop(); updateCornerPrompt(); });
 $('cancelCorners').addEventListener('click', () => { frozen = null; corners = []; setStep('place'); });
@@ -650,14 +663,15 @@ markerScanner=createMarkerScanner(video,(frame,points)=>{corners=points;frozen=n
   if(!calib){corners=[];return ($('calibOut').textContent||'').split(/\r?\n/)[0].slice(0,80)||'품질 부족';}
   $('tapPrompt').hidden=true;$('cornerDone').hidden=false;setStep('corners');
   $('autoMarkerStatus').textContent=calib?'자동 인식 완료 · 초록 테두리를 확인하세요':'모서리를 찾았지만 보정 품질이 부족합니다. 거리/각도를 조절하거나 수동 선택하세요';},text=>{$('autoMarkerStatus').textContent=text;},markerId(),{button:$('autoMarker')});
-$('autoMarker').onclick=()=>{if(step==='place')markerScanner.start();};
+$('autoMarker').onclick=()=>{if(requireHeight()&&step==='place')markerScanner.start();};
 window.addEventListener('pagehide',()=>markerScanner.stop());
 if (WIDE) {
   // Changing the camera number reloads the page so its link, saved calibration and marker id all switch together.
   document.title = `${DUO ? '2대 무대' : '넓은 무대'} ${wideCamera} · 카메라 1대 근사 3D`;
   if (DUO) {
-    // Planned duo setup: judging phones 0.66 m high, A3 markers (270 mm black square). Saved settings still win.
-    $('cameraHeight').value = '0.66'; $('markerCm').value = '27';
+    // Duo: A3 markers (270 mm black square). The phone height has no default: it must be measured and entered.
+    $('cameraHeight').value = ''; $('cameraHeight').placeholder = '줄자로 잰 값'; $('cameraHeight').required = true;
+    $('markerCm').value = '27';
     document.querySelector('[data-wide-camera="C2"]').hidden = true;
     document.querySelector('[data-wide-camera="C1"]').textContent = 'C1 · ID1 오른쪽';
   }

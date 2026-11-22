@@ -25,6 +25,9 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect(page.locator('#autoNext')).toBeChecked();await expect(page.locator('[data-physics="building"]')).not.toBeChecked();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
   let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  // AR hit effect (PR #22 module): nothing on the first state, one burst per accepted strike event.
+  expect(await page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(0);
+  await expect(page.locator('#sound')).toHaveText('소리 끄기');
   expect(s.blastEnabled).toBe(false);expect(s.collapse).toBe(false);expect(s.physics.options.building).toBe(false);
   await expect(page.locator('#blastMode')).not.toBeChecked();await expect(page.locator('#collapse')).not.toBeChecked();
   await page.locator('#autoNext').uncheck();   // this test checks one judged break; auto-next is tested in building-zones
@@ -74,6 +77,9 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length),{timeout:10000}).toBeGreaterThan(0);
   s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   expect(s.owner).toBe('C1');expect(s.removedBuildings.length).toBe(1);
+  await expect.poll(()=>page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(1);
+  // Drawn on the main view (V), the judging views and the 3D view, in stage coordinates.
+  await expect.poll(()=>page.evaluate(()=>window.__arHitEffect.snapshot().renderedFrames)).toBeGreaterThan(0);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().view.proxy)).toMatchObject({visible:true,torso:true});
   await page.evaluate(()=>window.scrollTo(0,0));
   await page.screenshot({path:'test-results/building-fragments/duo-stage.png',fullPage:true});
@@ -140,14 +146,17 @@ test('duo main screen: the view phone\'s real person outline replaces the joint 
   expect(errors).toEqual([]);
 });
 
-test('duo phone pages: judging phones C0/C1 with A3 and 0.66 m defaults, the view phone page loads',async({page})=>{
+test('duo phone pages: judging phones C0/C1 with A3, no assumed phone height, the view phone page loads',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/test/mono3d/?stage=duo&camera=C1&key=fragment-test');
   await expect(page.locator('[data-wide-camera="C1"]')).toHaveAttribute('aria-checked','true');
   await expect(page.locator('[data-wide-camera="C1"]')).toContainText('오른쪽');
   await expect(page.locator('[data-wide-camera="C2"]')).toBeHidden();
-  await expect(page.locator('#cameraHeight')).toHaveValue('0.66');await expect(page.locator('#markerCm')).toHaveValue('27');
+  // No assumed height (the old 0.66 m default is gone): the marker scan does not start until it is entered.
+  await expect(page.locator('#cameraHeight')).toHaveValue('');await expect(page.locator('#markerCm')).toHaveValue('27');
   await expect(page.locator('#autoMarkerStatus')).toContainText('ID1');
+  await page.evaluate(()=>document.getElementById('autoMarker').click());
+  await expect(page.locator('#autoMarkerStatus')).toContainText('폰 높이');
   await expect(page.locator('#pcLinkHint a').first()).toHaveAttribute('href','/test/building/?mode=duo');
   await page.goto('/test/stage-view/?key=fragment-test');
   await expect(page.locator('#cameraHeight')).toHaveValue('1.6');await expect(page.locator('#markerCm')).toHaveValue('27');
@@ -190,15 +199,17 @@ test('view phone: the recognise button hides while both markers are searched and
   expect(errors).toEqual([]);
 });
 
-test('main page ends with phone and PC entry buttons; the phone page picks a role and keeps the key',async({page})=>{
+test('main page links only the duo stage and the one-camera 3D test; the phone page picks a role and keeps the key',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/monitor/?key=fragment-test');
-  const entry=page.locator('nav.entry-buttons a');
+  // 2026-11-22: every other link (rooms, QR, 3-camera, demos, API docs) was removed from the main page.
+  await expect(page.locator('main a')).toHaveCount(4);
+  const entry=page.getByRole('navigation',{name:'2대 무대 입장'}).locator('a');
   await expect(entry).toHaveCount(2);
   await expect(entry.nth(0)).toHaveText('폰으로 입장');await expect(entry.nth(0)).toHaveAttribute('href','/test/duo/');
   await expect(entry.nth(1)).toHaveText('PC로 입장');await expect(entry.nth(1)).toHaveAttribute('href','/test/building/?mode=duo');
-  // The entry section is the last one on the page.
-  expect(await page.evaluate(()=>[...document.querySelectorAll('main > section')].at(-1).querySelector('nav.entry-buttons')!==null)).toBe(true);
+  const mono=page.getByRole('navigation',{name:'카메라 1대 근사 3D 입장'}).locator('a');
+  await expect(mono.nth(0)).toHaveAttribute('href','/test/mono3d/');await expect(mono.nth(1)).toHaveAttribute('href','/test/building/?mode=mono');
   await page.goto('/test/duo/?key=fragment-test');
   const roles=page.locator('[data-role]');
   await expect(roles).toHaveCount(3);

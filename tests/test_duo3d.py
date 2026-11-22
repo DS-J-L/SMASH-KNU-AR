@@ -260,3 +260,59 @@ def test_webrtc_signals_are_relayed_between_the_pc_and_the_view_phone_only(clien
                 assert pc2_id != pc_id
             # That PC left: V is told to drop its connection.
             assert receive_until(v, "rtc_signal", lambda m: m["from"] == pc2_id)["data"] == {"type": "bye"}
+
+
+def test_only_the_duo_stage_breaks_a_whole_swing_path():
+    import asyncio
+    from backend.test_wide3d import WideStage
+    duo, wide = WideStage("duo"), WideStage("wide")
+    asyncio.run(duo.rebuild()); asyncio.run(wide.rebuild())
+    assert duo.model.sweep is True and wide.model.sweep is False
+
+
+def test_measured_marker_poses_turn_and_move_the_judging_coordinates_until_turned_off(client):
+    # 2026-11-22: V's floor pose of each marker (its own frame, the building's) corrects that judging phone's frame.
+    import math
+    poses = {"0": {"center_m": [-1.0, 0.0], "yaw_deg": 0.0}, "1": {"center_m": [1.05, 0.03], "yaw_deg": 3.0}}
+    a = math.radians(3.0)
+    expect = lambda q: [1.05 + math.cos(a) * q[0] - math.sin(a) * q[1], 0.03 + math.sin(a) * q[0] + math.cos(a) * q[1]]
+    with connect(client, "viewer") as pc, connect(client, "phone", "C1") as c1, connect(client, "phone", "V") as v:
+        receive_until(pc, "multi3d_model_state")
+        c1.send_json(calib("C1"))
+        plain = receive_until(pc, "multi3d_calib", lambda m: m["camera_id"] == "C1")
+        assert plain["marker_offset_m"] == [1.0, 0, 0] and plain["marker_yaw_deg"] == 0
+        v.send_json({**view_calib(), "marker_poses": {"0": {"center_m": [0, 0]}}})
+        assert receive_until(v, "error")["code"] == "bad_message"
+        v.send_json({**view_calib(), "marker_poses": poses})
+        fixed = receive_until(pc, "multi3d_calib", lambda m: m["camera_id"] == "C1" and m["marker_yaw_deg"])
+        assert fixed["marker_offset_m"] == [1.05, 0.03, 0] and fixed["marker_yaw_deg"] == 3.0
+        cx, cy = expect([0, -2])
+        assert all(abs(u - w) < 1e-9 for u, w in zip(fixed["C"], [cx, cy, 1]))
+        status = receive_until(pc, "wide3d_status", lambda m: m["cameras"]["C1"]["correction"]["applied"])
+        assert status["view"]["auto_rotation"] is True and status["cameras"]["C1"]["correction"]["yaw_deg"] == 3.0
+        c1.send_json(frame(0.0, wrist=[0.3, -1.2, 0.5]))
+        seen = receive_until(pc, "wide3d_frame", lambda m: m["camera_id"] == "C1" and m["joints"])
+        x, y = expect([0.3, -1.2])
+        assert abs(seen["joints"]["right_wrist"][0] - x) < 1e-3 and abs(seen["joints"]["right_wrist"][1] - y) < 1e-3
+        # Turned off on the PC: back to the plain spacing shift.
+        pc.send_json({"type": "duo_auto_rotation", "enabled": False})
+        off = receive_until(pc, "multi3d_calib", lambda m: m["camera_id"] == "C1" and m["marker_yaw_deg"] == 0)
+        assert off["marker_offset_m"] == [1.0, 0, 0]
+        c1.send_json(frame(0.0, wrist=[0.3, -1.2, 0.5]))
+        seen = receive_until(pc, "wide3d_frame", lambda m: m["camera_id"] == "C1" and m["joints"])
+        assert seen["joints"]["right_wrist"][:2] == [1.3, -1.2]
+        # A pose far from the nominal one is a misread: ignored even when the correction is on.
+        pc.send_json({"type": "duo_auto_rotation", "enabled": True})
+        v.send_json({**view_calib(), "marker_poses": {**poses, "1": {"center_m": [1.0, 0.0], "yaw_deg": 30.0}}})
+        status = receive_until(pc, "wide3d_status", lambda m: m["view"]["auto_rotation"] and m["cameras"]["C1"]["correction"]["measured"]
+                               and m["cameras"]["C1"]["correction"]["measured"][2] == 30.0)
+        assert status["cameras"]["C1"]["correction"]["applied"] is False
+
+
+
+def test_the_wide_stage_never_uses_marker_poses():
+    from backend.test_wide3d import WideStage
+    wide = WideStage("wide")
+    wide.view_calib = {"marker_poses": {0: (-1.4, 0.1, 5.0), 1: (0.1, 0.0, 5.0)}}
+    assert wide.marker_pose("C0") == (wide.marker_x("C0"), 0.0, 0.0)
+    assert wide.to_stage("C0", [0.2, -1.0, 0.5]) == [wide.marker_x("C0") + 0.2, -1.0, 0.5]

@@ -15,6 +15,14 @@ def client():
         yield c
 
 
+def mono_judge():
+    """The 1-camera server's default building (fixed-size IT1, 2026-11-22), for computing test paths."""
+    from backend.building_scenes import MONO_DEFAULT_SCENE
+    from backend.fragment_test import FragmentTest
+    from backend.model_strike import Placement
+    return FragmentTest(Placement(scale=1.0),MONO_DEFAULT_SCENE)
+
+
 def receive_until(ws, kind, limit=10):
     for _ in range(limit):
         message = ws.receive_json()
@@ -73,13 +81,18 @@ def test_mono_model_blast_is_independent_from_multi_and_invalid_frames_do_not_hi
     from test_fragment_test import approach
     from test_multi3d_relay import until
     from backend.fragment_test import FragmentTest
-    a,b,_=approach(FragmentTest())
+    a,b,_=approach(mono_judge())
     with client.websocket_connect('/ws/test/mono3d?role=viewer&model=it1&key=s3cret') as viewer, \
          client.websocket_connect('/ws/test/multi3d?role=viewer&model=it1&key=s3cret') as multi:
         initial=until(viewer,lambda m:m['type']=='mono3d_model_state')
         other=until(multi,lambda m:m['type']=='multi3d_model_state')
         assert initial['source']=='mono_approx' and initial['model_test']['epoch']!=other['model_test']['epoch']
         assert initial['model_test']['depth_margin']==0 and other['model_test']['depth_margin']==0
+        # 1-camera defaults (2026-11-22): no whole-building blast, no support collapse; the 3-camera hub keeps its own.
+        assert initial['model_test']['blast_enabled'] is False and initial['model_test']['collapse'] is False
+        assert other['model_test']['blast_enabled'] is True
+        viewer.send_json({'type':'multi3d_model_blast_config','enabled':True,'radius':3,'strength':12})
+        until(viewer,lambda m:m['type']=='mono3d_model_state' and m['model_test']['blast_enabled'])
         with client.websocket_connect('/ws/test/mono3d?role=phone&key=s3cret') as phone:
             for p in (a,b):phone.send_json({'type':'mono3d_frame','valid':True,'joints':{'right_wrist':p},'source':'multi_view'})
             hit=until(viewer,lambda m:m['type']=='mono3d_model_state' and len(m['model_test']['removed_ids'])==96)
@@ -101,7 +114,7 @@ def test_body_depth_recalibration_resets_the_old_wrist_path(client):
     from backend.fragment_test import FragmentTest
     from test_fragment_test import approach
     from test_multi3d_relay import until
-    a,b,_=approach(FragmentTest())
+    a,b,_=approach(mono_judge())
     with client.websocket_connect('/ws/test/mono3d?role=viewer&model=it1&key=s3cret') as viewer, \
          client.websocket_connect('/ws/test/mono3d?role=phone&key=s3cret') as phone:
         initial=until(viewer,lambda m:m['type']=='mono3d_model_state')['model_test']
@@ -120,7 +133,7 @@ def test_mono_lifted_fast_ankle_hits_but_a_foot_on_the_floor_does_not(client):
     from test_fragment_test import kick_path
     from test_multi3d_relay import until
     from backend.fragment_test import FragmentTest
-    a,b,_=kick_path(FragmentTest(),.4)
+    a,b,_=kick_path(mono_judge(),.4)
     low_a,low_b=[a[0],a[1],.05],[b[0],b[1],.05]
     with client.websocket_connect('/ws/test/mono3d?role=viewer&model=it1&key=s3cret') as viewer, \
          client.websocket_connect('/ws/test/mono3d?role=phone&key=s3cret') as phone:
@@ -153,5 +166,20 @@ def test_mono_selects_single_buildings_refuses_zones_and_multi_takes_zones(clien
 def test_building_scene_list_kinds(client):
     zones=client.get('/api/test/building-scenes?key=s3cret').json()
     singles=client.get('/api/test/building-scenes?kind=single&key=s3cret').json()
-    assert len(zones)==24 and len(singles)==62 and singles[0]['id']=='it1'
+    # 1 camera (2026-11-22): fixed-size buildings (IT1 first, the default), the old resizable IT1 last as a test entry.
+    assert len(zones)==24 and len(singles)==50 and singles[0]['id']=='single:knu-it1-v3' and singles[-1]['id']=='it1'
+    for item in singles[:-1]:
+        assert item['width_m']<=1.0+1e-6 and item['depth_m']<=.75+1e-6 and .36-1e-6<=item['height_m']<=.7+1e-6
     assert client.get('/api/test/building-scenes?kind=x&key=s3cret').status_code==400
+
+
+def test_mono_default_building_is_fixed_size_and_body_capture_does_not_resize_it(client):
+    from test_multi3d_relay import until
+    with client.websocket_connect('/ws/test/mono3d?role=viewer&model=it1&key=s3cret') as viewer,          client.websocket_connect('/ws/test/mono3d?role=phone&key=s3cret') as phone:
+        state=until(viewer,lambda m:m['type']=='mono3d_model_state')['model_test']
+        assert state['scene_id']=='single:knu-it1-v3' and state['fragment_count']==96
+        lo,hi=state['bounds']['lo'],state['bounds']['hi']
+        assert hi[0]-lo[0]<=1.0+1e-6 and hi[1]-lo[1]<=.75+1e-6 and .6-1e-6<=hi[2]-lo[2]<=.7+1e-6
+        phone.send_json({'type':'mono3d_calib','body':{'scale':1,'model_reference':{'id':'r1','waist_height_m':1.0,'anchor_m':[0,0,0]}}})
+        after=until(viewer,lambda m:m['type']=='mono3d_model_state' and m['model_test']['body_reference'])['model_test']
+        assert after['bounds']==state['bounds']

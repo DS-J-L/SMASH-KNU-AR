@@ -30,8 +30,8 @@ test('3 cameras: zones with two or three buildings, independent contacts, fixed 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().projection.length)).toBe(1);
   await page.locator('#blastMode').uncheck();await page.locator('#collapse').uncheck();await page.locator('#impactBreak').uncheck();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(false);
-  await page.locator('#orbit canvas').scrollIntoViewIfNeeded();
-  const rect=await page.locator('#orbit canvas').boundingBox();
+  await page.locator('#orbit canvas[data-engine]').scrollIntoViewIfNeeded();
+  const rect=await page.locator('#orbit canvas[data-engine]').boundingBox();
   const candidates=await page.evaluate(()=>window.buildingFragmentTest.pickPoints());
   const byBuilding=new Map();for(const p of candidates)if(!byBuilding.has(p.buildingId))byBuilding.set(p.buildingId,p);
   expect(byBuilding.size).toBeGreaterThanOrEqual(2);
@@ -84,16 +84,22 @@ test('default: 3 cameras start on a zone of several buildings, 1 camera starts o
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().buildingCount),{timeout:90000}).toBeGreaterThanOrEqual(2);
   await page.goto('/test/building/?mode=mono&key=fragment-test');
   await expect(page.locator('#sceneControl')).toBeVisible();await expect(page.locator('#autoNextControl')).toBeVisible();
-  await expect(page.locator('#sceneSelect option')).toHaveCount(62);
+  // 2026-11-22: fixed-size buildings (IT1 first, the server default), the old resizable IT1 last as a test entry.
+  await expect(page.locator('#sceneSelect option')).toHaveCount(50);
+  await expect(page.locator('#sceneSelect option').first()).toHaveAttribute('value','single:knu-it1-v3');
+  await expect(page.locator('#sceneSelect option').last()).toHaveAttribute('value','it1');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
-  let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
-  expect(s.sceneId).toBe('it1');expect(s.buildingCount).toBe(1);
-  // Choose another single building from the list.
-  const second=await page.locator('#sceneSelect option').nth(1).getAttribute('value');
-  await page.locator('#sceneSelect').selectOption(second);
-  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().sceneId),{timeout:90000}).toBe(second);
-  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
-  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());expect(s.buildingCount).toBe(1);expect(s.fixedSize).toBe(true);
+  // The server keeps the building between pages, so pick each one explicitly.
+  for(const index of [0,1]){
+    const id=await page.locator('#sceneSelect option').nth(index).getAttribute('value');
+    await page.locator('#sceneSelect').selectOption(id);
+    await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().sceneId),{timeout:90000}).toBe(id);
+    await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+    const s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());expect(s.buildingCount).toBe(1);expect(s.fixedSize).toBe(true);
+    const lo=s.worldBounds.lo,hi=s.worldBounds.hi;
+    expect(hi[0]-lo[0]).toBeLessThanOrEqual(1.001);expect(hi[1]-lo[1]).toBeLessThanOrEqual(.751);expect(hi[2]-lo[2]).toBeLessThanOrEqual(.701);
+    await expect(page.locator('#sizePreview')).toContainText('1대 고정 크기');
+  }
   await page.locator('#sceneSelect').selectOption('it1');    // the server keeps the stage between pages
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().sceneId),{timeout:90000}).toBe('it1');
   expect(errors).toEqual([]);
@@ -107,7 +113,15 @@ test('1 camera: a broken building is replaced by the next one after a few second
   const start=await page.evaluate(()=>window.buildingFragmentTest.snapshot().sceneId);expect(ids).toContain(start);
   const next=ids[(ids.indexOf(start)+1)%ids.length];
   await page.locator('#autoNextDelay').fill('2');await page.locator('#autoNextDelay').dispatchEvent('change');
-  // Off by default: breaking everything does not move on.
+  // 1-camera defaults (2026-11-22): auto-next on; no whole-building blast, no collision with the standing
+  // building, no support collapse, no extra breaks from piece impacts.
+  await expect(page.locator('#autoNext')).toBeChecked();
+  await expect(page.locator('#blastMode')).not.toBeChecked();await expect(page.locator('[data-physics="building"]')).not.toBeChecked();
+  await expect(page.locator('#collapse')).not.toBeChecked();await expect(page.locator('#impactBreak')).not.toBeChecked();
+  let d=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(d.blastEnabled).toBe(false);expect(d.collapse).toBe(false);expect(d.physics.options.building).toBe(false);
+  // Turned off, breaking everything does not move on.
+  await page.locator('#autoNext').uncheck();
   await page.locator('#stress').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBeGreaterThan(50);
   await page.waitForTimeout(3500);

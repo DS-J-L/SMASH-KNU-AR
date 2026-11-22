@@ -8,13 +8,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-21 17:32 KST — PR #24 게시·검토 완료, 머지 확인 중 |
-| 현재 작업 | PR #24 게시·코드 검토 완료, 머지/로컬 동기화 진행: Python298·Node316·전체38, 진단 경로 보완 후 핵심3회 추가 통과. 실제3대 인수 별도 |
+| 마지막 갱신 | 2026-11-22 14:02 KST — feat/duo-ar-hit-effect에 판정 좌표 마커 회전·위치 보정 추가 push(PR 미생성) |
+| 현재 작업 | 2대 무대 타격 효과·휘두른 길 파괴·판정 폰 높이 입력·판정 좌표 마커 회전·위치 보정, 모니터 첫 화면 정리, 1대 기본 설정·건물 크기: 로컬 자동검증 후 push, PR 미생성. PR #24는 main 680b891에 머지됨 |
 | 구현 완료 범위 | 기존 수신·시계/3D 기초, 두 방·영상·QR·video_check, 전신22+머리1점, phone_2d 타격/점수/중지·재연결 — 로컬 자동검증 범위 |
 | 방 구성 | room-1 C0/C1/C2 모두 시작 필수, room-2 C0만. PC는 방별 전용 페이지 |
 | 최근 기능 검증 | 3대 슈퍼 및 기존 소비 회귀: Python299·Node308·건물38·시계 후속4, 실제 장비 별도 |
 | 남은 일 | 실폰/실제 모델·소리 청취·성능/장시간·QR실스캔, 실측 보정/3D 정합·3D 타격·영구 로그 |
-| 다음 작업 | SUPER_SMASH_TEST.md의 실제3대 정합/손발·청취·지연/20분 인수, J-SS-03 미완료 |
+| 다음 작업 | feat/duo-ar-hit-effect PR 생성, 실폰 2대 무대·1대 근사 3D 확인(효과·소리·휘두른 길·높이 입력·마커 보정·1m 건물). 실제3대 인수·J-SS-03은 미완료 유지 |
 | 판정 제한 | video_check는 영상 확인, phone_2d는 C0 화면2D 타격이며 실제 깊이/3D 완료가 아님. 합성 통과와 실폰/공통Phase는 구분 |
 
 ## 2. 개인 Phase 현황
@@ -1300,3 +1300,57 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 - 검토/검증: R1 테스트 진단 경로 보완 후 3/3 추가 통과, 이전 Python298/Node316/전체38·빌드와 제품/번들 불변 확인. 검토 보고서의 미해결 차단 항목은 없다. 원격 PR은 충돌 없이 mergeable, 이 시점에 GitHub status/workflow/review는 빈 목록이며 별도 사람 승인을 받은 것으로 표현하지 않는다.
 - 바뀐 파일/다음: 공유 링크·진행 요약·검토 JSON만 후속 문서 커밋에 반영한다. 최종 head의 제품 파일 동일성·base/검사/리뷰 상태를 재확인하고 SHA 지정 일반 머지 후 로컬 main fast-forward/clean을 확인한다. 실제 머지/로컬 확인 사실은 외곽 PM 기록에 남겨 main과 origin/main 일치를 보존한다.
 - 남은 일/체크: 실제3대·실측 정합/청취·전체 지연/20분과 PM-SS-03/04·개인 SS-03·공통 Phase는 미완료 유지. docs/SUPER_SMASH_TEST.md에서 실제 인수를 재개한다. 이 커밋 시점에는 머지/로컬 갱신 전이다.
+
+
+### 2026-11-22 13:19 KST — 2대 무대 타격 효과·휘두른 길 파괴, 판정 폰 높이 입력, 모니터 첫 화면, 1대 기본 설정·건물 크기
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청)
+- 작업 구분: 개인 개발 (2대 무대·1대 근사 3D 시험 화면)
+- Phase: P4 확장 — 개인 구현·자동검증 범위이며 공통 Phase 통과가 아니다
+- 상태: 구현·자동검증 완료, push 완료, PR 미생성(사용자 요청 범위: 기록 정리·push)
+- 읽은 계획·기록: AGENTS.md, pr-workflow 스킬, 이 파일 현재 상태와 2026-11-21 17:32 기록, 진행현황.md, docs/DUO_STAGE_TEST.md·BUILDING_FRAGMENT_TEST.md·SUPER_SMASH_TEST.md
+- 연결할 계획 항목: 정경호_plan.md 체크리스트 변경 없음(아래 남은 일 참고). 사용자 대화 결정(2026-11-22)으로 진행
+- 이번 목표·완료 기준: 아래 변경이 main 680b891 위에서 관련 자동 검사를 통과하고 작업 브랜치에 push됨
+- 검증 계획: Python 관련 테스트, Node 단위, Edge/D3D11 건물 브라우저 전체, 방 게임 브라우저
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: 브랜치 `feat/duo-ar-hit-effect`(기준 main 680b891, PR #24 머지 포함)
+  - `1348363` 2대 무대 PC 화면 AR 타격 효과·소리(로컬 미push였던 ea3109d를 최신 main에 옮김, 연쇄 폭파 모드에서는 끔), 2대 무대만 한 프레임에 지나간 파편 전부 파괴(`crossed_ids`)·0.4초 이내 연속 타격을 한 휘두르기(`swing_id`, `swing_start`)로 묶어 첫 타격에만 효과·소리. 다른 모드는 기존 첫 파편 1개
+  - `4245739` 2대 무대 판정 폰 높이 0.66m 기본값 제거, 0.1~3m 실측 입력 전에는 마커 인식·모서리 찍기 차단(입력 높이로 화각, 마커로 위치·각도 계산은 기존 방식)
+  - `31eea70` /monitor/ 첫 화면에 2대 무대 입장·카메라 1대 근사 3D 링크만 남김(방·QR·3대·데모·API 링크 삭제, 페이지는 주소로 열림, 방별 QR은 방 페이지에 남음)
+  - `e5b167d` 1대 근사 3D 기본값: 건물 전체 날리기·남은 건물과 충돌·지지 상실 붕괴·파편 충격 추가 분리 끔, 자동 다음 건물 켬. 건물은 2대 무대 건물을 높이 0.6~0.7m·바닥 1.0m×0.75m 이내로(0.36m 미만 제외 49개, 기본 IT1), 몸 보정은 크기를 바꾸지 않음, 예전 크기 조절 IT1은 목록 끝 시험 항목
+  - 데이터 계약 영향: 2대 무대 `model_test.event`에 선택 필드 `swing_id`, `swing_start` 추가(2대 무대만). 1대 `kind=single` 목록에 `width_m`, `depth_m` 추가·순서/개수 변경. 기존 소비자는 필드가 없으면 기존 동작
+- 어디까지 완료: 위 구현과 자동 검사, 문서(DUO_STAGE_TEST.md·BUILDING_FRAGMENT_TEST.md·SETUP.md) 갱신, push
+- 검증 방법·조건·실제 결과 (Windows, 저장소 .venv, Edge, AR_TEST_RENDERER=d3d11):
+  - Python: 건물 장면·1대 중계·파편·연쇄 폭파·2대·넓은 무대·3대 중계 86개 통과(test_building_scenes, test_mono3d_relay, test_fragment_test, test_super_smash, test_duo3d, test_wide3d, test_multi3d_relay), 서버 경로·인증·QR 20개 통과
+  - Node: tests/test_mono3d.mjs·test_duo_view.mjs 21개 통과
+  - 브라우저: playwright.building-test.config.js 전체 38/38 통과(최종 커밋 내용 기준), playwright.room-game.config.js 9/9 통과
+  - 실패·미실행: playwright.ar.config.js 4개는 Playwright Chromium 미설치로 실행 실패(코드 원인 아님, 미검증). phone-ui-panels 1개가 한 번 시간 초과 후 재실행 통과. Python 전체·Node 전체는 이번에 돌리지 않음
+  - 테스트 정정: 옛 기본값(1대 광역 켜짐·자동 다음 꺼짐·IT1 기본) 전제 시험을 새 기본값 확인 후 기존 동작을 보도록 고침. 공유 서버의 1대 장면이 시험 사이에 남아 순서에 따라 결과가 바뀌어, 1대 시험은 IT1 시험 항목을 명시 선택하게 함
+- 입력·장비 범위: synthetic(합성 WebSocket 관절·가짜 카메라)·마우스 자동 시험만. live/replay 없음
+- 남은 일·미검증: 실폰 2대 무대에서 효과·소리 청취·휘두른 길 파괴 체감·판정 폰 실측 높이 입력 후 정합, 실폰 1대에서 1m 건물 타격·기본값 체감, 판정 폰 마커 회전 보정(화면 폰 실측 회전값 반영)은 미구현·실측 후 결정
+- 막힌 점·도움·해제 조건: 없음. PR 생성·머지는 사용자 결정 대기
+- 다음 한 단계·재개 위치: 서버 재시작 → PC `/test/building/?mode=duo`·`?mode=mono` → 폰 페이지에서 높이 입력·보정 후 실제 타격. PR이 필요하면 `.github/pull_request_template.md`로 feat/duo-ar-hit-effect → main
+- 인계 대상·넘긴 자료: 2대 무대 송수신 관련 팀원에게 `swing_id`/`swing_start` 선택 필드와 1대 목록 변경 공유 필요(위 커밋)
+- 갱신한 계획 체크리스트·현황: 계획 체크리스트 변경 없음(실기기 확인 전). 이 파일 현재 상태 표와 진행현황.md 정경호 행 갱신
+- 종료·중단 시각: 2026-11-22 13:19 KST
+
+
+### 2026-11-22 14:02 KST — 2대 무대 판정 좌표 마커 회전·위치 자동 보정
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "잰 각도를 좌표에 자동으로 반영하는 기능 추가")
+- 작업 구분: 개인 개발 (2대 무대). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님
+- 상태: 구현·자동검증 완료, 같은 브랜치에 커밋 `db50789` push, PR 미생성
+- 읽은 기록: 이 파일 13:19 기록, docs/DUO_STAGE_TEST.md 마커 배치 실측(2026-11-18) 절의 "회전은 알려 주기만 하고 자동으로 고치지 않는다" 결정 → 이번에 변경(문서에 이전 결정 보존)
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: web/test/stage-view/view-calib.js(자유 배치 자세를 두 마커 중심선 기준으로 사용, 마커별 바닥 위치·회전 marker_poses 계산·전송), app.js·index.html 캐시 버전, backend/test_wide3d.py(2대 무대 판정 폰 관절·사람 기준점·카메라 자세에 마커 위치·회전 적용, 회전 20°·위치 0.3m 초과 무시, 변경 시 궤적 끊기·자세 재전송, duo_auto_rotation), frontend/building-test(보정 체크박스·상태 줄), tests/test_duo_view.mjs·tests/test_duo3d.py, docs/DUO_STAGE_TEST.md
+- 데이터 계약 영향(2대 무대): `wide3d_view_calib.marker_poses` 선택 필드, PC → 서버 `duo_auto_rotation{enabled}`, `wide3d_status.view.auto_rotation`·`cameras.<C>.correction`, 판정 폰 `multi3d_calib.marker_offset_m:[x,y,0]`·`marker_yaw_deg`. 화면 폰 자세 좌표가 강체 풀이 → 두 마커 중심선 기준으로 바뀜
+- 검증 방법·결과 (Windows, .venv, Edge D3D11): Node 새 시험 1개(합성 1280×720, 모서리 잡음 ±0.3px, 배치 3가지: 보정 후 0.78/0.76/0.79px, 보정 없이 17.2/16.4/11.4px) 포함 duo_view·duo_view_person·mono3d·auto_marker 33/33, Python 새 시험 2개 포함 duo·wide·파편·1대·3대 중계·연쇄 폭파·건물 장면 88/88, 건물 브라우저 전체 38/38
+- 입력·장비 범위: synthetic만. live/replay 없음
+- 남은 일·미검증: 실폰 화면 폰 마커 위치·회전 측정 정확도, 보정 후 실제 타격 정합. 보정을 끄면 화면 폰은 중심선 기준·판정 폰은 간격만 옮겨 예전보다 더 어긋날 수 있음(문서에 기록)
+- 다음 한 단계: 서버 재시작 → 화면 폰 두 마커 다시 인식 → PC 상태 줄의 판정 좌표 보정 값 확인 → 마커를 일부러 2~3° 돌려 놓고 타격 비교
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-22 14:02 KST
