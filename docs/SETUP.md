@@ -30,7 +30,7 @@ python tools/fetch_mediapipe.py
 python -m uvicorn backend.server:app --reload --host 127.0.0.1 --port 8000
 ```
 
-- `/monitor/`: 방 선택. `/monitor/room-1/`은 C0/C1/C2, `/monitor/room-2/`는 C0 영상·시작·60초 결과 화면
+- `/monitor/`: 첫 화면. 2026-11-22부터 2대 무대 입장(폰·PC)과 카메라 1대 근사 3D(폰·PC) 링크만 있다. 방·QR·3대·데모 화면은 아래 주소로 직접 연다. `/monitor/room-1/`은 C0/C1/C2, `/monitor/room-2/`는 C0 영상·시작·60초 결과 화면
 - `/camera/room/`: 고정 QR용 공개 화면. 두 방 모두 폰 관절 추론·영상·좌표 송신, 방 2는 C0 한 대
 - `/monitor/phone-game/?room=room-2`: C0 한 대의 폰 좌표 2D 게임. 방 1은 room=room-1이며 세 카메라 필수
 - `/camera/`: C0/C1/C2 선택, MediaPipe 좌·우 손목 추출, 서버가 받을 수 있으면 `pose_2d` 송신

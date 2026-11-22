@@ -199,15 +199,17 @@ test('view phone: the recognise button hides while both markers are searched and
   expect(errors).toEqual([]);
 });
 
-test('main page ends with phone and PC entry buttons; the phone page picks a role and keeps the key',async({page})=>{
+test('main page links only the duo stage and the one-camera 3D test; the phone page picks a role and keeps the key',async({page})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/monitor/?key=fragment-test');
-  const entry=page.locator('nav.entry-buttons a');
+  // 2026-11-22: every other link (rooms, QR, 3-camera, demos, API docs) was removed from the main page.
+  await expect(page.locator('main a')).toHaveCount(4);
+  const entry=page.getByRole('navigation',{name:'2대 무대 입장'}).locator('a');
   await expect(entry).toHaveCount(2);
   await expect(entry.nth(0)).toHaveText('폰으로 입장');await expect(entry.nth(0)).toHaveAttribute('href','/test/duo/');
   await expect(entry.nth(1)).toHaveText('PC로 입장');await expect(entry.nth(1)).toHaveAttribute('href','/test/building/?mode=duo');
-  // The entry section is the last one on the page.
-  expect(await page.evaluate(()=>[...document.querySelectorAll('main > section')].at(-1).querySelector('nav.entry-buttons')!==null)).toBe(true);
+  const mono=page.getByRole('navigation',{name:'카메라 1대 근사 3D 입장'}).locator('a');
+  await expect(mono.nth(0)).toHaveAttribute('href','/test/mono3d/');await expect(mono.nth(1)).toHaveAttribute('href','/test/building/?mode=mono');
   await page.goto('/test/duo/?key=fragment-test');
   const roles=page.locator('[data-role]');
   await expect(roles).toHaveCount(3);
