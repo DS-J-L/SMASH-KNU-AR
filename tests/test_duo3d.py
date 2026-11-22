@@ -260,3 +260,11 @@ def test_webrtc_signals_are_relayed_between_the_pc_and_the_view_phone_only(clien
                 assert pc2_id != pc_id
             # That PC left: V is told to drop its connection.
             assert receive_until(v, "rtc_signal", lambda m: m["from"] == pc2_id)["data"] == {"type": "bye"}
+
+
+def test_only_the_duo_stage_breaks_a_whole_swing_path():
+    import asyncio
+    from backend.test_wide3d import WideStage
+    duo, wide = WideStage("duo"), WideStage("wide")
+    asyncio.run(duo.rebuild()); asyncio.run(wide.rebuild())
+    assert duo.model.sweep is True and wide.model.sweep is False

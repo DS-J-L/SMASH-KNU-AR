@@ -205,6 +205,7 @@ class WideStage:
         old = self.model
         new = await asyncio.to_thread(FragmentTest, Placement(scale=1.0), self.scene_id())
         new.approximate = True
+        new.sweep = self.has_view   # duo only: a swing breaks its whole path, one effect per swing
         if old:
             new.collapse, new.blast_enabled = old.collapse, old.blast_enabled
             new.blast_radius, new.blast_strength, new.depth_margin = old.blast_radius, old.blast_strength, old.depth_margin

@@ -106,7 +106,7 @@ test('already released fragments accept another directional mouse push',async({p
   for(const name of ['gravity','building','debris'])await page.locator(`[data-physics="${name}"]`).uncheck();
   await page.locator('#impactBreak').uncheck();await page.locator('#stress').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.dynamic)).toBe(96);
-  await page.locator('#orbit canvas').click();
+  await page.locator('#orbit canvas[data-engine]').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.mousePushes)).toBe(1);
   await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
@@ -165,7 +165,7 @@ test('mouse without phones: OFF and orbit drag do not hit, click releases a real
   await page.locator('#blastMode').uncheck();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(false);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().collapse)).toBe(false);
-  const canvas=page.locator('#orbit canvas');
+  const canvas=page.locator('#orbit canvas[data-engine]');
   await page.locator('#mouseMode').uncheck();await canvas.click();
   await expect(page.locator('#count')).toHaveText('0 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('0점 · 파편 1개당 1점');
@@ -195,7 +195,7 @@ test('mouse without phones: OFF and orbit drag do not hit, click releases a real
 test('wide mouse strike launches the whole IT1 and distance limit remains adjustable',async({page})=>{
   await page.goto('/test/building/?scene=it1&key=fragment-test');await expect(page.locator('#dimensions')).toContainText('고정 높이');
   await page.locator('#blastMode').check();await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(true);
-  await page.locator('#orbit canvas').click();
+  await page.locator('#orbit canvas[data-engine]').click();
   await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.blasts)).toBe(1);
@@ -239,7 +239,7 @@ test('one approximate camera: model overlay, wrist blast and mouse restore use t
   await page.screenshot({path:'test-results/building-fragments/mono-building.png',fullPage:true});
   await page.locator('#restore').click();await expect(page.locator('#count')).toHaveText('0 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('0점 · 파편 1개당 1점');
-  await page.locator('#orbit canvas').click();await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
+  await page.locator('#orbit canvas[data-engine]').click();await expect(page.locator('#count')).toHaveText('96 / 96개 파괴');
   await expect(page.locator('#score')).toHaveText('96점 · 파편 1개당 1점');
   await page.evaluate(()=>window.monoPhone.close());
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.activeHands)).toBe(0);

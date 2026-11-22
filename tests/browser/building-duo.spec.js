@@ -25,6 +25,9 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect(page.locator('#autoNext')).toBeChecked();await expect(page.locator('[data-physics="building"]')).not.toBeChecked();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
   let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  // AR hit effect (PR #22 module): nothing on the first state, one burst per accepted strike event.
+  expect(await page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(0);
+  await expect(page.locator('#sound')).toHaveText('소리 끄기');
   expect(s.blastEnabled).toBe(false);expect(s.collapse).toBe(false);expect(s.physics.options.building).toBe(false);
   await expect(page.locator('#blastMode')).not.toBeChecked();await expect(page.locator('#collapse')).not.toBeChecked();
   await page.locator('#autoNext').uncheck();   // this test checks one judged break; auto-next is tested in building-zones
@@ -74,6 +77,9 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length),{timeout:10000}).toBeGreaterThan(0);
   s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   expect(s.owner).toBe('C1');expect(s.removedBuildings.length).toBe(1);
+  await expect.poll(()=>page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(1);
+  // Drawn on the main view (V), the judging views and the 3D view, in stage coordinates.
+  await expect.poll(()=>page.evaluate(()=>window.__arHitEffect.snapshot().renderedFrames)).toBeGreaterThan(0);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().view.proxy)).toMatchObject({visible:true,torso:true});
   await page.evaluate(()=>window.scrollTo(0,0));
   await page.screenshot({path:'test-results/building-fragments/duo-stage.png',fullPage:true});

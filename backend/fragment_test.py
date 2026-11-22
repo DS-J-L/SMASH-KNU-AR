@@ -17,6 +17,16 @@ OVERLAP_MIN_SPEED_MPS = 1.5
 OVERLAP_MIN_MOVE_M = 0.08
 
 BUILDING_HEIGHT_RATIO = .7
+# Sweep mode (duo stage only): one swing = hits no further apart than this. A new swing starts after a pause.
+SWING_GAP_MS = 400
+
+
+def crossed_ids(target, a, b):
+    """Every unbroken fragment the segment a->b enters, in path order (first_entry, repeated)."""
+    found, ids = set(), []
+    while (hit := first_entry(target, a, b, broken=found)) is not None:
+        found.add(hit["index"]); ids.append(hit["fragment_id"])
+    return ids
 
 
 @lru_cache(maxsize=8)
@@ -38,6 +48,8 @@ class FragmentTest:
         self.approximate = False
         self.depth_margin = 0.0
         self.body_reference = None
+        # Duo stage: a hand path breaks every piece it crosses, and each swing is marked for one effect.
+        self.sweep = False
         self.neighbors, self.anchors = support_graph(placement,scene_id)
         self.reset()
 
@@ -48,10 +60,14 @@ class FragmentTest:
         self.epoch = uuid.uuid4().hex
         self.pending_event = None
         self.diagnostics = {}
+        self.swing_id = None
+        self.swing_hit_at = -1e9
 
     def clear_tracking(self):
         self.previous.clear()
         self.overlap_hit_at.clear()
+        self.swing_id = None
+        self.swing_hit_at = -1e9
 
     def mouse_hit(self, origin, direction, strength=12.0):
         strength = float(strength)
@@ -118,13 +134,13 @@ class FragmentTest:
                 "points": len(requested | unsupported),
                 "direction": direction or [0, 0, 0], "point_m": point or [(a+b)/2 for a,b in zip(f.lo,f.hi)]}
 
-    def strike(self, fid, kind, direction, point, strength, blast, *, all_fragments=False):
-        ids=[fid]
+    def strike(self, fid, kind, direction, point, strength, blast, *, all_fragments=False, extra_ids=()):
+        ids=[fid,*extra_ids]
         if all_fragments:
             ids=[f.fragment_id for f in self.target.fragments]
             blast=False
         elif blast:
-            ids=[f.fragment_id for f in self.target.fragments
+            ids=[*extra_ids]+[f.fragment_id for f in self.target.fragments
                  if sum(max(f.lo[k]-point[k],0,point[k]-f.hi[k])**2 for k in range(3)) <= self.blast_radius**2]
         event=self.release(ids,kind,direction,point)
         if event:
@@ -201,9 +217,20 @@ class FragmentTest:
             _, name, contact, prev = min(candidates, key=lambda c: c[0])
             delta=[positions[name][k]-prev[0][k] for k in range(3)]
             speed=math.sqrt(sum(v*v for v in delta))/((at-prev[1])/1000)
+            swept=[]
+            if self.sweep and not super_smash:
+                # Every joint's whole path this frame, not only the first piece it enters.
+                for _, n, c, pv in candidates:
+                    swept += [c["fragment_id"], *crossed_ids(active, pv[0], positions[n])]
             event = self.strike(contact["fragment_id"], "ankle" if name in ANKLES else "wrist", delta, contact["point"],
                                 min(20,self.blast_strength*max(.6,min(1.5,speed/2))),self.blast_enabled and speed>=.8,
-                                all_fragments=super_smash)
+                                all_fragments=super_smash, extra_ids=swept)
+            if self.sweep and event:
+                # Consecutive hits of one swing share swing_id; only swing_start=True should play the effect/sound.
+                start = at - self.swing_hit_at > SWING_GAP_MS
+                if start:self.swing_id = uuid.uuid4().hex
+                self.swing_hit_at = at
+                event.update(swing_id=self.swing_id, swing_start=start)
             event["joint"] = name
             if contact.get("overlap"):event['overlap']=True
             event['approx_depth_margin_m']=self.depth_margin

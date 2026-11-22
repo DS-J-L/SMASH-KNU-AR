@@ -12,6 +12,8 @@ import {PersonOcclusion,loadOcclusionTexture} from './person-occlusion.js';
 import {createRtcReceiver} from '/test/stage-view/rtc.js?v=20261120-r1';
 import {createPcOutline} from '/test/stage-view/pc-outline.js?v=20261120-r1';
 import {createSuperFeedback} from './super-smash-feedback.js';
+import {createArHitEffect} from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
+import {createArHitSound} from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
 const STRIKE_JOINTS=['left_wrist','right_wrist','left_ankle','right_ankle'],JOINT_LABELS={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
 
 const $ = id => document.getElementById(id);
@@ -65,6 +67,41 @@ function syncToggle(id,value){
   else toggleDrafts.delete(id);
   $(id).checked=value;
 }
+// AR hit feedback (PR #22 module): only the server's accepted strikes (joint or mouse demo) play it, once per event_id.
+// The effect is drawn on each view in stage coordinates; it never changes judging, score or fragments.
+const HIT_EFFECT_KINDS=new Set(['wrist','ankle','mouse']);
+const hitEffect=createArHitEffect(),hitSound=createArHitSound({button:$('sound')});
+let lastEventId=null,eventsArmed=false,outerBase=null;
+window.__arHitEffect=Object.freeze({snapshot:()=>hitEffect.snapshot()});
+function effectOverlay(container){
+  const canvas=Object.assign(document.createElement('canvas'),{className:'hit-effect'});
+  canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
+  container.append(canvas);return {canvas,ctx:canvas.getContext('2d')};
+}
+function observeHit(m){
+  const e=m.event,id=e?.event_id??null;
+  // The first state after (re)connecting may repeat an old event: it only sets the baseline.
+  if(!eventsArmed){eventsArmed=true;lastEventId=id;return;}
+  if(!id||id===lastEventId)return;lastEventId=id;
+  // Chain-explosion mode (3 cameras) has its own full-screen effect and sound; do not stack this one on top.
+  if(m.smash_mode==='super_smash'||!HIT_EFFECT_KINDS.has(e.kind)||!m.bounds)return;
+  // Duo sweep: the server breaks a swing's path frame by frame; only its first hit (swing_start) plays.
+  if(e.swing_start===false)return;
+  const {lo,hi}=m.bounds,building={center:lo.map((v,i)=>(v+hi[i])/2),half:lo.map((v,i)=>(hi[i]-v)/2)};
+  if(hitEffect.trigger(e.point_m,building))hitSound.hit();
+}
+function drawHitEffect(s,camera,container,now){
+  const o=s.effect,w=container.clientWidth,h=container.clientHeight,r=devicePixelRatio||1;
+  if(o.canvas.width!==Math.round(w*r)||o.canvas.height!==Math.round(h*r)){o.canvas.width=Math.round(w*r);o.canvas.height=Math.round(h*r);}
+  o.ctx.setTransform(1,0,0,1,0,0);o.ctx.clearRect(0,0,o.canvas.width,o.canvas.height);
+  if(!s.outer.visible||!w||!h)return;
+  o.ctx.setTransform(r,0,0,r,0,0);
+  const v=new THREE.Vector3();
+  hitEffect.draw(o.ctx,p=>{
+    if(v.fromArray(p).applyMatrix4(camera.matrixWorldInverse).z>=-.01)return null; // behind the camera
+    v.fromArray(p).project(camera);return [(v.x+1)/2*w,(1-v.y)/2*h];
+  },now);
+}
 function previewSize(){
   const scale=Number($('scale').value);
   if(wide){$('sizePreview').textContent='무대 세트 크기 · 몸 보정과 무관 · 마커 간격에 맞춰 배치';return;}
@@ -96,6 +133,7 @@ function renderer(container, alpha=false) {
 }
 const orbit = scene(); const trackedPerson=new TrackedPerson(orbit.scene);orbit.renderer = renderer($('orbit'));
 orbit.camera = new THREE.PerspectiveCamera(45,1,.01,50); orbit.camera.up.set(0,0,1); orbit.camera.position.set(2,-3,2);
+$('orbit').style.position='relative';orbit.effect=effectOverlay($('orbit'));
 const controls = new OrbitControls(orbit.camera,orbit.renderer.domElement); controls.target.set(0,0,.35); controls.update();
 let pointerDown=null;
 orbit.renderer.domElement.addEventListener('pointerdown',e=>{if(e.button===0)pointerDown={x:e.clientX,y:e.clientY,id:e.pointerId};});
@@ -129,7 +167,7 @@ for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
   div.append(img);$('cameras').append(div);
   const s=scene();s.renderer=renderer(div,true);div.append(label);s.camera=new THREE.Camera();s.calibrated=false;
   Object.assign(s,{div,img,label,lastImage:0,jpegVersion:0});cameras.set(id,s);
-  s.occlusion=new PersonOcclusion(s.scene);s.occlusionInputValid=false;
+  s.occlusion=new PersonOcclusion(s.scene);s.occlusionInputValid=false;s.effect=effectOverlay(div);
   // Duo main screen: V sends the real person's outline with a depth (its own segmentation); the judging phones'
   // joint bars hide what is behind the person only while that outline is missing.
   if(id==='V'){div.classList.add('main-view');s.isView=true;s.personProxy=new TrackedPerson(s.scene,{occluder:true});
@@ -239,6 +277,8 @@ function syncState(m) {
   if(scenePending&&selected===$('sceneSelect').value){scenePending=false;status('구역 준비 완료 · 손목/마우스로 타격하세요');}
   checkAutoNext(m);
   const reset=epoch!==m.epoch;
+  if(reset)hitEffect.clear();
+  observeHit(m);
   if(reset)sizeDirty=false;
   epoch=m.epoch;
   if(!ready)return;
@@ -267,7 +307,7 @@ function syncState(m) {
   if(document.activeElement!==$('pushStrength'))$('pushStrength').value=m.blast_strength??12;
   syncToggle('collapse',m.collapse??true);
   for(const s of scenes){
-    s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
+    outerBase=place.position;s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
       if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);}
       node.visible=!physics.superHidden.has(id);
@@ -425,6 +465,7 @@ $('applySpacing').onclick=()=>{if(!$('stageSpacing').reportValidity())return;
   scenePending=link.send({type:'wide3d_stage_config',spacing_m:Number($('stageSpacing').value)});if(scenePending)status('마커 간격 적용 중… 구역을 다시 배치합니다.');};
 const link=createLink(duo?'/ws/test/duo3d':wide?'/ws/test/wide3d':mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
   connected=s.open;
+  if(!s.open){eventsArmed=false;hitEffect.clear();hitSound.reset();}
   if(!s.open){feedback?.cancel('disconnect');physics?.stopSuper();controlPending=null;viewerId=null;lastPresentationKey='';frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
   if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
 },onMessage);
@@ -552,7 +593,9 @@ function draw(now){
   if(physics&&state?.smash_mode==='super_smash')for(const s of scenes)for(const [id,n] of s.nodes)if(physics.superHidden.has(id))n.visible=false;
   const personLive=connected&&now-personAt<500;
   trackedPerson.update(personJoints,personLive);$('personStatus').textContent=personLive&&trackedPerson.count?('사람 3D · '+trackedPerson.count+'관절 · '+(mono?'1대 근사':wide?`${stageOwner??'판정 폰 없음'} 폰 근사`:'다중 시점')):'사람 3D 관측 대기';
+  const recoil=hitEffect.recoil(now);
   for(const s of scenes){
+    if(outerBase)s.outer.position.set(outerBase[0]+recoil[0],outerBase[1]+recoil[1],outerBase[2]+recoil[2]);
     STRIKE_JOINTS.forEach((n,i)=>{s.wrists[i].visible=live&&Boolean(lastJoints[n])&&(s===orbit||(s.calibrated&&now-s.lastImage<1500));if(s.wrists[i].visible)s.wrists[i].position.fromArray(lastJoints[n].p);});
     const box=s===orbit?$('orbit'):s.div,w=box.clientWidth,h=box.clientHeight;
     if(w<=0||h<=0)continue;
@@ -571,6 +614,7 @@ function draw(now){
     }
     s.personProxy?.update(personJoints,personLive&&s.calibrated&&$('personOcclusion').checked&&!s.occlusion?.mesh.visible);
     s.renderer.render(s.scene,s.camera);
+    if(s.effect)drawHitEffect(s,s.camera,box,now);
   }
   renderMs+=(performance.now()-start-renderMs)*.1;
   if(now-reportAt>=500){fps=(frameCount-reportFrames)*1000/(now-reportAt);reportAt=now;reportFrames=frameCount;

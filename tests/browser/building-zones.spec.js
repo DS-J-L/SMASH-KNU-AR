@@ -30,8 +30,8 @@ test('3 cameras: zones with two or three buildings, independent contacts, fixed 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().projection.length)).toBe(1);
   await page.locator('#blastMode').uncheck();await page.locator('#collapse').uncheck();await page.locator('#impactBreak').uncheck();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().blastEnabled)).toBe(false);
-  await page.locator('#orbit canvas').scrollIntoViewIfNeeded();
-  const rect=await page.locator('#orbit canvas').boundingBox();
+  await page.locator('#orbit canvas[data-engine]').scrollIntoViewIfNeeded();
+  const rect=await page.locator('#orbit canvas[data-engine]').boundingBox();
   const candidates=await page.evaluate(()=>window.buildingFragmentTest.pickPoints());
   const byBuilding=new Map();for(const p of candidates)if(!byBuilding.has(p.buildingId))byBuilding.set(p.buildingId,p);
   expect(byBuilding.size).toBeGreaterThanOrEqual(2);
