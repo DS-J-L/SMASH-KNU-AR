@@ -1,0 +1,119 @@
+{
+  "date_kst": "2026-11-23T13:38:13+09:00",
+  "base_commit": "bf7902c9245ee2feb97db4f2c156f55cf4da6577",
+  "branch": "feat/super-smash-variations-20261123",
+  "scope": "Local implementation: 3-camera super_smash only, four feedback presets and shuffle. No push/PR/merge.",
+  "presets": [
+    "chain_blast_v1",
+    "swing_wave_v1",
+    "crush_collapse_v1",
+    "gravity_compress_v1"
+  ],
+  "implemented": [
+    "controller-only selection and freeze while armed",
+    "accepted-event preset/version/seed and nonrepeating shuffle deck",
+    "PC capability gating and shared fallback",
+    "projected screen direction and head-on ring",
+    "downward crush initial velocity",
+    "64 visual-only compression fragments, no dynamic collision",
+    "bounded 128 dynamic bodies / 16 per frame / 3ms / 4sec",
+    "four audio cue signatures / <=14 sources / common cancel and mute",
+    "shared PC t0 and first-draw cancellation",
+    "original mesh position/rotation/scale restoration",
+    "silent reconnect and normal/mono/duo behavior preserved"
+  ],
+  "validation": {
+    "python": {
+      "passed": 313,
+      "deselected": 1,
+      "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests -q -k 'not all_zones'",
+      "log": "data/local/super-variations/python-all.log",
+      "exclusion": "unchanged all_zones geometry case; not rerun in this task"
+    },
+    "node": {
+      "passed": 241,
+      "scope": "tests/*.mjs and tests/single/*.test.mjs",
+      "command": "node --experimental-vm-modules --test --test-concurrency=1 tests/*.mjs tests/single/*.test.mjs",
+      "log": "data/local/super-variations/node-all.log"
+    },
+    "browser": {
+      "unique_passed": 36,
+      "first_run": {
+        "passed": 35,
+        "failed": 1
+      },
+      "failed_case": "building-fragments: actual IT1 on the marker",
+      "failure": "WebSocket opening raised Event before C2 acceptance, before contact assertions; cause not established",
+      "recheck": {
+        "passed": 1,
+        "failed": 0,
+        "fresh_server": true
+      },
+      "latest_4_preset_cases": "all passed within 35 successful cases; each accepted synthetic 3-camera strike scored96 and restored96 visible fragments; swing case also changed next selection while armed",
+      "scope": "building-* / mono-occlusion-fallback / super-smash; Edge headless D3D11",
+      "logs": [
+        "data/local/super-variations/browser-regression.log",
+        "data/local/super-variations/browser-single-recheck.log"
+      ],
+      "initial_smoke": {
+        "passed": 7,
+        "log": "data/local/super-variations/browser-focused.log"
+      }
+    },
+    "build": {
+      "command": "npm run build:building-test",
+      "passed": true,
+      "log": "data/local/super-variations/build.log",
+      "warning": "existing large bundle warning; no new dependencies"
+    },
+    "initial_environment_failures": [
+      {
+        "case": "Python default CP949 decoding",
+        "result": "6 failed,307 passed; explicit UTF-8 full rerun passed313",
+        "log": "data/local/super-variations/python-locale-failure.log"
+      },
+      {
+        "case": "Playwright server executable path parsing on Windows",
+        "resolution": "quoted absolute .venv python path in task-local runner",
+        "log": "data/local/super-variations/browser-start-path-failure.log"
+      }
+    ]
+  },
+  "input": "synthetic camera/pose/clock fixtures and real local HTTP/WS/WebGL/Rapier/WebAudio graphs, unit fixtures; not real phones or listening",
+  "unverified": [
+    "live phones and measured C0 alignment",
+    "speaker/headphone listening and preferred timbre",
+    "physical end-to-end latency/p95",
+    "20min and repeated live-session stability",
+    "participant aesthetic preference",
+    "future uplift/electric extension styles"
+  ],
+  "source_sha256": {
+    "backend/super_smash.py": "5ca6bf56402664564132dc800f18153b1e966cad9ffe1b8dcc62ba19c2a4c922",
+    "frontend/building-test/feedback-presets.js": "490e51d0547c6d5c72632c469d8365e06d16f59d601cf2609b31fc37ae020d74",
+    "frontend/building-test/screen-variation.js": "010c540e88cec0e752b5768623122bcdfbaef8b490f86b4e23e8ec5c406d2ac6",
+    "frontend/building-test/screen-impact.js": "f5063a422f80cae1ba5f132fc26d58a1fe9e1a39c262cb95183045379a5d66e5",
+    "frontend/building-test/super-smash-feedback.js": "fd31e62220af3ea4e31245ae600d3613d162a15e87d1ab9dd19e0b1d24bb8833",
+    "frontend/building-test/fragment-physics.js": "74201e8481de6165d417c651cbab89029721ac3b99a01dc24b34fa986a49b0a9",
+    "frontend/building-test/impact-audio.js": "67334a00feeaef54400933c304ca5ca4de4149617b175493d140eba2072c263e",
+    "frontend/building-test/main.js": "dd513ab037ac0dc8b2f2426bd65ca1916abfe948ace1e911d3458721ee02957e",
+    "frontend/building-test/index.html": "557477bcba7fabdec1ae8d7a67cf61ff96c234c6971116e6cbb4f57ee1820720",
+    "frontend/building-test/scene-loader.js": "99bd2bdc227ed9e96b651f61011c0e32156549071215bb17b597fd9edd042d1a",
+    "tests/test_super_smash.py": "044406867aefd12d0ec55c5bb2d040790270d0cccebb28c4517072e7b41a38d1",
+    "tests/test_feedback_variations.mjs": "55255dab315b9f2050b7657144872ad73f3f66a24ff1a18af39f2527a3be9b60",
+    "tests/browser/super-smash.spec.js": "04dd976de414f60a5c28882348ba44931d3f41c9875e269aef4e888200227930",
+    "docs/DATA_CONTRACT.md": "51ed7a07969d839de645961ae4f285377370f2792c9ecb8e702b0c35ed70e6fa",
+    "docs/SUPER_SMASH_TEST.md": "6c1122161689c92ca8fd3372d2573fbffcf002d661770cf657272b55d4e9cec0",
+    "web/test/building/index.html": "2f5b611f4d553d1613084b11351dbf13166f8e1643e64be249ad12c4eb2f0e40",
+    "web/test/building/assets/index-CfyEUVlG.js": "34de47ee701af6c6d7cf27eec131694fedb557b91165bba07be64702c162ed3e",
+    "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c"
+  },
+  "documentationValidation": {
+    "relativeLinksChecked": 41,
+    "implementationSourceHashesMatched": 18,
+    "planAutomaticItemsComplete": 8,
+    "planLiveItemsUnchecked": 4,
+    "builtAssetLinksExist": true,
+    "sourceWhitespaceCheck": "git diff --check excludes generated shader strings; passed"
+  }
+}

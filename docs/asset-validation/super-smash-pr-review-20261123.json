@@ -1,0 +1,71 @@
+{
+  "task": "Super Smash variations PR code review and publication",
+  "reviewed_at_kst": "2026-11-23T14:01:57.765752+09:00",
+  "reviewer": "Codex; not a separate human approval",
+  "base": "bf7902c9245ee2feb97db4f2c156f55cf4da6577",
+  "branch": "feat/super-smash-variations-20261123",
+  "scope": [
+    "controller ownership/version/capabilities and arming freeze",
+    "event preset/version/uint32 seed and nonrepeating shuffle",
+    "single normalized event and PC clock for screen/audio/physics",
+    "direction-following swing, nonpositive initial crush z, visual-only gravity",
+    "128 dynamic/64 visual, 16 per frame/3ms/4sec and14 audio source budgets",
+    "cancel on reset/pause/hidden/disconnect/view/motion setting, silent snapshot/duplicate",
+    "score/removal consistency, restScale restoration, normal/mono/duo regressions",
+    "first Canvas completion clock/deadline and local/OS reduced 3D motion"
+  ],
+  "unresolved_blocking_findings": [],
+  "validation_evidence": "docs/asset-validation/super-smash-validation-20261123.json",
+  "validation_reused": {
+    "python": 314,
+    "node": 331,
+    "browser": 40,
+    "separate_socket_repeats": 3,
+    "reason": "current20 source/bundle SHA256 match the tested artifacts; no product/test changes since final pass"
+  },
+  "prepublication_checks": {
+    "selected_paths": 32,
+    "rename_aware_diff_files": 31,
+    "relative_links": 195,
+    "source_sha256": 20,
+    "working_to_index_blob_matches": 31,
+    "whitespace": "tracked staged source/docs and new files passed; generated GLSL bundle excluded"
+  },
+  "reviewed_source_git_blobs": {
+    "backend/super_smash.py": "8918c8030c4df44d35b675934c314399b4b5dc6d",
+    "docs/DATA_CONTRACT.md": "e02fd7ab0c892b6178eeaabec39e82ffdd16f43b",
+    "docs/SMASH_ANIMATION_VARIATIONS.md": "cdbc4bd39486b3b76cf68dbc0ed219178a15f498",
+    "docs/SUPER_SMASH_TEST.md": "eefb3ba137b8f57f2fc01a15a6b8006a13c5e0b4",
+    "frontend/building-test/feedback-presets.js": "3f373332767c8d7f21b5b8ed814f63761ae112f7",
+    "frontend/building-test/fragment-physics.js": "4df7c23b4d7a20a50cacd3a3383032e964ac93c1",
+    "frontend/building-test/impact-audio.js": "861e0e813794c3b66e93459979bc04a469b5474c",
+    "frontend/building-test/index.html": "1d3c3c5c9d35c8c73a761ad50e4257df7817eea8",
+    "frontend/building-test/main.js": "31924292e98321afc71603462a066053b4199fb8",
+    "frontend/building-test/scene-loader.js": "5f5518030c673cc803c1e3703c4e6d4c925dea41",
+    "frontend/building-test/screen-impact.js": "ba10ad766bb928151cfcd18e402872a1798c01c1",
+    "frontend/building-test/screen-variation.js": "1cb5e105b123b9ab8b7e30bad23cf643d605ddde",
+    "frontend/building-test/super-smash-feedback.js": "cf21c8c9cace41df50f8e3ba8af2de8fc260cbec",
+    "tests/browser/super-smash.spec.js": "93509914502337fd667b1b24ef7a3a66f24049fd",
+    "tests/test_feedback_variations.mjs": "03ca1eb964beac689a27f9a481d4b75d0ee2f1bb",
+    "tests/test_screen_impact.mjs": "0332fdc27ee29a0b604bf44e20f4e4e3c67fe823",
+    "tests/test_super_smash.py": "9ed9c4fb2fbc906bed8eff2db98975bdad15f75f",
+    "web/test/building/assets/index-BPTzn119.js": "f87a697cbe386de49e27506dac643634d73dee2a",
+    "web/test/building/assets/index-DZ4IWW3t.css": "e7e0b8bb1b066f08b41e0273e861116bb643ed9f",
+    "web/test/building/index.html": "05e91dc42f45dc4039c25c627d3450f8bef99d2a"
+  },
+  "retained_failure_history": [
+    "Node initial native3221225477 in unchanged camera_lifecycle; isolated6 and final331 pass; root cause not established",
+    "earlier initial WebSocket connection Event not reproduced in3 separate repeats or40case final suite"
+  ],
+  "unverified": [
+    "live phones/C0 measured alignment",
+    "speaker listening/timbre",
+    "physical end-to-end latency/p95",
+    "20min and repeated live sessions",
+    "participant preference",
+    "future uplift/electric variants"
+  ],
+  "plan_status": "automatic SV-01/02 retained checked8; real SV-03 unchecked4, SS-03 and common phases unchanged",
+  "pr_state": "not yet created; remote verification follows",
+  "publication_permission": "user requested PR, verification, then merge"
+}

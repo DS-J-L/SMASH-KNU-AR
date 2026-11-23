@@ -4,6 +4,68 @@ import {writeFileSync} from 'node:fs';
 const fixture=JSON.parse(execFileSync('.venv/Scripts/python.exe',['-X','utf8','-c',
   "import sys,json;sys.path.insert(0,'tests');from test_fragment_test import browser_case;print(json.dumps(browser_case()))"],{encoding:'utf8'}));
 
+for(const preset of ['chain_blast_v1','swing_wave_v1','crush_collapse_v1','gravity_compress_v1'])for(const reducedMotion of [false,true]){
+  test('super preset '+preset+(reducedMotion?' with reduced motion':'')+' drives the real event, screen, audio and bounded debris then restores',async({page},testInfo)=>{
+    const errors=[];page.on('pageerror',e=>errors.push(e.message));
+    const osReduced=reducedMotion&&preset==='gravity_compress_v1';
+    if(osReduced)await page.emulateMedia({reducedMotion:'reduce'});
+    await page.goto('/test/building/?scene=it1&key=fragment-test');
+    await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest?.snapshot();return s?.ready&&s.connected;})).toBe(true);
+    await expect(page.locator('#claimControl')).toBeEnabled();await page.locator('#claimControl').click();
+    await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return s.modelState.controller_viewer_id===s.viewerId&&!s.controlPending;})).toBe(true);
+    await page.locator('#superIt1').click();
+    await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return s.sceneId==='it1'&&!s.controlPending&&s.score===0;})).toBe(true);
+    await page.locator('#smashMode').selectOption('super_smash');
+    await expect.poll(()=>page.evaluate(()=>!window.buildingFragmentTest.snapshot().controlPending)).toBe(true);
+    await page.locator('#feedbackStyle').selectOption(preset);
+    await expect.poll(()=>page.evaluate(()=>!window.buildingFragmentTest.snapshot().controlPending)).toBe(true);
+    if(reducedMotion&&!osReduced)await page.locator('#reduceMotion').check();
+    try{
+      await phones(page);await page.locator('#playView').click();
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.phase),{timeout:20000}).toBe('armed');
+      if(preset==='swing_wave_v1'){
+        await page.locator('#feedbackStyle').selectOption('gravity_compress_v1');
+        await expect.poll(()=>page.evaluate(()=>!window.buildingFragmentTest.snapshot().controlPending)).toBe(true);
+        await expect(page.locator('#feedbackHint')).toContainText('다음 준비');
+      }
+      await page.evaluate(()=>{window.smashPose='after';});
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().score)).toBe(96);
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().super.logs.at(-1)?.firstDraw)).not.toBeNull();
+      await page.waitForTimeout(180);
+      const result=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+      expect(result.modelState.event?.feedback_preset??result.super.logs.at(-1).preset).toBe(preset);
+      expect(result.super.eventCount).toBe(1);expect(result.super.logs.at(-1).preset).toBe(preset);
+      expect(result.super.logs.at(-1).firstDraw).toBeGreaterThanOrEqual(result.super.logs.at(-1).received);
+      expect(result.super.logs.at(-1).firstDraw-result.super.logs.at(-1).received).toBeLessThanOrEqual(100);
+      expect(result.super.audio.preset).toBe(preset);expect(result.physics.superPreset).toBe(preset);
+      expect(result.physics.dynamic).toBeLessThanOrEqual(128);expect(result.physics.finite).toBe(true);
+      if(reducedMotion){expect(result.physics.dynamic).toBe(0);expect(result.physics.superVisual).toBe(0);expect(result.physics.superHidden).toBe(96);}
+      else if(preset==='gravity_compress_v1'){expect(result.physics.dynamic).toBe(0);expect(result.physics.superVisual).toBeGreaterThan(0);expect(result.physics.superVisual).toBeLessThanOrEqual(64);}
+      await page.screenshot({path:testInfo.outputPath('live-synthetic-'+preset+'.png')});
+      writeFileSync(testInfo.outputPath('feedback-state.json'),JSON.stringify(result,null,2));
+      if(!reducedMotion&&['chain_blast_v1','gravity_compress_v1'].includes(preset)){
+        await page.locator('#reduceMotion').check();
+        const stopped=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+        expect(stopped.score).toBe(96);expect(stopped.physics.dynamic).toBe(0);expect(stopped.physics.superVisual).toBe(0);
+        expect(stopped.physics.superHidden).toBe(96);await expect(page.locator('#screenImpact')).toBeHidden();
+      }
+      await page.locator('#superRestore').click();
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().score)).toBe(0);
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().visible.length)).toBe(96);
+      const restored=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+      expect(restored.physics.superVisual).toBe(0);expect(restored.physics.dynamic).toBe(0);
+      await page.locator('#smashMode').selectOption('normal');
+      await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('normal');
+      await expect.poll(()=>page.evaluate(()=>!window.buildingFragmentTest.snapshot().controlPending)).toBe(true);
+      await page.locator('#feedbackStyle').selectOption('chain_blast_v1');
+      await expect.poll(()=>page.evaluate(()=>!window.buildingFragmentTest.snapshot().controlPending)).toBe(true);
+      expect(errors).toEqual([]);
+    }finally{
+      await page.evaluate(()=>{clearInterval(window.smashLoop);Object.values(window.smashSockets??{}).forEach(s=>s.close());});
+    }
+  });
+}
+
 async function phones(page,pose='before'){
   await page.evaluate(async({data,pose})=>{
     window.smashSockets={};window.smashPose=pose;window.smashFrames=[];

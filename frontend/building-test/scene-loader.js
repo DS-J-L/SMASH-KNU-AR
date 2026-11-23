@@ -33,6 +33,7 @@ export function assembleScene(spec,models){
       new THREE.Matrix4().multiplyMatrices(transform,original.matrixWorld).decompose(node.position,node.quaternion,node.scale);
       node.traverse(child=>{child.userData.fragmentId=f.id;});
       node.userData.restPosition=node.position.clone();node.userData.restQuaternion=node.quaternion.clone();
+      node.userData.restScale=node.scale.clone();
       root.add(node);nodes.set(f.id,node);
     }
   });

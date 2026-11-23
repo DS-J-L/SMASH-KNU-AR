@@ -309,7 +309,7 @@ PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wris
 `/ws/test/multi3d`의 model viewer 전용이다. `/ws/pose`·room 게임·mono/wide/duo에 슈퍼 명령은 추가하지 않는다. [상세 설계8절](SUPER_SMASH_DESIGN.md)·[실행/인수](SUPER_SMASH_TEST.md)를 따른다.
 
 - 접속 시 multi3d_viewer{viewer_id}와 완전한 모델 snapshot을 보낸다. 폰 input_mode query는 live(기본)/synthetic/replay, 잘못된 값은 unknown이다. 실제 장비 시험의 증명은 아니다.
-- multi3d_model_control은 request_id·server_instance_id·expected_epoch·expected_control_revision·action을 요구한다. action은 claim_controller/handoff_controller/set_mode/reset/pause/resume/set_scene이며 해당 모드/장면/인계 대상만 추가 필드를 허용한다. 운영 PC만 제어하고 claim은 운영자가 없거나 만료됐을 때 허용한다.
+- multi3d_model_control은 request_id·server_instance_id·expected_epoch·expected_control_revision·action을 요구한다. action은 claim_controller/handoff_controller/set_mode/reset/pause/resume/set_scene/set_feedback이며 해당 모드/장면/인계 대상/연출 선택만 추가 필드를 허용한다. 운영 PC만 제어하고 claim은 운영자가 없거나 만료됐을 때 허용한다.
 - 응답은 control_ack와 완전한 model_state다. 연결별 최근128개 request_id 중복은 재실행하지 않는다. 거부 code는 stale_instance/stale_epoch/stale_control_revision/not_controller/invalid_command이며 형식 오류/옛 우회 명령은 bad_message다. multi3d_model_snapshot으로 현재 상태를 다시 요청한다.
 - multi3d_presentation은 instance/epoch·presentation_ready·c0_frame_age_ms·visible·assets_ready다. 운영 PC 1초 갱신/3초 만료, C0 나이500ms 이하. 새 epoch는 옛 PC 준비를 재사용하지 않는다.
 - model_test에 server_instance_id/model_revision/control_revision/calibration_version/controller_viewer_id/smash_mode/phase/readiness/delivery를 추가한다. revision은 허브 수명 중 증가하며 모델 재생성 때 리셋하지 않는다. 초기/재동기화는 delivery=snapshot, 새 타격은 event, 후속 관측은 update다. 초기 snapshot event는 null이다.
@@ -317,3 +317,14 @@ PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wris
 - score=고유 제거 ID 수, event.points=새 ID 수, epoch당 슈퍼1회. 슈퍼 상태/타격은 순서 있는 전송이며 송신 큐 포화는1013 재접속/상태 복구를 요구한다. PC는 snapshot 무연출·옛 revision/instance/중복 event 거부를 적용한다.
 
 자동 synthetic와 실제3대 정합/전체 지연·공통 Phase 완료를 구분한다.
+
+### 2026-11-23 슈퍼 연출4종 추가 계약
+
+- `action=set_feedback`는 `feedback_selection` 하나만 추가한다. 값은 `chain_blast_v1`(기본)/`swing_wave_v1`/`crush_collapse_v1`/`gravity_compress_v1`/`shuffle` 중 하나다. 알 수 없는 값은 invalid_command이며 epoch·제거/점수·추적을 리셋하지 않는다.
+- 모델 상태에 `feedback_selection`(요청된 선택), `feedback_armed_selection`(준비된 타격에 고정된 선택 또는 null)을 추가한다. armed 중 선택 변경은 다음 준비부터 적용한다. 유효 관절 상실/장비·시각/PC 중단·복원/epoch 전환에서 준비 고정을 해제한다.
+- 수락된 슈퍼 이벤트는 기존 `effect_style=screen_impact_v1`과 접촉/방향/제거/점수를 보존하고 `feedback_preset`(4종 중 실제 결정값), `feedback_version=1`, `feedback_seed`(uint32)를 추가한다. shuffle은 수락 이벤트에만 덱을 소비하고4종을 한 번씩 사용하며 덱 경계에서도 직전 연출과 중복하지 않는다. 같은 event_id 재확인은 덱/seed를 다시 바꾸지 않는다.
+- 운영 PC presentation은 선택 필드 `feedback_version=1`, `feedback_presets=[지원하는 프리셋ID]`를 보낸다. 필드가 없는 기존 PC는 기본 폭파 지원으로 간주한다. 준비할 연출(섞기는4종 전부)을 지원하지 않으면 pc_not_ready로 대기한다. 다른 품질/카메라/시계 기준을 완화하지 않는다.
+- PC는 미지원 preset/version을 기본 폭파로 대체한 하나의 로컬 이벤트를 화면/음향/물리에 함께 전달하고 requested/played를 기록한다. 실제 지원 버전이 다른 PC도 동일한 새 연출을 보인다고 약속하지 않는다. snapshot/중복/역순/옛 epoch는 무연출을 유지한다.
+- 로컬 `presentation_t0`는 PC performance.now 기준이며 네트워크 계약 필드가 아니다. 화면·파편 시작을 맞추는 용도로만 사용하고 카메라/서버 시각과 직접 감산하지 않는다. 로컬 `presentation_reduced`는 해당 PC의 체크박스/OS 축소 동작을 반영해3D 파편 이동을 생략하고 정적 제거 결과를 적용한다. 서버 파괴/점수·다른 PC 설정을 바꾸지 않는다.
+
+2026-11-23 개발 재검증 정정: `firstDraw`는 RAF가 제공한 프레임 시작 시각이 아닌 **Canvas 그리기 명령 완료 시각**을 PC 단조 시계로 기록한다. 첫 그리기 전/후 실제 경과가100ms를 넘으면 화면을 지우고 소리·파편 예약을 함께 취소한다. 이 진단값은 실제 카메라→화면/스피커 지연 또는 디스플레이의 물리적 표시 시각이 아니다.
