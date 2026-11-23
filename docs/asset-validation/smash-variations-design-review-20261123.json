@@ -1,0 +1,268 @@
+{
+  "scope": "super_smash only; design and preview review; not product implementation or live acceptance",
+  "base_commit": "bf7902c9245ee2feb97db4f2c156f55cf4da6577",
+  "evidence": [
+    {
+      "path": "web/public/assets/buildings/knu-it1-v3/manifest.json",
+      "sha256": "02729d236d24e6527e885fa669253dfd6e33032f78c08d4bb7226c609a4053b0"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-it1-v3/colliders.json",
+      "sha256": "7aca7445344768a662af10a71886f910732bbb8a3bcfd6c5db3e16cf50b466bc"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-main-v2/manifest.json",
+      "sha256": "40f3ffc67f2cc2760863a7fa4ce2dbcc989aba2bd8d23d29453084458b42446b"
+    },
+    {
+      "path": "web/public/assets/buildings/knu-main-v2/colliders.json",
+      "sha256": "79d996a926002c5c6e7f49cc8c2b18f7b2f7de6df11a1f8a65bdc138cd0a2cc6"
+    },
+    {
+      "path": "frontend/building-test/fragment-physics.js",
+      "sha256": "f0f53f0d7e28180c200496587ba8626f6e7beb3bad4a1eb0c8b5aa3b749615c4"
+    },
+    {
+      "path": "frontend/building-test/super-smash-feedback.js",
+      "sha256": "792e7251bb01907cd2fb88e363395ba609d52c48c09989896881d8fb24246755"
+    },
+    {
+      "path": "frontend/building-test/screen-impact.js",
+      "sha256": "7fc699b184b0c12bb71bc78eb43232cb7abb921dfb5b82605b347de33f71df38"
+    },
+    {
+      "path": "frontend/building-test/impact-audio.js",
+      "sha256": "9075e843c1c39a9821d10383f338d1f3d50235a0d782ddaba7b57b36587622cd"
+    },
+    {
+      "path": "frontend/building-test/scene-loader.js",
+      "sha256": "831525cab1b3ce108145e6b14affeb8327346dd1a84cd16b405e64dff4ff1b63"
+    }
+  ],
+  "baseline": {
+    "preview_sha256": "a57141b91afa747f6e1b798df76cf88ae6a1ca0e134533a846cbcfd119d3abd3",
+    "grid_fragment_count": 96,
+    "grid_width_height_ratio": 1.3333333333333333,
+    "it1_authored_width_height_ratio": 2.5913124522496696,
+    "main_authored_width_height_ratio": 2.653181466862172,
+    "fixed_contact_point": true,
+    "sample_accepts_event_direction": false,
+    "fixed_positive_slash_velocity": true,
+    "current_physics_forces_upward_speed_at_least_2_3": true,
+    "it1_height_m_at_assumed_placement_scale_0_6": 0.6506629943847656,
+    "ballistic_rise_m_at_2_3_mps_no_damping": 0.2696228338430173,
+    "ballistic_rise_height_ratio_no_damping": 0.4143816940103673,
+    "note": "Ballistic calculation is an analytical comparison without damping/collisions, not a measured game trajectory."
+  },
+  "decisions": [
+    {
+      "preset": "blast",
+      "decision": "retain; immediate actual contact and scene-normalized propagation"
+    },
+    {
+      "preset": "slash",
+      "decision": "rename to swing shockwave; obey event direction; no implied mesh cutting"
+    },
+    {
+      "preset": "collapse",
+      "decision": "retain with immediate contact spall and faster primary collapse; remove inherited upward clamp"
+    },
+    {
+      "preset": "vortex",
+      "decision": "retain as super-mode gravity compression; compact active phase; visual-only ownership"
+    },
+    {
+      "preset": "uplift",
+      "decision": "extension; height-normalized vertical travel"
+    },
+    {
+      "preset": "electric",
+      "decision": "extension; bind branches to moving fragments and avoid full-screen flashing"
+    }
+  ],
+  "limitations": [
+    "Collider silhouettes preserve authored geometry, not exact GLB surface/material rendering.",
+    "No live cameras, authoritative event integration, Rapier collision test, listening test, or participant preference study."
+  ],
+  "revision": "0.2",
+  "previewValidation": {
+    "combinations": 48,
+    "samples": 108600,
+    "contactFirst": 48,
+    "restMatches": true,
+    "collapseNeverRises": true,
+    "upliftMaxRiseFraction": 0.27999998715660296,
+    "directionalCases": [
+      {
+        "model": "it1",
+        "direction": "right",
+        "meanAlongDirection": 1.815690181466452
+      },
+      {
+        "model": "it1",
+        "direction": "left",
+        "meanAlongDirection": 1.7358902466668191
+      },
+      {
+        "model": "it1",
+        "direction": "depth",
+        "meanAlongDirection": 1.5913996557796153
+      },
+      {
+        "model": "main",
+        "direction": "right",
+        "meanAlongDirection": 1.2176378409912023
+      },
+      {
+        "model": "main",
+        "direction": "left",
+        "meanAlongDirection": 1.2080520608608953
+      },
+      {
+        "model": "main",
+        "direction": "depth",
+        "meanAlongDirection": 1.0437018583130342
+      }
+    ],
+    "headOnProjectionCases": 2,
+    "shots": [
+      {
+        "model": "it1",
+        "kind": "blast"
+      },
+      {
+        "model": "it1",
+        "kind": "slash"
+      },
+      {
+        "model": "it1",
+        "kind": "collapse"
+      },
+      {
+        "model": "it1",
+        "kind": "vortex"
+      },
+      {
+        "model": "it1",
+        "kind": "uplift"
+      },
+      {
+        "model": "it1",
+        "kind": "electric"
+      },
+      {
+        "model": "main",
+        "kind": "blast"
+      },
+      {
+        "model": "main",
+        "kind": "slash"
+      },
+      {
+        "model": "main",
+        "kind": "collapse"
+      },
+      {
+        "model": "main",
+        "kind": "vortex"
+      },
+      {
+        "model": "main",
+        "kind": "uplift"
+      },
+      {
+        "model": "main",
+        "kind": "electric"
+      }
+    ],
+    "monochromeSharedFrames": [
+      {
+        "kind": "blast",
+        "ms": 80
+      },
+      {
+        "kind": "blast",
+        "ms": 300
+      },
+      {
+        "kind": "blast",
+        "ms": 750
+      },
+      {
+        "kind": "slash",
+        "ms": 80
+      },
+      {
+        "kind": "slash",
+        "ms": 300
+      },
+      {
+        "kind": "slash",
+        "ms": 750
+      },
+      {
+        "kind": "collapse",
+        "ms": 80
+      },
+      {
+        "kind": "collapse",
+        "ms": 300
+      },
+      {
+        "kind": "collapse",
+        "ms": 750
+      },
+      {
+        "kind": "vortex",
+        "ms": 80
+      },
+      {
+        "kind": "vortex",
+        "ms": 300
+      },
+      {
+        "kind": "vortex",
+        "ms": 750
+      }
+    ],
+    "sizes": [
+      {
+        "width": 704,
+        "scroll": 704
+      },
+      {
+        "width": 288,
+        "scroll": 288
+      }
+    ],
+    "playPause": "pass",
+    "scrub": "pass",
+    "reducedMotion": "pass",
+    "runtimeErrors": []
+  },
+  "artifactBytes": 113395,
+  "visualReview": {
+    "reviewer": "Codex screenshot inspection, not a participant preference study",
+    "basis": "Same model/contact/camera; neutral gray effects; 80/300/750ms shared frames for four core presets",
+    "observations": [
+      "blast: expanding ring and outward fragments",
+      "swing: direction-aligned band and displacement",
+      "collapse: down-pressure cue and lower silhouette",
+      "compression: inward rotation/contraction and cleared core"
+    ],
+    "evidence": "review-shared-times-monochrome.png"
+  },
+  "documentationValidation": {
+    "localLinks": 9,
+    "jsonExamplesParsed": 1,
+    "trailingWhitespace": false,
+    "sourceHashesMatched": 9
+  },
+  "documentSha256": "f200ed690f9d8be2ccac16eeb363630a018c1adfa920385835aeda3825d6745b",
+  "originalDocumentSha256": "3fec82e6e029f7ed4a678b25889dd718c3262a13573e935df162b684144be7a2",
+  "previewSha256": "776321312961daff02df959cf96d6854fdb0edbb78de8c0424165dfa24261ed4",
+  "scopeClarification": "User explicitly confirmed super smash animation only. Normal/duo impact effects are out of scope.",
+  "productFilesModified": [],
+  "reviewStatus": "Design constraints and preview choreography verified; aesthetic preference, integrated C0/Rapier/audio and live acceptance pending.",
+  "validationCorrection": "A first document link check ran before this review JSON was written; wrote the report, then rechecked all links successfully."
+}

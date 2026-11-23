@@ -1,4 +1,6 @@
 // Contact-centred explosion. No title card; live video remains visible around the blast.
+import {DEFAULT_FEEDBACK,FEEDBACK_PRESETS,feedbackId} from './feedback-presets.js';
+import {drawScreenVariation} from './screen-variation.js';
 export const IMPACT_DURATION_MS=2100;
 function randomFor(id='preview'){
   let seed=[...id].reduce((v,c)=>(v*31+c.charCodeAt(0))>>>0,2166136261);
@@ -8,16 +10,20 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export function createScreenImpact(canvas,{now=()=>performance.now(),reduced=()=>false}={}){
   const ctx=canvas.getContext('2d');let active=null,firstDraw=null,played=0,disposed=false;
   function cancel(){active=null;canvas.hidden=true;ctx.clearRect(0,0,canvas.width,canvas.height);}
-  function start({event={},originPx,t0=now(),preview=false}){
+  function start({event={},originPx,t0=now(),preview=false,directionPx=null,groundPx=null,spanPx=null}){
     if(disposed)return;
     const w=globalThis.innerWidth||1440,h=globalThis.innerHeight||1000;
     const point=Array.isArray(originPx)&&originPx.length===2&&originPx.every(Number.isFinite)?originPx:[w/2,h/2];
-    const random=randomFor(event.event_id),particles=Array.from({length:48},(_,i)=>({
+    const random=randomFor(String(event.feedback_seed??event.event_id??'preview')),particles=Array.from({length:48},(_,i)=>({
       angle:random()*Math.PI*2,speed:100+random()*650,size:2+random()*9,spin:random()*12-6,
       delay:i<32?0:.1+random()*.3,stretch:.6+random()*.8,
     }));
     const clouds=Array.from({length:16},()=>({angle:random()*Math.PI*2,spread:random(),size:.6+random()*.8}));
-    active={t0,preview,reduced:reduced(),uv:[clamp(point[0]/w,0,1),clamp(point[1]/h,0,1)],particles,clouds};
+    const preset=feedbackId(event),durationMs=FEEDBACK_PRESETS[preset].durationMs;
+    active={t0,preview,preset,durationMs,reduced:reduced(),uv:[clamp(point[0]/w,0,1),clamp(point[1]/h,0,1)],particles,clouds,
+      directionUV:Array.isArray(directionPx)&&directionPx.every(Number.isFinite)?[directionPx[0]/w,directionPx[1]/h]:null,
+      groundUV:Array.isArray(groundPx)&&groundPx.every(Number.isFinite)?[groundPx[0]/w,groundPx[1]/h]:null,
+      spanFraction:clamp((spanPx??Math.min(w,h)*.65)/Math.min(w,h),.25,1.1)};
     firstDraw=null;played++;canvas.hidden=false;
   }
   function glow(x,y,r,colors,alpha=1){
@@ -26,10 +32,17 @@ export function createScreenImpact(canvas,{now=()=>performance.now(),reduced=()=
     colors.forEach(([stop,color])=>gradient.addColorStop(stop,color));
     ctx.globalAlpha=alpha;ctx.fillStyle=gradient;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
   }
+  function completeDraw(at){
+    const completed=Math.max(at,now());
+    if(firstDraw===null&&completed-active.t0>100){cancel();return false;}
+    firstDraw??=completed;return true;
+  }
   function draw(at=now()){
     if(!active)return false;
-    const ms=at-active.t0;
-    if(ms>IMPACT_DURATION_MS||(firstDraw===null&&ms>100)){cancel();return false;}
+    // RAF stamps the beginning of the frame, which can predate socket delivery or CPU work.
+    const drawAt=Math.max(at,now()),ms=drawAt-active.t0;
+    if(ms<0)return false;
+    if(ms>active.durationMs||(firstDraw===null&&ms>100)){cancel();return false;}
     const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,1.5,1920/Math.max(w,h));
     const W=Math.max(1,Math.round(w*dpr)),H=Math.max(1,Math.round(h*dpr));
     if(canvas.width!==W||canvas.height!==H){canvas.width=W;canvas.height=H;}
@@ -37,9 +50,10 @@ export function createScreenImpact(canvas,{now=()=>performance.now(),reduced=()=
     const p=[active.uv[0]*w,active.uv[1]*h],t=Math.max(0,ms)/1000,scale=Math.min(w,h)/800;
     if(active.reduced){
       // A quiet, local amber glow; no full-screen flashes, flying shards or shake.
-      glow(...p,90*scale,[[0,'rgba(255,215,125,.8)'],[.4,'rgba(255,135,40,.45)'],[1,'rgba(255,90,10,0)']],Math.max(0,1-t/2.1));
-      firstDraw??=at;return true;
+      glow(...p,90*scale,[[0,'rgba(255,215,125,.8)'],[.4,'rgba(255,135,40,.45)'],[1,'rgba(255,90,10,0)']],Math.max(0,1-ms/active.durationMs));
+      return completeDraw(drawAt);
     }
+    if(active.preset!==DEFAULT_FEEDBACK){drawScreenVariation(ctx,active,{p,t,w,h,glow});return completeDraw(drawAt);}
     // Rolling smoke rises from the same point instead of covering the video immediately.
     if(t>.12)for(const c of active.clouds){
       const age=t-.12,cx=p[0]+Math.cos(c.angle)*(35+age*155)*c.spread*scale;
@@ -79,9 +93,9 @@ export function createScreenImpact(canvas,{now=()=>performance.now(),reduced=()=
         ctx.fillRect(-a.size*scale,-a.size*scale,a.size*2*scale,a.size*a.stretch*scale);ctx.restore();
       }
     }
-    ctx.globalAlpha=1;firstDraw??=at;return true;
+    ctx.globalAlpha=1;return completeDraw(drawAt);
   }
   return {start,draw,cancel,dispose(){cancel();disposed=true;},info:()=>({active:!!active,preview:active?.preview??false,played,firstDraw,
-    t0:active?.t0??null,durationMs:IMPACT_DURATION_MS,originPx:active?[active.uv[0]*(globalThis.innerWidth||1440),active.uv[1]*(globalThis.innerHeight||1000)]:null,
+    t0:active?.t0??null,durationMs:active?.durationMs??IMPACT_DURATION_MS,preset:active?.preset??null,directionUV:active?.directionUV??null,originPx:active?[active.uv[0]*(globalThis.innerWidth||1440),active.uv[1]*(globalThis.innerHeight||1000)]:null,
     particles:active?.particles.length??0,clouds:active?.clouds.length??0})};
 }

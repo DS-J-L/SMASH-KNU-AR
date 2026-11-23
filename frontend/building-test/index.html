@@ -3,8 +3,9 @@
 <body><header><h1>건물 정합 · 파편 물리 시험</h1><p id="sourceMode"></p><p id="status">모델 준비 중…</p><button id="sound" type="button" aria-pressed="true" title="화면을 한 번 클릭하면 AR 타격음이 활성화됩니다.">소리 끄기</button><a href="/test/building/?mode=mono">1대 근사 3D</a> · <a href="/test/building/">3대 삼각측량</a> · <a href="/test/building/?mode=wide">3대 가로 넓은 무대</a> · <a href="/test/building/?mode=duo">판정 2대 + 화면 폰</a> · <a id="legacyLink" href="/test/multi3d/view.html">기존 3D 시험</a></header>
 <section id="superPanel" hidden aria-label="3대 연쇄 폭파">
 <label>파괴 모드 <select id="smashMode"><option value="normal">일반 파괴</option><option value="super_smash">연쇄 폭파</option></select></label>
+<label>슈퍼 연출 <select id="feedbackStyle"><option value="chain_blast_v1">연쇄 폭파</option><option value="swing_wave_v1">스윙 충격파</option><option value="crush_collapse_v1">압궤 붕괴</option><option value="gravity_compress_v1">중력 압축</option><option value="shuffle">섞어서 재생</option></select></label><small id="feedbackHint"></small>
 <button id="claimControl">이 PC로 운영</button><button id="superIt1">IT1 선택 · 복원</button><button id="playView">C0 플레이 화면</button>
-<button id="effectPreview">폭발 미리보기 · 무득점</button><button id="superRestore">다시 세우기</button><button id="superStop">중지</button>
+<button id="effectPreview">화면·소리 미리보기 · 무득점</button><button id="superRestore">다시 세우기</button><button id="superStop">중지</button>
 <button id="superMute" aria-pressed="false">음소거</button><label><input id="reduceMotion" type="checkbox"> 동작 줄이기</label>
 <output id="superStatus" aria-live="polite">서버 상태 대기</output><output id="superResult"></output>
 </section><canvas id="screenImpact" hidden aria-hidden="true"></canvas>

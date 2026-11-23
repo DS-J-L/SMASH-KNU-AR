@@ -20,3 +20,25 @@ test('reduced motion keeps a local glow without particles drawn; origins scale w
   const {effect,gradients}=setup(true);effect.start({originPx:[300,650]});effect.draw(50);assert.equal(gradients.length,1);
   innerWidth=720;innerHeight=500;effect.draw(100);assert.deepEqual(effect.info().originPx,[150,325]);effect.cancel();
 });
+
+test('first draw uses completion time when the RAF timestamp predates the received event',()=>{
+  const {canvas}=setup();let at=100;
+  const effect=createScreenImpact(canvas,{now:()=>at});effect.start({t0:100,originPx:[300,650]});
+  at=102;effect.draw(99);
+  assert.equal(effect.info().firstDraw,102);
+});
+
+test('a stale RAF timestamp cannot bypass the actual first-draw deadline',()=>{
+  const {canvas}=setup();let at=100;
+  const effect=createScreenImpact(canvas,{now:()=>at});effect.start({t0:100});
+  at=205;assert.equal(effect.draw(190),false);
+  assert.equal(effect.info().active,false);assert.equal(canvas.hidden,true);
+});
+
+test('crossing the first-draw deadline during Canvas work cancels before presentation',()=>{
+  const {canvas}=setup();let at=100;
+  canvas.getContext('2d').fill=()=>{at=205;};
+  const effect=createScreenImpact(canvas,{now:()=>at});effect.start({t0:100});
+  assert.equal(effect.draw(100),false);assert.equal(canvas.hidden,true);
+  assert.equal(effect.info().firstDraw,null);
+});

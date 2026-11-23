@@ -1,5 +1,19 @@
 # 3대 연쇄 폭파 실행·인수 안내
 
+## 2026-11-23 슈퍼 연출4종 실행
+
+서버를 재시작하고 PC/폰을 새로고침한다. PC `/test/building/?scene=it1`에서 **이 PC로 운영 → IT1 선택·복원 → 파괴 모드 ‘연쇄 폭파’ → 슈퍼 연출 선택** 순서로 사용한다. 선택지는 연쇄 폭파/스윙 충격파/압궤 붕괴/중력 압축/섞어서 재생이다. 기존 C0/C1/C2 삼각측량·마커/시계·관절 준비를 충족하면 실제 타격 한 번에 전체 파괴/고유 점수와 선택한 연출을 재생한다. mono/wide/duo에 슈퍼 UI는 표시하지 않는다.
+
+- 스윙 충격파는 실제 direction을 C0에 투영하고 정면 타격은 고리로 표시한다. 압궤는 위로 쏘는 기존 폭파 속도를 사용하지 않는다.
+- 중력 압축은 최대64개 대표 시각 파편을 수축시키며 이 조각들의 동적 충돌체는 켜지지 않는다. 나머지 제거 ID/점수는 모두 적용한다. 실제 동적 파편은 기존128개·프레임16/3ms·4초 정리 경계를 유지한다.
+- armed 중 선택을 바꾸면 준비된 이번 타격은 기존 연출, 다음 준비부터 새 선택을 사용한다. 화면 안내에 ‘다음 준비’가 표시된다. 섞기는4종을 중복 없이 사용한다.
+- **화면·소리 미리보기 · 무득점**은 Canvas와 음향만 재생하며 실제 파편/판정/점수는 건드리지 않는다. 섞기 미리보기는 로컬로 순환하며 서버 덱을 소비하지 않는다. 실제3D 파편은 유효 타격에서 확인한다.
+- 복원/중지/숨김/표시 상실/화면 보기 전환/축소 동작 변경은 화면·소리·예약 파편을 취소한다. 복원은 수축한 메시의 원래 크기/회전/위치도 복구한다. 음소거는 소리만 멈춘다.
+- 동작 줄이기 체크 또는 OS의 모션 감소가 켜진 PC는4종 모두 접촉 잔광과 정적 제거 결과를 보인다. 점수/제거96개는 그대로 적용하되 동적/수축3D 파편은 만들지 않는다. 재생 중 켜면 진행 중 파편/화면 연출을 즉시 취소한다. 실제 영상·관절 추적은 멈추지 않으며 음향은 별도 음소거로 제어한다.
+- 준비된 연출을 지원하지 않는 옛 운영 PC는 대기한다. 새 PC 페이지를 새로고침해 지원 프리셋 목록을 서버에 전달한다. 서버 재시작 없이 옛 서버/새 번들 조합만으로 새 제어를 지원한다고 가정하지 않는다.
+
+자동 검사에는 tests/test_super_smash.py·test_feedback_variations.mjs·browser/super-smash.spec.js의4종96점/복원·준비 중 선택 고정·좌우 스윙/압궤/압축·미지원 대체·재접속/무효 입력을 사용한다. 실제 폰/정합·청취·전체 지연·20분/사용자 선호는 별도 인수다. 상세 설계/자동 범위는 [바리에이션 설계](SMASH_ANIMATION_VARIATIONS.md)를 따른다.
+
 2026-11-21, Asia/Seoul. 작업 브랜치 `feat/super-smash-three-camera`. [설계](SUPER_SMASH_DESIGN.md)의 C0/C1/C2 삼각측량 경로를 구현했다. **실제 폰·실측 정합·청취·전체 지연·20분 인수는 미검증이다.** 공유·검토 상태는 [PR 검토 기록](asset-validation/super-smash-pr-review-20261121.json)을 따른다.
 
 ## 실행
@@ -33,8 +47,8 @@
 
 ```powershell
 $env:PYTHONUTF8='1'
-.venv/Scripts/python.exe -m pytest tests/test_super_smash.py tests/test_fragment_test.py tests/test_multi3d_relay.py -q
-node --experimental-vm-modules --test --test-concurrency=1 tests/test_super_smash.mjs tests/test_fragment_physics.mjs tests/test_screen_impact.mjs tests/test_impact_audio.mjs
+.venv/Scripts/python.exe -X utf8 -m pytest tests/test_super_smash.py tests/test_fragment_test.py tests/test_multi3d_relay.py -q
+node --experimental-vm-modules --test --test-concurrency=1 tests/test_super_smash.mjs tests/test_feedback_variations.mjs tests/test_fragment_physics.mjs tests/test_screen_impact.mjs tests/test_impact_audio.mjs
 npm run build:building-test
 $env:AR_TEST_RENDERER='d3d11'
 npx playwright test -c playwright.building-test.config.js
