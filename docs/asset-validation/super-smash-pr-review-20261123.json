@@ -66,6 +66,30 @@
     "future uplift/electric variants"
   ],
   "plan_status": "automatic SV-01/02 retained checked8; real SV-03 unchecked4, SS-03 and common phases unchanged",
-  "pr_state": "not yet created; remote verification follows",
+  "pr_state": {
+    "url": "https://github.com/DS-J-L/SMASH-KNU-AR/pull/26",
+    "number": 26,
+    "state": "OPEN",
+    "implementation_head": "38b9515603a1839dac1a495d5ac816b0b5c2a656",
+    "base": "bf7902c9245ee2feb97db4f2c156f55cf4da6577",
+    "actual_pr_changed_files": 32,
+    "remote_patches_reviewed": [
+      "backend/super_smash.py",
+      "frontend/building-test/fragment-physics.js",
+      "frontend/building-test/screen-impact.js"
+    ],
+    "first_github_state": {
+      "mergeable": "UNKNOWN",
+      "mergeStateStatus": "UNKNOWN",
+      "status_checks": 0,
+      "workflow_runs": 0,
+      "check_runs": 0,
+      "reviews": 0,
+      "review_threads": 0,
+      "branch_protected": false,
+      "required_status_checks": []
+    },
+    "next": "recheck final documentation head then merge using expected SHA; local main sync afterwards"
+  },
   "publication_permission": "user requested PR, verification, then merge"
 }
