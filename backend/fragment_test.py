@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import time
 import uuid
 from dataclasses import replace
 from functools import lru_cache
@@ -19,6 +20,9 @@ OVERLAP_MIN_MOVE_M = 0.08
 BUILDING_HEIGHT_RATIO = .7
 # Sweep mode (duo stage only): one swing = hits no further apart than this. A new swing starts after a pause.
 SWING_GAP_MS = 400
+# 1-camera / duo stage (2026-11-24, user): a building that just appeared (scene change, e.g. auto next building)
+# ignores body hits for this long, so a swing still in progress does not break it at once. Server clock.
+SPAWN_GUARD_MS = 2000
 
 
 def crossed_ids(target, a, b):
@@ -50,8 +54,16 @@ class FragmentTest:
         self.body_reference = None
         # Duo stage: a hand path breaks every piece it crosses, and each swing is marked for one effect.
         self.sweep = False
+        self.spawn_guard_until = 0.0   # perf_counter ms; 0 = no guard
         self.neighbors, self.anchors = support_graph(placement,scene_id)
         self.reset()
+
+    def guard_spawn(self, ms=SPAWN_GUARD_MS):
+        self.spawn_guard_until = time.perf_counter() * 1000 + ms
+
+    def spawn_guard_ms(self):
+        left = self.spawn_guard_until - time.perf_counter() * 1000
+        return round(left) if left > 0 else 0
 
     def reset(self):
         self.removed = set()
@@ -115,7 +127,7 @@ class FragmentTest:
                 "score": len(self.removed),
                 "blast_enabled": self.blast_enabled, "blast_radius": self.blast_radius, "blast_strength": self.blast_strength,
                 "depth_margin": self.depth_margin, "diagnostics": self.diagnostics,
-                "collapse": self.collapse, "event": event, "bounds": {"lo": self.target.lo, "hi": self.target.hi}}
+                "collapse": self.collapse, "spawn_guard_ms": self.spawn_guard_ms(), "event": event, "bounds": {"lo": self.target.lo, "hi": self.target.hi}}
 
     def release(self, ids, kind="impact", direction=None, point=None):
         valid = {f.fragment_id for f in self.target.fragments}
@@ -155,6 +167,7 @@ class FragmentTest:
         standing = standing_in_model(self.target, positions)
         candidates = []
         self.diagnostics={}
+        guarded = self.spawn_guard_ms() > 0
         for name in STRIKE_JOINTS:
             ankle = name in ANKLES
             p = positions.get(name)
@@ -167,6 +180,10 @@ class FragmentTest:
             self.diagnostics[name]=diagnostic
             prev = self.previous.get(name)
             self.previous[name] = (list(p), at)
+            if guarded:
+                # Keep tracking so the first frame after the guard is a normal move, not a jump from stale data.
+                diagnostic['reason']='spawn_guard'
+                continue
             if prev is None or not 0 < at - prev[1] <= 250 or math.dist(prev[0], p) > 1.5:
                 diagnostic['reason']='baseline' if prev is None else 'gap'
                 continue

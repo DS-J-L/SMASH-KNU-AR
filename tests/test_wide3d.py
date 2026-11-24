@@ -204,7 +204,8 @@ def test_viewer_changes_spacing_and_zone_but_not_free_placement(client):
         pc.send_json({"type": "wide3d_stage_config", "spacing_m": 10})
         assert "spacing_m" in receive_until(pc, "error")["detail"]
         pc.send_json({"type": "multi3d_model_scene", "scene_id": sets[3]["id"]})
-        assert receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["stage"]["zone_id"] == sets[3]["id"])
+        chosen = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["stage"]["zone_id"] == sets[3]["id"])
+        assert 1500 < chosen["model_test"]["spawn_guard_ms"] <= 2000   # new building: body hits ignored ~2 s
         # A spacing change keeps the set that holds the same first building.
         pc.send_json({"type": "wide3d_stage_config", "spacing_m": 1.5})
         first = sets[3]["packages"][0]

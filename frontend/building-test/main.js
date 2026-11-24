@@ -510,7 +510,9 @@ function checkAutoNext(m){
   if(!$('autoNext').checked){cancelAutoNext();$('autoNextStatus').textContent='';return;}
   const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
   const need=Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
-  if(!(total>0&&removed>=need)){cancelAutoNext();$('autoNextStatus').textContent=`부서진 파편 ${removed}/${total}개 · ${need}개 이상이면 다음 건물`;return;}
+  // The server ignores body hits for ~2 s after a new building appears (spawn_guard_ms).
+  const guard=m.spawn_guard_ms>0?`새 건물 무적 ${(m.spawn_guard_ms/1000).toFixed(1)}초 · `:'';
+  if(!(total>0&&removed>=need)){cancelAutoNext();$('autoNextStatus').textContent=`${guard}부서진 파편 ${removed}/${total}개 · ${need}개 이상이면 다음 건물`;return;}
   const key=`${m.scene_id}:${m.epoch}`;if(autoNextFor===key)return;
   cancelAutoNext();autoNextFor=key;
   const delay=Math.min(30,Math.max(1,Number($('autoNextDelay').value)||3));

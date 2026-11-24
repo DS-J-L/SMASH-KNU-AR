@@ -313,3 +313,24 @@ def test_sweep_breaks_every_crossed_piece_and_marks_one_effect_per_swing():
     late = j.update({'right_wrist': {'p': [b[0], a[1], d[2]]}}, 666)
     assert late['event'] is not None and late['event']['swing_start'] is True
     assert late['event']['swing_id'] != first['event']['swing_id']
+
+
+def test_new_building_ignores_body_hits_during_spawn_guard(monkeypatch):
+    # 1-camera / duo stage (2026-11-24): a building that just appeared cannot be broken for SPAWN_GUARD_MS.
+    import backend.fragment_test as ft
+    clock = [1000.0]
+    monkeypatch.setattr(ft.time, 'perf_counter', lambda: clock[0] / 1000)
+    j = FragmentTest()
+    a, b, fid = approach(j)
+    assert j.snapshot()['spawn_guard_ms'] == 0
+    j.guard_spawn()
+    assert j.snapshot()['spawn_guard_ms'] == ft.SPAWN_GUARD_MS
+    j.update({'right_wrist': {'p': a}}, 0)
+    out = j.update({'right_wrist': {'p': b}}, 33)
+    assert out['event'] is None and out['removed_ids'] == []
+    assert out['diagnostics']['right_wrist']['reason'] == 'spawn_guard'
+    clock[0] += ft.SPAWN_GUARD_MS
+    assert j.snapshot()['spawn_guard_ms'] == 0
+    # Still tracked during the guard: the next move is judged from the last position, as usual.
+    j.update({'right_wrist': {'p': a}}, 66)
+    assert j.update({'right_wrist': {'p': b}}, 99)['removed_ids'] == [fid]

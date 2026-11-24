@@ -158,9 +158,11 @@ def test_mono_selects_single_buildings_refuses_zones_and_multi_takes_zones(clien
         mono.send_json({'type':'multi3d_model_scene','scene_id':single})
         state=until(mono,lambda m:m['type']=='mono3d_model_state' and m['model_test']['scene_id']==single)
         assert state['model_test']['fragment_count']>0
+        # A new building ignores body hits for ~2 s (auto next building, 2026-11-24); the 3-camera hub has no guard.
+        assert 1500<state['model_test']['spawn_guard_ms']<=2000
         multi.send_json({'type':'multi3d_model_scene','scene_id':'museum-social-01'})
         state=until(multi,lambda m:(m.get('model_test') or {}).get('scene_id')=='museum-social-01')
-        assert state['model_test']['fragment_count']>96
+        assert state['model_test']['fragment_count']>96 and state['model_test']['spawn_guard_ms']==0
 
 
 def test_building_scene_list_kinds(client):

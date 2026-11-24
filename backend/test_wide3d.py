@@ -533,6 +533,7 @@ def stage_router(layout: str) -> APIRouter:
                     raise ValueError("the stage shows a stage set: unknown scene_id")
                 hub.zone_id = zone
                 await hub.rebuild()
+                hub.model.guard_spawn()   # new building: body hits ignored for SPAWN_GUARD_MS
             elif kind == "multi3d_model_config":
                 raise ValueError("the stage layout follows the markers; move the markers or change spacing_m")
             elif isinstance(kind, str) and kind.startswith("multi3d_model_"):

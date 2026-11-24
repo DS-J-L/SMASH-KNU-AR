@@ -8,13 +8,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-22 14:02 KST — feat/duo-ar-hit-effect에 판정 좌표 마커 회전·위치 보정 추가 push(PR 미생성) |
+| 마지막 갱신 | 2026-11-24 09:55 KST — feat/duo-ar-hit-effect에 1대·2대 무대 새 건물 2초 무적 추가(PR 미생성) |
 | 현재 작업 | 2대 무대 타격 효과·휘두른 길 파괴·판정 폰 높이 입력·판정 좌표 마커 회전·위치 보정, 모니터 첫 화면 정리, 1대 기본 설정·건물 크기: 로컬 자동검증 후 push, PR 미생성. PR #24는 main 680b891에 머지됨 |
 | 구현 완료 범위 | 기존 수신·시계/3D 기초, 두 방·영상·QR·video_check, 전신22+머리1점, phone_2d 타격/점수/중지·재연결 — 로컬 자동검증 범위 |
 | 방 구성 | room-1 C0/C1/C2 모두 시작 필수, room-2 C0만. PC는 방별 전용 페이지 |
 | 최근 기능 검증 | 3대 슈퍼 및 기존 소비 회귀: Python299·Node308·건물38·시계 후속4, 실제 장비 별도 |
 | 남은 일 | 실폰/실제 모델·소리 청취·성능/장시간·QR실스캔, 실측 보정/3D 정합·3D 타격·영구 로그 |
-| 다음 작업 | feat/duo-ar-hit-effect PR 생성, 실폰 2대 무대·1대 근사 3D 확인(효과·소리·휘두른 길·높이 입력·마커 보정·1m 건물). 실제3대 인수·J-SS-03은 미완료 유지 |
+| 다음 작업 | feat/duo-ar-hit-effect PR 생성, 실폰 2대 무대·1대 근사 3D 확인(효과·소리·휘두른 길·높이 입력·마커 보정·1m 건물·새 건물 2초 무적). 실제3대 인수·J-SS-03은 미완료 유지 |
 | 판정 제한 | video_check는 영상 확인, phone_2d는 C0 화면2D 타격이며 실제 깊이/3D 완료가 아님. 합성 통과와 실폰/공통Phase는 구분 |
 
 ## 2. 개인 Phase 현황
@@ -1354,3 +1354,22 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 - 다음 한 단계: 서버 재시작 → 화면 폰 두 마커 다시 인식 → PC 상태 줄의 판정 좌표 보정 값 확인 → 마커를 일부러 2~3° 돌려 놓고 타격 비교
 - 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
 - 종료 시각: 2026-11-22 14:02 KST
+
+
+### 2026-11-24 09:55 KST — 1대·2대 무대 자동 다음 건물 후 새 건물 2초 무적
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "2대 무대화면과 폰1대 화면에서 건물이 자동으로 넘어가게 했을때 건물이 새로 생길때 2초 정도의 무적시간")
+- 작업 구분: 개인 개발 (1대 근사 3D·2대 무대). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님
+- 상태: 구현·자동검증 완료, 같은 브랜치에 커밋, PR 미생성
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: backend/fragment_test.py(`SPAWN_GUARD_MS=2000`, `guard_spawn()`, `spawn_guard_ms()`; 무적 중 손목·발목은 궤적만 갱신하고 판정 이유 `spawn_guard`, 스냅숏에 `spawn_guard_ms`), backend/test_mono3d.py(1대 건물 변경 `multi3d_model_scene` 후 무적), backend/test_wide3d.py(무대 세트 변경 후 무적, 간격·몸 보정 재생성에는 미적용), frontend/building-test/main.js(자동 다음 건물 상태 줄에 `새 건물 무적 N초`) 및 web/test/building 빌드, tests 3개, docs/BUILDING_FRAGMENT_TEST.md·DUO_STAGE_TEST.md
+- 무적 시계는 서버 `time.perf_counter`(관절 시각과 무관). 마우스 시험 타격·복원·전체 낙하는 막지 않음. 3대 삼각측량 화면은 미적용
+- 데이터 계약 영향: `model_test.spawn_guard_ms`(남은 ms, 정수) 선택 필드 추가. 기존 소비자는 무시해도 동작 동일
+- 검증 방법·결과 (Windows, .venv, Edge): 새 단위 시험(가짜 시계로 무적 중 타격 무시 → 2초 뒤 같은 궤적 타격 성공), 1대·무대 세트 변경 후 `spawn_guard_ms` 1500~2000·3대 0 확인 포함 Python 관련 95/95 통과. Python 전체 300 통과·6 실패(test_model_strike 6개, 변경 전 HEAD에서도 같은 6개 실패 — 이번 변경과 무관, 별도 확인 필요). 건물 브라우저 building-zones·building-duo·building-wide 12/12 통과
+- 입력·장비 범위: synthetic(합성 WebSocket·가짜 시계)만. live/replay 없음
+- 남은 일·미검증: 실폰에서 자동 다음 건물 직후 휘두름이 2초 동안 안 깨지는지 체감, 2초가 적당한지 사용자 판단. test_model_strike 기존 실패 6개 원인 확인
+- 다음 한 단계: 서버 재시작 → PC `/test/building/?mode=mono`·`?mode=duo` → 건물 부수기 → 다음 건물이 뜬 직후 상태 줄의 무적 표시와 타격 무시 확인
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 09:55 KST
