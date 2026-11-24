@@ -1,9 +1,13 @@
 """Opt-in policy for the three-view test hub. No approximate or demo hit promotion."""
 from collections import OrderedDict
 import math
+import hashlib
+import random
 import uuid
 
 from .fragment_test import STRIKE_JOINTS, model_command
+
+FEEDBACK_PRESETS = ('chain_blast_v1', 'swing_wave_v1', 'crush_collapse_v1', 'gravity_compress_v1')
 
 
 class SuperSmash:
@@ -23,12 +27,44 @@ class SuperSmash:
         self.requests = {}
         self.input_modes = {}
         self.input_mode = 'unknown'
+        self.feedback_selection = FEEDBACK_PRESETS[0]
+        self.feedback_events = OrderedDict()
+        self.feedback_deck = []
+        self.feedback_cycle = 0
+        self.last_feedback = None
+        self.pc_presets = {FEEDBACK_PRESETS[0]}
         self.clear()
 
     def clear(self):
         self.stable_at = None
         self.joints = {}
         self.last_observed = None
+        self.armed_feedback_selection = None
+
+    def feedback_supported(self):
+        selection = self.armed_feedback_selection or self.feedback_selection
+        required = set(FEEDBACK_PRESETS) if selection == 'shuffle' else {selection}
+        return required <= self.pc_presets
+
+    def event_feedback(self, event_id):
+        if event_id in self.feedback_events:
+            return self.feedback_events[event_id]
+        selection = self.armed_feedback_selection or self.feedback_selection
+        if selection == 'shuffle':
+            if not self.feedback_deck:
+                self.feedback_deck = list(FEEDBACK_PRESETS)
+                random.Random(f'{self.instance}:{self.feedback_cycle}').shuffle(self.feedback_deck)
+                self.feedback_cycle += 1
+                if self.feedback_deck[0] == self.last_feedback:
+                    self.feedback_deck[0], self.feedback_deck[1] = self.feedback_deck[1], self.feedback_deck[0]
+            selection = self.feedback_deck.pop(0)
+        self.last_feedback = selection
+        result = {'feedback_preset': selection, 'feedback_version': 1,
+                  'feedback_seed': int.from_bytes(hashlib.sha256(event_id.encode()).digest()[:4], 'big')}
+        self.feedback_events[event_id] = result
+        if len(self.feedback_events) > 256:
+            self.feedback_events.popitem(last=False)
+        return result
 
     def invalidate(self, model):
         self.calibration_version += 1
@@ -60,8 +96,15 @@ class SuperSmash:
             raise ValueError('invalid C0 frame age')
         self.lease_at = now
         self.pc_epoch = model.epoch
+        presets = message.get('feedback_presets')
+        if presets is not None and (not isinstance(presets, list) or len(presets) > 16
+                                    or any(not isinstance(p, str) for p in presets)):
+            raise ValueError('invalid feedback capabilities')
+        self.pc_presets = set(presets or [FEEDBACK_PRESETS[0]]) & set(FEEDBACK_PRESETS)
+        if message.get('feedback_version', 1) != 1:
+            self.pc_presets = {FEEDBACK_PRESETS[0]}
         self.pc_ready = (message.get('presentation_ready') is True and message.get('visible') is True
-                         and message.get('assets_ready') is True and age <= 500)
+                         and message.get('assets_ready') is True and age <= 500 and self.feedback_supported())
         return True
 
     def decorate(self, snapshot, delivery='update'):
@@ -73,6 +116,8 @@ class SuperSmash:
         snapshot.update(server_instance_id=self.instance, model_revision=self.revision,
                         control_revision=self.control_revision, calibration_version=self.calibration_version,
                         controller_viewer_id=self.controller, smash_mode=self.mode, phase=self.phase,
+                        feedback_selection=self.feedback_selection,
+                        feedback_armed_selection=self.armed_feedback_selection,
                         delivery='event' if event else delivery,
                         readiness={'ready': self.phase == 'armed', 'reason': self.reason,
                                    'joints': sorted(n for n,s in self.joints.items() if s.get('armed')),
@@ -82,6 +127,7 @@ class SuperSmash:
                          model_revision=self.revision, calibration_version=self.calibration_version,
                          smash_mode=self.mode, tracking_source='multi_view_test')
             if event.get('effect_style') == 'screen_impact_v1':
+                event.update(self.event_feedback(event['event_id']))
                 event.update(input_mode=self.input_mode, input_reference_ms=self.last_observed,
                              joint_cameras=self.joints.get(event.get('joint'), {}).get('cams', []))
         return snapshot
@@ -105,7 +151,8 @@ class SuperSmash:
             changed = True
             try:
                 common={'type','request_id','server_instance_id','expected_epoch','expected_control_revision','action'}
-                extra={'set_mode':{'mode'},'set_scene':{'scene_id'},'handoff_controller':{'viewer_id'}}.get(action,set())
+                extra={'set_mode':{'mode'},'set_scene':{'scene_id'},'handoff_controller':{'viewer_id'},
+                       'set_feedback':{'feedback_selection'}}.get(action,set())
                 if set(message)-common-extra:raise ValueError('unexpected control fields')
                 if action == 'claim_controller':
                     if self.controller not in (None, viewer): code = 'not_controller'
@@ -130,6 +177,14 @@ class SuperSmash:
                         self.paused = False
                         self.pc_ready = False
                         self.clear()
+                elif action == 'set_feedback':
+                    selection = message.get('feedback_selection')
+                    if selection not in (*FEEDBACK_PRESETS, 'shuffle'):
+                        raise ValueError('invalid feedback selection')
+                    changed = selection != self.feedback_selection
+                    self.feedback_selection = selection
+                    if changed:
+                        self.feedback_deck = []
                 elif action == 'reset':
                     model.reset()
                     self.pc_ready = False
@@ -148,9 +203,10 @@ class SuperSmash:
                 code = 'invalid_command'
             if code == 'ok' and changed:
                 self.control_revision += 1
-        self.phase = ('paused' if self.paused else 'normal' if self.mode == 'normal' else
-                      'cleared' if len(hub.fragment_test.removed)==len(hub.fragment_test.target.fragments) else 'preparing')
-        self.reason = self.phase
+        if message.get('action') != 'set_feedback' or self.phase != 'armed':
+            self.phase = ('paused' if self.paused else 'normal' if self.mode == 'normal' else
+                          'cleared' if len(hub.fragment_test.removed)==len(hub.fragment_test.target.fragments) else 'preparing')
+            self.reason = self.phase
         state = self.decorate(hub.fragment_test.snapshot(), 'snapshot')
         ack = {'type':'multi3d_model_control_ack','request_id':request,'accepted':code=='ok','code':code,
                **{k:state[k] for k in ('server_instance_id','epoch','control_revision','model_revision','smash_mode','phase')}}
@@ -168,7 +224,7 @@ class SuperSmash:
         reason = None
         if self.paused: reason = 'paused'
         elif len(model.removed) == len(model.target.fragments): reason = 'cleared'
-        elif not self.controller or not self.pc_ready or self.pc_epoch != model.epoch: reason = 'pc_not_ready'
+        elif not self.controller or not self.pc_ready or self.pc_epoch != model.epoch or not self.feedback_supported(): reason = 'pc_not_ready'
         elif not can_hit: reason = 'body_not_ready'
         else:
             status = hub.status()['cameras']
@@ -213,6 +269,10 @@ class SuperSmash:
             state.update(p=p,at=observed_at,cams=cams);self.joints[name]=state
             if state['armed']:allowed[name]=joint
             else:model.previous.pop(name,None)
+        if allowed and self.armed_feedback_selection is None:
+            self.armed_feedback_selection = self.feedback_selection
+        elif not allowed:
+            self.armed_feedback_selection = None
         self.phase='armed' if allowed else 'preparing'
         self.reason='ready' if allowed else 'move_outside_to_prepare'
         return allowed

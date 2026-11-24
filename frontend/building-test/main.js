@@ -12,6 +12,7 @@ import {PersonOcclusion,loadOcclusionTexture} from './person-occlusion.js';
 import {createRtcReceiver} from '/test/stage-view/rtc.js?v=20261120-r1';
 import {createPcOutline} from '/test/stage-view/pc-outline.js?v=20261120-r1';
 import {createSuperFeedback} from './super-smash-feedback.js';
+import {DEFAULT_FEEDBACK,FEEDBACK_PRESETS} from './feedback-presets.js';
 import {createArHitEffect} from '/shared/ar-hit-effect.js?v=20261121-ar-feedback-2';
 import {createArHitSound} from '/shared/ar-hit-sound.js?v=20261121-ar-sound-1';
 const STRIKE_JOINTS=['left_wrist','right_wrist','left_ankle','right_ankle'],JOINT_LABELS={left_wrist:'왼손',right_wrist:'오른손',left_ankle:'왼발',right_ankle:'오른발'};
@@ -223,15 +224,20 @@ function updateViewHud(now){
   const t=viewHudText(now);$('hudCollapse').textContent=t.collapse;$('hudTime').textContent=t.time;$('hudNote').textContent=t.note;
   $('viewHud').classList.toggle('done',t.done);
 }
+let previewRequest=0;
 const feedback=approx?null:createSuperFeedback({canvas:$('screenImpact'),
+  onCancel:()=>{previewRequest++;physics?.stopSuper();},
   reduced:()=>$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
-  project:point=>{
+  project:(point,{unclipped=false}={})=>{
     const c=cameras.get('C0');if(!c?.calibrated||!point)return null;
     const p=new THREE.Vector3(...point).project(c.camera),box=c.div.getBoundingClientRect();
-    return p.z>=-1&&p.z<=1&&Math.abs(p.x)<=1&&Math.abs(p.y)<=1?[box.left+(p.x+1)*box.width/2,box.top+(1-p.y)*box.height/2]:null;
+    return p.z>=-1&&p.z<=1&&(unclipped||(Math.abs(p.x)<=1&&Math.abs(p.y)<=1))?[box.left+(p.x+1)*box.width/2,box.top+(1-p.y)*box.height/2]:null;
   }});
-$('effectPreview').onclick=()=>{feedback?.preview();$('superResult').textContent='미리보기 · 무득점';};
-$('playView').onclick=()=>{document.body.classList.toggle('play-view');$('playView').textContent=document.body.classList.contains('play-view')?'운영 화면':'C0 플레이 화면';};
+$('effectPreview').onclick=async()=>{const request=++previewRequest;await feedback?.unlock();if(request!==previewRequest||document.hidden||localStopped||$('effectPreview').disabled)return;feedback?.preview();$('superResult').textContent='화면·소리 미리보기 · 무득점';};
+$('feedbackStyle').onchange=()=>control('set_feedback',{feedback_selection:$('feedbackStyle').value});
+$('playView').onclick=()=>{feedback?.cancel('view_change');document.body.classList.toggle('play-view');$('playView').textContent=document.body.classList.contains('play-view')?'운영 화면':'C0 플레이 화면';};
+$('reduceMotion').onchange=()=>feedback?.cancel('motion_setting');
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>feedback?.cancel('motion_setting'));
 $('superMute').onclick=()=>{const muted=$('superMute').getAttribute('aria-pressed')!=='true';$('superMute').setAttribute('aria-pressed',String(muted));feedback?.mute(muted);};
 const unlockSuper=()=>feedback?.unlock();document.addEventListener('pointerdown',unlockSuper,{capture:true});
 function presentable(){const c=cameras.get('C0');return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
@@ -253,6 +259,11 @@ function updateSuperUi(now){
   if(!feedback||!state?.server_instance_id)return;
   const owner=state.controller_viewer_id===viewerId,superMode=state.smash_mode==='super_smash';
   $('smashMode').value=state.smash_mode;$('smashMode').disabled=!owner||!!controlPending;
+  $('feedbackStyle').value=state.feedback_selection??DEFAULT_FEEDBACK;
+  $('feedbackStyle').disabled=!owner||!!controlPending||(superMode&&state.phase==='cleared'&&(feedback.info().screen.active||physics?.superAt!==null));
+  $('effectPreview').disabled=!!controlPending||(superMode&&state.phase==='cleared'&&physics?.superAt!==null);
+  const armed=state.feedback_armed_selection,selection=state.feedback_selection;
+  $('feedbackHint').textContent=armed&&armed!==selection?'준비된 이번 타격은 기존 연출 유지 · 변경은 다음 준비부터':selection==='shuffle'?'네 연출을 중복 없이 섞어서 재생':'한 번의 타격에 장면 전체 파괴';
   $('claimControl').disabled=!!controlPending||!!state.controller_viewer_id;
   $('superRestore').disabled=!owner||!!controlPending||!ready;
   $('superIt1').disabled=!owner||!!controlPending||!!loadingScene;
@@ -261,7 +272,7 @@ function updateSuperUi(now){
   const reasons={normal:'일반 파괴',ready:'한 번 쳐 보세요',cleared:'전체 파괴 · 다시 세우기를 누르세요',paused:'중지됨',pc_not_ready:'C0 영상·운영 PC 준비 대기',three_cameras_required:'세 카메라 연결·보정·최신 입력 필요',clock_not_ready:'세 카메라 시계 교환 대기',input_not_aligned:'관절 시각 정렬 대기',move_outside_to_prepare:'손/발을 건물 밖으로 빼고 준비하세요',body_not_ready:'몸 보정 완료 대기',input_source_unknown:'입력 출처 확인 필요'};
   $('superStatus').textContent=controlPending?(now-controlPending.at>2000?'응답 확인 중…':'요청 처리 중…'):
     localStopped&&state.phase!=='paused'?'이 PC 중지 · 서버 상태 확인 필요':`${owner?'운영 PC':'관찰 PC'} · ${$('sceneTitle').textContent} · ${reasons[state.readiness?.reason]??state.phase} · ${state.readiness?.input_mode??'unknown'}`;
-  if(superMode)$('superResult').textContent=state.phase==='cleared'?`${physics?.superQueue.length?'연쇄 붕괴 중':'전체 파괴'} · +${state.score}점`:state.phase==='paused'?`중지 · ${state.score}점`:'';
+  if(superMode)$('superResult').textContent=state.phase==='cleared'?`${physics?.superQueue.length||physics?.superVisual.size||feedback.info().screen.active?(FEEDBACK_PRESETS[physics?.superPreset]?.label??'파괴 연출')+' 중':'전체 파괴'} · +${state.score}점`:state.phase==='paused'?`중지 · ${state.score}점`:'';
   for(const id of ['mouseMode','blastMode','blastRadius','pushStrength','collapse','stress','impactBreak','applySize'])if(superMode)$(id).disabled=true;
   if(superMode){for(const b of $('placement').querySelectorAll('input,button'))b.disabled=true;$('restore').disabled=!owner||!!controlPending;$('sceneSelect').disabled||=!owner||!!controlPending;}
   if(controlPending&&now-controlPending.at>2000&&!controlPending.queried){controlPending.queried=true;link.send({type:'multi3d_model_snapshot'});}
@@ -269,7 +280,8 @@ function updateSuperUi(now){
   if(owner&&(key!==lastPresentationKey||now-lastPresentationAt>1000)){
     const age=Math.max(0,now-(cameras.get('C0')?.lastImage??0));
     if(link.send({type:'multi3d_presentation',server_instance_id:state.server_instance_id,epoch:state.epoch,
-      presentation_ready:okay,c0_frame_age_ms:age,visible:!document.hidden,assets_ready:ready&&!loadingScene})){
+      presentation_ready:okay,c0_frame_age_ms:age,visible:!document.hidden,assets_ready:ready&&!loadingScene,
+      feedback_version:1,feedback_presets:Object.keys(FEEDBACK_PRESETS)})){
       lastPresentationAt=now;lastPresentationKey=key;
     }
   }
@@ -354,7 +366,7 @@ function syncState(m) {
   for(const s of scenes){
     outerBase=place.position;s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
-      if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);}
+      if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);node.scale.copy(node.userData.restScale);}
       node.visible=!physics.superHidden.has(id)&&!physics.vanished.has(id);
     }
   }
@@ -639,7 +651,7 @@ function draw(now){
   physics?.updateWrists(connected&&state?.smash_mode!=='super_smash'?lastJoints:{},frameAt,now);
   physics?.step(dt);
   if(physics){
-    for(const id of physics.dynamic){const {position,quaternion}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.visible=true;n.position.copy(position);n.quaternion.copy(quaternion);}}
+    for(const id of [...physics.dynamic,...physics.superVisual.keys()]){const {position,quaternion,scale}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.visible=true;n.position.copy(position);n.quaternion.copy(quaternion);n.scale.copy(n.userData.restScale).multiplyScalar(scale);}}
     for(const id of physics.vanished)for(const s of scenes)s.nodes.get(id).visible=false;
     if(connected&&state?.smash_mode!=='super_smash'&&now-impactSentAt>150&&impactQueue.size){
       const ids=[...impactQueue].filter(id=>!state.removed_ids.includes(id)).slice(0,8);

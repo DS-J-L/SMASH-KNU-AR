@@ -1,0 +1,282 @@
+{
+  "task": "Super Smash four-preset development revalidation and defect fixes",
+  "recorded_at_kst": "2026-11-23 13:58 KST",
+  "branch": "feat/super-smash-variations-20261123",
+  "base_head": "bf7902c9245ee2feb97db4f2c156f55cf4da6577",
+  "publication": "local uncommitted; no commit/push/PR/merge in this task",
+  "prior_implementation_report": "docs/asset-validation/super-smash-variations-20261123.json",
+  "baseline": {
+    "initial_source_hashes_matched": 18,
+    "snapshot": "data/local/super-validation-20261123/baseline-source-hashes.json",
+    "historical_report_preserved": true
+  },
+  "fixes": [
+    {
+      "id": "first_draw_clock_deadline",
+      "before": "RAF timestamp could predate receipt or hide a missed 100ms deadline",
+      "reproduction": {
+        "passed": 2,
+        "failed": 2,
+        "log": "data/local/super-validation-20261123/first-draw-before-fix.log"
+      },
+      "change": "sample PC monotonic clock before and after Canvas commands; cancel late first frame; retain completion time",
+      "coverage": "stale RAF, expired actual time, drawing itself crosses deadline; browser firstDraw >= received and <=100ms",
+      "limitation": "Canvas command completion, not compositor presentation or physical end-to-end latency"
+    },
+    {
+      "id": "reduced_motion_3d",
+      "before": "reduced motion changed Canvas but still animated dynamic96 or visual64 fragments",
+      "reproduction": {
+        "passed": 0,
+        "failed": 4,
+        "log": "data/local/super-validation-20261123/reduced-before-fix.log"
+      },
+      "change": "local presentation_reduced passed to physics; authoritative removal/score preserved; no 3D motion scheduled",
+      "coverage": "four real IT1 hull unit integrations; all4 browser reduced presets, OS-only gravity preference, checkbox and mid-animation cancellation",
+      "wire_contract_changed": false
+    }
+  ],
+  "validation": {
+    "python": {
+      "passed": 314,
+      "failed": 0,
+      "deselected": 0,
+      "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests -q",
+      "duration_seconds": 151.21,
+      "log": "data/local/super-validation-20261123/python-full.log",
+      "warning": "Starlette TestClient httpx deprecation"
+    },
+    "node": {
+      "passed": 331,
+      "failed": 0,
+      "skipped": 0,
+      "command_powershell": "$taskFiles=@(rg --files tests -g '*.mjs'); node --experimental-vm-modules --test --test-concurrency=1 @taskFiles",
+      "scope": "all recursively discovered .mjs including single and fracture",
+      "duration_seconds": 17.15396,
+      "log": "data/local/super-validation-20261123/node-full.log"
+    },
+    "browser": {
+      "passed": 40,
+      "failed": 0,
+      "retries": 0,
+      "command": "node node_modules/@playwright/test/cli.js test -c data/local/super-validation-20261123/playwright.config.mjs 'building-|super-smash|mono-occlusion-fallback' --reporter=line",
+      "environment": "new localhost8898 uvicorn, Edge headless D3D11, test fixtures",
+      "duration_reported": "3.5m",
+      "log": "data/local/super-validation-20261123/browser-full.log",
+      "includes": [
+        "4 presets x normal/reduced =8",
+        "arming freezes current selection and defers next",
+        "score96, removal and full restore96",
+        "mid-animation reduced cancellation",
+        "normal/mono/wide/duo and video/occlusion/zone regressions"
+      ]
+    },
+    "build": {
+      "passed": true,
+      "command": "npm run build:building-test",
+      "log": "data/local/super-validation-20261123/build.log",
+      "javascript": "web/test/building/assets/index-BPTzn119.js",
+      "warning": "large chunk warning retained, no dependencies added"
+    }
+  },
+  "separate_socket_reproduction": {
+    "case": "building-fragments: actual IT1 on the marker",
+    "command": "node node_modules/@playwright/test/cli.js test -c data/local/super-validation-20261123/playwright.config.mjs building-fragments.spec.js --grep 'actual IT1 on the marker' --repeat-each=3 --output=data/local/super-validation-20261123/socket-repeat-output --reporter=line",
+    "passed": 3,
+    "failed": 0,
+    "also_passed_in_full_suite": true,
+    "log": "data/local/super-validation-20261123/socket-repeat.log",
+    "finding": "not reproduced in this run; original cause remains unestablished"
+  },
+  "failure_history_preserved": {
+    "initial_node": {
+      "passed": 321,
+      "failed_file_processes": 1,
+      "file": "tests/test_camera_lifecycle.mjs",
+      "exit_code": 3221225477,
+      "hex": "0xC0000005",
+      "cause": "not established",
+      "file_unchanged_for_recheck": true,
+      "log": "data/local/super-validation-20261123/node-initial-native-exit.log"
+    },
+    "camera_recheck": {
+      "passed": 6,
+      "failed": 0,
+      "log": "data/local/super-validation-20261123/node-camera-recheck.log"
+    },
+    "subsequent_full_node": {
+      "passed": 331,
+      "failed": 0
+    },
+    "earlier_implementation_failures": "retained in prior implementation report, not overwritten"
+  },
+  "browser_diagnostic_samples": [
+    {
+      "preset": "chain_blast_v1",
+      "reduced_motion": true,
+      "reduced_source": "checkbox",
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 0,
+      "visual_at_capture": 0,
+      "pending_at_capture": 0,
+      "hidden_at_capture": 96,
+      "receive_to_canvas_complete_ms": 14.2,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-0f9bf-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-0f9bf-ounded-debris-then-restores/live-synthetic-chain_blast_v1.png"
+    },
+    {
+      "preset": "crush_collapse_v1",
+      "reduced_motion": true,
+      "reduced_source": "checkbox",
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 0,
+      "visual_at_capture": 0,
+      "pending_at_capture": 0,
+      "hidden_at_capture": 96,
+      "receive_to_canvas_complete_ms": 13.4,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-d1083-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-d1083-ounded-debris-then-restores/live-synthetic-crush_collapse_v1.png"
+    },
+    {
+      "preset": "crush_collapse_v1",
+      "reduced_motion": false,
+      "reduced_source": null,
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 70,
+      "visual_at_capture": 0,
+      "pending_at_capture": 26,
+      "hidden_at_capture": 0,
+      "receive_to_canvas_complete_ms": 5.6,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-d26d7-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-d26d7-ounded-debris-then-restores/live-synthetic-crush_collapse_v1.png"
+    },
+    {
+      "preset": "chain_blast_v1",
+      "reduced_motion": false,
+      "reduced_source": null,
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 23,
+      "visual_at_capture": 0,
+      "pending_at_capture": 73,
+      "hidden_at_capture": 0,
+      "receive_to_canvas_complete_ms": 6.9,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-e4f31-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-c-e4f31-ounded-debris-then-restores/live-synthetic-chain_blast_v1.png"
+    },
+    {
+      "preset": "gravity_compress_v1",
+      "reduced_motion": false,
+      "reduced_source": null,
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 0,
+      "visual_at_capture": 64,
+      "pending_at_capture": 0,
+      "hidden_at_capture": 32,
+      "receive_to_canvas_complete_ms": 5.2,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-g-66841-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-g-66841-ounded-debris-then-restores/live-synthetic-gravity_compress_v1.png"
+    },
+    {
+      "preset": "gravity_compress_v1",
+      "reduced_motion": true,
+      "reduced_source": "OS prefers-reduced-motion",
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 0,
+      "visual_at_capture": 0,
+      "pending_at_capture": 0,
+      "hidden_at_capture": 96,
+      "receive_to_canvas_complete_ms": 8.7,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-g-94bdd-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-g-94bdd-ounded-debris-then-restores/live-synthetic-gravity_compress_v1.png"
+    },
+    {
+      "preset": "swing_wave_v1",
+      "reduced_motion": true,
+      "reduced_source": "checkbox",
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 0,
+      "visual_at_capture": 0,
+      "pending_at_capture": 0,
+      "hidden_at_capture": 96,
+      "receive_to_canvas_complete_ms": 4.6,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-s-20346-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-s-20346-ounded-debris-then-restores/live-synthetic-swing_wave_v1.png"
+    },
+    {
+      "preset": "swing_wave_v1",
+      "reduced_motion": false,
+      "reduced_source": null,
+      "score": 96,
+      "removed": 96,
+      "dynamic_at_capture": 63,
+      "visual_at_capture": 0,
+      "pending_at_capture": 33,
+      "hidden_at_capture": 0,
+      "receive_to_canvas_complete_ms": 6.8,
+      "state": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-s-78f7a-ounded-debris-then-restores/feedback-state.json",
+      "screenshot": "data/local/super-validation-20261123/browser-output/super-smash-super-preset-s-78f7a-ounded-debris-then-restores/live-synthetic-swing_wave_v1.png"
+    }
+  ],
+  "sample_interpretation": "8 diagnostic samples, not physical latency, performance p95 or live-device acceptance",
+  "input_scope": "synthetic pose/camera/clock fixtures and unit fake clocks; actual local HTTP/WS/WebGL/Rapier/WebAudio execution; no live phones or speaker listening",
+  "unverified": [
+    "live3-camera input and measured C0 alignment",
+    "speaker/headphone listening and timbre",
+    "physical end-to-end latency and target-PC p95",
+    "20min stability and repeated live sessions",
+    "participant preference and visual suitability in live C0",
+    "future uplift/electric extension styles"
+  ],
+  "plan_status": "SV-01/02 retained complete for automatic implementation; SV-03/SS-03 and common P0-P6 retained unverified",
+  "test_server": "8898 stopped after browser execution",
+  "source_sha256": {
+    "backend/super_smash.py": "5ca6bf56402664564132dc800f18153b1e966cad9ffe1b8dcc62ba19c2a4c922",
+    "docs/DATA_CONTRACT.md": "c176705a4d9de040a545912e560fb7afab1beddd953ccfe1c93a6db2e953b2c5",
+    "docs/SMASH_ANIMATION_VARIATIONS.md": "cc9a4200b529d163de1a13935047dc4cd66c118d4b8aa8c3492b51d6387a3bfd",
+    "docs/SUPER_SMASH_TEST.md": "485206dc31e879c3ed2dafd7bd9b64e5a32c89698f36b6114c2518747f48df20",
+    "frontend/building-test/feedback-presets.js": "490e51d0547c6d5c72632c469d8365e06d16f59d601cf2609b31fc37ae020d74",
+    "frontend/building-test/fragment-physics.js": "939a501859fdac3c8f6e8d9f4abeb6add168a3887a99cf324e92ac7a33969a01",
+    "frontend/building-test/impact-audio.js": "67334a00feeaef54400933c304ca5ca4de4149617b175493d140eba2072c263e",
+    "frontend/building-test/index.html": "557477bcba7fabdec1ae8d7a67cf61ff96c234c6971116e6cbb4f57ee1820720",
+    "frontend/building-test/main.js": "dd513ab037ac0dc8b2f2426bd65ca1916abfe948ace1e911d3458721ee02957e",
+    "frontend/building-test/scene-loader.js": "99bd2bdc227ed9e96b651f61011c0e32156549071215bb17b597fd9edd042d1a",
+    "frontend/building-test/screen-impact.js": "aed9cf4a99961ba95551f8058a1da5176a97d3bbd2fe1c39520a1be3fc7d961c",
+    "frontend/building-test/screen-variation.js": "010c540e88cec0e752b5768623122bcdfbaef8b490f86b4e23e8ec5c406d2ac6",
+    "frontend/building-test/super-smash-feedback.js": "61d16e6fba5bee31d3015fe0186e92689663b97ff9ffa0c0ccf866a18bc9c87e",
+    "tests/browser/super-smash.spec.js": "29dfb060542d1a520ad7fdb22a25a3fb46d770319b5a2e2b0aa2b7bd31e030e2",
+    "tests/test_feedback_variations.mjs": "4e0d1fde026abdf596d5f2653f5798700fdb4962ef952d9e7ea985a44821e650",
+    "tests/test_screen_impact.mjs": "195528ceed6a94a9954e3b6d39abf05d186fc104a5e139907ad80fec423f392d",
+    "tests/test_super_smash.py": "044406867aefd12d0ec55c5bb2d040790270d0cccebb28c4517072e7b41a38d1",
+    "web/test/building/assets/index-BPTzn119.js": "51de432994596c1cb49647f0c9debf39f331523a327da17e6ddb235c34c688fd",
+    "web/test/building/assets/index-DZ4IWW3t.css": "200ce3bd52275fa8423aee26c110b585c9409ab4047a38fd52bae5f08b6f305c",
+    "web/test/building/index.html": "09fbd16e1c07f0a1215e4fbb42d8b045b141134f5e118b30e6cd7a99dc2b151e"
+  },
+  "final_consistency": {
+    "source_sha256_verified": 20,
+    "diagnostic_capture_pairs": 8,
+    "new_relative_links_verified": 17,
+    "sv_checked": 8,
+    "sv_real_device_unchecked": 4,
+    "tracked_source_document_diff_check": "passed; generated GLSL bundle whitespace excluded",
+    "new_non_bundle_file_whitespace": "passed",
+    "compiled_html_assets": "all exist",
+    "log_sha256": {
+      "browser-full.log": "595b58266dc9859b96c0240753b4e817f8f447dfe4e68d12a7a57536e735cc16",
+      "build.log": "07ebd774f6f68308514184faca9ebc6b446250473fa4f4a2c6c273b50ff0654b",
+      "first-draw-before-fix.log": "e8f9cce175302566b4c67032bd448d858f7c0a6dd4a420b57410bfb42f0dd60e",
+      "node-camera-recheck.log": "f78ec836e664ab83713a04643db9d5d915d169d10817dee7b0343a197464aeb4",
+      "node-full.log": "c7a491069cb94b5e94ce12259922884dd6ff890d6529afae3be6475d85de7fe0",
+      "node-initial-native-exit.log": "d23a82bc6aeff3967b053b8c63aa0a84e87fff57c82b18903d3848e4cf59cc2f",
+      "python-full.log": "ce1c24da9fe152ac290111e496620fba4849491fd94eb1fac6097eaddce16f18",
+      "reduced-before-fix.log": "ff53ce7fe4543ea3a718fbbdb1d2dba5617b1deb0049306032548cb917b5e863",
+      "socket-repeat.log": "9854396ea4483f776f4aeedef605a5a89efbe166bd4b6a7c1421b66ce02053cd"
+    }
+  }
+}

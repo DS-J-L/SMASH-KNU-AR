@@ -2,7 +2,7 @@
 from types import SimpleNamespace
 import pytest
 
-from backend.super_smash import SuperSmash
+from backend.super_smash import SuperSmash, FEEDBACK_PRESETS
 from backend.fragment_test import FragmentTest
 from test_fragment_test import approach
 
@@ -31,6 +31,71 @@ def step(hub,s,p,at,*,cams=('C0','C1'),timing='inference_input_aligned',now=None
 def arm(hub,s,a):
     for at in (0,100,200,310):result=step(hub,s,a,at)
     assert result['phase']=='armed'
+
+
+def present_all(hub, smash):
+    smash.presentation(dict(server_instance_id=smash.instance, epoch=hub.fragment_test.epoch,
+        c0_frame_age_ms=0, presentation_ready=True, visible=True, assets_ready=True,
+        feedback_version=1, feedback_presets=list(FEEDBACK_PRESETS)), 'pc', hub.fragment_test, 0)
+
+
+@pytest.mark.parametrize('preset', FEEDBACK_PRESETS)
+def test_feedback_choice_preserves_atomic_score_and_authoritative_contact(preset):
+    h,s,a,b,fid,_,command=setup()
+    epoch=h.fragment_test.epoch
+    ack,state=command('set_feedback',feedback_selection=preset)
+    assert ack['accepted'] and state['feedback_selection']==preset and h.fragment_test.epoch==epoch
+    present_all(h,s);arm(h,s,a);result=step(h,s,b,350)
+    event=result['event']
+    assert event['feedback_preset']==preset and event['feedback_version']==1
+    assert 0 <= event['feedback_seed'] <= 0xffffffff
+    assert event['points']==result['score']==96 and event['fragment_id']==fid
+    assert event['released_ids']==result['removed_ids']
+    assert s.event_feedback(event['event_id'])['feedback_seed']==event['feedback_seed']
+
+
+def test_armed_selection_is_frozen_until_the_next_preparation():
+    h,s,a,b,_,_,command=setup();present_all(h,s);arm(h,s,a)
+    ack,state=command('set_feedback',feedback_selection='gravity_compress_v1')
+    assert ack['accepted'] and state['phase']=='armed'
+    assert state['feedback_selection']=='gravity_compress_v1'
+    assert state['feedback_armed_selection']=='chain_blast_v1'
+    assert step(h,s,b,350)['event']['feedback_preset']=='chain_blast_v1'
+    command('reset');present_all(h,s);arm(h,s,a)
+    assert step(h,s,b,350)['event']['feedback_preset']=='gravity_compress_v1'
+
+
+def test_shuffle_deck_has_each_style_once_and_no_repeat_at_cycle_boundaries():
+    s=SuperSmash();s.feedback_selection='shuffle'
+    results=[s.event_feedback(str(i))['feedback_preset'] for i in range(12)]
+    assert all(set(results[i:i+4])==set(FEEDBACK_PRESETS) for i in range(0,12,4))
+    assert all(a!=b for a,b in zip(results,results[1:]))
+    deck=list(s.feedback_deck)
+    assert s.event_feedback('11')['feedback_preset']==results[-1] and s.feedback_deck==deck
+
+
+def test_nondefault_feedback_waits_for_a_capable_operating_pc():
+    h,s,a,b,_,_,command=setup();command('set_feedback',feedback_selection='crush_collapse_v1')
+    assert step(h,s,a,0)['readiness']['reason']=='pc_not_ready'
+    assert not step(h,s,b,350)['event']
+    present_all(h,s);arm(h,s,a)
+    assert step(h,s,b,350)['event']['feedback_preset']=='crush_collapse_v1'
+
+
+def test_unknown_feedback_selection_is_rejected_without_reset_or_score_change():
+    h,s,_,_,_,_,command=setup();epoch=h.fragment_test.epoch
+    ack,_=command('set_feedback',feedback_selection='not-a-preset')
+    assert not ack['accepted'] and s.feedback_selection=='chain_blast_v1'
+    assert h.fragment_test.epoch==epoch and not h.fragment_test.removed
+
+
+def test_tracking_loss_starts_a_new_preparation_with_the_latest_selection():
+    h,s,a,_,_,_,command=setup();present_all(h,s);arm(h,s,a)
+    command('set_feedback',feedback_selection='swing_wave_v1')
+    step(h,s,None,330)
+    assert s.armed_feedback_selection is None
+    for at in (350,450,550):step(h,s,a,at)
+    assert s.phase=='armed' and s.armed_feedback_selection=='swing_wave_v1'
 
 
 def test_valid_two_view_joint_with_three_healthy_devices_releases_all_once():

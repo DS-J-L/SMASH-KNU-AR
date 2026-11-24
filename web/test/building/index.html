@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>건물 구역 파편 접촉 시험</title>  <script type="module" crossorigin src="/test/building/assets/index-obi7dCit.js"></script>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>건물 구역 파편 접촉 시험</title>  <script type="module" crossorigin src="/test/building/assets/index-CDGahb1t.js"></script>
   <link rel="stylesheet" crossorigin href="/test/building/assets/index-2U7JJWjC.css">
 </head>
 <body><header><h1>건물 정합 · 파편 물리 시험</h1><p id="sourceMode"></p><p id="status">모델 준비 중…</p><button id="sound" type="button" aria-pressed="true" title="화면을 한 번 클릭하면 AR 타격음이 활성화됩니다.">소리 끄기</button><a href="/test/building/?mode=mono">1대 근사 3D</a> · <a href="/test/building/">3대 삼각측량</a> · <a href="/test/building/?mode=wide">3대 가로 넓은 무대</a> · <a href="/test/building/?mode=duo">판정 2대 + 화면 폰</a> · <a id="legacyLink" href="/test/multi3d/view.html">기존 3D 시험</a></header>
 <section id="superPanel" hidden aria-label="3대 연쇄 폭파">
 <label>파괴 모드 <select id="smashMode"><option value="normal">일반 파괴</option><option value="super_smash">연쇄 폭파</option></select></label>
+<label>슈퍼 연출 <select id="feedbackStyle"><option value="chain_blast_v1">연쇄 폭파</option><option value="swing_wave_v1">스윙 충격파</option><option value="crush_collapse_v1">압궤 붕괴</option><option value="gravity_compress_v1">중력 압축</option><option value="shuffle">섞어서 재생</option></select></label><small id="feedbackHint"></small>
 <button id="claimControl">이 PC로 운영</button><button id="superIt1">IT1 선택 · 복원</button><button id="playView">C0 플레이 화면</button>
-<button id="effectPreview">폭발 미리보기 · 무득점</button><button id="superRestore">다시 세우기</button><button id="superStop">중지</button>
+<button id="effectPreview">화면·소리 미리보기 · 무득점</button><button id="superRestore">다시 세우기</button><button id="superStop">중지</button>
 <button id="superMute" aria-pressed="false">음소거</button><label><input id="reduceMotion" type="checkbox"> 동작 줄이기</label>
 <output id="superStatus" aria-live="polite">서버 상태 대기</output><output id="superResult"></output>
 </section><canvas id="screenImpact" hidden aria-hidden="true"></canvas>
@@ -36,4 +37,4 @@
 <label><input type="checkbox" id="impactBreak" checked> 파편 충격으로 추가 분리</label>
 <button id="stress" type="button">96개 전체 낙하 · 합성 부하 시험</button><p id="performance">물리 준비 중…</p></fieldset>
 <form id="placement"><label>X (m)<input id="x" type="number" value="0" min="-5" max="5" step=".05" required></label><label>Y (m)<input id="y" type="number" value="0" min="-5" max="5" step=".05" required></label><label>회전 (°)<input id="yaw" type="number" value="0" step="5" required></label><button type="submit">배치 적용 · 복원</button></form>
-<p id="contact">접촉 대기</p><p id="phoneHelp">폰에서 <a href="/test/multi3d/">3D 폰 페이지</a>를 열어 C0·C1·C2를 고르고 같은 20cm 바닥 마커로 보정하세요. 2대 이상이 손목을 봐야 합니다.</p><p>마커 옆에서 손으로 건물에 접촉하세요. 닿은 조각과 지지를 잃은 조각이 떨어집니다. 소구역은 절대 크기, IT1 단독은 선택한 배율을 유지합니다.</p><p>시험용 · 시각 품질은 상태 표시 참조 · 실폰 정합/정확도 미검증. 분리 여부는 서버 공유, 파편 물리는 각 PC에서 계산합니다. 지지 판정은 연결 그래프 근사입니다.</p></aside></main></body></html>
+<p id="contact">접촉 대기</p><p id="phoneHelp">폰에서 <a href="/test/multi3d/">3D 폰 페이지</a>를 열어 C0·C1·C2를 고르고 같은 20cm 바닥 마커로 보정하세요. 2대 이상이 손목을 봐야 합니다.</p><p>마커 옆에서 손으로 건물에 접촉하세요. 닿은 조각과 지지를 잃은 조각이 떨어집니다. 소구역은 절대 크기, IT1 단독은 선택한 배율을 유지합니다.</p><p>시험용 · 시각 품질은 상태 표시 참조 · 실폰 정합/정확도 미검증. 분리 여부는 서버 공유, 파편 물리는 각 PC에서 계산합니다. 지지 판정은 연결 그래프 근사입니다.</p></aside></main></body></html>
