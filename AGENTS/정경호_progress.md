@@ -8,13 +8,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-24 11:00 KST — feat/duo-ar-hit-effect에 origin/main(PR #26 슈퍼4종 머지 4f4e126) 병합, PR 미생성 |
-| 현재 작업 | 2대 무대 새 건물 2초 무적·전체화면 표시·바닥 파편 2초 뒤 사라짐: 로컬 커밋, main 병합 완료, PR 미생성. PR #24·#25·#26(Codex 슈퍼4종)은 main에 머지됨 |
+| 마지막 갱신 | 2026-11-24 12:20 KST — 2대 무대 슈퍼 연출 켜기/끄기 구현·합성 자동검증, 커밋 안 함(사용자 지시) |
+| 현재 작업 | 2대 무대 슈퍼 연출 켜기/끄기(PR #26 4종을 V 화면에): 작업 트리 미커밋. 그 전 무적·전체화면·바닥 파편 사라짐·main 병합(b043ff5)은 로컬 커밋, push·PR 없음 |
 | 구현 완료 범위 | 기존 수신·시계/3D 기초, 두 방·영상·QR·video_check, 전신22+머리1점, phone_2d 타격/점수/중지·재연결 — 로컬 자동검증 범위 |
 | 방 구성 | room-1 C0/C1/C2 모두 시작 필수, room-2 C0만. PC는 방별 전용 페이지 |
 | 최근 기능 검증 | Python 전체314/314(제외0)·Node 전체331/331·관련 브라우저40/40·소켓 별도3/3·배포 빌드·실폰/청취/공통 Phase 별도 |
 | 남은 일 | 실폰/실제 모델·소리 청취·성능/장시간·QR실스캔, 실측 보정/3D 정합·3D 타격·영구 로그 |
-| 다음 작업 | feat/duo-ar-hit-effect 병합본 검증·push·PR 생성, 실폰 2대 무대·1대 근사 3D 확인(새 건물 2초 무적·전체화면 표시·바닥 파편 사라짐). SUPER_SMASH_TEST.md 실제3대4종·청취/정합·20분 인수, SV-03/SS-03 미완료 유지 |
+| 다음 작업 | 슈퍼 연출 변경 커밋(사용자 승인 후)·push·PR, 실폰 2대 무대에서 슈퍼 연출 크기·밝기·소리·한 번에 전체 파괴 체감 확인, 새 건물 2초 무적·전체화면·바닥 파편 사라짐 확인. SUPER_SMASH_TEST.md 실제3대4종·SV-03/SS-03 미완료 유지 |
 | 판정 제한 | video_check는 영상 확인, phone_2d는 C0 화면2D 타격이며 실제 깊이/3D 완료가 아님. 합성 통과와 실폰/공통Phase는 구분 |
 
 ## 2. 개인 Phase 현황
@@ -1457,3 +1457,18 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 - 남은 일·미검증: 병합 커밋, push·PR, 실폰 2대 무대·1대 확인, super-smash 축소 동작 시험 불안정 원인
 - 다음 한 단계: `git commit`(병합 메시지 유지) → push → PR 생성
 - 종료 시각: 2026-11-24 11:00 KST
+
+
+### 2026-11-24 12:20 KST — 2대 무대에서 슈퍼 연출 켜기/끄기
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "머지 커밋 로컬에만 하고 저 기능 2대 무대에서도 on/off 할 수 있게 해줘", 이전 "커밋은 하지마")
+- 작업 구분: 개인 개발 (2대 무대). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님. SV-03/SS-03(3대 실기기 인수)와 무관
+- 상태: 병합 커밋 b043ff5만 로컬 커밋(push 없음). 슈퍼 연출 변경은 구현·자동검증 완료, 커밋 안 함
+- 바꾼 파일: backend/test_wide3d.py(duo 허브에 `SuperSmash` 하나, `duo_super{enabled}`·`duo_super_feedback{feedback_selection}`, 켜면 판정 폰 타격 하나가 세트 전체 제거 `update(super_smash=True)`, 모델 상태에 3대 envelope(instance/revision/delivery/phase ready|cleared)·이벤트 연출 preset/seed/input_mode·tracking_source=mono_approx, 켠 동안 모든 상태를 순서 큐로 전송, 모드 변경은 새 라운드+2초 무적·snapshot, 켠 동안 마우스/push/release/drop_all 거부, 폰 `?input_mode=` 기본 live), frontend/building-test/index.html·main.js(무대 설정에 슈퍼 연출 체크·연출 선택·미리보기·상태 줄, duo에서 연출 모듈 생성·V 화면에 투영·V 영상 500ms 이내일 때만 재생, 켠 동안 마우스 타격 끔, 머리글 소리 끄기가 슈퍼 소리도 끔) 및 web/test/building 빌드, docs/DATA_CONTRACT.md(2026-11-24 항목: 기존 "duo에 슈퍼 명령 추가 안 함"을 바꿈), docs/DUO_STAGE_TEST.md, tests/test_duo3d.py 2개, tests/browser/building-duo.spec.js 1개
+- 3대 슈퍼 스매쉬 판정·제어 코드(super_smash.py·test_multi3d.py)는 바꾸지 않음. 3대 전용 준비 조건(세 카메라·시계·건물 밖 준비·운영 PC)은 2대 무대에 적용하지 않음 — 2대 무대 판정 규칙 그대로
+- 검증 (Windows, .venv, Edge, synthetic만): Python 전체 318/318, Node 173/173, duo 브라우저 7/7(새 시험: 체크 켜기 → 합성 휘두름 → 64개 전체 제거·스윙 충격파 1회·시작점이 V 화면 안·작은 AR 효과 안 겹침·캔버스에 그려짐, 끄면 복원). 건물 브라우저 전체 47개 중 36 통과·11 실패: 3대 super-smash 10개와 wide 1개. 따로 재실행 시 wide 6/6 통과, super-smash 10/11 통과. 변경 전 b043ff5 임시 worktree에서도 super-smash 13개 중 5개 실패(실행마다 다른 시험) → 기존 불안정 시험으로 판단, 원인 미확인
+- 입력·장비 범위: synthetic만. 실폰·청취·실제 화면 밝기 미검증. 스크린샷에서 스윙 충격파는 얇고 짧아 잘 보이지 않음(캔버스 픽셀은 그려짐)
+- 남은 일·미검증: 실폰 2대 무대에서 연출 크기·밝기·소리, 전체화면(HUD)과 함께 볼 때, 자동 다음 건물과의 간격(연출 2초·파편 정리 4초 vs 다음 건물 3초), super-smash 브라우저 시험 불안정 원인
+- 다음 한 단계: 사용자 승인 후 커밋 → 서버 재시작 → PC `/test/building/?mode=duo` 무대 설정 **슈퍼 연출** 체크 → 실폰 휘두름
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음, 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 12:20 KST

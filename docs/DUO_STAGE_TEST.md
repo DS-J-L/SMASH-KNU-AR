@@ -64,6 +64,7 @@
 ## 연결 규격 (`/ws/test/duo3d`)
 
 - WebRTC 신호(2026-11-20): 서버 → PC 연결 직후 `rtc_hello{id}`. PC → 서버 `rtc_signal{to:'V',data}` → 화면 폰에 `rtc_signal{from:<PC id>,data}`. 화면 폰 → 서버 `rtc_signal{to:<PC id>,data}` → 그 PC에 `rtc_signal{from:'V',data}`. 상대가 없으면 보낸 쪽에 `rtc_signal_failed{to,reason:'not_connected'}`. `data.type`: offer/answer/ice/not_ready(카메라 전)/disabled(JPEG 선택)/bye(PC 떠남, 서버가 보냄). 판정 폰은 보낼 수 없다(`unsupported_message`).
+- 슈퍼 연출(2026-11-24): PC 오른쪽 무대 설정의 **슈퍼 연출** 체크로 켜고 끈다. 켜면 한 번 친 타격이 세트 전체를 부수고, 고른 연출(연쇄 폭파·스윙 충격파·압궤 붕괴·중력 압축·섞어서 재생)이 V 메인 화면 위에 화면·소리로 나온다. 켜고 끌 때 세트가 다시 서고 2초 무적이 걸린다. 켠 동안 마우스 타격은 막는다. **연출 미리보기**는 점수 없이 화면·소리만 보여 준다. 규격: PC → 서버 `duo_super{enabled}`·`duo_super_feedback{feedback_selection}`, 상세는 [DATA_CONTRACT](DATA_CONTRACT.md) 2026-11-24 항목.
 - 판정 좌표 보정(2026-11-22): PC → 서버 `duo_auto_rotation{enabled}`(기본 true). `wide3d_status.view.auto_rotation`, `wide3d_status.cameras.<C0|C1>.correction{applied,x_m,y_m,yaw_deg,measured}`, 판정 폰 `multi3d_calib`의 `marker_offset_m:[x,y,0]`·`marker_yaw_deg`.
 - 간격 자동 적용(2026-11-20): PC → 서버 `duo_auto_spacing{enabled}`(기본 true). 켜져 있으면 `wide3d_view_layout.spacing_m`이 현재 간격과 5mm 이상 다르고 0.5~3m이면 서버가 그 간격을 적용한다(PC의 간격 적용과 같은 처리). `wide3d_status.view.auto_spacing`에 상태가 들어간다.
 
@@ -92,3 +93,4 @@
   - 합성 측정(반대편 1.6m 화면 폰 1280×720, 4×4 초과표본·잡음): 꼭짓점 최대 오차 1.7px → 0.1px, 간격 오차 +27mm → −0.8mm. 3×3 흐림 1회 추가 시 2.5px → 0.26px, 간격 +78mm → +5mm, 회전 −1.7° → −0.1°. 흐림 2회에서는 기존 1차 인식부터 실패했다(이번 변경 범위 밖).
   - 자동 시험: `tests/test_auto_marker.mjs` 3개(4방향 소수점 꼭짓점 0.25px 이내·무늬 순서 유지, 축소본 위치 → 원본 해상도 정밀화, 경계 불분명 시 입력 유지), `tests/test_duo_view.mjs` 1개(반대편 초과표본 영상에서 꼭짓점 0.3px 이내·간격 1cm·회전 0.3° 이내·경고 없음), `tests/browser/auto-marker.spec.js`(버튼 숨김/복귀, 720×1280 영상에서 꼭짓점 0.5px 이내), `tests/browser/building-duo.spec.js` 1개(화면 폰 두 마커 인식 중 버튼 숨김 → 인식 완료 후 복귀).
   - 미검증: 실제 폰 영상(렌즈 왜곡·압축·초점 흐림·조명 불균일)에서 정밀화 효과, 판정 폰 실측 위치 개선 폭.
+- 자동 시험 추가(2026-11-24, 슈퍼 연출 켜기/끄기, 합성 입력): `tests/test_duo3d.py` 2개(켜면 새 라운드 snapshot·선택 연출 유지·마우스 거부·판정 폰 휘두름 한 번에 세트 전체 제거·이벤트 연출/입력 출처·revision 역행 없음, 끄면 복원·envelope 없음, 잘못된 연출 값 거부, 넓은 무대는 명령 거부), `building-duo.spec.js` 1개(체크 켜기 → 합성 휘두름 → 세트 전체 제거·고른 연출 1회 재생·시작점이 V 화면 안·작은 AR 타격 효과는 겹쳐 나오지 않음·화면에 그려짐, 끄면 복원·마우스 타격 복귀). 미검증: 실폰 2대 무대에서 연출 크기·밝기·소리 청취, 실제 휘두름에서 한 번에 다 부서지는 체감, 전체화면 표시와 함께 볼 때.

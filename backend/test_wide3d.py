@@ -16,7 +16,7 @@ Two layouts share this hub (one instance each):
         server -> phone: mono3d_status
     /ws/test/wide3d?role=viewer
         viewer -> server: multi3d_model_* commands, wide3d_stage_config {spacing_m}, duo: duo_auto_spacing {enabled},
-                          rtc_signal {to:'V', data}
+                          duo_super {enabled}, duo_super_feedback {feedback_selection}, rtc_signal {to:'V', data}
         server -> viewer: multi3d_calib / multi3d_jpeg / multi3d_phone_left (tagged with camera_id, stage frame),
                           wide3d_frame, wide3d_status, multi3d_model_state
 
@@ -27,6 +27,12 @@ person judges the hits (with hysteresis), so one swing is never judged from two 
 A wrist/ankle the judging phone cannot see is borrowed from a neighbour that sees the same person right now; when
 a joint's source phone changes, only that joint's path is cut, so the jump between two estimates is never a swing.
 Results stay `source: mono_approx`. Nothing is stored on disk. Protected by the normal access key.
+
+duo super smash (2026-11-24, user: "그 기능 2대 무대에서도 on/off"): with duo_super on, one hit of the judging phone
+breaks the whole stage set and the PC plays the chosen 3-camera super feedback preset on V's view. The judging rule
+is the stage's own (approximate depth, spawn guard); none of the 3-camera arming/clock/controller gates apply.
+In this mode model states carry the SuperSmash envelope (instance, revision, delivery) and all go through the
+ordered queue, so the PC never sees an older state after a newer one. Phones may give ?input_mode= (default live).
 """
 
 from __future__ import annotations
@@ -45,6 +51,7 @@ from .building_scenes import (DUO_PREFIX, STAGE_SECTIONS, WIDE_PREFIX, WIDE_SPAC
                               scene_spec, wide_scene_id)
 from .connections import Peer
 from .fragment_test import FragmentTest, model_command
+from .super_smash import FEEDBACK_PRESETS, SuperSmash
 from .model_strike import Placement
 
 CAMERAS = ("C0", "C1", "C2")    # the wide layout; see LAYOUTS
@@ -54,6 +61,8 @@ LAYOUTS = {
     "duo": {"cameras": ("C0", "C1"), "prefix": DUO_PREFIX, "view": True, "spacing_m": 2.0},
 }
 MAX_MESSAGE_BYTES = 512 * 1024
+# duo super smash: viewer commands that would break pieces some other way than a body hit.
+SUPER_BLOCKED = ("multi3d_model_mouse", "multi3d_model_push", "multi3d_model_release", "multi3d_model_drop_all")
 # duo (2026-11-22): V's measured floor pose of each marker turns/moves that judging phone's coordinates. A pose this far
 # from the nominal one is a misread, not a placement: it is ignored and the plain spacing shift is used.
 MARKER_POSE_MAX_YAW_DEG = 20.0
@@ -203,6 +212,11 @@ class WideStage:
         self.joint_sources: dict[str, str] = {}  # strike joint -> phone whose estimate the model last tracked
         self.model: FragmentTest | None = None
         self.lock = asyncio.Lock()
+        self.smash = SuperSmash() if self.has_view else None   # duo only: super smash on/off and its feedback preset
+        self.input_modes: dict[str, str] = {}   # phone -> live | synthetic | replay (from ?input_mode=)
+
+    def super_on(self) -> bool:
+        return self.smash is not None and self.smash.mode == "super_smash"
 
     # ----- stage / model -----
     def marker_x(self, camera: str) -> float:
@@ -247,17 +261,32 @@ class WideStage:
                 "owner": self.owner, "borrowed": self.borrowed(), "reference_camera": (self.reference or {}).get("camera_id"),
                 "markers": {c: {"marker_id": i, "x_m": self.marker_x(c)} for i, c in enumerate(self.cameras)}, "layout": self.layout}
 
-    def model_packet(self, state=None) -> dict:
+    def model_packet(self, state=None, delivery="update") -> dict:
         state = state or self.model.snapshot()
+        if self.smash is not None:
+            state = self.super_decorate(state, delivery)
         return {"type": "multi3d_model_state", "source": "mono_approx", "timing": "server_arrival",
                 "model_test": {**state, "stage": self.stage()}}
 
-    def send_model(self, state=None) -> None:
+    def super_decorate(self, state: dict, delivery: str) -> dict:
+        s = self.smash
+        if not self.super_on():
+            # Normal mode: only what the PC's switch shows; no envelope, so the plain hit path is unchanged.
+            return {**state, "smash_mode": "normal", "feedback_selection": s.feedback_selection}
+        s.input_mode = self.input_modes.get(self.owner, "unknown") if self.owner else "unknown"
+        s.phase = s.reason = "cleared" if len(self.model.removed) == len(self.model.target.fragments) else "ready"
+        state = s.decorate(state, delivery)
+        if state.get("event"):
+            state["event"]["tracking_source"] = "mono_approx"
+        return state
+
+    def send_model(self, state=None, delivery="update") -> None:
         if not self.model:
             return
-        packet = self.model_packet(state)
+        packet = self.model_packet(state, delivery)
         for viewer in self.viewers:
-            if packet["model_test"].get("event"):
+            if packet["model_test"].get("event") or self.super_on():
+                # Super mode: every state in order (revisions must not go backwards on the PC).
                 viewer.send(packet)
             else:
                 viewer.send_video("model_state", packet)
@@ -436,7 +465,7 @@ class WideStage:
         state, shown = None, joints
         if self.model and camera == self.owner:
             judged = self.judged_joints(joints, self.frames[camera]["anchor_x"])
-            state = self.model.update({n: {"p": p} for n, p in judged.items()}, now_ms())
+            state = self.model.update({n: {"p": p} for n, p in judged.items()}, now_ms(), super_smash=self.super_on())
             shown = {**joints, **judged}
         elif self.model and self.owner is None and not valid:
             state = self.model.update({}, now_ms())
@@ -511,6 +540,7 @@ def stage_router(layout: str) -> APIRouter:
 
     async def viewer_command(peer: Peer, m: dict) -> None:
         kind = m.get("type")
+        delivery = "update"
         async with hub.lock:
             if kind == "wide3d_stage_config":
                 await apply_spacing(m.get("spacing_m"))
@@ -534,6 +564,26 @@ def stage_router(layout: str) -> APIRouter:
                 hub.zone_id = zone
                 await hub.rebuild()
                 hub.model.guard_spawn()   # new building: body hits ignored for SPAWN_GUARD_MS
+            elif kind == "duo_super" and hub.has_view:
+                if type(m.get("enabled")) is not bool:
+                    raise ValueError("enabled must be true or false")
+                mode = "super_smash" if m["enabled"] else "normal"
+                if mode != hub.smash.mode:
+                    # A mode change is a new round, as in the 3-camera mode: the set stands again.
+                    hub.smash.mode = mode
+                    hub.smash.clear()
+                    hub.model.reset()
+                    hub.model.guard_spawn()
+                    delivery = "snapshot"
+            elif kind == "duo_super_feedback" and hub.has_view:
+                selection = m.get("feedback_selection")
+                if selection not in (*FEEDBACK_PRESETS, "shuffle"):
+                    raise ValueError("invalid feedback_selection")
+                if selection != hub.smash.feedback_selection:
+                    hub.smash.feedback_selection = selection
+                    hub.smash.feedback_deck = []
+            elif hub.super_on() and kind in SUPER_BLOCKED:
+                raise ValueError("super smash on: only body hits break the set (restore and scene change still work)")
             elif kind == "multi3d_model_config":
                 raise ValueError("the stage layout follows the markers; move the markers or change spacing_m")
             elif isinstance(kind, str) and kind.startswith("multi3d_model_"):
@@ -542,7 +592,7 @@ def stage_router(layout: str) -> APIRouter:
                 raise ValueError(f"unsupported: {kind}")
             event = hub.model.pending_event
             hub.model.pending_event = None
-            hub.send_model(hub.model.snapshot(event))
+            hub.send_model(hub.model.snapshot(event), delivery)
         hub.broadcast_status()
 
     async def phone_calibration(peer: Peer, camera: str, m: dict) -> None:
@@ -608,11 +658,13 @@ def stage_router(layout: str) -> APIRouter:
                     peer.send(hub.view_packet())
                 if c in hub.jpegs:
                     peer.send(hub.jpegs[c])
-            peer.send(hub.model_packet())
+            peer.send(hub.model_packet(delivery="snapshot"))
         else:
             old = hub.phones.get(camera)
             hub.phones[camera] = peer
             hub.forget(camera)
+            mode = websocket.query_params.get("input_mode", "live")
+            hub.input_modes[camera] = mode if mode in ("live", "synthetic", "replay") else "unknown"
             if old is not None:
                 old.send({"type": "error", "code": "superseded"})
                 await old.close(CLOSE_SUPERSEDED, "superseded")

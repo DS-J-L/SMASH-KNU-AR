@@ -38,7 +38,7 @@ if(wide){document.body.classList.add('wide-mode');$('legacyLink').hidden=true;
   $('autoNext').checked=true;
   if(duo){document.body.classList.add('duo-mode');$('stageSpacing').value=2;$('stageTitle').textContent='2대 무대 · A3 마커 2장 + 반대편 화면 폰';
     $('stageHint').textContent='ID0(C0)·ID1(C1) 마커를 같은 방향(무늬 위쪽=판정 폰에서 먼 쪽)으로 왼쪽부터 일직선에 놓으세요. 간격은 정해져 있지 않습니다(0.5~3m): 자동 적용이 켜져 있으면 화면 폰이 두 마커로 잰 간격을 그대로 씁니다. 끄면 줄자로 잰 간격을 넣으세요. 판정 폰은 각자 자기 마커 앞(높이 두고 내려다봐도 됨), 화면 폰은 반대편에서 두 마커가 모두 보이게 가로로 둡니다.';
-    $('autoSpacingRow').hidden=false;$('autoRotationRow').hidden=false;$('viewTransport').hidden=false;
+    $('autoSpacingRow').hidden=false;$('autoRotationRow').hidden=false;$('viewTransport').hidden=false;$('duoSuperRow').hidden=false;
     $('captureBody').textContent='판정 폰 몸 보정 시작 · 허리 기준 고정';}
   $('phoneHelp').innerHTML=duo?'판정 폰 2대에서 <a href="/test/mono3d/?stage=duo&camera=C0">C0</a>·<a href="/test/mono3d/?stage=duo&camera=C1">C1</a> 2대 무대 페이지를 열고 각자 자기 번호 A3 마커(ID0 왼쪽·ID1 오른쪽)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 반대편 폰은 <a href="/test/stage-view/">화면 폰</a> 페이지를 가로로 열어 두 마커를 한 번에 인식합니다. 그 영상이 위쪽 메인 화면입니다.':'폰 3대에서 <a href="/test/mono3d/?stage=wide&camera=C0">C0</a>·<a href="/test/mono3d/?stage=wide&camera=C1">C1</a>·<a href="/test/mono3d/?stage=wide&camera=C2">C2</a> 넓은 무대 페이지를 열고, 각자 자기 번호 마커(ID0·ID1·ID2)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 사람이 있는 구간의 폰이 판정합니다. 깊이는 폰별 근사값입니다.';}
 // 1 camera: one building at a time, chosen from a list (IT1 or any single building). 3 cameras: zones of several
@@ -225,11 +225,13 @@ function updateViewHud(now){
   $('viewHud').classList.toggle('done',t.done);
 }
 let previewRequest=0;
-const feedback=approx?null:createSuperFeedback({canvas:$('screenImpact'),
+// Super feedback: the 3-camera mode on C0, and the duo stage (2026-11-24, user: on/off there too) on V's main view.
+const FEEDBACK_CAMERA=duo?'V':'C0';
+const feedback=approx&&!duo?null:createSuperFeedback({canvas:$('screenImpact'),
   onCancel:()=>{previewRequest++;physics?.stopSuper();},
   reduced:()=>$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
   project:(point,{unclipped=false}={})=>{
-    const c=cameras.get('C0');if(!c?.calibrated||!point)return null;
+    const c=cameras.get(FEEDBACK_CAMERA);if(!c?.calibrated||!point)return null;
     const p=new THREE.Vector3(...point).project(c.camera),box=c.div.getBoundingClientRect();
     return p.z>=-1&&p.z<=1&&(unclipped||(Math.abs(p.x)<=1&&Math.abs(p.y)<=1))?[box.left+(p.x+1)*box.width/2,box.top+(1-p.y)*box.height/2]:null;
   }});
@@ -240,7 +242,7 @@ $('reduceMotion').onchange=()=>feedback?.cancel('motion_setting');
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>feedback?.cancel('motion_setting'));
 $('superMute').onclick=()=>{const muted=$('superMute').getAttribute('aria-pressed')!=='true';$('superMute').setAttribute('aria-pressed',String(muted));feedback?.mute(muted);};
 const unlockSuper=()=>feedback?.unlock();document.addEventListener('pointerdown',unlockSuper,{capture:true});
-function presentable(){const c=cameras.get('C0');return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
+function presentable(){const c=cameras.get(FEEDBACK_CAMERA);return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
 function control(action,extra={}){
   if(!state?.server_instance_id||!connected||controlPending)return false;
   const request_id=`${viewerId}:${++controlSeq}`;
@@ -256,6 +258,7 @@ function completeControl(){
   }
 }
 function updateSuperUi(now){
+  if(duo){updateDuoSuperUi();return;}
   if(!feedback||!state?.server_instance_id)return;
   const owner=state.controller_viewer_id===viewerId,superMode=state.smash_mode==='super_smash';
   $('smashMode').value=state.smash_mode;$('smashMode').disabled=!owner||!!controlPending;
@@ -285,6 +288,27 @@ function updateSuperUi(now){
       lastPresentationAt=now;lastPresentationKey=key;
     }
   }
+}
+// Duo super smash: a plain on/off and preset choice (no operator lease, no 3-camera readiness gates).
+function updateDuoSuperUi(){
+  if(!state)return;
+  const on=state.smash_mode==='super_smash',busy=on&&(feedback.info().screen.active||physics?.superAt!=null);
+  if(document.activeElement!==$('duoSuper'))$('duoSuper').checked=on;
+  if(document.activeElement!==$('duoFeedback'))$('duoFeedback').value=state.feedback_selection??DEFAULT_FEEDBACK;
+  $('duoSuper').disabled=$('duoFeedback').disabled=!connected;$('duoSuperPreview').disabled=busy;
+  $('mouseMode').disabled=on;if(on)$('mouseMode').checked=false;
+  const label=FEEDBACK_PRESETS[physics?.superPreset]?.label??'파괴 연출';
+  $('duoSuperStatus').textContent=!on?'끔 · 일반 타격(부순 곳만)':
+    state.phase==='cleared'?`${busy?label+' 중':'전체 파괴'} · +${state.score}점`:
+    !presentable()?'켬 · 화면 폰(V) 영상이 들어와야 연출이 보입니다':
+    state.spawn_guard_ms>0?`켬 · 새 건물 무적 ${(state.spawn_guard_ms/1000).toFixed(1)}초`:'켬 · 한 번 쳐 보세요';
+}
+if(duo){
+  $('duoSuper').onchange=()=>{feedback.cancel('mode_change');physics?.stopSuper();link.send({type:'duo_super',enabled:$('duoSuper').checked});};
+  $('duoFeedback').onchange=()=>link.send({type:'duo_super_feedback',feedback_selection:$('duoFeedback').value});
+  // The header sound button (aria-pressed = sound on) also mutes the super feedback sound.
+  $('sound').addEventListener('click',()=>feedback.mute($('sound').getAttribute('aria-pressed')!=='true'));
+  $('duoSuperPreview').onclick=async()=>{const request=++previewRequest;await feedback.unlock();if(request!==previewRequest||document.hidden)return;feedback.preview({preset:$('duoFeedback').value});};
 }
 $('claimControl').onclick=()=>control('claim_controller');
 $('superIt1').onclick=()=>{feedback?.cancel('scene_request');physics?.stopSuper();control('set_scene',{scene_id:'it1'});};
