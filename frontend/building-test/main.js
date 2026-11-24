@@ -255,8 +255,11 @@ const feedback=approx&&!duo?null:createSuperFeedback({canvas:$('screenImpact'),
   // 2-camera stage (2026-11-25, user): only its checkbox; the OS setting (Windows animations off) hid every piece.
   reduced:()=>duo?$('duoReduceMotion').checked:$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
   project:(point,{unclipped=false}={})=>{
-    const c=cameras.get(FEEDBACK_CAMERA);if(!c?.calibrated||!point)return null;
-    const p=new THREE.Vector3(...point).project(c.camera),box=c.div.getBoundingClientRect();
+    const c=cameras.get(FEEDBACK_CAMERA),onView=c?.calibrated&&(!duo||viewFresh());
+    // Duo: no live V video -> draw on the 3D view instead, so the click demo works without phones.
+    if((!onView&&!duo)||!point)return null;
+    const cam=onView?c.camera:orbit.camera,el=onView?c.div:orbit.renderer.domElement;
+    const p=new THREE.Vector3(...point).project(cam),box=el.getBoundingClientRect();
     return p.z>=-1&&p.z<=1&&(unclipped||(Math.abs(p.x)<=1&&Math.abs(p.y)<=1))?[box.left+(p.x+1)*box.width/2,box.top+(1-p.y)*box.height/2]:null;
   }});
 $('effectPreview').onclick=async()=>{const request=++previewRequest;await feedback?.unlock();if(request!==previewRequest||document.hidden||localStopped||$('effectPreview').disabled)return;feedback?.preview();$('superResult').textContent='화면·소리 미리보기 · 무득점';};
@@ -266,7 +269,8 @@ $('reduceMotion').onchange=()=>feedback?.cancel('motion_setting');
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>feedback?.cancel('motion_setting'));
 $('superMute').onclick=()=>{const muted=$('superMute').getAttribute('aria-pressed')!=='true';$('superMute').setAttribute('aria-pressed',String(muted));feedback?.mute(muted);};
 const unlockSuper=()=>feedback?.unlock();document.addEventListener('pointerdown',unlockSuper,{capture:true});
-function presentable(){const c=cameras.get(FEEDBACK_CAMERA);return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
+function viewFresh(){const c=cameras.get(FEEDBACK_CAMERA);return !!c?.calibrated&&performance.now()-c.lastImage<=500;}
+function presentable(){if(duo)return ready&&connected&&!scenePending&&!loadingScene&&!document.hidden;const c=cameras.get(FEEDBACK_CAMERA);return ready&&connected&&!scenePending&&!loadingScene&&!localStopped&&!document.hidden&&c?.calibrated&&performance.now()-c.lastImage<=500;}
 function control(action,extra={}){
   if(!state?.server_instance_id||!connected||controlPending)return false;
   const request_id=`${viewerId}:${++controlSeq}`;
@@ -320,14 +324,13 @@ function updateDuoSuperUi(){
   if(document.activeElement!==$('duoSuper'))$('duoSuper').checked=on;
   if(document.activeElement!==$('duoFeedback'))$('duoFeedback').value=state.feedback_selection??DEFAULT_FEEDBACK;
   $('duoSuper').disabled=$('duoFeedback').disabled=!connected;$('duoSuperPreview').disabled=busy;
-  $('mouseMode').disabled=on;if(on)$('mouseMode').checked=false;
   // Normal-hit options do nothing while every hit breaks the whole set (drop_all is refused by the server).
   for(const id of ['blastMode','blastRadius','collapse','impactBreak','stress'])if(on)$(id).disabled=true;
   $('duoNormalNote').textContent=on?'슈퍼 연출 중에는 아래 일반 타격 설정을 쓰지 않습니다':'';
   const label=FEEDBACK_PRESETS[physics?.superPreset]?.label??'파괴 연출';
   $('duoSuperStatus').textContent=!on?'끔 · 일반 타격(부순 곳만)':
     state.phase==='cleared'?`${busy?label+' 중':'전체 파괴'} · +${state.score}점`:
-    !presentable()?'켬 · 화면 폰(V) 영상이 들어와야 연출이 보입니다':
+    !viewFresh()?'켬 · V 영상 없음: 연출은 아래 3D 화면에 · 3D 화면 클릭(데모)도 전체 파괴':
     state.spawn_guard_ms>0?`켬 · 새 건물 무적 ${(state.spawn_guard_ms/1000).toFixed(1)}초`:'켬 · 한 번 쳐 보세요';
 }
 if(duo){

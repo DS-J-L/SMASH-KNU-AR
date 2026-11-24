@@ -332,7 +332,7 @@ def test_duo_super_smash_on_breaks_the_whole_set_with_the_chosen_preset_and_off_
         on = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "super_smash")["model_test"]
         assert on["delivery"] == "snapshot" and on["server_instance_id"] and on["feedback_selection"] == "crush_collapse_v1"
         assert on["removed_ids"] == [] and on["epoch"] != normal["epoch"]   # a mode change stands the set again
-        pc.send_json({"type": "multi3d_model_mouse", "point_m": [0, 0, 0.2]})
+        pc.send_json({"type": "multi3d_model_drop_all"})
         assert "only body hits" in receive_until(pc, "error")["detail"]
         lo, hi = on["bounds"]["lo"], on["bounds"]["hi"]
         x, height = building_at(on["scene_id"], 1.5)
@@ -366,6 +366,16 @@ def test_duo_super_smash_on_breaks_the_whole_set_with_the_chosen_preset_and_off_
         pc.send_json({"type": "duo_super", "enabled": False})
         off = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "normal")["model_test"]
         assert off["removed_ids"] == [] and "server_instance_id" not in off
+        # A click on the PC 3D view is a demo that breaks the whole set too, labelled mouse_demo.
+        pc.send_json({"type": "duo_super", "enabled": True})
+        again = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "super_smash")["model_test"]
+        lo, hi = again["bounds"]["lo"], again["bounds"]["hi"]
+        mid = [(lo[k] + hi[k]) / 2 for k in range(3)]
+        pc.send_json({"type": "multi3d_model_mouse", "origin": [mid[0], lo[1] - 3, mid[2]], "direction": [0, 1, 0]})
+        click = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"].get("event"))["model_test"]
+        assert click["event"]["input_mode"] == "mouse_demo" and click["event"]["effect_style"] == "screen_impact_v1"
+        assert len(click["removed_ids"]) == click["fragment_count"]
+        pc.send_json({"type": "duo_super", "enabled": False})
         pc.send_json({"type": "duo_super_feedback", "feedback_selection": "nope"})
         assert receive_until(pc, "error")["code"] == "bad_message"
 

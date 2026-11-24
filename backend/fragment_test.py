@@ -82,7 +82,7 @@ class FragmentTest:
         self.swing_id = None
         self.swing_hit_at = -1e9
 
-    def mouse_hit(self, origin, direction, strength=12.0):
+    def mouse_hit(self, origin, direction, strength=12.0, *, all_fragments=False):
         strength = float(strength)
         if not math.isfinite(strength) or not .1 <= strength <= 20:
             raise ValueError('invalid mouse strength')
@@ -98,7 +98,8 @@ class FragmentTest:
         if not contact:
             return None
         self.clear_tracking()
-        event=self.strike(contact['fragment_id'], 'mouse', direction, contact['point'], strength, self.blast_enabled)
+        event=self.strike(contact['fragment_id'], 'mouse', direction, contact['point'], strength, self.blast_enabled,
+                          all_fragments=all_fragments)   # duo super smash: the click demo breaks the whole set
         event['input_mode']='mouse_demo'
         event['strength']=strength
         return event

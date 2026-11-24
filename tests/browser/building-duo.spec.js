@@ -316,7 +316,7 @@ test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the who
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.feedback_selection)).toBe('swing_wave_v1');
   await page.locator('#duoSuper').check();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
-  await expect(page.locator('#mouseMode')).toBeDisabled();
+  await expect(page.locator('#mouseMode')).toBeEnabled();   // a click is a demo that breaks the whole set
   await page.evaluate(()=>window.scrollTo(0,0));   // the effect is placed on V where it is on screen when it starts
   let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   expect(s.removed).toEqual([]);
@@ -357,5 +357,32 @@ test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the who
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
   await expect(page.locator('#mouseMode')).toBeEnabled();await expect(page.locator('#duoSuperStatus')).toContainText('끔');
   await page.evaluate(()=>{clearInterval(window.duoSuperVideo);Object.values(window.duoSuperPhones).forEach(ws=>ws.close());});
+  expect(errors).toEqual([]);
+});
+
+test('duo super smash click demo: without phones a click on the 3D view breaks the set and plays the effect there',async({page})=>{
+  test.setTimeout(120000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.setViewportSize({width:1600,height:1000});
+  await page.goto('/test/building/?mode=duo&key=fragment-test');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  await page.locator('#autoNext').uncheck();
+  await page.locator('#duoFeedback').selectOption('chain_blast_v1');
+  await page.locator('#duoSuper').check();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
+  await expect(page.locator('#duoSuperStatus')).toContainText('V 영상 없음');
+  const box=await page.locator('#orbit canvas').first().boundingBox();
+  await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+  await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return s.removed.length===s.modelState.fragment_count;}),{timeout:5000}).toBe(true);
+  const s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(s.super.eventCount).toBe(1);expect(s.super.logs.at(-1)).toMatchObject({preset:'chain_blast_v1',input_mode:'mouse_demo'});
+  const [ox,oy]=s.super.logs.at(-1).originPx;
+  expect(ox).toBeGreaterThanOrEqual(box.x);expect(ox).toBeLessThanOrEqual(box.x+box.width);expect(oy).toBeGreaterThanOrEqual(box.y);expect(oy).toBeLessThanOrEqual(box.y+box.height);
+  // After a restore the next click plays again.
+  await page.locator('#restore').click();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
+  await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().super.eventCount),{timeout:5000}).toBe(2);
+  await page.locator('#duoSuper').uncheck();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('normal');
   expect(errors).toEqual([]);
 });

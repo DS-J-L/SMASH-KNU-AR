@@ -62,7 +62,8 @@ LAYOUTS = {
 }
 MAX_MESSAGE_BYTES = 512 * 1024
 # duo super smash: viewer commands that would break pieces some other way than a body hit.
-SUPER_BLOCKED = ("multi3d_model_mouse", "multi3d_model_push", "multi3d_model_release", "multi3d_model_drop_all")
+# A mouse click is allowed as a demo (2026-11-25, user): it breaks the whole set like a body hit, labelled mouse_demo.
+SUPER_BLOCKED = ("multi3d_model_push", "multi3d_model_release", "multi3d_model_drop_all")
 # duo (2026-11-22): V's measured floor pose of each marker turns/moves that judging phone's coordinates. A pose this far
 # from the nominal one is a misread, not a placement: it is ignored and the plain spacing shift is used.
 MARKER_POSE_MAX_YAW_DEG = 20.0
@@ -275,9 +276,12 @@ class WideStage:
             return {**state, "smash_mode": "normal", "feedback_selection": s.feedback_selection}
         s.input_mode = self.input_modes.get(self.owner, "unknown") if self.owner else "unknown"
         s.phase = s.reason = "cleared" if len(self.model.removed) == len(self.model.target.fragments) else "ready"
+        demo = (state.get("event") or {}).get("input_mode") == "mouse_demo"
         state = s.decorate(state, delivery)
         if state.get("event"):
             state["event"]["tracking_source"] = "mono_approx"
+            if demo:   # a click stays a demo, never labelled as the judging phone's input
+                state["event"]["input_mode"] = "mouse_demo"
         return state
 
     def send_model(self, state=None, delivery="update") -> None:
@@ -585,6 +589,11 @@ def stage_router(layout: str) -> APIRouter:
                 if selection != hub.smash.feedback_selection:
                     hub.smash.feedback_selection = selection
                     hub.smash.feedback_deck = []
+            elif hub.super_on() and kind == "multi3d_model_mouse":
+                a, b = m.get("origin"), m.get("direction")
+                if not isinstance(a, list) or not isinstance(b, list):
+                    raise ValueError("mouse ray must be lists")
+                hub.model.pending_event = hub.model.mouse_hit(a, b, m.get("strength", 12), all_fragments=True)
             elif hub.super_on() and kind in SUPER_BLOCKED:
                 raise ValueError("super smash on: only body hits break the set (restore and scene change still work)")
             elif kind == "multi3d_model_config":

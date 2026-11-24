@@ -1480,3 +1480,4 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 - 원인·수정: Windows 애니메이션 효과 꺼짐 → 브라우저 동작 줄이기 → 조각 없이 바로 숨김. 2대 무대는 무대 체크박스만 따름. 가까운 V 화면 밖으로 바로 나가지 않게 조각 속도 0.35배. 슈퍼 모드 복원·자동 다음 건물·세트 변경이 3대용 명령으로 가서 실패하던 것 수정. PC 설정을 네 묶음으로 정리
 - 검증 (synthetic만): Python 81, Node 173, duo·구역 브라우저 12 통과. 실폰 미검증
 - 다음: 실폰 2대 무대에서 무너지는 모습·속도 확인
+- 추가 커밋: 2대 무대 슈퍼 모드에서 폰 없이 PC 3D 화면 클릭 데모로 세트 전체 파괴(`input_mode=mouse_demo`), DATA_CONTRACT 갱신

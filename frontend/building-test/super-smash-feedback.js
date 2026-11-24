@@ -31,7 +31,7 @@ export function createSuperFeedback({canvas,reduced=()=>false,project=()=>null,n
     if(!e||m.delivery!=='event'||m.smash_mode!=='super_smash'||e.effect_style!=='screen_impact_v1'||
       e.epoch!==epoch||e.server_instance_id!==instance||e.model_revision!==revision||seen.has(e.event_id))return {accepted:true,event:null};
     seen.add(e.event_id);if(seen.size>256)seen.delete(seen.values().next().value);
-    if(!presentable||!['live','synthetic','replay'].includes(e.input_mode))return {accepted:true,event:null};
+    if(!presentable||!['live','synthetic','replay','mouse_demo'].includes(e.input_mode))return {accepted:true,event:null};
     const t0=now(),played={...e,feedback_preset:feedbackId(e),feedback_version:1,feedback_seed:feedbackSeed(e),presentation_t0:t0,presentation_reduced:Boolean(reduced())};
     screen.start({event:played,...presentation(played,m.bounds),t0});audio.play(played);eventCount++;
     logs.push({event_id:e.event_id,epoch,received:t0,firstDraw:null,scene_id:m.scene_id,input_mode:e.input_mode,
