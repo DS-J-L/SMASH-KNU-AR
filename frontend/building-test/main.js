@@ -41,6 +41,27 @@ if(wide){document.body.classList.add('wide-mode');$('legacyLink').hidden=true;
     $('autoSpacingRow').hidden=false;$('autoRotationRow').hidden=false;$('viewTransport').hidden=false;$('duoSuperRow').hidden=false;
     $('captureBody').textContent='판정 폰 몸 보정 시작 · 허리 기준 고정';}
   $('phoneHelp').innerHTML=duo?'판정 폰 2대에서 <a href="/test/mono3d/?stage=duo&camera=C0">C0</a>·<a href="/test/mono3d/?stage=duo&camera=C1">C1</a> 2대 무대 페이지를 열고 각자 자기 번호 A3 마커(ID0 왼쪽·ID1 오른쪽)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 반대편 폰은 <a href="/test/stage-view/">화면 폰</a> 페이지를 가로로 열어 두 마커를 한 번에 인식합니다. 그 영상이 위쪽 메인 화면입니다.':'폰 3대에서 <a href="/test/mono3d/?stage=wide&camera=C0">C0</a>·<a href="/test/mono3d/?stage=wide&camera=C1">C1</a>·<a href="/test/mono3d/?stage=wide&camera=C2">C2</a> 넓은 무대 페이지를 열고, 각자 자기 번호 마커(ID0·ID1·ID2)로 마커 보정 → 몸 보정 → 측정까지 진행하세요. 사람이 있는 구간의 폰이 판정합니다. 깊이는 폰별 근사값입니다.';}
+// Duo PC side panel (2026-11-24, user: settings were duplicated/mixed): the same controls, regrouped into
+// building/score, how hits break, stage/phones, and a closed physics/test group. Ids and handlers are unchanged.
+if(duo)(function organizeDuoPanel(){
+  const aside=$('sceneTitle').parentElement,labelOf=id=>$(id).closest('label');
+  const group=(title,open,...nodes)=>{const d=document.createElement('details');d.className='duo-group';d.open=open;
+    d.innerHTML=`<summary>${title}</summary>`;for(const n of nodes)if(n)d.append(n);return d;};
+  const sub=text=>Object.assign(document.createElement('h4'),{textContent:text});
+  const normalNote=Object.assign(document.createElement('small'),{id:'duoNormalNote'});
+  $('depthControl').firstChild.textContent='판정 앞뒤 오차 허용 (m)';
+  // Look everything up while it is still in the document (getElementById misses detached nodes).
+  $('sceneControl').append($('autoNextControl'));
+  const building=group('건물 · 점수',true,$('sceneControl'),$('dimensions'),$('count'),$('score'),$('restore'));
+  const hits=group('타격 방식',true,sub('슈퍼 연출'),$('duoSuperRow'),sub('일반 타격 (슈퍼 연출을 끄면 적용)'),normalNote,
+    labelOf('blastMode'),labelOf('blastRadius'),labelOf('collapse'),labelOf('impactBreak'),labelOf('pushStrength'),
+    sub('판정'),$('depthControl'),$('trackingDiagnosis'),$('contact'));
+  const stage=group('무대 · 폰 배치',true,$('stageControl'),$('personStatus'),$('occlusionControl'),$('phoneHelp'));
+  const notes=[...aside.querySelectorAll(':scope>p:not([id])')];
+  const physicsGroup=group('물리 · 시험 (개발용)',false,labelOf('interactionDistance'),$('physics'),notes.at(-1));
+  $('bodyReference').hidden=true;for(const p of notes.slice(0,-1))p.hidden=true;   // 3-camera text / repeated height
+  $('sceneTitle').after(building,hits,stage,physicsGroup);
+})();
 // 1 camera: one building at a time, chosen from a list (IT1 or any single building). 3 cameras: zones of several
 // buildings; ?scene=it1 keeps the single IT1 building there.
 const keepSingleBuilding=!wide&&new URLSearchParams(location.search).get('scene')==='it1';let zoneRequested=mono||wide||keepSingleBuilding,zonesReady=false;
@@ -122,6 +143,8 @@ function previewSize(){
 const physicsOptions={...DEFAULT_PHYSICS};
 if(wide||mono){physicsOptions.building=false;document.querySelector('[data-physics="building"]').checked=false;}   // stage default (2026-11-20), 1-camera (2026-11-22)
 // Pieces on the floor disappear after 2 s (2026-11-24, user): 1 camera and the stages; 3 cameras keep them.
+// 2-camera super smash (2026-11-25, user): pieces fly at about a third of the speed so the collapse stays on V.
+if(duo)physicsOptions.superSpeed=.35;
 if(wide||mono){physicsOptions.vanish=true;document.querySelector('[data-physics="vanish"]').checked=true;}
 const scenes = [], pieces = new Map(), cameras = new Map();
 const status = text => { $('status').textContent = text; };
@@ -229,7 +252,8 @@ let previewRequest=0;
 const FEEDBACK_CAMERA=duo?'V':'C0';
 const feedback=approx&&!duo?null:createSuperFeedback({canvas:$('screenImpact'),
   onCancel:()=>{previewRequest++;physics?.stopSuper();},
-  reduced:()=>$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
+  // 2-camera stage (2026-11-25, user): only its checkbox; the OS setting (Windows animations off) hid every piece.
+  reduced:()=>duo?$('duoReduceMotion').checked:$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
   project:(point,{unclipped=false}={})=>{
     const c=cameras.get(FEEDBACK_CAMERA);if(!c?.calibrated||!point)return null;
     const p=new THREE.Vector3(...point).project(c.camera),box=c.div.getBoundingClientRect();
@@ -297,6 +321,9 @@ function updateDuoSuperUi(){
   if(document.activeElement!==$('duoFeedback'))$('duoFeedback').value=state.feedback_selection??DEFAULT_FEEDBACK;
   $('duoSuper').disabled=$('duoFeedback').disabled=!connected;$('duoSuperPreview').disabled=busy;
   $('mouseMode').disabled=on;if(on)$('mouseMode').checked=false;
+  // Normal-hit options do nothing while every hit breaks the whole set (drop_all is refused by the server).
+  for(const id of ['blastMode','blastRadius','collapse','impactBreak','stress'])if(on)$(id).disabled=true;
+  $('duoNormalNote').textContent=on?'슈퍼 연출 중에는 아래 일반 타격 설정을 쓰지 않습니다':'';
   const label=FEEDBACK_PRESETS[physics?.superPreset]?.label??'파괴 연출';
   $('duoSuperStatus').textContent=!on?'끔 · 일반 타격(부순 곳만)':
     state.phase==='cleared'?`${busy?label+' 중':'전체 파괴'} · +${state.score}점`:
@@ -305,6 +332,9 @@ function updateDuoSuperUi(){
 }
 if(duo){
   $('duoSuper').onchange=()=>{feedback.cancel('mode_change');physics?.stopSuper();link.send({type:'duo_super',enabled:$('duoSuper').checked});};
+  $('duoReduceMotion').onchange=()=>feedback.cancel('motion_setting');
+  const osReduce=matchMedia('(prefers-reduced-motion: reduce)'),showOsReduce=()=>{$('duoReduceHint').textContent=osReduce.matches?'Windows 애니메이션 효과가 꺼져 있지만 이 무대는 체크한 경우에만 동작을 줄입니다':'';};
+  showOsReduce();osReduce.addEventListener('change',showOsReduce);
   $('duoFeedback').onchange=()=>link.send({type:'duo_super_feedback',feedback_selection:$('duoFeedback').value});
   // The header sound button (aria-pressed = sound on) also mutes the super feedback sound.
   $('sound').addEventListener('click',()=>feedback.mute($('sound').getAttribute('aria-pressed')!=='true'));
@@ -558,7 +588,8 @@ const link=createLink(duo?'/ws/test/duo3d':wide?'/ws/test/wide3d':mono?'/ws/test
   if(!s.open){feedback?.cancel('disconnect');physics?.stopSuper();controlPending=null;viewerId=null;lastPresentationKey='';frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
   if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
 },onMessage);
-$('restore').onclick=()=>{if(state?.smash_mode==='super_smash')$('superRestore').click();else link.send({type:'multi3d_model_reset'});};
+// The 2-camera stage has no 3-camera control channel: restore and scene change stay plain messages there.
+$('restore').onclick=()=>{if(!duo&&state?.smash_mode==='super_smash')$('superRestore').click();else if(duo&&state?.smash_mode==='super_smash'){feedback?.cancel('reset_request');physics?.stopSuper();link.send({type:'multi3d_model_reset'});}else link.send({type:'multi3d_model_reset'});};
 $('captureBody').hidden=true;
 $('captureBody').onclick=()=>link.send({type:'multi3d_body_start'});
 $('stress').onclick=()=>link.send({type:'multi3d_model_drop_all'});
@@ -596,7 +627,7 @@ function checkAutoNext(m){
 for(const id of ['autoNext','autoNextDelay','autoNextPercent'])$(id).addEventListener('change',()=>{if(id==='autoNext'||id==='autoNextDelay')cancelAutoNext();if(state)checkAutoNext(state);});
 $('sceneSelect').onchange=()=>{cancelAutoNext();
   failedScene=null;
-  scenePending=state?.smash_mode==='super_smash'?control('set_scene',{scene_id:$('sceneSelect').value}):link.send({type:'multi3d_model_scene',scene_id:$('sceneSelect').value});
+  scenePending=!duo&&state?.smash_mode==='super_smash'?control('set_scene',{scene_id:$('sceneSelect').value}):link.send({type:'multi3d_model_scene',scene_id:$('sceneSelect').value});
   if(scenePending)status('구역 준비 중… 모델과 충돌체를 불러옵니다.');
 };
 function applyPlacement(){if(!$('placement').reportValidity())return;link.send({type:'multi3d_model_config',placement:{x_m:Number($('x').value),y_m:Number($('y').value),yaw_deg:Number($('yaw').value),scale:Number($('scale').value)}});}

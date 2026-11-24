@@ -564,6 +564,9 @@ def stage_router(layout: str) -> APIRouter:
                 hub.zone_id = zone
                 await hub.rebuild()
                 hub.model.guard_spawn()   # new building: body hits ignored for SPAWN_GUARD_MS
+                if hub.super_on():
+                    hub.smash.clear()
+                    delivery = "snapshot"
             elif kind == "duo_super" and hub.has_view:
                 if type(m.get("enabled")) is not bool:
                     raise ValueError("enabled must be true or false")
@@ -588,6 +591,9 @@ def stage_router(layout: str) -> APIRouter:
                 raise ValueError("the stage layout follows the markers; move the markers or change spacing_m")
             elif isinstance(kind, str) and kind.startswith("multi3d_model_"):
                 hub.model = await asyncio.to_thread(model_command, hub.model, m)
+                if hub.super_on() and kind == "multi3d_model_reset":
+                    hub.smash.clear()   # restore in super mode: a new round, as a mode change
+                    delivery = "snapshot"
             else:
                 raise ValueError(f"unsupported: {kind}")
             event = hub.model.pending_event

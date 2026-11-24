@@ -160,10 +160,12 @@ export class FragmentPhysics {
       else if(this.superPreset==='crush_collapse_v1')direction.set(-radial.x*height*.3,-radial.y*height*.3,-Math.max(.1,height*.4));
       else{direction.multiplyScalar(4.5).add(radial.multiplyScalar(4));direction.z=Math.max(2.3,direction.z);}
       if(direction.length()>24)direction.setLength(24);
+      // superSpeed (2026-11-25, user): the 2-camera stage's close V camera lost fast pieces at once; slower there.
+      const speed=this.options.superSpeed??1;direction.multiplyScalar(speed);
       r.body.setLinvel({x:direction.x,y:direction.y,z:direction.z},true);
       // Stable decorative spin; independent of the authoritative point/score.
       const seed=(feedbackSeed(event)^Math.imul(id+1,2654435761))>>>0;
-      r.body.setAngvel({x:(seed%11)-5,y:((seed>>>4)%11)-5,z:((seed>>>8)%11)-5},true);
+      r.body.setAngvel({x:((seed%11)-5)*speed,y:(((seed>>>4)%11)-5)*speed,z:(((seed>>>8)%11)-5)*speed},true);
     }
     for(const [id,v] of this.superVisual){
       const t=Math.max(0,Math.min(1,(now-v.start)/820)),q=t*t*(3-2*t),angle=q*Math.PI*1.5;

@@ -356,6 +356,13 @@ def test_duo_super_smash_on_breaks_the_whole_set_with_the_chosen_preset_and_off_
         assert e["effect_style"] == "screen_impact_v1" and e["feedback_preset"] == "crush_collapse_v1"
         assert e["input_mode"] == "synthetic" and e["tracking_source"] == "mono_approx" and hit["delivery"] == "event"
         assert len(hit["removed_ids"]) == hit["fragment_count"] and hit["phase"] == "cleared"
+        # Restore and scene change (also the PC's auto next) work in super mode: plain messages, a new round.
+        pc.send_json({"type": "multi3d_model_reset"})
+        restored = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["epoch"] != hit["epoch"])["model_test"]
+        assert restored["removed_ids"] == [] and restored["smash_mode"] == "super_smash" and restored["delivery"] == "snapshot"
+        pc.send_json({"type": "multi3d_model_scene", "scene_id": restored["stage"]["zone_id"]})
+        rebuilt = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["epoch"] != restored["epoch"])["model_test"]
+        assert rebuilt["removed_ids"] == [] and rebuilt["smash_mode"] == "super_smash"
         pc.send_json({"type": "duo_super", "enabled": False})
         off = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "normal")["model_test"]
         assert off["removed_ids"] == [] and "server_instance_id" not in off

@@ -294,9 +294,10 @@ test('duo PC shows the view phone\'s measured marker layout and applies the meas
 test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the whole set with the chosen preset on V',async({page})=>{
   test.setTimeout(180000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.setViewportSize({width:1600,height:1000});
+  await page.emulateMedia({reducedMotion:'reduce'});   // Windows animations off: the stage follows only its own checkbox
   await page.goto('/test/building/?mode=duo&key=fragment-test');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
-  await expect(page.locator('#duoSuperRow')).toBeVisible();await expect(page.locator('#superPanel')).toBeHidden();
+  await expect(page.locator('#duoSuperRow')).toBeVisible();await expect(page.locator('#duoReduceHint')).toContainText('체크한 경우에만');await expect(page.locator('#superPanel')).toBeHidden();
   await expect(page.locator('#duoSuper')).not.toBeChecked();await expect(page.locator('#duoSuperStatus')).toContainText('끔');
   await page.locator('#autoNext').uncheck();
   const spacing=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).stage.spacing_m;
@@ -333,6 +334,7 @@ test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the who
     }
   },{lo,hi,z,bx});
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length),{timeout:10000}).toBe(s.modelState.fragment_count);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.dynamic),{timeout:3000}).toBeGreaterThan(10);   // pieces fly
   s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   // Painted on the page while it runs (the swing shockwave is short and thin; size/brightness on a real screen unchecked).
   expect(await page.evaluate(()=>{const c=document.getElementById('screenImpact'),d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
@@ -345,6 +347,10 @@ test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the who
   expect(await page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(0);
   await expect(page.locator('#duoSuperStatus')).toContainText(`+${s.modelState.score}점`);
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().super.screen.firstDraw)).not.toBeNull();
+  // Restore in super mode stands the set again (it used the 3-camera control channel the stage does not have).
+  await page.locator('#restore').click();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
   // Off: normal hits again, the set stands again, the mouse demo comes back.
   await page.locator('#duoSuper').uncheck();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('normal');
