@@ -120,6 +120,8 @@ function previewSize(){
 }
 const physicsOptions={...DEFAULT_PHYSICS};
 if(wide||mono){physicsOptions.building=false;document.querySelector('[data-physics="building"]').checked=false;}   // stage default (2026-11-20), 1-camera (2026-11-22)
+// Pieces on the floor disappear after 2 s (2026-11-24, user): 1 camera and the stages; 3 cameras keep them.
+if(wide||mono){physicsOptions.vanish=true;document.querySelector('[data-physics="vanish"]').checked=true;}
 const scenes = [], pieces = new Map(), cameras = new Map();
 const status = text => { $('status').textContent = text; };
 function scene() {
@@ -353,7 +355,7 @@ function syncState(m) {
     outerBase=place.position;s.outer.position.fromArray(place.position);s.outer.rotation.z=place.rotationZ;s.outer.scale.setScalar(place.scale);
     for(const [id,node] of s.nodes){
       if(reset){node.position.copy(node.userData.restPosition);node.quaternion.copy(node.userData.restQuaternion);}
-      node.visible=!physics.superHidden.has(id);
+      node.visible=!physics.superHidden.has(id)&&!physics.vanished.has(id);
     }
   }
   $('count').textContent=`${removed.size} / ${m.fragment_count}개 파괴`;
@@ -638,6 +640,7 @@ function draw(now){
   physics?.step(dt);
   if(physics){
     for(const id of physics.dynamic){const {position,quaternion}=physics.localTransform(id);for(const s of scenes){const n=s.nodes.get(id);n.visible=true;n.position.copy(position);n.quaternion.copy(quaternion);}}
+    for(const id of physics.vanished)for(const s of scenes)s.nodes.get(id).visible=false;
     if(connected&&state?.smash_mode!=='super_smash'&&now-impactSentAt>150&&impactQueue.size){
       const ids=[...impactQueue].filter(id=>!state.removed_ids.includes(id)).slice(0,8);
       if(ids.length&&link.send({type:'multi3d_model_release',ids})){impactSentAt=now;ids.forEach(id=>impactQueue.delete(id));}

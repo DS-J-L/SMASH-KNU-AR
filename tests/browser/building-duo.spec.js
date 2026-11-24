@@ -105,6 +105,14 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await page.locator('#viewFullscreen').click();
   await expect(page.locator('#viewFullscreen')).toHaveText('전체화면');await expect(page.locator('header')).toBeVisible();
   await expect(page.locator('#viewHud')).toBeHidden();
+
+  // Pieces on the floor disappear 2 s after landing (2026-11-24, stage default); the score and removal stay.
+  await expect(page.locator('[data-physics="vanish"]')).toBeChecked();
+  const broken=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).removed;
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.vanished),{timeout:15000}).toBe(broken.length);
+  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(s.physics.dynamic).toBe(0);expect(s.removed).toEqual(broken);expect(s.visible.filter(id=>broken.includes(id))).toEqual([]);
+  expect(s.visible.length).toBe(s.modelState.fragment_count-broken.length);expect(s.viewFull.hud.collapse).toBe(`${percent}%`);
   await page.evaluate(()=>clearInterval(window.duoStanding));
 
   // New spacing: V's pose is hidden until the view phone solves again for the new marker positions.

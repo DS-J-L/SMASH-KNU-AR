@@ -152,7 +152,7 @@ test('all physics enabled: 96-piece fall, switches, finite state and repeatable 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.steps),{timeout:20000}).toBeGreaterThan(120);
   let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   expect(s.physics.finite).toBe(true);expect(s.physics.minZ).toBeGreaterThan(-.03);
-  expect(s.physics.bodies).toBe(97);expect(s.physics.options).toEqual({gravity:true,floor:true,building:true,debris:true,rotation:true,sleep:true,hand:true});
+  expect(s.physics.bodies).toBe(97);expect(s.physics.options).toEqual({gravity:true,floor:true,building:true,debris:true,rotation:true,sleep:true,hand:true,vanish:false});   // 3 cameras keep floor pieces (vanish: 1 camera/stages)
   console.log('Browser 96-piece physics load',JSON.stringify({fps:s.fps,frameCpuMs:s.frameCpuMs,physics:s.physics}));
   await page.screenshot({path:'test-results/building-fragments/physics-96.png',fullPage:true});
   for(const name of ['debris','building','gravity','rotation','sleep']){
