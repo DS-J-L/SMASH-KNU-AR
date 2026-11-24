@@ -68,6 +68,7 @@ class FragmentTest:
     def reset(self):
         self.removed = set()
         self.previous = {}
+        self.created_at = time.perf_counter() * 1000   # this building's appearance (new model or restore); age_ms
         self.overlap_hit_at = {}
         self.epoch = uuid.uuid4().hex
         self.pending_event = None
@@ -127,7 +128,8 @@ class FragmentTest:
                 "score": len(self.removed),
                 "blast_enabled": self.blast_enabled, "blast_radius": self.blast_radius, "blast_strength": self.blast_strength,
                 "depth_margin": self.depth_margin, "diagnostics": self.diagnostics,
-                "collapse": self.collapse, "spawn_guard_ms": self.spawn_guard_ms(), "event": event, "bounds": {"lo": self.target.lo, "hi": self.target.hi}}
+                "collapse": self.collapse, "spawn_guard_ms": self.spawn_guard_ms(),
+                "age_ms": round(time.perf_counter() * 1000 - self.created_at), "event": event, "bounds": {"lo": self.target.lo, "hi": self.target.hi}}
 
     def release(self, ids, kind="impact", direction=None, point=None):
         valid = {f.fragment_id for f in self.target.fragments}

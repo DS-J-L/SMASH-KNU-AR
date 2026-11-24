@@ -334,3 +334,16 @@ def test_new_building_ignores_body_hits_during_spawn_guard(monkeypatch):
     # Still tracked during the guard: the next move is judged from the last position, as usual.
     j.update({'right_wrist': {'p': a}}, 66)
     assert j.update({'right_wrist': {'p': b}}, 99)['removed_ids'] == [fid]
+
+
+def test_age_counts_from_the_building_appearing_and_restarts_on_restore(monkeypatch):
+    # Duo full-screen timer (2026-11-24): age_ms is how long this building has stood (new model or restore).
+    import backend.fragment_test as ft
+    clock = [5000.0]
+    monkeypatch.setattr(ft.time, 'perf_counter', lambda: clock[0] / 1000)
+    j = FragmentTest()
+    assert j.snapshot()['age_ms'] == 0
+    clock[0] += 12345
+    assert j.snapshot()['age_ms'] == 12345
+    j.reset()
+    assert j.snapshot()['age_ms'] == 0

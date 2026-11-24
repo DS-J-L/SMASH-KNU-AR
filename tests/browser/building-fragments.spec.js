@@ -7,6 +7,9 @@ async function monoIt1(page){
   await page.locator('#sceneSelect').selectOption('it1');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest?.snapshot().sceneId),{timeout:60000}).toBe('it1');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  // A new building ignores body hits for ~2 s (2026-11-24); synthetic swings start after that.
+  const guard=await page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState?.spawn_guard_ms??0);
+  if(guard>0)await page.waitForTimeout(guard+150);
 }
 test('a delayed server option snapshot cannot undo the checkbox before its acknowledgement',async({page})=>{
   let lastState,delayed=0;

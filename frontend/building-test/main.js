@@ -183,7 +183,43 @@ for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
     s.rtcVideo.style.cssText='position:absolute;width:1px;height:1px;opacity:0;pointer-events:none';
     s.frame=document.createElement('canvas');s.frame.className='rtc-frame';s.frame.hidden=true;s.frameCtx=s.frame.getContext('2d');
     div.insertBefore(s.frame,s.renderer.domElement);div.append(s.rtcVideo);
-    Object.assign(s,{rtcFrameAt:-Infinity,rtcFrames:0,rtcFps:0,outlineMs:null,viewCalib:null});}
+    Object.assign(s,{rtcFrameAt:-Infinity,rtcFrames:0,rtcFps:0,outlineMs:null,viewCalib:null});
+    // Full screen (2026-11-24, user): only this matched view, with the building's collapse and elapsed time on top.
+    const full=Object.assign(document.createElement('button'),{type:'button',id:'viewFullscreen',className:'view-full-button',textContent:'전체화면'});
+    const hud=Object.assign(document.createElement('div'),{id:'viewHud',className:'view-hud'});
+    hud.innerHTML='<div><small>무너짐</small><b id="hudCollapse">0%</b></div><div><small>걸린 시간</small><b id="hudTime">0:00.0</b></div><p id="hudNote"></p>';
+    div.append(hud,full);full.onclick=toggleViewFull;}
+}
+// Duo full screen: the page (not the panel) goes full screen so the view keeps its own aspect ratio, centred.
+function setViewFull(on){document.body.classList.toggle('view-full',on);const b=$('viewFullscreen');if(b)b.textContent=on?'전체화면 끝내기':'전체화면';}
+function toggleViewFull(){
+  if(document.body.classList.contains('view-full')){if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});setViewFull(false);return;}
+  setViewFull(true);document.documentElement.requestFullscreen?.().catch(()=>{});   // no Fullscreen API: still a page-filling view
+}
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)setViewFull(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('view-full'))setViewFull(false);});
+// Time to break the current building: from its appearance (server age_ms, survives reloads) until the
+// auto-next share of pieces is gone; then it stops. A new building or a restore starts it again.
+const buildingTimer={key:null,startAt:0,doneAt:null};
+const autoNextNeed=total=>Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
+function trackBuildingTimer(m){
+  const key=`${m.scene_id}:${m.epoch}`,now=performance.now();
+  if(buildingTimer.key!==key)Object.assign(buildingTimer,{key,startAt:now-(m.age_ms??0),doneAt:null});
+  const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
+  if(buildingTimer.doneAt===null&&total>0&&removed>=autoNextNeed(total))buildingTimer.doneAt=now;
+}
+const clockText=ms=>{const t=Math.max(0,ms)/1000;return `${Math.floor(t/60)}:${(t%60).toFixed(1).padStart(4,'0')}`;};
+function viewHudText(now){
+  const total=state?.fragment_count||0,removed=state?.removed_ids?.length??0;
+  const percent=total?Math.round(removed/total*100):0,done=buildingTimer.doneAt!==null;
+  const guard=state?.spawn_guard_ms>0?`새 건물 무적 ${(state.spawn_guard_ms/1000).toFixed(1)}초`:'';
+  return {collapse:`${percent}%`,time:buildingTimer.key?clockText((done?buildingTimer.doneAt:now)-buildingTimer.startAt):'—',
+    note:done?(autoNextTimer!==null?'무너뜨림 · 곧 다음 건물':'무너뜨림'):guard||`파편 ${removed}/${total}개`,done};
+}
+function updateViewHud(now){
+  if(!duo||!document.body.classList.contains('view-full'))return;
+  const t=viewHudText(now);$('hudCollapse').textContent=t.collapse;$('hudTime').textContent=t.time;$('hudNote').textContent=t.note;
+  $('viewHud').classList.toggle('done',t.done);
 }
 const feedback=approx?null:createSuperFeedback({canvas:$('screenImpact'),
   reduced:()=>$('reduceMotion').checked||matchMedia('(prefers-reduced-motion: reduce)').matches,
@@ -282,7 +318,7 @@ function syncState(m) {
   // Wide stage scene ids carry spacing and height; the list shows the zone it was built from.
   const selected=wide?m.stage?.zone_id:desired;
   if(scenePending&&selected===$('sceneSelect').value){scenePending=false;status('구역 준비 완료 · 손목/마우스로 타격하세요');}
-  checkAutoNext(m);
+  checkAutoNext(m);if(duo)trackBuildingTimer(m);
   const reset=epoch!==m.epoch;
   if(reset)hitEffect.clear();
   observeHit(m);
@@ -509,7 +545,7 @@ function checkAutoNext(m){
   if(!approx)return;
   if(!$('autoNext').checked){cancelAutoNext();$('autoNextStatus').textContent='';return;}
   const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
-  const need=Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
+  const need=autoNextNeed(total);
   // The server ignores body hits for ~2 s after a new building appears (spawn_guard_ms).
   const guard=m.spawn_guard_ms>0?`새 건물 무적 ${(m.spawn_guard_ms/1000).toFixed(1)}초 · `:'';
   if(!(total>0&&removed>=need)){cancelAutoNext();$('autoNextStatus').textContent=`${guard}부서진 파편 ${removed}/${total}개 · ${need}개 이상이면 다음 건물`;return;}
@@ -609,7 +645,7 @@ function draw(now){
     }
   }
   const live=connected&&now-frameAt<500;
-  updateSuperUi(now);
+  updateSuperUi(now);updateViewHud(now);
   if(state?.smash_mode==='super_smash'&&!presentable()&&feedback?.info().screen.active&&!feedback.info().screen.preview){feedback.cancel('presentation_lost');physics?.stopSuper();}
   if(physics&&state?.smash_mode==='super_smash')for(const s of scenes)for(const [id,n] of s.nodes)if(physics.superHidden.has(id))n.visible=false;
   const personLive=connected&&now-personAt<500;
@@ -664,6 +700,7 @@ window.buildingFragmentTest=Object.freeze({previewImpact:originPx=>feedback?.pre
   removedBuildings:colliderData?[...new Set(colliderData.fragments.filter(f=>state?.removed_ids.includes(f.fragment_id)).map(f=>f.building_id))]:[],
   physics:physics?.snapshot()??null,fps,frameCpuMs:renderMs,collapse:state?.collapse,
   blastEnabled:state?.blast_enabled,autoNextPending:autoNextTimer!==null,
+  viewFull:duo?{on:document.body.classList.contains('view-full'),hud:viewHudText(performance.now())}:null,
   stage:state?.stage??null,owner:stageOwner,borrowed:stageBorrowed,markerX:markers.children.map(m=>m.position.x),
   cameraPanels:[...cameras].map(([id,c])=>{const r=c.div.getBoundingClientRect();return {id,x:r.x,y:r.y,width:r.width,height:r.height,visible:!c.img.hidden};}),
   occlusion:cameras.get('C0').occlusion.snapshot(),person:trackedPerson.snapshot(),

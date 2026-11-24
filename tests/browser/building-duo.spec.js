@@ -83,6 +83,28 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().view.proxy)).toMatchObject({visible:true,torso:true});
   await page.evaluate(()=>window.scrollTo(0,0));
   await page.screenshot({path:'test-results/building-fragments/duo-stage.png',fullPage:true});
+
+  // Full screen (2026-11-24): only the matched V view, centred, with the collapse share and elapsed time.
+  await expect(page.locator('#viewHud')).toBeHidden();
+  await page.locator('#viewFullscreen').click();
+  await expect(page.locator('#viewFullscreen')).toHaveText('전체화면 끝내기');
+  await expect(page.locator('header')).toBeHidden();await expect(page.locator('#orbit')).toBeHidden();
+  await expect(page.locator('.camera[data-camera="C0"]')).toBeHidden();await expect(page.locator('#viewHud')).toBeVisible();
+  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  const total=s.modelState.fragment_count,percent=Math.round(s.removed.length/total*100);
+  expect(s.viewFull.on).toBe(true);expect(s.viewFull.hud.collapse).toBe(`${percent}%`);
+  await expect(page.locator('#hudCollapse')).toHaveText(`${percent}%`);
+  const t0=await page.locator('#hudTime').textContent();expect(t0).toMatch(/^\d+:\d\d\.\d$/);
+  if(!s.viewFull.hud.done)await expect.poll(()=>page.locator('#hudTime').textContent()).not.toBe(t0);   // still running
+  const full=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).cameraPanels.find(p=>p.id==='V'),vp=page.viewportSize();
+  // Fills one side of the screen at the view's own aspect ratio, centred.
+  expect(Math.max(full.width/vp.width,full.height/vp.height)).toBeGreaterThan(.99);
+  expect(Math.abs(full.x+full.width/2-vp.width/2)).toBeLessThan(2);expect(Math.abs(full.y+full.height/2-vp.height/2)).toBeLessThan(2);
+  expect(full.width/full.height).toBeCloseTo(960/540,1);
+  await page.screenshot({path:'test-results/building-fragments/duo-fullscreen.png'});
+  await page.locator('#viewFullscreen').click();
+  await expect(page.locator('#viewFullscreen')).toHaveText('전체화면');await expect(page.locator('header')).toBeVisible();
+  await expect(page.locator('#viewHud')).toBeHidden();
   await page.evaluate(()=>clearInterval(window.duoStanding));
 
   // New spacing: V's pose is hidden until the view phone solves again for the new marker positions.
