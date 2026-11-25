@@ -316,3 +316,73 @@ def test_the_wide_stage_never_uses_marker_poses():
     wide.view_calib = {"marker_poses": {0: (-1.4, 0.1, 5.0), 1: (0.1, 0.0, 5.0)}}
     assert wide.marker_pose("C0") == (wide.marker_x("C0"), 0.0, 0.0)
     assert wide.to_stage("C0", [0.2, -1.0, 0.5]) == [wide.marker_x("C0") + 0.2, -1.0, 0.5]
+
+
+def test_duo_super_smash_on_breaks_the_whole_set_with_the_chosen_preset_and_off_restores_normal(client, monkeypatch):
+    from backend.fragment_test import FragmentTest
+    monkeypatch.setattr(FragmentTest, "guard_spawn", lambda self, ms=0: None)   # no 2 s wait after the mode change
+    with connect(client, "viewer") as pc, client.websocket_connect(
+            f"/ws/test/duo3d?role=phone&camera=C1&key={KEY}&input_mode=synthetic") as c1:
+        normal = receive_until(pc, "multi3d_model_state")["model_test"]
+        assert normal["smash_mode"] == "normal" and "server_instance_id" not in normal
+        c1.send_json(calib("C1"))
+        receive_until(c1, "mono3d_status", lambda m: m.get("markers"))
+        pc.send_json({"type": "duo_super_feedback", "feedback_selection": "crush_collapse_v1"})
+        pc.send_json({"type": "duo_super", "enabled": True})
+        on = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "super_smash")["model_test"]
+        assert on["delivery"] == "snapshot" and on["server_instance_id"] and on["feedback_selection"] == "crush_collapse_v1"
+        assert on["removed_ids"] == [] and on["epoch"] != normal["epoch"]   # a mode change stands the set again
+        pc.send_json({"type": "multi3d_model_drop_all"})
+        assert "only body hits" in receive_until(pc, "error")["detail"]
+        lo, hi = on["bounds"]["lo"], on["bounds"]["hi"]
+        x, height = building_at(on["scene_id"], 1.5)
+        z = min(0.2, height / 2)
+        revisions = []
+        for y in (lo[1] - 0.5, lo[1] - 0.25, (lo[1] + hi[1]) / 2):
+            c1.send_json(frame(0.0, wrist=[x - 1.0, y, z]))
+            time.sleep(0.05)
+        for _ in range(40):
+            m = pc.receive_json()
+            if m["type"] != "multi3d_model_state":
+                continue
+            revisions.append(m["model_test"]["model_revision"])
+            if m["model_test"].get("event"):
+                hit = m["model_test"]
+                break
+        else:
+            raise AssertionError("no super event")
+        assert revisions == sorted(revisions) and len(set(revisions)) == len(revisions)   # never older after newer
+        e = hit["event"]
+        assert e["effect_style"] == "screen_impact_v1" and e["feedback_preset"] == "crush_collapse_v1"
+        assert e["input_mode"] == "synthetic" and e["tracking_source"] == "mono_approx" and hit["delivery"] == "event"
+        assert len(hit["removed_ids"]) == hit["fragment_count"] and hit["phase"] == "cleared"
+        # Restore and scene change (also the PC's auto next) work in super mode: plain messages, a new round.
+        pc.send_json({"type": "multi3d_model_reset"})
+        restored = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["epoch"] != hit["epoch"])["model_test"]
+        assert restored["removed_ids"] == [] and restored["smash_mode"] == "super_smash" and restored["delivery"] == "snapshot"
+        pc.send_json({"type": "multi3d_model_scene", "scene_id": restored["stage"]["zone_id"]})
+        rebuilt = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["epoch"] != restored["epoch"])["model_test"]
+        assert rebuilt["removed_ids"] == [] and rebuilt["smash_mode"] == "super_smash"
+        pc.send_json({"type": "duo_super", "enabled": False})
+        off = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "normal")["model_test"]
+        assert off["removed_ids"] == [] and "server_instance_id" not in off
+        # A click on the PC 3D view is a demo that breaks the whole set too, labelled mouse_demo.
+        pc.send_json({"type": "duo_super", "enabled": True})
+        again = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"]["smash_mode"] == "super_smash")["model_test"]
+        lo, hi = again["bounds"]["lo"], again["bounds"]["hi"]
+        mid = [(lo[k] + hi[k]) / 2 for k in range(3)]
+        pc.send_json({"type": "multi3d_model_mouse", "origin": [mid[0], lo[1] - 3, mid[2]], "direction": [0, 1, 0]})
+        click = receive_until(pc, "multi3d_model_state", lambda m: m["model_test"].get("event"))["model_test"]
+        assert click["event"]["input_mode"] == "mouse_demo" and click["event"]["effect_style"] == "screen_impact_v1"
+        assert len(click["removed_ids"]) == click["fragment_count"]
+        pc.send_json({"type": "duo_super", "enabled": False})
+        pc.send_json({"type": "duo_super_feedback", "feedback_selection": "nope"})
+        assert receive_until(pc, "error")["code"] == "bad_message"
+
+
+def test_the_wide_stage_has_no_super_switch(client):
+    with client.websocket_connect(f"/ws/test/wide3d?role=viewer&key={KEY}") as pc:
+        state = receive_until(pc, "multi3d_model_state")["model_test"]
+        assert "smash_mode" not in state
+        pc.send_json({"type": "duo_super", "enabled": True})
+        assert receive_until(pc, "error")["code"] == "bad_message"

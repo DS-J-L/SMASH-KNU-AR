@@ -8,13 +8,13 @@
 
 | 항목 | 현재 값 |
 | --- | --- |
-| 마지막 갱신 | 2026-11-23 14:03 KST — Codex PR #26 공유·검토, 머지 전 |
-| 현재 작업 | [슈퍼4종 PR #26](https://github.com/DS-J-L/SMASH-KNU-AR/pull/26) 공유·자동 검증 근거/코드 검토 완료, 머지 및 실제 인수 별도 |
+| 마지막 갱신 | 2026-11-24 12:20 KST — 2대 무대 슈퍼 연출 켜기/끄기 구현·합성 자동검증, 커밋 안 함(사용자 지시) |
+| 현재 작업 | 2대 무대 슈퍼 연출 켜기/끄기(PR #26 4종을 V 화면에): 작업 트리 미커밋. 그 전 무적·전체화면·바닥 파편 사라짐·main 병합(b043ff5)은 로컬 커밋, push·PR 없음 |
 | 구현 완료 범위 | 기존 수신·시계/3D 기초, 두 방·영상·QR·video_check, 전신22+머리1점, phone_2d 타격/점수/중지·재연결 — 로컬 자동검증 범위 |
 | 방 구성 | room-1 C0/C1/C2 모두 시작 필수, room-2 C0만. PC는 방별 전용 페이지 |
 | 최근 기능 검증 | Python 전체314/314(제외0)·Node 전체331/331·관련 브라우저40/40·소켓 별도3/3·배포 빌드·실폰/청취/공통 Phase 별도 |
 | 남은 일 | 실폰/실제 모델·소리 청취·성능/장시간·QR실스캔, 실측 보정/3D 정합·3D 타격·영구 로그 |
-| 다음 작업 | SUPER_SMASH_TEST.md 실제3대4종·청취/정합·20분 인수. 기존2대/1대 코드는 기준 main에 보존, SV-03/SS-03 미완료 |
+| 다음 작업 | 슈퍼 연출 변경 커밋(사용자 승인 후)·push·PR, 실폰 2대 무대에서 슈퍼 연출 크기·밝기·소리·한 번에 전체 파괴 체감 확인, 새 건물 2초 무적·전체화면·바닥 파편 사라짐 확인. SUPER_SMASH_TEST.md 실제3대4종·SV-03/SS-03 미완료 유지 |
 | 판정 제한 | video_check는 영상 확인, phone_2d는 C0 화면2D 타격이며 실제 깊이/3D 완료가 아님. 합성 통과와 실폰/공통Phase는 구분 |
 
 ## 2. 개인 Phase 현황
@@ -1387,3 +1387,97 @@ node --experimental-vm-modules --test tests/test_synchronized_video.mjs
 
 - Codex 공통 통합 결과를 [PR #26](https://github.com/DS-J-L/SMASH-KNU-AR/pull/26)으로 공유했다. 구현38b9515, 기준 main bf7902c. 실제 PR patch·선별 목록 및20개 검사 소스/번들 Git blob/해시를 대조했고 차단 지적 없음. Python314/Node331/브라우저40·소켓 별도3·빌드는 동일 코드의 기존 최종 통과 근거다.
 - 후속은 공유 기록만 바꾸고 최신 head/충돌·검사/리뷰 확인 후 승인된 머지를 진행한다. 현재는 머지 전이며 본인 수행·실기기 인수/공통 Phase 완료가 아니다. 실폰3대/정합·청취/실측 전체 지연·20분·SV-03/SS-03는 미검증 유지, [PM](PM_progress.md)·[검토 JSON](../docs/asset-validation/super-smash-pr-review-20261123.json)에서 이어 확인한다.
+
+### 2026-11-24 09:55 KST — 1대·2대 무대 자동 다음 건물 후 새 건물 2초 무적
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "2대 무대화면과 폰1대 화면에서 건물이 자동으로 넘어가게 했을때 건물이 새로 생길때 2초 정도의 무적시간")
+- 작업 구분: 개인 개발 (1대 근사 3D·2대 무대). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님
+- 상태: 구현·자동검증 완료, 같은 브랜치에 커밋, PR 미생성
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: backend/fragment_test.py(`SPAWN_GUARD_MS=2000`, `guard_spawn()`, `spawn_guard_ms()`; 무적 중 손목·발목은 궤적만 갱신하고 판정 이유 `spawn_guard`, 스냅숏에 `spawn_guard_ms`), backend/test_mono3d.py(1대 건물 변경 `multi3d_model_scene` 후 무적), backend/test_wide3d.py(무대 세트 변경 후 무적, 간격·몸 보정 재생성에는 미적용), frontend/building-test/main.js(자동 다음 건물 상태 줄에 `새 건물 무적 N초`) 및 web/test/building 빌드, tests 3개, docs/BUILDING_FRAGMENT_TEST.md·DUO_STAGE_TEST.md
+- 무적 시계는 서버 `time.perf_counter`(관절 시각과 무관). 마우스 시험 타격·복원·전체 낙하는 막지 않음. 3대 삼각측량 화면은 미적용
+- 데이터 계약 영향: `model_test.spawn_guard_ms`(남은 ms, 정수) 선택 필드 추가. 기존 소비자는 무시해도 동작 동일
+- 검증 방법·결과 (Windows, .venv, Edge): 새 단위 시험(가짜 시계로 무적 중 타격 무시 → 2초 뒤 같은 궤적 타격 성공), 1대·무대 세트 변경 후 `spawn_guard_ms` 1500~2000·3대 0 확인 포함 Python 관련 95/95 통과. Python 전체 300 통과·6 실패(test_model_strike 6개, 변경 전 HEAD에서도 같은 6개 실패 — 이번 변경과 무관, 별도 확인 필요). 건물 브라우저 building-zones·building-duo·building-wide 12/12 통과
+- 입력·장비 범위: synthetic(합성 WebSocket·가짜 시계)만. live/replay 없음
+- 남은 일·미검증: 실폰에서 자동 다음 건물 직후 휘두름이 2초 동안 안 깨지는지 체감, 2초가 적당한지 사용자 판단. test_model_strike 기존 실패 6개 원인 확인
+- 다음 한 단계: 서버 재시작 → PC `/test/building/?mode=mono`·`?mode=duo` → 건물 부수기 → 다음 건물이 뜬 직후 상태 줄의 무적 표시와 타격 무시 확인
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 09:55 KST
+
+
+### 2026-11-24 10:11 KST — 2대 무대 메인 화면 전체화면·무너짐/걸린 시간 표시
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "2대 무대에서 pc화면에 정합된 모습만 전체화면 버튼 넣어주고 그 전체화면에 현재 건물의 무너짐 정도와 걸린 시간도 같이 보여주게")
+- 작업 구분: 개인 개발 (2대 무대 PC 화면). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님
+- 상태: 구현·자동검증 완료, 같은 브랜치에 커밋, PR 미생성
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: frontend/building-test/main.js·style.css(V 메인 화면 `전체화면` 버튼, 전체화면에서 V만 비율 유지 가운데 배치, 왼쪽 위 무너짐 %·걸린 시간·상태 줄, Esc·다시 누르기로 종료, 스냅숏 `viewFull`) 및 web/test/building 빌드, backend/fragment_test.py(스냅숏 `age_ms`: 건물이 나타난 뒤 지난 ms, 새 모델·복원 때 0), tests/browser/building-duo.spec.js·tests/test_fragment_test.py, docs/DUO_STAGE_TEST.md
+- 걸린 시간 기준: 건물 등장(서버 age_ms, 새로고침해도 이어짐) → 부서진 파편이 자동 다음 건물 비율(기본 70%) 이상이 된 순간 멈춤. 무너짐 % = 부서진 파편 ÷ 전체 파편
+- 데이터 계약 영향: `model_test.age_ms` 선택 필드 추가(모든 파편 시험 화면 스냅숏). 기존 소비자는 무시해도 동작 동일
+- 정정(09:55 기록 보완): 09:55에 건물 브라우저는 zones·duo·wide 12개만 돌려 1대 시험 2개(`one approximate camera`, `mono depth offset`)가 새 건물 무적 때문에 깨진 것을 놓쳤음. 시험이 IT1로 바꾼 직후 바로 휘둘렀기 때문 → 공용 도우미 `monoIt1`이 남은 무적 시간만큼 기다리게 고침
+- 검증 방법·결과 (Windows, .venv, Edge): Python 관련 96/96 통과(age_ms 단위 시험 포함). 건물 브라우저 전체 37/38 통과 — 실패 1개 `size slider and numeric scale…`는 무적 추가 전 커밋 43bfb41에서도 같은 시험이 실패하는 것을 확인(이번 변경과 무관, 원인 미확인). duo 시험에서 전체화면 버튼 → 헤더·3D·판정 폰 숨김, V가 화면 가운데 16:9로 한 변을 꽉 채움, 무너짐 %가 서버 파편 수와 일치, 시간 증가, 다시 누르면 원래 화면 확인, 스크린샷 test-results/building-fragments/duo-fullscreen.png
+- 입력·장비 범위: synthetic(합성 WebSocket·가짜 영상)만. 실제 브라우저 전체화면 API는 headless에서 결과 무관하게 페이지 안 전체 표시로 확인. live/replay 없음
+- 남은 일·미검증: 실제 PC·프로젝터에서 전체화면 표시 크기·가독성, 실폰 2대 무대에서 시간 기준(등장~70%)이 적당한지 사용자 판단. size slider 시험 기존 실패 원인 확인
+- 다음 한 단계: 서버 재시작 → PC `/test/building/?mode=duo` → V 메인 화면 오른쪽 아래 `전체화면` → 건물 부수며 무너짐·시간 확인
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 10:11 KST
+
+
+### 2026-11-24 10:40 KST — 1대·무대 부서진 파편이 바닥에 닿고 2초 뒤 사라짐
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "조각들이 바닥에 닿은 후 2초 후에 사라지게")
+- 작업 구분: 개인 개발 (1대 근사 3D·넓은 무대·2대 무대 PC 화면). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님
+- 상태: 구현·자동검증 완료, 같은 브랜치에 커밋, PR 미생성
+
+진행·종료 결과:
+
+- 바꾼 파일·결과물: frontend/building-test/fragment-physics.js(물리 옵션 `vanish`, `FLOOR_VANISH_MS=2000`, 파편 가장 낮은 꼭짓점이 바닥 1.5cm 이내에 처음 닿은 시뮬레이션 시각 기록 → 2초 뒤 움직임 목록에서 빼고 충돌체 끔·`vanished`에 넣음, 사라진 파편은 다시 release하지 않음, 스냅숏 `vanished`·`landed`), main.js(1대·무대 기본 켬, 사라진 파편 숨김), index.html(물리 효과 체크 `바닥에 닿은 파편 2초 뒤 사라짐`) 및 web/test/building 빌드, tests/test_fragment_physics.mjs·tests/browser/building-duo.spec.js·building-fragments.spec.js, docs/BUILDING_FRAGMENT_TEST.md·DUO_STAGE_TEST.md
+- 화면 표시만 바뀜: 서버 removed_ids·점수·무너짐 %는 그대로. 새 건물·복원 때 물리를 새로 만들어 원래대로. 3대 삼각측량 화면은 기본 끔
+- 시간 기준은 물리 시뮬레이션 단계 수(탭이 멈추면 같이 멈춤). 바닥 충돌을 끄면 -0.5m 아래로 빠진 파편을 바로 사라지게 함
+- 검증 방법·결과 (Windows, .venv, Edge): Node test_fragment_physics 14/14(새 시험: 착지 전 사라지지 않음, 착지 후 2초 전 유지·2초 뒤 사라짐, 재release 무시, 옵션 끔이면 유지). 건물 브라우저 전체 37/38 — duo 시험에 사라진 파편 수 = 부서진 수, 움직이는 파편 0, 서버 removed·무너짐 % 그대로, 보이는 파편 = 전체 - 부서진 수 확인. 실패 1개는 기존 size slider 시험(이전 기록 참고)
+- 시험 정정: 3대 `all physics enabled` 시험이 물리 옵션 전체를 비교해 새 `vanish:false` 항목을 기대값에 추가. 이 시험이 중간에 실패하면 합성 폰을 닫지 못해 뒤의 3대 마우스 시험 2개가 같이 실패했음 → 고친 뒤 전체 실행에서 함께 통과
+- 입력·장비 범위: synthetic만. live/replay 없음
+- 남은 일·미검증: 실폰 화면에서 사라지는 모습(즉시 숨김, 서서히 흐려지지 않음)이 자연스러운지 사용자 판단, 파편이 다른 파편 위에 쌓여 바닥에 닿지 않으면 아래 파편이 사라진 뒤 떨어져야 사라짐
+- 다음 한 단계: 서버 재시작 → PC `/test/building/?mode=duo`·`?mode=mono` → 부서진 파편이 바닥에서 2초 뒤 사라지는지 확인
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음(실기기 확인 전), 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 10:40 KST
+
+
+### 2026-11-24 11:00 KST — feat/duo-ar-hit-effect에 origin/main(PR #26 슈퍼4종) 병합, 커밋 전
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "main 받아오기만 해봐", "커밋은 하지마")
+- 작업 구분: 브랜치 동기화. Phase: P4 확장, 공통 Phase 통과 아님
+- 상태: 충돌 해결·자동검증 완료, 병합 커밋 안 함(사용자 지시), push·PR 없음
+- 충돌 해결: fragment-physics.js(바닥 파편 사라짐 `landedAt`·`vanished`와 슈퍼 연출 `superVisual`·`superPreset`을 모두 유지, 스냅숏에 둘 다), main.js(복원 시 위치·회전·크기 모두 되돌리고 보이기는 슈퍼 숨김·사라짐 모두 반영, draw는 `dynamic`+`superVisual` 크기 반영 후 사라진 파편 숨김), web/test/building은 병합한 소스로 `npm run build:building-test`를 다시 빌드(index-CDGahb1t.js), 이 파일·진행현황은 11-23 Codex 기록과 11-24 기록을 모두 남김
+- 검증 (Windows, .venv, Edge, synthetic만): Python 316/316, Node(`--experimental-vm-modules`) 173/173, 건물 브라우저 46개 중 43 통과·3 실패. 실패 1 `size slider…`는 기존 실패(10:11 기록). 실패 2 super-smash 축소 동작(실행마다 chain·crush/chain·swing으로 바뀜, 연출 전 `state` null·`다음 준비` 문구 대기에서 멈춤)는 병합 전 origin/main 4f4e126 임시 worktree에서도 같은 2개가 실패해 이번 병합과 무관한 불안정 시험으로 판단, 원인 미확인
+- 남은 일·미검증: 병합 커밋, push·PR, 실폰 2대 무대·1대 확인, super-smash 축소 동작 시험 불안정 원인
+- 다음 한 단계: `git commit`(병합 메시지 유지) → push → PR 생성
+- 종료 시각: 2026-11-24 11:00 KST
+
+
+### 2026-11-24 12:20 KST — 2대 무대에서 슈퍼 연출 켜기/끄기
+
+- 담당 / 기록자: 정경호 / Claude (사용자 대화 요청 "머지 커밋 로컬에만 하고 저 기능 2대 무대에서도 on/off 할 수 있게 해줘", 이전 "커밋은 하지마")
+- 작업 구분: 개인 개발 (2대 무대). Phase: P4 확장 — 개인 구현·자동검증 범위, 공통 Phase 통과 아님. SV-03/SS-03(3대 실기기 인수)와 무관
+- 상태: 병합 커밋 b043ff5만 로컬 커밋(push 없음). 슈퍼 연출 변경은 구현·자동검증 완료, 커밋 안 함
+- 바꾼 파일: backend/test_wide3d.py(duo 허브에 `SuperSmash` 하나, `duo_super{enabled}`·`duo_super_feedback{feedback_selection}`, 켜면 판정 폰 타격 하나가 세트 전체 제거 `update(super_smash=True)`, 모델 상태에 3대 envelope(instance/revision/delivery/phase ready|cleared)·이벤트 연출 preset/seed/input_mode·tracking_source=mono_approx, 켠 동안 모든 상태를 순서 큐로 전송, 모드 변경은 새 라운드+2초 무적·snapshot, 켠 동안 마우스/push/release/drop_all 거부, 폰 `?input_mode=` 기본 live), frontend/building-test/index.html·main.js(무대 설정에 슈퍼 연출 체크·연출 선택·미리보기·상태 줄, duo에서 연출 모듈 생성·V 화면에 투영·V 영상 500ms 이내일 때만 재생, 켠 동안 마우스 타격 끔, 머리글 소리 끄기가 슈퍼 소리도 끔) 및 web/test/building 빌드, docs/DATA_CONTRACT.md(2026-11-24 항목: 기존 "duo에 슈퍼 명령 추가 안 함"을 바꿈), docs/DUO_STAGE_TEST.md, tests/test_duo3d.py 2개, tests/browser/building-duo.spec.js 1개
+- 3대 슈퍼 스매쉬 판정·제어 코드(super_smash.py·test_multi3d.py)는 바꾸지 않음. 3대 전용 준비 조건(세 카메라·시계·건물 밖 준비·운영 PC)은 2대 무대에 적용하지 않음 — 2대 무대 판정 규칙 그대로
+- 검증 (Windows, .venv, Edge, synthetic만): Python 전체 318/318, Node 173/173, duo 브라우저 7/7(새 시험: 체크 켜기 → 합성 휘두름 → 64개 전체 제거·스윙 충격파 1회·시작점이 V 화면 안·작은 AR 효과 안 겹침·캔버스에 그려짐, 끄면 복원). 건물 브라우저 전체 47개 중 36 통과·11 실패: 3대 super-smash 10개와 wide 1개. 따로 재실행 시 wide 6/6 통과, super-smash 10/11 통과. 변경 전 b043ff5 임시 worktree에서도 super-smash 13개 중 5개 실패(실행마다 다른 시험) → 기존 불안정 시험으로 판단, 원인 미확인
+- 입력·장비 범위: synthetic만. 실폰·청취·실제 화면 밝기 미검증. 스크린샷에서 스윙 충격파는 얇고 짧아 잘 보이지 않음(캔버스 픽셀은 그려짐)
+- 남은 일·미검증: 실폰 2대 무대에서 연출 크기·밝기·소리, 전체화면(HUD)과 함께 볼 때, 자동 다음 건물과의 간격(연출 2초·파편 정리 4초 vs 다음 건물 3초), super-smash 브라우저 시험 불안정 원인
+- 다음 한 단계: 사용자 승인 후 커밋 → 서버 재시작 → PC `/test/building/?mode=duo` 무대 설정 **슈퍼 연출** 체크 → 실폰 휘두름
+- 갱신한 계획 체크리스트·현황: 체크리스트 변경 없음, 이 파일 현재 상태 표·진행현황 정경호 행
+- 종료 시각: 2026-11-24 12:20 KST
+
+
+### 2026-11-25 01:10 KST — 2대 무대 슈퍼 연출 조각이 보이게, 설정 패널 정리
+
+- 담당 / 기록자: 정경호 / Claude (사용자: "슈퍼연출을 했을때 소리와 효과는 나는데 건물은 그대로", "한순간에 사라져서 싫음", 패널 "정리해줘")
+- 원인·수정: Windows 애니메이션 효과 꺼짐 → 브라우저 동작 줄이기 → 조각 없이 바로 숨김. 2대 무대는 무대 체크박스만 따름. 가까운 V 화면 밖으로 바로 나가지 않게 조각 속도 0.35배. 슈퍼 모드 복원·자동 다음 건물·세트 변경이 3대용 명령으로 가서 실패하던 것 수정. PC 설정을 네 묶음으로 정리
+- 검증 (synthetic만): Python 81, Node 173, duo·구역 브라우저 12 통과. 실폰 미검증
+- 다음: 실폰 2대 무대에서 무너지는 모습·속도 확인
+- 추가 커밋: 2대 무대 슈퍼 모드에서 폰 없이 PC 3D 화면 클릭 데모로 세트 전체 파괴(`input_mode=mouse_demo`), DATA_CONTRACT 갱신

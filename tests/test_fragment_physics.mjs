@@ -126,3 +126,21 @@ test('distance hook disables only separated debris contacts, keeping nearby stac
     heights.push(height(p));assert.ok(p.snapshot().minZ>-.025);if(distance===.05)assert.ok(p.filteredPairs>0);p.dispose();}
   assert.ok(heights[1]>heights[0]+.08,JSON.stringify(heights));
 });
+
+test('vanish: a released piece disappears 2 s (simulated) after it first touches the floor and is not released again',async()=>{
+  const {FLOOR_VANISH_MS}=await import('../frontend/building-test/fragment-physics.js');
+  const p=new FragmentPhysics(cubes,place,{building:false,vanish:true});
+  p.release([1]);   // starts 0.5 m above the floor
+  run(p,6);assert.equal(p.landedAt.has(1),false);
+  let steps=6;while(!p.landedAt.has(1)&&steps<120){p.step(1/60);steps++;}
+  assert.ok(p.landedAt.has(1)&&steps>15,`landed after ${steps} steps`);
+  const landed=p.landedAt.get(1),stepsLeft=Math.ceil(FLOOR_VANISH_MS*60/1000)-1;
+  run(p,stepsLeft-1);assert.ok(p.dynamic.has(1));assert.equal(p.vanished.size,0);
+  run(p,3);assert.ok(p.steps*1000/60-landed>=FLOOR_VANISH_MS);
+  assert.deepEqual([...p.vanished],[1]);assert.equal(p.dynamic.size,0);assert.equal(p.records.get(1).collider.isEnabled(),false);
+  p.release([1]);assert.equal(p.dynamic.size,0);   // the next server state repeats removed IDs: stays gone
+  assert.equal(p.snapshot().vanished,1);p.dispose();
+  // Off (3 cameras): pieces stay on the floor.
+  const kept=new FragmentPhysics(cubes,place,{building:false});kept.release([1]);run(kept,300);
+  assert.equal(kept.vanished.size,0);assert.equal(kept.dynamic.size,1);kept.dispose();
+});

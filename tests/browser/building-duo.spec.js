@@ -83,6 +83,36 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().view.proxy)).toMatchObject({visible:true,torso:true});
   await page.evaluate(()=>window.scrollTo(0,0));
   await page.screenshot({path:'test-results/building-fragments/duo-stage.png',fullPage:true});
+
+  // Full screen (2026-11-24): only the matched V view, centred, with the collapse share and elapsed time.
+  await expect(page.locator('#viewHud')).toBeHidden();
+  await page.locator('#viewFullscreen').click();
+  await expect(page.locator('#viewFullscreen')).toHaveText('전체화면 끝내기');
+  await expect(page.locator('header')).toBeHidden();await expect(page.locator('#orbit')).toBeHidden();
+  await expect(page.locator('.camera[data-camera="C0"]')).toBeHidden();await expect(page.locator('#viewHud')).toBeVisible();
+  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  const total=s.modelState.fragment_count,percent=Math.round(s.removed.length/total*100);
+  expect(s.viewFull.on).toBe(true);expect(s.viewFull.hud.collapse).toBe(`${percent}%`);
+  await expect(page.locator('#hudCollapse')).toHaveText(`${percent}%`);
+  const t0=await page.locator('#hudTime').textContent();expect(t0).toMatch(/^\d+:\d\d\.\d$/);
+  if(!s.viewFull.hud.done)await expect.poll(()=>page.locator('#hudTime').textContent()).not.toBe(t0);   // still running
+  const full=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).cameraPanels.find(p=>p.id==='V'),vp=page.viewportSize();
+  // Fills one side of the screen at the view's own aspect ratio, centred.
+  expect(Math.max(full.width/vp.width,full.height/vp.height)).toBeGreaterThan(.99);
+  expect(Math.abs(full.x+full.width/2-vp.width/2)).toBeLessThan(2);expect(Math.abs(full.y+full.height/2-vp.height/2)).toBeLessThan(2);
+  expect(full.width/full.height).toBeCloseTo(960/540,1);
+  await page.screenshot({path:'test-results/building-fragments/duo-fullscreen.png'});
+  await page.locator('#viewFullscreen').click();
+  await expect(page.locator('#viewFullscreen')).toHaveText('전체화면');await expect(page.locator('header')).toBeVisible();
+  await expect(page.locator('#viewHud')).toBeHidden();
+
+  // Pieces on the floor disappear 2 s after landing (2026-11-24, stage default); the score and removal stay.
+  await expect(page.locator('[data-physics="vanish"]')).toBeChecked();
+  const broken=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).removed;
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.vanished),{timeout:15000}).toBe(broken.length);
+  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(s.physics.dynamic).toBe(0);expect(s.removed).toEqual(broken);expect(s.visible.filter(id=>broken.includes(id))).toEqual([]);
+  expect(s.visible.length).toBe(s.modelState.fragment_count-broken.length);expect(s.viewFull.hud.collapse).toBe(`${percent}%`);
   await page.evaluate(()=>clearInterval(window.duoStanding));
 
   // New spacing: V's pose is hidden until the view phone solves again for the new marker positions.
@@ -258,5 +288,101 @@ test('duo PC shows the view phone\'s measured marker layout and applies the meas
   // Put the stage back to the default for later tests.
   await page.locator('#stageSpacing').fill('2');await page.locator('#applySpacing').click();
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().stage.spacing_m),{timeout:60000}).toBe(2);
+  expect(errors).toEqual([]);
+});
+
+test('duo super smash (2026-11-24): on/off switch, one judged hit breaks the whole set with the chosen preset on V',async({page})=>{
+  test.setTimeout(180000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.setViewportSize({width:1600,height:1000});
+  await page.emulateMedia({reducedMotion:'reduce'});   // Windows animations off: the stage follows only its own checkbox
+  await page.goto('/test/building/?mode=duo&key=fragment-test');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  await expect(page.locator('#duoSuperRow')).toBeVisible();await expect(page.locator('#duoReduceHint')).toContainText('체크한 경우에만');await expect(page.locator('#superPanel')).toBeHidden();
+  await expect(page.locator('#duoSuper')).not.toBeChecked();await expect(page.locator('#duoSuperStatus')).toContainText('끔');
+  await page.locator('#autoNext').uncheck();
+  const spacing=(await page.evaluate(()=>window.buildingFragmentTest.snapshot())).stage.spacing_m;
+  await page.evaluate(async({phone,viewCalib})=>{
+    window.duoSuperPhones={};
+    const open=async(id,extra='')=>{const u=new URL(`/ws/test/duo3d?role=phone&camera=${id}&key=fragment-test${extra}`,location.href);u.protocol='ws:';
+      const ws=new WebSocket(u);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});window.duoSuperPhones[id]=ws;return ws;};
+    const video=(ws,w,h)=>{const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;canvas.getContext('2d').fillRect(0,0,w,h);
+      const packet=JSON.stringify({type:'mono3d_jpeg',data:canvas.toDataURL('image/jpeg')});ws.send(packet);window.duoSuperVideo=setInterval(()=>{if(ws.readyState===1)ws.send(packet);},200);};
+    const c1=await open('C1','&input_mode=synthetic');c1.send(JSON.stringify(phone));
+    const v=await open('V');v.send(JSON.stringify(viewCalib));video(v,960,540);
+  },{phone:calib('C1'),viewCalib:view(spacing)});
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().view.calibrated)).toBe(true);
+  // Turn it on with a preset: the set stands again (new round) and a new building's 2 s guard applies.
+  await page.locator('#duoFeedback').selectOption('swing_wave_v1');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.feedback_selection)).toBe('swing_wave_v1');
+  await page.locator('#duoSuper').check();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
+  await expect(page.locator('#mouseMode')).toBeEnabled();   // a click is a demo that breaks the whole set
+  await page.evaluate(()=>window.scrollTo(0,0));   // the effect is placed on V where it is on screen when it starts
+  let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(s.removed).toEqual([]);
+  const target=s.buildings.reduce((a,b)=>Math.abs(b.x-1.5)<Math.abs(a.x-1.5)?b:a);
+  const lo=s.worldBounds.lo,hi=s.worldBounds.hi,z=Math.min(.2,target.height/2),bx=target.x-1;
+  await page.evaluate(async({lo,hi,z,bx})=>{
+    const send=wrist=>window.duoSuperPhones.C1.send(JSON.stringify({type:'mono3d_frame',valid:true,anchor_m:[0,.3,0],
+      joints:{left_hip:[-.1,lo[1]-.6,.9],right_hip:[.1,lo[1]-.6,.9],right_wrist:wrist}}));
+    const wait=ms=>new Promise(r=>setTimeout(r,ms));
+    while(window.buildingFragmentTest.snapshot().modelState.spawn_guard_ms>0||window.buildingFragmentTest.snapshot().modelState.delivery==='snapshot'){send([bx,lo[1]-.8,z]);await wait(100);}
+    for(let swing=0;swing<3&&!window.buildingFragmentTest.snapshot().removed.length;swing++){
+      send([bx,lo[1]-.8,z]);await wait(300);
+      for(const y of [lo[1]-.5,lo[1]-.25,(lo[1]+hi[1])/2]){send([bx,y,z]);await wait(60);}
+      await wait(400);
+    }
+  },{lo,hi,z,bx});
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length),{timeout:10000}).toBe(s.modelState.fragment_count);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.dynamic),{timeout:3000}).toBeGreaterThan(10);   // pieces fly
+  s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  // Painted on the page while it runs (the swing shockwave is short and thin; size/brightness on a real screen unchecked).
+  expect(await page.evaluate(()=>{const c=document.getElementById('screenImpact'),d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;
+    let n=0;for(let i=3;i<d.length;i+=4)if(d[i])n++;return n;})).toBeGreaterThan(0);
+  await page.screenshot({path:'test-results/building-fragments/duo-super.png'});
+  // The 3-camera super feedback plays once, with the chosen preset, on V's view; the small AR hit effect does not stack.
+  expect(s.super.eventCount).toBe(1);expect(s.super.logs.at(-1)).toMatchObject({preset:'swing_wave_v1',input_mode:'synthetic'});
+  const V=s.cameraPanels.find(p=>p.id==='V'),[ox,oy]=s.super.logs.at(-1).originPx;
+  expect(ox).toBeGreaterThanOrEqual(V.x);expect(ox).toBeLessThanOrEqual(V.x+V.width);expect(oy).toBeGreaterThanOrEqual(V.y);expect(oy).toBeLessThanOrEqual(V.y+V.height);
+  expect(await page.evaluate(()=>window.__arHitEffect.snapshot().total)).toBe(0);
+  await expect(page.locator('#duoSuperStatus')).toContainText(`+${s.modelState.score}점`);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().super.screen.firstDraw)).not.toBeNull();
+  // Restore in super mode stands the set again (it used the 3-camera control channel the stage does not have).
+  await page.locator('#restore').click();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
+  // Off: normal hits again, the set stands again, the mouse demo comes back.
+  await page.locator('#duoSuper').uncheck();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('normal');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
+  await expect(page.locator('#mouseMode')).toBeEnabled();await expect(page.locator('#duoSuperStatus')).toContainText('끔');
+  await page.evaluate(()=>{clearInterval(window.duoSuperVideo);Object.values(window.duoSuperPhones).forEach(ws=>ws.close());});
+  expect(errors).toEqual([]);
+});
+
+test('duo super smash click demo: without phones a click on the 3D view breaks the set and plays the effect there',async({page})=>{
+  test.setTimeout(120000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.setViewportSize({width:1600,height:1000});
+  await page.goto('/test/building/?mode=duo&key=fragment-test');
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  await page.locator('#autoNext').uncheck();
+  await page.locator('#duoFeedback').selectOption('chain_blast_v1');
+  await page.locator('#duoSuper').check();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('super_smash');
+  await expect(page.locator('#duoSuperStatus')).toContainText('V 영상 없음');
+  const box=await page.locator('#orbit canvas').first().boundingBox();
+  await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+  await expect.poll(()=>page.evaluate(()=>{const s=window.buildingFragmentTest.snapshot();return s.removed.length===s.modelState.fragment_count;}),{timeout:5000}).toBe(true);
+  const s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
+  expect(s.super.eventCount).toBe(1);expect(s.super.logs.at(-1)).toMatchObject({preset:'chain_blast_v1',input_mode:'mouse_demo'});
+  const [ox,oy]=s.super.logs.at(-1).originPx;
+  expect(ox).toBeGreaterThanOrEqual(box.x);expect(ox).toBeLessThanOrEqual(box.x+box.width);expect(oy).toBeGreaterThanOrEqual(box.y);expect(oy).toBeLessThanOrEqual(box.y+box.height);
+  // After a restore the next click plays again.
+  await page.locator('#restore').click();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().removed.length)).toBe(0);
+  await page.mouse.click(box.x+box.width/2,box.y+box.height/2);
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().super.eventCount),{timeout:5000}).toBe(2);
+  await page.locator('#duoSuper').uncheck();
+  await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState.smash_mode)).toBe('normal');
   expect(errors).toEqual([]);
 });

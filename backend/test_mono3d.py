@@ -162,6 +162,7 @@ def mono3d_router() -> APIRouter:
                             if not isinstance(message,dict):raise ValueError('object expected')
                             from .fragment_test import model_command
                             relay.model=await asyncio.to_thread(model_command,relay.model,message)
+                            if message.get('type')=='multi3d_model_scene':relay.model.guard_spawn()   # new building: body hits ignored briefly
                             event=relay.model.pending_event;relay.model.pending_event=None
                             relay.model_state(relay.model.snapshot(event))
                         except (TypeError,ValueError,OverflowError) as exc:

@@ -7,6 +7,9 @@ async function monoIt1(page){
   await page.locator('#sceneSelect').selectOption('it1');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest?.snapshot().sceneId),{timeout:60000}).toBe('it1');
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().ready),{timeout:60000}).toBe(true);
+  // A new building ignores body hits for ~2 s (2026-11-24); synthetic swings start after that.
+  const guard=await page.evaluate(()=>window.buildingFragmentTest.snapshot().modelState?.spawn_guard_ms??0);
+  if(guard>0)await page.waitForTimeout(guard+150);
 }
 test('a delayed server option snapshot cannot undo the checkbox before its acknowledgement',async({page})=>{
   let lastState,delayed=0;
@@ -149,7 +152,7 @@ test('all physics enabled: 96-piece fall, switches, finite state and repeatable 
   await expect.poll(()=>page.evaluate(()=>window.buildingFragmentTest.snapshot().physics.steps),{timeout:20000}).toBeGreaterThan(120);
   let s=await page.evaluate(()=>window.buildingFragmentTest.snapshot());
   expect(s.physics.finite).toBe(true);expect(s.physics.minZ).toBeGreaterThan(-.03);
-  expect(s.physics.bodies).toBe(97);expect(s.physics.options).toEqual({gravity:true,floor:true,building:true,debris:true,rotation:true,sleep:true,hand:true});
+  expect(s.physics.bodies).toBe(97);expect(s.physics.options).toEqual({gravity:true,floor:true,building:true,debris:true,rotation:true,sleep:true,hand:true,vanish:false});   // 3 cameras keep floor pieces (vanish: 1 camera/stages)
   console.log('Browser 96-piece physics load',JSON.stringify({fps:s.fps,frameCpuMs:s.frameCpuMs,physics:s.physics}));
   await page.screenshot({path:'test-results/building-fragments/physics-96.png',fullPage:true});
   for(const name of ['debris','building','gravity','rotation','sleep']){

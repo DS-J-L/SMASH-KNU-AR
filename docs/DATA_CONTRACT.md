@@ -328,3 +328,15 @@ PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wris
 - 로컬 `presentation_t0`는 PC performance.now 기준이며 네트워크 계약 필드가 아니다. 화면·파편 시작을 맞추는 용도로만 사용하고 카메라/서버 시각과 직접 감산하지 않는다. 로컬 `presentation_reduced`는 해당 PC의 체크박스/OS 축소 동작을 반영해3D 파편 이동을 생략하고 정적 제거 결과를 적용한다. 서버 파괴/점수·다른 PC 설정을 바꾸지 않는다.
 
 2026-11-23 개발 재검증 정정: `firstDraw`는 RAF가 제공한 프레임 시작 시각이 아닌 **Canvas 그리기 명령 완료 시각**을 PC 단조 시계로 기록한다. 첫 그리기 전/후 실제 경과가100ms를 넘으면 화면을 지우고 소리·파편 예약을 함께 취소한다. 이 진단값은 실제 카메라→화면/스피커 지연 또는 디스플레이의 물리적 표시 시각이 아니다.
+
+### 2026-11-24 2대 무대 슈퍼 연출 켜기/끄기 (`/ws/test/duo3d` 전용)
+
+- 위 2026-11-21 계약의 "duo에 슈퍼 명령은 추가하지 않는다"를 이 항목으로 바꾼다(사용자 요청). 3대용 `multi3d_model_control`·운영 PC 임대·`multi3d_presentation`은 duo에 추가하지 않는다. `/ws/test/wide3d`(넓은 무대)는 그대로 거부(`bad_message`)한다.
+- PC → 서버 `duo_super{enabled:bool}`: 켜면 `smash_mode=super_smash`, 끄면 `normal`. 실제로 바뀌면 새 라운드(세트 복원, 새 epoch, 새 건물 2초 무적)이고 모든 PC에 `delivery=snapshot` 상태를 보낸다. `duo_super_feedback{feedback_selection}`: 2026-11-23 값 5개 중 하나, 아니면 `bad_message`. epoch·제거·점수는 바꾸지 않는다.
+- 끔: `model_test`에 `smash_mode:'normal'`·`feedback_selection`만 추가한다. instance/revision/delivery는 넣지 않으며 기존 타격 흐름은 같다.
+- 켬: 판정은 2대 무대 규칙(판정 폰 근사 깊이·새 건물 무적) 그대로이고, 받아들인 타격 하나가 현재 세트 전체를 제거한다. 3대 전용 준비 조건(세 카메라·시계·관절 정렬·건물 밖 준비·운영 PC 준비)은 적용하지 않는다. `model_test`에 2026-11-21 envelope(server_instance_id/model_revision/smash_mode/phase(ready|cleared)/delivery/feedback_selection 등)을 붙이고, 이벤트에 `effect_style=screen_impact_v1`·`feedback_preset/version/seed`·`input_mode`·`tracking_source=mono_approx`를 붙인다. 이 모드의 모델 상태는 모두 순서 있는 큐로 보낸다(최신 값만 덮어쓰기 안 함).
+- 켬 동안 `multi3d_model_push/release/drop_all`은 `bad_message`로 거부한다. 복원(`multi3d_model_reset`)·세트 변경(`multi3d_model_scene`)은 허용하고 새 라운드(`delivery=snapshot`)로 보낸다(2026-11-25).
+- 2026-11-25 클릭 데모: 켬 동안 `multi3d_model_mouse`는 거부하지 않고 맞은 세트 전체를 제거하며, 이벤트 `input_mode=mouse_demo`로 판정 폰 입력과 구분한다.
+- 판정 폰 `?input_mode=` live(기본)/synthetic/replay, 그 밖은 unknown. 이벤트 `input_mode`는 그 순간 판정 폰의 값이다. PC는 live/synthetic/replay/mouse_demo일 때만 연출한다.
+- PC: 연출 위치는 V(화면 폰) 화면에 투영한다. V 영상이 500ms 넘게 없으면(2026-11-25) PC 3D 화면에 대신 그린다. 동작 줄이기는 2대 무대 체크박스만 따른다(OS 설정 무시). 머리글 소리 끄기 버튼이 슈퍼 소리도 끈다. 자동 시험은 합성 입력만이며 실폰·청취 확인은 하지 않았다.
+

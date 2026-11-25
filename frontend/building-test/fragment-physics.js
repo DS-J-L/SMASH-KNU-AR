@@ -4,7 +4,11 @@ import {feedbackId,feedbackSeed,unitDirection} from './feedback-presets.js';
 
 let initializing;
 export const initPhysics = () => initializing ??= RAPIER.init();
-export const DEFAULT_PHYSICS = Object.freeze({gravity:true, floor:true, building:true, debris:true, rotation:true, sleep:true, hand:true});
+export const DEFAULT_PHYSICS = Object.freeze({gravity:true, floor:true, building:true, debris:true, rotation:true, sleep:true, hand:true, vanish:false});
+// vanish (2026-11-24, user; on for 1 camera and the stages): a released piece disappears this long after its lowest
+// point first reaches the floor. Visual only: the server's removed IDs and score are unchanged.
+export const FLOOR_VANISH_MS = 2000;
+const FLOOR_TOUCH_M = .015, LOST_BELOW_M = -.5;
 const groups = (member, mask) => (member << 16) | mask;
 
 // One simulation in marker coordinates, shared by the orbit view and all camera overlays.
@@ -18,6 +22,7 @@ export class FragmentPhysics {
     this.superQueue=[];this.superHidden=new Set();this.superRemoved=new Set();this.superEventId=null;this.superAt=null;
     this.superVisual=new Map();this.superGroups=new Map();this.superPreset=null;
     this.appliedPushes=new Set();
+    this.landedAt=new Map();this.vanished=new Set();
     this.appliedBlasts=new Set();this.interactionDistance=.75;this.filteredPairs=0;this.hookPositions=new Map();
     this.hooks={filterContactPair:(a,b)=>{
       const ia=this.byCollider.get(a),ib=this.byCollider.get(b);
@@ -94,7 +99,7 @@ export class FragmentPhysics {
   }
   release(ids,event=null){
     let changed=false;
-    for(const id of ids){const r=this.records.get(id);if(!r||this.dynamic.has(id))continue;
+    for(const id of ids){const r=this.records.get(id);if(!r||this.dynamic.has(id)||this.vanished.has(id))continue;   // vanished: gone for this building
       changed=true;
       this.dynamic.add(id);r.body.setBodyType(RAPIER.RigidBodyType.Dynamic,true);
       // Synthetic release speed, NOT a measurement of the person's physical impact energy.
@@ -155,10 +160,12 @@ export class FragmentPhysics {
       else if(this.superPreset==='crush_collapse_v1')direction.set(-radial.x*height*.3,-radial.y*height*.3,-Math.max(.1,height*.4));
       else{direction.multiplyScalar(4.5).add(radial.multiplyScalar(4));direction.z=Math.max(2.3,direction.z);}
       if(direction.length()>24)direction.setLength(24);
+      // superSpeed (2026-11-25, user): the 2-camera stage's close V camera lost fast pieces at once; slower there.
+      const speed=this.options.superSpeed??1;direction.multiplyScalar(speed);
       r.body.setLinvel({x:direction.x,y:direction.y,z:direction.z},true);
       // Stable decorative spin; independent of the authoritative point/score.
       const seed=(feedbackSeed(event)^Math.imul(id+1,2654435761))>>>0;
-      r.body.setAngvel({x:(seed%11)-5,y:((seed>>>4)%11)-5,z:((seed>>>8)%11)-5},true);
+      r.body.setAngvel({x:((seed%11)-5)*speed,y:(((seed>>>4)%11)-5)*speed,z:(((seed>>>8)%11)-5)*speed},true);
     }
     for(const [id,v] of this.superVisual){
       const t=Math.max(0,Math.min(1,(now-v.start)/820)),q=t*t*(3-2*t),angle=q*Math.PI*1.5;
@@ -237,6 +244,25 @@ export class FragmentPhysics {
       });
     }
     if(this.accumulator>=1/60){this.droppedTime+=this.accumulator;this.accumulator=0;}
+    if(count)this.vanishLanded();
+  }
+  // Simulated time (steps), so a paused or throttled tab does not make pieces vanish before they are seen to land.
+  vanishLanded(){
+    if(!this.options.vanish||this.superAt!==null)return;
+    const now=this.steps*1000/60;
+    for(const id of [...this.dynamic]){
+      const r=this.records.get(id),p=r.body.translation();
+      if(!this.landedAt.has(id)){
+        const q=r.body.rotation(),qv=new Quaternion(q.x,q.y,q.z,q.w),v=new Vector3();let low=Infinity;
+        for(let i=0;i<r.vertices.length;i+=3)low=Math.min(low,p.z+v.set(r.vertices[i],r.vertices[i+1],r.vertices[i+2]).applyQuaternion(qv).z);
+        if(low<=FLOOR_TOUCH_M&&p.z>LOST_BELOW_M)this.landedAt.set(id,now);
+        else if(p.z<=LOST_BELOW_M)this.landedAt.set(id,now-FLOOR_VANISH_MS);   // floor collision off: fell through
+        else continue;
+      }
+      if(now-this.landedAt.get(id)<FLOOR_VANISH_MS)continue;
+      this.dynamic.delete(id);this.hookPositions.delete(id);this.vanished.add(id);
+      r.collider.setEnabled(false);r.body.setBodyType(RAPIER.RigidBodyType.Fixed,false);
+    }
   }
   localTransform(id){
     const r=this.records.get(id),visual=this.superVisual.get(id),p=visual?.position??r.body.translation(),q=visual?.quaternion??r.body.rotation();
@@ -252,7 +278,7 @@ export class FragmentPhysics {
       for(let i=0;i<r.vertices.length;i+=3){const v=new Vector3(r.vertices[i],r.vertices[i+1],r.vertices[i+2]).applyQuaternion(qv);minZ=Math.min(minZ,p.z+v.z);}
       finite&&=[p.x,p.y,p.z,q.x,q.y,q.z,q.w].every(Number.isFinite);}
     const sorted=[...this.times].sort((a,b)=>a-b);
-    return {dynamic:this.dynamic.size,superVisual:this.superVisual.size,superPreset:this.superPreset,superPending:this.superQueue.length,superHidden:this.superHidden.size,sleeping,awake:this.dynamic.size-sleeping,mousePushes:this.appliedPushes.size,
+    return {dynamic:this.dynamic.size,vanished:this.vanished.size,landed:this.landedAt.size,superVisual:this.superVisual.size,superPreset:this.superPreset,superPending:this.superQueue.length,superHidden:this.superHidden.size,sleeping,awake:this.dynamic.size-sleeping,mousePushes:this.appliedPushes.size,
       handBodies:this.wrists.size,activeHands:[...this.wrists.values()].filter(h=>h.active).length,bodies:this.world.bodies.len(),colliders:this.world.colliders.len(),
       blasts:this.appliedBlasts.size,interactionDistance:this.interactionDistance,filteredPairs:this.filteredPairs,
       steps:this.steps,stepMeanMs:this.times.reduce((a,b)=>a+b,0)/(this.times.length||1),stepP95Ms:sorted[Math.floor(sorted.length*.95)]??0,
