@@ -1,0 +1,7 @@
+# tools/pck_eval.py only (not needed to run the server). Checked with Python 3.10 on 2026-11-27.
+rtmlib==0.0.16
+onnxruntime==1.23.2
+pingouin==0.6.1
+pandas==2.3.3
+numpy
+opencv-python-headless
