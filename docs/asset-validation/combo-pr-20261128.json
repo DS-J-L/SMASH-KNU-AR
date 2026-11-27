@@ -1,0 +1,104 @@
+{
+  "date_kst": "2026-11-28 02:37 KST",
+  "scope": "PR 생성 전 변경 코드/배포·관련 회귀 검증;실제 장비 인수/머지 별도",
+  "branch": "feat/duo-combo-score-20261127",
+  "base_commit": "eba177150ad7034829ea3ebbe0d159b2e0f0eb23",
+  "review": {
+    "reviewed": [
+      "서버 수락 break와 swing별 배율·고유 제거/중복·입력 출처 분리",
+      "80%/epoch 확인과직렬화·준비 ACK·2초 보호/1초 정지",
+      "선준비의 현재 모델/점수 보존·PC 비동기 자원 해제",
+      "PC 일반/전체화면 HUD·상태 역행 필터·재접속/수동 초기화",
+      "생성 번들/계약·계획/진행과 구현 범위"
+    ],
+    "blocking_findings": [],
+    "documentation_corrections": [
+      "이동수 현재 요약의 오래된 콤보 미구현 문구 정정",
+      "DUO_STAGE_TEST의 이전80% 변경 절을 당시 이력으로 표시"
+    ]
+  },
+  "checks": [
+    {
+      "name": "Python",
+      "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_combo_scoring.py tests/test_duo_combo.py tests/test_duo3d.py tests/test_wide3d.py tests/test_fragment_test.py -q",
+      "passed": 69,
+      "seconds": 10.5,
+      "warning": "Starlette TestClient httpx deprecation"
+    },
+    {
+      "name": "Node HUD",
+      "command": "node --test tests/test_combo_hud.mjs",
+      "passed": 3
+    },
+    {
+      "name": "Browser",
+      "command": "npx playwright test -c playwright.building-test.config.js tests/browser/building-combo.spec.js tests/browser/building-duo.spec.js tests/browser/building-zones.spec.js --grep \"PC combo HUD|far-side view phone|a broken building|super smash\"",
+      "passed": 5,
+      "failed": 0,
+      "duration_report": "1.5m",
+      "cases_seconds": [
+        29.7,
+        24.2,
+        7.9,
+        3.4,
+        14.2
+      ],
+      "scope": [
+        "콤보/80% 교체·PC 일반/전체화면·420px·초기화",
+        "duo V·부분 파괴",
+        "슈퍼 실제 판정 연출",
+        "폰 없는 마우스 슈퍼 데모",
+        "mono 자동 교체/취소"
+      ],
+      "input": "합성 관절/Canvas 영상·통제된 시험 제거·mouse_demo.실제 Edge/WebGL/Rapier/서버/WS"
+    },
+    {
+      "name": "Build",
+      "command": "npm run build:building-test",
+      "status": "passed",
+      "warning": "기존 대형 청크 경고"
+    },
+    {
+      "name": "Docs/staging",
+      "status": "검증 파일 UTF-8/JSON/Markdown 링크/펜스·credential pattern scan·git diff --check 통과"
+    }
+  ],
+  "virtual_player_prior_evidence": "virtual-player-20261127.json",
+  "prior_failure_history": "가상 참가자 검증 때 슈퍼 최초2실패/단독 재검사2통과.이번 동일5개 묶음은재시도 없이5/5.최초 실패 원인을새로 확정하지 않는다.",
+  "source_bundle_sha256": {
+    "backend/combo_scoring.py": "176dbd34f2a36dca88dc10bbf5c2673bef9b85a859634f1b0325542b6074738a",
+    "backend/test_wide3d.py": "184a6e6bdf4e6cbb250c2ed7f2ee7e6ab9ccfb56de06c56f87c50bcc822c4fdf",
+    "frontend/building-test/combo-hud.js": "d4713d9b7bd2b6661612865a506be14dd45f7ec63fde5eb8ea088e7d7d373dfc",
+    "frontend/building-test/main.js": "b1cfce9f139a26a90be66b85271fa16efba7021c66dd428f938c34650b673925",
+    "frontend/building-test/style.css": "0b7d8389a5c725f8f967e3be98b61da686c1bf07206dbc9c39e836fd9e569333",
+    "frontend/building-test/index.html": "c1a6cdc02e4f8c5b16f33ad81f57f0bc8d7d11d310c93bfdf21223e05d615e8d",
+    "tests/test_combo_scoring.py": "7d641c8318f5c3f22d555054570853974631670b6c50416395f71536e01f6056",
+    "tests/test_duo_combo.py": "a4a64c08f4d319e7e5e135d32db462e2b4a1530f489a4b2871206ea5134e4fe9",
+    "tests/test_combo_hud.mjs": "2ef9250ae4517869f0d479d24df333284db257d60a94a0ff1fba9ac3a9bed056",
+    "tests/browser/building-combo.spec.js": "e718e759ffd172e272bc90a636e6e9624e5d596d4a75345d19dda8390779a744",
+    "tests/browser/building-duo.spec.js": "833caae0b0115449ec7ddc9a3774b854ab6febb8b5d08fb443a08b98e258eda2",
+    "playwright.building-test.config.js": "cabe9cbb5629e6b5f6ac6eb013a84e42db533b5ffc65895ba02df095449b46f2",
+    "web/test/building/index.html": "c37074ffef718e394fddec601849fff9942e0e5701981fa63134679c2b57d29e",
+    "web/test/building/assets/index-BICFaZIO.js": "d5b5fd0da6e81f4ae4ecdf8b30e04af6d1017de4fa0e5d64cde77b2ba7de0cdb",
+    "web/test/building/assets/index-D1TxwNU-.css": "25262b8ef7829c7dfa9458685f39a50431c2415af4d3ef7b3d19ea92457a8505"
+  },
+  "hash_scope": "검증한 현재 worktree 원시 bytes.SHA256는 LF 파일에서Git blob내용과도 같고 텍스트 정규화는별도 게시 검수한다.",
+  "local_logs": "data/local/pr-combo-20261128",
+  "not_verified": [
+    "실폰 live·실제 카메라 추론/정합",
+    "촬영 replay·keyboard_demo",
+    "스피커 청취·전체 지연/p95·3판/20분",
+    "400ms swing 구분의 실제 연타 과합침/과분리",
+    "60초 종료/결과 전체 세션은별도 기능"
+  ],
+  "publication": {
+    "status": "검증 완료·커밋/push/PR 준비 중",
+    "merge_requested": false
+  },
+  "staging_correction": {
+    "initial_result": "git diff --cached --check failed on upstream GLSL template-string whitespace in the newly named generated bundle",
+    "resolution": "기존 생성 번들 규칙과 같은 web/test/building/assets/*.js만-whitespace 적용.셰이더 bytes/실행 코드는 보존.",
+    "scope": "생성 번들만 적용.직접 작성한 source/test/doc 공백 검사는 유지."
+  },
+  "repository_attributes_sha256": "7f4336f16ba4313bd3f4a39c8e81aaf0a074cdb3b77206acb1c7bb98269dcb93"
+}

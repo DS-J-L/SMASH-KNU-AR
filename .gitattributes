@@ -16,6 +16,7 @@
 web/monitor/fracture/assets/*.js -whitespace
 web/monitor/single/assets/*.js -whitespace
 web/monitor/phone-game/assets/*.js -whitespace
+web/test/building/assets/*.js -whitespace
 
 # Preserve the exact accepted CRLF evidence bytes and their original SHA256.
 docs/asset-validation/campus-v71/ACCEPTANCE-v71-r3.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,0 +1,97 @@
+{
+  "date_kst": "2026-11-27",
+  "base": "eba177150ad7034829ea3ebbe0d159b2e0f0eb23",
+  "branch": "feat/duo-combo-score-20261127",
+  "scope": "duo 일반 부분 파괴·80% 교체·4초 콤보/0.1 선형 배율·0.1점 정수 집계·PC 플레이 HUD·교체 준비 ACK/2초 무적 중1초 게이지 정지",
+  "tests": {
+    "python": {
+      "passed": 68,
+      "runs": [
+        {
+          "files": [
+            "tests/test_duo3d.py",
+            "tests/test_wide3d.py",
+            "tests/test_fragment_test.py"
+          ],
+          "passed": 50
+        },
+        {
+          "files": [
+            "tests/test_combo_scoring.py"
+          ],
+          "passed": 16
+        },
+        {
+          "files": [
+            "tests/test_duo_combo.py"
+          ],
+          "passed": 2
+        }
+      ]
+    },
+    "node": {
+      "file": "tests/test_combo_hud.mjs",
+      "passed": 3
+    },
+    "browser": {
+      "final_passed": 5,
+      "elapsed_seconds": 52.3,
+      "ui_recheck_passed": 2,
+      "coverage": [
+        "실제 판정 폰 합성 관절에서 가중 점수",
+        "80% 미달/도달·다음 모델/중복 epoch·ACK",
+        "1초 정지 후 게이지 감소·2초 보호·교체 후 콤보 유지",
+        "PC 일반/전체화면/420px 좁은 창·초기화",
+        "기존 duo 부분 파괴/가림·super 합성/클릭 데모·mono 자동 교체/취소"
+      ]
+    },
+    "build": "npm run build:building-test passed"
+  },
+  "failures_preserved": [
+    {
+      "scope": "첫 브라우저5개 실행",
+      "result": "3 passed / 2 failed",
+      "details": [
+        "무프레임 상태의 고정 서버 snapshot이 스스로 갱신된다고 검사해 timeout. 실제 UI 보간값을 검사하고 보호 두 번째 초를 기다리도록 fixture 정정",
+        "기존 duo 검사가 일반 보기 복귀 후 HUD 숨김을 기대. 새 요구인 일반/전체화면 표시로 기대값 정합"
+      ],
+      "correction": "제품 단언을 낮추지 않고 새 요구/서버 snapshot 의미에 맞춰 검사 수정. UI2개 재검사 통과,라벨 겹침/무효 지연 입력 정리 후5개 최종 통과",
+      "local_evidence": [
+        "data/local/combo-score/browser-first.log",
+        "data/local/combo-score/browser-first-failures.zip",
+        "data/local/combo-score/browser-ui-recheck.log",
+        "data/local/combo-score/browser-final.log"
+      ]
+    }
+  ],
+  "input_scope": "synthetic 관절/영상·제어 fixture와 실제 로컬 HTTP/WS/Edge/WebGL/Rapier. live 실폰·촬영 replay·키보드 데모·스피커 청취·전체 지연/p95·20분 미검증. 기존 super mouse_demo 회귀는 별도로2대 슈퍼 클릭 시험에서 확인.",
+  "limitations": [
+    "swing 구분은400ms 무파괴 공백 휴리스틱",
+    "로딩 시간은 콤보를 동결하지 않으며 느린 장비에서 콤보가 만료될 수 있음",
+    "duo60초 종료/결과/랭킹은 별도 세션 기능,이번 구현에 포함됐다고 보지 않음",
+    "점수는 서버 메모리,재시작 시 초기화"
+  ],
+  "source_and_bundle_sha256": {
+    "backend/combo_scoring.py": "176dbd34f2a36dca88dc10bbf5c2673bef9b85a859634f1b0325542b6074738a",
+    "backend/test_wide3d.py": "ba889d4075f84daa3a63e18b4488f980ea1a7776cc7e588ed89eb15952461174",
+    "frontend/building-test/combo-hud.js": "d4713d9b7bd2b6661612865a506be14dd45f7ec63fde5eb8ea088e7d7d373dfc",
+    "frontend/building-test/main.js": "552f4fa9b0aaa4edb4550c0edda1594ede0a1ff9c10ded2308c06f0ac7b5d05e",
+    "frontend/building-test/style.css": "0b7d8389a5c725f8f967e3be98b61da686c1bf07206dbc9c39e836fd9e569333",
+    "frontend/building-test/index.html": "c1a6cdc02e4f8c5b16f33ad81f57f0bc8d7d11d310c93bfdf21223e05d615e8d",
+    "tests/test_combo_scoring.py": "7d641c8318f5c3f22d555054570853974631670b6c50416395f71536e01f6056",
+    "tests/test_duo_combo.py": "95d3c9551bc78f9b04a1e4d7d8f18cab6ff2ca23bad08a0ec1a347cf9a02f70c",
+    "tests/test_combo_hud.mjs": "2ef9250ae4517869f0d479d24df333284db257d60a94a0ff1fba9ac3a9bed056",
+    "tests/browser/building-combo.spec.js": "e718e759ffd172e272bc90a636e6e9624e5d596d4a75345d19dda8390779a744",
+    "tests/browser/building-duo.spec.js": "833caae0b0115449ec7ddc9a3774b854ab6febb8b5d08fb443a08b98e258eda2",
+    "playwright.building-test.config.js": "cabe9cbb5629e6b5f6ac6eb013a84e42db533b5ffc65895ba02df095449b46f2",
+    "web/test/building/index.html": "9b05e13ac273aeb8b0d11c271750abddab8ba576d19b0657e471e090d51829ca",
+    "web/test/building/assets/index-GqlFqqAg.js": "d462a5d469f489efa91a02c8c0b3f5d48407c97c6ba3d35de4c445be6f42e9de",
+    "web/test/building/assets/index-D1TxwNU-.css": "25262b8ef7829c7dfa9458685f39a50431c2415af4d3ef7b3d19ea92457a8505"
+  },
+  "screenshots": [
+    "test-results/building-fragments/combo-normal.png",
+    "test-results/building-fragments/combo-fullscreen.png",
+    "test-results/building-fragments/combo-narrow.png"
+  ],
+  "publication": "로컬 미커밋·미게시,commit/push/PR/merge 없음"
+}

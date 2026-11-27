@@ -85,7 +85,7 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await page.screenshot({path:'test-results/building-fragments/duo-stage.png',fullPage:true});
 
   // Full screen (2026-11-24): only the matched V view, centred, with the collapse share and elapsed time.
-  await expect(page.locator('#viewHud')).toBeHidden();
+  await expect(page.locator('#viewHud')).toBeVisible(); // Combo/score HUD also lives on the normal PC play view.
   await page.locator('#viewFullscreen').click();
   await expect(page.locator('#viewFullscreen')).toHaveText('전체화면 끝내기');
   await expect(page.locator('header')).toBeHidden();await expect(page.locator('#orbit')).toBeHidden();
@@ -104,7 +104,7 @@ test('duo stage: the far-side view phone is the main screen, the judging phones 
   await page.screenshot({path:'test-results/building-fragments/duo-fullscreen.png'});
   await page.locator('#viewFullscreen').click();
   await expect(page.locator('#viewFullscreen')).toHaveText('전체화면');await expect(page.locator('header')).toBeVisible();
-  await expect(page.locator('#viewHud')).toBeHidden();
+  await expect(page.locator('#viewHud')).toBeVisible(); // Returning to the page keeps the play HUD.
 
   // Pieces on the floor disappear 2 s after landing (2026-11-24, stage default); the score and removal stay.
   await expect(page.locator('[data-physics="vanish"]')).toBeChecked();
