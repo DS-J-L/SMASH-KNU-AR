@@ -92,7 +92,20 @@
     "60초 종료/결과 전체 세션은별도 기능"
   ],
   "publication": {
-    "status": "검증 완료·커밋/push/PR 준비 중",
+    "status": "PR 게시·자동 검증 완료·검토 요청,미머지",
+    "url": "https://github.com/DS-J-L/SMASH-KNU-AR/pull/31",
+    "tested_code_commit": "0f4cd260f231ba60bf8eb054f948db6d6c3a81df",
+    "observed_head_before_records_commit": "0f4cd260f231ba60bf8eb054f948db6d6c3a81df",
+    "base_commit": "eba177150ad7034829ea3ebbe0d159b2e0f0eb23",
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "mergeable": true,
+    "checks": 0,
+    "statuses": 0,
+    "ci_note": "등록된 checks/statuses 없음;로컬 검사 통과와구분",
+    "checked_at_kst": "2026-11-28 02:40 KST",
+    "follow_up": "후속 커밋은 게시/진행기록만.15개 실행코드/시험/번들 불변을검증하며최종head는PR상태로확인한다.",
     "merge_requested": false
   },
   "staging_correction": {
