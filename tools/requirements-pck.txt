@@ -1,0 +1,8 @@
+# tools/pck_eval.py only. Install into its OWN virtual environment, not the server's:
+# rtmlib pulls opencv-python / opencv-contrib-python, which clash with the server's
+# opencv-python-headless pin in requirements.txt (both provide the cv2 module).
+# Checked with Python 3.10 on 2026-11-27.
+rtmlib==0.0.16
+onnxruntime==1.23.2
+pingouin==0.6.1
+pandas==2.3.3
