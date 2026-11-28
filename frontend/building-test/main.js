@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {createComboHud} from './combo-hud.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createLink } from '/test/multi3d/link.js?v=20261109-6';
 import { placementToThree } from '/shared/model-strike-3d.js';
@@ -75,6 +76,22 @@ let failedScene=null,sceneBuildings=[];
 let sceneDimensions=[2.810118,1.0844383,.6256438],buildingCount=1,fixedSize=false;
 let ready = false, connected = false, fatal = null, state = null, epoch = null;
 let viewerId=null,controlPending=null,controlSeq=0,pauseWanted=false,localStopped=false,lastPresentationAt=-Infinity,lastPresentationKey='';
+let comboHud=null,comboNextEpoch=null,comboReadyEpoch=null;
+let duoPreload=null;
+function discardDuoPreload(){
+  const old=duoPreload;duoPreload=null;if(!old)return;
+  old.discarded=true;if(old.data)disposeRoots(old.data.models.map(g=>g.scene));
+}
+function prewarmDuoScene(id){
+  if(!duo||!id||id===loadedScene||duoPreload?.id===id)return;
+  discardDuoPreload();
+  const pending={id,data:null,discarded:false};duoPreload=pending;
+  pending.promise=fetchScene(id).then(async spec=>{
+    const models=await loadModels(spec);
+    if(pending.discarded){disposeRoots(models.map(g=>g.scene));return null;}
+    return pending.data={spec,models};
+  }).catch(error=>{if(!pending.discarded)console.warn('Next scene preload deferred',error);return null;});
+}
 let frameAt = 0, lastJoints = {}, physics = null, colliderData = null;
 let personJoints={},personAt=-Infinity;
 let previousNow=0, reportAt=0, frameCount=0, reportFrames=0, fps=0, renderMs=0;
@@ -213,8 +230,11 @@ for (const id of (mono?['C0']:duo?['V','C0','C1']:['C0','C1','C2'])) {
     // Full screen (2026-11-24, user): only this matched view, with the building's collapse and elapsed time on top.
     const full=Object.assign(document.createElement('button'),{type:'button',id:'viewFullscreen',className:'view-full-button',textContent:'전체화면'});
     const hud=Object.assign(document.createElement('div'),{id:'viewHud',className:'view-hud'});
-    hud.innerHTML='<div><small>무너짐</small><b id="hudCollapse">0%</b></div><div><small>걸린 시간</small><b id="hudTime">0:00.0</b></div><p id="hudNote"></p>';
-    div.append(hud,full);full.onclick=toggleViewFull;}
+    hud.innerHTML='<div class="hud-stats"><div><small>무너짐</small><b id="hudCollapse">0%</b></div><div><small>걸린 시간</small><b id="hudTime">0:00.0</b></div></div><div id="comboHud"></div><p id="hudNote"></p>';
+    div.append(hud,full);full.onclick=toggleViewFull;
+    comboHud=createComboHud($('comboHud'));
+    const retry=Object.assign(document.createElement('button'),{type:'button',className:'combo-retry',textContent:'점수 초기화 · 다시 세우기'});
+    div.append(retry);retry.onclick=()=>$('restore').click();}
 }
 // Duo full screen: the page (not the panel) goes full screen so the view keeps its own aspect ratio, centred.
 function setViewFull(on){document.body.classList.toggle('view-full',on);const b=$('viewFullscreen');if(b)b.textContent=on?'전체화면 끝내기':'전체화면';}
@@ -227,7 +247,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.class
 // Time to break the current building: from its appearance (server age_ms, survives reloads) until the
 // auto-next share of pieces is gone; then it stops. A new building or a restore starts it again.
 const buildingTimer={key:null,startAt:0,doneAt:null};
-const autoNextNeed=total=>Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||70))/100);
+const autoNextNeed=total=>Math.ceil(total*Math.min(100,Math.max(10,Number($('autoNextPercent').value)||80))/100);
 function trackBuildingTimer(m){
   const key=`${m.scene_id}:${m.epoch}`,now=performance.now();
   if(buildingTimer.key!==key)Object.assign(buildingTimer,{key,startAt:now-(m.age_ms??0),doneAt:null});
@@ -243,9 +263,10 @@ function viewHudText(now){
     note:done?(autoNextTimer!==null?'무너뜨림 · 곧 다음 건물':'무너뜨림'):guard||`파편 ${removed}/${total}개`,done};
 }
 function updateViewHud(now){
-  if(!duo||!document.body.classList.contains('view-full'))return;
+  if(!duo)return;
   const t=viewHudText(now);$('hudCollapse').textContent=t.collapse;$('hudTime').textContent=t.time;$('hudNote').textContent=t.note;
   $('viewHud').classList.toggle('done',t.done);
+  $('comboHud').hidden=state?.smash_mode==='super_smash';comboHud?.draw();
 }
 let previewRequest=0;
 // Super feedback: the 3-camera mode on C0, and the duo stage (2026-11-24, user: on/off there too) on V's main view.
@@ -369,9 +390,12 @@ function applyCalibration(c,m) {
 }
 function syncState(m) {
   if(!m)return;
+  if(m!==state&&duo&&m.combo&&!comboHud?.accept(m.combo))return;
   let superEvent=null;const isIncoming=m!==state;
   if(m!==state&&feedback){const result=feedback.accept(m,{presentable:presentable()&&loadedScene===m.scene_id});if(!result.accepted)return;superEvent=result.event;}
   state=m;
+  if(duo&&m.combo&&isIncoming)comboHud?.update(m.combo,m.event);
+  if(duo&&!m.combo)discardDuoPreload();
   completeControl();
   if(feedback&&m.smash_mode==='normal')for(const id of ['mouseMode','blastMode','blastRadius','pushStrength','collapse','impactBreak'])$(id).disabled=false;
   if(wide&&m.stage){stageOwner=m.stage.owner;if(stageSpacing!==m.stage.spacing_m){stageSpacing=m.stage.spacing_m;placeMarkers(stageSpacing);if(document.activeElement!==$('stageSpacing'))$('stageSpacing').value=stageSpacing;}
@@ -402,6 +426,10 @@ function syncState(m) {
     physics.setInteractionDistance(Number($('interactionDistance').value));
     physics.onImpact=(id,force)=>{if(state.smash_mode!=='super_smash'&&$('impactBreak').checked&&force>=8&&!state.removed_ids.includes(id))impactQueue.add(id);};
   }
+  if(duo&&m.combo?.awaiting_ready&&comboReadyEpoch!==m.epoch){
+    if(link.send({type:'duo_combo_ready',epoch:m.epoch}))comboReadyEpoch=m.epoch;
+  }
+  if(duo&&m.combo?.next_collision_ready)prewarmDuoScene(m.combo.next_scene_id);
   if(m.smash_mode==='super_smash'){
     if(m.delivery==='snapshot'&&isIncoming)physics.stopSuper();
     physics.queueSuper(m.removed_ids,superEvent);impactQueue.clear();
@@ -588,7 +616,7 @@ $('applySpacing').onclick=()=>{if(!$('stageSpacing').reportValidity())return;
 const link=createLink(duo?'/ws/test/duo3d':wide?'/ws/test/wide3d':mono?'/ws/test/mono3d':'/ws/test/multi3d',{role:'viewer',model:'it1'},s=>{
   connected=s.open;
   if(!s.open){eventsArmed=false;hitEffect.clear();hitSound.reset();}
-  if(!s.open){feedback?.cancel('disconnect');physics?.stopSuper();controlPending=null;viewerId=null;lastPresentationKey='';frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
+  if(!s.open){comboReadyEpoch=null;comboNextEpoch=null;feedback?.cancel('disconnect');physics?.stopSuper();controlPending=null;viewerId=null;lastPresentationKey='';frameAt=0;personJoints={};personAt=-Infinity;for(const c of cameras.values()){c.calibrated=false;c.img.hidden=true;c.jpegVersion++;c.occlusion?.clear();c.occlusionInputValid=false;}}
   if(!fatal)status(s.open?'마우스 합성 타격 가능 · 건물을 클릭하세요':'서버 연결 대기');
 },onMessage);
 // The 2-camera stage has no 3-camera control channel: restore and scene change stay plain messages there.
@@ -615,9 +643,20 @@ function advanceBuilding(){
 }
 function checkAutoNext(m){
   if(!approx)return;
+  const comboMode=duo&&!!m.combo&&m.smash_mode!=='super_smash';
+  if(duo){$('autoNextPercent').disabled=$('autoNextDelay').disabled=comboMode;$('autoNextDelay').closest('label').hidden=comboMode;if(comboMode)$('autoNextPercent').value=80;}
   if(!$('autoNext').checked){cancelAutoNext();$('autoNextStatus').textContent='';return;}
   const total=m.fragment_count||0,removed=m.removed_ids?.length??0;
   const need=autoNextNeed(total);
+  if(comboMode){
+    cancelAutoNext();
+    if(m.combo.awaiting_ready){$('autoNextStatus').textContent='다음 건물 준비 중 · 준비 후 2초 무적';return;}
+    $('autoNextStatus').textContent=removed>=need?'80% 철거 완료 · 다음 건물 준비':`파괴 ${removed}/${total}개 · ${need}개(80%)부터 다음 건물 · 준비 후 2초 무적`;
+    if(total>0&&removed>=need&&comboNextEpoch!==m.epoch){
+      if(link.send({type:'duo_combo_next',epoch:m.epoch}))comboNextEpoch=m.epoch;
+    }
+    return;
+  }
   // The server ignores body hits for ~2 s after a new building appears (spawn_guard_ms).
   const guard=m.spawn_guard_ms>0?`새 건물 무적 ${(m.spawn_guard_ms/1000).toFixed(1)}초 · `:'';
   if(!(total>0&&removed>=need)){cancelAutoNext();$('autoNextStatus').textContent=`${guard}부서진 파편 ${removed}/${total}개 · ${need}개 이상이면 다음 건물`;return;}
@@ -648,9 +687,12 @@ async function loadScene(id){
   physics?.dispose();physics=null;
   disposeRoots([...ownedRoots,...scenes.flatMap(s=>[...s.outer.children])]);ownedRoots=[];
   for(const s of scenes){s.outer.clear();s.nodes.clear();}pieces.clear();
-  const spec=await fetchScene(id);
+  const pending=duoPreload?.id===id?duoPreload:null;
+  if(pending)duoPreload=null;else if(duo)discardDuoPreload();
+  const cached=pending?await pending.promise:null;
+  const spec=cached?.spec??await fetchScene(id);
   sceneBuildings=spec.render.map(b=>({id:b.id,x:b.offset[0],height:b.height_m}));
-  const [models]=await Promise.all([loadModels(spec),initPhysics()]);
+  const [models]=await Promise.all([cached?.models??loadModels(spec),initPhysics()]);
   if(generation!==loadGeneration){disposeRoots(models.map(g=>g.scene));return;}
   ownedRoots=models.map(g=>g.scene);colliderData=spec.colliders;sceneDimensions=spec.dimensions_m;buildingCount=spec.building_count;
   fixedSize=spec.fixed_size;
@@ -768,6 +810,7 @@ window.buildingFragmentTest=Object.freeze({previewImpact:originPx=>feedback?.pre
     return {id,x:v.x,y:v.y,z:v.z,buildingId:colliderData.fragments.find(f=>f.fragment_id===id)?.building_id};
   }).filter(p=>Math.abs(p.x)<.98&&Math.abs(p.y)<.98&&p.z>0&&p.z<1).sort((a,b)=>a.z-b.z);
 },snapshot:()=>({ready,connected,removed:state?.removed_ids??[],score:state?.score??0,epoch,
+  nextPreload:duoPreload?{sceneId:duoPreload.id,ready:!!duoPreload.data}:null,
   placement:state?.placement,super:feedback?.info()??null,modelState:state,viewerId,controlPending,
   sceneId:loadedScene,buildingCount,loadingScene,fixedSize,buildings:sceneBuildings,
   removedBuildings:colliderData?[...new Set(colliderData.fragments.filter(f=>state?.removed_ids.includes(f.fragment_id)).map(f=>f.building_id))]:[],

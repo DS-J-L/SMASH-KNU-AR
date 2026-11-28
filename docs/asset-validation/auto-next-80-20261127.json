@@ -1,0 +1,108 @@
+{
+  "date_kst": "2026-11-27 02:18 KST",
+  "base_commit": "eba177150ad7034829ea3ebbe0d159b2e0f0eb23",
+  "branch": "fix/auto-next-80-percent-20261127",
+  "change": "부분 파괴 유지·자동 다음 건물 기본/대체 파괴율80%, ceil(전체 고유 파편×80/100)",
+  "build": {
+    "command": "npm run build:building-test",
+    "result": "passed",
+    "warning": "기존5MB 번들에 대한500kB 청크 크기 안내"
+  },
+  "existing_browser_regressions": {
+    "command": "npx playwright test -c playwright.building-test.config.js tests/browser/building-zones.spec.js tests/browser/building-duo.spec.js --grep 'a broken building|far-side view phone' --reporter=line",
+    "passed": 2,
+    "failed": 0,
+    "elapsed_seconds": 41.1
+  },
+  "boundary_verification": {
+    "dateKst": "2026-11-27 02:16:42",
+    "scope": "실제 로컬 HTTP/WS/WebGL/Rapier + synthetic 제거 명령; live/replay/keyboard_demo/mouse_demo 타격 미실행",
+    "modes": [
+      {
+        "mode": "mono",
+        "defaultPercent": 80,
+        "emptyInputFallback": 80,
+        "threshold": 77,
+        "below": {
+          "removed": 76,
+          "total": 96,
+          "percent": 79.16666666666666,
+          "pending": false
+        },
+        "reached": {
+          "removed": 77,
+          "percent": 80.20833333333334,
+          "pending": true,
+          "hudDone": null
+        },
+        "nextScene": "single:knu-it5-practice-v1",
+        "nextRemoved": 0,
+        "guardRemainingMs": 2000
+      },
+      {
+        "mode": "wide",
+        "defaultPercent": 80,
+        "emptyInputFallback": 80,
+        "threshold": 52,
+        "below": {
+          "removed": 51,
+          "total": 64,
+          "percent": 79.6875,
+          "pending": false
+        },
+        "reached": {
+          "removed": 52,
+          "percent": 81.25,
+          "pending": true,
+          "hudDone": null
+        },
+        "nextScene": "wide:s02:1500:0",
+        "nextRemoved": 0,
+        "guardRemainingMs": 2000
+      },
+      {
+        "mode": "duo",
+        "defaultPercent": 80,
+        "emptyInputFallback": 80,
+        "threshold": 52,
+        "below": {
+          "removed": 51,
+          "total": 64,
+          "percent": 79.6875,
+          "pending": false
+        },
+        "reached": {
+          "removed": 52,
+          "percent": 81.25,
+          "pending": true,
+          "hudDone": true
+        },
+        "nextScene": "duo:s02:2000:0",
+        "nextRemoved": 0,
+        "guardRemainingMs": 2000
+      }
+    ],
+    "errors": [],
+    "sourceHashes": {
+      "frontend/building-test/main.js": "efeeab7ec4072cb37e34daa643b4588dd1f2a0854b6186a10fbcf79e3437ab85",
+      "frontend/building-test/index.html": "c1a6cdc02e4f8c5b16f33ad81f57f0bc8d7d11d310c93bfdf21223e05d615e8d",
+      "web/test/building/index.html": "054aa4c3e91c9ae10a55c143edd90d7f96e7ef76c2ea725611c40dc509a591b9"
+    }
+  },
+  "source_and_deployment_sha256": {
+    "frontend/building-test/main.js": "efeeab7ec4072cb37e34daa643b4588dd1f2a0854b6186a10fbcf79e3437ab85",
+    "frontend/building-test/index.html": "c1a6cdc02e4f8c5b16f33ad81f57f0bc8d7d11d310c93bfdf21223e05d615e8d",
+    "web/test/building/index.html": "054aa4c3e91c9ae10a55c143edd90d7f96e7ef76c2ea725611c40dc509a591b9",
+    "web/test/building/assets/index-1XLM_fwp.js": "55805ef04a4c06cddebc349ff0c5375c63a92502468d85beb3313071c872535f"
+  },
+  "first_validation_failure": {
+    "cause": "검수용 mono viewer에서 model=it1을 누락해 읽기 전용 구독자로 연결되어 합성 제거 명령이 실행되지 않음.76개 기대/0개 관측",
+    "correction": "검수 연결 URL에 model=it1을 지정해 원래 제품 모델 제어 경로로 연결. 제품 코드는 변경하지 않고3모드 경계 재확인 통과",
+    "retained_local_logs": [
+      "data/local/auto-next-80/boundary-check-first-failed.log",
+      "data/local/auto-next-80/boundary-server-first-failed.log"
+    ]
+  },
+  "scope": "실제 로컬 HTTP/WS/Edge/WebGL/Rapier, 합성 관절/영상과 제거 명령. 실폰 live·촬영 replay·keyboard_demo·mouse_demo 타격/청취/성능/20분 미검증. 기존 교체 대기/2초 보호·파괴 범위·점수 정책은 이번에 바꾸지 않음.",
+  "publication": "로컬 미커밋, commit/push/PR/merge 없음"
+}

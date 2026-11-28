@@ -340,3 +340,20 @@ PC 소비자에서 영상만 수신한 프레임은 wrists.left_wrist/right_wris
 - 판정 폰 `?input_mode=` live(기본)/synthetic/replay, 그 밖은 unknown. 이벤트 `input_mode`는 그 순간 판정 폰의 값이다. PC는 live/synthetic/replay/mouse_demo일 때만 연출한다.
 - PC: 연출 위치는 V(화면 폰) 화면에 투영한다. V 영상이 500ms 넘게 없으면(2026-11-25) PC 3D 화면에 대신 그린다. 동작 줄이기는 2대 무대 체크박스만 따른다(OS 설정 무시). 머리글 소리 끄기 버튼이 슈퍼 소리도 끈다. 자동 시험은 합성 입력만이며 실폰·청취 확인은 하지 않았다.
 
+
+
+## 2026-11-27 duo 일반 부분 파괴 콤보/점수
+
+`/ws/test/duo3d`의 일반 모드 `multi3d_model_state.model_test`에 `combo`를 추가한다. 기존 `score`/`removed_ids`는 건물별 원점수/고유 제거 상태를 유지한다. mono/wide·3대 삼각측량·phone_2d 계약은 유지한다. [실행](COMBO_SCORE_RUN.md).
+
+- `combo`: `instance_id, session_id, revision, epoch, server_now_ms, game_score_units, combo_count, max_combo, multiplier_tenths, combo_remaining_ms, combo_paused, combo_pause_remaining_ms, awaiting_ready, transition_id, cleared_count, clear_percent(80), input_mode, window_ms(4000)`. `game_score_units`는0.1점 단위 정수, `multiplier_tenths`는10=×1.0·11=×1.1이다. revision은 새 기록/모델 변경에도 역행하지 않는다. 서버 monotonic 시각은 UI 보간용이며 촬영 시각/전체 지연 측정이 아니다.
+- 유효 몸 타격 이벤트에 `combo_award`: `event_id, action_id, action_start, combo_count, multiplier_tenths, awarded_score_units, action_score_units, new_fragment_count, input_mode`. 같은 swing은 같은 배율/팝업 합계를 사용하고 새 파편이 없으면 점수/콤보 갱신 없음. 마우스/직접 제거/재밀기는 몸 타격 가중 점수를 만들지 않는다.
+- PC→서버 `duo_combo_next {epoch}`: 현재 normal·정확한 epoch·80% 도달·전환 대기 아님을 서버에서 확인하고 서버 목록의 다음 대상을1회 확정한다. 두 PC의 중복/옛 epoch는 현재 snapshot만 돌려주며 다시 넘기지 않는다.
+- 전환 snapshot은 `awaiting_ready=true`로 몸 판정을 차단한다. PC가 해당 모델/충돌체를 준비한 후 `duo_combo_ready {epoch}`를 보낸다. 최초 유효 ACK에서 무적2초, 그 앞1초만 콤보 정지. 반복 ACK는 연장/재시작하지 않는다. 새 모델 로딩 동안의 시간은 정지 혜택으로 빼지 않으며 만료된 콤보를 되살리지 않는다.
+- 자동 교체/재접속은 가중 점수 기록을 유지한다. 수동 reset/장면·모델 재생성 설정/모드 변경과 입력 출처 변경은 새 기록이다. 서버 재시작은 메모리 기록을 초기화한다. 클라이언트가 점수·콤보 번호·파편 수·정지 길이를 선언하는 메시지는 없다.
+- duo 콤보 모델 상태는 이벤트/무이벤트 모두 순서 있는 전송 큐를 사용한다. PC는 instance/revision/서버 시각 역행을 걸러내며 재접속 snapshot으로 득점 팝업을 재생하지 않는다. 콤보 게이지는 서버 값 기준 표시 보간이고,4초 이내 여부/점수 확정은 서버만 수행한다.
+
+
+### 2026-11-27 가상 참가자 검증 후 선준비 보완
+
+`combo.next_scene_id`는 서버가 정한 다음 대상 ID, `combo.next_collision_ready`는 해당 대상의 서버 선준비 작업 완료 여부다. PC는 현재 대상 진행 중 다음 장면/GLB를 한 대상만 미리 읽고 실제 교체에 재사용하며, 잘못된/수동 전환·모드 변경으로 쓰지 않는 자원은 해제한다. 서버 선준비는 독립 모델 생성으로 기하/지지 캐시만 채우며 현재 target/제거 목록/점수/epoch를 바꾸지 않는다.4초·0.1배·80%·2초 무적/1초 콤보 정지 규칙은 유지한다.

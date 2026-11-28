@@ -50,6 +50,7 @@ from starlette.websockets import WebSocketState
 from .building_scenes import (DUO_PREFIX, STAGE_SECTIONS, WIDE_PREFIX, WIDE_SPACING_RANGE_M, stage_set, stage_sets,
                               scene_spec, wide_scene_id)
 from .connections import Peer
+from .combo_scoring import ComboScoring, CLEAR_PERCENT
 from .fragment_test import FragmentTest, model_command
 from .super_smash import FEEDBACK_PRESETS, SuperSmash
 from .model_strike import Placement
@@ -214,6 +215,9 @@ class WideStage:
         self.model: FragmentTest | None = None
         self.lock = asyncio.Lock()
         self.smash = SuperSmash() if self.has_view else None   # duo only: super smash on/off and its feedback preset
+        self.combo = ComboScoring(clock=lambda: now_ms()) if self.has_view else None
+        self.preload_task = None
+        self.preload_scene = None
         self.input_modes: dict[str, str] = {}   # phone -> live | synthetic | replay (from ?input_mode=)
 
     def super_on(self) -> bool:
@@ -240,7 +244,31 @@ class WideStage:
     def scene_id(self) -> str:
         return wide_scene_id(self.zone_id, self.spacing, self.height(), LAYOUTS[self.layout]["prefix"])
 
-    async def rebuild(self) -> None:
+    def next_scene(self):
+        sets = stage_sets(self.sections(), self.spacing)
+        index = next(i for i, item in enumerate(sets) if item['id'] == self.zone_id)
+        zone = sets[(index + 1) % len(sets)]['id']
+        return zone, wide_scene_id(zone, self.spacing, self.height(), LAYOUTS[self.layout]['prefix'])
+
+    async def warm_next_model(self, scene_id):
+        # Pure geometry/support caches only: never replace the current model or reset its tracking.
+        try:
+            await asyncio.to_thread(FragmentTest, Placement(scale=1.0), scene_id)
+        except Exception:
+            log.exception('Could not prewarm next duo model %s', scene_id)
+
+    def prewarm_next(self):
+        if not self.has_view:
+            return
+        _, scene_id = self.next_scene()
+        if self.preload_scene == scene_id and self.preload_task and not self.preload_task.cancelled():
+            return
+        if self.preload_task and not self.preload_task.done():
+            self.preload_task.cancel()
+        self.preload_scene = scene_id
+        self.preload_task = asyncio.create_task(self.warm_next_model(scene_id))
+
+    async def rebuild(self, *, keep_combo=False) -> None:
         old = self.model
         new = await asyncio.to_thread(FragmentTest, Placement(scale=1.0), self.scene_id())
         new.approximate = True
@@ -256,6 +284,9 @@ class WideStage:
         # The size comes from this reference (baked into the scene id); stored for the PC's height text.
         new.body_reference = dict(self.reference) if self.reference else None
         self.model = new
+        if self.combo is not None and not keep_combo:
+            self.combo.reset(new.epoch)
+        self.prewarm_next()
 
     def stage(self) -> dict:
         return {"zone_id": self.zone_id, "spacing_m": self.spacing, "height_m": scene_spec(self.scene_id())["wide"]["height_m"],
@@ -266,6 +297,12 @@ class WideStage:
         state = state or self.model.snapshot()
         if self.smash is not None:
             state = self.super_decorate(state, delivery)
+        if self.combo is not None and not self.super_on():
+            combo = self.combo.snapshot()
+            combo['next_scene_id'] = self.next_scene()[1]
+            combo['next_collision_ready'] = bool(self.preload_task and self.preload_task.done()
+                                                 and not self.preload_task.cancelled())
+            state = {**state, 'combo': combo}
         return {"type": "multi3d_model_state", "source": "mono_approx", "timing": "server_arrival",
                 "model_test": {**state, "stage": self.stage()}}
 
@@ -289,7 +326,7 @@ class WideStage:
             return
         packet = self.model_packet(state, delivery)
         for viewer in self.viewers:
-            if packet["model_test"].get("event") or self.super_on():
+            if packet["model_test"].get("event") or self.super_on() or self.combo is not None:
                 # Super mode: every state in order (revisions must not go backwards on the PC).
                 viewer.send(packet)
             else:
@@ -469,7 +506,10 @@ class WideStage:
         state, shown = None, joints
         if self.model and camera == self.owner:
             judged = self.judged_joints(joints, self.frames[camera]["anchor_x"])
-            state = self.model.update({n: {"p": p} for n, p in judged.items()}, now_ms(), super_smash=self.super_on())
+            waiting = self.combo is not None and self.combo.awaiting_ready and not self.super_on()
+            state = self.model.update({} if waiting else {n: {"p": p} for n, p in judged.items()}, now_ms(), super_smash=self.super_on())
+            if self.combo is not None and not self.super_on():
+                self.combo.accept(self.model.epoch, state.get('event'), self.input_modes.get(camera, 'unknown'))
             shown = {**joints, **judged}
         elif self.model and self.owner is None and not valid:
             state = self.model.update({}, now_ms())
@@ -546,7 +586,23 @@ def stage_router(layout: str) -> APIRouter:
         kind = m.get("type")
         delivery = "update"
         async with hub.lock:
-            if kind == "wide3d_stage_config":
+            old_epoch = hub.model.epoch
+            if kind == 'duo_combo_next' and hub.has_view:
+                # Two PCs may request the same transition; only the current, completed epoch can advance.
+                if (hub.super_on() or m.get('epoch') != hub.model.epoch or hub.combo.awaiting_ready
+                        or len(hub.model.removed) * 100 < len(hub.model.target.fragments) * CLEAR_PERCENT):
+                    peer.send(hub.model_packet(delivery='snapshot'))
+                    return
+                hub.zone_id, _ = hub.next_scene()
+                await hub.rebuild(keep_combo=True)
+                hub.combo.transition(hub.model.epoch)
+                delivery = 'snapshot'
+            elif kind == 'duo_combo_ready' and hub.has_view:
+                if not hub.super_on() and hub.combo.ready(m.get('epoch')):
+                    hub.model.clear_tracking()
+                    hub.model.guard_spawn()
+                delivery = 'snapshot'
+            elif kind == "wide3d_stage_config":
                 await apply_spacing(m.get("spacing_m"))
             elif kind == "duo_auto_spacing" and hub.has_view:
                 if type(m.get("enabled")) is not bool:
@@ -605,6 +661,8 @@ def stage_router(layout: str) -> APIRouter:
                     delivery = "snapshot"
             else:
                 raise ValueError(f"unsupported: {kind}")
+            if hub.combo is not None and hub.model.epoch != old_epoch and kind != 'duo_combo_next':
+                hub.combo.reset(hub.model.epoch)
             event = hub.model.pending_event
             hub.model.pending_event = None
             hub.send_model(hub.model.snapshot(event), delivery)
@@ -725,16 +783,17 @@ def stage_router(layout: str) -> APIRouter:
                     elif kind == "mono3d_calib":
                         await phone_calibration(peer, camera, m)
                     elif kind == "mono3d_frame":
-                        frame, state = hub.on_frame(camera, m)
-                        for viewer in hub.viewers:
-                            viewer.send_video(f"frame:{camera}", frame)
-                        view = hub.phones.get(VIEW_CAMERA) if hub.has_view else None
-                        if view is not None and frame["valid"] and camera == hub.owner and frame["joints"]:
-                            # Depth only for V's outline: latest frame wins, never queued behind video.
-                            view.send_video("person", {"type": "duo_person", "camera_id": camera,
-                                                       "joints": frame["joints"], "source": "mono_approx"})
-                        if state is not None:
-                            hub.send_model(state)
+                        async with hub.lock:
+                            frame, state = hub.on_frame(camera, m)
+                            for viewer in hub.viewers:
+                                viewer.send_video(f"frame:{camera}", frame)
+                            view = hub.phones.get(VIEW_CAMERA) if hub.has_view else None
+                            if view is not None and frame["valid"] and camera == hub.owner and frame["joints"]:
+                                # Depth only for V's outline: latest frame wins, never queued behind video.
+                                view.send_video("person", {"type": "duo_person", "camera_id": camera,
+                                                           "joints": frame["joints"], "source": "mono_approx"})
+                            if state is not None:
+                                hub.send_model(state)
                     elif kind == "mono3d_jpeg":
                         if not isinstance(m.get("data"), str) or not m["data"].startswith("data:image/jpeg;base64,"):
                             raise ValueError("jpeg data URL expected")
