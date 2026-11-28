@@ -203,3 +203,88 @@ def test_one_participant_is_not_enough(tmp_path):
     write_session(root, "P01")
     result = pe.run(root, tmp_path / "r", fake_reference, SCHEDULE)
     assert "need at least 2" in result["error"]
+
+
+# ---------- marker mode: the operator marks each change of the directed motion ----------
+MOTIONS = ["right_punch", "left_punch", "right_kick", "left_kick", "both_hands"]
+MOTION_ERR = {"right_punch": 2.0, "left_punch": 4.0, "right_kick": 30.0, "left_kick": 40.0, "both_hands": 6.0}
+BLOCK_MS = 3000                      # 15 images per block; 10 remain after the 1 s settle time
+
+
+def write_marker_session(root: Path, pid: str, blocks: list[str], noise_px: float = 8.0) -> None:
+    rng = np.random.default_rng(int(pid[1:]))
+    s = root / f"s_{pid}"
+    (s / "frames" / "C0").mkdir(parents=True)
+    (s / "meta.json").write_text(json.dumps({"session_id": s.name, "participant": pid}))
+    calib = {"type": "mono3d_calib", "image": {"width": CALIB_W, "height": CALIB_H}, "K": K,
+             "camera": {"R": R, "t": T}}
+    (s / "calib.jsonl").write_text(json.dumps({"camera": "C0", "server_ms": 0, "msg": calib}) + "\n")
+    markers = [{"server_ms": START + k * BLOCK_MS, "label": f"motion:{m}"} for k, m in enumerate(blocks)]
+    markers.append({"server_ms": START + len(blocks) * BLOCK_MS, "label": "directed_end"})
+    (s / "markers.jsonl").write_text("".join(json.dumps(m) + "\n" for m in markers))
+    label_of = pe.make_labeler(markers, [], skip_ms=0)
+    frames, joints = [], []
+    for i in range(-3, len(blocks) * BLOCK_MS // 200 + 5):       # a few images before and after
+        server_ms, t_img = START + i * 200, 50_000 + i * 200
+        motion = label_of(server_ms)
+        key = len(TRUTH) + 1
+        img = np.zeros((IMG_H, IMG_W, 3), np.uint8)
+        img[0, 0] = (key % 256, key // 256, 0)
+        name = f"frames/C0/{t_img}.png"
+        cv2.imwrite(str(s / name), img)
+        ref = np.array([to_px(body()[n]) for n in NAMES])
+        if motion:
+            if "kick" in motion:
+                ref[[NAMES.index("left_ankle"), NAMES.index("right_ankle")], 0] += MOTION_ERR[motion]
+            else:
+                ref[:, 0] += MOTION_ERR[motion]
+            ref += rng.normal(0, noise_px, ref.shape)
+        TRUTH[key] = ref
+        frames.append({"camera": "C0", "file": name, "t_ms": t_img, "server_ms": server_ms})
+        joints.append(frame_line(t_img + 40, server_ms + 40, body()))
+    (s / "frames.jsonl").write_text("".join(json.dumps(f) + "\n" for f in frames))
+    (s / "joints.jsonl").write_text("".join(json.dumps(j) + "\n" for j in joints))
+
+
+def test_labeler_follows_motion_markers():
+    markers = [{"server_ms": 0, "label": "motion:a"}, {"server_ms": 5000, "label": "motion:b"},
+               {"server_ms": 10000, "label": "motion:a"}, {"server_ms": 15000, "label": "directed_end"}]
+    label = pe.make_labeler(markers, [], skip_ms=1000)
+    assert label(-10) is None                 # before the first marker
+    assert label(500) is None                 # still switching
+    assert label(1000) == "a" and label(4999) == "a"
+    assert label(5200) is None and label(6000) == "b"
+    assert label(11000) == "a"                # a motion may come back (cycling)
+    assert label(15500) is None               # after directed_end
+    assert pe.make_labeler([{"server_ms": 0, "label": "other"}], [], 0) is None
+
+
+def test_five_directed_motions_cycled_until_done(tmp_path):
+    TRUTH.clear()
+    root = tmp_path / "pck"
+    for i in range(1, 6):
+        write_marker_session(root, f"P{i:02d}", MOTIONS * 2)              # two rounds of the five motions
+    write_marker_session(root, "P06", MOTIONS[:4] * 2)                    # never did the fifth motion
+    write_marker_session(root, "P07", MOTIONS * 2)
+    out = tmp_path / "r"
+    result = pe.run(root, out, fake_reference, [])
+    summary = read_summary(out)
+    assert int(summary[("P01", "right_punch")]["n_images"]) == 20         # 2 blocks x 10 images after settling
+    assert result["motions"] == sorted(MOTIONS)
+    assert result["dropped_incomplete"] == ["P06"]
+    assert result["n_participants"] == 6
+    a = result["rm_anova"][0]
+    assert (a["ddof1"], a["ddof2"]) == (4, 20) and a["p_unc"] < 0.05
+    assert len(result["pairwise_t_holm"]) == 10
+    assert result["means"]["left_kick"] < result["means"]["right_punch"]
+
+
+def test_cells_with_too_few_images_are_left_out(tmp_path):
+    TRUTH.clear()
+    root = tmp_path / "pck"
+    write_marker_session(root, "P01", MOTIONS * 2)
+    write_marker_session(root, "P02", MOTIONS * 2)
+    write_marker_session(root, "P03", MOTIONS + MOTIONS[:4])              # fifth motion only once: 10 images
+    result = pe.run(root, tmp_path / "r", fake_reference, [], min_images=15)
+    assert result["thin_cells"] == ["P03/both_hands (10 images)"]
+    assert result["dropped_incomplete"] == ["P03"] and result["n_participants"] == 2

@@ -34,7 +34,7 @@
 ## 4. 요청 사항 (월요일 시연 전 필수)
 
 1. **세션 시작/종료:** PC 화면에 참가자 코드(P01~P09) 입력칸과 시작·종료 버튼. 시작하면 세션 폴더를 만들고 저장을 켜며, 종료하면 끈다. 한 참가자(연습·지정 동작·자유 동작 전체)가 한 세션이다. 세션이 없을 때는 저장하지 않는다.
-2. **지정 동작 시작 표시:** "지정 동작 시작" 버튼. 누르면 `markers.jsonl`에 `directed_start` 한 줄을 쓴다.
+2. **지정 동작 표시:** 지정 동작은 시간을 정하지 않고, 진행자가 동작 5개를 정해진 순서로 지정하며 건물 3개가 부서질 때까지 반복한다. PC 화면에 **동작 버튼 5개**와 **"지정 동작 끝" 버튼**을 둔다. 동작 버튼을 누르면 `markers.jsonl`에 `motion:<동작 이름>` 한 줄을, 끝 버튼을 누르면 `directed_end` 한 줄을 쓴다. 동작 이름은 영문 식별자(예: `right_punch`)로 하고, 목록은 팀이 정하면 바꿀 수 있게 상수나 설정으로 둔다. 건물 3개가 먼저 부서져도 5개 동작을 모두 한 번씩 할 때까지는 끝내지 않으므로, `directed_end`는 자동이 아니라 진행자가 버튼으로 남긴다.
 3. **원본 영상:** C0·C1의 `mono3d_jpeg`를 받은 그대로 저장한다. 관절 선·건물을 그린 화면은 쓰지 않는다.
 4. **관절 로그:** `mono3d_frame`을 **받은 메시지 그대로** 저장한다(가공 없음, `shift_joints` 적용 전). 그 프레임을 처리한 뒤 `camera == hub.owner`인지를 `owner`로 함께 남긴다.
 5. **보정값:** 세션을 시작할 때 C0·C1의 현재 보정값을 먼저 쓰고, 이후 `mono3d_calib`를 받을 때마다 받은 메시지 그대로 추가한다. 폰은 보정값이 바뀔 때만 보내므로, 서버가 카메라별 마지막 `mono3d_calib` 원본을 들고 있어야 한다(지금 `hub.calibs`에는 가공된 값만 있다).
@@ -52,7 +52,8 @@ data/local/pck/<session_id>/
   frames/C0/<t_ms>.jpg
   frames.jsonl     {"camera": "C0", "file": "frames/C0/<t_ms>.jpg", "t_ms": ..., "server_ms": ...}
   joints.jsonl     {"camera": "C0", "server_ms": ..., "owner": true, "msg": <받은 mono3d_frame 그대로>}
-  markers.jsonl    {"server_ms": ..., "label": "directed_start"}
+  markers.jsonl    {"server_ms": ..., "label": "motion:right_punch"}   동작이 바뀔 때마다 한 줄
+                   {"server_ms": ..., "label": "directed_end"}          지정 동작이 끝날 때
 ```
 
 필드 이름을 바꾸면 `tools/pck_eval.py`도 같이 바꿔야 한다. 바꿀 때는 이 PR이나 #30에 알려 준다.
@@ -64,7 +65,7 @@ data/local/pck/<session_id>/
 
 ## 7. 완료 기준
 
-- [ ] 참가자 코드를 넣고 시작 → 지정 동작 시작 → 1분 → 종료하면 5의 파일이 모두 생긴다.
+- [ ] 참가자 코드를 넣고 시작 → 동작 버튼을 바꿔 가며 1분 → 지정 동작 끝 → 종료하면 5의 파일이 모두 생기고, `markers.jsonl`에 누른 순서대로 표시가 남는다.
 - [ ] 그 폴더로 `python tools/pck_eval.py data/local/pck`를 실행하면 `pck_summary.csv`가 나오고, `anova.json`의 `projection_check_px` 중앙값이 3px 이하다(참가자 3명 이상이면 ANOVA 결과도 나온다). 분석용 패키지는 서버와 다른 가상환경에 설치한다(`docs/PCK_EVAL.md` 3절).
 - [ ] 세션을 시작하지 않으면 기존과 동일하게 동작한다.
 

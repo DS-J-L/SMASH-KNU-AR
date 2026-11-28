@@ -9,8 +9,9 @@ pose model (RTMPose-x via rtmlib) and writes:
     <out>/anova.json        rm_anova + friedman (+ pairwise t, Holm) over the directed motions
 
 Usage:
-    python tools/pck_eval.py data/local/pck --out data/results/pck \
-        --schedule right_punch:20,left_punch:20,kick:20
+    python tools/pck_eval.py data/local/pck --out data/results/pck
+
+Directed motions are labelled from the "motion:<name>" markers the operator writes during the test.
 
 Report the result as "PCK@0.2 against a reference model (RTMPose-x)", not as ground-truth accuracy.
 """
@@ -99,6 +100,34 @@ def motion_at(server_ms: float, start_ms: float | None, schedule: list[tuple[str
     return None
 
 
+MOTION_PREFIX = "motion:"
+END_LABELS = ("directed_end", "free_start", "session_end")
+
+
+def make_labeler(markers: list[dict], schedule: list[tuple[str, float]], skip_ms: float = 1000.0):
+    """server_ms -> directed motion label (or None).
+
+    Marker mode (preferred): the operator presses a button each time the directed motion changes, which
+    writes {"label": "motion:<name>"}. An image gets the latest such label, until a "directed_end" marker.
+    The first `skip_ms` after every marker are dropped: the participant is still switching motions.
+    A motion may come back several times (cycling through the motions until the buildings fall).
+
+    Schedule mode (fallback): only a "directed_start" marker, motions follow a fixed timetable."""
+    events = sorted((m["server_ms"], m["label"]) for m in markers
+                    if m["label"].startswith(MOTION_PREFIX) or m["label"] in END_LABELS)
+    if any(label.startswith(MOTION_PREFIX) for _, label in events):
+        times = [t for t, _ in events]
+
+        def by_marker(server_ms: float) -> str | None:
+            i = bisect_left(times, server_ms + 1e-9) - 1      # last marker at or before the image
+            if i < 0 or not events[i][1].startswith(MOTION_PREFIX) or server_ms - times[i] < skip_ms:
+                return None
+            return events[i][1][len(MOTION_PREFIX):]
+        return by_marker
+    start = next((m["server_ms"] for m in markers if m["label"] == "directed_start"), None)
+    return (lambda server_ms: motion_at(server_ms, start, schedule)) if start is not None else None
+
+
 def pick_person(kps: np.ndarray, scores: np.ndarray, pred: dict) -> int | None:
     """The reference person closest to the system's prediction (another person may be in frame)."""
     if len(kps) == 0:
@@ -128,17 +157,18 @@ def flatten(row: dict) -> dict:
 
 def evaluate_session(session: Path, reference: Reference, schedule: list[tuple[str, float]],
                      alpha: float = 0.2, cameras: Iterable[str] = ("C0", "C1"),
-                     owner_only: bool = True) -> tuple[list[dict], list[float]]:
+                     owner_only: bool = True, skip_ms: float = 1000.0) -> tuple[list[dict], list[float]]:
     """Rows for pck_frames.csv, and |projected joint - phone 2D landmark| in px (a calibration self-check)."""
     import cv2
 
     meta = json.loads((session / "meta.json").read_text(encoding="utf-8"))
     participant = meta["participant"]
     markers = read_jsonl(session / "markers.jsonl")
-    start = next((m["server_ms"] for m in markers if m["label"] == "directed_start"), None)
-    if start is None:
-        print(f"[warn] {session.name}: no 'directed_start' marker; directed motions cannot be labelled",
+    label_of = make_labeler(markers, schedule, skip_ms)
+    if label_of is None:
+        print(f"[warn] {session.name}: no 'motion:<name>' or 'directed_start' marker; nothing can be labelled",
               file=sys.stderr)
+        return [], []
 
     calibs: dict[str, list[Calib]] = {}
     for entry in read_jsonl(session / "calib.jsonl"):
@@ -159,7 +189,7 @@ def evaluate_session(session: Path, reference: Reference, schedule: list[tuple[s
         cam = fr["camera"]
         if cam not in cameras:
             continue
-        motion = motion_at(fr["server_ms"], start, schedule)
+        motion = label_of(fr["server_ms"])
         if motion is None:
             continue
         cal = [c for c in calibs.get(cam, []) if c.server_ms <= fr["server_ms"]] or calibs.get(cam, [])[:1]
@@ -245,18 +275,24 @@ def summarize(rows: list[dict]) -> list[dict]:
             for (pid, motion), v in sorted(cells.items())]
 
 
-def anova(summary: list[dict]) -> dict:
+def anova(summary: list[dict], min_images: int = 10) -> dict:
+    """Repeated-measures ANOVA over motions. A cell with fewer than `min_images` images is treated as
+    missing (its mean is too noisy), and a participant with a missing cell is left out."""
     import pandas as pd
     import pingouin as pg
 
     df = pd.DataFrame(summary)
     if df.empty:
         return {"error": "no data"}
-    full = df.pivot(index="participant", columns="motion", values="pck").dropna()
+    thin = df[df["n_images"] < min_images]
+    wide = df[df["n_images"] >= min_images].pivot(index="participant", columns="motion", values="pck")
+    wide = wide.reindex(columns=sorted(df["motion"].unique()))
+    full = wide.dropna()
     dropped = sorted(set(df["participant"]) - set(full.index))
     long = full.reset_index().melt(id_vars="participant", var_name="motion", value_name="pck")
     result: dict = {"n_participants": int(len(full)), "motions": list(full.columns),
-                    "dropped_incomplete": dropped,
+                    "dropped_incomplete": dropped, "min_images_per_cell": min_images,
+                    "thin_cells": [f"{r.participant}/{r.motion} ({r.n_images} images)" for r in thin.itertuples()],
                     "means": {m: round(float(full[m].mean()), 4) for m in full.columns}}
     if len(full) < 2 or full.shape[1] < 2:
         result["error"] = "need at least 2 participants with every motion"
@@ -304,14 +340,15 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def run(root: Path, out: Path, reference: Reference, schedule: list[tuple[str, float]],
-        alpha: float = 0.2, cameras: Iterable[str] = ("C0", "C1"), owner_only: bool = True) -> dict:
+        alpha: float = 0.2, cameras: Iterable[str] = ("C0", "C1"), owner_only: bool = True,
+        skip_ms: float = 1000.0, min_images: int = 10) -> dict:
     sessions = sorted(p for p in root.iterdir() if (p / "meta.json").exists())
     if not sessions:
         raise SystemExit(f"no sessions under {root}")
     rows: list[dict] = []
     check: list[float] = []
     for s in sessions:
-        r, c = evaluate_session(s, reference, schedule, alpha, cameras, owner_only)
+        r, c = evaluate_session(s, reference, schedule, alpha, cameras, owner_only, skip_ms)
         rows += r
         check += c
     out.mkdir(parents=True, exist_ok=True)
@@ -326,7 +363,7 @@ def run(root: Path, out: Path, reference: Reference, schedule: list[tuple[str, f
               # Should be ~0-2 px. Larger means the calibration, image size or mirroring does not match.
               "projection_check_px": ({"n": len(check), "median": round(float(np.median(check)), 2),
                                        "p95": round(float(np.percentile(check, 95)), 2)} if check else None),
-              **anova(summary)}
+              **anova(summary, min_images)}
     if check and np.median(check) > 3:
         print(f"[warn] projected joints are {np.median(check):.1f} px (median) away from the phone's own 2D "
               "landmarks: check calibration / image size / mirroring before trusting PCK", file=sys.stderr)
@@ -339,7 +376,12 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("root", type=Path, help="folder holding <session_id>/ folders (data/local/pck)")
     ap.add_argument("--out", type=Path, default=Path("data/results/pck"))
     ap.add_argument("--schedule", default=DEFAULT_SCHEDULE,
-                    help="directed motions after the 'directed_start' marker, label:seconds,...")
+                    help="fallback when a session has no 'motion:<name>' markers: motions after the "
+                         "'directed_start' marker, label:seconds,...")
+    ap.add_argument("--skip-ms", type=float, default=1000.0,
+                    help="drop images this long after each 'motion:<name>' marker (switching motions)")
+    ap.add_argument("--min-images", type=int, default=10,
+                    help="a participant x motion cell needs at least this many images to enter the ANOVA")
     ap.add_argument("--alpha", type=float, default=0.2, help="PCK threshold as a fraction of torso length")
     ap.add_argument("--cameras", default="C0,C1")
     ap.add_argument("--mode", default="performance", choices=["performance", "balanced", "lightweight"])
@@ -348,8 +390,8 @@ def main(argv: list[str] | None = None) -> None:
                     help="also score images from the phone that is not judging (default: judging phone only)")
     a = ap.parse_args(argv)
     result = run(a.root, a.out, rtmpose_reference(a.mode, a.device), parse_schedule(a.schedule),
-                 a.alpha, tuple(a.cameras.split(",")), not a.all_cameras)
-    print(json.dumps({k: result.get(k) for k in ("n_participants", "means", "dropped_incomplete",
+                 a.alpha, tuple(a.cameras.split(",")), not a.all_cameras, a.skip_ms, a.min_images)
+    print(json.dumps({k: result.get(k) for k in ("n_participants", "means", "dropped_incomplete", "thin_cells",
                                                  "projection_check_px", "row_status_counts", "error")},
                      ensure_ascii=False, indent=2))
     for r in result.get("rm_anova", []):
